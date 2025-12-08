@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ChatTurn, ExperiencePlan } from '@types/api';
+import { ChatTurn, ExperiencePlan } from '@app-types/api';
 
 const client = axios.create({
   baseURL: process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:4000/api',

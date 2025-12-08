@@ -25,7 +25,7 @@ Saalik_app/
 
 ### Backend
 ```bash
-cd /Users/sumandangal/Saalik_app/backend
+cd backend
 cp .env.example .env   # adjust PORT if needed
 npm install            # already run once, safe to repeat
 npm run dev            # starts express server on http://localhost:4000
@@ -33,7 +33,7 @@ npm run dev            # starts express server on http://localhost:4000
 
 ### Frontend (Expo)
 ```bash
-cd /Users/sumandangal/Saalik_app/frontend/saalik-mobile
+cd frontend/saalik-mobile
 cp .env.example .env                      # point to deployed backend when ready
 npm install                               # already run once, safe to repeat
 npx expo run:ios or npx expo start --ios  # iOS priority
@@ -47,3 +47,34 @@ npx expo start --android                  # Android build
 - Replace imagination engine with OpenAI / Vertex / local LLM.
 - Add authentication + secure storage for Remember Me toggle.
 - Style chatbot with streaming responses and voice trigger.
+
+## Recent Changes & Cleanup
+
+### Code Cleanup (Latest)
+- **Removed redundant files:**
+  - Deleted empty `frontend/package-lock.json` file (redundant wrapper)
+  - Removed empty `frontend/saalik-mobile/src/hooks/` directory
+  
+- **Documentation updates:**
+  - Updated README to use relative paths instead of absolute paths for better portability
+  - All setup instructions now use relative paths from project root
+
+### Project Status
+✅ **Working Features:**
+- Login screen with League Spartan typography and gradient UI
+- Home screen with intent selection (Religious/Scenic/Cultural/Adventure/Wellness)
+- Experience plan generation with demo data
+- Plan screen with detailed itinerary display
+- Chatbot modal for concierge-style interactions
+- Profile screen with memory cards
+- Upload screen for adding travel memories
+- Navigation with bottom tabs and stack navigation
+- Backend API with `/api/experience-plan` and `/api/chat` endpoints
+- Imagination engine for intent scoring and plan generation
+
+### Architecture
+- **Frontend:** React Native with Expo, TypeScript, React Navigation
+- **Backend:** Node.js with Express, TypeScript, Zod validation
+- **State Management:** React Context API (AuthContext)
+- **Styling:** Custom theme with colors and typography
+- **API Communication:** Axios with environment variable configuration
