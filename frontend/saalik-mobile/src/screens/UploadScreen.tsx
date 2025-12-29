@@ -49,7 +49,11 @@ export function UploadScreen() {
                 <AppText style={styles.title}>Upload Memory</AppText>
                 <AppText style={styles.subtitle}>Share your journey artifacts with Saalik.</AppText>
 
-                <Pressable style={styles.uploadZone} onPress={() => { }} disabled={uploading}>
+                <Pressable
+                    style={styles.uploadZone}
+                    onPress={() => Alert.alert('Select Media', 'Simulating native gallery picker... (This would open iOS Image Library)')}
+                    disabled={uploading}
+                >
                     {uploading ? (
                         <ActivityIndicator size="large" color={colors.accent} />
                     ) : (

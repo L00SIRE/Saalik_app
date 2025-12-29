@@ -1,141 +1,84 @@
-import { ChatTurn, ExperienceInput, ExperiencePlan, ExperienceTheme } from '../types/experience';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { ChatTurn, ExperienceInput, ExperiencePlan } from '../types/experience';
 
-const archetypes: Record<ExperienceTheme, {
-  tone: string;
-  soundtrack: string;
-  anchors: string[];
-  rituals: string[];
-}> = {
-  religious: {
-    tone: 'Sattvic calm with guided rituals and sacred geometry walks',
-    soundtrack: 'Morning ragas with temple bells',
-    anchors: ['sunrise darshan', 'mantra immersion', 'prasad tasting'],
-    rituals: ['guided meditation', 'heritage walk', 'aarti curation'],
-  },
-  scenic: {
-    tone: 'Slow-travel panoramas with misty trail highlights',
-    soundtrack: 'Monsoon lo-fi with bamboo flute layers',
-    anchors: ['golden-hour ridge picnic', 'canoe drift', 'tea estate brunch'],
-    rituals: ['forest bathing', 'stargazing map', 'artisan picnic'],
-  },
-  culture: {
-    tone: 'Studio-to-street storytellers with culinary residencies',
-    soundtrack: 'Analog jazz fused with folk percussion',
-    anchors: ['atelier residency', 'night bazaar tasting menu', 'spoken-word soiree'],
-    rituals: ['craft workshop', 'chef table circuit', 'gallery night'],
-  },
-  adventure: {
-    tone: 'Pulse-forward trek circuits with recovery pods',
-    soundtrack: 'Handpan over downtempo bass',
-    anchors: ['skybridge ascent', 'hidden waterfall rappel', 'midnight dune ride'],
-    rituals: ['mobility lab', 'guided breath-work', 'astro navigation'],
-  },
-  wellness: {
-    tone: 'Ayurvedic micro-retreat with bio-rhythm coaching',
-    soundtrack: 'Binaural beats blended with ocean drones',
-    anchors: ['dosha consult', 'therapeutic cooking', 'floating meditation'],
-    rituals: ['herbal spa circuit', 'sound bath', 'reset journaling'],
-  },
-};
+const apiKey = process.env.GEMINI_API_KEY || '';
+const genAI = new GoogleGenerativeAI(apiKey);
 
-const keywordMap: Record<ExperienceTheme, string[]> = {
-  religious: ['spiritual', 'temple', 'pilgrim', 'devotional', 'heritage'],
-  scenic: ['scenic', 'mountain', 'lake', 'view', 'nature', 'landscape'],
-  culture: ['culture', 'art', 'food', 'festival', 'museum'],
-  adventure: ['adventure', 'trek', 'thrill', 'ride', 'explore'],
-  wellness: ['wellness', 'healing', 'retreat', 'detox', 'yoga'],
-};
+const model = genAI.getGenerativeModel({
+  model: 'gemini-2.0-flash-exp',
+  systemInstruction: `You are Saalik, a deeply knowledgeable, soulful, and ultra-curated travel guide AI.
+Your vibe is "monocle magazine meets spiritual guru". You curate hyper-personalized, non-touristy experiences.
+You speak in a calm, sophisticated, slightly poetic tone.
+When generating plans, you MUST output valid JSON only.`,
+});
 
-function scoreTheme(intent: string, mood: string[] = []): ExperienceTheme {
-  const text = `${intent} ${mood.join(' ')}`.toLowerCase();
-  let bestTheme: ExperienceTheme = 'scenic';
-  let bestScore = -Infinity;
-
-  (Object.keys(keywordMap) as ExperienceTheme[]).forEach((theme) => {
-    const themeKeywords = keywordMap[theme];
-    const score = themeKeywords.reduce((acc, keyword) => (
-      text.includes(keyword) ? acc + 3 : acc
-    ), 0) + (text.includes(theme) ? 2 : 0);
-
-    if (score > bestScore) {
-      bestScore = score;
-      bestTheme = theme;
-    }
-  });
-
-  return bestTheme;
-}
-
-function buildDayPlan(theme: ExperienceTheme, input: ExperienceInput) {
-  const signature = archetypes[theme];
-  const baseDays = [
-    {
-      day: 'Arrival Ritual',
-      focus: signature.anchors[0] ?? 'Arrival curation',
-      details: [
-        'Welcome tea + orientation with your Saalik guide',
-        `Personal intention setting focused on ${input.intent}`,
-        `Sunset moment curated around ${signature.tone.toLowerCase()}`,
-      ],
-    },
-    {
-      day: 'Immersion',
-      focus: signature.anchors[1] ?? 'Immersive sequence',
-      details: [
-        `Hands-on session inspired by ${signature.rituals[0] ?? 'guided ritual'}`,
-        'Micro-itinerary for local dining and hidden studios',
-        'Personalized audio guide synced to your travel pace',
-      ],
-    },
-    {
-      day: 'Departure Glow',
-      focus: signature.anchors[2] ?? 'Departure glow',
-      details: [
-        'Slow morning with journaling prompts',
-        `Farewell ritual featuring ${signature.rituals[1] ?? 'sound bath'}`,
-        'Digital keepsake drop + concierge follow-up',
-      ],
-    },
-  ];
-
-  if (input.pace === 'fast') {
-    baseDays.push({
-      day: 'Bonus Pulse',
-      focus: 'High-energy addon',
-      details: ['Pop-up adventure card', 'Nightscape photography dash'],
-    });
+export async function craftExperiencePlan(input: ExperienceInput): Promise<ExperiencePlan> {
+  if (!apiKey) {
+    throw new Error('GEMINI_API_KEY is not set');
   }
 
-  return baseDays;
+  const prompt = `
+    Create a travel experience plan based on this input:
+    ${JSON.stringify(input, null, 2)}
+
+    Output ONLY a JSON object matching this TypeScript interface:
+    interface ExperiencePlan {
+      theme: 'religious' | 'scenic' | 'culture' | 'adventure' | 'wellness';
+      headline: string; // Catchy title
+      summary: string; // 1-2 sentences
+      soundtrack: string; // A music vibe description
+      highlights: Array<{
+        title: string;
+        description: string;
+        whyItWorks: string;
+      }>;
+      dayPlan: Array<{
+        day: string; // e.g. "Day 1", "Arrival"
+        focus: string;
+        details: string[]; // 2-3 specific activities/rituals
+      }>;
+    }
+  `;
+
+  try {
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: prompt }] }],
+      generationConfig: { responseMimeType: 'application/json' },
+    });
+
+    const text = result.response.text();
+    const plan = JSON.parse(text) as ExperiencePlan;
+    return plan;
+  } catch (error) {
+    console.error('Gemini Plan Error:', error);
+    throw new Error('Failed to generate plan');
+  }
 }
 
-export function craftExperiencePlan(input: ExperienceInput): ExperiencePlan {
-  const theme = scoreTheme(input.intent, input.mood);
-  const signature = archetypes[theme];
+export async function respondAsGuide(history: ChatTurn[]): Promise<ChatTurn> {
+  if (!apiKey) {
+    return { role: 'guide', message: 'I cannot speak right now (Missing API Key).' };
+  }
 
-  return {
-    theme,
-    headline: `${input.name ?? 'Explorer'}, here is your ${theme} flow`,
-    summary: `${signature.tone}. Tailored for ${input.partySize ?? 2} traveler(s) in ${input.travelMonth ?? 'the upcoming season'}.`,
-    soundtrack: signature.soundtrack,
-    highlights: signature.anchors.map((anchor, idx) => ({
-      title: anchor,
-      description: `Saalik guide curates ${anchor} with ${signature.rituals[idx % signature.rituals.length] ?? 'a bespoke ritual'}.`,
-      whyItWorks: 'Matched to your stated mood & boundaries.',
+  const chatSession = model.startChat({
+    history: history.slice(0, -1).map(h => ({
+      role: h.role === 'guide' ? 'model' : 'user',
+      parts: [{ text: h.message }],
     })),
-    dayPlan: buildDayPlan(theme, input),
-  };
-}
+  });
 
-export function respondAsGuide(history: ChatTurn[]): ChatTurn {
-  const lastUser = [...history].reverse().find((turn) => turn.role === 'user');
-  const prompt = lastUser?.message ?? 'Tell me about Saalik.';
-  const theme = scoreTheme(prompt, []);
-  const signature = archetypes[theme];
-  const response = `I sense you are leaning toward a ${theme} immersion. Imagine ${signature.tone.toLowerCase()} — I can line up ${signature.anchors.join(', ')}. Want me to lock dates or weave in a chatbot concierge?`;
+  const lastMsg = history[history.length - 1];
 
-  return {
-    role: 'guide',
-    message: response,
-  };
+  if (!lastMsg) {
+    return { role: 'guide', message: 'I am listening...' };
+  }
+
+  try {
+    const result = await chatSession.sendMessage(lastMsg.message);
+    const text = result.response.text();
+    return { role: 'guide', message: text };
+  } catch (error) {
+    console.error('Gemini Chat Error:', error);
+    return { role: 'guide', message: 'I drifted into a daydream. Please speak again.' };
+  }
 }

@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id           String           @id @default(uuid())
+  email        String           @unique
+  passwordHash String
+  name         String
+  createdAt    DateTime         @default(now())
+  plans        ExperiencePlan[]
+  memories     Memory[]
+}
+
+model ExperiencePlan {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  // We store the structured plan as a JSON string to keep it flexible
+  // In a production Postgres DB, we'd use Json type. SQLite uses string.
+  data      String 
+  createdAt DateTime @default(now())
+}
+
+model Memory {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  uri       String
+  caption   String
+  type      String   @default("image") // 'image' or 'video'
+  likes     Int      @default(0)
+  createdAt DateTime @default(now())
+}

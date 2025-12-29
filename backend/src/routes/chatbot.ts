@@ -13,7 +13,7 @@ const chatSchema = z.object({
   message: z.string().min(2),
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   const parsed = chatSchema.safeParse(req.body);
 
   if (!parsed.success) {
@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
   }
 
   const history: ChatTurn[] = [...parsed.data.history, { role: 'user', message: parsed.data.message }];
-  const reply = respondAsGuide(history);
+  const reply = await respondAsGuide(history);
 
   return res.json({
     history: [...history, reply],

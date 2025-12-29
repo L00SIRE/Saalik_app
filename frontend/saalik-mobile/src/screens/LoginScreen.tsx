@@ -5,6 +5,8 @@ import {
   View,
   Pressable,
   ScrollView,
+  ActivityIndicator,
+  Alert,
 } from 'react-native';
 import { AppText } from '@components/AppText';
 import { AppTextInput } from '@components/AppTextInput';
@@ -16,26 +18,41 @@ import { useAuth } from '../context/AuthContext';
 const background = require('../../assets/bgsaalik.jpg');
 
 export function LoginScreen() {
-  const { login } = useAuth();
+  const { login, register, isLoading } = useAuth();
+  const [isLoginMode, setIsLoginMode] = useState(true);
+
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-  const [error, setError] = useState('');
+  const [localError, setLocalError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = () => {
-    // Simple mock login
-    if (email && password) {
-      login();
-    } else {
-      // Allow empty for demo convenience, or enforce?
-      // Let's enforce non-empty for "realism"
-      if (!email || !password) {
-        setError('Please enter credentials.');
-        return;
-      }
-      login();
+  const handleSubmit = async () => {
+    setLocalError('');
+    if (!email || !password) {
+      setLocalError('Please fill in all required fields.');
+      return;
     }
-    setError('');
+    if (!isLoginMode && !name) {
+      setLocalError('Please enter your name.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      if (isLoginMode) {
+        await login(email, password);
+      } else {
+        await register(email, password, name);
+      }
+    } catch (e: any) {
+      // Parse error message if possible
+      const msg = e.response?.data?.error || 'Authentication failed. Please check your connection or credentials.';
+      setLocalError(typeof msg === 'string' ? msg : JSON.stringify(msg));
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -49,7 +66,22 @@ export function LoginScreen() {
           </View>
 
           <View style={styles.loginCard}>
-            <AppText style={styles.loginTitle}>Welcome Back</AppText>
+            <AppText style={styles.loginTitle}>
+              {isLoginMode ? 'Welcome Back' : 'Begin Journey'}
+            </AppText>
+
+            {!isLoginMode && (
+              <View>
+                <AppText style={styles.label}>Name</AppText>
+                <AppTextInput
+                  style={styles.input}
+                  placeholder="Your Name"
+                  placeholderTextColor={colors.textSecondary}
+                  value={name}
+                  onChangeText={setName}
+                />
+              </View>
+            )}
 
             <View>
               <AppText style={styles.label}>Email</AppText>
@@ -76,27 +108,49 @@ export function LoginScreen() {
               />
             </View>
 
-            <View style={styles.rowBetween}>
-              <View style={styles.rememberRow}>
-                <Checkbox
-                  value={rememberMe}
-                  onValueChange={setRememberMe}
-                  color={rememberMe ? colors.accent : undefined}
-                />
-                <AppText style={styles.rememberText}>Remember me</AppText>
+            {isLoginMode && (
+              <View style={styles.rowBetween}>
+                <View style={styles.rememberRow}>
+                  <Checkbox
+                    value={rememberMe}
+                    onValueChange={setRememberMe}
+                    color={rememberMe ? colors.accent : undefined}
+                  />
+                  <AppText style={styles.rememberText}>Remember me</AppText>
+                </View>
+                <AppText style={styles.link}>Forgot Password?</AppText>
               </View>
-              <AppText style={styles.link}>Forgot Password?</AppText>
-            </View>
+            )}
 
-            {error ? <AppText style={styles.errorText}>{error}</AppText> : null}
+            {localError ? <AppText style={styles.errorText}>{localError}</AppText> : null}
 
-            <Pressable style={styles.primaryButton} onPress={handleLogin}>
-              <AppText style={styles.primaryButtonText}>Log In</AppText>
+            <Pressable
+              style={[styles.primaryButton, loading && styles.buttonDisabled]}
+              onPress={handleSubmit}
+              disabled={loading}
+            >
+              {loading ? (
+                <ActivityIndicator color="#021007" />
+              ) : (
+                <AppText style={styles.primaryButtonText}>
+                  {isLoginMode ? 'Log In' : 'Sign Up'}
+                </AppText>
+              )}
             </Pressable>
 
-            <AppText style={styles.footerText}>
-              Don't have an account? <AppText style={styles.link}>Sign Up</AppText>
-            </AppText>
+            <View style={styles.footerContainer}>
+              <AppText style={styles.footerText}>
+                {isLoginMode ? "Don't have an account?" : "Already have an account?"}
+              </AppText>
+              <Pressable onPress={() => {
+                setIsLoginMode(!isLoginMode);
+                setLocalError('');
+              }}>
+                <AppText style={[styles.link, { marginLeft: 6 }]}>
+                  {isLoginMode ? 'Sign Up' : 'Log In'}
+                </AppText>
+              </Pressable>
+            </View>
           </View>
         </ScrollView>
       </LinearGradient>
@@ -143,6 +197,7 @@ const styles = StyleSheet.create({
     color: colors.accent,
     fontSize: 26,
     letterSpacing: 2,
+    marginBottom: 8,
   },
   label: {
     color: colors.textSecondary,
@@ -175,26 +230,35 @@ const styles = StyleSheet.create({
   },
   link: {
     color: colors.accent,
+    fontWeight: 'bold',
   },
   primaryButton: {
     backgroundColor: colors.accent,
     paddingVertical: 14,
     borderRadius: 16,
-    marginTop: 8,
+    marginTop: 16,
     alignItems: 'center',
+  },
+  buttonDisabled: {
+    opacity: 0.7,
   },
   primaryButtonText: {
     color: '#021007',
     fontWeight: '700',
     letterSpacing: 1,
   },
+  footerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 12,
+  },
   footerText: {
     color: colors.textSecondary,
     textAlign: 'center',
-    marginTop: 8,
   },
   errorText: {
     color: colors.error,
     textAlign: 'center',
+    marginTop: 8,
   },
 });

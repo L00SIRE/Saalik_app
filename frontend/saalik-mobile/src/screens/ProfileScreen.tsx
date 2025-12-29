@@ -6,19 +6,20 @@ import { colors } from '@theme/colors';
 import { useAuth } from '../context/AuthContext';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
 
 export function ProfileScreen() {
-    const { logout, savedPlans, memories, toggleLike } = useAuth();
+    const { user, logout, savedPlans, memories, toggleLike } = useAuth();
     const navigation = useNavigation<any>();
     const [isPublicView, setIsPublicView] = useState(true);
 
     const renderHeader = () => (
         <View style={styles.header}>
             <View style={styles.avatarContainer}>
-                <AppText style={styles.avatarText}>EX</AppText>
+                <AppText style={styles.avatarText}>{user?.name?.[0] || 'E'}</AppText>
             </View>
-            <AppText style={styles.name}>Explorer</AppText>
-            <AppText style={styles.email}>explorer@saalik.ai</AppText>
+            <AppText style={styles.name}>{user?.name || 'Explorer'}</AppText>
+            <AppText style={styles.email}>{user?.email || 'explorer@saalik.ai'}</AppText>
 
             <View style={styles.statsContainer}>
                 <View style={styles.statItem}>
@@ -52,30 +53,14 @@ export function ProfileScreen() {
 
     const renderPrivateContent = () => (
         <View style={styles.privateContainer}>
-            {/* Saved Journeys Section */}
             <View style={styles.section}>
-                <AppText style={styles.sectionTitle}>My Journeys</AppText>
-                {savedPlans.length === 0 ? (
-                    <AppText style={styles.emptyText}>No saved journeys yet.</AppText>
-                ) : (
-                    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.horizontalScroll}>
-                        {savedPlans.map((plan, index) => (
-                            <Pressable
-                                key={index}
-                                style={styles.planCard}
-                                onPress={() => navigation.navigate('Journey', { screen: 'Plan', params: { plan } })}
-                            >
-                                <AppText style={styles.planTheme}>{plan.theme.toUpperCase()}</AppText>
-                                <AppText style={styles.planHeadline} numberOfLines={2}>{plan.headline}</AppText>
-                            </Pressable>
-                        ))}
-                    </ScrollView>
-                )}
-            </View>
+                <View style={styles.sectionHeader}>
+                    <AppText style={styles.sectionTitle}>My Artifacts</AppText>
+                    <Pressable onPress={() => navigation.navigate('Upload')}>
+                        <Ionicons name="add-circle" size={28} color={colors.accent} />
+                    </Pressable>
+                </View>
 
-            {/* Memories Grid Section */}
-            <View style={styles.section}>
-                <AppText style={styles.sectionTitle}>Memories Grid</AppText>
                 {memories.length === 0 ? (
                     <AppText style={styles.emptyText}>No uploaded memories.</AppText>
                 ) : (
@@ -226,6 +211,11 @@ const styles = StyleSheet.create({
     sectionTitle: {
         fontSize: 18,
         color: colors.accent,
+    },
+    sectionHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         marginBottom: 16,
     },
     emptyText: {

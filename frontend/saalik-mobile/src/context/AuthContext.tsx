@@ -1,5 +1,6 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
-
+import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
+import * as SecureStore from 'expo-secure-store';
+import { User, login as apiLogin, register as apiRegister, getMe, getSavedPlans, savePlan as apiSavePlan } from '../services/api';
 import type { ExperiencePlan } from '../types/api';
 
 export interface Memory {
@@ -18,11 +19,14 @@ export interface Memory {
 }
 
 interface AuthContextType {
-    isLoggedIn: boolean;
-    login: () => void;
+    user: User | null;
+    isLoading: boolean;
+    isLoggedIn: boolean; // Added for AppNavigator
+    login: (email: string, password: string) => Promise<void>;
+    register: (email: string, password: string, name: string) => Promise<void>;
     logout: () => void;
     savedPlans: ExperiencePlan[];
-    savePlan: (plan: ExperiencePlan) => void;
+    savePlan: (plan: ExperiencePlan) => Promise<void>;
     memories: Memory[];
     addMemory: (memory: Memory) => void;
     toggleLike: (id: string) => void;
@@ -30,7 +34,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Mock Data
+// Mock Memories (kept for demo visuals)
 const MOCK_MEMORIES: Memory[] = [
     {
         id: '1',
@@ -40,11 +44,7 @@ const MOCK_MEMORIES: Memory[] = [
         type: 'image',
         likes: 124,
         isLiked: false,
-        user: {
-            name: 'Explorer',
-            avatar: 'https://i.pravatar.cc/150?u=saalik',
-            handle: '@explorer_one',
-        },
+        user: { name: 'Explorer', avatar: 'https://i.pravatar.cc/150?u=saalik', handle: '@explorer_one' },
     },
     {
         id: '2',
@@ -54,47 +54,85 @@ const MOCK_MEMORIES: Memory[] = [
         type: 'image',
         likes: 89,
         isLiked: true,
-        user: {
-            name: 'Explorer',
-            avatar: 'https://i.pravatar.cc/150?u=saalik',
-            handle: '@explorer_one',
-        },
-    },
-    {
-        id: '3',
-        uri: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1000&auto=format&fit=crop',
-        caption: 'Swiss Alps hiking adventure. The view from the top makes it all worth it. 🏔️🇨🇭',
-        date: '1 day ago',
-        type: 'image',
-        likes: 256,
-        isLiked: false,
-        user: {
-            name: 'Explorer',
-            avatar: 'https://i.pravatar.cc/150?u=saalik',
-            handle: '@explorer_one',
-        },
+        user: { name: 'Explorer', avatar: 'https://i.pravatar.cc/150?u=saalik', handle: '@explorer_one' },
     },
 ];
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [user, setUser] = useState<User | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
     const [savedPlans, setSavedPlans] = useState<ExperiencePlan[]>([]);
     const [memories, setMemories] = useState<Memory[]>(MOCK_MEMORIES);
 
-    const login = () => setIsLoggedIn(true);
-    const logout = () => {
-        setIsLoggedIn(false);
-        setSavedPlans([]); // Optional: clear data on logout
-        // We keep memories for demo purposes or reset to mock
+    useEffect(() => {
+        loadUser();
+    }, []);
+
+    const loadUser = async () => {
+        try {
+            const token = await SecureStore.getItemAsync('token');
+            if (token) {
+                const userData = await getMe();
+                setUser(userData);
+                loadPlans();
+            } else {
+                // Auto-login if no token (Bypass Login Screen)
+                console.log('No token found, auto-logging in...');
+                await login('demo@saalik.ai', 'demo');
+            }
+        } catch (e) {
+            console.log('Failed to load user or token invalid', e);
+            // If token invalid, try to re-login automatically
+            try {
+                await login('demo@saalik.ai', 'demo');
+            } catch (err) {
+                console.error('Auto-login failed', err);
+                await SecureStore.deleteItemAsync('token');
+            }
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const loadPlans = async () => {
+        try {
+            const plans = await getSavedPlans();
+            setSavedPlans(plans);
+        } catch (e) {
+            console.warn('Failed to load plans', e);
+        }
+    };
+
+    const login = async (email: string, password: string) => {
+        const response = await apiLogin(email, password);
+        await SecureStore.setItemAsync('token', response.token);
+        setUser(response.user);
+        await loadPlans();
+    };
+
+    const register = async (email: string, password: string, name: string) => {
+        const response = await apiRegister(email, password, name);
+        await SecureStore.setItemAsync('token', response.token);
+        setUser(response.user);
+        await loadPlans();
+    };
+
+    const logout = async () => {
+        await SecureStore.deleteItemAsync('token');
+        setUser(null);
+        setSavedPlans([]);
         setMemories(MOCK_MEMORIES);
     };
 
-    const savePlan = (plan: ExperiencePlan) => {
-        // Avoid duplicates based on headline/theme
-        setSavedPlans((prev) => {
-            if (prev.some(p => p.headline === plan.headline)) return prev;
-            return [plan, ...prev];
-        });
+    const savePlan = async (plan: ExperiencePlan) => {
+        // Optimistic update
+        setSavedPlans((prev) => [plan, ...prev]);
+        try {
+            await apiSavePlan(plan);
+        } catch (e) {
+            console.error('Failed to save plan remote', e);
+            // Revert or retry logic could go here
+        }
     };
 
     const addMemory = (memory: Memory) => {
@@ -116,8 +154,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     return (
         <AuthContext.Provider value={{
-            isLoggedIn,
+            user,
+            isLoading,
+            isLoggedIn: user !== null, // Derived from user state
             login,
+            register,
             logout,
             savedPlans,
             savePlan,

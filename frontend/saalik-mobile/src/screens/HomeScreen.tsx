@@ -11,6 +11,8 @@ import { AppTextInput } from '@components/AppTextInput';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '@theme/colors';
 import type { ExperiencePlan } from '../types/api';
+import { requestExperiencePlan } from '../services/api';
+import { useAuth } from '../context/AuthContext';
 import { useNavigation } from '@react-navigation/native';
 
 const intents = [
@@ -292,6 +294,7 @@ const getDemoPlan = (intentKey: string, name: string): ExperiencePlan => {
 };
 
 export function HomeScreen() {
+    const { user } = useAuth();
     const navigation = useNavigation<any>();
     const [selectedIntent, setSelectedIntent] = useState(intents[0]);
     const [customPrompt, setCustomPrompt] = useState('');
@@ -301,15 +304,16 @@ export function HomeScreen() {
     const handlePlan = async () => {
         setError('');
         setPlanLoading(true);
-        // Simulate API delay for better UX
-        await new Promise(resolve => setTimeout(resolve, 800));
         try {
-            const name = 'Explorer';
-            const intentKey = selectedIntent.key;
-            const experience = getDemoPlan(intentKey, name);
+            const payload = {
+                intent: selectedIntent.intent + ' ' + customPrompt,
+                mood: [selectedIntent.key],
+                name: user?.name || 'Explorer'
+            };
+            const experience = await requestExperiencePlan(payload);
             navigation.navigate('Plan', { plan: experience });
         } catch (e) {
-            setError('Unable to generate experience plan.');
+            setError('Unable to reach Saalik AI. Please check connection.');
         } finally {
             setPlanLoading(false);
         }
@@ -324,6 +328,25 @@ export function HomeScreen() {
                         <AppText style={styles.logo}>SAALIK</AppText>
                         <AppText style={styles.tagline}>Curated journeys for soul-first tourism</AppText>
                     </View>
+
+                    {/* Featured Plan Card */}
+                    <Pressable style={styles.featuredCard} onPress={() => navigation.navigate('FeaturedPlan')}>
+                        <LinearGradient colors={[colors.accent, colors.accentMuted]} style={styles.featuredGradient}>
+                            <View style={styles.featuredContent}>
+                                <View style={styles.featuredBadge}>
+                                    <AppText style={styles.featuredBadgeText}>FEATURED DROP</AppText>
+                                </View>
+                                <AppText style={styles.featuredTitle}>The Sacred Loop: Pashupati & Boudha</AppText>
+                                <AppText style={styles.featuredSubtitle}>Airport pickup • Local food • Private Guide</AppText>
+                                <View style={styles.featuredFooter}>
+                                    <AppText style={styles.featuredPrice}>from $45</AppText>
+                                    <View style={styles.featuredButton}>
+                                        <AppText style={styles.featuredButtonText}>View Itinerary</AppText>
+                                    </View>
+                                </View>
+                            </View>
+                        </LinearGradient>
+                    </Pressable>
 
                     <View style={styles.intentCard}>
                         <View style={styles.intentHeader}>
@@ -471,5 +494,65 @@ const styles = StyleSheet.create({
     },
     pillTextActive: {
         color: colors.accent,
+    },
+    featuredCard: {
+        borderRadius: 24,
+        overflow: 'hidden',
+        borderWidth: 1,
+        borderColor: colors.accent,
+    },
+    featuredGradient: {
+        padding: 20,
+    },
+    featuredContent: {
+        gap: 8,
+    },
+    featuredBadge: {
+        backgroundColor: '#000',
+        alignSelf: 'flex-start',
+        paddingHorizontal: 10,
+        paddingVertical: 4,
+        borderRadius: 8,
+        marginBottom: 4,
+    },
+    featuredBadgeText: {
+        color: colors.accent,
+        fontSize: 10,
+        fontWeight: 'bold',
+        letterSpacing: 1,
+    },
+    featuredTitle: {
+        fontSize: 22,
+        fontWeight: '800',
+        color: '#021007',
+        lineHeight: 26,
+    },
+    featuredSubtitle: {
+        fontSize: 14,
+        color: '#021d0f',
+        opacity: 0.8,
+        fontWeight: '500',
+    },
+    featuredFooter: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: 12,
+    },
+    featuredPrice: {
+        fontSize: 18,
+        fontWeight: '800',
+        color: '#021007',
+    },
+    featuredButton: {
+        backgroundColor: '#021007',
+        paddingHorizontal: 16,
+        paddingVertical: 8,
+        borderRadius: 12,
+    },
+    featuredButtonText: {
+        color: colors.accent,
+        fontWeight: 'bold',
+        fontSize: 12,
     },
 });

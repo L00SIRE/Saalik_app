@@ -15,6 +15,7 @@ import { AppTextInput } from '@components/AppTextInput';
 import { LinearGradient } from 'expo-linear-gradient';
 import { colors } from '@theme/colors';
 import type { ExperiencePlan, ChatTurn } from '../types/api';
+import { sendChat } from '../services/api';
 import { useRoute } from '@react-navigation/native';
 import { useAuth } from '../context/AuthContext';
 
@@ -57,38 +58,15 @@ export function PlanScreen() {
         setChatLoading(true);
 
         // Add user message immediately
-        const newHistory: ChatTurn[] = [...chatHistory, { role: 'user', message: userMessage }];
-        setChatHistory(newHistory);
+        const historyForApi: ChatTurn[] = [...chatHistory, { role: 'user', message: userMessage }];
+        setChatHistory(historyForApi);
         setChatInput('');
 
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 600));
-
         try {
-            const fullResponse = getDemoChatResponse(userMessage, newHistory);
-
-            // Streaming effect
-            let currentResponse = '';
-            const words = fullResponse.split(' ');
-
-            // Add a placeholder guide message
-            const historyWithGuide: ChatTurn[] = [...newHistory, { role: 'guide', message: '' }];
-            setChatHistory(historyWithGuide);
-
-            for (let i = 0; i < words.length; i++) {
-                currentResponse += words[i] + ' ';
-                // Update the last message in history
-                setChatHistory(prev => {
-                    const updated = [...prev];
-                    updated[updated.length - 1] = { role: 'guide', message: currentResponse };
-                    return updated;
-                });
-                // Random delay between words for natural feel
-                await new Promise(resolve => setTimeout(resolve, 30 + Math.random() * 50));
-            }
-
+            const response = await sendChat(chatHistory, userMessage);
+            setChatHistory(prev => [...prev, response.reply]);
         } catch (e) {
-            // setError('Chatbot is offline right now.');
+            setChatHistory(prev => [...prev, { role: 'guide', message: 'I am having trouble connecting to the spirit realm (API Error).' }]);
         } finally {
             setChatLoading(false);
         }

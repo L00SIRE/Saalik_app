@@ -1,10 +1,11 @@
+import 'dotenv/config'; // Must be first
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
+import authRouter from './routes/auth';
 import experienceRouter from './routes/experience';
 import chatbotRouter from './routes/chatbot';
 
-dotenv.config();
+// dotenv.config() removed as it is loaded above
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -16,6 +17,7 @@ app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', message: 'Saalik imagination service ready' });
 });
 
+app.use('/api/auth', authRouter);
 app.use('/api/experience-plan', experienceRouter);
 app.use('/api/chat', chatbotRouter);
 
