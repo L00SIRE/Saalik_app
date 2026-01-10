@@ -41,3 +41,9 @@ frontend/saalik-mobile/build/
 *.tmp
 *.temp
 
+# Confidential/Private Documents
+AI_GUIDE_DESIGN.md
+SOFT_LAUNCH_PLAN.md
+*_CONFIDENTIAL.md
+*_PRIVATE.md
+

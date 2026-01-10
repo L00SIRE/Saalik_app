@@ -1,277 +1,325 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, Pressable, ScrollView, Image, FlatList } from 'react-native';
+import React from 'react';
+import {
+    View,
+    StyleSheet,
+    ScrollView,
+    Pressable,
+    Image,
+    Alert,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppText } from '@components/AppText';
-import { MemoryCard } from '@components/MemoryCard';
 import { colors } from '@theme/colors';
-import { useAuth } from '../context/AuthContext';
-import { LinearGradient } from 'expo-linear-gradient';
-import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
+import { useAuth } from '../context/AuthContext';
+import { useNavigation } from '@react-navigation/native';
 
 export function ProfileScreen() {
-    const { user, logout, savedPlans, memories, toggleLike } = useAuth();
+    const { user, logout } = useAuth();
     const navigation = useNavigation<any>();
-    const [isPublicView, setIsPublicView] = useState(true);
 
-    const renderHeader = () => (
-        <View style={styles.header}>
-            <View style={styles.avatarContainer}>
-                <AppText style={styles.avatarText}>{user?.name?.[0] || 'E'}</AppText>
-            </View>
-            <AppText style={styles.name}>{user?.name || 'Explorer'}</AppText>
-            <AppText style={styles.email}>{user?.email || 'explorer@saalik.ai'}</AppText>
+    const handleLogout = () => {
+        Alert.alert(
+            'Log Out',
+            'Are you sure you want to log out?',
+            [
+                { text: 'Cancel', style: 'cancel' },
+                { text: 'Log Out', style: 'destructive', onPress: logout },
+            ]
+        );
+    };
 
-            <View style={styles.statsContainer}>
-                <View style={styles.statItem}>
-                    <AppText style={styles.statNumber}>{memories.length}</AppText>
-                    <AppText style={styles.statLabel}>Memories</AppText>
-                </View>
-                <View style={styles.statDivider} />
-                <View style={styles.statItem}>
-                    <AppText style={styles.statNumber}>{savedPlans.length}</AppText>
-                    <AppText style={styles.statLabel}>Journeys</AppText>
-                </View>
-            </View>
-
-            {/* Toggle */}
-            <View style={styles.toggleContainer}>
-                <Pressable
-                    style={[styles.toggleButton, isPublicView && styles.toggleActive]}
-                    onPress={() => setIsPublicView(true)}
-                >
-                    <AppText style={[styles.toggleText, isPublicView && styles.toggleTextActive]}>Public Feed</AppText>
-                </Pressable>
-                <Pressable
-                    style={[styles.toggleButton, !isPublicView && styles.toggleActive]}
-                    onPress={() => setIsPublicView(false)}
-                >
-                    <AppText style={[styles.toggleText, !isPublicView && styles.toggleTextActive]}>My Profile</AppText>
-                </Pressable>
-            </View>
-        </View>
-    );
-
-    const renderPrivateContent = () => (
-        <View style={styles.privateContainer}>
-            <View style={styles.section}>
-                <View style={styles.sectionHeader}>
-                    <AppText style={styles.sectionTitle}>My Artifacts</AppText>
-                    <Pressable onPress={() => navigation.navigate('Upload')}>
-                        <Ionicons name="add-circle" size={28} color={colors.accent} />
-                    </Pressable>
-                </View>
-
-                {memories.length === 0 ? (
-                    <AppText style={styles.emptyText}>No uploaded memories.</AppText>
-                ) : (
-                    <View style={styles.grid}>
-                        {memories.map((memory) => (
-                            <View key={memory.id} style={styles.memoryItem}>
-                                <Image source={{ uri: memory.uri }} style={styles.memoryImage} />
-                            </View>
-                        ))}
-                    </View>
-                )}
-            </View>
-
-            <Pressable style={styles.logoutButton} onPress={logout}>
-                <AppText style={styles.logoutText}>Log Out</AppText>
-            </Pressable>
-        </View>
-    );
+    const menuItems = [
+        {
+            icon: 'person-outline',
+            label: 'Edit Profile',
+            onPress: () => Alert.alert('Coming Soon', 'Profile editing will be available soon!'),
+        },
+        {
+            icon: 'heart-outline',
+            label: 'Saved Tours',
+            onPress: () => Alert.alert('Coming Soon', 'Your saved tours will appear here.'),
+        },
+        {
+            icon: 'star-outline',
+            label: 'My Reviews',
+            onPress: () => Alert.alert('Coming Soon', 'View your reviews here.'),
+        },
+        {
+            icon: 'map-outline',
+            label: 'Become a Guide',
+            onPress: () => Alert.alert('Become a Guide', 'Share your passion for Nepal with travelers from around the world. Apply to become a Saalik guide!'),
+            highlight: true,
+        },
+        {
+            icon: 'notifications-outline',
+            label: 'Notifications',
+            onPress: () => Alert.alert('Coming Soon', 'Notification settings will be available soon.'),
+        },
+        {
+            icon: 'help-circle-outline',
+            label: 'Help & Support',
+            onPress: () => Alert.alert('Contact Us', 'Email: support@saalik.com\nPhone: +977-1-4XXXXXX'),
+        },
+        {
+            icon: 'information-circle-outline',
+            label: 'About Saalik',
+            onPress: () => Alert.alert('About Saalik', 'Saalik connects travelers with passionate local guides for free walking tours across Nepal.\n\nVersion 2.0.0'),
+        },
+    ];
 
     return (
-        <View style={styles.container}>
-            <LinearGradient colors={[colors.background, '#000000']} style={styles.background}>
-                {isPublicView ? (
-                    <FlatList
-                        data={memories}
-                        keyExtractor={(item) => item.id}
-                        renderItem={({ item }) => (
-                            <MemoryCard memory={item} onToggleLike={toggleLike} />
+        <SafeAreaView style={styles.container} edges={['top']}>
+            {/* Header */}
+            <View style={styles.header}>
+                <AppText style={styles.headerTitle}>Profile</AppText>
+            </View>
+
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
+                {/* Profile Card */}
+                <View style={styles.profileCard}>
+                    <View style={styles.avatarContainer}>
+                        {user?.avatar ? (
+                            <Image source={{ uri: user.avatar }} style={styles.avatar} />
+                        ) : (
+                            <View style={[styles.avatar, styles.avatarPlaceholder]}>
+                                <AppText style={styles.avatarInitial}>
+                                    {user?.name?.charAt(0)?.toUpperCase() || 'U'}
+                                </AppText>
+                            </View>
                         )}
-                        ListHeaderComponent={renderHeader}
-                        contentContainerStyle={styles.scrollContent}
-                        showsVerticalScrollIndicator={false}
-                    />
-                ) : (
-                    <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-                        {renderHeader()}
-                        {renderPrivateContent()}
-                    </ScrollView>
-                )}
-            </LinearGradient>
-        </View>
+                        <Pressable style={styles.editAvatarButton}>
+                            <Ionicons name="camera" size={14} color="#fff" />
+                        </Pressable>
+                    </View>
+
+                    <AppText style={styles.userName}>{user?.name || 'Traveler'}</AppText>
+                    <AppText style={styles.userEmail}>{user?.email || 'demo@saalik.com'}</AppText>
+
+                    {/* Stats */}
+                    <View style={styles.statsRow}>
+                        <View style={styles.stat}>
+                            <AppText style={styles.statValue}>0</AppText>
+                            <AppText style={styles.statLabel}>Tours</AppText>
+                        </View>
+                        <View style={styles.statDivider} />
+                        <View style={styles.stat}>
+                            <AppText style={styles.statValue}>0</AppText>
+                            <AppText style={styles.statLabel}>Reviews</AppText>
+                        </View>
+                        <View style={styles.statDivider} />
+                        <View style={styles.stat}>
+                            <AppText style={styles.statValue}>0</AppText>
+                            <AppText style={styles.statLabel}>Saved</AppText>
+                        </View>
+                    </View>
+                </View>
+
+                {/* Menu Items */}
+                <View style={styles.menuSection}>
+                    {menuItems.map((item, index) => (
+                        <Pressable
+                            key={index}
+                            style={[styles.menuItem, item.highlight && styles.menuItemHighlight]}
+                            onPress={item.onPress}
+                        >
+                            <Ionicons
+                                name={item.icon as any}
+                                size={22}
+                                color={item.highlight ? colors.accent : colors.textSecondary}
+                            />
+                            <AppText style={[styles.menuItemText, item.highlight && styles.menuItemTextHighlight]}>
+                                {item.label}
+                            </AppText>
+                            <Ionicons name="chevron-forward" size={18} color={colors.textMuted} />
+                        </Pressable>
+                    ))}
+                </View>
+
+                {/* Logout Button */}
+                <Pressable style={styles.logoutButton} onPress={handleLogout}>
+                    <Ionicons name="log-out-outline" size={22} color={colors.error} />
+                    <AppText style={styles.logoutText}>Log Out</AppText>
+                </Pressable>
+
+                {/* App Info */}
+                <View style={styles.appInfo}>
+                    <AppText style={styles.appName}>SAALIK</AppText>
+                    <AppText style={styles.appVersion}>Nepal Tour Platform v2.0</AppText>
+                    <AppText style={styles.appTagline}>Discover Nepal with Passionate Local Guides</AppText>
+                </View>
+            </ScrollView>
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    },
-    background: {
-        flex: 1,
-    },
-    scrollContent: {
-        padding: 24,
-        paddingTop: 60,
-        paddingBottom: 40,
+        backgroundColor: colors.background,
     },
     header: {
-        alignItems: 'center',
-        marginBottom: 24,
-    },
-    avatarContainer: {
-        width: 80,
-        height: 80,
-        borderRadius: 40,
-        backgroundColor: 'rgba(21, 255, 117, 0.1)',
-        borderWidth: 1,
-        borderColor: colors.accent,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: 16,
-    },
-    avatarText: {
-        fontSize: 24,
-        color: colors.accent,
-        fontWeight: 'bold',
-    },
-    name: {
-        fontSize: 24,
-        color: colors.textPrimary,
-        marginBottom: 4,
-    },
-    email: {
-        fontSize: 14,
-        color: colors.textSecondary,
-        marginBottom: 20,
-    },
-    statsContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 24,
+        paddingHorizontal: 20,
+        paddingVertical: 16,
         backgroundColor: colors.card,
-        paddingVertical: 12,
-        paddingHorizontal: 32,
-        borderRadius: 16,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+    },
+    headerTitle: {
+        fontSize: 24,
+        fontWeight: '800',
+        color: colors.textPrimary,
+    },
+    scrollContent: {
+        padding: 20,
+        paddingBottom: 40,
+    },
+
+    // Profile Card
+    profileCard: {
+        backgroundColor: colors.card,
+        borderRadius: 20,
+        padding: 24,
+        alignItems: 'center',
+        marginBottom: 24,
         borderWidth: 1,
         borderColor: colors.border,
     },
-    statItem: {
+    avatarContainer: {
+        position: 'relative',
+        marginBottom: 12,
+    },
+    avatar: {
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+    },
+    avatarPlaceholder: {
+        backgroundColor: colors.primary,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    avatarInitial: {
+        fontSize: 40,
+        fontWeight: '700',
+        color: '#fff',
+    },
+    editAvatarButton: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
+        width: 32,
+        height: 32,
+        borderRadius: 16,
+        backgroundColor: colors.primary,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 3,
+        borderColor: colors.card,
+    },
+    userName: {
+        fontSize: 22,
+        fontWeight: '700',
+        color: colors.textPrimary,
+    },
+    userEmail: {
+        fontSize: 14,
+        color: colors.textSecondary,
+        marginTop: 4,
+    },
+    statsRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 20,
+        gap: 24,
+    },
+    stat: {
         alignItems: 'center',
     },
-    statNumber: {
-        fontSize: 18,
-        fontWeight: 'bold',
+    statValue: {
+        fontSize: 20,
+        fontWeight: '800',
         color: colors.textPrimary,
     },
     statLabel: {
         fontSize: 12,
         color: colors.textSecondary,
+        marginTop: 2,
     },
     statDivider: {
         width: 1,
-        height: 24,
+        height: 30,
         backgroundColor: colors.border,
-        marginHorizontal: 24,
     },
-    toggleContainer: {
-        flexDirection: 'row',
+
+    // Menu
+    menuSection: {
         backgroundColor: colors.card,
-        borderRadius: 12,
-        padding: 4,
+        borderRadius: 16,
+        overflow: 'hidden',
+        marginBottom: 24,
         borderWidth: 1,
         borderColor: colors.border,
-        width: '100%',
     },
-    toggleButton: {
-        flex: 1,
-        paddingVertical: 8,
+    menuItem: {
+        flexDirection: 'row',
         alignItems: 'center',
-        borderRadius: 8,
+        paddingVertical: 16,
+        paddingHorizontal: 16,
+        gap: 14,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
     },
-    toggleActive: {
-        backgroundColor: colors.accent,
+    menuItemHighlight: {
+        backgroundColor: `${colors.accent}08`,
     },
-    toggleText: {
-        color: colors.textSecondary,
+    menuItemText: {
+        flex: 1,
+        fontSize: 15,
+        color: colors.textPrimary,
+    },
+    menuItemTextHighlight: {
+        color: colors.accent,
         fontWeight: '600',
     },
-    toggleTextActive: {
-        color: '#021007',
-        fontWeight: 'bold',
-    },
-    privateContainer: {
-        flex: 1,
-    },
-    section: {
+
+    // Logout
+    logoutButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 8,
+        paddingVertical: 14,
+        backgroundColor: `${colors.error}10`,
+        borderRadius: 12,
+        borderWidth: 1,
+        borderColor: `${colors.error}30`,
         marginBottom: 32,
     },
-    sectionTitle: {
-        fontSize: 18,
-        color: colors.accent,
-    },
-    sectionHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 16,
-    },
-    emptyText: {
-        color: colors.textSecondary,
-        fontStyle: 'italic',
-    },
-    horizontalScroll: {
-        gap: 12,
-    },
-    planCard: {
-        backgroundColor: colors.card,
-        padding: 16,
-        borderRadius: 16,
-        borderWidth: 1,
-        borderColor: colors.border,
-        width: 160,
-        height: 120,
-        justifyContent: 'space-between',
-    },
-    planTheme: {
-        color: colors.accent,
-        fontSize: 12,
-        fontWeight: 'bold',
-    },
-    planHeadline: {
-        color: colors.textPrimary,
-        fontSize: 14,
-    },
-    grid: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        gap: 12,
-    },
-    memoryItem: {
-        width: '31%',
-        aspectRatio: 1,
-        borderRadius: 12,
-        overflow: 'hidden',
-        backgroundColor: colors.card,
-    },
-    memoryImage: {
-        width: '100%',
-        height: '100%',
-    },
-    logoutButton: {
-        marginTop: 20,
-        padding: 16,
-        borderRadius: 12,
-        borderWidth: 1,
-        borderColor: colors.error,
-        alignItems: 'center',
-        backgroundColor: 'rgba(255, 107, 107, 0.1)',
-    },
     logoutText: {
+        fontSize: 15,
         color: colors.error,
-        fontSize: 16,
         fontWeight: '600',
+    },
+
+    // App Info
+    appInfo: {
+        alignItems: 'center',
+        gap: 4,
+    },
+    appName: {
+        fontSize: 18,
+        fontWeight: '800',
+        color: colors.textMuted,
+        letterSpacing: 4,
+    },
+    appVersion: {
+        fontSize: 12,
+        color: colors.textMuted,
+    },
+    appTagline: {
+        fontSize: 11,
+        color: colors.textMuted,
+        marginTop: 4,
     },
 });

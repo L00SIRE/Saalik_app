@@ -1,558 +1,450 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
-    ImageBackground,
-    StyleSheet,
     View,
-    Pressable,
+    StyleSheet,
     ScrollView,
+    Pressable,
+    TextInput,
+    Image,
+    RefreshControl,
+    FlatList,
+    ActivityIndicator,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppText } from '@components/AppText';
-import { AppTextInput } from '@components/AppTextInput';
-import { LinearGradient } from 'expo-linear-gradient';
-import { colors } from '@theme/colors';
-import type { ExperiencePlan } from '../types/api';
-import { requestExperiencePlan } from '../services/api';
-import { useAuth } from '../context/AuthContext';
+import { TourCard } from '@components/TourCard';
+import { colors, categoryColors, categoryIcons } from '@theme/colors';
+import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { getFeaturedTours, searchTours, getCategories } from '../services/api';
+import type { Tour, CategoryMeta, TourCategory } from '@app-types/api';
 
-const intents = [
-    { key: 'religious', label: 'Religious', intent: 'Seeking sacred circuits & temple energy.' },
-    { key: 'scenic', label: 'Scenic', intent: 'Craving ridgeline tea gardens & waterfalls.' },
-    { key: 'culture', label: 'Cultural', intent: 'Want ateliers, food labs, and artist time.' },
-    { key: 'adventure', label: 'Adventure', intent: 'Planning kinetic treks with recovery pods.' },
-    { key: 'wellness', label: 'Wellness', intent: 'Need a detox slow retreat with Ayurveda.' },
+// Hero background
+const heroImage = require('../../assets/bgsaalik.jpg');
+
+// Nepali cities/hubs
+const HUBS = [
+    { name: 'Kathmandu', image: 'https://images.unsplash.com/photo-1582654454409-778d91d845a0?w=400' },
+    { name: 'Pokhara', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400' },
+    { name: 'Bhaktapur', image: 'https://images.unsplash.com/photo-1609766857326-18a204797d22?w=400' },
+    { name: 'Patan', image: 'https://images.unsplash.com/photo-1585016495481-91613a3ab1bc?w=400' },
 ];
 
-const background = require('../../assets/bgsaalik.jpg');
-
-// Demo data functions - bypass API for UI testing
-const getDemoPlan = (intentKey: string, name: string): ExperiencePlan => {
-    const demoPlans: Record<string, ExperiencePlan> = {
-        religious: {
-            theme: 'religious',
-            headline: `${name}, here is your religious flow`,
-            summary: 'Sattvic calm with guided rituals and sacred geometry walks. Tailored for 2 traveler(s) in the upcoming season.',
-            soundtrack: 'Morning ragas with temple bells',
-            highlights: [
-                {
-                    title: 'sunrise darshan',
-                    description: 'Saalik guide curates sunrise darshan with guided meditation.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-                {
-                    title: 'mantra immersion',
-                    description: 'Saalik guide curates mantra immersion with heritage walk.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-                {
-                    title: 'prasad tasting',
-                    description: 'Saalik guide curates prasad tasting with aarti curation.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-            ],
-            dayPlan: [
-                {
-                    day: 'Arrival Ritual',
-                    focus: 'sunrise darshan',
-                    details: [
-                        'Welcome tea + orientation with your Saalik guide',
-                        'Personal intention setting focused on your spiritual journey',
-                        'Sunset moment curated around sattvic calm with guided rituals and sacred geometry walks',
-                    ],
-                },
-                {
-                    day: 'Immersion',
-                    focus: 'mantra immersion',
-                    details: [
-                        'Hands-on session inspired by guided meditation',
-                        'Micro-itinerary for local dining and hidden studios',
-                        'Personalized audio guide synced to your travel pace',
-                    ],
-                },
-                {
-                    day: 'Departure Glow',
-                    focus: 'prasad tasting',
-                    details: [
-                        'Slow morning with journaling prompts',
-                        'Farewell ritual featuring heritage walk',
-                        'Digital keepsake drop + concierge follow-up',
-                    ],
-                },
-            ],
-        },
-        scenic: {
-            theme: 'scenic',
-            headline: `${name}, here is your scenic flow`,
-            summary: 'Slow-travel panoramas with misty trail highlights. Tailored for 2 traveler(s) in the upcoming season.',
-            soundtrack: 'Monsoon lo-fi with bamboo flute layers',
-            highlights: [
-                {
-                    title: 'golden-hour ridge picnic',
-                    description: 'Saalik guide curates golden-hour ridge picnic with forest bathing.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-                {
-                    title: 'canoe drift',
-                    description: 'Saalik guide curates canoe drift with stargazing map.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-                {
-                    title: 'tea estate brunch',
-                    description: 'Saalik guide curates tea estate brunch with artisan picnic.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-            ],
-            dayPlan: [
-                {
-                    day: 'Arrival Ritual',
-                    focus: 'golden-hour ridge picnic',
-                    details: [
-                        'Welcome tea + orientation with your Saalik guide',
-                        'Personal intention setting focused on scenic exploration',
-                        'Sunset moment curated around slow-travel panoramas with misty trail highlights',
-                    ],
-                },
-                {
-                    day: 'Immersion',
-                    focus: 'canoe drift',
-                    details: [
-                        'Hands-on session inspired by forest bathing',
-                        'Micro-itinerary for local dining and hidden studios',
-                        'Personalized audio guide synced to your travel pace',
-                    ],
-                },
-                {
-                    day: 'Departure Glow',
-                    focus: 'tea estate brunch',
-                    details: [
-                        'Slow morning with journaling prompts',
-                        'Farewell ritual featuring stargazing map',
-                        'Digital keepsake drop + concierge follow-up',
-                    ],
-                },
-            ],
-        },
-        culture: {
-            theme: 'culture',
-            headline: `${name}, here is your culture flow`,
-            summary: 'Studio-to-street storytellers with culinary residencies. Tailored for 2 traveler(s) in the upcoming season.',
-            soundtrack: 'Analog jazz fused with folk percussion',
-            highlights: [
-                {
-                    title: 'atelier residency',
-                    description: 'Saalik guide curates atelier residency with craft workshop.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-                {
-                    title: 'night bazaar tasting menu',
-                    description: 'Saalik guide curates night bazaar tasting menu with chef table circuit.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-                {
-                    title: 'spoken-word soiree',
-                    description: 'Saalik guide curates spoken-word soiree with gallery night.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-            ],
-            dayPlan: [
-                {
-                    day: 'Arrival Ritual',
-                    focus: 'atelier residency',
-                    details: [
-                        'Welcome tea + orientation with your Saalik guide',
-                        'Personal intention setting focused on cultural immersion',
-                        'Sunset moment curated around studio-to-street storytellers with culinary residencies',
-                    ],
-                },
-                {
-                    day: 'Immersion',
-                    focus: 'night bazaar tasting menu',
-                    details: [
-                        'Hands-on session inspired by craft workshop',
-                        'Micro-itinerary for local dining and hidden studios',
-                        'Personalized audio guide synced to your travel pace',
-                    ],
-                },
-                {
-                    day: 'Departure Glow',
-                    focus: 'spoken-word soiree',
-                    details: [
-                        'Slow morning with journaling prompts',
-                        'Farewell ritual featuring chef table circuit',
-                        'Digital keepsake drop + concierge follow-up',
-                    ],
-                },
-            ],
-        },
-        adventure: {
-            theme: 'adventure',
-            headline: `${name}, here is your adventure flow`,
-            summary: 'Pulse-forward trek circuits with recovery pods. Tailored for 2 traveler(s) in the upcoming season.',
-            soundtrack: 'Handpan over downtempo bass',
-            highlights: [
-                {
-                    title: 'skybridge ascent',
-                    description: 'Saalik guide curates skybridge ascent with mobility lab.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-                {
-                    title: 'hidden waterfall rappel',
-                    description: 'Saalik guide curates hidden waterfall rappel with guided breath-work.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-                {
-                    title: 'midnight dune ride',
-                    description: 'Saalik guide curates midnight dune ride with astro navigation.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-            ],
-            dayPlan: [
-                {
-                    day: 'Arrival Ritual',
-                    focus: 'skybridge ascent',
-                    details: [
-                        'Welcome tea + orientation with your Saalik guide',
-                        'Personal intention setting focused on adventure',
-                        'Sunset moment curated around pulse-forward trek circuits with recovery pods',
-                    ],
-                },
-                {
-                    day: 'Immersion',
-                    focus: 'hidden waterfall rappel',
-                    details: [
-                        'Hands-on session inspired by mobility lab',
-                        'Micro-itinerary for local dining and hidden studios',
-                        'Personalized audio guide synced to your travel pace',
-                    ],
-                },
-                {
-                    day: 'Departure Glow',
-                    focus: 'midnight dune ride',
-                    details: [
-                        'Slow morning with journaling prompts',
-                        'Farewell ritual featuring guided breath-work',
-                        'Digital keepsake drop + concierge follow-up',
-                    ],
-                },
-            ],
-        },
-        wellness: {
-            theme: 'wellness',
-            headline: `${name}, here is your wellness flow`,
-            summary: 'Ayurvedic micro-retreat with bio-rhythm coaching. Tailored for 2 traveler(s) in the upcoming season.',
-            soundtrack: 'Binaural beats blended with ocean drones',
-            highlights: [
-                {
-                    title: 'dosha consult',
-                    description: 'Saalik guide curates dosha consult with herbal spa circuit.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-                {
-                    title: 'therapeutic cooking',
-                    description: 'Saalik guide curates therapeutic cooking with sound bath.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-                {
-                    title: 'floating meditation',
-                    description: 'Saalik guide curates floating meditation with reset journaling.',
-                    whyItWorks: 'Matched to your stated mood & boundaries.',
-                },
-            ],
-            dayPlan: [
-                {
-                    day: 'Arrival Ritual',
-                    focus: 'dosha consult',
-                    details: [
-                        'Welcome tea + orientation with your Saalik guide',
-                        'Personal intention setting focused on wellness',
-                        'Sunset moment curated around ayurvedic micro-retreat with bio-rhythm coaching',
-                    ],
-                },
-                {
-                    day: 'Immersion',
-                    focus: 'therapeutic cooking',
-                    details: [
-                        'Hands-on session inspired by herbal spa circuit',
-                        'Micro-itinerary for local dining and hidden studios',
-                        'Personalized audio guide synced to your travel pace',
-                    ],
-                },
-                {
-                    day: 'Departure Glow',
-                    focus: 'floating meditation',
-                    details: [
-                        'Slow morning with journaling prompts',
-                        'Farewell ritual featuring sound bath',
-                        'Digital keepsake drop + concierge follow-up',
-                    ],
-                },
-            ],
-        },
-    };
-
-    return demoPlans[intentKey] || demoPlans.religious;
-};
-
 export function HomeScreen() {
-    const { user } = useAuth();
     const navigation = useNavigation<any>();
-    const [selectedIntent, setSelectedIntent] = useState(intents[0]);
-    const [customPrompt, setCustomPrompt] = useState('');
-    const [planLoading, setPlanLoading] = useState(false);
-    const [error, setError] = useState('');
+    const [searchQuery, setSearchQuery] = useState('');
+    const [featuredTours, setFeaturedTours] = useState<Tour[]>([]);
+    const [allTours, setAllTours] = useState<Tour[]>([]);
+    const [categories, setCategories] = useState<CategoryMeta[]>([]);
+    const [selectedCategory, setSelectedCategory] = useState<TourCategory | null>(null);
+    const [loading, setLoading] = useState(true);
+    const [refreshing, setRefreshing] = useState(false);
 
-    const handlePlan = async () => {
-        setError('');
-        setPlanLoading(true);
+    const loadData = async () => {
         try {
-            const payload = {
-                intent: selectedIntent.intent + ' ' + customPrompt,
-                mood: [selectedIntent.key],
-                name: user?.name || 'Explorer'
-            };
-            const experience = await requestExperiencePlan(payload);
-            navigation.navigate('Plan', { plan: experience });
+            const [featured, tours, cats] = await Promise.all([
+                getFeaturedTours(),
+                searchTours(selectedCategory ? { category: selectedCategory } : undefined),
+                getCategories(),
+            ]);
+            setFeaturedTours(featured);
+            setAllTours(tours);
+            setCategories(cats);
         } catch (e) {
-            setError('Unable to reach Saalik AI. Please check connection.');
+            console.error('Error loading data:', e);
         } finally {
-            setPlanLoading(false);
+            setLoading(false);
+            setRefreshing(false);
         }
     };
 
+    useEffect(() => {
+        loadData();
+    }, [selectedCategory]);
+
+    const onRefresh = () => {
+        setRefreshing(true);
+        loadData();
+    };
+
+    const handleSearch = () => {
+        if (searchQuery.trim()) {
+            navigation.navigate('Search', { query: searchQuery });
+        }
+    };
+
+    const handleTourPress = (tour: Tour) => {
+        navigation.navigate('TourDetail', { tourId: tour.id, tour });
+    };
+
+    const handleHubPress = (hubName: string) => {
+        navigation.navigate('Search', { hub: hubName });
+    };
+
+    const handleCategoryPress = (category: TourCategory) => {
+        if (selectedCategory === category) {
+            setSelectedCategory(null);
+        } else {
+            setSelectedCategory(category);
+        }
+    };
+
+    if (loading) {
+        return (
+            <View style={styles.loadingContainer}>
+                <ActivityIndicator size="large" color={colors.primary} />
+                <AppText style={styles.loadingText}>Discovering tours...</AppText>
+            </View>
+        );
+    }
+
     return (
-        <ImageBackground source={background} style={styles.background} resizeMode="cover">
-            <LinearGradient colors={["rgba(0,0,0,0.75)", "rgba(0,0,0,0.2)"]} style={styles.overlay}>
-                <ScrollView contentContainerStyle={styles.scroll}
-                    showsVerticalScrollIndicator={false}>
-                    <View style={styles.header}>
-                        <AppText style={styles.logo}>SAALIK</AppText>
-                        <AppText style={styles.tagline}>Curated journeys for soul-first tourism</AppText>
+        <SafeAreaView style={styles.container} edges={['top']}>
+            <ScrollView
+                contentContainerStyle={styles.scrollContent}
+                showsVerticalScrollIndicator={false}
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={colors.primary} />
+                }
+            >
+                {/* Hero Section */}
+                <View style={styles.hero}>
+                    <Image source={heroImage} style={styles.heroImage} resizeMode="cover" />
+                    <View style={styles.heroOverlay}>
+                        <AppText style={styles.heroLogo}>SAALIK</AppText>
+                        <AppText style={styles.heroTagline}>Free Walking Tours in Nepal</AppText>
+                        <AppText style={styles.heroSubtitle}>
+                            Discover authentic experiences with passionate local guides
+                        </AppText>
                     </View>
+                </View>
 
-                    {/* Featured Plan Card */}
-                    <Pressable style={styles.featuredCard} onPress={() => navigation.navigate('FeaturedPlan')}>
-                        <LinearGradient colors={[colors.accent, colors.accentMuted]} style={styles.featuredGradient}>
-                            <View style={styles.featuredContent}>
-                                <View style={styles.featuredBadge}>
-                                    <AppText style={styles.featuredBadgeText}>FEATURED DROP</AppText>
-                                </View>
-                                <AppText style={styles.featuredTitle}>The Sacred Loop: Pashupati & Boudha</AppText>
-                                <AppText style={styles.featuredSubtitle}>Airport pickup • Local food • Private Guide</AppText>
-                                <View style={styles.featuredFooter}>
-                                    <AppText style={styles.featuredPrice}>from $45</AppText>
-                                    <View style={styles.featuredButton}>
-                                        <AppText style={styles.featuredButtonText}>View Itinerary</AppText>
-                                    </View>
-                                </View>
-                            </View>
-                        </LinearGradient>
-                    </Pressable>
+                {/* Search Bar */}
+                <View style={styles.searchContainer}>
+                    <View style={styles.searchBar}>
+                        <Ionicons name="search" size={20} color={colors.textSecondary} />
+                        <TextInput
+                            style={styles.searchInput}
+                            placeholder="Where do you want to explore?"
+                            placeholderTextColor={colors.textMuted}
+                            value={searchQuery}
+                            onChangeText={setSearchQuery}
+                            onSubmitEditing={handleSearch}
+                            returnKeyType="search"
+                        />
+                        {searchQuery.length > 0 && (
+                            <Pressable onPress={() => setSearchQuery('')}>
+                                <Ionicons name="close-circle" size={18} color={colors.textMuted} />
+                            </Pressable>
+                        )}
+                    </View>
+                </View>
 
-                    <View style={styles.intentCard}>
-                        <View style={styles.intentHeader}>
-                            <AppText style={styles.intentTitle}>Shape my journey</AppText>
-                            <AppText style={styles.intentSubtitle}>Religious / Scenic / Cultural / Adventure / Wellness</AppText>
-                        </View>
-                        <View style={styles.intentPills}>
-                            {intents.map((intent) => (
+                {/* Categories */}
+                <View style={styles.section}>
+                    <AppText style={styles.sectionTitle}>Browse by Category</AppText>
+                    <ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={styles.categoriesScroll}
+                    >
+                        {categories.map((category) => {
+                            const isSelected = selectedCategory === category.key;
+                            const iconName = categoryIcons[category.key] || 'help-circle';
+                            const bgColor = isSelected ? categoryColors[category.key] : colors.inputBg;
+
+                            return (
                                 <Pressable
-                                    key={intent.key}
-                                    style={[styles.pill, selectedIntent.key === intent.key && styles.pillActive]}
-                                    onPress={() => setSelectedIntent(intent)}
+                                    key={category.key}
+                                    style={[styles.categoryPill, { backgroundColor: bgColor }]}
+                                    onPress={() => handleCategoryPress(category.key)}
                                 >
-                                    <AppText style={[styles.pillText, selectedIntent.key === intent.key && styles.pillTextActive]}>
-                                        {intent.label}
+                                    <Ionicons
+                                        name={iconName as any}
+                                        size={16}
+                                        color={isSelected ? '#fff' : colors.textSecondary}
+                                    />
+                                    <AppText style={[styles.categoryText, isSelected && styles.categoryTextActive]}>
+                                        {category.label}
                                     </AppText>
                                 </Pressable>
-                            ))}
+                            );
+                        })}
+                    </ScrollView>
+                </View>
+
+                {/* Popular Destinations */}
+                <View style={styles.section}>
+                    <AppText style={styles.sectionTitle}>Popular Destinations</AppText>
+                    <ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={styles.hubsScroll}
+                    >
+                        {HUBS.map((hub) => (
+                            <Pressable key={hub.name} style={styles.hubCard} onPress={() => handleHubPress(hub.name)}>
+                                <Image source={{ uri: hub.image }} style={styles.hubImage} resizeMode="cover" />
+                                <View style={styles.hubOverlay}>
+                                    <AppText style={styles.hubName}>{hub.name}</AppText>
+                                </View>
+                            </Pressable>
+                        ))}
+                    </ScrollView>
+                </View>
+
+                {/* Featured Tours */}
+                {featuredTours.length > 0 && !selectedCategory && (
+                    <View style={styles.section}>
+                        <View style={styles.sectionHeader}>
+                            <AppText style={styles.sectionTitle}>Featured Tours</AppText>
+                            <Pressable onPress={() => navigation.navigate('Search', {})}>
+                                <AppText style={styles.seeAllText}>See All</AppText>
+                            </Pressable>
                         </View>
-
-                        <AppText style={styles.label}>What experience are you visualizing?</AppText>
-                        <AppTextInput
-                            value={customPrompt}
-                            onChangeText={setCustomPrompt}
-                            placeholder="Describe the energy, places, people, or rituals you want."
-                            placeholderTextColor={colors.textSecondary}
-                            style={[styles.input, styles.multiline]}
-                            multiline
-                        />
-
-                        {error ? <AppText style={styles.errorText}>{error}</AppText> : null}
-
-                        <Pressable style={[styles.primaryButton, planLoading && styles.disabledButton]} onPress={handlePlan} disabled={planLoading}>
-                            <AppText style={styles.primaryButtonText}>{planLoading ? 'Gathering Intent…' : 'Ask Saalik AI'}</AppText>
-                        </Pressable>
+                        <ScrollView
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                            contentContainerStyle={styles.featuredScroll}
+                        >
+                            {featuredTours.map((tour) => (
+                                <TourCard key={tour.id} tour={tour} onPress={() => handleTourPress(tour)} compact />
+                            ))}
+                        </ScrollView>
                     </View>
-                </ScrollView>
-            </LinearGradient>
-        </ImageBackground>
+                )}
+
+                {/* All Tours (or filtered by category) */}
+                <View style={styles.section}>
+                    <AppText style={styles.sectionTitle}>
+                        {selectedCategory ? `${selectedCategory} Tours` : 'All Tours'}
+                    </AppText>
+                    <View style={styles.toursGrid}>
+                        {allTours.map((tour) => (
+                            <TourCard key={tour.id} tour={tour} onPress={() => handleTourPress(tour)} />
+                        ))}
+                    </View>
+
+                    {allTours.length === 0 && (
+                        <View style={styles.emptyState}>
+                            <Ionicons name="compass-outline" size={48} color={colors.textMuted} />
+                            <AppText style={styles.emptyText}>No tours found</AppText>
+                            <AppText style={styles.emptySubtext}>Try a different category or destination</AppText>
+                        </View>
+                    )}
+                </View>
+
+                {/* Bottom Padding */}
+                <View style={{ height: 20 }} />
+            </ScrollView>
+
+            {/* AI Chat FAB */}
+            <Pressable
+                style={styles.aiFab}
+                onPress={() => navigation.navigate('AIChat')}
+            >
+                <Ionicons name="sparkles" size={24} color="#021007" />
+            </Pressable>
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
-    background: {
+    container: {
         flex: 1,
+        backgroundColor: colors.background,
     },
-    overlay: {
+    loadingContainer: {
         flex: 1,
-        backgroundColor: 'rgba(0,0,0,0.3)',
-    },
-    scroll: {
-        paddingBottom: 48,
-        paddingHorizontal: 24,
-        paddingTop: 80,
-        gap: 20,
-    },
-    header: {
         alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: colors.background,
+        gap: 12,
     },
-    logo: {
-        fontSize: 32,
-        color: colors.accent,
-        letterSpacing: 4,
-    },
-    tagline: {
-        color: colors.textPrimary,
-        marginTop: 8,
-        textAlign: 'center',
-    },
-    label: {
+    loadingText: {
         color: colors.textSecondary,
         fontSize: 14,
-        marginTop: 4,
     },
-    input: {
-        backgroundColor: colors.inputBg,
-        paddingHorizontal: 16,
-        paddingVertical: 14,
-        borderRadius: 14,
-        color: colors.textPrimary,
-        borderWidth: 1,
-        borderColor: colors.border,
-        marginTop: 6,
+    scrollContent: {
+        paddingBottom: 20,
     },
-    multiline: {
-        minHeight: 100,
-        textAlignVertical: 'top',
+
+    // Hero
+    hero: {
+        height: 220,
+        position: 'relative',
     },
-    primaryButton: {
-        backgroundColor: colors.accent,
-        paddingVertical: 14,
-        borderRadius: 16,
-        marginTop: 8,
+    heroImage: {
+        width: '100%',
+        height: '100%',
+    },
+    heroOverlay: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         alignItems: 'center',
-    },
-    primaryButtonText: {
-        color: '#021007',
-        fontWeight: '700',
-        letterSpacing: 1,
-    },
-    disabledButton: {
-        opacity: 0.7,
-    },
-    errorText: {
-        color: colors.error,
-        textAlign: 'center',
-    },
-    intentCard: {
-        backgroundColor: colors.card,
-        borderRadius: 24,
-        padding: 24,
-        borderWidth: 1,
-        borderColor: colors.border,
-        gap: 12,
-    },
-    intentHeader: {
-        gap: 4,
-    },
-    intentTitle: {
-        color: colors.accent,
-        fontSize: 22,
-    },
-    intentSubtitle: {
-        color: colors.textSecondary,
-    },
-    intentPills: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        gap: 12,
-        marginTop: 8,
-    },
-    pill: {
-        borderRadius: 999,
-        borderWidth: 1,
-        borderColor: colors.border,
-        paddingHorizontal: 16,
-        paddingVertical: 8,
-    },
-    pillActive: {
-        backgroundColor: 'rgba(21, 255, 117, 0.1)',
-        borderColor: colors.accent,
-    },
-    pillText: {
-        color: colors.textSecondary,
-    },
-    pillTextActive: {
-        color: colors.accent,
-    },
-    featuredCard: {
-        borderRadius: 24,
-        overflow: 'hidden',
-        borderWidth: 1,
-        borderColor: colors.accent,
-    },
-    featuredGradient: {
+        justifyContent: 'center',
         padding: 20,
     },
-    featuredContent: {
-        gap: 8,
-    },
-    featuredBadge: {
-        backgroundColor: '#000',
-        alignSelf: 'flex-start',
-        paddingHorizontal: 10,
-        paddingVertical: 4,
-        borderRadius: 8,
-        marginBottom: 4,
-    },
-    featuredBadgeText: {
-        color: colors.accent,
-        fontSize: 10,
-        fontWeight: 'bold',
-        letterSpacing: 1,
-    },
-    featuredTitle: {
-        fontSize: 22,
+    heroLogo: {
+        fontSize: 36,
         fontWeight: '800',
-        color: '#021007',
-        lineHeight: 26,
+        color: '#fff',
+        letterSpacing: 6,
     },
-    featuredSubtitle: {
+    heroTagline: {
+        fontSize: 18,
+        fontWeight: '600',
+        color: colors.accent,
+        marginTop: 4,
+    },
+    heroSubtitle: {
         fontSize: 14,
-        color: '#021d0f',
-        opacity: 0.8,
-        fontWeight: '500',
+        color: 'rgba(255, 255, 255, 0.8)',
+        textAlign: 'center',
+        marginTop: 8,
+        maxWidth: 280,
     },
-    featuredFooter: {
+
+    // Search
+    searchContainer: {
+        paddingHorizontal: 16,
+        marginTop: -24,
+        zIndex: 10,
+    },
+    searchBar: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: colors.card,
+        borderRadius: 12,
+        paddingHorizontal: 14,
+        paddingVertical: 12,
+        gap: 10,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.1,
+        shadowRadius: 12,
+        elevation: 6,
+    },
+    searchInput: {
+        flex: 1,
+        fontSize: 15,
+        color: colors.textPrimary,
+    },
+
+    // Sections
+    section: {
+        marginTop: 24,
+        paddingHorizontal: 16,
+    },
+    sectionHeader: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 12,
+        marginBottom: 12,
     },
-    featuredPrice: {
-        fontSize: 18,
-        fontWeight: '800',
-        color: '#021007',
+    sectionTitle: {
+        fontSize: 20,
+        fontWeight: '700',
+        color: colors.textPrimary,
+        marginBottom: 12,
     },
-    featuredButton: {
-        backgroundColor: '#021007',
-        paddingHorizontal: 16,
+    seeAllText: {
+        fontSize: 14,
+        color: colors.primary,
+        fontWeight: '600',
+    },
+
+    // Categories
+    categoriesScroll: {
+        paddingRight: 16,
+        gap: 10,
+    },
+    categoryPill: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 14,
         paddingVertical: 8,
-        borderRadius: 12,
+        borderRadius: 20,
+        gap: 6,
+        marginRight: 10,
     },
-    featuredButtonText: {
-        color: colors.accent,
-        fontWeight: 'bold',
-        fontSize: 12,
+    categoryText: {
+        fontSize: 13,
+        color: colors.textSecondary,
+        fontWeight: '500',
+    },
+    categoryTextActive: {
+        color: '#fff',
+    },
+
+    // Hubs
+    hubsScroll: {
+        paddingRight: 16,
+    },
+    hubCard: {
+        width: 140,
+        height: 100,
+        borderRadius: 12,
+        overflow: 'hidden',
+        marginRight: 12,
+    },
+    hubImage: {
+        width: '100%',
+        height: '100%',
+    },
+    hubOverlay: {
+        ...StyleSheet.absoluteFillObject,
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    hubName: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: '700',
+    },
+
+    // Featured
+    featuredScroll: {
+        paddingRight: 16,
+    },
+
+    // Tours Grid
+    toursGrid: {
+        gap: 0,
+    },
+
+    // Empty State
+    emptyState: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 40,
+        gap: 8,
+    },
+    emptyText: {
+        fontSize: 16,
+        color: colors.textSecondary,
+        fontWeight: '600',
+    },
+    emptySubtext: {
+        fontSize: 14,
+        color: colors.textMuted,
+    },
+
+    // AI FAB
+    aiFab: {
+        position: 'absolute',
+        bottom: 20,
+        right: 20,
+        width: 56,
+        height: 56,
+        borderRadius: 28,
+        backgroundColor: colors.accent,
+        alignItems: 'center',
+        justifyContent: 'center',
+        shadowColor: colors.accent,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.4,
+        shadowRadius: 8,
+        elevation: 8,
     },
 });

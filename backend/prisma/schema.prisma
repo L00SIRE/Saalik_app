@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider   = "prisma-client-js"
   engineType = "library"
 }
 
@@ -10,33 +10,130 @@ datasource db {
   provider = "sqlite"
 }
 
+// ============================================
+// USER & AUTHENTICATION
+// ============================================
+
 model User {
-  id           String           @id @default(uuid())
-  email        String           @unique
+  id           String    @id @default(uuid())
+  email        String    @unique
   passwordHash String
   name         String
-  createdAt    DateTime         @default(now())
-  plans        ExperiencePlan[]
-  memories     Memory[]
+  phone        String?
+  avatar       String?   // URL to profile image
+  role         String    @default("TRAVELER") // TRAVELER, GUIDE, ADMIN
+  createdAt    DateTime  @default(now())
+
+  // Relations
+  guideProfile Guide?
+  bookings     Booking[]
+  reviews      Review[]
 }
 
-model ExperiencePlan {
-  id        String   @id @default(uuid())
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
-  // We store the structured plan as a JSON string to keep it flexible
-  // In a production Postgres DB, we'd use Json type. SQLite uses string.
-  data      String 
-  createdAt DateTime @default(now())
+// ============================================
+// GUIDE PROFILES
+// ============================================
+
+model Guide {
+  id              String   @id @default(uuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id])
+  bio             String
+  languages       String   // JSON array: ["English", "Nepali", "Hindi"]
+  certifications  String?  // JSON array of certifications
+  specialties     String   // JSON array: ["Historical", "Food", "Photography"]
+  yearsExperience Int      @default(1)
+  isVerified      Boolean  @default(false)
+  rating          Float    @default(0)
+  totalTours      Int      @default(0)
+  totalReviews    Int      @default(0)
+  createdAt       DateTime @default(now())
+
+  tours Tour[]
 }
 
-model Memory {
+// ============================================
+// TOURS
+// ============================================
+
+model Tour {
+  id           String   @id @default(uuid())
+  guideId      String
+  guide        Guide    @relation(fields: [guideId], references: [id])
+  title        String
+  description  String
+  duration     Int      // minutes
+  distance     Float?   // km
+  maxGroupSize Int      @default(15)
+  meetingPoint String   // Address/description
+  meetingLat   Float?
+  meetingLng   Float?
+  hub          String   // City: "Kathmandu", "Pokhara", etc.
+  category     String   // HISTORICAL, CULTURAL, FOOD, RELIGIOUS, ADVENTURE, PHOTOGRAPHY, NATURE, NIGHTLIFE
+  highlights   String   // JSON array of highlight strings
+  included     String   // JSON array: ["Local guide", "Stories"]
+  notIncluded  String   // JSON array: ["Transport", "Food"]
+  photos       String   // JSON array of image URLs
+  isActive     Boolean  @default(true)
+  rating       Float    @default(0)
+  totalReviews Int      @default(0)
+  createdAt    DateTime @default(now())
+
+  schedules TourSchedule[]
+  bookings  Booking[]
+  reviews   Review[]
+}
+
+// ============================================
+// TOUR SCHEDULES
+// ============================================
+
+model TourSchedule {
+  id           String    @id @default(uuid())
+  tourId       String
+  tour         Tour      @relation(fields: [tourId], references: [id])
+  dayOfWeek    Int?      // 0-6 for recurring (0=Sunday), null for one-time
+  startTime    String    // "09:00"
+  specificDate DateTime? // For one-time tours
+  isActive     Boolean   @default(true)
+
+  bookings Booking[]
+}
+
+// ============================================
+// BOOKINGS
+// ============================================
+
+model Booking {
+  id          String   @id @default(uuid())
+  tourId      String
+  tour        Tour     @relation(fields: [tourId], references: [id])
+  scheduleId  String
+  schedule    TourSchedule @relation(fields: [scheduleId], references: [id])
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  bookingDate DateTime // The actual date of the tour
+  partySize   Int      @default(1)
+  status      String   @default("CONFIRMED") // PENDING, CONFIRMED, CANCELLED, COMPLETED, NO_SHOW
+  tipAmount   Float?   // Amount tipped after tour (optional)
+  tipCurrency String?  // "NPR", "USD", "EUR"
+  notes       String?  // Special requests
+  createdAt   DateTime @default(now())
+}
+
+// ============================================
+// REVIEWS
+// ============================================
+
+model Review {
   id        String   @id @default(uuid())
+  tourId    String
+  tour      Tour     @relation(fields: [tourId], references: [id])
   userId    String
   user      User     @relation(fields: [userId], references: [id])
-  uri       String
-  caption   String
-  type      String   @default("image") // 'image' or 'video'
-  likes     Int      @default(0)
+  rating    Int      // 1-5
+  title     String?
+  comment   String
+  photos    String?  // JSON array of URLs
   createdAt DateTime @default(now())
 }

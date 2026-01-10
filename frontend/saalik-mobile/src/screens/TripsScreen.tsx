@@ -1,120 +1,290 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, ScrollView, Pressable, Image } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import {
+    View,
+    StyleSheet,
+    FlatList,
+    Pressable,
+    RefreshControl,
+    ActivityIndicator,
+    Alert,
+} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { AppText } from '@components/AppText';
+import { BookingCard } from '@components/BookingCard';
 import { colors } from '@theme/colors';
-import { useAuth } from '../context/AuthContext';
-import { LinearGradient } from 'expo-linear-gradient';
-import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import { getMyBookings, cancelBooking } from '../services/api';
+import type { Booking } from '@app-types/api';
+
+type TabType = 'upcoming' | 'past' | 'cancelled';
 
 export function TripsScreen() {
-    const { savedPlans } = useAuth();
     const navigation = useNavigation<any>();
-    const [filter, setFilter] = useState<'Upcoming' | 'Past'>('Upcoming');
+    const [activeTab, setActiveTab] = useState<TabType>('upcoming');
+    const [bookings, setBookings] = useState<Booking[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [refreshing, setRefreshing] = useState(false);
+
+    const loadBookings = async () => {
+        try {
+            const data = await getMyBookings(activeTab);
+            setBookings(data);
+        } catch (e) {
+            console.error('Error loading bookings:', e);
+        } finally {
+            setLoading(false);
+            setRefreshing(false);
+        }
+    };
+
+    useFocusEffect(
+        useCallback(() => {
+            loadBookings();
+        }, [activeTab])
+    );
+
+    const onRefresh = () => {
+        setRefreshing(true);
+        loadBookings();
+    };
+
+    const handleBookingPress = (booking: Booking) => {
+        navigation.navigate('TourDetail', { tourId: booking.tourId, tour: booking.tour });
+    };
+
+    const handleCancelBooking = async (booking: Booking) => {
+        Alert.alert(
+            'Cancel Booking',
+            `Are you sure you want to cancel your booking for "${booking.tour.title}"?`,
+            [
+                { text: 'Keep Booking', style: 'cancel' },
+                {
+                    text: 'Yes, Cancel',
+                    style: 'destructive',
+                    onPress: async () => {
+                        try {
+                            await cancelBooking(booking.id);
+                            Alert.alert('Cancelled', 'Your booking has been cancelled.');
+                            loadBookings();
+                        } catch (e) {
+                            Alert.alert('Error', 'Failed to cancel booking. Please try again.');
+                        }
+                    },
+                },
+            ]
+        );
+    };
+
+    const handleReviewBooking = (booking: Booking) => {
+        navigation.navigate('WriteReview', { booking });
+    };
+
+    const tabs: { key: TabType; label: string; icon: string }[] = [
+        { key: 'upcoming', label: 'Upcoming', icon: 'calendar-outline' },
+        { key: 'past', label: 'Past', icon: 'time-outline' },
+        { key: 'cancelled', label: 'Cancelled', icon: 'close-circle-outline' },
+    ];
 
     return (
-        <View style={styles.container}>
-            <LinearGradient colors={[colors.background, '#000000']} style={styles.background}>
-                <View style={styles.header}>
-                    <AppText style={styles.title}>My Trips</AppText>
-                    <View style={styles.filterContainer}>
-                        <Pressable
-                            style={[styles.filterPill, filter === 'Upcoming' && styles.filterActive]}
-                            onPress={() => setFilter('Upcoming')}
-                        >
-                            <AppText style={[styles.filterText, filter === 'Upcoming' && styles.filterTextActive]}>Upcoming</AppText>
-                        </Pressable>
-                        <Pressable
-                            style={[styles.filterPill, filter === 'Past' && styles.filterActive]}
-                            onPress={() => setFilter('Past')}
-                        >
-                            <AppText style={[styles.filterText, filter === 'Past' && styles.filterTextActive]}>Past</AppText>
-                        </Pressable>
-                    </View>
+        <SafeAreaView style={styles.container} edges={['top']}>
+            {/* Header */}
+            <View style={styles.header}>
+                <AppText style={styles.headerTitle}>My Bookings</AppText>
+                <Pressable style={styles.exploreButton} onPress={() => navigation.navigate('Explore')}>
+                    <Ionicons name="compass-outline" size={20} color={colors.primary} />
+                </Pressable>
+            </View>
+
+            {/* Tabs */}
+            <View style={styles.tabs}>
+                {tabs.map((tab) => (
+                    <Pressable
+                        key={tab.key}
+                        style={[styles.tab, activeTab === tab.key && styles.tabActive]}
+                        onPress={() => {
+                            setActiveTab(tab.key);
+                            setLoading(true);
+                        }}
+                    >
+                        <Ionicons
+                            name={tab.icon as any}
+                            size={18}
+                            color={activeTab === tab.key ? colors.primary : colors.textSecondary}
+                        />
+                        <AppText style={[styles.tabText, activeTab === tab.key && styles.tabTextActive]}>
+                            {tab.label}
+                        </AppText>
+                    </Pressable>
+                ))}
+            </View>
+
+            {/* Content */}
+            {loading ? (
+                <View style={styles.loadingContainer}>
+                    <ActivityIndicator size="large" color={colors.primary} />
                 </View>
-
-                <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
-                    {filter === 'Upcoming' && (
-                        <>
-                            {/* Mock Active Trip Card if we had state for it, for now using static placeholder or saved plans */}
-                            {savedPlans.length === 0 ? (
-                                <View style={styles.emptyState}>
-                                    <View style={styles.iconCircle}>
-                                        <Ionicons name="map-outline" size={48} color={colors.accent} />
-                                    </View>
-                                    <AppText style={styles.emptyTitle}>No upcoming trips</AppText>
-                                    <AppText style={styles.emptyDesc}>Your booked guides and saved itineraries will appear here.</AppText>
-                                    <Pressable style={styles.exploreButton} onPress={() => navigation.navigate('Explore')}>
-                                        <AppText style={styles.exploreButtonText}>Explore Destinations</AppText>
-                                    </Pressable>
-                                </View>
-                            ) : (
-                                savedPlans.map((plan, index) => (
-                                    <Pressable
-                                        key={index}
-                                        style={styles.tripCard}
-                                        onPress={() => navigation.navigate('Journey', { screen: 'Plan', params: { plan } })}
-                                    >
-                                        <View style={styles.cardHeader}>
-                                            <View style={styles.statusBadge}>
-                                                <AppText style={styles.statusText}>PLANNED</AppText>
-                                            </View>
-                                            <AppText style={styles.dateText}>Flexible Dates</AppText>
-                                        </View>
-                                        <AppText style={styles.tripTitle}>{plan.headline}</AppText>
-                                        <AppText style={styles.tripSummary} numberOfLines={2}>{plan.summary}</AppText>
-
-                                        <View style={styles.cardFooter}>
-                                            <View style={styles.footerItem}>
-                                                <Ionicons name="musical-note" size={14} color={colors.textSecondary} />
-                                                <AppText style={styles.footerText}>{plan.theme.toUpperCase()}</AppText>
-                                            </View>
-                                            <Ionicons name="chevron-forward" size={18} color={colors.textSecondary} />
-                                        </View>
-                                    </Pressable>
-                                ))
-                            )}
-                        </>
+            ) : (
+                <FlatList
+                    data={bookings}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }) => (
+                        <BookingCard
+                            booking={item}
+                            onPress={() => handleBookingPress(item)}
+                            onCancel={activeTab === 'upcoming' ? () => handleCancelBooking(item) : undefined}
+                            onReview={activeTab === 'past' ? () => handleReviewBooking(item) : undefined}
+                        />
                     )}
-
-                    {filter === 'Past' && (
+                    contentContainerStyle={styles.listContent}
+                    showsVerticalScrollIndicator={false}
+                    refreshControl={
+                        <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={colors.primary} />
+                    }
+                    ListEmptyComponent={
                         <View style={styles.emptyState}>
-                            <AppText style={styles.emptyDesc}>No past trips history.</AppText>
+                            <Ionicons
+                                name={
+                                    activeTab === 'upcoming' ? 'calendar-outline' :
+                                        activeTab === 'past' ? 'time-outline' : 'close-circle-outline'
+                                }
+                                size={64}
+                                color={colors.textMuted}
+                            />
+                            <AppText style={styles.emptyTitle}>
+                                {activeTab === 'upcoming' ? 'No upcoming tours' :
+                                    activeTab === 'past' ? 'No past tours yet' : 'No cancelled bookings'}
+                            </AppText>
+                            <AppText style={styles.emptyText}>
+                                {activeTab === 'upcoming'
+                                    ? 'Discover amazing walking tours in Nepal and book your first adventure!'
+                                    : activeTab === 'past'
+                                        ? 'Your completed tours will appear here'
+                                        : 'Cancelled bookings will appear here'}
+                            </AppText>
+                            {activeTab === 'upcoming' && (
+                                <Pressable style={styles.exploreCardButton} onPress={() => navigation.navigate('Explore')}>
+                                    <AppText style={styles.exploreCardButtonText}>Explore Tours</AppText>
+                                    <Ionicons name="arrow-forward" size={18} color="#fff" />
+                                </Pressable>
+                            )}
                         </View>
-                    )}
-                </ScrollView>
-            </LinearGradient>
-        </View>
+                    }
+                />
+            )}
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1 },
-    background: { flex: 1, paddingTop: 60, paddingHorizontal: 20 },
-    header: { marginBottom: 20 },
-    title: { fontSize: 32, fontWeight: 'bold', color: colors.textPrimary, marginBottom: 16 },
-    filterContainer: { flexDirection: 'row', gap: 12 },
-    filterPill: { paddingVertical: 8, paddingHorizontal: 20, borderRadius: 20, borderWidth: 1, borderColor: colors.border },
-    filterActive: { backgroundColor: colors.accent, borderColor: colors.accent },
-    filterText: { color: colors.textSecondary, fontWeight: '600' },
-    filterTextActive: { color: '#000', fontWeight: 'bold' },
-    scroll: { paddingBottom: 100, gap: 16 },
+    container: {
+        flex: 1,
+        backgroundColor: colors.background,
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 20,
+        paddingVertical: 16,
+        backgroundColor: colors.card,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+    },
+    headerTitle: {
+        fontSize: 24,
+        fontWeight: '800',
+        color: colors.textPrimary,
+    },
+    exploreButton: {
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+        backgroundColor: `${colors.primary}15`,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 
-    emptyState: { alignItems: 'center', marginTop: 60, gap: 12 },
-    iconCircle: { width: 80, height: 80, borderRadius: 40, backgroundColor: 'rgba(21, 255, 117, 0.1)', alignItems: 'center', justifyContent: 'center', marginBottom: 10 },
-    emptyTitle: { fontSize: 20, fontWeight: 'bold', color: colors.textPrimary },
-    emptyDesc: { fontSize: 16, color: colors.textSecondary, textAlign: 'center', maxWidth: '80%' },
-    exploreButton: { marginTop: 20, paddingVertical: 14, paddingHorizontal: 32, backgroundColor: colors.accent, borderRadius: 12 },
-    exploreButtonText: { color: '#000', fontWeight: 'bold', fontSize: 16 },
+    // Tabs
+    tabs: {
+        flexDirection: 'row',
+        paddingHorizontal: 16,
+        paddingVertical: 12,
+        backgroundColor: colors.card,
+        borderBottomWidth: 1,
+        borderBottomColor: colors.border,
+        gap: 8,
+    },
+    tab: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 6,
+        paddingVertical: 10,
+        borderRadius: 10,
+        backgroundColor: colors.inputBg,
+    },
+    tabActive: {
+        backgroundColor: `${colors.primary}15`,
+    },
+    tabText: {
+        fontSize: 13,
+        color: colors.textSecondary,
+        fontWeight: '500',
+    },
+    tabTextActive: {
+        color: colors.primary,
+        fontWeight: '600',
+    },
 
-    tripCard: { backgroundColor: colors.card, padding: 20, borderRadius: 20, borderWidth: 1, borderColor: colors.border, gap: 10 },
-    cardHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 },
-    statusBadge: { backgroundColor: 'rgba(21, 255, 117, 0.1)', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 },
-    statusText: { color: colors.accent, fontSize: 10, fontWeight: 'bold', letterSpacing: 1 },
-    dateText: { color: colors.textSecondary, fontSize: 12 },
-    tripTitle: { fontSize: 18, fontWeight: 'bold', color: colors.textPrimary },
-    tripSummary: { fontSize: 14, color: colors.textSecondary, lineHeight: 20 },
-    cardFooter: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 8, paddingTop: 12, borderTopWidth: 1, borderColor: colors.border },
-    footerItem: { flexDirection: 'row', gap: 6, alignItems: 'center' },
-    footerText: { color: colors.textSecondary, fontSize: 12, fontWeight: '600' },
+    // Loading
+    loadingContainer: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    // List
+    listContent: {
+        padding: 16,
+        flexGrow: 1,
+    },
+
+    // Empty State
+    emptyState: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 60,
+        paddingHorizontal: 40,
+        gap: 12,
+    },
+    emptyTitle: {
+        fontSize: 18,
+        fontWeight: '700',
+        color: colors.textPrimary,
+        textAlign: 'center',
+    },
+    emptyText: {
+        fontSize: 14,
+        color: colors.textSecondary,
+        textAlign: 'center',
+        lineHeight: 20,
+    },
+    exploreCardButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+        backgroundColor: colors.primary,
+        paddingHorizontal: 20,
+        paddingVertical: 12,
+        borderRadius: 10,
+        marginTop: 8,
+    },
+    exploreCardButtonText: {
+        fontSize: 14,
+        fontWeight: '600',
+        color: '#fff',
+    },
 });

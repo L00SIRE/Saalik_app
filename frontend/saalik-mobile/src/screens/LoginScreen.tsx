@@ -7,6 +7,7 @@ import {
   ScrollView,
   ActivityIndicator,
   Alert,
+  Platform,
 } from 'react-native';
 import { AppText } from '@components/AppText';
 import { AppTextInput } from '@components/AppTextInput';
@@ -14,6 +15,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Checkbox from 'expo-checkbox';
 import { colors } from '@theme/colors';
 import { useAuth } from '../context/AuthContext';
+import { Ionicons } from '@expo/vector-icons';
 
 const background = require('../../assets/bgsaalik.jpg');
 
@@ -47,9 +49,39 @@ export function LoginScreen() {
         await register(email, password, name);
       }
     } catch (e: any) {
-      // Parse error message if possible
       const msg = e.response?.data?.error || 'Authentication failed. Please check your connection or credentials.';
       setLocalError(typeof msg === 'string' ? msg : JSON.stringify(msg));
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Social login handlers - use demo login for now
+  const handleGoogleSignIn = async () => {
+    setLocalError('');
+    setLoading(true);
+    try {
+      // In production: use expo-auth-session with Google OAuth
+      // For demo: use mock login
+      console.log('Google Sign-In initiated (demo mode)');
+      await login('google-demo@saalik.com', 'google-oauth');
+    } catch (e) {
+      setLocalError('Google Sign-In failed. Please try email login.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleAppleSignIn = async () => {
+    setLocalError('');
+    setLoading(true);
+    try {
+      // In production: use expo-apple-authentication
+      // For demo: use mock login
+      console.log('Apple Sign-In initiated (demo mode)');
+      await login('apple-demo@saalik.com', 'apple-oauth');
+    } catch (e) {
+      setLocalError('Apple Sign-In failed. Please try email login.');
     } finally {
       setLoading(false);
     }
@@ -62,13 +94,47 @@ export function LoginScreen() {
           showsVerticalScrollIndicator={false}>
           <View style={styles.header}>
             <AppText style={styles.logo}>SAALIK</AppText>
-            <AppText style={styles.tagline}>Curated journeys for soul-first tourism</AppText>
+            <AppText style={styles.tagline}>Free Walking Tours in Nepal</AppText>
           </View>
 
           <View style={styles.loginCard}>
             <AppText style={styles.loginTitle}>
               {isLoginMode ? 'Welcome Back' : 'Begin Journey'}
             </AppText>
+
+            {/* Social Login Buttons */}
+            <View style={styles.socialButtonsContainer}>
+              <Pressable
+                style={[styles.socialButton, styles.googleButton]}
+                onPress={handleGoogleSignIn}
+                disabled={loading}
+              >
+                <Ionicons name="logo-google" size={20} color="#EA4335" />
+                <AppText style={styles.socialButtonText}>
+                  Continue with Google
+                </AppText>
+              </Pressable>
+
+              {Platform.OS === 'ios' && (
+                <Pressable
+                  style={[styles.socialButton, styles.appleButton]}
+                  onPress={handleAppleSignIn}
+                  disabled={loading}
+                >
+                  <Ionicons name="logo-apple" size={22} color="#FFFFFF" />
+                  <AppText style={[styles.socialButtonText, styles.appleButtonText]}>
+                    Continue with Apple
+                  </AppText>
+                </Pressable>
+              )}
+            </View>
+
+            {/* Divider */}
+            <View style={styles.dividerContainer}>
+              <View style={styles.dividerLine} />
+              <AppText style={styles.dividerText}>or</AppText>
+              <View style={styles.dividerLine} />
+            </View>
 
             {!isLoginMode && (
               <View>
@@ -87,7 +153,7 @@ export function LoginScreen() {
               <AppText style={styles.label}>Email</AppText>
               <AppTextInput
                 style={styles.input}
-                placeholder="explorer@saalik.ai"
+                placeholder="explorer@saalik.com"
                 placeholderTextColor={colors.textSecondary}
                 value={email}
                 onChangeText={setEmail}
@@ -199,6 +265,53 @@ const styles = StyleSheet.create({
     letterSpacing: 2,
     marginBottom: 8,
   },
+
+  // Social Login Styles
+  socialButtonsContainer: {
+    gap: 10,
+  },
+  socialButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 14,
+    borderRadius: 12,
+    gap: 10,
+  },
+  googleButton: {
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: 'rgba(0,0,0,0.1)',
+  },
+  appleButton: {
+    backgroundColor: '#000000',
+  },
+  socialButtonText: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#333333',
+  },
+  appleButtonText: {
+    color: '#FFFFFF',
+  },
+
+  // Divider
+  dividerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 8,
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: colors.border,
+  },
+  dividerText: {
+    color: colors.textSecondary,
+    paddingHorizontal: 16,
+    fontSize: 13,
+  },
+
   label: {
     color: colors.textSecondary,
     fontSize: 14,

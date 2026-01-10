@@ -3,32 +3,52 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { LoginScreen } from '../screens/LoginScreen';
 import { HomeScreen } from '../screens/HomeScreen';
-import { PlanScreen } from '../screens/PlanScreen';
-import { ProfileScreen } from '../screens/ProfileScreen';
-import { UploadScreen } from '../screens/UploadScreen';
-import { FeaturedPlanScreen } from '../screens/FeaturedPlanScreen';
-import { GuideRequestScreen } from '../screens/GuideRequestScreen';
-import { JourneyScreen } from '../screens/JourneyScreen';
+import { TourDetailScreen } from '../screens/TourDetailScreen';
+import { SearchScreen } from '../screens/SearchScreen';
+import { BookingScreen } from '../screens/BookingScreen';
 import { TripsScreen } from '../screens/TripsScreen';
+import { ProfileScreen } from '../screens/ProfileScreen';
+import { AIChatScreen } from '../screens/AIChatScreen';
 import { useAuth } from '../context/AuthContext';
 import { colors } from '@theme/colors';
-import { Ionicons } from '@expo/vector-icons'; // Assuming Expo, otherwise use another icon lib
+import { Ionicons } from '@expo/vector-icons';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function HomeStack() {
+// Explore Stack - Tour discovery and booking flow
+function ExploreStack() {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Plan" component={PlanScreen} />
-            <Stack.Screen name="FeaturedPlan" component={FeaturedPlanScreen} />
-            <Stack.Screen name="GuideRequest" component={GuideRequestScreen} />
-            <Stack.Screen name="Journey" component={JourneyScreen} />
+            <Stack.Screen name="TourDetail" component={TourDetailScreen} />
+            <Stack.Screen name="Search" component={SearchScreen} />
+            <Stack.Screen name="Booking" component={BookingScreen} />
+            <Stack.Screen name="AIChat" component={AIChatScreen} />
         </Stack.Navigator>
     );
 }
 
+// Trips Stack - User's bookings
+function TripsStack() {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="MyBookings" component={TripsScreen} />
+            <Stack.Screen name="TourDetail" component={TourDetailScreen} />
+        </Stack.Navigator>
+    );
+}
+
+// Profile Stack - User profile and settings
+function ProfileStack() {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="MyProfile" component={ProfileScreen} />
+        </Stack.Navigator>
+    );
+}
+
+// Main Tab Navigator
 function MainTabs() {
     return (
         <Tab.Navigator
@@ -41,7 +61,7 @@ function MainTabs() {
                     paddingBottom: 8,
                     paddingTop: 8,
                 },
-                tabBarActiveTintColor: colors.accent,
+                tabBarActiveTintColor: colors.primary,
                 tabBarInactiveTintColor: colors.textSecondary,
                 tabBarIcon: ({ focused, color, size }) => {
                     let iconName: keyof typeof Ionicons.glyphMap;
@@ -60,23 +80,21 @@ function MainTabs() {
                 },
             })}
         >
-            <Tab.Screen name="Explore" component={HomeStack} />
-            <Tab.Screen name="Trips" component={TripsScreen} />
-            <Tab.Screen name="Profile" component={ProfileScreen} />
+            <Tab.Screen name="Explore" component={ExploreStack} />
+            <Tab.Screen name="Trips" component={TripsStack} />
+            <Tab.Screen name="Profile" component={ProfileStack} />
         </Tab.Navigator>
     );
 }
 
+// Root Navigator
 export function AppNavigator() {
     const { isLoggedIn } = useAuth();
 
     return (
         <Stack.Navigator screenOptions={{ headerShown: false }}>
             {isLoggedIn ? (
-                <>
-                    <Stack.Screen name="Main" component={MainTabs} />
-                    <Stack.Screen name="Upload" component={UploadScreen} options={{ presentation: 'modal' }} />
-                </>
+                <Stack.Screen name="Main" component={MainTabs} />
             ) : (
                 <Stack.Screen name="Auth" component={LoginScreen} />
             )}
