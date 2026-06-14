@@ -20,14 +20,26 @@ model User {
   passwordHash String
   name         String
   phone        String?
-  avatar       String?   // URL to profile image
-  role         String    @default("TRAVELER") // TRAVELER, GUIDE, ADMIN
+  avatar       String?
+  role         String    @default("TRAVELER") // TRAVELER | GUIDE | ADMIN
   createdAt    DateTime  @default(now())
 
-  // Relations
-  guideProfile Guide?
-  bookings     Booking[]
-  reviews      Review[]
+  guideProfile   Guide?
+  bookings       Booking[]
+  reviews        Review[]
+  refreshTokens  RefreshToken[]
+}
+
+// Stored refresh token IDs for rotation + replay-attack detection.
+// Only the UUID is stored — the full JWT lives on the client.
+model RefreshToken {
+  id        String   @id @default(uuid()) // also embedded in the JWT payload
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
 }
 
 // ============================================

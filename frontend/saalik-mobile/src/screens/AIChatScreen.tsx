@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import {
     View,
     StyleSheet,
@@ -15,144 +15,34 @@ import { AppText } from '@components/AppText';
 import { colors } from '@theme/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { useAiAssistant } from '@logic/ai/useAiAssistant';
+import type { ChatMessage } from '@logic/ai/useAiAssistant';
+import type { AiSuggestion } from '@integration/contracts/ai';
 
-interface Message {
-    id: string;
-    role: 'user' | 'assistant';
-    content: string;
-    timestamp: Date;
-}
-
-interface Suggestion {
-    text: string;
-    icon: string;
-    message: string;
-}
-
-const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:4000';
-
-// Demo mode for when backend is not running
-const USE_DEMO = true;
-
-const DEMO_RESPONSES: Record<string, string> = {
-    default: "Namaste! 🙏 I'm Saalik AI, your personal guide to Nepal. I can help you plan trips, recommend tours, find food spots, and share cultural insights. What would you like to explore today?",
-
-    trip: "For a 5-day Nepal trip, here's my recommendation:\n\n**Day 1-2: Kathmandu Valley**\n🏛️ Durbar Square & Kumari Temple\n📿 Boudhanath Stupa (sunset)\n🍜 Street Food Safari tour\n\n**Day 3: Bhaktapur**\n🏺 Potter's Square\n🏛️ The Living Museum tour\n🧈 Famous Juju Dhau (King Curd)\n\n**Day 4-5: Pokhara**\n🌅 Lakeside Sunrise walk\n🏔️ World Peace Pagoda trek\n🚣 Phewa Lake boating\n\nWould you like me to suggest specific tours for any of these days?",
-
-    food: "Great choice! Here are the best food experiences:\n\n**Kathmandu:**\n🍜 Momos at Bhat-Bhateni area\n🥘 Dal Bhat at Thakali Kitchen\n🌯 Our 'Street Food Safari' tour covers 6+ spots!\n\n**Bhaktapur:**\n🧈 Juju Dhau (King Curd) - must try!\n🥟 Yomari (sweet dumplings)\n\nI recommend booking our **Bhaktapur Food Trail** - it includes 6+ tastings including the famous King Curd. Interested?",
-
-    temple: "Great question! Here's what to know for temple visits:\n\n**Dress Code:**\n👔 Cover shoulders and knees\n👟 Remove shoes at entrance\n🎒 No leather items in Hindu temples\n\n**Etiquette:**\n🙏 Walk clockwise around stupas\n📵 Ask before photographing rituals\n💰 Small donations welcome\n\n**Top Temples:**\n• Pashupatinath - Hindu, most sacred\n• Boudhanath - Buddhist, great sunset\n• Swayambhunath - Both, city views\n\nOur 'Boudhanath Mindful Walk' includes all etiquette guidance. Would you like to book?",
-
-    tours: "Here are today's available Saalik tours:\n\n**Kathmandu:**\n🏛️ Durbar Square Secrets (9AM) - 3hrs\n📿 Boudhanath Mindful Walk (4PM) - 2hrs\n🍜 Thamel After Dark (6PM) - 2hrs\n\n**Bhaktapur:**\n🏺 Potter's Square (10AM) - 3hrs\n🍜 Food Trail (11AM) - 2.5hrs\n\n**Pokhara:**\n🌅 Lakeside Sunrise (5:30AM) - 2.5hrs\n🏔️ Peace Pagoda Trek (7AM) - 4hrs\n\nAll tours are FREE - you just tip your guide! Which interests you?",
-
-    nepali: "Let me teach you some Nepali! 🇳🇵\n\n**Essential Greetings:**\n• नमस्ते (Namaste) - Hello/Goodbye\n• धन्यवाद (Dhanyabad) - Thank you\n• माफ गर्नुहोस् (Maaf garnuhos) - Sorry/Excuse me\n\n**Useful Phrases:**\n• कति हो? (Kati ho?) - How much?\n• मिठो छ (Mitho chha) - It's delicious!\n• राम्रो छ (Ramro chha) - It's beautiful!\n\n**Numbers:**\n• एक (ek) - 1\n• दुई (dui) - 2\n• तीन (tin) - 3\n\nPractice 'Dhanyabad' - locals love when visitors try! 😊",
-};
+// ─────────────────────────────────────────────────────────────────────────────
+// Layer 1 · Rendering / UI — AI chat screen (DUMB component)
+//
+// This screen now knows nothing about where AI replies come from. It renders
+// the state produced by the Logic-layer hook `useAiAssistant` (Layer 3), which
+// in turn calls the Integration layer (Layer 4) → mock today, live post-funding.
+// All conversation logic, intent classification, and canned content have moved
+// out of this file.
+// ─────────────────────────────────────────────────────────────────────────────
 
 export function AIChatScreen() {
     const navigation = useNavigation<any>();
-    const [messages, setMessages] = useState<Message[]>([]);
+    const { messages, suggestions, isThinking, send, clear } = useAiAssistant();
     const [inputText, setInputText] = useState('');
-    const [isLoading, setIsLoading] = useState(false);
-    const [suggestions, setSuggestions] = useState<Suggestion[]>([
-        { text: "Plan my trip", icon: "map-outline", message: "Help me plan a 5-day trip to Nepal" },
-        { text: "Today's tours", icon: "calendar-outline", message: "What tours are available today?" },
-        { text: "Food spots", icon: "restaurant-outline", message: "Best local food recommendations?" },
-        { text: "Temple tips", icon: "home-outline", message: "What should I know before visiting temples?" },
-        { text: "Learn Nepali", icon: "language-outline", message: "Teach me basic Nepali greetings" },
-    ]);
     const flatListRef = useRef<FlatList>(null);
 
-    // Send initial greeting
-    useEffect(() => {
-        const greeting: Message = {
-            id: 'greeting',
-            role: 'assistant',
-            content: "Namaste! 🙏 I'm Saalik AI, your personal guide to Nepal.\n\nI can help you:\n• Plan your perfect Nepal trip\n• Recommend walking tours\n• Find amazing food spots\n• Share cultural insights\n• Teach you Nepali phrases\n\nWhat would you like to explore?",
-            timestamp: new Date(),
-        };
-        setMessages([greeting]);
-    }, []);
-
-    const getDemoResponse = (userMessage: string): string => {
-        const msg = userMessage.toLowerCase();
-        if (msg.includes('trip') || msg.includes('plan') || msg.includes('day')) {
-            return DEMO_RESPONSES.trip;
-        } else if (msg.includes('food') || msg.includes('eat') || msg.includes('restaurant')) {
-            return DEMO_RESPONSES.food;
-        } else if (msg.includes('temple') || msg.includes('etiquette') || msg.includes('dress')) {
-            return DEMO_RESPONSES.temple;
-        } else if (msg.includes('tour') || msg.includes('today') || msg.includes('available')) {
-            return DEMO_RESPONSES.tours;
-        } else if (msg.includes('nepali') || msg.includes('language') || msg.includes('phrase') || msg.includes('greeting')) {
-            return DEMO_RESPONSES.nepali;
-        }
-        return DEMO_RESPONSES.default;
-    };
-
-    const sendMessage = async (text: string = inputText) => {
-        if (!text.trim() || isLoading) return;
-
-        const userMessage: Message = {
-            id: Date.now().toString(),
-            role: 'user',
-            content: text.trim(),
-            timestamp: new Date(),
-        };
-
-        setMessages(prev => [...prev, userMessage]);
+    const handleSend = (text: string = inputText) => {
+        if (!text.trim() || isThinking) return;
         setInputText('');
-        setIsLoading(true);
-
-        try {
-            let responseText: string;
-
-            if (USE_DEMO) {
-                // Demo mode - use local responses
-                await new Promise(resolve => setTimeout(resolve, 800)); // Simulate delay
-                responseText = getDemoResponse(text);
-            } else {
-                // Real API call
-                const response = await fetch(`${API_URL}/api/ai/chat`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: text }),
-                });
-
-                if (!response.ok) {
-                    throw new Error('Failed to get response');
-                }
-
-                const data = await response.json();
-                responseText = data.message;
-            }
-
-            const assistantMessage: Message = {
-                id: (Date.now() + 1).toString(),
-                role: 'assistant',
-                content: responseText,
-                timestamp: new Date(),
-            };
-
-            setMessages(prev => [...prev, assistantMessage]);
-        } catch (error) {
-            console.error('AI Error:', error);
-            Alert.alert('Connection Error', 'Could not reach AI. Using offline mode.');
-
-            // Fallback to demo response
-            const fallbackMessage: Message = {
-                id: (Date.now() + 1).toString(),
-                role: 'assistant',
-                content: getDemoResponse(text),
-                timestamp: new Date(),
-            };
-            setMessages(prev => [...prev, fallbackMessage]);
-        } finally {
-            setIsLoading(false);
-        }
+        void send(text);
     };
 
-    const handleSuggestion = (suggestion: Suggestion) => {
-        sendMessage(suggestion.message);
+    const handleSuggestion = (suggestion: AiSuggestion) => {
+        handleSend(suggestion.message);
     };
 
     const clearChat = () => {
@@ -161,22 +51,12 @@ export function AIChatScreen() {
             'Start a fresh conversation?',
             [
                 { text: 'Cancel', style: 'cancel' },
-                {
-                    text: 'Clear',
-                    onPress: () => {
-                        setMessages([{
-                            id: 'greeting',
-                            role: 'assistant',
-                            content: "Namaste! 🙏 Fresh start! How can I help you explore Nepal today?",
-                            timestamp: new Date(),
-                        }]);
-                    }
-                },
+                { text: 'Clear', onPress: () => clear() },
             ]
         );
     };
 
-    const renderMessage = ({ item }: { item: Message }) => {
+    const renderMessage = ({ item }: { item: ChatMessage }) => {
         const isUser = item.role === 'user';
 
         return (
@@ -240,7 +120,7 @@ export function AIChatScreen() {
                     showsVerticalScrollIndicator={false}
                     onContentSizeChange={() => flatListRef.current?.scrollToEnd()}
                     ListFooterComponent={
-                        isLoading ? (
+                        isThinking ? (
                             <View style={styles.loadingContainer}>
                                 <View style={styles.avatarContainer}>
                                     <Ionicons name="sparkles" size={16} color={colors.accent} />
@@ -286,17 +166,17 @@ export function AIChatScreen() {
                         onChangeText={setInputText}
                         multiline
                         maxLength={2000}
-                        onSubmitEditing={() => sendMessage()}
+                        onSubmitEditing={() => handleSend()}
                     />
                     <Pressable
-                        style={[styles.sendButton, (!inputText.trim() || isLoading) && styles.sendButtonDisabled]}
-                        onPress={() => sendMessage()}
-                        disabled={!inputText.trim() || isLoading}
+                        style={[styles.sendButton, (!inputText.trim() || isThinking) && styles.sendButtonDisabled]}
+                        onPress={() => handleSend()}
+                        disabled={!inputText.trim() || isThinking}
                     >
                         <Ionicons
                             name="send"
                             size={20}
-                            color={inputText.trim() && !isLoading ? '#fff' : colors.textMuted}
+                            color={inputText.trim() && !isThinking ? '#fff' : colors.textMuted}
                         />
                     </Pressable>
                 </View>

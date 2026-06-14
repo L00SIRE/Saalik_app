@@ -10,6 +10,9 @@
       "@screens/*": [
         "src/screens/*"
       ],
+      "@theme": [
+        "src/theme/index.ts"
+      ],
       "@theme/*": [
         "src/theme/*"
       ],
@@ -19,8 +22,20 @@
       "@services/*": [
         "src/services/*"
       ],
+      "@logic/*": [
+        "src/logic/*"
+      ],
+      "@integration": [
+        "src/integration/index.ts"
+      ],
+      "@integration/*": [
+        "src/integration/*"
+      ],
       "@app-types/*": [
         "src/types/*"
+      ],
+      "@context/*": [
+        "src/context/*"
       ]
     }
   }

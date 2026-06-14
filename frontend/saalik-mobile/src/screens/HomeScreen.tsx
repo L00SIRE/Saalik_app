@@ -1,450 +1,433 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-    View,
-    StyleSheet,
-    ScrollView,
-    Pressable,
-    TextInput,
-    Image,
-    RefreshControl,
-    FlatList,
-    ActivityIndicator,
+  ActivityIndicator,
+  Image,
+  Pressable,
+  RefreshControl,
+  ScrollView,
+  StyleSheet,
+  TextInput,
+  View,
 } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { AppText } from '@components/AppText';
-import { TourCard } from '@components/TourCard';
-import { colors, categoryColors, categoryIcons } from '@theme/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { getFeaturedTours, searchTours, getCategories } from '../services/api';
-import type { Tour, CategoryMeta, TourCategory } from '@app-types/api';
 
-// Hero background
+import { AppText } from '@components/AppText';
+import { TourCard } from '@components/TourCard';
+import { Chip } from '@components/Chip';
+import { SectionHeader } from '@components/SectionHeader';
+import { EmptyState } from '@components/EmptyState';
+import { colors, categoryColors, categoryIcons } from '@theme/colors';
+import { radii, shadows, space, rhythm } from '@theme';
+import { useAuthState } from '@context/AuthContext';
+import { getCategories, getFeaturedTours, searchTours } from '../services/api';
+import type { CategoryMeta, Tour, TourCategory } from '@app-types/api';
+
 const heroImage = require('../../assets/bgsaalik.jpg');
 
-// Nepali cities/hubs
 const HUBS = [
-    { name: 'Kathmandu', image: 'https://images.unsplash.com/photo-1582654454409-778d91d845a0?w=400' },
-    { name: 'Pokhara', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400' },
-    { name: 'Bhaktapur', image: 'https://images.unsplash.com/photo-1609766857326-18a204797d22?w=400' },
-    { name: 'Patan', image: 'https://images.unsplash.com/photo-1585016495481-91613a3ab1bc?w=400' },
+  { name: 'Kathmandu', tagline: 'Capital of temples', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Kathmandu_from_Swayambhunath_2%2C_Nepal.jpg?width=600' },
+  { name: 'Tokha', tagline: 'Chaku & old Newar town', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Chandeshwori_Temple_Tokha_Tokha_Municipility_Kathmandu_Nepal_Rajesh_Dhungana_%2815%29.jpg?width=600' },
+  { name: 'Pokhara', tagline: 'Lakeside Himalayas', image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600' },
+  { name: 'Bhaktapur', tagline: 'Living museum', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/View_of_Bhaktapur_Durbar_Square.jpg?width=600' },
+  { name: 'Patan', tagline: 'City of artisans', image: 'https://images.unsplash.com/photo-1585016495481-91613a3ab1bc?w=600' },
 ];
 
 export function HomeScreen() {
-    const navigation = useNavigation<any>();
-    const [searchQuery, setSearchQuery] = useState('');
-    const [featuredTours, setFeaturedTours] = useState<Tour[]>([]);
-    const [allTours, setAllTours] = useState<Tour[]>([]);
-    const [categories, setCategories] = useState<CategoryMeta[]>([]);
-    const [selectedCategory, setSelectedCategory] = useState<TourCategory | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [refreshing, setRefreshing] = useState(false);
+  const navigation = useNavigation<any>();
+  const { user } = useAuthState();
 
-    const loadData = async () => {
-        try {
-            const [featured, tours, cats] = await Promise.all([
-                getFeaturedTours(),
-                searchTours(selectedCategory ? { category: selectedCategory } : undefined),
-                getCategories(),
-            ]);
-            setFeaturedTours(featured);
-            setAllTours(tours);
-            setCategories(cats);
-        } catch (e) {
-            console.error('Error loading data:', e);
-        } finally {
-            setLoading(false);
-            setRefreshing(false);
-        }
-    };
+  const [searchQuery, setSearchQuery] = useState('');
+  const [featuredTours, setFeaturedTours] = useState<Tour[]>([]);
+  const [allTours, setAllTours] = useState<Tour[]>([]);
+  const [categories, setCategories] = useState<CategoryMeta[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<TourCategory | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
 
-    useEffect(() => {
-        loadData();
-    }, [selectedCategory]);
-
-    const onRefresh = () => {
-        setRefreshing(true);
-        loadData();
-    };
-
-    const handleSearch = () => {
-        if (searchQuery.trim()) {
-            navigation.navigate('Search', { query: searchQuery });
-        }
-    };
-
-    const handleTourPress = (tour: Tour) => {
-        navigation.navigate('TourDetail', { tourId: tour.id, tour });
-    };
-
-    const handleHubPress = (hubName: string) => {
-        navigation.navigate('Search', { hub: hubName });
-    };
-
-    const handleCategoryPress = (category: TourCategory) => {
-        if (selectedCategory === category) {
-            setSelectedCategory(null);
-        } else {
-            setSelectedCategory(category);
-        }
-    };
-
-    if (loading) {
-        return (
-            <View style={styles.loadingContainer}>
-                <ActivityIndicator size="large" color={colors.primary} />
-                <AppText style={styles.loadingText}>Discovering tours...</AppText>
-            </View>
-        );
+  const load = async () => {
+    try {
+      const [featured, tours, cats] = await Promise.all([
+        getFeaturedTours(),
+        searchTours(selectedCategory ? { category: selectedCategory } : undefined),
+        getCategories(),
+      ]);
+      setFeaturedTours(featured);
+      setAllTours(tours);
+      setCategories(cats);
+    } catch (e) {
+      console.error('Error loading data:', e);
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
     }
+  };
 
+  useEffect(() => {
+    load();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCategory]);
+
+  const onRefresh = () => {
+    setRefreshing(true);
+    load();
+  };
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) navigation.navigate('Search', { query: searchQuery });
+  };
+
+  const handleTourPress = (tour: Tour) => {
+    navigation.navigate('TourDetail', { tourId: tour.id, tour });
+  };
+
+  const handleHubPress = (hubName: string) => {
+    navigation.navigate('Search', { hub: hubName });
+  };
+
+  const handleCategoryPress = (category: TourCategory) => {
+    setSelectedCategory((current) => (current === category ? null : category));
+  };
+
+  const greeting = (() => {
+    const h = new Date().getHours();
+    if (h < 12) return 'Good morning';
+    if (h < 18) return 'Good afternoon';
+    return 'Good evening';
+  })();
+  const firstName = user?.name?.split(' ')[0] ?? 'Traveler';
+
+  if (loading) {
     return (
-        <SafeAreaView style={styles.container} edges={['top']}>
-            <ScrollView
-                contentContainerStyle={styles.scrollContent}
-                showsVerticalScrollIndicator={false}
-                refreshControl={
-                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={colors.primary} />
-                }
-            >
-                {/* Hero Section */}
-                <View style={styles.hero}>
-                    <Image source={heroImage} style={styles.heroImage} resizeMode="cover" />
-                    <View style={styles.heroOverlay}>
-                        <AppText style={styles.heroLogo}>SAALIK</AppText>
-                        <AppText style={styles.heroTagline}>Free Walking Tours in Nepal</AppText>
-                        <AppText style={styles.heroSubtitle}>
-                            Discover authentic experiences with passionate local guides
-                        </AppText>
-                    </View>
-                </View>
-
-                {/* Search Bar */}
-                <View style={styles.searchContainer}>
-                    <View style={styles.searchBar}>
-                        <Ionicons name="search" size={20} color={colors.textSecondary} />
-                        <TextInput
-                            style={styles.searchInput}
-                            placeholder="Where do you want to explore?"
-                            placeholderTextColor={colors.textMuted}
-                            value={searchQuery}
-                            onChangeText={setSearchQuery}
-                            onSubmitEditing={handleSearch}
-                            returnKeyType="search"
-                        />
-                        {searchQuery.length > 0 && (
-                            <Pressable onPress={() => setSearchQuery('')}>
-                                <Ionicons name="close-circle" size={18} color={colors.textMuted} />
-                            </Pressable>
-                        )}
-                    </View>
-                </View>
-
-                {/* Categories */}
-                <View style={styles.section}>
-                    <AppText style={styles.sectionTitle}>Browse by Category</AppText>
-                    <ScrollView
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={styles.categoriesScroll}
-                    >
-                        {categories.map((category) => {
-                            const isSelected = selectedCategory === category.key;
-                            const iconName = categoryIcons[category.key] || 'help-circle';
-                            const bgColor = isSelected ? categoryColors[category.key] : colors.inputBg;
-
-                            return (
-                                <Pressable
-                                    key={category.key}
-                                    style={[styles.categoryPill, { backgroundColor: bgColor }]}
-                                    onPress={() => handleCategoryPress(category.key)}
-                                >
-                                    <Ionicons
-                                        name={iconName as any}
-                                        size={16}
-                                        color={isSelected ? '#fff' : colors.textSecondary}
-                                    />
-                                    <AppText style={[styles.categoryText, isSelected && styles.categoryTextActive]}>
-                                        {category.label}
-                                    </AppText>
-                                </Pressable>
-                            );
-                        })}
-                    </ScrollView>
-                </View>
-
-                {/* Popular Destinations */}
-                <View style={styles.section}>
-                    <AppText style={styles.sectionTitle}>Popular Destinations</AppText>
-                    <ScrollView
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={styles.hubsScroll}
-                    >
-                        {HUBS.map((hub) => (
-                            <Pressable key={hub.name} style={styles.hubCard} onPress={() => handleHubPress(hub.name)}>
-                                <Image source={{ uri: hub.image }} style={styles.hubImage} resizeMode="cover" />
-                                <View style={styles.hubOverlay}>
-                                    <AppText style={styles.hubName}>{hub.name}</AppText>
-                                </View>
-                            </Pressable>
-                        ))}
-                    </ScrollView>
-                </View>
-
-                {/* Featured Tours */}
-                {featuredTours.length > 0 && !selectedCategory && (
-                    <View style={styles.section}>
-                        <View style={styles.sectionHeader}>
-                            <AppText style={styles.sectionTitle}>Featured Tours</AppText>
-                            <Pressable onPress={() => navigation.navigate('Search', {})}>
-                                <AppText style={styles.seeAllText}>See All</AppText>
-                            </Pressable>
-                        </View>
-                        <ScrollView
-                            horizontal
-                            showsHorizontalScrollIndicator={false}
-                            contentContainerStyle={styles.featuredScroll}
-                        >
-                            {featuredTours.map((tour) => (
-                                <TourCard key={tour.id} tour={tour} onPress={() => handleTourPress(tour)} compact />
-                            ))}
-                        </ScrollView>
-                    </View>
-                )}
-
-                {/* All Tours (or filtered by category) */}
-                <View style={styles.section}>
-                    <AppText style={styles.sectionTitle}>
-                        {selectedCategory ? `${selectedCategory} Tours` : 'All Tours'}
-                    </AppText>
-                    <View style={styles.toursGrid}>
-                        {allTours.map((tour) => (
-                            <TourCard key={tour.id} tour={tour} onPress={() => handleTourPress(tour)} />
-                        ))}
-                    </View>
-
-                    {allTours.length === 0 && (
-                        <View style={styles.emptyState}>
-                            <Ionicons name="compass-outline" size={48} color={colors.textMuted} />
-                            <AppText style={styles.emptyText}>No tours found</AppText>
-                            <AppText style={styles.emptySubtext}>Try a different category or destination</AppText>
-                        </View>
-                    )}
-                </View>
-
-                {/* Bottom Padding */}
-                <View style={{ height: 20 }} />
-            </ScrollView>
-
-            {/* AI Chat FAB */}
-            <Pressable
-                style={styles.aiFab}
-                onPress={() => navigation.navigate('AIChat')}
-            >
-                <Ionicons name="sparkles" size={24} color="#021007" />
-            </Pressable>
-        </SafeAreaView>
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color={colors.accent} />
+        <AppText variant="bodySm" tone="secondary" style={styles.loadingText}>
+          Discovering tours...
+        </AppText>
+      </View>
     );
+  }
+
+  return (
+    <View style={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            tintColor={colors.accent}
+            progressViewOffset={120}
+          />
+        }
+      >
+        {/* Hero */}
+        <View style={styles.hero}>
+          <Image source={heroImage} style={StyleSheet.absoluteFillObject} resizeMode="cover" />
+          <LinearGradient
+            colors={['rgba(2,18,8,0.45)', 'rgba(2,18,8,0.85)', colors.background]}
+            locations={[0, 0.6, 1]}
+            style={StyleSheet.absoluteFillObject}
+          />
+          <SafeAreaView edges={['top']}>
+            <View style={styles.heroContent}>
+              <AppText variant="overline" tone="accent">
+                {greeting}, {firstName}
+              </AppText>
+              <AppText variant="h1" tone="primary" style={styles.heroTitle}>
+                Where will Nepal take you today?
+              </AppText>
+              <AppText variant="body" tone="secondary" style={styles.heroSubtitle}>
+                Free walking tours led by passionate locals.{'\n'}Pay what the experience is worth.
+              </AppText>
+            </View>
+          </SafeAreaView>
+
+          {/* Floating search bar — overlaps the hero edge */}
+          <View style={styles.searchWrap}>
+            <View style={styles.searchBar}>
+              <Ionicons name="search" size={18} color={colors.textSecondary} />
+              <TextInput
+                style={styles.searchInput}
+                placeholder="Search tours, cities, or guides"
+                placeholderTextColor={colors.textMuted}
+                value={searchQuery}
+                onChangeText={setSearchQuery}
+                onSubmitEditing={handleSearch}
+                returnKeyType="search"
+              />
+              {searchQuery.length > 0 && (
+                <Pressable onPress={() => setSearchQuery('')} hitSlop={8}>
+                  <Ionicons name="close-circle" size={18} color={colors.textMuted} />
+                </Pressable>
+              )}
+            </View>
+          </View>
+        </View>
+
+        {/* Categories */}
+        <View style={[styles.section, styles.firstSection]}>
+          <SectionHeader
+            eyebrow="Filter"
+            title="Browse by interest"
+            subtitle="Tap to filter the tours below"
+          />
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.chipsRow}
+          >
+            <Chip
+              label="All"
+              selected={selectedCategory === null}
+              onPress={() => setSelectedCategory(null)}
+              icon="apps-outline"
+            />
+            {categories.map((c) => (
+              <Chip
+                key={c.key}
+                label={c.label}
+                selected={selectedCategory === c.key}
+                onPress={() => handleCategoryPress(c.key)}
+                icon={categoryIcons[c.key] as any}
+                selectedBg={categoryColors[c.key]}
+              />
+            ))}
+          </ScrollView>
+        </View>
+
+        {/* Hubs */}
+        <View style={styles.section}>
+          <SectionHeader
+            title="Popular hubs"
+            actionLabel="See all"
+            onActionPress={() => navigation.navigate('Search', {})}
+          />
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={styles.hubsRow}
+          >
+            {HUBS.map((hub) => (
+              <Pressable
+                key={hub.name}
+                onPress={() => handleHubPress(hub.name)}
+                style={({ pressed }) => [styles.hubCard, pressed && styles.hubCardPressed]}
+              >
+                <Image source={{ uri: hub.image }} style={StyleSheet.absoluteFillObject} />
+                <LinearGradient
+                  colors={['rgba(0,0,0,0.05)', 'rgba(2,18,8,0.95)']}
+                  style={StyleSheet.absoluteFillObject}
+                />
+                <View style={styles.hubContent}>
+                  <AppText variant="h3" tone="primary">
+                    {hub.name}
+                  </AppText>
+                  <AppText variant="caption" tone="secondary">
+                    {hub.tagline}
+                  </AppText>
+                </View>
+              </Pressable>
+            ))}
+          </ScrollView>
+        </View>
+
+        {/* Featured */}
+        {featuredTours.length > 0 && !selectedCategory && (
+          <View style={styles.section}>
+            <SectionHeader
+              eyebrow="Editor's picks"
+              title="Featured tours"
+              actionLabel="Gallery"
+              onActionPress={() => navigation.navigate('Gallery')}
+            />
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.featuredRow}
+            >
+              {featuredTours.map((tour) => (
+                <TourCard key={tour.id} tour={tour} onPress={() => handleTourPress(tour)} compact />
+              ))}
+            </ScrollView>
+          </View>
+        )}
+
+        {/* Tours grid */}
+        <View style={styles.section}>
+          <SectionHeader
+            title={selectedCategory ? `${categoryLabel(categories, selectedCategory)} tours` : 'All tours'}
+            subtitle={
+              allTours.length > 0
+                ? `${allTours.length} ${allTours.length === 1 ? 'tour' : 'tours'} ready to explore`
+                : undefined
+            }
+          />
+          {allTours.length > 0 ? (
+            <View style={styles.toursList}>
+              {allTours.map((tour) => (
+                <TourCard key={tour.id} tour={tour} onPress={() => handleTourPress(tour)} />
+              ))}
+            </View>
+          ) : (
+            <EmptyState
+              icon="compass-outline"
+              title="No tours yet"
+              body="Try a different category or check back soon — new tours land every week."
+              actionLabel="Clear filters"
+              onActionPress={() => setSelectedCategory(null)}
+            />
+          )}
+        </View>
+
+        <View style={{ height: space.xxxl }} />
+      </ScrollView>
+
+      {/* AI FAB */}
+      <Pressable
+        style={({ pressed }) => [styles.aiFab, pressed && styles.aiFabPressed]}
+        onPress={() => navigation.navigate('AIChat')}
+      >
+        <Ionicons name="sparkles" size={22} color="#021007" />
+      </Pressable>
+    </View>
+  );
 }
 
+function categoryLabel(cats: CategoryMeta[], key: TourCategory): string {
+  return cats.find((c) => c.key === key)?.label ?? String(key);
+}
+
+const HERO_HEIGHT = 320;
+
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: colors.background,
-    },
-    loadingContainer: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: colors.background,
-        gap: 12,
-    },
-    loadingText: {
-        color: colors.textSecondary,
-        fontSize: 14,
-    },
-    scrollContent: {
-        paddingBottom: 20,
-    },
+  container: {
+    flex: 1,
+    backgroundColor: colors.background,
+  },
+  loadingContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.background,
+    gap: space.md,
+  },
+  loadingText: {
+    marginTop: space.sm,
+  },
+  scrollContent: {
+    paddingBottom: space.xxxl,
+  },
 
-    // Hero
-    hero: {
-        height: 220,
-        position: 'relative',
-    },
-    heroImage: {
-        width: '100%',
-        height: '100%',
-    },
-    heroOverlay: {
-        ...StyleSheet.absoluteFillObject,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 20,
-    },
-    heroLogo: {
-        fontSize: 36,
-        fontWeight: '800',
-        color: '#fff',
-        letterSpacing: 6,
-    },
-    heroTagline: {
-        fontSize: 18,
-        fontWeight: '600',
-        color: colors.accent,
-        marginTop: 4,
-    },
-    heroSubtitle: {
-        fontSize: 14,
-        color: 'rgba(255, 255, 255, 0.8)',
-        textAlign: 'center',
-        marginTop: 8,
-        maxWidth: 280,
-    },
+  // Hero
+  hero: {
+    minHeight: HERO_HEIGHT,
+    paddingBottom: space.xxxl,
+  },
+  heroContent: {
+    paddingHorizontal: space.xl,
+    paddingTop: space.lg,
+    gap: space.sm,
+  },
+  heroTitle: {
+    marginTop: space.xs,
+  },
+  heroSubtitle: {
+    marginTop: space.xs,
+    maxWidth: 320,
+  },
+  searchWrap: {
+    position: 'absolute',
+    bottom: -28,
+    left: space.xl,
+    right: space.xl,
+  },
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: colors.card,
+    borderRadius: radii.lg,
+    paddingHorizontal: space.lg,
+    paddingVertical: 14,
+    gap: space.md,
+    borderWidth: 1,
+    borderColor: 'rgba(21, 255, 117, 0.18)',
+    ...shadows.lg,
+  },
+  searchInput: {
+    flex: 1,
+    fontSize: 15,
+    color: colors.textPrimary,
+    fontFamily: 'LeagueSpartan_400Regular',
+  },
 
-    // Search
-    searchContainer: {
-        paddingHorizontal: 16,
-        marginTop: -24,
-        zIndex: 10,
-    },
-    searchBar: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: colors.card,
-        borderRadius: 12,
-        paddingHorizontal: 14,
-        paddingVertical: 12,
-        gap: 10,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.1,
-        shadowRadius: 12,
-        elevation: 6,
-    },
-    searchInput: {
-        flex: 1,
-        fontSize: 15,
-        color: colors.textPrimary,
-    },
+  // Sections
+  section: {
+    marginTop: rhythm.betweenSections,
+    paddingHorizontal: space.xl,
+  },
+  // The first section sits below the floating search bar, which overhangs the
+  // hero by ~28px. Extra top margin keeps the "Filter" header clear of it.
+  firstSection: {
+    marginTop: space.jumbo,
+  },
 
-    // Sections
-    section: {
-        marginTop: 24,
-        paddingHorizontal: 16,
-    },
-    sectionHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 12,
-    },
-    sectionTitle: {
-        fontSize: 20,
-        fontWeight: '700',
-        color: colors.textPrimary,
-        marginBottom: 12,
-    },
-    seeAllText: {
-        fontSize: 14,
-        color: colors.primary,
-        fontWeight: '600',
-    },
+  // Chips row
+  chipsRow: {
+    gap: space.sm,
+    paddingRight: space.xl,
+  },
 
-    // Categories
-    categoriesScroll: {
-        paddingRight: 16,
-        gap: 10,
-    },
-    categoryPill: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingHorizontal: 14,
-        paddingVertical: 8,
-        borderRadius: 20,
-        gap: 6,
-        marginRight: 10,
-    },
-    categoryText: {
-        fontSize: 13,
-        color: colors.textSecondary,
-        fontWeight: '500',
-    },
-    categoryTextActive: {
-        color: '#fff',
-    },
+  // Hubs
+  hubsRow: {
+    gap: space.md,
+    paddingRight: space.xl,
+  },
+  hubCard: {
+    width: 170,
+    height: 200,
+    borderRadius: radii.lg,
+    overflow: 'hidden',
+    justifyContent: 'flex-end',
+    backgroundColor: '#0a3d1f',
+  },
+  hubCardPressed: {
+    opacity: 0.92,
+    transform: [{ scale: 0.98 }],
+  },
+  hubContent: {
+    padding: space.md,
+    gap: 2,
+  },
 
-    // Hubs
-    hubsScroll: {
-        paddingRight: 16,
-    },
-    hubCard: {
-        width: 140,
-        height: 100,
-        borderRadius: 12,
-        overflow: 'hidden',
-        marginRight: 12,
-    },
-    hubImage: {
-        width: '100%',
-        height: '100%',
-    },
-    hubOverlay: {
-        ...StyleSheet.absoluteFillObject,
-        backgroundColor: 'rgba(0, 0, 0, 0.3)',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    hubName: {
-        color: '#fff',
-        fontSize: 16,
-        fontWeight: '700',
-    },
+  // Featured
+  featuredRow: {
+    paddingRight: space.xl,
+  },
 
-    // Featured
-    featuredScroll: {
-        paddingRight: 16,
-    },
+  // Tours list
+  toursList: {
+    gap: space.xs,
+  },
 
-    // Tours Grid
-    toursGrid: {
-        gap: 0,
-    },
-
-    // Empty State
-    emptyState: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: 40,
-        gap: 8,
-    },
-    emptyText: {
-        fontSize: 16,
-        color: colors.textSecondary,
-        fontWeight: '600',
-    },
-    emptySubtext: {
-        fontSize: 14,
-        color: colors.textMuted,
-    },
-
-    // AI FAB
-    aiFab: {
-        position: 'absolute',
-        bottom: 20,
-        right: 20,
-        width: 56,
-        height: 56,
-        borderRadius: 28,
-        backgroundColor: colors.accent,
-        alignItems: 'center',
-        justifyContent: 'center',
-        shadowColor: colors.accent,
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.4,
-        shadowRadius: 8,
-        elevation: 8,
-    },
+  // FAB
+  aiFab: {
+    position: 'absolute',
+    bottom: space.xl,
+    right: space.xl,
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    backgroundColor: colors.accent,
+    alignItems: 'center',
+    justifyContent: 'center',
+    ...shadows.glow,
+  },
+  aiFabPressed: {
+    opacity: 0.9,
+    transform: [{ scale: 0.94 }],
+  },
 });

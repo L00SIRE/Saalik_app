@@ -82,7 +82,8 @@ export function BookingScreen() {
                 [
                     {
                         text: 'View My Bookings',
-                        onPress: () => navigation.navigate('Trips'),
+                        onPress: () =>
+                            navigation.navigate('TripsTab', { screen: 'MyBookings' }),
                     },
                     {
                         text: 'Done',
@@ -420,15 +421,16 @@ const styles = StyleSheet.create({
     },
     partySizeValue: {
         alignItems: 'center',
-        minWidth: 100,
+        minWidth: 90,
     },
     partySizeNumber: {
-        fontSize: 36,
+        fontSize: 24,
+        lineHeight: 30,
         fontWeight: '800',
         color: colors.textPrimary,
     },
     partySizeLabel: {
-        fontSize: 14,
+        fontSize: 13,
         color: colors.textSecondary,
     },
     maxGroupText: {

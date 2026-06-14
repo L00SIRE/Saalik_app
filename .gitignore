@@ -1,49 +1,145 @@
-# Dependencies
+# ─── Dependencies ─────────────────────────────────────────────────────────────
 node_modules/
 */node_modules/
 
-# Expo
+# ─── Expo / Metro / build outputs ─────────────────────────────────────────────
 .expo/
 .expo-shared/
+.metro-health-check*
 dist/
 web-build/
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# macOS
-.DS_Store
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# TypeScript
-*.tsbuildinfo
-
-# Build outputs
 backend/dist/
 frontend/saalik-mobile/.expo/
 frontend/saalik-mobile/build/
 
-# Temporary files
+# ─── Environment variables ────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
+# ─── Credentials & secrets (do not commit) ────────────────────────────────────
+# These match anything that looks remotely like a key, cert, or service account.
+*.pem
+*.key
+*.cer
+*.crt
+*.p8
+*.p12
+*.jks
+*.mobileprovision
+*.keystore
+.npmrc.local
+.netrc
+credentials.json
+service-account*.json
+google-services.json
+GoogleService-Info.plist
+secrets/
+.secrets/
+
+# ─── Database snapshots / dumps ───────────────────────────────────────────────
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.dump
+backend/dev.db
+
+# ─── Native build artifacts ───────────────────────────────────────────────────
+*.xcuserstate
+*.xcuserdatad/
+*.xcworkspace/xcuserdata/
+ios/build/
+android/build/
+android/.gradle/
+
+# ─── macOS / IDE / editor noise ───────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+.vscode/
+.idea/
+.cursor/
+.windsurfrc
+.aider*
+*.swp
+*.swo
+*~
+
+# ─── Logs / coverage / test artifacts ─────────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+coverage/
+.nyc_output/
+*.lcov
+
+# ─── TypeScript build info ────────────────────────────────────────────────────
+*.tsbuildinfo
+
+# ─── Backup / scratch / temp ──────────────────────────────────────────────────
+*.bak
+*.backup
+*.orig
 *.tmp
 *.temp
+*.scratch
+SCRATCH.md
+NOTES.md
+TODO.md
+scratch/
+notes/
+.scratch/
+.tmp/
 
-# Confidential/Private Documents
+# ─── Recordings, screenshots, demo videos ─────────────────────────────────────
+# Demo recordings, screen captures, and design exports are easy to commit by
+# accident and bloat the repo. Anything in the directories below is private.
+# Legitimate brand assets live under frontend/saalik-mobile/assets — those are
+# explicitly re-allowed at the bottom of this file.
+recordings/
+screenshots/
+demo-output/
+investor-materials/
+*.mov
+*.mp4
+*.webm
+*.mkv
+*.gif
+
+# Re-allow committed brand/UI image assets (these *should* be in version control).
+!frontend/saalik-mobile/assets/**
+
+# ─── Confidential / private documents ─────────────────────────────────────────
+# Anything that contains pricing, take rates, founder comp, partnership terms,
+# or investor-specific framing. Use the suffix conventions, the `private/` dir,
+# or the named-file list below.
 AI_GUIDE_DESIGN.md
 SOFT_LAUNCH_PLAN.md
+DEMO_RECORDING_GUIDE.md
+GROWTH_STRATEGY.md
+INVESTOR_*.md
+PITCH_*.md
+DECK_*.md
+CAP_TABLE*
 *_CONFIDENTIAL.md
 *_PRIVATE.md
+*_INTERNAL.md
+*_INVESTOR.md
+private/
+.private/
+internal/
+investors/
 
+# ─── Agent / runtime output (Claude Code task transcripts, etc.) ──────────────
+# These can leak conversation history and partial drafts.
+tasks/
+.tasks/
+.agent-output/
+
+# ─── Agentic memory / architect ledger (local source of truth, never commit) ──
+.project_ledger.md

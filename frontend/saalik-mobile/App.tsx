@@ -2,9 +2,27 @@ import { StatusBar } from 'expo-status-bar';
 import { ActivityIndicator, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useEffect } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { AuthProvider } from './src/context/AuthContext';
 import { AppNavigator } from './src/navigation/AppNavigator';
+import { queryClient, asyncStoragePersister } from './src/services/queryClient';
+import { colors } from './src/theme/colors';
+
+const navTheme = {
+  ...DefaultTheme,
+  dark: true,
+  colors: {
+    ...DefaultTheme.colors,
+    background: colors.background,
+    card: colors.card,
+    text: colors.textPrimary,
+    border: 'rgba(255,255,255,0.06)',
+    primary: colors.accent,
+    notification: colors.accent,
+  },
+};
 
 export default function App() {
   const [fontsLoaded, error] = useFonts({
@@ -13,18 +31,13 @@ export default function App() {
 
   useEffect(() => {
     if (error) {
-      // Ignore "already registered" error which happens on hot reload
       const errorStr = JSON.stringify(error) + (error.message || '');
       if (!errorStr.includes('CTFontManagerError code: 104')) {
         console.error('Error loading fonts:', error);
-      } else {
-        console.log('Font already registered (ignoring hot reload error)');
       }
     }
-    console.log('Fonts loaded:', fontsLoaded);
   }, [fontsLoaded, error]);
 
-  // If fonts fail to load, we still want to show the app, just without the custom font
   if (!fontsLoaded && !error) {
     return (
       <View style={{ flex: 1, backgroundColor: '#021d0f', justifyContent: 'center', alignItems: 'center' }}>
@@ -34,11 +47,18 @@ export default function App() {
   }
 
   return (
-    <AuthProvider>
-      <NavigationContainer>
-        <StatusBar style="light" />
-        <AppNavigator />
-      </NavigationContainer>
-    </AuthProvider>
+    <SafeAreaProvider>
+      <PersistQueryClientProvider
+        client={queryClient}
+        persistOptions={{ persister: asyncStoragePersister }}
+      >
+        <AuthProvider>
+          <NavigationContainer theme={navTheme}>
+            <StatusBar style="light" />
+            <AppNavigator />
+          </NavigationContainer>
+        </AuthProvider>
+      </PersistQueryClientProvider>
+    </SafeAreaProvider>
   );
 }
