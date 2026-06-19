@@ -8,6 +8,7 @@ import { colors } from '@theme/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { radii, space } from '@theme';
 import type { Booking } from '@app-types/api';
+import { tourCoverSource } from '../assets/imageSource';
 import { formatDuration } from '../services/api';
 
 interface BookingCardProps {
@@ -45,13 +46,15 @@ export function BookingCard({ booking, onPress, onCancel, onReview }: BookingCar
   const countdownLabel =
     daysUntil === 0 ? 'Today' : daysUntil === 1 ? 'Tomorrow' : `In ${daysUntil} days`;
 
+  const tourPhoto = tourCoverSource(booking.tour);
+
   return (
     <PressableCard onPress={onPress} variant="outlined" noPadding radius="lg" style={styles.card}>
       <View style={styles.row}>
         {/* Image rail */}
         <View style={styles.imageWrap}>
-          {booking.tour.photos?.[0] ? (
-            <Image source={{ uri: booking.tour.photos[0] }} style={styles.image} />
+          {tourPhoto ? (
+            <Image source={tourPhoto} style={styles.image} />
           ) : (
             <View style={[styles.image, styles.imagePlaceholder]} />
           )}

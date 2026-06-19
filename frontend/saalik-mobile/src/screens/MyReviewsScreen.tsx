@@ -18,6 +18,7 @@ import { EmptyState } from '@components/EmptyState';
 import { colors } from '@theme/colors';
 import { radii, space } from '@theme';
 import { getMyReviews, searchTours } from '../services/api';
+import { tourCoverSource } from '../assets/imageSource';
 import type { Review, Tour } from '@app-types/api';
 
 function formatRelative(dateString: string): string {
@@ -92,13 +93,16 @@ export function MyReviewsScreen() {
                   }
                   style={({ pressed }) => [styles.tourRow, pressed && styles.pressed]}
                 >
-                  {tour?.photos?.[0] ? (
-                    <Image source={{ uri: tour.photos[0] }} style={styles.thumb} />
-                  ) : (
-                    <View style={[styles.thumb, styles.thumbFallback]}>
-                      <Ionicons name="image-outline" size={18} color={colors.textMuted} />
-                    </View>
-                  )}
+                  {(() => {
+                    const thumb = tour ? tourCoverSource(tour) : undefined;
+                    return thumb ? (
+                      <Image source={thumb} style={styles.thumb} />
+                    ) : (
+                      <View style={[styles.thumb, styles.thumbFallback]}>
+                        <Ionicons name="image-outline" size={18} color={colors.textMuted} />
+                      </View>
+                    );
+                  })()}
                   <View style={styles.tourText}>
                     <AppText variant="label" numberOfLines={2}>
                       {tour?.title ?? 'Tour'}

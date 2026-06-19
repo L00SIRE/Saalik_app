@@ -23,6 +23,7 @@ import { colors, categoryColors, categoryIcons } from '@theme/colors';
 import { radii, shadows, space, rhythm } from '@theme';
 import { useAuthState } from '@context/AuthContext';
 import { getCategories, getFeaturedTours, searchTours } from '../services/api';
+import { hubImageSource } from '../assets/imageSource';
 import type { CategoryMeta, Tour, TourCategory } from '@app-types/api';
 
 const heroImage = require('../../assets/bgsaalik.jpg');
@@ -217,7 +218,10 @@ export function HomeScreen() {
                 onPress={() => handleHubPress(hub.name)}
                 style={({ pressed }) => [styles.hubCard, pressed && styles.hubCardPressed]}
               >
-                <Image source={{ uri: hub.image }} style={StyleSheet.absoluteFillObject} />
+                <Image
+                  source={hubImageSource(hub.name, hub.image)!}
+                  style={StyleSheet.absoluteFillObject}
+                />
                 <LinearGradient
                   colors={['rgba(0,0,0,0.05)', 'rgba(2,18,8,0.95)']}
                   style={StyleSheet.absoluteFillObject}

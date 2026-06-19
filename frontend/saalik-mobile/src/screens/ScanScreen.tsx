@@ -19,6 +19,7 @@ import { Chip } from '@components/Chip';
 import { colors } from '@theme/colors';
 import { radii, shadows, space } from '@theme';
 import { useScanner } from '@logic/discovery/useScanner';
+import { landmarkImageSource } from '../assets/imageSource';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Layer 1 · Rendering / UI — Scan & Discover screen (DUMB component)
@@ -131,7 +132,11 @@ export function ScanScreen() {
         <View style={styles.stageWrap}>
           <View style={styles.stage}>
             {status === 'result' && result ? (
-              <Image source={{ uri: result.image }} style={StyleSheet.absoluteFillObject} />
+              <Image
+                source={landmarkImageSource(result.id, result.image)!}
+                style={styles.resultImage}
+                resizeMode="cover"
+              />
             ) : (
               <LinearGradient
                 colors={['#063d20', '#021d0f']}
@@ -139,11 +144,15 @@ export function ScanScreen() {
               />
             )}
 
-            {/* Corner brackets — camera framing */}
-            <View style={[styles.corner, styles.cornerTL]} />
-            <View style={[styles.corner, styles.cornerTR]} />
-            <View style={[styles.corner, styles.cornerBL]} />
-            <View style={[styles.corner, styles.cornerBR]} />
+            {/* Corner brackets — camera framing (only while framing, not on a result) */}
+            {status !== 'result' && (
+              <>
+                <View style={[styles.corner, styles.cornerTL]} />
+                <View style={[styles.corner, styles.cornerTR]} />
+                <View style={[styles.corner, styles.cornerBL]} />
+                <View style={[styles.corner, styles.cornerBR]} />
+              </>
+            )}
 
             {status === 'scanning' && (
               <>
@@ -327,7 +336,7 @@ function MetaRow({
 }) {
   return (
     <View style={styles.metaRow}>
-      <Ionicons name={icon} size={15} color={colors.textSecondary} />
+      <Ionicons name={icon} size={15} color={colors.textSecondary} style={styles.metaIcon} />
       <AppText variant="bodySm" tone="secondary" style={styles.metaText}>
         {label}
       </AppText>
@@ -362,6 +371,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#021d0f',
+  },
+  resultImage: {
+    ...StyleSheet.absoluteFillObject,
+    width: undefined,
+    height: undefined,
+    borderRadius: radii.xxl,
   },
   stageCenter: {
     alignItems: 'center',
@@ -444,7 +459,8 @@ const styles = StyleSheet.create({
   },
   unescoText: { fontWeight: '700', fontSize: 10, letterSpacing: 0.5 },
   metaRows: { gap: space.sm },
-  metaRow: { flexDirection: 'row', alignItems: 'center', gap: space.sm },
+  metaRow: { flexDirection: 'row', alignItems: 'flex-start', gap: space.sm },
+  metaIcon: { marginTop: 2 },
   metaText: { flex: 1 },
   summary: { lineHeight: 22 },
   factsBlock: {

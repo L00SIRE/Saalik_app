@@ -3,6 +3,7 @@ import {
   ActivityIndicator,
   Dimensions,
   Image,
+  ImageSourcePropType,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -19,10 +20,12 @@ import { ScreenHeader } from '@components/ScreenHeader';
 import { colors } from '@theme/colors';
 import { radii, space } from '@theme';
 import { searchTours } from '../services/api';
+import { tourGallerySources, tourPhotoKey } from '../assets/imageSource';
 import type { Tour } from '@app-types/api';
 
 interface Tile {
-  uri: string;
+  key: string;
+  source: ImageSourcePropType;
   tourId: string;
   title: string;
   hub: string;
@@ -75,18 +78,22 @@ export function GalleryScreen() {
     let i = 0;
     for (const tour of tours) {
       if (hub !== ALL && tour.hub !== hub) continue;
-      for (const uri of tour.photos ?? []) {
-        if (!uri || seen.has(uri)) continue;
-        seen.add(uri);
+      const sources = tourGallerySources(tour);
+      sources.forEach((source, index) => {
+        const key =
+          tourPhotoKey(tour.id, index) || `${tour.id}:${index}:${(tour.photos ?? [])[index] ?? index}`;
+        if (seen.has(key)) return;
+        seen.add(key);
         out.push({
-          uri,
+          key,
+          source,
           tourId: tour.id,
           title: tour.title,
           hub: tour.hub,
-          tall: i % 3 === 0, // every third tile is taller
+          tall: i % 3 === 0,
         });
         i += 1;
-      }
+      });
     }
     return out;
   }, [tours, hub]);
@@ -113,7 +120,7 @@ export function GalleryScreen() {
   const renderTile = useCallback(
     (tile: Tile, idx: number) => (
       <Pressable
-        key={`${tile.tourId}-${idx}-${tile.uri}`}
+        key={`${tile.tourId}-${tile.key}`}
         onPress={() => navigation.navigate('TourDetail', { tourId: tile.tourId })}
         style={({ pressed }) => [
           styles.tile,
@@ -121,7 +128,7 @@ export function GalleryScreen() {
           pressed && styles.tilePressed,
         ]}
       >
-        <Image source={{ uri: tile.uri }} style={styles.tileImage} />
+        <Image source={tile.source} style={styles.tileImage} />
         <LinearGradient
           colors={['rgba(0,0,0,0)', 'rgba(2,18,8,0.85)']}
           style={StyleSheet.absoluteFillObject}

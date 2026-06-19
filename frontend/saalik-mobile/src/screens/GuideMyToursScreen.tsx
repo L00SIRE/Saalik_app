@@ -14,6 +14,7 @@ import { radii, space } from '@theme';
 import { useAuth } from '@context/AuthContext';
 import * as demo from '@services/demoSession';
 import { formatDuration, formatRating } from '@services/api';
+import { tourCoverSource } from '../assets/imageSource';
 import type { Tour } from '@app-types/api';
 
 /**
@@ -88,11 +89,12 @@ export function GuideMyToursScreen() {
 }
 
 function OwnTourCard({ tour }: { tour: Tour }) {
+  const cover = tourCoverSource(tour);
   return (
     <Card variant="outlined" noPadding radius="lg" style={styles.tourCard}>
       <View style={styles.tourImageBlock}>
-        {tour.photos[0] ? (
-          <Image source={{ uri: tour.photos[0] }} style={styles.tourImage} />
+        {cover ? (
+          <Image source={cover} style={styles.tourImage} />
         ) : (
           <View style={[styles.tourImage, styles.tourImagePlaceholder]} />
         )}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -25,6 +25,7 @@ import { SectionHeader } from '@components/SectionHeader';
 import { IconButton } from '@components/IconButton';
 import { colors, categoryColors } from '@theme/colors';
 import { radii, shadows, space } from '@theme';
+import { tourGallerySources } from '../assets/imageSource';
 import {
   formatDuration,
   formatRating,
@@ -86,6 +87,11 @@ export function TourDetailScreen() {
     }
   };
 
+  const galleryPhotos = useMemo(
+    () => (tour ? tourGallerySources(tour) : []),
+    [tour],
+  );
+
   if (loading || !tour) {
     return (
       <View style={styles.loadingContainer}>
@@ -110,8 +116,8 @@ export function TourDetailScreen() {
             }
             scrollEventThrottle={16}
           >
-            {tour.photos.map((photo, i) => (
-              <Image key={i} source={{ uri: photo }} style={styles.photo} resizeMode="cover" />
+            {galleryPhotos.map((photo, i) => (
+              <Image key={i} source={photo} style={styles.photo} resizeMode="cover" />
             ))}
           </ScrollView>
 
@@ -144,7 +150,7 @@ export function TourDetailScreen() {
               <Tag label="FREE TOUR" tone="accent" solid icon="leaf" />
             </View>
             <View style={styles.indicators}>
-              {tour.photos.map((_, i) => (
+              {galleryPhotos.map((_, i) => (
                 <View
                   key={i}
                   style={[styles.indicator, i === activePhotoIndex && styles.indicatorActive]}

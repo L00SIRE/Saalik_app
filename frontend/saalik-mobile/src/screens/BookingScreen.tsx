@@ -14,6 +14,7 @@ import { colors } from '@theme/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { createBooking, formatDuration, getDayName } from '../services/api';
+import { tourCoverSource } from '../assets/imageSource';
 import type { Tour, TourSchedule } from '@app-types/api';
 
 export function BookingScreen() {
@@ -112,7 +113,7 @@ export function BookingScreen() {
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
                 {/* Tour Summary */}
                 <View style={styles.tourSummary}>
-                    <Image source={{ uri: tour.photos[0] }} style={styles.tourImage} />
+                    <Image source={tourCoverSource(tour)!} style={styles.tourImage} />
                     <View style={styles.tourInfo}>
                         <AppText style={styles.tourTitle} numberOfLines={2}>{tour.title}</AppText>
                         <View style={styles.tourRow}>

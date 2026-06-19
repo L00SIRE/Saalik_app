@@ -8,6 +8,7 @@ import { colors, categoryColors } from '@theme/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { radii, shadows, space } from '@theme';
 import type { Tour } from '@app-types/api';
+import { tourCoverSource } from '../assets/imageSource';
 import { formatDuration, formatRating } from '../services/api';
 
 interface TourCardProps {
@@ -24,7 +25,7 @@ interface TourCardProps {
  */
 export function TourCard({ tour, onPress, compact = false }: TourCardProps) {
   const categoryColor = categoryColors[tour.category] ?? colors.primary;
-  const photo = tour.photos?.[0];
+  const photo = tourCoverSource(tour);
 
   if (compact) {
     return (
@@ -36,7 +37,7 @@ export function TourCard({ tour, onPress, compact = false }: TourCardProps) {
         style={styles.compactCard}
       >
         <ImageBackground
-          source={photo ? { uri: photo } : undefined}
+          source={photo}
           style={styles.compactImage}
           imageStyle={styles.compactImageInner}
         >
@@ -80,7 +81,7 @@ export function TourCard({ tour, onPress, compact = false }: TourCardProps) {
       {/* Hero image with gradient + overlay tags */}
       <View style={styles.heroBlock}>
         {photo ? (
-          <Image source={{ uri: photo }} style={styles.heroImage} resizeMode="cover" />
+          <Image source={photo} style={styles.heroImage} resizeMode="cover" />
         ) : (
           <View style={[styles.heroImage, styles.heroPlaceholder]} />
         )}
