@@ -42,6 +42,13 @@ export type TravelerProfileStackParamList = {
 
 export type DiscoverStackParamList = {
   Scan: undefined;
+  HeritageHome: undefined;
+  Scanner: undefined;
+  MonumentStory: { monumentId: string };
+  LocalStorytellers: { monumentId?: string } | undefined;
+  CollectorChecklist: undefined;
+  GuidedCamera: { monumentId: string; angle?: string };
+  SyncManager: undefined;
 };
 
 export type TravelerTabParamList = {

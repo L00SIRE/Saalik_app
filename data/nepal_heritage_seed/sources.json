@@ -1,0 +1,117 @@
+{
+  "version": "2026.11.0",
+  "attributionPolicy": "Every lore chunk is an editorial synthesis drafted by the Saalik team. The sourceIds on each chunk name the published references and custodial institutions that the chunk must be checked against before it is promoted from EDITORIAL_DRAFT to FIELD_VERIFIED; they are not direct quotations. Dates and attributions that rest on chronicle or oral tradition are marked as such in the text, and chunks with confidence 'low' must be reviewed with temple custodians (guthi members, priests, or monastery staff) before public release.",
+  "sources": [
+    {
+      "id": "unesco_whc_121",
+      "type": "official_listing",
+      "citation": "UNESCO World Heritage Centre, 'Kathmandu Valley' (World Heritage List ref. 121), inscribed 1979, boundaries modified 2006.",
+      "url": "https://whc.unesco.org/en/list/121"
+    },
+    {
+      "id": "doa_nepal",
+      "type": "institution",
+      "citation": "Department of Archaeology, Government of Nepal - monument registers, conservation and post-2015 reconstruction records.",
+      "url": "https://doa.gov.np"
+    },
+    {
+      "id": "kvpt",
+      "type": "institution",
+      "citation": "Kathmandu Valley Preservation Trust - restoration project documentation for Patan Durbar Square and other valley monuments.",
+      "url": "https://kvptnepal.org"
+    },
+    {
+      "id": "ntb",
+      "type": "institution",
+      "citation": "Nepal Tourism Board - destination and visitor information for Kathmandu Valley heritage sites.",
+      "url": "https://ntb.gov.np"
+    },
+    {
+      "id": "ird_heritage",
+      "type": "institution",
+      "citation": "Institute for Rural Development (IRD), Culture & Heritage programme - community heritage documentation in Nepal.",
+      "url": "https://ird.com.np/areas-of-work/culture-and-heritage"
+    },
+    {
+      "id": "slusser_1982",
+      "type": "book",
+      "citation": "Mary Shepherd Slusser, Nepal Mandala: A Cultural Study of the Kathmandu Valley (Princeton University Press, 1982)."
+    },
+    {
+      "id": "bernier_1979",
+      "type": "book",
+      "citation": "Ronald M. Bernier, The Nepalese Pagoda: Origins and Style (S. Chand, 1979)."
+    },
+    {
+      "id": "korn_1976",
+      "type": "book",
+      "citation": "Wolfgang Korn, The Traditional Architecture of the Kathmandu Valley (Ratna Pustak Bhandar, 1976)."
+    },
+    {
+      "id": "gutschow_1997",
+      "type": "book",
+      "citation": "Niels Gutschow, The Nepalese Caitya: 1500 Years of Buddhist Votive Architecture in the Kathmandu Valley (Edition Axel Menges, 1997)."
+    },
+    {
+      "id": "hutt_1994",
+      "type": "book",
+      "citation": "Michael Hutt, David Gellner, Axel Michaels, Greta Rana and Graham Tiller, Nepal: A Guide to the Art and Architecture of the Kathmandu Valley (Kiscadale, 1994)."
+    },
+    {
+      "id": "pal_1974",
+      "type": "book",
+      "citation": "Pratapaditya Pal, The Arts of Nepal, Part I: Sculpture (E. J. Brill, 1974)."
+    },
+    {
+      "id": "vajracharya_1973",
+      "type": "book",
+      "citation": "Dhanavajra Vajracharya, Licchavikalaka Abhilekha (Inscriptions of the Licchavi Period), Centre for Nepal and Asian Studies, Tribhuvan University, 1973."
+    },
+    {
+      "id": "wright_1877",
+      "type": "chronicle",
+      "citation": "Daniel Wright (ed.), History of Nepal, translated from the Parbatiya vamshavali (Cambridge University Press, 1877)."
+    },
+    {
+      "id": "dowman_1995",
+      "type": "book",
+      "citation": "Keith Dowman, Power-Places of Kathmandu: Hindu and Buddhist Holy Sites in the Sacred Valley of Nepal (Inner Traditions, 1995)."
+    },
+    {
+      "id": "levy_1990",
+      "type": "book",
+      "citation": "Robert I. Levy, Mesocosm: Hinduism and the Organization of a Traditional Newar City in Nepal (University of California Press, 1990)."
+    },
+    {
+      "id": "locke_1980",
+      "type": "book",
+      "citation": "John K. Locke, Karunamaya: The Cult of Avalokitesvara-Matsyendranath in the Valley of Nepal (Sahayogi Prakashan, 1980)."
+    },
+    {
+      "id": "locke_1985",
+      "type": "book",
+      "citation": "John K. Locke, Buddhist Monasteries of Nepal: A Survey of the Bahas and Bahis of the Kathmandu Valley (Sahayogi Press, 1985)."
+    },
+    {
+      "id": "michaels_2008",
+      "type": "book",
+      "citation": "Axel Michaels, Siva in Trouble: Festivals and Rituals at the Pasupatinatha Temple of Deopatan (Oxford University Press, 2008)."
+    },
+    {
+      "id": "toffin_2008",
+      "type": "book",
+      "citation": "Gerard Toffin, Newar Society: City, Village and Periphery (Himal Books, 2008)."
+    },
+    {
+      "id": "durham_unesco_rescue_archaeology",
+      "type": "institution",
+      "citation": "Durham University and UNESCO post-disaster rescue archaeology in the Kathmandu Valley World Heritage property (2015-2016 field seasons)."
+    },
+    {
+      "id": "saalik_editorial",
+      "type": "editorial",
+      "citation": "Saalik Tech editorial synthesis, pending field verification with community custodians.",
+      "url": "https://www.sumandangal.com"
+    }
+  ]
+}

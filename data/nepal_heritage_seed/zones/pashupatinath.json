@@ -1,0 +1,844 @@
+{
+  "zoneId": "pashupatinath",
+  "names": { "en": "Pashupatinath", "ne": "पशुपतिनाथ", "romanized": "Deopatan", "romanizedLanguage": "Nepali" },
+  "designation": "UNESCO_MONUMENT_ZONE",
+  "unescoReference": "UNESCO WHC 121 - Pashupati Monument Zone",
+  "district": "Kathmandu",
+  "centroid": { "lat": 27.7105, "lng": 85.35 },
+  "zoneRadiusM": 800,
+  "description": "Pashupatinath, on the banks of the sacred Bagmati river east of Kathmandu, is the holiest Hindu shrine in Nepal. Around the gilded temple of Shiva as lord of all creatures lie cremation ghats, forested slopes, Shiva shrines, ashrams and the Shakti Peeth of Guhyeshwari, managed by the Pashupati Area Development Trust. The main courtyard is open only to Hindus.",
+  "walkingTour": {
+    "tourId": "pas_circle_of_life",
+    "title": "Pashupati: Temples, Ghats and the Circle of Life",
+    "titleNe": "पशुपति: मन्दिर, घाट र जीवनचक्र",
+    "startPoint": "Western main gate of Pashupatinath Temple, Gaushala side",
+    "bestStartTime": "06:30"
+  },
+  "monuments": [
+    {
+      "id": "pas_main_pagoda_courtyard",
+      "names": { "en": "Pashupatinath Temple (Main Pagoda Courtyard)", "ne": "पशुपतिनाथ मन्दिर", "romanized": "Pashupatinath Mandir", "romanizedLanguage": "Nepali" },
+      "aliases": ["Main Pashupatinath Pagoda Courtyard", "Pashupati Temple"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "late 17th century CE (present temple); worship attested in Licchavi inscriptions", "foundingYearCE": null, "datingBasis": "documented_record", "patron": "Bhupalendra Malla (present temple)" },
+      "geo": { "lat": 27.7105, "lng": 85.3487, "elevationM": 1305, "geofenceRadiusM": 60, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 8, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 2,
+        "primaryMaterials": ["gilt_repousse_copper", "carved_wood", "fired_brick", "silver"],
+        "guardianVahanas": ["giant gilded Nandi bull facing the western door"],
+        "deityMudrasWeapons": ["four-faced Shiva lingam in the sanctum", "silver-plated doors on all four sides", "gilded trident finials"],
+        "distinguishingFeatures": ["two-tiered pagoda with gilded copper roofs", "large walled courtyard closed to non-Hindus", "temple rising above the west bank of the Bagmati"],
+        "confusableWith": ["pas_guhyeshwari", "chg_main_pagoda"],
+        "disambiguationTip": "Pashupatinath's gilded two-tier roofs rise above the Bagmati ghats and are seen by non-Hindus from the east-bank terraces; Guhyeshwari is a separate shrine upstream with a serpent-supported golden canopy."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Lord of All Creatures",
+          "text": "Pashupatinath, Shiva as Pashupati, 'lord of all creatures', is the most sacred Hindu shrine in Nepal and one of the most important Shiva temples in the world. Worship of Pashupati is attested in Licchavi inscriptions from the fifth century onward, when the deity was honoured as protector of the kings and the realm, and later rulers styled themselves his devotees. The temple was sacked in 1349 by the Bengal Sultan Shams ud-din Ilyas and subsequently restored. The present two-tiered pagoda dates from the late seventeenth century, when King Bhupalendra Malla rebuilt it after the earlier structure was damaged by termites, according to the commonly cited account. Over the centuries kings, nobles and devotees added shrines, ghats, rest houses and ashrams, creating the vast sacred complex along the Bagmati river that is now managed by the Pashupati Area Development Trust.",
+          "sourceIds": ["michaels_2008", "vajracharya_1973", "unesco_whc_121"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Gold, Silver and a Sacred River",
+          "text": "The main temple is a two-tiered pagoda with gilded copper roofs, raised on a square plinth and opening on all four sides through silver-plated doors. Its roof struts are carved with deities, and gilded finials crowned with tridents rise from the summit. The temple stands within a large walled courtyard crowded with smaller shrines, images, lingams and bells donated over the centuries. To the east, the courtyard opens toward the Bagmati river, where stone ghats descend to the water. Non-Hindus may not enter the courtyard, but they can view the temple's roofs and the courtyard's activity from the terraces on the east bank, across the river. The ensemble of temple, courtyard, river and ghats forms one of the most powerful sacred landscapes in South Asia, where architecture, water and ritual combine to express the cycle of life and death.",
+          "sourceIds": ["bernier_1979", "michaels_2008"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Four-Faced Lingam",
+          "text": "The sanctum houses a lingam with four faces, each representing an aspect of Shiva facing a cardinal direction, while the top of the lingam represents a fifth, formless aspect. The faces are known as Sadyojata, Vamadeva, Tatpurusha and Aghora, with Ishana above, and together they symbolise Shiva's roles as creator, preserver, destroyer, concealer and revealer. Outside the western door kneels a huge gilded Nandi, Shiva's bull, gazing toward the sanctum. The temple's struts and doors carry images of Shiva's family and attendants, and the courtyard holds countless lingams and images of other deities, including Vasuki, the serpent king who guards the temple. The trident, Shiva's weapon and symbol of his three powers, appears on the roof finials and throughout the complex. For devotees, seeing the lingam, known as darshan, is the culmination of a pilgrimage.",
+          "sourceIds": ["michaels_2008", "pal_1974"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Priests from the South and Maha Shivaratri",
+          "text": "Pashupatinath's daily rituals are performed by priests known as Bhattas, Brahmins traditionally drawn from Karnataka in southern India, a custom said to date back many centuries and maintained into the present day, alongside local priests and attendants. Worship begins before dawn and continues through the day, with offerings, bathing of the lingam and an evening aarti, a ceremony of lamps and music on the riverbank that draws large crowds. The greatest festival is Maha Shivaratri, the night of Shiva in late winter, when hundreds of thousands of pilgrims from Nepal and India, including many sadhus, converge on the temple. During Teej, women dressed in red come to pray for their husbands' long life. Throughout the year, families bring their dead to the cremation ghats beside the temple, believing that death and cremation here bring liberation.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "high"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Managing a Living Sacred Landscape",
+          "text": "The main Pashupatinath temple survived the 2015 earthquake largely intact, a fact many devotees attribute to the god's protection, while some smaller structures in the complex suffered damage and were repaired. The Pashupati Area Development Trust, established in 1987, manages the site, overseeing conservation, the cremation ghats, visitor services and the large flows of pilgrims. Challenges include the pollution of the Bagmati river, the focus of long-running clean-up campaigns, crowd management during festivals and encroachment on the monument zone. The gilded roofs and silver doors require periodic restoration, which must be coordinated with the temple's priests and rituals. Visitors can contribute by respecting the restriction on entry for non-Hindus, photographing cremations only from a respectful distance, if at all, and supporting the trust through the entry fee charged to foreign visitors.",
+          "sourceIds": ["doa_nepal", "unesco_whc_121", "michaels_2008"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Look across the Bagmati river at the golden roofs rising above the courtyard walls. That is Pashupatinath, the temple of Shiva as lord of all creatures, the holiest Hindu shrine in Nepal. Kings of the Licchavi age were already honouring this god some fifteen hundred years ago. Only Hindus may enter, but from the terraces on this side you can watch the courtyard come alive, and below you, on the stone ghats, families say goodbye to their loved ones, believing that a farewell here brings liberation. Inside, behind silver doors, a lingam with four faces looks out in every direction, and a giant golden bull kneels before it. On the night of Shivaratri, hundreds of thousands arrive. Book a verified local storyteller nearby and let a guide explain the circle of life on these banks."
+      },
+      "nepaliSummary": "पशुपतिनाथ नेपालकै सबैभन्दा पवित्र हिन्दु तीर्थ हो, जहाँ बागमती किनारमा दुई तले सुनौलो छाना भएको शिव मन्दिर छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:00-07:30",
+        "lightingNotes": "Morning sun lights the gilded roofs seen from the east bank, and mist over the river softens the ghats.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "From the east-bank terraces, temple roofs above the courtyard wall." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique downstream, roofs with the ghats below." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique upstream toward Arya Ghat." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Telephoto on the gilded roof finials and struts." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Whole riverfront with temple, ghats and terraces." }
+        ],
+        "occlusionNotes": "Smoke from cremations and crowds on the bridges and terraces; monkeys on the walls.",
+        "restrictions": "Non-Hindus may not enter the main courtyard; do not photograph cremations or mourners closely; foreign visitor entry fee applies."
+      },
+      "walkingTourStop": { "sequence": 1, "dwellMinutes": 20, "talkingPoint": "Introduce Pashupati and the etiquette of viewing from the east bank." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Rebuild date of the present temple (sources cite the 1690s) to confirm." }
+    },
+    {
+      "id": "pas_bachhareshwari",
+      "names": { "en": "Bachhareshwari Mandir", "ne": "वत्सलेश्वरी (बच्छलेश्वरी) मन्दिर", "romanized": "Vatsaleshwari", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Bachhareshwari Temple", "Vatsaleshwari Temple"],
+      "monumentType": "SHRINE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "date unconfirmed; carvings attributed to Malla centuries", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.7101, "lng": 85.3491, "elevationM": 1302, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 8, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 1,
+        "primaryMaterials": ["fired_brick", "carved_wood"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["struts carved with Tantric figures, skeletons and erotic scenes"],
+        "distinguishingFeatures": ["small temple near the ghats south of the main temple", "skeletal figures visible in the exterior carvings"],
+        "confusableWith": ["pas_ram_mandir"],
+        "disambiguationTip": "Bachhareshwari is a small temple near the ghats with skeletal Tantric carvings; Ram Mandir is a larger courtyard complex where sadhus gather."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Small Temple of the Mother Goddess",
+          "text": "Bachhareshwari, also known as Vatsaleshwari, is a small temple in the Pashupatinath complex, near the ghats on the western bank of the Bagmati. It is dedicated to a form of the goddess understood as a mother protecting her child, and its name is connected with the Sanskrit word for a calf, a symbol of tender maternal care. Its precise date has not been established in Saalik's sources, and guidebook claims of a very early date need to be checked against inscriptions and architectural evidence. The temple is notable for its unusual carvings of Tantric figures, including skeletal forms, and for its reported association with rituals of Maha Shivaratri. Within the vast complex of Pashupati it is easily overlooked, yet it offers visitors a glimpse of the Tantric dimension of worship that runs alongside the more visible devotion to Shiva.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Carvings at the Edge of the Ghats",
+          "text": "The temple is a modest structure with brick walls, a carved doorway and roof struts, set among the dense cluster of shrines, rest houses and ghats on the western bank. Its most distinctive features are the carvings on its struts and frames, which depict Tantric figures, skeletons and, as on many temples in the valley, erotic scenes. These carvings are smaller and less elaborate than those of the great Durbar Square temples, but their subjects make them memorable. The temple's position near the cremation ghats gives its skeletal imagery an added resonance, reminding visitors of the transience of life. Because many visitors to Pashupati focus on the main temple and the cremations, Bachhareshwari is often quiet, allowing time for close observation of its carvings. Field collectors are asked to document the struts carefully, as they are vulnerable to weathering.",
+          "sourceIds": ["bernier_1979", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Skeletons and the Mother",
+          "text": "The skeletal figures carved on Bachhareshwari's struts belong to a Tantric iconography in which death and decay are confronted directly rather than hidden. In Tantric traditions associated with Shiva and the goddess, cremation grounds are powerful places of practice, and images of skeletons and charnel ground deities express the impermanence of the body and the liberation that lies beyond attachment. The mother goddess honoured here protects devotees through this cycle, offering care alongside a stark reminder of mortality. The erotic carvings, common on Newar temples, express the union of Shiva and Shakti, the creative energy that gives rise to life. Together these images represent the full circle of existence: birth, desire, death and transformation. Their presence beside the ghats, where cremations take place every day, makes Pashupati one of the most profound settings for such imagery anywhere.",
+          "sourceIds": ["michaels_2008", "pal_1974"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "A Shivaratri Tradition",
+          "text": "Bachhareshwari is associated in some accounts with rituals performed during Maha Shivaratri, the great night of Shiva, when the Pashupati complex fills with pilgrims and sadhus. Guidebooks mention a traditional dance once performed at the temple during the festival, although whether this practice continues today must be confirmed in the field. Throughout the year the temple receives offerings from devotees who visit Pashupati, especially women seeking the goddess's protection for their children. The proximity of the temple to the cremation ghats means that mourners may pass by, and some make offerings as they come and go. Visitors should behave respectfully in this sensitive area, avoiding photographs of mourners and cremations and following the guidance of temple staff. A guide familiar with Pashupati's ritual life can explain the temple's place in the festival calendar.",
+          "sourceIds": ["saalik_editorial", "michaels_2008"],
+          "confidence": "low"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protecting Small Shrines at Pashupati",
+          "text": "The Pashupati complex includes hundreds of shrines, many of them small and little documented. Bachhareshwari is one of these, and its carvings are vulnerable to weathering, to smoke from the cremation ghats and to the humidity of the riverbank. The 2015 earthquake damaged some structures in the complex, and the condition of smaller shrines like Bachhareshwari needs to be recorded. The Pashupati Area Development Trust oversees conservation in the complex, working with the Department of Archaeology, but resources are often concentrated on the main temple and high-traffic areas. Documentation of smaller shrines by field collectors provides valuable records for conservation planning and helps protect carvings against theft. Saalik's collectors are asked to photograph Bachhareshwari's struts and doorway from all angles, recording any damage and the temple's relationship to the surrounding ghats and buildings.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Near the cremation ghats stands a small temple that most visitors walk straight past. Stop and look up at its carvings: skeletons, Tantric figures and lovers, side by side. This is Bachhareshwari, a shrine to a mother goddess whose name recalls a cow caring for her calf. Here, a few steps from the funeral pyres, the carvings put birth, desire and death in one frame, the whole circle of life that Pashupati is famous for. Guidebooks speak of a dance once performed here on Shivaratri night, the great festival of Shiva, and Saalik's field team is checking whether it still happens. Can you find the skeletons among the struts? Book a verified local storyteller nearby and let a guide explain why death is carved so openly at Pashupati."
+      },
+      "nepaliSummary": "वत्सलेश्वरी (बच्छलेश्वरी) पशुपतिका घाट नजिकैको सानो मन्दिर हो, जसका टुँडालमा कङ्काल र तान्त्रिक आकृति कुँदिएका छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "Morning light reaches the west bank; smoke from the ghats can haze the carvings later in the day.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Temple doorway and struts square-on." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the strut carvings." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the ghats behind, framed without mourners." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "A skeletal figure on one strut." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple among the west-bank shrines." }
+        ],
+        "occlusionNotes": "Smoke, mourners and sadhus are often close by.",
+        "restrictions": "Do not photograph mourners or cremations; follow the guidance of temple staff."
+      },
+      "walkingTourStop": { "sequence": 3, "dwellMinutes": 6, "talkingPoint": "Interpret the skeletal carvings beside the ghats." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Date, dedication and the Shivaratri dance tradition are unconfirmed; field verification required." }
+    },
+    {
+      "id": "pas_arya_ghat",
+      "names": { "en": "Arya Ghat", "ne": "आर्यघाट", "romanized": "Aryaghat", "romanizedLanguage": "Nepali" },
+      "aliases": ["Aryaghat Cremation Ghats"],
+      "monumentType": "CREMATION_GHAT",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "centuries-old cremation ghats; present structures largely 19th-21st century", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7107, "lng": 85.3493, "elevationM": 1300, "geofenceRadiusM": 40, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 8, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["grey_stone", "fired_brick", "reinforced_concrete"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": [],
+        "distinguishingFeatures": ["stone cremation platforms stepping down to the Bagmati", "smoke from funeral pyres rising beside the river"],
+        "confusableWith": ["pas_pandra_shivalaya"],
+        "disambiguationTip": "Arya Ghat is the set of cremation platforms on the west bank beside the temple; the Pandra Shivalaya are domed shrines on the east-bank terraces opposite."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Where Life Returns to the River",
+          "text": "Arya Ghat is the principal cremation ghat at Pashupatinath, on the western bank of the Bagmati river beside the main temple. For centuries Hindus have brought their dead here, believing that cremation beside the sacred river at Pashupati, the abode of Shiva, brings liberation from the cycle of rebirth. Historically Arya Ghat was associated with royalty and the elite, while other ghats served the general public; members of Nepal's royal family, including those killed in the palace tragedy of 2001, were cremated here. Today it is used by people from all backgrounds. The Bagmati flows on to join the Ganges system in India, linking Pashupati with the wider sacred geography of Hinduism. The ghats have been rebuilt and extended many times, and in recent years an electric crematorium has been added nearby to reduce wood use and air pollution.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Platforms by the Water",
+          "text": "The ghats consist of stone platforms stepping down to the river, on which funeral pyres are built of wood. Each platform is a raised plinth, sometimes with a small shrine or canopy, and steps allow mourners to carry the body to the water for ritual bathing before cremation. Around the ghats stand rest houses where families can stay, shrines to Shiva and other deities, and buildings associated with death rituals, including a hospice where the dying may spend their final days near the river. Across the river, the terraces of the east bank provide a vantage point from which the ghats can be seen, though visitors should observe with discretion. The architecture is functional rather than ornate, but its setting, with temples above and the river below, creates an atmosphere of solemnity that is unique in the valley.",
+          "sourceIds": ["michaels_2008", "korn_1976"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Fire, Water and Liberation",
+          "text": "Cremation at Pashupati brings together the elements of fire and water, both sacred in Hindu thought. Fire, Agni, carries the offering of the body to the gods and releases the soul, while the waters of the Bagmati purify the body before cremation and receive the ashes afterwards. The eldest son traditionally lights the pyre after circling it, and the family performs rituals guided by priests, including offerings of rice balls for the ancestors. Shiva, lord of the cremation ground and of transformation, presides over the process, and his temple above the ghats makes Pashupati one of the most auspicious places to die and be cremated. For many visitors, witnessing a cremation is a profound experience that challenges assumptions about death. In Hindu understanding it is not an end but a transition, overseen by the god who is both destroyer and liberator.",
+          "sourceIds": ["michaels_2008"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Rites of Passage",
+          "text": "Cremations take place at Arya Ghat throughout the day. The family brings the body wrapped in cloth, bathes the feet in the river, places the body on the pyre and performs rituals with the help of priests and ghat attendants. The pyre burns for several hours, and the ashes are then committed to the river. Following the cremation, the family observes a mourning period of about thirteen days, with rituals at home and sometimes at the ghats. Arya Ghat is also used for other rites, including ritual bathing on festival days. Visitors may observe from the east bank, but should remember that these are moments of deep grief for real families. Photography, if any, should be distant and discreet, and never of faces. Many families do not mind respectful observers, but some do, and their wishes must always come first.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "high"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "The River and the Air",
+          "text": "The greatest environmental challenge at Arya Ghat is the health of the Bagmati river, which has been heavily polluted by urban sewage and waste upstream. Campaigns led by the government and civil society, including a long-running weekly clean-up movement, have sought to restore the river, with some improvements but much work remaining. The burning of wood for cremations contributes to air pollution and deforestation, which prompted the construction of an electric crematorium at Pashupati. The 2015 earthquake affected some structures around the ghats, and repairs followed. The Pashupati Area Development Trust manages the ghats and works to balance ritual needs, environmental concerns and the pressures of large numbers of visitors. Visitors can contribute by not littering, respecting mourners and supporting organisations working for the river's revival, since the ghats are a living heritage.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Below you, on stone platforms beside the river, funeral fires are burning. This is Arya Ghat, the main cremation ghat of Pashupatinath, and for centuries Hindus have believed that being cremated here, in the shadow of Shiva's temple, frees the soul from the cycle of rebirth. Kings were cremated on these steps, including the royal family after the palace tragedy of 2001, and today families from every walk of life come here to say goodbye. Watch quietly and you will see a son circle the pyre before lighting it, and ashes returned to the Bagmati. Please remember that this is someone's grief, not a show: no close photos, no faces. What happens in the days that follow? Book a verified local storyteller nearby and let a guide explain the rites with care."
+      },
+      "nepaliSummary": "आर्यघाट पशुपतिनाथको मुख्य दाहसंस्कार घाट हो, जहाँ बागमती किनारमा दाहसंस्कार गर्दा मोक्ष प्राप्त हुने विश्वास छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:00-07:30",
+        "lightingNotes": "Morning mist and smoke soften the scene; never photograph identifiable mourners at any time.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "From the east bank, ghats and river without identifiable people." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique downstream toward the bridges." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique upstream along the river." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Empty platform stonework or a ghat shrine." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Riverfront with the temple roofs above the ghats." }
+        ],
+        "occlusionNotes": "Smoke from pyres, mourners and crowds on the bridges obscure the ghats.",
+        "restrictions": "Never photograph mourners or bodies closely; keep a respectful distance; follow trust staff instructions."
+      },
+      "walkingTourStop": { "sequence": 4, "dwellMinutes": 15, "talkingPoint": "Explain cremation rites with sensitivity and point out the electric crematorium." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Historical royal-use statement and the electric crematorium's opening date to cross-check." }
+    },
+    {
+      "id": "pas_vasuki_nath",
+      "names": { "en": "Vasuki Nath Mandir", "ne": "वासुकिनाथ मन्दिर", "romanized": "Vasukinath", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Vasuki Temple Pashupati"],
+      "monumentType": "SHRINE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "date unconfirmed; within a temple compound rebuilt in the late 17th century CE", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.7107, "lng": 85.3489, "elevationM": 1305, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 8, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 1,
+        "primaryMaterials": ["fired_brick", "gilt_repousse_copper"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["Vasuki, the serpent king, shown with a human upper body, serpent hood and coiled tail"],
+        "distinguishingFeatures": ["shrine inside the Pashupatinath compound visited before the main sanctum", "serpent imagery on the shrine"],
+        "confusableWith": ["pas_main_pagoda_courtyard", "bkt_naga_pokhari"],
+        "disambiguationTip": "Vasuki's shrine stands inside the restricted main courtyard; images taken from outside usually belong to the main temple record."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Guardian of Pashupati",
+          "text": "Within the Pashupatinath temple compound stands a shrine to Vasuki, the king of serpents, who is regarded as the guardian of the temple and its treasures. In Hindu mythology Vasuki served as the rope with which the gods and demons churned the cosmic ocean, and he coils around Shiva's neck as an ornament. Devotees traditionally honour Vasuki before worshipping Pashupati, asking the serpent guardian for permission and protection. The shrine's date has not been established in Saalik's sources, and since it lies inside the courtyard closed to non-Hindus, documentation must rely on permitted sources and on Hindu field collectors. The cult of serpents is deeply rooted in the Kathmandu Valley, where nagas are believed to have inhabited the primordial lake, and Vasuki's presence at Pashupati links the temple with this ancient layer of belief.",
+          "sourceIds": ["michaels_2008", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Shrine Within the Courtyard",
+          "text": "Vasuki's shrine is one of the many structures within the walled courtyard of Pashupatinath, which is crowded with smaller temples, shrines, lingams and images donated over the centuries. Descriptions indicate a shrine with gilded decoration and serpent imagery, placed so that devotees approaching the main temple can stop to honour the guardian first. Because non-Hindus cannot enter the courtyard, visitors usually know the shrine only from descriptions or from distant glimpses. The courtyard's layout, with the main temple at its centre and subsidiary shrines around it, reflects a common pattern in Hindu temple complexes, where attendant deities surround the principal god. Vasuki's position near the main temple emphasises his role as protector. Saalik's documentation of the courtyard relies on permitted photography and on Hindu collectors who may enter with the temple authorities' consent.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Serpent King",
+          "text": "Vasuki is usually depicted as a figure with a human upper body crowned by a multi-headed serpent hood and a serpent's coiled tail below. In the myth of the churning of the ocean, he allowed himself to be used as the churning rope, wrapped around Mount Mandara, as the gods and demons pulled him back and forth to extract the nectar of immortality. The poison released during the churning was swallowed by Shiva, turning his throat blue, and Vasuki remained close to Shiva ever after, adorning his neck. This story connects Vasuki, Shiva and the theme of sacrifice for the good of the world. In the Kathmandu Valley serpents are guardians of water, wealth and rain, and offerings to Vasuki may be made for prosperity, health and protection from snakebite. His image at Pashupati carries both pan-Hindu and local meanings.",
+          "sourceIds": ["pal_1974", "michaels_2008"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Permission Before Darshan",
+          "text": "Many devotees visiting Pashupatinath first worship Vasuki, offering flowers, milk and red powder, before proceeding to the main sanctum for darshan of the lingam. This sequence reflects the belief that the serpent guardian controls access to the god. During Nag Panchami, the festival of serpents in the monsoon, Vasuki receives special worship, and pictures of serpents are pasted above doorways across the valley to protect homes. On Maha Shivaratri the crowds that fill the courtyard also pay homage at Vasuki's shrine. Visitors who are not Hindu cannot observe these rituals directly, but they can learn about them from guides and watch the courtyard's activity from a distance on the east bank. Understanding Vasuki's role helps visitors appreciate the layered structure of worship at Pashupati, where every deity has its proper place in the sequence.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Documentation Within a Restricted Space",
+          "text": "Conservation within the Pashupatinath courtyard is managed by the Pashupati Area Development Trust in coordination with the temple's priests, and access for documentation is restricted. Vasuki's shrine, like other structures in the courtyard, is subject to the wear of constant worship: offerings of milk, oil and powder accumulate, smoke darkens surfaces, and crowds wear the floors. The 2015 earthquake left the main temple largely intact, but smaller structures in the complex required inspection. Detailed records of the courtyard's shrines are important for conservation planning and for protection against theft. Saalik's field programme will work only through permitted channels, using Hindu field collectors authorised by the trust where possible, and will not attempt unauthorised photography. This record is therefore marked for verification, and its visual identification data will stay limited until permitted documentation exists.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Before Hindu pilgrims enter the inner sanctum of Pashupatinath, many stop first at the shrine of Vasuki, king of the serpents, to ask permission. In Hindu myth, Vasuki let himself be used as the rope when gods and demons churned the cosmic ocean, and when a deadly poison rose from the waters, Shiva swallowed it, turning his throat blue. Vasuki has stayed by Shiva's side ever since, coiled around his neck, and here he guards Shiva's temple. His shrine is inside the courtyard, so only Hindus may see it up close, but from the east bank you can watch the stream of worshippers moving toward the god. Why do serpents guard so much in this valley? Book a verified local storyteller nearby and let a guide tell you the story of the churning ocean."
+      },
+      "nepaliSummary": "वासुकिनाथ पशुपतिनाथ मन्दिर परिसरभित्र रहेका नागराज वासुकिको स्थान हो, जसलाई पशुपतिको दर्शनअघि पुजिन्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:30-08:00",
+        "lightingNotes": "The courtyard is restricted; permitted exterior views from the east bank are best in morning light.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Permitted view toward the courtyard from outside." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique of the courtyard wall." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the main temple roofs." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Serpent imagery, only if photographed by authorised collectors." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Courtyard roofs seen from the east bank." }
+        ],
+        "occlusionNotes": "Courtyard walls and crowds block direct views.",
+        "restrictions": "Courtyard closed to non-Hindus; documentation only through authorised channels."
+      },
+      "walkingTourStop": { "sequence": 2, "dwellMinutes": 5, "talkingPoint": "Tell the churning-of-the-ocean story while viewing the courtyard." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Restricted interior: location within the courtyard, form and imagery must be confirmed by authorised collectors." }
+    },
+    {
+      "id": "pas_guhyeshwari",
+      "names": { "en": "Guhyeshwari Shakti Peeth", "ne": "गुह्येश्वरी शक्तिपीठ", "romanized": "Guhyeshwari", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Guhyeshwari Temple", "Guheshwari"],
+      "monumentType": "SHRINE",
+      "tradition": "SHARED_HINDU_BUDDHIST",
+      "era": { "dynasty": "Malla", "century": "17th century CE (present temple)", "foundingYearCE": null, "datingBasis": "chronicle", "patron": "Pratap Malla (attributed)" },
+      "geo": { "lat": 27.7113, "lng": 85.3537, "elevationM": 1310, "geofenceRadiusM": 30, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 8, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["gilt_repousse_copper", "fired_brick", "grey_stone"],
+        "guardianVahanas": ["four gilded serpents supporting the golden canopy"],
+        "deityMudrasWeapons": ["sacred water-filled pit representing the goddess"],
+        "distinguishingFeatures": ["golden canopy over a sunken sanctum within a walled courtyard", "temple on the east bank of the Bagmati upstream of Pashupatinath"],
+        "confusableWith": ["pas_main_pagoda_courtyard", "pas_vishwaroopa_courtyard"],
+        "disambiguationTip": "Guhyeshwari's courtyard is upstream on the east bank with a golden canopy held by serpents; the main Pashupatinath temple has two gilded tiered roofs on the west bank."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Where the Goddess Fell",
+          "text": "Guhyeshwari is one of the most sacred Shakti Peeths, the seats of the goddess, in South Asia. According to the myth of Sati, Shiva's wife, she immolated herself after her father insulted Shiva, and the grieving god carried her body across the world. To end his grief, Vishnu cut the body into pieces, and wherever a part fell, a Shakti Peeth arose. At Guhyeshwari the guhya, Sati's 'secret' part or womb, is said to have fallen, making the site a supreme seat of feminine power. The present temple is attributed to King Pratap Malla in the seventeenth century. Guhyeshwari is closely linked with Pashupatinath, and tradition holds that pilgrims should honour the goddess as well as the god. For Newar Buddhists the site is also sacred, associated with the goddess Nairatma and with the root of the lotus that bore Swayambhu's flame.",
+          "sourceIds": ["michaels_2008", "slusser_1982", "dowman_1995"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Golden Canopy Over a Sacred Pit",
+          "text": "Guhyeshwari's temple is distinctive: instead of a tiered pagoda roof, the central shrine is covered by a gilded canopy supported by four gilded serpents, whose bodies rise from the corners of the shrine and arch upward to hold the finial. Beneath the canopy, the sanctum contains a sacred pit or spring, covered by a vessel, which represents the goddess. The shrine stands in a walled courtyard on the east bank of the Bagmati, upstream from Pashupatinath, surrounded by smaller shrines and buildings. The courtyard is closed to non-Hindus, but parts of the temple can be glimpsed from outside. The use of serpents to support the canopy connects the goddess with the water spirits of the valley, and the gilded metalwork reflects the patronage of Malla kings and later devotees who adorned the shrine over the centuries.",
+          "sourceIds": ["slusser_1982", "korn_1976"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Goddess as Source",
+          "text": "At Guhyeshwari the goddess is not represented by a sculpted image but by a sacred water source, understood as her womb, the origin of creation. This aniconic form expresses the idea that the feminine power, Shakti, is the source from which all existence arises. In Tantric traditions Guhyeshwari is identified with Kali and other powerful forms of the goddess, and she may be worshipped with offerings that differ from the vegetarian offerings common at many temples. For Buddhists the site is associated with Nairatma, consort of Hevajra, and with the root of the lotus from which the Swayambhu flame emerged, so Buddhist devotees also come here. The serpents supporting the canopy and the water within link the goddess with fertility, life and the sacred waters of the valley, making this one of the most powerful shrines in Nepal.",
+          "sourceIds": ["dowman_1995", "michaels_2008"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Dashain and Tantric Worship",
+          "text": "Guhyeshwari is a major focus of worship during Dashain, the great festival of the goddess Durga, when large numbers of devotees visit and sacrifices are offered. Throughout the year devotees come to pray for fertility, protection and the fulfilment of wishes, and newly married couples may visit for blessings. Tantric practitioners regard the site as particularly powerful, and certain rituals are performed only by initiated priests. Many pilgrims visiting Pashupatinath include Guhyeshwari in their pilgrimage, walking the path along the river or through the Mrigasthali forest between the two temples. The temple is closed to non-Hindus, but visitors can walk around the outer area and see the gilded canopy from beyond the walls. Respectful behaviour is essential, since the shrine is one of the most sacred places in Nepal for millions of Hindus and Buddhists alike.",
+          "sourceIds": ["michaels_2008", "levy_1990"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Caring for a Sacred Spring",
+          "text": "Guhyeshwari's conservation involves not only its gilded metalwork and buildings but also the sacred water source at its heart, which depends on the health of the local hydrology. Changes in groundwater and the pollution of the Bagmati threaten water sources across the valley. The temple and its courtyard lie within the Pashupati monument zone and are managed by the Pashupati Area Development Trust together with the temple's priests. The 2015 earthquake affected structures in the area, and repairs were carried out where needed. The gilded canopy and serpents require periodic cleaning and regilding, coordinated with the temple's ritual calendar. Because the courtyard is closed to non-Hindus, documentation must rely on authorised collectors and permitted exterior views. Saalik's field programme will respect these restrictions while recording the temple's exterior, setting and approaches along the river and forest path.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Walk upstream along the river to a golden canopy held up by four gilded serpents. This is Guhyeshwari, one of the holiest seats of the goddess in all of South Asia. Hindu myth tells that when Shiva carried the body of his wife Sati across the world in grief, her body fell in pieces, and where her womb fell, this shrine arose. Inside, the goddess is not a statue but a sacred spring, the source of all creation. Tradition says pilgrims should honour Guhyeshwari as well as Pashupati, the goddess and the god together, and Newar Buddhists revere this place too. Only Hindus may enter, but from outside the walls you can see the serpents shining. Why is the goddess a spring? Book a verified local storyteller nearby and let a guide tell you the story of Sati."
+      },
+      "nepaliSummary": "गुह्येश्वरी सतीदेवीको अङ्ग खसेको मानिने प्रमुख शक्तिपीठ हो, जहाँ चार सुनौला नागले छत्र थामेका छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:30-08:00",
+        "lightingNotes": "The gilded canopy catches the early sun; capture exterior views only.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Golden canopy seen from the permitted outer area." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique of the courtyard wall and entrance." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the river path." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gilded serpents supporting the canopy, by telephoto." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple on the east bank with the river and forest." }
+        ],
+        "occlusionNotes": "Walls, crowds at the gate and offering stalls block the lower views.",
+        "restrictions": "Courtyard closed to non-Hindus; no photography inside."
+      },
+      "walkingTourStop": { "sequence": 11, "dwellMinutes": 12, "talkingPoint": "End at the goddess's seat and tell the story of Sati." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding attribution to Pratap Malla and the exterior visibility of the canopy to confirm." }
+    },
+    {
+      "id": "pas_kirateshwar",
+      "names": { "en": "Kirateshwar Mahadev", "ne": "किरातेश्वर महादेव", "romanized": "Kirateshwar", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Kirateshwar Temple", "Kirateshwar Sangeet Ashram"],
+      "monumentType": "SHRINE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "date unconfirmed; part of the historic Pashupati complex across many centuries", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7092, "lng": 85.3507, "elevationM": 1320, "geofenceRadiusM": 20, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 8, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["fired_brick", "whitewash_lime", "grey_stone"],
+        "guardianVahanas": ["Nandi bull before the shrine"],
+        "deityMudrasWeapons": ["Shiva as the Kirata hunter, worshipped as a lingam"],
+        "distinguishingFeatures": ["temple on the eastern slopes above the Bagmati", "open terrace used for classical music concerts on full-moon evenings"],
+        "confusableWith": ["pas_gorakhnath_shikhar"],
+        "disambiguationTip": "Kirateshwar sits on the east-bank slope beside an open concert terrace; Gorakhnath's tall white shikhara stands higher on the wooded Mrigasthali plateau."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Shiva the Hunter",
+          "text": "Kirateshwar Mahadev is a temple to Shiva in his form as Kirata, the hunter, on the eastern slopes of the Pashupati complex above the Bagmati. The name recalls the story, told in the Mahabharata and in the Sanskrit poem Kiratarjuniya, in which Shiva, disguised as a tribal hunter, tested the warrior Arjuna in combat before granting him a divine weapon. In Nepal the name also resonates with the Kirata peoples of the eastern hills, whom legend places among the early rulers of the Kathmandu Valley before the Licchavis. Saalik's sources have not established the temple's founding date, and its history will be gathered in the field. In recent decades Kirateshwar has become known for a remarkable cultural tradition: concerts of classical music held on full-moon evenings, organised by a music ashram associated with the temple, which draw musicians and listeners from across the city.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Temple and a Concert Ground",
+          "text": "Kirateshwar's temple stands on a terrace on the slopes east of the Bagmati, reached by paths and stairs from the riverbank and the Mrigasthali forest. Its architecture is modest, with a shrine housing a Shiva lingam and a Nandi bull facing it, surrounded by smaller shrines and an open area. This open space serves as the venue for the full-moon concerts, where musicians sit before the temple and audiences gather on the ground and terraces. The setting, with trees, temple roofs and views over the river toward the main Pashupatinath temple, creates an atmosphere of calm. As darkness falls during a concert, lamps and moonlight illuminate the scene. Field collectors are asked to document the temple's form, any inscriptions and the arrangement of the concert ground, which shows how a sacred space can also become a living cultural venue.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Testing the Warrior",
+          "text": "In the story of Kirata and Arjuna, the hero Arjuna was performing austerities in the Himalayas to obtain divine weapons for the coming war of the Mahabharata. Shiva appeared as a wild hunter, and when both shot arrows at the same boar, they quarrelled over the kill and fought. Arjuna was defeated, and recognising the god, he surrendered. Pleased by his courage and devotion, Shiva revealed himself and granted Arjuna the Pashupata weapon. The story links the Kirata form of Shiva with the name Pashupati, the lord of creatures, whose temple stands nearby. The lingam at Kirateshwar represents Shiva's presence, and the Nandi before it is his loyal vehicle. For devotees the story teaches that the god may appear in unexpected forms, and that humility before him leads to grace, a theme that resonates with Pashupati's role as protector of all beings.",
+          "sourceIds": ["pal_1974", "michaels_2008"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Music Under the Full Moon",
+          "text": "On full-moon evenings Kirateshwar hosts concerts of Hindustani classical music, a tradition organised for many years by a music ashram connected with the temple. Musicians, from renowned masters to young students, perform ragas on sitar, sarod, flute, tabla and voice, offering their music to Shiva and to the audience. Concerts are often free and open to all, and they attract a mix of devotees, music lovers and curious visitors. The tradition reflects the deep link between music and devotion in Hindu culture, in which Shiva is the lord of dance and the source of sound. On other days the temple receives regular worship from devotees visiting the Pashupati complex, especially on Mondays and during Shivaratri. Visitors who time their trip to a full moon can enjoy one of Kathmandu's most enchanting cultural experiences in a sacred and peaceful setting.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Sustaining Heritage and Culture",
+          "text": "Kirateshwar's heritage is both architectural and cultural. The temple and its surroundings lie within the Pashupati monument zone, managed by the Pashupati Area Development Trust, and face the same challenges as other parts of the complex: erosion on the slopes, the effects of the 2015 earthquake and pressure from visitors. At the same time, the full-moon concert tradition is an example of intangible heritage that depends on the commitment of musicians, organisers and audiences rather than on stone and timber. Supporting the concerts by attending, donating or helping to publicise them helps to sustain this living tradition. Documentation of the temple's physical structure and of the concert tradition, including its history and the musicians involved, would make a valuable contribution to Nepal's cultural record. Saalik's field collectors are asked to record both aspects with the organisers' consent.",
+          "sourceIds": ["ird_heritage", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Climb the slope east of the river and you reach a quiet temple to Shiva as Kirata, the hunter. Legend says Shiva once disguised himself as a wild hunter to test the hero Arjuna; they fought over a boar, Arjuna lost, and only then did the god reveal himself and reward his courage. But Kirateshwar has a modern magic too. On full-moon evenings, classical musicians gather here to play ragas on sitar, flute and tabla as an offering to Shiva, and anyone can sit on the terraces and listen as the moon rises over Pashupati. Check the lunar calendar before you go. Who will be playing at the next full moon? Book a verified local storyteller nearby and let a guide bring you to Kathmandu's most enchanting concert hall."
+      },
+      "nepaliSummary": "किरातेश्वर महादेव पशुपति क्षेत्रको पूर्वी भिरालोमा रहेको शिवको किरात रूपको मन्दिर हो, जहाँ पूर्णिमामा शास्त्रीय सङ्गीत कार्यक्रम हुन्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "LATE_AFTERNOON_GOLDEN",
+        "localTimeWindow": "16:30-18:00",
+        "lightingNotes": "Late light falls on the east slope; full-moon concerts need low-light settings without flash.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Shrine and Nandi square-on." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the concert ground." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique toward the river and main temple." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Lingam doorway or Nandi detail." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple terrace with the Pashupati complex below." }
+        ],
+        "occlusionNotes": "Concert audiences fill the terrace on full-moon nights and trees shade it in the afternoon.",
+        "restrictions": "No flash during concerts; respect worshippers at the shrine."
+      },
+      "walkingTourStop": { "sequence": 9, "dwellMinutes": 8, "talkingPoint": "Tell the Kirata and Arjuna story and mention the full-moon concerts." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding date unconfirmed; confirm the current concert schedule with the organisers." }
+    },
+    {
+      "id": "pas_gorakhnath_shikhar",
+      "names": { "en": "Gorakhnath Shikhar Mandir", "ne": "गोरखनाथ शिखर मन्दिर", "romanized": "Gorakhnath", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Gorakhnath Temple Mrigasthali"],
+      "monumentType": "SHIKHARA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "date unconfirmed; within the long history of the Mrigasthali plateau across many centuries", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.71, "lng": 85.3505, "elevationM": 1325, "geofenceRadiusM": 30, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 8, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["whitewash_lime", "fired_brick", "grey_stone"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["Gorakhnath's footprints or image venerated by the Nath order", "trident emblems"],
+        "distinguishingFeatures": ["tall white shikhara on the wooded Mrigasthali plateau", "surrounded by smaller shrines and lingams in the forest"],
+        "confusableWith": ["pas_kirateshwar", "ktm_kasthamandap"],
+        "disambiguationTip": "Gorakhnath's shikhara is the tall white tower on the Mrigasthali plateau east of the river; Kasthamandap's Gorakhnath shrine is inside a timber pavilion in Kathmandu."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Yogi of the Deer Forest",
+          "text": "On the Mrigasthali plateau, the wooded hill east of the Bagmati at Pashupati, stands a shikhara temple dedicated to Gorakhnath, the great yogi of the Nath tradition. Mrigasthali means 'place of deer', and legend tells that Shiva and Parvati roamed here in the form of deer. Gorakhnath, revered by Hindus and linked in the valley's legends with the rain-bringing deity Matsyendranath, is the patron of the Nath yogis, whose ascetic order has long been present at Pashupati. The Shah dynasty, which came from Gorkha, traced a special relationship with Gorakhnath, and the name of Gorkha itself is associated with him. Saalik's sources have not established the founding date of this temple, and its history will be gathered in the field. The plateau and its shrines form a quieter counterpart to the busy temple and ghats below.",
+          "sourceIds": ["michaels_2008", "locke_1980"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A White Tower in the Forest",
+          "text": "The Gorakhnath temple is a tall shikhara, a tapering tower in the north Indian style, rising above the trees of Mrigasthali and visible from the riverbank below. Its whitewashed surfaces and simple form contrast with the gilded roofs of the main Pashupatinath temple across the river. Around it, the plateau holds a collection of smaller shrines, lingams, chaityas and images, set among trees and paths. The forest provides shade and a sense of seclusion, and monkeys move freely among the shrines. Paths lead from the plateau down to the river, to the Pandra Shivalaya terraces and to Guhyeshwari upstream. The setting, with a sacred forest surrounding the temple, reflects the importance of groves in Hindu sacred geography, where the presence of the gods is felt in nature as well as in architecture. Field collectors should document the temple and its neighbouring shrines.",
+          "sourceIds": ["saalik_editorial", "michaels_2008"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Nath Yogis and the Deer",
+          "text": "Gorakhnath is venerated in the Nath tradition as a perfected master of yoga, often represented by his footprints or by an image of a yogi with large earrings, the distinctive mark of Nath ascetics, who are called kanphata, 'split-eared'. The trident and other Shaiva emblems mark the temple as part of Shiva's domain. The legend of Shiva and Parvati taking the form of deer at Mrigasthali gives the plateau its name and its association with divine play. In one widely told account, Shiva lived here as a deer to escape the gods who sought him, until he was discovered and his horn broke, becoming a lingam. These stories connect the forest with the origin of Pashupati's sanctity. Visitors may encounter Nath sadhus, recognisable by their earrings and ash-covered bodies, especially during festivals, when ascetics from across South Asia gather at Pashupati.",
+          "sourceIds": ["michaels_2008", "dowman_1995"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Sadhus, Shivaratri and Forest Walks",
+          "text": "Mrigasthali and the Gorakhnath temple come alive during Maha Shivaratri, when thousands of sadhus, including Nath yogis, gather at Pashupati, camping in the forest and around the temples, lighting fires and performing rituals. Pilgrims walk through the plateau between the main temple and Guhyeshwari, stopping at shrines along the way. On ordinary days the plateau is peaceful, used by devotees for quiet worship and by local residents for walks. Monkeys are numerous and can be bold, so visitors should keep food out of sight. The temple's rituals are maintained by its custodians, and offerings are made by Nath devotees and others who revere Gorakhnath. For visitors, a walk through Mrigasthali offers a chance to experience the Pashupati complex beyond the crowds, discovering small shrines and views across the river to the temple roofs and the ghats below.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protecting the Sacred Forest",
+          "text": "Mrigasthali's forest is an important part of the Pashupati monument zone, providing green space and habitat in a densely urbanised area. Its protection is a priority for the Pashupati Area Development Trust, which manages the area together with conservation of the temples. Threats include encroachment, litter, erosion and the pressure of large crowds during festivals. The 2015 earthquake damaged some structures on the plateau, and repairs followed. The Gorakhnath shikhara, as a tall masonry tower, is vulnerable to earthquakes and must be monitored. Small shrines and images in the forest are at risk of weathering and theft, so documentation is valuable. Deer have been kept on the plateau as a living reminder of the legend that gives it its name. Visitors can help by staying on paths, avoiding litter and treating the forest and its animals with respect.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Leave the busy riverbank and climb into the forest on the east bank. This is Mrigasthali, the place of deer, where legend says Shiva and Parvati once wandered in the form of deer. Rising above the trees is a tall white tower, the temple of Gorakhnath, the great yogi of the Nath order, whose followers wear heavy earrings through split ears. Gorakhnath matters to all of Nepal: the Shah kings came from Gorkha, a town whose name is linked with him. On the night of Shivaratri this forest fills with sadhus and their fires. Today, listen for monkeys in the branches and keep your snacks hidden. Why did Shiva hide here as a deer, and who found him? Book a verified local storyteller nearby and let a guide walk the sacred forest with you."
+      },
+      "nepaliSummary": "मृगस्थलीको जङ्गलमा रहेको गोरखनाथ शिखर मन्दिर नाथ योगीहरूका गुरु गोरखनाथलाई समर्पित छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "Trees filter the light; the white tower reads best against the morning sky from the clearing.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Shikhara square-on from the clearing." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the surrounding shrines." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the forest path." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Doorway emblems or the footprint shrine." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Tower rising above Mrigasthali's trees, seen from the river." }
+        ],
+        "occlusionNotes": "Trees, monkeys and sadhu camps during festivals obstruct views.",
+        "restrictions": "Keep food hidden from monkeys; respect sadhus' privacy."
+      },
+      "walkingTourStop": { "sequence": 8, "dwellMinutes": 10, "talkingPoint": "Tell the deer legend and introduce the Nath yogis." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding date and current access to the shikhara interior to confirm." }
+    },
+    {
+      "id": "pas_pandra_shivalaya",
+      "names": { "en": "Pandra Shivalaya", "ne": "पन्ध्र शिवालय", "romanized": "Pandra Shivalaya", "romanizedLanguage": "Nepali" },
+      "aliases": ["Fifteen Shivalayas", "Fifteen Shiva Shrines"],
+      "monumentType": "DOME_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Shah", "century": "Shah and Rana period centuries CE (attributed)", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7104, "lng": 85.3496, "elevationM": 1305, "geofenceRadiusM": 30, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 8, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["grey_stone", "whitewash_lime", "fired_brick"],
+        "guardianVahanas": ["small Nandi figures before some shrines"],
+        "deityMudrasWeapons": ["Shiva lingam in each shrine"],
+        "distinguishingFeatures": ["row of identical small domed shrines on the east-bank terraces", "shrines face the main temple across the Bagmati"],
+        "confusableWith": ["ktm_kotilingeshwara_mahadev", "pas_arya_ghat"],
+        "disambiguationTip": "The Pandra Shivalaya are a row of small domed shrines on the east-bank terraces facing the ghats; Kotilingeshwara in Kathmandu is a single domed shrine in a palace square."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Fifteen Shrines Facing Shiva",
+          "text": "On the terraces of the east bank of the Bagmati, facing the main temple and the cremation ghats, stands a row of small domed shrines known as the Pandra Shivalaya, the fifteen Shiva shrines. Each houses a Shiva lingam, and together they form one of the most photographed views at Pashupati, seen from the riverbank or from the terraces above. Shrines of this kind were often built as memorials, endowed by families in memory of deceased relatives, and the Pandra Shivalaya are commonly described as memorial shrines of the Shah and Rana periods, though Saalik's sources have not confirmed their exact dates or patrons. Their position looking across the river toward Pashupatinath allowed the souls they commemorate to remain in perpetual view of the god. The terraces also became a favourite spot for sadhus, pilgrims and visitors watching the activity below.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Row of Domes",
+          "text": "The Pandra Shivalaya are small, near-identical shrines, each a cube topped by a bell-shaped dome in the gumbhaj style, the same form seen at Kotilingeshwara in Kathmandu Durbar Square. They are arranged in a row along the terraces, creating a rhythmic sequence of domes when viewed from the river. Each shrine has a doorway framing a lingam, and some are accompanied by small Nandi figures. The shrines are built of brick and stone, plastered and whitewashed, and their simplicity contrasts with the gilded splendour of the main temple across the river. The terraces on which they stand are linked by steps that lead down to the river and up toward Mrigasthali. The ensemble is a fine example of how repetitive, modest forms can create a powerful architectural effect when they are placed in a carefully chosen setting above a sacred river.",
+          "sourceIds": ["korn_1976", "michaels_2008"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Lingams for the Departed",
+          "text": "Each of the fifteen shrines contains a Shiva lingam, the abstract form of the god that represents his infinite creative power. Building a shrine with a lingam in memory of a deceased relative was believed to bring merit to the departed soul and to the family, helping the soul toward liberation. The placement facing Pashupatinath and the cremation ghats reinforces this meaning: the shrines watch over the place where bodies are returned to the elements, and they gaze toward the god who grants liberation. The dome form, associated with the heavens, adds another layer of symbolism. For visitors, the row of near-identical shrines offers a meditative image of repetition and devotion. Pilgrims often pause at the shrines, making offerings at each, and sadhus sometimes sit in their doorways, adding colourful figures to a scene that photographers frequently capture.",
+          "sourceIds": ["michaels_2008", "pal_1974"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "A Vantage Point for Devotion",
+          "text": "The Pandra Shivalaya are part of the circuit that devotees and visitors walk at Pashupati, especially on the east bank. Pilgrims offer flowers, water and bel leaves at the lingams, and on Mondays and during Shivaratri the shrines receive more offerings. Sadhus, ascetics devoted to Shiva, often gather on the terraces, and some offer to pose for photographs in exchange for a donation, a practice that visitors should approach respectfully. The terraces are also the main viewpoint from which non-Hindu visitors watch cremations and the evening aarti across the river. This makes the area one of the busiest at Pashupati, and visitors should be mindful of mourners on the opposite bank and of worshippers at the shrines. Sitting quietly on the terraces at dusk, as lamps are lit across the river, is a deeply moving experience.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "high"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Weathering on the Riverbank",
+          "text": "The Pandra Shivalaya stand close to the river and are exposed to humidity, monsoon floods, smoke from the cremation ghats and the wear of heavy visitor traffic. Their plaster and whitewash must be renewed periodically, and the terraces require maintenance to prevent erosion. The 2015 earthquake caused damage to some structures on the east bank, and the shrines were inspected and repaired where needed. The Pashupati Area Development Trust manages the area and has undertaken works to improve the riverbanks and visitor facilities. The pollution of the Bagmati affects the environment around the shrines, so river clean-up efforts matter for their setting. Documentation of each shrine, including any inscription recording its patron, would help clarify their history and support conservation. Saalik's field collectors are asked to photograph and number all fifteen shrines systematically.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Look along the terrace on the east bank and count the small white domes. There should be fifteen: the Pandra Shivalaya, fifteen shrines to Shiva, each holding a lingam and each gazing across the river at the golden roofs of Pashupatinath and the cremation fires below. Families built shrines like these in memory of loved ones, so that their souls would stay forever within sight of the god who grants liberation. Sadhus in saffron sometimes sit in the doorways, and at dusk the terraces fill with people watching the lamps of the evening aarti across the water. Sit quietly for a while; this is the best seat at Pashupati. Whose memory does each shrine keep? Book a verified local storyteller nearby and let a guide tell you the stories behind the domes."
+      },
+      "nepaliSummary": "पन्ध्र शिवालय बागमतीको पूर्वी किनारका पन्ध्र वटा गुम्बजाकार शिव मन्दिर हुन्, जसले पशुपतिनाथतिर हेरिरहेका छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "LATE_AFTERNOON_GOLDEN",
+        "localTimeWindow": "16:30-18:00",
+        "lightingNotes": "Late sun from the west lights the row of domes; the evening aarti across the river follows at dusk.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Row of domes from the riverside path with all shrines in frame." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique along the row." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique toward the main temple across the river." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "A single shrine doorway with its lingam." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Terraces with the shrines, river and temple roofs." }
+        ],
+        "occlusionNotes": "Sadhus, visitors and vendors crowd the terraces, and cremation smoke drifts across.",
+        "restrictions": "Donations are expected when photographing sadhus; be discreet toward mourners across the river."
+      },
+      "walkingTourStop": { "sequence": 7, "dwellMinutes": 10, "talkingPoint": "Sit on the terraces and explain memorial shrines and the evening aarti." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Number, dates and patrons of the shrines to confirm from inscriptions." }
+    },
+    {
+      "id": "pas_ram_mandir",
+      "names": { "en": "Ram Mandir, Pashupati", "ne": "राम मन्दिर (पशुपति)", "romanized": "Ram Mandir", "romanizedLanguage": "Nepali" },
+      "aliases": ["Ram Temple Pashupati"],
+      "monumentType": "PILGRIM_COMPLEX",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Shah", "century": "date unconfirmed; likely Shah-period centuries CE", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7096, "lng": 85.3488, "elevationM": 1302, "geofenceRadiusM": 25, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 8, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 1,
+        "primaryMaterials": ["fired_brick", "whitewash_lime"],
+        "guardianVahanas": ["Hanuman image at the entrance"],
+        "deityMudrasWeapons": ["Rama with bow beside Sita, Lakshmana and Hanuman"],
+        "distinguishingFeatures": ["temple complex on the west bank south of the main temple", "courtyard used as a gathering place for sadhus during Shivaratri"],
+        "confusableWith": ["pas_bachhareshwari"],
+        "disambiguationTip": "Ram Mandir is the larger courtyard complex with Rama's family in the sanctum; Bachhareshwari is a small shrine with skeletal carvings near the ghats."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Rama at Shiva's Temple",
+          "text": "At Pashupati, the realm of Shiva, stands a temple dedicated to Rama, the hero of the Ramayana and an avatar of Vishnu. Its presence reflects the inclusive character of Hindu worship at Pashupati, where devotees of Shiva, Vishnu and the goddess share the sacred landscape. The Ram Mandir, on the western bank south of the main temple, is known as a gathering place for sadhus, especially during Maha Shivaratri, when ascetics from across Nepal and India converge on the complex. Saalik's desk research has not established the temple's founding date or patron, which will be documented in the field. The temple's association with sadhus gives it a distinctive atmosphere, and it is one of the places where visitors can encounter the rich diversity of ascetic traditions that make Pashupati one of the most important pilgrimage destinations in South Asia.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Courtyard for Pilgrims",
+          "text": "The Ram Mandir is a temple complex with a shrine and a courtyard surrounded by buildings that provide space for pilgrims and ascetics. Its architecture reflects the practical needs of a pilgrim centre, with rooms, verandas and open spaces where sadhus can stay, cook and perform rituals during festivals. The shrine houses images of Rama and his family, and the entrance may be guarded by an image of Hanuman, Rama's devoted monkey ally. The complex's modest, functional design contrasts with the grand architecture of the main temple, but it plays an important role in the life of the Pashupati complex, especially during festivals when thousands of pilgrims need shelter. Field collectors are asked to document the layout, the shrine and any inscriptions, recording the complex's form and its relationship to the ghats and the main temple nearby.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Rama, Sita, Lakshmana and Hanuman",
+          "text": "Ram temples typically enshrine Rama with his wife Sita, his brother Lakshmana and his devoted ally Hanuman, representing the ideals of righteousness, devotion and loyalty celebrated in the Ramayana. Rama is shown with his bow, Sita at his side, Lakshmana bearing his own weapons and Hanuman kneeling in devotion. The epic is deeply woven into Nepali culture: Sita is believed to have been born in Janakpur in Nepal's southern plains, which makes the story especially meaningful to Nepalis. At Pashupati, the presence of Rama alongside Shiva reflects the tradition that Rama himself worshipped Shiva and that the two gods honour each other. For visitors, the temple offers an introduction to the Ramayana, whose scenes also appear on the stone friezes of Patan's Krishna Mandir, and to the continuity of devotion across Hindu traditions.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Sadhus and Shivaratri",
+          "text": "During Maha Shivaratri the Ram Mandir becomes one of the main gathering points for sadhus, who come from across South Asia to celebrate the great night of Shiva at Pashupati. Ascetics of different orders, some with ash-covered bodies and matted hair, others in saffron robes, camp in and around the temple, light sacred fires and receive visitors. The atmosphere is intense, colourful and sometimes chaotic. Ram Navami, the festival of Rama's birth in spring, and Vivaha Panchami, celebrating the marriage of Rama and Sita, are important occasions at the temple itself. On ordinary days the temple receives regular worship from devotees. Visitors are welcome to observe, but should be aware that some sadhus expect donations for photographs and that respect for their spiritual practice should guide every interaction. A guide can help visitors navigate the scene respectfully.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Managing Festival Pressure",
+          "text": "The Ram Mandir's role as a pilgrim centre means that it experiences intense use during festivals, when thousands of people may crowd its courtyard and surroundings. This places stress on its buildings, sanitation and services, and the Pashupati Area Development Trust organises arrangements for sadhus and pilgrims during Shivaratri. The 2015 earthquake affected structures in the complex, and repairs were carried out where needed. Fires lit by sadhus during festivals require careful management to prevent damage. The temple's day-to-day maintenance depends on its custodians and on the trust. Documentation of the temple's physical form and history is needed, as published sources say little about it. Saalik's field collectors are asked to record the complex on an ordinary day and, if possible, during Shivaratri, to capture both its architecture and its role in the great festival.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "In the middle of Shiva's holiest shrine in Nepal, you will find a temple to Rama, hero of the Ramayana. Inside, Rama stands with his bow beside Sita, his brother Lakshmana and faithful Hanuman. Nepalis feel a special bond with this story, because Sita is said to have been born in Janakpur, in Nepal's southern plains. On the night of Shivaratri, this courtyard fills with sadhus from across South Asia, ash-covered and saffron-robed, lighting sacred fires and welcoming pilgrims. On other days it is calm, and you can sit and listen to devotional songs. Many sadhus expect a small donation for photographs, so always ask first. How did Rama honour Shiva in the epic? Book a verified local storyteller nearby and let a guide introduce you to the ascetics of Pashupati."
+      },
+      "nepaliSummary": "पशुपति क्षेत्रको राम मन्दिरमा राम, सीता, लक्ष्मण र हनुमानको पूजा हुन्छ; शिवरात्रिमा यहाँ साधुहरू जम्मा हुन्छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "The courtyard catches morning light; sadhu fires produce smoke during festivals.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Shrine entrance square-on with the Hanuman image." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique of the courtyard." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the pilgrim quarters." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Doorway decoration; the sanctum only with permission." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Complex in relation to the ghats and main temple." }
+        ],
+        "occlusionNotes": "Sadhus and pilgrims fill the courtyard during festivals.",
+        "restrictions": "Ask before photographing sadhus; donations are customary; the sanctum may be restricted."
+      },
+      "walkingTourStop": { "sequence": 5, "dwellMinutes": 8, "talkingPoint": "Introduce sadhu traditions and Rama's place at Shiva's shrine." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding date, patron and exact location unconfirmed; field documentation required." }
+    },
+    {
+      "id": "pas_vishwaroopa_courtyard",
+      "names": { "en": "Vishwaroopa Courtyard", "ne": "विश्वरूप मन्दिर", "romanized": "Vishwarup", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Vishwarup Temple", "Vishwaroop Mandir"],
+      "monumentType": "SHRINE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Modern", "century": "date unconfirmed; assigned to recent centuries pending field survey", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.711, "lng": 85.3525, "elevationM": 1315, "geofenceRadiusM": 25, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 8, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["whitewash_lime", "gilt_repousse_copper"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["colossal many-armed image of the cosmic form, Vishwarupa"],
+        "distinguishingFeatures": ["walled temple courtyard on the east bank near Guhyeshwari", "closed to non-Hindus"],
+        "confusableWith": ["pas_guhyeshwari", "chg_vishwaroopa_relief"],
+        "disambiguationTip": "Pashupati's Vishwaroopa is a walled courtyard temple near Guhyeshwari; Changu Narayan's Vishwaroopa is a Licchavi stone relief in an open temple courtyard."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Cosmic Form at Pashupati",
+          "text": "On the east bank of the Bagmati, near Guhyeshwari, stands a temple courtyard dedicated to Vishwarupa, the cosmic form of the divine, in which the god reveals himself as containing the entire universe. The concept comes from the Bhagavad Gita, where Krishna shows his universal form to Arjuna on the battlefield of Kurukshetra, and it is also applied to Shiva in Shaiva traditions. At Pashupati the Vishwarupa temple is known for a large image of the cosmic form, and it is closed to non-Hindus. Saalik's desk research has not established the temple's date or patron, and published descriptions are brief. Its position near Guhyeshwari suggests a role in the pilgrimage circuit linking the god and the goddess. This record is marked for verification, and the field team will document the temple's history with the permission of its custodians.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Walled Temple Courtyard",
+          "text": "The Vishwarupa temple stands within a walled courtyard, entered through a gateway, with the main shrine housing the cosmic image. Because the temple is closed to non-Hindus, its interior is known mainly from descriptions, and the visible exterior shows whitewashed walls and decorative elements. The courtyard plan, with a central shrine surrounded by enclosing walls and smaller buildings, is common in the Pashupati complex. The temple's position on the slopes east of the river, on the route between the Mrigasthali forest and Guhyeshwari, places it within a landscape of shrines, paths and trees. Field collectors are asked to document the exterior, the gateway and any inscriptions, and to obtain permission from the custodians before attempting any interior photography, which may not be permitted at all. The record will be updated as verified information becomes available.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Seeing the Universe in God",
+          "text": "The Vishwarupa image represents the deity with countless heads, arms and eyes, containing gods, beings and worlds within his body. In the Bhagavad Gita, Arjuna, overwhelmed by the vision, describes seeing the whole cosmos, all the gods and all creatures in Krishna's form, blazing like a thousand suns. The image expresses the idea that the divine is both the source and the totality of existence. In Nepal the most famous representation of Vishwarupa is the Licchavi stone relief at Changu Narayan, carved about fifteen centuries ago, and the image at Pashupati continues this theme in a later form. Seeing such an image, devotees are reminded of the vastness of the divine and the smallness of individual concerns. For visitors, understanding Vishwarupa helps to interpret the many images in the valley that show gods with multiple arms and heads.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Pilgrimage Between God and Goddess",
+          "text": "Pilgrims walking between Pashupatinath and Guhyeshwari pass near the Vishwarupa temple, and many stop to worship the cosmic form. The temple receives offerings during major festivals, including Maha Shivaratri and Dashain, when the Pashupati complex is crowded with devotees. Because it is closed to non-Hindus, visitors of other faiths can only observe from outside. The route through this part of the complex, with its shrines, forest and river views, is pleasant to walk and less crowded than the area around the main temple. A guide can explain the meaning of the Vishwarupa image and its place in the pilgrimage circuit, and can help visitors understand which areas are open to them. Respecting the restrictions at temples like this one is an essential part of visiting Pashupati responsibly, since these are active places of worship for Hindus.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Documenting a Restricted Temple",
+          "text": "Conservation of the Vishwarupa temple falls within the responsibilities of the Pashupati Area Development Trust and the temple's custodians. Its restricted access limits public documentation, and published information about its structure and condition is scarce. The 2015 earthquake affected buildings in the area, and the temple's condition after the earthquake should be recorded. The large image inside requires care, particularly if it is painted or gilded, since smoke from lamps and incense can darken surfaces. Saalik's field programme will approach the temple through permitted channels, documenting the exterior and seeking information from custodians about the temple's history, date and condition. Until then its visual identification data remain limited. This careful approach respects religious restrictions while still building the record needed for heritage planning and accurate visitor information at Pashupati.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Near Guhyeshwari, behind high walls, a temple holds an image of the god in his universal form, Vishwarupa, with countless heads, arms and eyes, the whole cosmos contained in one body. In the Bhagavad Gita, Krishna reveals this form to Arjuna before battle, and Arjuna says it blazed like a thousand suns. Only Hindus may enter here, but the idea is worth carrying with you. The oldest and most famous Vishwarupa in Nepal is a stone carving about fifteen hundred years old at Changu Narayan, on a hilltop east of the valley. Saalik's field team is still documenting this temple's own story. How do you carve the whole universe in stone? Book a verified local storyteller nearby and let a guide take you to see both versions."
+      },
+      "nepaliSummary": "विश्वरूप मन्दिर पशुपति क्षेत्रको पूर्वी भागमा गुह्येश्वरी नजिक रहेको, ईश्वरको ब्रह्माण्डीय रूपको मूर्ति भएको मन्दिर हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "Exterior views only; morning light falls on the east-bank slope.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Gateway square-on from the path." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique of the courtyard wall." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique toward Guhyeshwari." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gateway decoration or any inscription." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple within the east-bank landscape." }
+        ],
+        "occlusionNotes": "Walls block interior views and trees line the path.",
+        "restrictions": "Closed to non-Hindus; no interior photography without explicit permission."
+      },
+      "walkingTourStop": { "sequence": 10, "dwellMinutes": 6, "talkingPoint": "Explain the cosmic form before the final stop at Guhyeshwari." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Temple identity, date and image description unconfirmed; the field team should consult custodians." }
+    },
+    {
+      "id": "pas_panch_deval",
+      "names": { "en": "Panch Deval", "ne": "पञ्चदेवल", "romanized": "Panchadeval", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Panch Deval Temple Complex", "Five Temples of Pashupati"],
+      "monumentType": "PILGRIM_COMPLEX",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Shah", "century": "19th century CE (attributed)", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7091, "lng": 85.3483, "elevationM": 1303, "geofenceRadiusM": 30, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 8, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["whitewash_lime", "fired_brick", "grey_stone"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["five shrines arranged within a walled courtyard"],
+        "distinguishingFeatures": ["courtyard enclosed by five temples on the west bank south of the main temple", "complex used as a care home for elderly residents"],
+        "confusableWith": ["pas_pandra_shivalaya", "pas_ram_mandir"],
+        "disambiguationTip": "Panch Deval is a walled courtyard of five temples with residential buildings; the Pandra Shivalaya are a row of small domed shrines on open terraces across the river."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Five Temples and a Home for Elders",
+          "text": "Panch Deval, meaning 'five temples', is a temple complex on the western bank of the Bagmati at Pashupati, south of the main temple, in which five shrines stand within a walled courtyard. Its date and patrons have not been established in Saalik's sources; it is commonly associated with the Shah period, but this attribution must be confirmed from inscriptions or archival records. In recent decades the complex has served as a care home for elderly people, many of whom come to Pashupati to spend their final years near the sacred river, in keeping with the belief that death at Pashupati brings liberation. This combination of temples and social care makes Panch Deval unusual among the valley's heritage sites. It reflects a long tradition in which sacred complexes provided shelter for pilgrims, ascetics and the vulnerable, alongside the worship of the gods.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Courtyard of Shrines",
+          "text": "The complex consists of a walled courtyard in which five shrines are arranged, surrounded by buildings that provide rooms and services for the residents of the care home. The shrines' forms, materials and decoration should be documented in the field, as published descriptions are limited. The courtyard plan, with shrines at its centre and residential wings around it, echoes the quadrangular layout common in Newar architecture and in pilgrim complexes across the valley. Whitewashed walls and stone paving give the courtyard a calm appearance, contrasting with the crowds and smoke of the ghats nearby. Because the complex is a home for elderly residents, its spaces are lived in rather than purely ceremonial, and the needs of residents shape how it is used and maintained. Field collectors are asked to record the layout and shrines only with the permission of the care home's management.",
+          "sourceIds": ["saalik_editorial", "korn_1976"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Five Deities",
+          "text": "Complexes of five temples in the Hindu tradition are often associated with panchayatana worship, in which five deities, typically Shiva, Vishnu, Surya, Ganesh and the goddess, are honoured together, with one of them at the centre. Whether Panch Deval follows this pattern must be confirmed by identifying the deities in its shrines. If it does, the complex would express an inclusive vision of the divine, in which different gods are understood as aspects of a single reality, a theme also seen in the Hari Shankar form of Vishnu and Shiva united. Its location at Pashupati, the great centre of Shiva worship, suggests that Shiva may hold a central place. For residents of the care home, the shrines provide daily opportunities for worship close to where they live. For visitors, the complex illustrates how religious architecture and compassionate care are combined at the valley's holiest Hindu site.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Spending Final Years Beside the River",
+          "text": "Many Hindus believe that dying at Pashupati and being cremated beside the Bagmati frees the soul from rebirth, and for centuries elderly people have come to the area to spend their final years near the god. Panch Deval's role as a care home continues this tradition in a modern, organised form, providing shelter, food and care for elderly residents, many of whom have no family to support them. Residents take part in daily worship at the shrines and at the main temple, and volunteers and donors visit to help and make offerings. During festivals such as Maha Shivaratri and Teej, the complex is part of the wider celebrations at Pashupati. Visitors may wish to support the residents through donations, but should respect their privacy and dignity, avoiding photography of residents without consent and following the guidance of the care home's staff at all times.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Caring for Buildings and People",
+          "text": "Conservation at Panch Deval must balance the heritage value of its temples with the needs of the elderly people who live there. The 2015 earthquake damaged structures at Pashupati, and the safety of buildings housing vulnerable residents was a particular concern, requiring inspection and repair. Modern facilities such as sanitation, medical rooms and accessibility improvements must be integrated with the historic fabric sensitively. The Pashupati Area Development Trust and the agencies responsible for the care home share responsibility for the complex. Documentation of the shrines, their deities and any inscriptions would clarify the complex's history and support conservation planning. Saalik's field collectors are asked to approach the complex only through its management, photograph the shrines and courtyard without identifying residents, and record the history as told by staff and long-term residents, with their consent.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Behind these walls, five temples share a quiet courtyard with an unusual community. Panch Deval, the five temples, is also a home for elderly people who have come to spend their last years beside the Bagmati, because many Hindus believe that dying at Pashupati frees the soul from the cycle of rebirth. Here the old pray each morning at shrines just steps from their rooms, and volunteers bring food and company. Saalik's field team is still confirming which five gods live in these shrines and who built them. If you visit, remember that this is people's home: ask before entering, never photograph residents without permission, and a small donation goes a long way. Book a verified local storyteller nearby and let a guide explain the traditions of care at Pashupati."
+      },
+      "nepaliSummary": "पञ्चदेवल पशुपतिको पाँच मन्दिर भएको परिसर हो, जहाँ अहिले वृद्धवृद्धाहरूको आश्रय गृह सञ्चालन हुन्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:30-09:00",
+        "lightingNotes": "Morning light enters the courtyard; avoid photographing residents' rooms or faces.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Courtyard entrance and central shrine, without residents." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique of the shrines." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique of the shrines and walls." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Shrine doorway or deity image, with permission." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Complex in relation to the river and main temple." }
+        ],
+        "occlusionNotes": "Residents and staff use the courtyard throughout the day.",
+        "restrictions": "Care home: enter only with staff permission; never photograph residents without consent."
+      },
+      "walkingTourStop": { "sequence": 6, "dwellMinutes": 6, "talkingPoint": "Explain the tradition of spending final years at Pashupati." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Dates, patrons, deities of the five shrines and current care-home management to confirm." }
+    }
+  ]
+}

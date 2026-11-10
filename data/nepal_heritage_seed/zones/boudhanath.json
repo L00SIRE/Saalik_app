@@ -1,0 +1,769 @@
+{
+  "zoneId": "boudhanath",
+  "names": { "en": "Boudhanath", "ne": "बौद्धनाथ", "romanized": "Khasti", "romanizedLanguage": "Newa" },
+  "designation": "UNESCO_MONUMENT_ZONE",
+  "unescoReference": "UNESCO WHC 121 - Boudhanath Monument Zone",
+  "district": "Kathmandu",
+  "centroid": { "lat": 27.7218, "lng": 85.3622 },
+  "zoneRadiusM": 600,
+  "description": "Boudhanath, Khasti in Newar, holds one of the largest stupas in the world on flat ground north-east of Kathmandu. Since 1959 Tibetan refugees, alongside Sherpa, Tamang and Newar communities, have built dozens of monasteries around its circular kora, making Boudha a global centre of Tibetan Buddhism. The stupa's spire, cracked in 2015, was rebuilt by the community and reconsecrated in 2016.",
+  "walkingTour": {
+    "tourId": "bdh_kora_and_monasteries",
+    "title": "Boudha Kora: Stupa, Monasteries and Himalayan Life",
+    "titleNe": "बौद्ध कोरा: स्तूप, गुम्बा र हिमाली जीवन",
+    "startPoint": "Main southern gateway of Boudhanath Stupa",
+    "bestStartTime": "06:00"
+  },
+  "monuments": [
+    {
+      "id": "bdh_boudha_mahachaitya",
+      "names": { "en": "Boudha Mahachaitya (Boudhanath Stupa)", "ne": "बौद्धनाथ स्तूप (खास्ति चैत्य)", "romanized": "Khasti Chaitya", "romanizedLanguage": "Newa" },
+      "aliases": ["Boudha Mahachaitya Stupa", "Boudhanath Stupa", "Jarung Khashor"],
+      "monumentType": "STUPA",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Licchavi", "century": "Licchavi origins by chronicle tradition (5th-7th century CE); repeatedly enlarged", "foundingYearCE": null, "datingBasis": "chronicle", "patron": "A Licchavi king, named variously in chronicle traditions" },
+      "geo": { "lat": 27.7215, "lng": 85.362, "elevationM": 1310, "geofenceRadiusM": 80, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 6, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["whitewash_lime", "gilt_repousse_copper", "fired_brick", "gold_leaf"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["painted eyes of the Buddha on the gilded harmika", "rows of small Buddha images in niches around the base"],
+        "distinguishingFeatures": ["massive white dome on a three-tiered mandala platform", "prayer flags radiating from the spire to the platform edge", "circular kora street lined with monasteries and shops"],
+        "confusableWith": ["swy_mahachaitya"],
+        "disambiguationTip": "Boudhanath's stupa is a vast dome on a stepped mandala platform at street level ringed by shops; Swayambhu's is smaller and sits on a crowded hilltop."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Legends of Penance and Permission",
+          "text": "Boudhanath, known to Newars as Khasti and to Tibetans as Jarung Khashor, is one of the largest stupas in the world and the heart of Tibetan Buddhist life in Nepal. Its origins are wrapped in legend. A Newar chronicle tradition tells that a Licchavi king, unknowingly obeying his own father's command, beheaded him, and built the stupa in penance; the name Khasti, 'dewdrops', is linked with a drought during construction when dew was gathered to make mortar. Tibetan tradition tells of a humble poultry woman who asked the king for land as large as a buffalo hide and cut the hide into thin strips to enclose a vast area; the king's reluctant 'permission given', jarung khashor, became the stupa's Tibetan name. Licchavi origins are likely, and the stupa was enlarged over the centuries. Since 1959 Tibetan refugees have made Boudha their home.",
+          "sourceIds": ["slusser_1982", "dowman_1995", "unesco_whc_121"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Mandala in Brick and Whitewash",
+          "text": "Boudhanath is built as a vast three-dimensional mandala. A three-tiered platform with projecting corners supports a massive hemispherical dome, crowned by a gilded square harmika painted with the eyes of the Buddha and a stepped spire. Seen from above, the plan forms a mandala, a diagram of the enlightened universe. The dome is whitewashed regularly, and on festival days devotees throw saffron-coloured lime over it in arcing patterns. Strings of prayer flags radiate from the spire to the platform's edge, fluttering with printed prayers. At ground level the stupa's base is ringed by niches holding images and prayer wheels, and the circular street around it, the kora, is lined with monasteries, homes, shops and cafes. The scale is overwhelming, especially when seen from a rooftop cafe at dusk as lamps are lit around the base and the dome turns gold.",
+          "sourceIds": ["gutschow_1997", "korn_1976"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Eyes, Steps and Elements",
+          "text": "Like Swayambhu, Boudhanath carries the painted eyes of the Buddha on each side of its harmika, symbolising all-seeing wisdom and compassion, with the numeral one in place of a nose. Its forms map the Buddhist path and the elements: the platform represents earth, the dome water, the spire fire, the parasol air and the pinnacle space. The thirteen steps of the spire represent the stages toward enlightenment. Around the base, niches hold images of the Buddha, and the prayer wheels, inscribed with the mantra om mani padme hum, release prayers with every turn. Tibetan tradition holds that the stupa contains relics of the past Buddha Kashyapa, making it a powerful object of devotion. Pilgrims believe that circling it with sincere intention purifies negative karma, and that wishes made here are especially likely to be fulfilled.",
+          "sourceIds": ["gutschow_1997", "dowman_1995"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "The Evening Kora",
+          "text": "Every day, but especially at dawn and dusk, thousands of people walk the kora, the clockwise circuit around the stupa. Tibetan grandmothers spinning hand-held prayer wheels, monks in maroon robes, Sherpa and Tamang families, Newar devotees and visitors from around the world move together in a slow river of devotion, murmuring mantras and turning the wheels set into the base. Some pilgrims perform full-length prostrations around the stupa, measuring the circuit with their bodies. Butter lamps flicker in lamp houses, and the sound of monastery horns drifts over the rooftops. Losar, the Tibetan New Year, brings dances, offerings and huge crowds, and full moon days are especially auspicious. Joining the evening kora, simply walking clockwise with the crowd as the light fades and the stupa glows, is one of the most memorable experiences in Kathmandu.",
+          "sourceIds": ["dowman_1995", "saalik_editorial"],
+          "confidence": "high"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Rebuilt in Eighteen Months",
+          "text": "The 2015 earthquake cracked Boudhanath's harmika and spire, and the upper structure had to be dismantled for safety. What followed was one of the most remarkable reconstruction efforts in Nepal. The Boudhanath Area Development Committee, working with local Buddhist communities and the Department of Archaeology, organised the rebuilding largely with private donations from Buddhists in Nepal and abroad. Traditional craftsmen rebuilt the harmika and spire, regilding them with donated gold, and the stupa was reconsecrated in November 2016, about eighteen months after the earthquake, far faster than most heritage reconstructions in the valley. The speed reflected the stupa's importance to its living community, for whom it is not a museum but the centre of daily life. The rebuilding has since become a reference point in debates about community-led heritage recovery in Nepal and beyond.",
+          "sourceIds": ["doa_nepal", "unesco_whc_121"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Join the river of people walking clockwise around this enormous white dome. Tibetan grandmothers spin prayer wheels, monks chant under their breath, and above you the eyes of the Buddha gaze from the golden tower in all four directions. This is Boudhanath, one of the largest stupas on Earth. Tibetan legend says a humble poultry woman asked the king for as much land as a buffalo hide could cover, then cut the hide into thin strips and claimed a vast circle. The king had to say yes, and his words, permission given, became the stupa's Tibetan name. In 2015 the earthquake cracked its tower, and the community rebuilt it in just eighteen months. Book a verified local storyteller nearby and let a guide walk the evening kora with you."
+      },
+      "nepaliSummary": "बौद्धनाथ स्तूप विश्वकै ठूला स्तूपमध्ये एक हो; २०१५ को भूकम्पपछि समुदायले यसको गजुर १८ महिनामै पुनर्निर्माण गरे।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "LATE_AFTERNOON_GOLDEN",
+        "localTimeWindow": "16:30-18:00",
+        "lightingNotes": "Late sun warms the whitewashed dome from the west; rooftop cafes give elevated views at dusk.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "From the main gate, dome and eyes centred with prayer flags." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique along the kora with monastery facades." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the prayer wheels at the base." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Harmika eyes and the gilded spire steps." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "From a rooftop, the full mandala platform and kora." }
+        ],
+        "occlusionNotes": "Dense kora crowds at dawn and dusk, and prayer flags crossing every upper view.",
+        "restrictions": "Walk clockwise; foreign visitor entry fee applies; ask before photographing monks or prostrating pilgrims."
+      },
+      "walkingTourStop": { "sequence": 3, "dwellMinutes": 25, "talkingPoint": "Explain both founding legends and the community rebuild of 2016." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Stupa height and base image count to confirm; reconsecration date to cross-check with the development committee." }
+    },
+    {
+      "id": "bdh_ajima_shrine",
+      "names": { "en": "Ajima Shrine, Boudha", "ne": "अजिमा मन्दिर (बौद्ध)", "romanized": "Ajima Dyah", "romanizedLanguage": "Newa" },
+      "aliases": ["Hariti Temple Boudha", "Ajima Temple"],
+      "monumentType": "SHRINE",
+      "tradition": "SHARED_HINDU_BUDDHIST",
+      "era": { "dynasty": "Malla", "century": "date unconfirmed; Newar shrine tradition of the Malla centuries", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.722, "lng": 85.3621, "elevationM": 1312, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 6, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 1,
+        "primaryMaterials": ["fired_brick", "gilt_repousse_copper", "carved_wood"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["Ajima, the grandmother goddess identified with Hariti, protector of children"],
+        "distinguishingFeatures": ["small Newar-style shrine on the northern side of the stupa circuit", "Newar pagoda form standing among Tibetan monastery facades"],
+        "confusableWith": ["swy_harati_ajima"],
+        "disambiguationTip": "Boudha's Ajima shrine is a small Newar-style temple on the flat kora; Swayambhu's Harati is a gilded pagoda beside a hilltop stupa."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Newar Goddess on a Tibetan Circuit",
+          "text": "On the northern side of the Boudhanath kora stands a small shrine to Ajima, the grandmother goddess identified with Hariti, protector of children. Its Newar architectural style contrasts with the Tibetan monasteries that surround it, a reminder that Boudha was a sacred site of the Newar and wider Nepali community long before Tibetan refugees made it their home after 1959. In several versions of the stupa's founding legend, the goddess is closely connected with the stupa itself, and some traditions describe Ajima as its protector. The shrine's exact date has not been established in Saalik's sources, and field documentation is needed. Its presence shows how Boudha's sacred landscape combines layers: Licchavi origins, Newar Buddhist and Hindu worship, Sherpa and Tamang devotion, and the Tibetan monasteries that have transformed the area over the past six decades.",
+          "sourceIds": ["slusser_1982", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Small Pagoda Among Gompas",
+          "text": "The Ajima shrine is a compact Newar-style temple with brick walls, a carved doorway and a pagoda roof, set on the edge of the kora where it is easily missed among the shopfronts and monastery gates. Its scale is modest, but its form links it with the shrines of Kathmandu, Patan and Bhaktapur rather than with the Tibetan buildings around it. The doorway is often hung with offerings and bells, and the threshold is worn by the steps of devotees. In front of the shrine the stream of people walking the kora flows past, and many pause briefly to bow or make an offering before continuing. The contrast between the Newar shrine and the whitewashed, prayer-flag-covered architecture of the monasteries offers a vivid lesson in how different architectural traditions meet around a single sacred centre.",
+          "sourceIds": ["korn_1976", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Grandmother Who Protects",
+          "text": "Ajima, meaning 'grandmother' in Newar, is a name for a group of protective goddesses in the Kathmandu Valley, many of them identified with Hariti, the ogress converted by the Buddha into a protector of children. She is honoured especially by mothers and by families with young children, who seek her protection against illness. Her shrines are often located at the edges of settlements or near important sacred sites, where she guards the community. At Boudha, her presence beside the great stupa echoes the Harati temple next to the stupa at Swayambhu, suggesting a shared pattern in which a protective goddess watches over a Buddhist monument. Tibetan devotees may identify the goddess with their own protective deities, and her shrine is honoured by people from several communities who walk the kora together each day.",
+          "sourceIds": ["slusser_1982", "pal_1974"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Pausing on the Kora",
+          "text": "Many people walking the kora stop at the Ajima shrine to make offerings of flowers, rice, coins or red powder, ring the bell and touch the threshold before continuing their circuit. Newar families from the surrounding area bring children for blessings, and the shrine receives special worship during Newar festivals. On auspicious days of the lunar calendar the number of offerings increases. The shrine's place on the kora shows how devotion at Boudha is not limited to the stupa: the circuit includes many smaller shrines, prayer wheels and lamp houses, each with its own significance. Visitors can observe the brief, practised gestures of devotees and the mix of communities who pause here. A guide can explain the shrine's significance in local tradition and its relationship with the founding legends of the stupa that it is said to protect.",
+          "sourceIds": ["saalik_editorial", "toffin_2008"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "A Small Shrine in a Changing Neighbourhood",
+          "text": "Boudha has changed dramatically since the 1960s, as Tibetan settlement, tourism and urban growth transformed a village around a stupa into a dense, busy neighbourhood. Small shrines like the Ajima temple are vulnerable in this setting, squeezed by new buildings and affected by the heavy foot traffic of the kora. The 2015 earthquake damaged structures around the stupa, and the shrine's condition after the earthquake needs to be recorded. Conservation of small shrines often depends on the local community and guthi, which may have limited resources. The Boudhanath Area Development Committee and the Department of Archaeology oversee the monument zone, and the stupa's rapid reconstruction showed the strength of community commitment. Documenting the Ajima shrine helps to ensure that it remains part of the heritage record alongside the stupa and the monasteries.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "As you walk the kora, look for a small Newar-style temple tucked between the shops on the northern side. This is the shrine of Ajima, the grandmother goddess who protects children, and she was honoured here long before the Tibetan monasteries you see today were built. Many people say she is the protector of the great stupa itself. Watch how kora walkers pause for just a second, touch the threshold, ring the bell and move on, a gesture they have repeated thousands of times. Mothers bring their babies here for her blessing. At Swayambhu, a goddess with the same story stands right beside the stupa too. Why does a Buddhist monument need a grandmother? Book a verified local storyteller nearby and let a guide tell you the legend."
+      },
+      "nepaliSummary": "बौद्ध कोराको उत्तरतिर रहेको अजिमा मन्दिर बालबालिकाकी रक्षक देवीको नेवारी शैलीको सानो मन्दिर हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "The shrine sits in the shade of neighbouring buildings; morning light along the kora is most even.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Shrine doorway square-on with its offerings." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique along the kora." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the stupa dome in frame." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Doorway carving and the shrine bell." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Shrine within the shopfronts of the northern kora." }
+        ],
+        "occlusionNotes": "Continuous kora traffic passes directly in front and shop awnings shade the doorway.",
+        "restrictions": "Do not block the kora; photograph quickly and step aside."
+      },
+      "walkingTourStop": { "sequence": 5, "dwellMinutes": 5, "talkingPoint": "Show Boudha's Newar layer before visiting the Tibetan monasteries." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Exact location, roof form and founding date unconfirmed; the field team must verify on site." }
+    },
+    {
+      "id": "bdh_guru_lhakhang",
+      "names": { "en": "Guru Lhakhang Monastery", "ne": "गुरु ल्हाखाङ गुम्बा", "romanized": "Guru Lhakhang", "romanizedLanguage": "Tibetan" },
+      "aliases": ["Guru Rinpoche Shrine Boudha"],
+      "monumentType": "MONASTERY",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Modern", "century": "20th century CE (date to confirm)", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7215, "lng": 85.3627, "elevationM": 1312, "geofenceRadiusM": 20, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 6, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["whitewash_lime", "reinforced_concrete", "gilt_repousse_copper"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["Guru Rinpoche (Padmasambhava) holding a vajra and skull cup", "khatvanga staff resting in the crook of his arm"],
+        "distinguishingFeatures": ["shrine dedicated to Guru Rinpoche near the stupa circuit", "large image of Padmasambhava visible through the doorway"],
+        "confusableWith": ["bdh_tamang_gompa", "bdh_samtenling_monastery"],
+        "disambiguationTip": "Guru Lhakhang centres on a large Guru Rinpoche image; check the main image through the doorway to distinguish it from the neighbouring gompas."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Shrine to the Precious Guru",
+          "text": "Guru Lhakhang, meaning 'temple of the Guru', is a shrine near the Boudhanath circuit dedicated to Guru Rinpoche, the eighth-century master Padmasambhava who is credited in Tibetan tradition with establishing Buddhism in Tibet. Padmasambhava is closely linked with Nepal: Tibetan and Newar traditions hold that he meditated in caves at Pharping, south of Kathmandu, before travelling to Tibet, and he is revered by Nyingma practitioners as a second Buddha. Shrines to him are found throughout Boudha, reflecting the strong presence of the Nyingma school among the Tibetan, Sherpa and other Himalayan communities who settled here. Saalik's desk research has not confirmed the founding date or the community responsible for this particular shrine, and the field team will gather its history directly. Its dedication places it within the network of Padmasambhava sites across the valley.",
+          "sourceIds": ["dowman_1995", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Tibetan Shrine Design",
+          "text": "Guru Lhakhangs typically follow the design of a Tibetan temple hall, with a central image of Padmasambhava on an altar, flanked by his consorts or by other masters of the lineage. The walls are often painted with murals of deities and teachers, and the ceiling and pillars are brightly decorated with traditional motifs in red, gold, blue and green. Butter lamps burn before the altar, and offerings of water bowls, flowers and food are arranged in rows. Exteriors are usually whitewashed, with painted window frames, golden roof ornaments such as the dharma wheel flanked by deer, and prayer flags. In the dense urban setting of Boudha, many such shrines are built into multistorey buildings, with the shrine hall on an upper floor and residential or commercial spaces below it. Field collectors should record the building form carefully.",
+          "sourceIds": ["saalik_editorial", "korn_1976"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Lotus-Born Master",
+          "text": "Padmasambhava, whose name means 'lotus-born', is depicted seated on a lotus, wearing a distinctive hat topped with a feather, and holding a vajra in his right hand and a skull cup in his left. A khatvanga, a ritual staff topped with skulls and a trident, rests in the crook of his left arm, representing his consort and the union of wisdom and method. His expression is often described as wrathful yet smiling, conveying his power to subdue obstacles. Tibetan tradition tells that he tamed the demons and spirits of Tibet and bound them as protectors of Buddhism, which is why he is invoked for protection and the removal of obstacles. His eight manifestations, each a different form for a different purpose, are often painted around the main image. His mantra, om ah hum vajra guru padma siddhi hum, is chanted widely.",
+          "sourceIds": ["pal_1974", "dowman_1995"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "The Tenth Day",
+          "text": "The tenth day of each lunar month, known as Tsechu, is sacred to Guru Rinpoche, and shrines dedicated to him are especially busy on these days, with offerings, ritual feasts known as tsok and the chanting of his mantra. Devotees visit Guru Lhakhangs to pray for protection, to remove obstacles before journeys or new ventures, and to make offerings for the deceased. The anniversary celebrated as his birthday is particularly important in the Nyingma calendar. Visitors are usually welcome to enter shrine halls quietly, remove their shoes, walk clockwise and leave a small offering. Photography inside may be restricted, and monks or caretakers should be asked before taking pictures. A guide familiar with Tibetan Buddhism can explain the meanings of the images and the rituals observed on Guru Rinpoche's special days throughout the year at Boudha.",
+          "sourceIds": ["dowman_1995", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Documenting Boudha's Smaller Shrines",
+          "text": "Boudha's smaller shrines and temples, such as this Guru Lhakhang, are often built and maintained by individual communities, families or monasteries, and their histories are rarely documented in published sources. The 2015 earthquake damaged many buildings around the stupa, and some shrines were repaired or rebuilt by their communities. Painted interiors require care to protect them from smoke, moisture and wear, and many are repainted periodically by skilled thangka and mural painters. Because these shrines lie within the Boudhanath monument zone, construction and alterations are subject to heritage regulations intended to preserve the stupa's setting. Documenting smaller shrines builds a fuller picture of Boudha's living heritage. Saalik's field collectors are asked to identify the shrine on site, record its location and interview its caretakers about its history and lineage.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "In Boudha you will meet one face again and again: a master with a feathered hat, a vajra in one hand and a skull cup in the other, smiling fiercely. He is Guru Rinpoche, Padmasambhava, the lotus-born, who Tibetans say carried Buddhism over the Himalaya in the eighth century after meditating in caves just south of Kathmandu. This shrine, Guru Lhakhang, is dedicated to him, and on the tenth day of every lunar month devotees crowd in to chant his mantra and offer feasts. Saalik's field team is still gathering this shrine's own history from its caretakers. Look for the staff resting in the crook of his arm. What does it symbolise? Book a verified local storyteller nearby and let a guide introduce you to the eight forms of the Guru."
+      },
+      "nepaliSummary": "गुरु ल्हाखाङ तिब्बतमा बौद्ध धर्म पुर्‍याउने गुरु पद्मसम्भवलाई समर्पित बौद्धस्थित गुम्बा हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:00",
+        "lightingNotes": "Interiors are dark and lamp-lit; exterior shots work best in soft midday light along the kora.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Shrine entrance square-on." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique along the street." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the stupa in frame." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Roof ornaments or entrance murals; interior only with permission." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Shrine within the stupa-side streetscape." }
+        ],
+        "occlusionNotes": "Street traffic, shop signs and parked motorbikes crowd the entrance.",
+        "restrictions": "Ask permission before interior photography; remove shoes; walk clockwise."
+      },
+      "walkingTourStop": { "sequence": 4, "dwellMinutes": 8, "talkingPoint": "Introduce Padmasambhava and the long link between Nepal and Tibet." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Playbook name; exact location, lineage and founding unconfirmed. The field team must identify the shrine." }
+    },
+    {
+      "id": "bdh_tamang_gompa",
+      "names": { "en": "Tamang Gompa", "ne": "तामाङ गुम्बा", "romanized": "Tamang Gompa", "romanizedLanguage": "Tibetan" },
+      "aliases": ["Tamang Monastery Boudha"],
+      "monumentType": "MONASTERY",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Modern", "century": "20th century CE (date to confirm)", "foundingYearCE": null, "datingBasis": "tradition", "patron": "Tamang community of Boudha" },
+      "geo": { "lat": 27.7219, "lng": 85.3615, "elevationM": 1312, "geofenceRadiusM": 20, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 6, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["whitewash_lime", "carved_wood", "reinforced_concrete"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["Buddha and Guru Rinpoche images on the altar", "wheel of life painted at the entrance"],
+        "distinguishingFeatures": ["community monastery facing the stupa circuit", "painted facade with prayer flags and window frames"],
+        "confusableWith": ["bdh_samtenling_monastery", "swy_dewa_dharma_monastery"],
+        "disambiguationTip": "Use the facade signage and the main altar image to separate the Tamang Gompa from neighbouring monasteries on the kora."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Tamang Community and Boudha",
+          "text": "The Tamangs are one of Nepal's largest indigenous peoples, living mainly in the hills surrounding the Kathmandu Valley, and most practise a form of Tibetan Buddhism. Their connection with Boudhanath is long and deep: Tamang communities have honoured the stupa for generations, and many Tamang men historically worked as porters on the trade routes between Kathmandu and Tibet. The Tamang Gompa on the Boudha circuit serves as a religious centre for the community in the city, maintaining rituals and festivals and offering a place for Tamang monks and lay devotees to gather. Saalik's desk research has not established the gompa's founding date, and its history will be gathered from the community. Its presence on the kora is a reminder that Boudha's Buddhist life is rooted not only in Tibet but also in Nepal's own Himalayan peoples, who share this sacred space.",
+          "sourceIds": ["toffin_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Community Gompa",
+          "text": "Community gompas at Boudha typically consist of a prayer hall with a main altar, often on an upper floor, with painted walls and pillars, and rooms for monks and community activities. The facade facing the kora is usually whitewashed or painted, with colourful window frames, prayer flags and roof ornaments. Inside, images of the Buddha, Guru Rinpoche and other deities sit on the altar, surrounded by offering bowls and butter lamps. The interior is decorated with murals and thangka paintings, which are periodically renewed by painters. Community gompas also serve practical purposes, hosting meetings, celebrations and funeral rites for community members. In the dense setting of Boudha, the gompa may share its building with shops or residences. Field collectors are asked to record the layout, decoration and any inscriptions that document the gompa's history and patrons.",
+          "sourceIds": ["saalik_editorial", "korn_1976"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Teaching Through Paintings",
+          "text": "Gompas often display at their entrance a painting of the wheel of life, held in the jaws of Yama, the lord of death. At its centre a pig, a snake and a rooster represent ignorance, aversion and desire, the three poisons that drive the cycle of rebirth. Around them six realms of existence are depicted, and the outer rim shows the twelve links of dependent origination. The painting serves as a visual teaching for lay visitors, explaining the Buddhist understanding of suffering and the path to liberation. Inside, images of the Buddha, Guru Rinpoche and protector deities each have their own meanings and rituals. Tamang Buddhism shares much with Tibetan traditions, especially the Nyingma school, but also includes distinctive local practices. A guide can help visitors interpret the paintings and understand how they guide devotees along the path.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Sonam Lhosar and Community Festivals",
+          "text": "The Tamang community celebrates Sonam Lhosar, the Tamang New Year, which falls in late winter, with gatherings, music, dances and rituals at gompas and in public spaces across the Kathmandu Valley. Boudha is a natural focus for these celebrations, and the Tamang Gompa is a centre of community activity during the festival. Throughout the year the gompa hosts prayers for the welfare of the community, rituals for the dead and celebrations of Buddhist festivals. Tamang lay devotees walk the kora around the stupa and visit the gompa to make offerings. Visitors may hear the distinctive music of Tamang festivals, including the damphu drum, during celebrations. As with other monasteries, visitors should remove shoes, walk clockwise, ask before taking photographs and make a small offering. Observing community rituals respectfully offers insight into Nepal's diverse Buddhist traditions.",
+          "sourceIds": ["toffin_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Community Heritage Around the Stupa",
+          "text": "Community gompas at Boudha are maintained by their communities, often with limited resources, and they face pressure from urban growth, rising property values and the costs of repair. The 2015 earthquake damaged many buildings in Boudha, and community gompas raised funds to repair them, sometimes with support from donors. Painted interiors require periodic renewal, which provides work for traditional painters and keeps their skills alive. Because the Tamang Gompa stands within the Boudhanath monument zone, alterations are subject to heritage rules intended to protect the stupa's setting. Documentation of community gompas is important for recognising the full diversity of Boudha's heritage, which includes the contributions of Tamang, Sherpa, Tibetan and Newar communities. Saalik's field collectors are asked to record the gompa and its community's history with the caretakers' consent.",
+          "sourceIds": ["ird_heritage", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Not everyone who walks the kora at Boudha is Tibetan. Many are Tamang, one of Nepal's largest indigenous peoples, whose villages ring the hills around the valley and whose grandfathers often carried loads over the Himalaya to Tibet. This is their gompa, a community monastery on the stupa circuit where Tamang monks pray and families gather. At the entrance you may see the great wheel of life held in the jaws of the lord of death, with a pig, a snake and a rooster at its centre. Can you guess what they stand for? In late winter, the Tamang New Year fills these streets with drums and dancing. Book a verified local storyteller nearby and let a guide introduce you to the Himalayan peoples of Boudha."
+      },
+      "nepaliSummary": "तामाङ गुम्बा बौद्ध कोरामा रहेको तामाङ समुदायको गुम्बा हो, जहाँ सोनाम ल्होसारमा विशेष उत्सव हुन्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "The facade faces the kora; morning light is softest before the street fills.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Gompa facade square-on with the entrance paintings." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique along the kora." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the stupa." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Wheel of life painting at the entrance." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Gompa within the kora streetscape." }
+        ],
+        "occlusionNotes": "Kora crowds and shop awnings obscure the lower facade.",
+        "restrictions": "Ask before photographing interiors or monks; remove shoes."
+      },
+      "walkingTourStop": { "sequence": 7, "dwellMinutes": 8, "talkingPoint": "Introduce the Tamang community's role at Boudha." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Exact location, lineage and founding to confirm with the community." }
+    },
+    {
+      "id": "bdh_samtenling_monastery",
+      "names": { "en": "Samtenling Monastery", "ne": "साम्तेनलिङ गुम्बा", "romanized": "Samten Ling Gompa", "romanizedLanguage": "Tibetan" },
+      "aliases": ["Samtenling Gompa"],
+      "monumentType": "MONASTERY",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Modern", "century": "20th century CE (date to confirm)", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7222, "lng": 85.3612, "elevationM": 1312, "geofenceRadiusM": 20, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 6, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["whitewash_lime", "reinforced_concrete", "gilt_repousse_copper"],
+        "guardianVahanas": ["golden deer flanking a dharma wheel on the roof"],
+        "deityMudrasWeapons": ["main Buddha image on the assembly hall altar"],
+        "distinguishingFeatures": ["monastery near the north-west of the stupa circuit", "dharma wheel and deer ornament on the roofline"],
+        "confusableWith": ["bdh_tamang_gompa", "bdh_guru_lhakhang"],
+        "disambiguationTip": "Check the monastery's name board and main image; several gompas near the north-west kora share similar facades."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Place of Meditation",
+          "text": "Samten Ling, meaning 'place of meditative concentration' in Tibetan, is the name of a monastery near the Boudhanath circuit. It is sometimes described as one of the older monasteries in Boudha, but Saalik's desk research has not confirmed its founding date, lineage or founder, and this record must be completed through field interviews with the monastery. Many monasteries at Boudha were founded after 1959, when Tibetan refugees fleeing the Chinese occupation of Tibet settled around the stupa, joining Sherpa, Tamang and other Himalayan Buddhists already present. Others trace their roots to earlier connections between Tibet and the valley, when lamas travelled to Boudha on pilgrimage and trade. Whatever its precise history, Samtenling belongs to the extraordinary concentration of monasteries that has made Boudha one of the most important centres of Tibetan Buddhism outside Tibet itself.",
+          "sourceIds": ["saalik_editorial", "dowman_1995"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Roof Wheels and Golden Deer",
+          "text": "Tibetan monasteries at Boudha typically display a golden dharma wheel flanked by two deer on the roof above the main entrance, a symbol recalling the Buddha's first sermon in the deer park at Sarnath. The assembly hall, or dukhang, is the heart of the monastery, with rows of low seats for monks, a main altar with images of the Buddha and lineage masters, and walls painted with murals. Pillars are wrapped in brocade, and thangka paintings hang from the walls. Upper floors may house the abbot's quarters, a library of scriptures and smaller shrine rooms, and monks' residences surround or adjoin the main building. In Boudha's dense streets, monasteries have often grown upward and outward over the decades, adding storeys and wings as their communities expanded. Field collectors should document the roof ornaments and facade carefully.",
+          "sourceIds": ["saalik_editorial", "korn_1976"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Wheel and the Deer",
+          "text": "The dharma wheel with two deer is one of the most widespread emblems of Buddhism. The wheel, with eight spokes representing the Noble Eightfold Path, symbolises the teaching the Buddha set in motion with his first sermon. The two deer, a male and a female, recall the deer park at Sarnath where that sermon was delivered, and they also represent listeners who receive the teaching with gentle, attentive minds. Inside the monastery, the altar images and murals depict the lineage of teachers through whom the teachings have been transmitted, as well as protective deities. Each monastery belongs to a lineage, such as Nyingma, Kagyu, Sakya or Gelug, whose founders and masters appear prominently in its art. Identifying the lineage of Samtenling through its images is one of the tasks set for Saalik's field documentation.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Daily Assembly and Annual Dances",
+          "text": "Monastic life at Boudha follows a daily rhythm of assemblies in the prayer hall, where monks chant texts to the sound of drums, cymbals, horns and bells, usually early in the morning and again in the afternoon or evening. Young monks study scriptures, philosophy and ritual arts, and sometimes English or other subjects. Many monasteries hold annual ritual dances, called cham, in which masked monks perform sacred dances depicting the victory of wisdom over obstacles, often around Losar, the Tibetan New Year. Lay devotees visit monasteries to make offerings, request prayers for the sick or deceased and receive blessings. Visitors are usually welcome to watch assemblies from the back of the hall, provided they are quiet, remove shoes and do not photograph without permission. A guide can help visitors find out when each monastery holds its prayers and festivals.",
+          "sourceIds": ["saalik_editorial", "dowman_1995"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Monasteries After the Earthquake",
+          "text": "Many of Boudha's monasteries were damaged in the 2015 earthquake, and their communities undertook repairs and reconstruction, often supported by international networks of followers. Monastery buildings combine reinforced concrete structures, common since the 1970s, with traditional decorative elements such as painted woodwork, murals and gilded roof ornaments. Conservation of these elements requires skilled painters and metalworkers, many of whom trained in Boudha itself. Because the monasteries lie within or near the Boudhanath monument zone, new construction is regulated to protect the stupa's setting, though enforcement has varied over the years. Documenting individual monasteries, their histories, lineages and artworks contributes to an understanding of Boudha's heritage as a living whole. Saalik's field collectors are asked to record Samtenling with the monastery's permission, including its founding story as its own community tells it.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Look up at the roof of this monastery: a golden wheel with eight spokes, flanked by two golden deer. They recall the deer park in India where the Buddha gave his very first teaching, and you will see them on monasteries all around Boudha. This one is called Samtenling, the place of meditation. Its own story, who founded it and when, is still being gathered by Saalik's field team from the monks themselves, so you may learn something here that is not yet in any book. If you arrive at prayer time, you can sit quietly at the back as horns and drums fill the hall. Which lineage does this monastery belong to? Book a verified local storyteller nearby and let a guide help you read the clues on the altar."
+      },
+      "nepaliSummary": "साम्तेनलिङ बौद्धनाथ नजिकैको गुम्बा हो, जसको छानामा धर्मचक्र र दुई सुनौला मृग राखिएका छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "Gilded roof ornaments catch the morning light; interiors only with permission.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Monastery entrance and facade square-on." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique along the lane." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique toward the kora." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Dharma wheel and deer on the roofline." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Monastery among the north-west kora buildings." }
+        ],
+        "occlusionNotes": "Narrow lanes, signage and overhead wires cut across the facade.",
+        "restrictions": "Ask before photographing interiors or monks; remove shoes."
+      },
+      "walkingTourStop": { "sequence": 8, "dwellMinutes": 8, "talkingPoint": "Read the dharma wheel and introduce the monastic lineages." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding, lineage and exact location unconfirmed; field interview required." }
+    },
+    {
+      "id": "bdh_prayer_wheel_arcade",
+      "names": { "en": "Prayer Wheel Arcade", "ne": "माने (प्रार्थना चक्र) पङ्क्ति", "romanized": "Mani Khorlo", "romanizedLanguage": "Tibetan" },
+      "aliases": ["Boudha Prayer Wheels", "Mani Wall of Boudhanath"],
+      "monumentType": "ARCADE",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Modern", "century": "20th century CE renewal of an older devotional feature", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7212, "lng": 85.362, "elevationM": 1310, "geofenceRadiusM": 50, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 6, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["brass", "whitewash_lime", "fired_brick"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["mantra om mani padme hum embossed on each wheel", "small Buddha images in niches between the wheels"],
+        "distinguishingFeatures": ["continuous ring of brass prayer wheels set into the stupa's base wall", "handles polished bright by countless hands"],
+        "confusableWith": ["bdh_boudha_mahachaitya"],
+        "disambiguationTip": "Frame the low wall of brass wheels at the stupa's base; if the dome fills the frame, the match belongs to the stupa record instead."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Ring of Turning Prayers",
+          "text": "Around the base of Boudhanath, set into niches in the stupa's lower wall, runs a continuous ring of brass prayer wheels, which pilgrims spin as they walk the kora. Prayer wheels became widespread in Tibetan Buddhism as a way for practitioners, literate or not, to accumulate merit by turning scrolls of printed mantras. Their presence at Boudha reflects the stupa's long importance for Tibetan and Himalayan pilgrims, who came here on pilgrimage and for trade long before the refugee settlement of the 1960s. The wheels have been replaced, repaired and added to many times, and the present arrangement reflects twentieth-century renewal, though Saalik's sources do not give a precise date. Larger prayer wheels in small houses, along with lamp houses and smaller shrines, are found around the kora, making the circuit a continuous path of devotion encircling the stupa.",
+          "sourceIds": ["dowman_1995", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Brass, Niches and Rhythm",
+          "text": "The prayer wheels are cylinders of brass or copper, embossed with mantras and mounted on vertical axles within niches in the stupa's base. Each contains a tightly rolled scroll printed with many repetitions of a mantra. Set side by side, the wheels form a continuous band at hand height, interrupted by niches holding small images. As pilgrims walk clockwise, they reach out and spin each wheel in turn, creating a rhythmic clatter and a shimmer of moving metal that is one of Boudha's signature sounds. The arrangement is both practical and beautiful, inviting participation from every passer-by. Elsewhere on the kora, giant prayer wheels taller than a person stand in their own small houses, turned by pushing a handle and ringing a bell with each rotation. The wheels' handles are polished smooth by millions of hands over the years.",
+          "sourceIds": ["saalik_editorial", "gutschow_1997"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Om Mani Padme Hum",
+          "text": "The mantra embossed on the prayer wheels, om mani padme hum, is associated with Avalokiteshvara, the bodhisattva of compassion, known in Tibetan as Chenrezig. Often translated loosely as 'the jewel in the lotus', it is understood as invoking compassion and purifying the six realms of existence, with each of its six syllables associated with one realm. Spinning a prayer wheel is believed to have the same effect as reciting the mantras printed inside, sending prayers out into the world for the benefit of all beings. The wheels are always turned clockwise, following the direction of the sun and of the kora. The Dalai Lama is regarded by Tibetans as an emanation of Avalokiteshvara, linking the mantra with Tibetan identity. For visitors, the wheels offer an accessible way to take part in Buddhist practice simply by walking and turning.",
+          "sourceIds": ["pal_1974", "dowman_1995"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Spinning on the Kora",
+          "text": "Every day thousands of pilgrims spin the prayer wheels as they circle Boudhanath, many combining the action with recitation of the mantra or with counting beads on a rosary. Elderly Tibetans may walk the kora many times each morning and evening, and the prayer wheels mark their progress. Children learn the practice by copying their grandparents. On special days, such as the full moon and Losar, the kora is so crowded that pilgrims queue to reach the wheels. Visitors are welcome to spin the wheels too, walking clockwise and turning each wheel gently with the right hand. There is no need to stop at every wheel, and the flow of people should never be blocked. The sound of thousands of turning wheels, mixed with chanting and the murmur of conversation, forms the soundtrack of Boudha's daily life from dawn until dark.",
+          "sourceIds": ["dowman_1995", "saalik_editorial"],
+          "confidence": "high"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Wear and Renewal",
+          "text": "The prayer wheels are among the most heavily used objects in Nepal, turned millions of times each year, and their axles, bearings and handles wear out. They are regularly repaired and replaced by the stupa's caretakers, often with donations from devotees, who sponsor new wheels as acts of merit. The 2015 earthquake damaged the stupa's base in places, and repairs to the niches and wheels were part of the reconstruction effort completed in 2016. Brass and copper corrode and tarnish, and the scrolls inside can be damaged by moisture. Conservation must balance the need to keep the wheels working for daily use with the historical value of older components. Visitors can help by spinning the wheels gently, not forcing stuck wheels and reporting damage to the caretakers. Their constant use is itself a sign of the stupa's vitality as a living monument.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Reach out your right hand as you walk and spin the brass wheel beside you, then the next, and the next. You are turning prayers. Inside each wheel at the base of Boudhanath is a scroll printed with the mantra om mani padme hum, repeated many times over, and Tibetan Buddhists believe every turn sends those prayers out for the benefit of all beings. Always walk clockwise, follow the grandmother in front of you, and do not worry about missing a few. The handles shine because millions of hands have touched them before yours. In the small houses along the kora, giant wheels ring a bell each time they complete a turn. What do the six syllables mean? Book a verified local storyteller nearby and let a guide teach you the mantra as you walk."
+      },
+      "nepaliSummary": "बौद्धनाथ स्तूपको फेदमा पितलका प्रार्थना चक्रहरूको लहर छ, जसमा ॐ मणि पद्मे हुँ मन्त्र लेखिएको छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:00-07:30",
+        "lightingNotes": "Brass glints in low dawn light; use slower shutter speeds to capture the motion of spinning wheels.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Row of prayer wheels square-on at hand height." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique along the curving base." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with pilgrims' hands spinning the wheels." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Embossed mantra lettering on a single wheel." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Base wall with the wheels and the dome above." }
+        ],
+        "occlusionNotes": "A continuous stream of pilgrims means hands and bodies appear in every frame.",
+        "restrictions": "Walk clockwise; do not block the kora; ask before photographing individual pilgrims."
+      },
+      "walkingTourStop": { "sequence": 2, "dwellMinutes": 8, "talkingPoint": "Teach the mantra and how to spin the wheels while walking." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Date of the present wheel installation and the number of wheels to confirm." }
+    },
+    {
+      "id": "bdh_chini_lama_residence",
+      "names": { "en": "Chini Lama Residence", "ne": "चिनियाँ लामा निवास", "romanized": "Chiniya Lama Dera", "romanizedLanguage": "Nepali" },
+      "aliases": ["Chini Lama Residence History", "House of the Chiniya Lama"],
+      "monumentType": "RESIDENCE",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Rana", "century": "19th century CE onward", "foundingYearCE": null, "datingBasis": "tradition", "patron": "Chini Lama lineage" },
+      "geo": { "lat": 27.722, "lng": 85.3618, "elevationM": 1312, "geofenceRadiusM": 20, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 6, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["fired_brick", "whitewash_lime", "carved_wood"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": [],
+        "distinguishingFeatures": ["house on the northern side of the stupa circuit associated with the hereditary custodians", "gateway and courtyard facing the stupa"],
+        "confusableWith": ["bdh_ajima_shrine"],
+        "disambiguationTip": "The Chini Lama residence is a house-like building on the north of the kora rather than a temple; confirm it by its gateway and any signage."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Hereditary Custodians of Boudha",
+          "text": "For more than a century, the Boudhanath stupa was in the custody of a line of hereditary lamas known as the Chini Lamas, or 'Chinese Lamas'. Accounts trace the title to the nineteenth century, when a lama who acted as an intermediary between Nepal and Tibet after the Nepal-Tibet war of the 1850s was granted custodianship of the stupa by the Rana prime minister Jang Bahadur. The name reflects claimed connections with China, whose imperial influence in Tibet was then significant. The Chini Lamas lived in a residence on the stupa circuit and collected offerings, managed the stupa and served as leaders of the Buddhist community at Boudha. The details of the lineage and its history vary between accounts, and Saalik's field team will consult descendants and historians to verify them before this record is published to visitors.",
+          "sourceIds": ["saalik_editorial", "dowman_1995"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Custodian's House on the Kora",
+          "text": "The Chini Lama residence is a house on the circuit around the stupa, with a gateway and courtyard facing the monument. Its architecture is understood to mix Newar, Tibetan and Rana-era influences, with brick walls, whitewashed surfaces, carved woodwork and later additions. As the home of the stupa's custodians, it combined domestic, administrative and ritual functions: it was a place where offerings were received, disputes settled and important visitors welcomed. Over the decades, as Boudha changed from a village into a dense neighbourhood, the residence's surroundings changed dramatically, and parts of the property may have been altered or redeveloped. Field documentation should record the building's current condition, any historic features that survive and its relationship to the stupa. Its location on the kora places it among the most significant private properties in Boudha's history.",
+          "sourceIds": ["saalik_editorial", "korn_1976"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Authority and Devotion",
+          "text": "The Chini Lama's role combined religious authority with secular power granted by the state. As custodian, he was responsible for maintaining the stupa, performing rituals and overseeing the offerings of pilgrims, which made the position both influential and wealthy. The residence would have displayed symbols of this dual role, with Buddhist images and shrine rooms alongside documents and objects connected with the Rana court. For Tibetan and Himalayan pilgrims, the Chini Lama was a figure of respect and a link between their own traditions and the Nepali state. Today, with the stupa managed by a development committee and the Department of Archaeology, the residence is a reminder of an earlier form of stewardship. Understanding the Chini Lamas helps visitors appreciate how sacred sites in Nepal have been managed by different institutions over time, each leaving its mark on the site.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Stewardship of the Stupa",
+          "text": "Under the Chini Lamas, the stupa's rituals and festivals were organised and supervised by the custodian's household, including the whitewashing of the dome, the hanging of prayer flags and the reception of pilgrims at Losar and other festivals. Pilgrims from Tibet, Bhutan, Sikkim and the Nepali hills would visit the Chini Lama to make offerings and receive blessings. Stories about particular Chini Lamas, their visitors and their roles in community life are part of Boudha's oral history, preserved by older residents. Today the stupa's rituals are carried on by monasteries, community groups and the development committee, but memories of the custodian lineage remain. Visitors interested in Boudha's social history can ask older residents, with a guide's help, about the Chini Lamas and how the neighbourhood has changed in living memory, from a quiet village into a bustling city.",
+          "sourceIds": ["saalik_editorial", "toffin_2008"],
+          "confidence": "low"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Recording a Social History",
+          "text": "The Chini Lama residence is important less for its architecture than for its place in Boudha's social and political history. Conservation in this case means documenting that history before living memory fades: interviewing descendants and older residents, collecting photographs and documents, and recording the building's current state. The 2015 earthquake damaged many structures around the stupa, and changes to private properties on the kora continue under pressure from rising land values and tourism. Heritage regulations within the monument zone aim to protect the setting of the stupa, but private buildings are often altered. Saalik's field collectors are asked to approach the residence respectfully, seek permission from its occupants and record oral histories alongside photographs. This record is marked for verification, and its historical details will be updated based on what the field team learns from the community.",
+          "sourceIds": ["ird_heritage", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "On the northern side of the kora stands a house with a long and unusual history. For more than a century, the great stupa of Boudhanath was looked after by a line of hereditary custodians known as the Chini Lamas, the Chinese Lamas. Accounts say the first was a lama who helped negotiate between Nepal and Tibet after a war in the 1850s, and the Rana ruler Jang Bahadur rewarded him with custody of the stupa. From this house, the Chini Lamas received pilgrims from Tibet and the Himalaya, collected offerings and led the community. Saalik's team is still verifying the details with descendants and historians. What was Boudha like before the monasteries? Book a verified local storyteller nearby and let a guide who knows the old families tell you."
+      },
+      "nepaliSummary": "चिनियाँ लामा निवास बौद्धनाथ स्तूपको वंशानुगत संरक्षक लामाहरूको घर हो, जसको इतिहास प्रमाणीकरण गर्न बाँकी छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "North-side buildings get morning light along the kora; never photograph occupants without consent.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Gateway and facade square-on from the kora." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique along the kora." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the stupa dome." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gateway woodwork or any historic plaque." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Residence in relation to the stupa." }
+        ],
+        "occlusionNotes": "Kora crowds and shopfronts block the lower facade.",
+        "restrictions": "Private residence: photograph only from public space and with permission for any interior."
+      },
+      "walkingTourStop": { "sequence": 6, "dwellMinutes": 6, "talkingPoint": "Tell the Chini Lama custodianship story and Boudha's transformation." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Lineage details, the Jang Bahadur grant and the building's current status must be verified with descendants and historians." }
+    },
+    {
+      "id": "bdh_bone_chorten_gateways",
+      "names": { "en": "Bone Chorten Gateways", "ne": "प्रवेशद्वार चोर्तेन (कानी)", "romanized": "Kani Chorten", "romanizedLanguage": "Tibetan" },
+      "aliases": ["Kani Gateway Chortens", "Boudha Main Gate"],
+      "monumentType": "GATEWAY",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Modern", "century": "20th-21st century CE gateway structures", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7206, "lng": 85.3619, "elevationM": 1308, "geofenceRadiusM": 30, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 6, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["reinforced_concrete", "whitewash_lime", "gilt_repousse_copper"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["chorten form or Buddha imagery above the passage"],
+        "distinguishingFeatures": ["arched gateway leading from the main road to the stupa plaza", "passage beneath a chorten-topped gate that blesses those who walk under it"],
+        "confusableWith": ["bdh_boudha_mahachaitya"],
+        "disambiguationTip": "Frame the gateway arch with the road behind it; the stupa appears through the arch but should not fill the frame."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Thresholds to the Stupa",
+          "text": "Most visitors reach Boudhanath through a gateway from the main road on its southern side, passing from the noise of traffic into the stupa's circular plaza. In Tibetan Buddhist architecture, gateways topped with chortens, known as kani, are built over paths so that everyone who walks beneath them receives a blessing. Saalik's seed list records 'Bone Chorten Gateways' at Boudha; the meaning of the word 'Bone' in that name has not been confirmed, and it may refer to the Bon tradition, to relics, or be a transcription error. This record therefore documents the gateways to the stupa as thresholds, pending field verification of the specific structures intended. The gateways themselves are relatively recent, built and rebuilt as the area developed, but they continue a long tradition of marking the transition into sacred space in Himalayan Buddhist landscapes.",
+          "sourceIds": ["saalik_editorial", "gutschow_1997"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "The Kani Form",
+          "text": "A kani is a gateway structure with a passage beneath and a chorten, or stupa form, above or within its roof. Inside the passage, the ceiling is often painted with mandalas, and the walls may carry images of Buddhas, bodhisattvas or protective deities. In Tibet, Ladakh and the Himalayan regions of Nepal, kanis stand at village entrances and on paths approaching monasteries. In urban Boudha, the gateways to the stupa have taken more modern forms, with arches, painted decoration and signage, but they serve the same purpose: to frame the approach and prepare the visitor for the sacred space beyond. The southern gateway offers the classic first view of the stupa, framed by the arch, with the eyes of the Buddha appearing above the crowds. Field collectors should record each gateway's structure, decoration and any inscriptions they carry.",
+          "sourceIds": ["gutschow_1997", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Blessing Those Who Pass Beneath",
+          "text": "The chorten above a gateway is a reminder of the Buddha's enlightened mind, and passing beneath it is believed to purify and bless the traveller. The mandala painted on a kani's ceiling places the traveller at the centre of an enlightened universe for the moment they pass through. Images of the five Buddha families or of protective deities may guard the passage, warding off obstacles. In this way the gateway becomes a teaching in miniature: one leaves the ordinary world, passes under the symbol of enlightenment and enters the sacred precinct. If the term 'Bone' in this record's name refers to relics, it may connect with the Tibetan belief that the Boudha stupa contains relics of the past Buddha Kashyapa, a belief that gives the entire site its special sanctity. Field research will clarify where the name actually comes from.",
+          "sourceIds": ["dowman_1995", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Entering with Intention",
+          "text": "Pilgrims arriving at Boudha often pause at the gateway, join their palms or touch their foreheads in respect, and then begin the clockwise kora around the stupa. For Tibetan Buddhists, entering a sacred site is an opportunity to set an intention, dedicating the merit of one's visit to the benefit of all beings. The gateways are also gathering points, where friends meet and vendors sell offerings such as butter lamps, incense and prayer flags. During festivals such as Losar and Buddha Jayanti, the gateways are decorated and crowded with arriving pilgrims. Visitors can follow the example of pilgrims by entering respectfully and beginning the kora in the clockwise direction. The main gateway is also where the foreign visitor entry fee is usually collected by the area's development committee, whose revenue supports the stupa's upkeep and services.",
+          "sourceIds": ["saalik_editorial", "ntb"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Recording the Gateways",
+          "text": "The gateways to Boudhanath have been altered and rebuilt over the decades as the surrounding area urbanised and as the stupa's management developed visitor facilities. The 2015 earthquake affected structures around the stupa, and the gateways were inspected and repaired as part of the broader recovery. Because the gateways frame the most important views of the stupa, their design and maintenance matter for the monument's setting, and heritage regulations within the monument zone apply. This record is flagged for verification because of uncertainty about the playbook's name 'Bone Chorten Gateways'. Saalik's field collectors are asked to identify all gateways and chortens on the approaches to the stupa, record their structure, decoration and inscriptions, and ask local custodians whether any are known by a name resembling 'Bone', so the record can be corrected or confirmed.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Step through the gateway from the busy road, and the noise seems to fall away as the great white dome of Boudhanath rises in front of you. In Tibetan Buddhist lands, gateways like this are often crowned with a small stupa, called a kani, and anyone who walks beneath it receives a blessing. Some even have mandalas painted on the ceiling, so that for one step you stand at the centre of an enlightened universe. Saalik's records call these the Bone Chorten Gateways, and our field team is still working out where that name comes from, so if you hear a local explanation, we would love to know. Pause here, set an intention, and turn left to begin the kora clockwise. Book a verified local storyteller nearby and let a guide begin your walk at the threshold."
+      },
+      "nepaliSummary": "बौद्धनाथ स्तूपमा पुग्ने प्रवेशद्वारहरूलाई यहाँ अभिलेख गरिएको छ; 'बोन चोर्तेन' नामको अर्थ फिल्ड टोलीले पुष्टि गर्न बाँकी छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "LATE_AFTERNOON_GOLDEN",
+        "localTimeWindow": "16:30-18:00",
+        "lightingNotes": "Late light through the arch silhouettes the gateway against the glowing dome.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Gateway arch square-on from the road with the stupa beyond." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the gateway structure." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique including the vendor stalls." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gateway decoration, chorten form or ceiling painting." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Approach road and gateway in context." }
+        ],
+        "occlusionNotes": "Traffic, vendors and arriving crowds fill the approach, and a ticket booth stands at the gate.",
+        "restrictions": "Entry fee for foreign visitors at the gate; do not obstruct the passage."
+      },
+      "walkingTourStop": { "sequence": 1, "dwellMinutes": 5, "talkingPoint": "Begin at the threshold and explain the blessing of the kani." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Playbook name 'Bone Chorten Gateways' is unexplained; the field team must identify the intended structures and confirm or correct the name." }
+    },
+    {
+      "id": "bdh_kanying_shedrup_ling",
+      "names": { "en": "Ka-Nying Shedrup Ling", "ne": "का-न्यिङ शेड्रुप लिङ गुम्बा", "romanized": "Ka-Nying Shedrub Ling", "romanizedLanguage": "Tibetan" },
+      "aliases": ["White Monastery", "Seto Gumba Boudha"],
+      "monumentType": "MONASTERY",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Modern", "century": "20th century CE", "foundingYearCE": 1976, "datingBasis": "documented_record", "patron": "Tulku Urgyen Rinpoche" },
+      "geo": { "lat": 27.7235, "lng": 85.3616, "elevationM": 1315, "geofenceRadiusM": 40, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 6, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["whitewash_lime", "reinforced_concrete", "gilt_repousse_copper"],
+        "guardianVahanas": ["golden deer flanking the dharma wheel on the roof"],
+        "deityMudrasWeapons": ["large Buddha image in the main hall", "murals of Kagyu and Nyingma lineage masters"],
+        "distinguishingFeatures": ["large white monastery just north of the stupa", "gilded roof ornaments above a whitewashed facade"],
+        "confusableWith": ["bdh_shechen_tennyi_dargyeling"],
+        "disambiguationTip": "Ka-Nying Shedrup Ling is the large white monastery just north of the stupa; Shechen is further north-east with a red-and-gold facade and a large courtyard."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The White Monastery",
+          "text": "Ka-Nying Shedrup Ling, often called the White Monastery for its whitewashed walls, was founded in 1976 by Tulku Urgyen Rinpoche, one of the most respected Tibetan meditation masters of the twentieth century, who settled in Nepal after leaving Tibet. Its name refers to the union of the Kagyu and Nyingma lineages, the 'ka' and 'nying', and to the joining of study and practice, 'shedrup'. Tulku Urgyen Rinpoche's sons became prominent teachers, and the monastery has been led by Chokyi Nyima Rinpoche, who has taught many students from around the world. The monastery is home to a large community of monks and is associated with a well-known programme of Buddhist studies for international students. Its founding was part of the wave of monastery building at Boudha after 1959 that made the area a global centre of Tibetan Buddhism outside Tibet.",
+          "sourceIds": ["dowman_1995", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Modern Himalayan Monastery",
+          "text": "The monastery is a large, multistorey complex built in the Tibetan style with modern materials, its whitewashed walls, painted window frames and gilded roof ornaments rising above the streets north of the stupa. The main assembly hall contains a large image of the Buddha and is decorated with colourful murals and thangka paintings depicting the lineages of the Kagyu and Nyingma schools. Columns wrapped in brocade support the ceiling, and the hall is furnished with rows of seats for monks. The complex includes residential quarters for monks, classrooms and facilities for visiting students. The monastery's scale and visibility make it a landmark in Boudha. Its architecture shows how Tibetan monastic traditions have adapted to new urban settings in exile, combining concrete construction with traditional painted and gilded decoration in a recognisably Himalayan style.",
+          "sourceIds": ["saalik_editorial", "korn_1976"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Lineages on the Walls",
+          "text": "The murals of Ka-Nying Shedrup Ling depict the masters of the Kagyu and Nyingma lineages, the Buddhas and bodhisattvas central to their practice, and protective deities. For practitioners these images are not decorations but supports for meditation, showing the transmission of teachings from the Buddha through generations of realised masters to the present. Padmasambhava, revered by the Nyingma school, and the great yogis of the Kagyu tradition, such as Milarepa, appear prominently. The union of the two lineages that gives the monastery its name is reflected in its art, where masters from both traditions are honoured side by side. The monastery's main Buddha image, surrounded by offerings, forms the focus of the assembly hall. Visitors who study the murals with a guide can learn to recognise key figures and understand the stories they illustrate.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Teachings Open to the World",
+          "text": "Ka-Nying Shedrup Ling is known internationally for opening its teachings to students from around the world. For many years the monastery has hosted public teachings, and an annual autumn seminar has drawn practitioners from many countries. Its associated institute offers academic programmes in Buddhist studies and Himalayan languages, attracting international students to live and study at Boudha. Daily monastic rituals continue alongside these activities, with prayer sessions, ritual ceremonies and festivals such as Losar marked by special pujas. Visitors are often welcome to observe ceremonies and visit the main hall, provided they follow monastery etiquette: remove shoes, dress modestly, walk clockwise and ask before taking photographs. The monastery's openness has made it an important bridge between Tibetan Buddhism and practitioners worldwide, and many visitors first encounter Buddhist teaching here.",
+          "sourceIds": ["saalik_editorial", "dowman_1995"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Sustaining a Living Institution",
+          "text": "As a modern monastery, Ka-Nying Shedrup Ling's conservation concerns relate mainly to maintaining its buildings, murals and community. The 2015 earthquake damaged many buildings in Boudha, and monasteries undertook repairs to ensure the safety of their monks and visitors. Murals and thangka paintings must be protected from moisture, smoke and wear, and periodic renewal provides work for skilled painters trained in Boudha. The monastery's international connections have helped it to raise funds for maintenance and repairs. Its role in heritage is distinctive: rather than preserving an ancient building, it preserves and transmits a living tradition of teaching and practice that was endangered after 1959. Documenting such institutions acknowledges that heritage includes intangible traditions and recent history, which are as important to communities as ancient monuments are.",
+          "sourceIds": ["ird_heritage", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Just north of the stupa rises a large white building with golden deer on its roof. This is Ka-Nying Shedrup Ling, the White Monastery, founded in 1976 by Tulku Urgyen Rinpoche, a celebrated meditation master who came to Nepal from Tibet. Its name brings together two great Tibetan traditions, Kagyu and Nyingma, and two halves of the path, study and practice. Look at the murals inside and you will find the masters of both lineages side by side. This monastery is famous for opening its doors to students from around the world, and you may meet people from many countries studying here. Remove your shoes, sit quietly at the back during prayers, and listen. Book a verified local storyteller nearby and let a guide tell you the story of the Tibetan exile at Boudha."
+      },
+      "nepaliSummary": "का-न्यिङ शेड्रुप लिङ (सेतो गुम्बा) सन् १९७६ मा तुल्कु उर्ग्येन रिन्पोछेले स्थापना गरेको बौद्धनाथ नजिकैको गुम्बा हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "The white facade glows in early light; midday sun blows out the whitewash.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Main facade and entrance square-on." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the courtyard." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the roof ornaments." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Dharma wheel and deer, or the entrance murals." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Monastery in relation to the stupa's spire." }
+        ],
+        "occlusionNotes": "Monks and students cross the courtyard and vehicles park at the entrance.",
+        "restrictions": "Ask before photographing monks or the interior; remove shoes; dress modestly."
+      },
+      "walkingTourStop": { "sequence": 9, "dwellMinutes": 15, "talkingPoint": "Tell the story of Tibetan exile and the union of lineages." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm current leadership and visitor arrangements with the monastery office." }
+    },
+    {
+      "id": "bdh_shechen_tennyi_dargyeling",
+      "names": { "en": "Shechen Tennyi Dargyeling", "ne": "शेचेन तेन्यी दार्गेलिङ गुम्बा", "romanized": "Shechen Tennyi Dargye Ling", "romanizedLanguage": "Tibetan" },
+      "aliases": ["Shechen Monastery", "Shechen Gompa Boudha"],
+      "monumentType": "MONASTERY",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Modern", "century": "20th century CE", "foundingYearCE": 1980, "datingBasis": "documented_record", "patron": "Dilgo Khyentse Rinpoche" },
+      "geo": { "lat": 27.7244, "lng": 85.3639, "elevationM": 1316, "geofenceRadiusM": 50, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 6, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["reinforced_concrete", "whitewash_lime", "gilt_repousse_copper", "carved_wood"],
+        "guardianVahanas": ["golden deer and dharma wheel on the roof"],
+        "deityMudrasWeapons": ["large image of the Buddha with Padmasambhava", "murals painted by artists of the monastery's art school"],
+        "distinguishingFeatures": ["large monastery with a spacious courtyard north-east of the stupa", "red, white and gold facade with a grand assembly hall"],
+        "confusableWith": ["bdh_kanying_shedrup_ling"],
+        "disambiguationTip": "Shechen is the large red-and-gold monastery with a big courtyard north-east of the stupa; Ka-Nying Shedrup Ling is closer to the stupa and predominantly white."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Monastery Reborn in Exile",
+          "text": "Shechen Tennyi Dargyeling is the exile seat of Shechen Monastery, one of the great monasteries of the Nyingma school in eastern Tibet, which was destroyed in the 1950s. Its re-establishment at Boudha was led by Dilgo Khyentse Rinpoche, one of the most revered Tibetan masters of the twentieth century, with construction beginning in 1980. Dilgo Khyentse Rinpoche, who died in 1991, was a teacher to many lamas, including the Dalai Lama, and a renowned poet and scholar. The monastery has since been led by Shechen Rabjam Rinpoche, his grandson. It houses a large community of monks and has become one of the most important Nyingma centres outside Tibet. The French monk and author Matthieu Ricard, long associated with Dilgo Khyentse Rinpoche, has also been closely connected with Shechen, helping to bring its traditions to international attention.",
+          "sourceIds": ["dowman_1995", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Grand Assembly Hall",
+          "text": "Shechen is one of the largest monasteries at Boudha, organised around a spacious courtyard where ceremonies and dances take place. Its main assembly hall rises above the courtyard with a red, white and gold facade, gilded roof ornaments and a grand entrance portico. Inside, the hall is richly decorated with murals and statues created by artists trained in traditional techniques, many of them associated with the monastery's own art school, which teaches thangka painting and other sacred arts. The scale of the hall accommodates the monastery's large community of monks during assemblies. The complex also includes residences, classrooms, a guesthouse and facilities for visitors. Its architecture continues the tradition of the great monasteries of eastern Tibet, adapted to the materials and setting of the valley, and its courtyard provides a rare open space in crowded Boudha.",
+          "sourceIds": ["saalik_editorial", "korn_1976"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Murals of the Nyingma Tradition",
+          "text": "Shechen's murals and statues present the vision of the Nyingma school, the oldest of the four main schools of Tibetan Buddhism, which traces its teachings to Padmasambhava and the masters of the eighth century. The main hall features a large image of the Buddha, accompanied by Padmasambhava and other key figures, and its walls are painted with Buddhas, bodhisattvas, lineage masters and protective deities in vivid colour. The paintings follow strict iconographic rules specifying proportions, colours and attributes, which artists learn through years of training. The monastery's art school helps to preserve these skills, which were threatened by the destruction of monasteries in Tibet. For visitors, the murals offer a remarkable introduction to Tibetan Buddhist art, and the quality of the work reflects the importance placed on beauty as a support for spiritual practice.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Dances, Drupchen and Daily Prayer",
+          "text": "Shechen is renowned for its ritual life, including elaborate ceremonies known as drupchen, intensive group practices lasting many days, and for its sacred dances, cham, performed by masked monks in the courtyard. These dances, often held around Losar or on other auspicious dates, depict the victory of wisdom over obstacles and draw large crowds of devotees and visitors. Daily prayers in the assembly hall, accompanied by horns, drums and cymbals, structure the monks' lives. The monastery also offers teachings, and its guesthouse welcomes visitors who wish to experience monastic life more closely. Visitors are often welcome to watch ceremonies from the edges of the courtyard or the back of the hall, following monastery etiquette. Checking the monastery's calendar or asking a guide helps visitors time their visit to coincide with special events and dances.",
+          "sourceIds": ["saalik_editorial", "dowman_1995"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Preserving Arts in Exile",
+          "text": "Shechen's greatest contribution to heritage conservation lies in preserving the sacred arts and ritual traditions of Tibetan Buddhism, many of which were endangered after the destruction of monasteries in Tibet. The monastery's art school trains painters in traditional techniques, and its library preserves texts and documents. Its buildings, like others in Boudha, were affected by the 2015 earthquake and required inspection and repair, and the murals and statues must be maintained to protect them from moisture, smoke and wear. The monastery has also been associated with humanitarian and educational projects in Nepal and in Tibetan areas, reflecting a broad understanding of heritage as part of community well-being. Documenting Shechen helps to recognise the role of exile institutions in safeguarding intangible heritage, alongside the conservation of ancient monuments such as the stupa itself.",
+          "sourceIds": ["ird_heritage", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Walk north-east from the stupa to a grand courtyard surrounded by red, white and gold buildings. This is Shechen, a monastery reborn here after its original home in eastern Tibet was destroyed in the 1950s. Its rebuilding at Boudha began in 1980 under Dilgo Khyentse Rinpoche, a master so respected that he taught the Dalai Lama. Step inside the great hall and look at the murals: many were painted by artists trained at the monastery's own art school, keeping alive techniques that might otherwise have been lost. If you are lucky, you may arrive during the masked dances in the courtyard, when monks spin in swirling costumes. When does the next dance take place? Book a verified local storyteller nearby and let a guide check the monastery calendar for you."
+      },
+      "nepaliSummary": "शेचेन तेन्यी दार्गेलिङ सन् १९८० देखि दिल्गो ख्येन्चे रिन्पोछेले बौद्धमा पुनर्स्थापना गरेको ञिङ्मा परम्पराको ठूलो गुम्बा हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "The courtyard opens to morning sun; gilded ornaments flare by midday.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Assembly hall facade from the courtyard centre." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the courtyard galleries." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique showing the entrance portico." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Roof ornaments or portico murals." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Whole courtyard with the assembly hall." }
+        ],
+        "occlusionNotes": "Monks and visitors cross the courtyard constantly and festival crowds fill it during cham.",
+        "restrictions": "Ask before photographing ceremonies or the interior; remove shoes."
+      },
+      "walkingTourStop": { "sequence": 10, "dwellMinutes": 20, "talkingPoint": "End with the story of sacred arts preserved in exile." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm visitor access, current cham dates and the art school's name." }
+    }
+  ]
+}

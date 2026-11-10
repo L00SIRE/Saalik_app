@@ -1,0 +1,1219 @@
+{
+  "zoneId": "kathmandu_durbar",
+  "names": { "en": "Kathmandu Durbar Square (Hanuman Dhoka)", "ne": "काठमाडौं दरबार क्षेत्र (हनुमानढोका)", "romanized": "Yen Layaku", "romanizedLanguage": "Newa" },
+  "designation": "UNESCO_MONUMENT_ZONE",
+  "unescoReference": "UNESCO WHC 121 - Hanuman Dhoka Durbar Square Monument Zone",
+  "district": "Kathmandu",
+  "centroid": { "lat": 27.7045, "lng": 85.3069 },
+  "zoneRadiusM": 400,
+  "description": "The former royal palace square of Kathmandu, where Malla kings and later the Shah dynasty ruled. It combines the Hanuman Dhoka palace, the city's namesake Kasthamandap pavilion, the residence of the living goddess Kumari and dozens of temples rebuilt or repaired after the 2015 Gorkha earthquake.",
+  "walkingTour": {
+    "tourId": "ktm_durbar_royal_loop",
+    "title": "Royal Kathmandu: From Kasthamandap to Taleju",
+    "titleNe": "शाही काठमाडौं: काष्ठमण्डपदेखि तलेजुसम्म",
+    "startPoint": "Kasthamandap platform, Maru Tole",
+    "bestStartTime": "07:00"
+  },
+  "monuments": [
+    {
+      "id": "ktm_hanuman_dhoka",
+      "names": { "en": "Hanuman Dhoka Palace", "ne": "हनुमानढोका दरबार", "romanized": "Hanuman Dhoka Layaku", "romanizedLanguage": "Newa" },
+      "aliases": ["Hanuman Dhoka Durbar", "Old Royal Palace of Kathmandu", "Nasal Chowk"],
+      "monumentType": "PALACE",
+      "tradition": "CIVIC_ROYAL",
+      "era": { "dynasty": "Malla", "century": "16th-17th century CE, expanded through the 19th century", "foundingYearCE": null, "datingBasis": "documented_record", "patron": "Pratap Malla (major expansion); later Shah kings" },
+      "geo": { "lat": 27.7046, "lng": 85.3074, "elevationM": 1302, "geofenceRadiusM": 120, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["fired_brick", "carved_wood", "gilt_repousse_copper", "black_stone"],
+        "guardianVahanas": ["stone lions ridden by Shiva and Parvati flanking the gate", "Hanuman statue under a royal umbrella"],
+        "deityMudrasWeapons": ["Hanuman coated in red sindoor paste with his face hidden", "Narasimha disembowelling Hiranyakashipu inside the gate"],
+        "distinguishingFeatures": ["red-cloaked Hanuman statue beside a gilded and painted gateway", "nine-storey Basantapur tower rising over the southern wing", "chain of brick courtyards entered through low doorways"],
+        "confusableWith": ["ktm_gaddhi_baithak", "ktm_taleju_mandir"],
+        "disambiguationTip": "Look for the red-cloaked Hanuman under an umbrella at the gate; Gaddhi Baithak is the white European-style facade, and Taleju is the tall triple-roofed temple on a stepped plinth."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Seat of Malla and Shah Kings",
+          "text": "Hanuman Dhoka was the royal palace of Kathmandu from the Malla period until the Shah court moved to Narayanhiti in the late nineteenth century. Parts of the complex are older, but its present character owes most to King Pratap Malla, who ruled Kantipur in the mid-seventeenth century and added courtyards, temples and, in 1672, the statue of Hanuman that gave the gate its name. After Prithvi Narayan Shah captured Kathmandu during the Indra Jatra festival of 1768, the Shah dynasty made the palace their seat and added the Basantapur wing with its tall lookout towers. Nasal Chowk, the main courtyard, remained the stage for royal coronations well into the late twentieth century. Today the palace is a museum and a protected part of the Kathmandu Valley World Heritage property, managed by a museum development committee working with the Department of Archaeology.",
+          "sourceIds": ["unesco_whc_121", "slusser_1982", "doa_nepal"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Courtyards, Towers and Carved Windows",
+          "text": "The palace is not one building but a sequence of brick courtyards, or chowks, linked by low doorways and wrapped in carved timber. Visitors enter through the painted gate beside the Hanuman statue into Nasal Chowk, a long rectangular court whose name is linked to Nasaleshwar, the dancing form of Shiva. Above its southern side rises the nine-storey Basantapur tower, built in the Shah period as a lookout over the city, joined around Lohan Chowk by three smaller towers named for Kirtipur, Bhaktapur and Lalitpur. The walls show classic Newar craft: thin, precisely fired bricks laid with tight joints, latticed windows, and roof struts carved with gods and attendants. Later Shah and Rana rulers added whitewashed rooms and European details, so a single walk through the palace reads like a timeline of Kathmandu building styles across three centuries.",
+          "sourceIds": ["korn_1976", "hutt_1994"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Hanuman, Narasimha and the Gate",
+          "text": "The monkey god Hanuman stands guard beside the main gate, his image so thickly coated in red sindoor paste and mustard oil that his features have disappeared beneath generations of offerings. He wears a red cloak and shelters under a royal umbrella, signalling that the loyal servant of Rama also protects the king's household. Hanuman was chosen for the gate because he is believed to ward off evil and to bring victory in war. Inside, near the entrance to Nasal Chowk, a black stone sculpture installed under Pratap Malla shows Narasimha, the man-lion form of Vishnu, tearing open the demon Hiranyakashipu. Stone lions ridden by Shiva and Parvati flank the doorway, and the painted panel above the gate adds further protective deities. Read together, the images announce a palace guarded by every divine power available to a Malla king.",
+          "sourceIds": ["slusser_1982", "pal_1974"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Dashain Sacrifices and the Kumari's Blessing",
+          "text": "Although no king has lived here for more than a century, the palace still sits at the centre of Kathmandu's ritual calendar. During Dashain, sacrifices are offered in the inner palace courtyards to Taleju, the royal goddess whose temple rises from the palace grounds. During Indra Jatra, the city's great late-summer festival, the living goddess Kumari is pulled past the palace in her chariot. In the monarchy era the king received her tika blessing during the festival, and since 2008 the President has taken that role. Masked dancers representing Bhairav and other deities perform in the square nearby, and crowds fill every plinth and balcony. On ordinary mornings devotees still smear fresh red paste on Hanuman and ring the small bells at his feet, adding another layer to the shapeless red figure that has guarded the gate since 1672.",
+          "sourceIds": ["levy_1990", "slusser_1982", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Earthquake Damage and Reconstruction",
+          "text": "The 2015 Gorkha earthquake struck Hanuman Dhoka hard. The upper storeys of the nine-storey Basantapur tower were badly damaged, several palace wings cracked, and temples in the surrounding square collapsed. Reconstruction has been led by the Department of Archaeology with international partners, including a major Chinese-assisted programme for the Basantapur and Lohan Chowk sections. Engineers faced a familiar tension in Kathmandu heritage work: how to add seismic strength without replacing original bricks, timbers and carvings. The approach generally favoured traditional materials, salvaged carvings and hidden reinforcement. The palace also benefited from rescue archaeology by Durham University and UNESCO teams, who documented foundations and earlier building phases exposed by the damage. Some rooms may still be closed when you visit, and a guide can explain which parts were rebuilt and which survived intact.",
+          "sourceIds": ["doa_nepal", "durham_unesco_rescue_archaeology", "unesco_whc_121"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Look to the left of the gate and you will see a figure with no face at all, only a red, rounded shape wrapped in a cloak beneath an umbrella. That is Hanuman, the loyal servant of Rama, and for more than three hundred years Kathmandu has painted him with so much red paste that the carving has vanished. King Pratap Malla placed him here in 1672 to protect a palace that kings would rule from for two more centuries. Beyond the gate lies Nasal Chowk, where Nepal crowned its kings, and above you rises the nine-storey Basantapur tower, cracked in 2015 and rebuilt since. Want to know why four towers here were named after four rival cities? Book a verified local storyteller nearby and walk the palace with a guide who grew up in its shadow."
+      },
+      "nepaliSummary": "हनुमानढोका मल्ल र शाह राजाहरूको पुरानो दरबार हो, जसको ढोकामा राजा प्रताप मल्लले सन् १६७२ मा हनुमानको मूर्ति राखेका थिए।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-09:00",
+        "lightingNotes": "Early light reduces the contrast between the dark gate and the bright whitewashed walls; avoid noon, when shadows under the eaves turn black.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Gate, Hanuman statue and umbrella centred with the full doorway in frame." },
+          { "angle": "LEFT_45", "framingNote": "From the Jagannath side, capture gate depth and the Hanuman profile." },
+          { "angle": "RIGHT_45", "framingNote": "From the inscription wall side, include the lion guardian pair." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Painted panel above the gate and the Shiva-Parvati lion riders." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "From Basantapur, palace facade with the nine-storey tower behind." }
+        ],
+        "occlusionNotes": "Queues of devotees and security staff stand at the gate and pigeons gather on the plinth; shoot before 08:00 or wait for gaps between offerings.",
+        "restrictions": "Ticketed entry for foreign visitors; photography is not permitted inside some museum galleries."
+      },
+      "walkingTourStop": { "sequence": 7, "dwellMinutes": 25, "talkingPoint": "Explain how the Hanuman statue named the palace and why four towers honour four cities." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Coordinates approximate (gate position); confirm museum gallery photography rules with the site office." }
+    },
+    {
+      "id": "ktm_taleju_mandir",
+      "names": { "en": "Taleju Bhawani Temple", "ne": "तलेजु भवानी मन्दिर", "romanized": "Taleju Dyah", "romanizedLanguage": "Newa" },
+      "aliases": ["Taleju Mandir", "Taleju Temple Kathmandu"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "16th century CE", "foundingYearCE": 1564, "datingBasis": "documented_record", "patron": "Mahendra Malla" },
+      "geo": { "lat": 27.7053, "lng": 85.3078, "elevationM": 1304, "geofenceRadiusM": 45, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 3,
+        "primaryMaterials": ["fired_brick", "carved_wood", "gilt_repousse_copper"],
+        "guardianVahanas": ["stone lions on the plinth stairs"],
+        "deityMudrasWeapons": ["Taleju Bhawani, a form of Durga, kept hidden from public view", "gilded toranas above the sanctum doors"],
+        "distinguishingFeatures": ["three gilded copper roofs forming the highest roofline in the square", "tall stepped brick plinth", "walled enclosure closed to the public most of the year"],
+        "confusableWith": ["ktm_hanuman_dhoka", "ktm_maju_dega"],
+        "disambiguationTip": "Taleju is the tallest roofline and sits inside a walled enclosure; Maju Dega also has a stepped plinth but stands open on the square with tiled roofs and a Nandi bull in front."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Goddess Who Came with the Kings",
+          "text": "Taleju Bhawani was the tutelary goddess of the Malla kings, and her cult reached the Kathmandu Valley with the dynasty's ancestors from the south, by tradition through King Harisimhadeva of Tirhut in the fourteenth century. In 1564 King Mahendra Malla built this temple to house her within the royal precinct, and tradition holds that he forbade anyone in the city to build higher than it. The temple's height and the closed enclosure around it expressed a political idea: the goddess legitimised the king, and the king's palace sheltered the goddess. When Prithvi Narayan Shah took Kathmandu in 1768 he did not suppress the cult but adopted it, keeping Taleju's worship at the centre of royal ritual. The temple therefore spans both dynasties and remains one of the most important sacred buildings in the city.",
+          "sourceIds": ["slusser_1982", "wright_1877"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Tallest Roofline in the Square",
+          "text": "Taleju rises in three gilded copper roofs above a stepped brick plinth, making it the highest building in Kathmandu Durbar Square and the landmark that orients visitors from every side. The plinth raises the shrine far above street level, which both protects it from crowds and gives it the commanding profile that Malla builders associated with royal power. Each roof is supported by carved wooden struts depicting deities and their attendants, and the eaves are hung with bells and banners whose metal catches the morning sun. Gilded toranas, the semicircular panels above the doors, frame the entrances to the sanctum. The temple sits within a walled enclosure entered through a guarded gate, so most visitors appreciate it from outside, ideally from the Basantapur platform or the steps of nearby temples, where the full height of the roofs can be seen.",
+          "sourceIds": ["bernier_1979", "korn_1976"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "A Goddess Kept from View",
+          "text": "Taleju is understood as a form of Durga, the warrior goddess who destroys demons, and she is closely linked with the Tantric goddesses of the Newar tradition. Her image is never displayed to the public, and the sanctum is served by a small number of designated priests. Instead of showing the goddess directly, the temple communicates her power through its ornament: carved struts with multi-armed deities, guardian lions, and gilded panels in which protective figures surround the doorways. This concealment is itself a theological statement. In Newar Tantric practice, the most powerful forms of a deity are considered secret and are approached only through initiation. The tall, closed temple thus works as a public sign of a private presence. Visitors are invited to read the exterior carvings and imagine the goddess within, rather than to see her.",
+          "sourceIds": ["slusser_1982", "levy_1990"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Opened Once a Year",
+          "text": "For most of the year the Taleju temple is closed, but on Maha Navami, the ninth day of Dashain, it opens to Hindu worshippers, who queue for hours across the square for a rare chance to enter. Animal sacrifices are offered to the goddess during Dashain in the palace courtyards associated with her worship, continuing a royal ritual that once confirmed the king's protection for the coming year. Taleju is also bound to the cult of the Kumari, the living goddess, who is regarded as her embodiment, and legends of the Malla kings describe secret games of dice between the king and the goddess. In one widely told version, the king offended Taleju and she withdrew, promising to return in the form of a young girl. That story is often given as the origin of the Kumari tradition across the square.",
+          "sourceIds": ["levy_1990", "wright_1877", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Surviving the 2015 Earthquake",
+          "text": "Taleju came through the 2015 Gorkha earthquake better than many of its neighbours, which some residents interpret as a sign of the goddess's protection and engineers attribute to its massive plinth and careful original construction. The temple still required inspection and repair, as did the walls of its enclosure and parts of the surrounding palace. Conservation of temples like Taleju follows principles shared across the valley's World Heritage zones: keep original timber and brick wherever possible, replace decayed members with matching species and joinery, and avoid modern materials that change the building's character. Gilded roofs pose special problems, because regilding is a ritual act as well as a technical one and must be performed with the approval of the temple's priests and guthi. Ask your guide what work is under way during your visit, since repairs are often continuous.",
+          "sourceIds": ["doa_nepal", "unesco_whc_121"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Turn your eyes upward until you find the highest golden roof in the square. That is Taleju, the royal goddess of the Malla kings, and in 1564 King Mahendra Malla built her temple so tall that, legend says, no one in Kathmandu was allowed to build higher. Here is the remarkable part: almost no one has ever seen her. The goddess is hidden inside, served by a handful of priests, and the doors open to Hindu worshippers on only one day each year, during the festival of Dashain. Her story is also tied to the Kumari, the living goddess who lives just across the square. How did a game of dice between a king and a goddess create that tradition? Book a verified local storyteller nearby and let a guide tell you the full legend."
+      },
+      "nepaliSummary": "तलेजु भवानी मल्ल राजाहरूकी कुलदेवी हुन्; राजा महेन्द्र मल्लले सन् १५६४ मा बनाएको यो मन्दिर दशैँको नवमीमा मात्र खुल्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "06:45-08:30",
+        "lightingNotes": "Low morning sun lights the gilded roofs evenly; at midday the gold flares and the carved struts fall into deep shadow.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full three-roof profile from outside the enclosure gate, plinth included." },
+          { "angle": "LEFT_45", "framingNote": "From the northern square near Kotilingeshwar, roofs stacked against the sky." },
+          { "angle": "RIGHT_45", "framingNote": "From the palace side, showing plinth steps and the enclosure wall." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Telephoto on carved roof struts and the gilded torana above the doors." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "From Basantapur, Taleju rising above the surrounding temples." }
+        ],
+        "occlusionNotes": "The enclosure wall hides the plinth from street level and overhead wires cross the northern view; climb nearby temple steps for a clear line.",
+        "restrictions": "Enclosure closed except to Hindu worshippers on Maha Navami; never photograph inside the sanctum."
+      },
+      "walkingTourStop": { "sequence": 14, "dwellMinutes": 15, "talkingPoint": "End the loop with the hidden goddess and link Taleju back to the Kumari legend told earlier." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm current access rules with the site office; coordinates estimated from the enclosure centre." }
+    },
+    {
+      "id": "ktm_kasthamandap",
+      "names": { "en": "Kasthamandap", "ne": "काष्ठमण्डप", "romanized": "Maru Sattal", "romanizedLanguage": "Newa" },
+      "aliases": ["Kathmandap", "Maru Satta", "Kasthamandap Pavilion"],
+      "monumentType": "REST_HOUSE",
+      "tradition": "SHARED_HINDU_BUDDHIST",
+      "era": { "dynasty": "Licchavi", "century": "foundations c. 7th century CE; rebuilt over many centuries, latest reconstruction 2021", "foundingYearCE": null, "datingBasis": "archaeological", "patron": null },
+      "geo": { "lat": 27.7039, "lng": 85.3058, "elevationM": 1300, "geofenceRadiusM": 40, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 3,
+        "primaryMaterials": ["carved_wood", "wood", "fired_brick", "clay_tile"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["Gorakhnath, the Nath yogi, seated at the centre of the open ground floor"],
+        "distinguishingFeatures": ["open-sided three-storey timber pavilion on a raised brick platform", "bright, unweathered timber from the 2021 reconstruction", "Ashok Binayak Ganesh shrine immediately beside it"],
+        "confusableWith": ["ktm_trailokya_mohan", "ktm_maju_dega"],
+        "disambiguationTip": "Kasthamandap is open at ground level with no enclosed sanctum walls and its timber looks newer than its neighbours; Trailokya Mohan and Maju Dega are closed temples on taller plinths."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Pavilion That Named a City",
+          "text": "Kasthamandap, meaning 'wooden pavilion', is the building from which Kathmandu takes its name. Chronicles tell that it was raised from the timber of a single sal tree, a story that captures how prodigious its beams seemed to later generations. For centuries scholars dated it to around the twelfth century from documentary references, but rescue archaeology after the 2015 earthquake found evidence suggesting that its foundations reach back to roughly the seventh century, the late Licchavi period. Whatever its exact age, it served as a sattal, a public rest house at the meeting of trade routes from India and Tibet, where travellers, traders and pilgrims could shelter. The city grew around this crossroads, and the pavilion's name gradually became the name of the whole settlement and, eventually, of the capital of modern Nepal.",
+          "sourceIds": ["durham_unesco_rescue_archaeology", "slusser_1982", "wright_1877"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Building Without Walls",
+          "text": "Unlike the closed temples around it, Kasthamandap is essentially a timber frame on a brick platform: three storeys of posts, beams and roofs, open on the ground floor so that people can gather, sit and pass through. Its structure depends on interlocking joinery rather than nails, a technique Newar carpenters still practise, and massive posts carry the load of the tiled roofs above. The upper floors were used for storage and ritual purposes, while the ground floor served as a communal hall for meetings, singing and resting. Carved struts and beams carry deities and attendant figures in the Newar manner. Because the 2015 earthquake brought the whole structure down, today's pavilion is a reconstruction, built with sal timber, traditional bricks and lime-based mortar, but engineered with discreet improvements so that it holds together better in future earthquakes.",
+          "sourceIds": ["korn_1976", "doa_nepal"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Gorakhnath at the Centre",
+          "text": "At the heart of the ground floor sits an image of Gorakhnath, the great yogi of the Nath tradition, who is revered by both Hindus and Buddhists in Kathmandu. Nath legends describe Gorakhnath as a disciple of Matsyendranath, the rain-bringing deity whom Newar Buddhists identify with Karunamaya, the compassionate Avalokiteshvara. A well-known valley story tells how Gorakhnath, offended at not being welcomed, sat in meditation on the rain-giving serpents and caused a long drought, which ended only when his guru was brought to the valley. Gorakhnath's presence here is therefore a reminder of the valley's dependence on monsoon rain. Images of Ganesh are associated with the pavilion, and the small Ashok Binayak shrine, one of Kathmandu's most visited Ganesh temples, stands right beside it, so many devotees combine a visit to both.",
+          "sourceIds": ["locke_1980", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Singing, Feasting and Festival Gatherings",
+          "text": "As a public pavilion, Kasthamandap has always been a place where neighbourhood groups meet. Devotional singing groups gather here in the evenings, and feasts and religious readings are held during festivals. Its position on the processional route at Maru means that chariots, masked dancers and festival crowds pass by during Indra Jatra and other celebrations. Before setting out on a journey or starting a new venture, many Kathmandu residents first stop at the neighbouring Ashok Binayak shrine to ask Ganesh to remove obstacles, then pause at the pavilion. The rebuilding after 2015 became a ritual event in itself: the arrival of the timber, the laying of foundations and the final consecration were all marked with ceremonies involving priests, guthi members and residents, who regarded the work as restoring the identity of their city rather than simply repairing a building.",
+          "sourceIds": ["toffin_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "A Community-Led Rebuilding",
+          "text": "Kasthamandap collapsed completely on 25 April 2015, killing people who had sheltered beneath it, and its loss became a symbol of the earthquake's damage to Kathmandu's heritage. Before rebuilding, archaeologists from Durham University and UNESCO worked with the Department of Archaeology to excavate the ruins, recovering evidence of the original foundations and earlier construction phases. Reconstruction was then organised through a community committee working with Kathmandu Metropolitan City, an unusual model in which local residents and craftspeople led the work instead of a contractor. They used traditional materials, including sal timber, hand-made bricks and lime-based mortar, and incorporated modest structural strengthening. The rebuilt pavilion was completed and reconsecrated in 2021. Its fresh timber looks noticeably brighter than the older monuments nearby, a visual sign of how recently the city's namesake returned.",
+          "sourceIds": ["durham_unesco_rescue_archaeology", "doa_nepal", "unesco_whc_121"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Stand at Maru and look at the open wooden pavilion in front of you. This is Kasthamandap, the wooden shelter that gave Kathmandu its name. Legend says it was built from the timber of a single tree, and archaeologists digging after the 2015 earthquake found signs that its foundations may be around fourteen hundred years old. For centuries traders, pilgrims and travellers slept here at the crossroads of routes to India and Tibet. In 2015 the whole building fell, and the people of Kathmandu chose to rebuild it themselves, with their own carpenters and traditional materials, finishing in 2021. Inside sits the yogi Gorakhnath, whose meditation once caused a famous drought. Want to hear how that drought ended? Book a verified local storyteller nearby and begin your walk with a guide right here."
+      },
+      "nepaliSummary": "काष्ठमण्डप एउटै रूखको काठबाट बनेको मानिने सार्वजनिक सत्तल हो, जसबाट काठमाडौंको नाम रहेको हो; २०१५ को भूकम्पपछि समुदायले यसलाई पुनर्निर्माण गरे।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:30-08:00",
+        "lightingNotes": "Before 08:00 the open ground floor is evenly lit; later the deep eaves turn the interior almost black against a bright street.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full three-storey pavilion from the Maru side with platform steps visible." },
+          { "angle": "LEFT_45", "framingNote": "Corner view showing the open ground floor depth and roof stacking." },
+          { "angle": "RIGHT_45", "framingNote": "Corner view including the adjacent Ashok Binayak shrine." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gorakhnath shrine and the newly carved struts of the 2021 rebuild." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "From the Trailokya Mohan steps, the pavilion with Maru street life." }
+        ],
+        "occlusionNotes": "Motorbikes and street vendors fill Maru from mid-morning and people rest on the platform all day.",
+        "restrictions": "Remove shoes before stepping onto the inner platform; be discreet when photographing worshippers."
+      },
+      "walkingTourStop": { "sequence": 1, "dwellMinutes": 15, "talkingPoint": "Open the tour with the city's namesake and the community rebuilding story." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Coordinates approximate; confirm reconsecration date and current shrine arrangement on site." }
+    },
+    {
+      "id": "ktm_kumari_ghar",
+      "names": { "en": "Kumari Ghar", "ne": "कुमारी घर", "romanized": "Kumari Chhen", "romanizedLanguage": "Newa" },
+      "aliases": ["House of the Living Goddess", "Kumari Bahal"],
+      "monumentType": "RESIDENCE",
+      "tradition": "SHARED_HINDU_BUDDHIST",
+      "era": { "dynasty": "Malla", "century": "18th century CE", "foundingYearCE": 1757, "datingBasis": "documented_record", "patron": "Jaya Prakash Malla" },
+      "geo": { "lat": 27.7036, "lng": 85.3069, "elevationM": 1300, "geofenceRadiusM": 30, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["fired_brick", "carved_wood"],
+        "guardianVahanas": ["stone lions flanking the entrance"],
+        "deityMudrasWeapons": ["carved window frames with deities, birds and floral motifs"],
+        "distinguishingFeatures": ["three-storey brick courtyard house with richly carved windows", "inner courtyard with a small Buddhist chaitya", "upper-floor window where the Kumari may briefly appear"],
+        "confusableWith": ["ktm_gaddhi_baithak", "ktm_shiva_parvati_mandir"],
+        "disambiguationTip": "Kumari Ghar is a red-brick house with carved windows and lion guardians at the doorway; Shiva Parvati Mandir has two painted figures leaning from an upper window, and Gaddhi Baithak is white neoclassical."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Palace for a Living Goddess",
+          "text": "Kumari Ghar was built in 1757 by Jaya Prakash Malla, the last Malla king of Kathmandu, as the residence of the Royal Kumari, a young girl worshipped as the living embodiment of the goddess Taleju. The king's devotion to the Kumari was famous, and he is credited with establishing the Kumari's chariot procession during Indra Jatra. It was during this very festival, in 1768, that Prithvi Narayan Shah entered Kathmandu and took the city. Chronicles relate that the new king went to receive the Kumari's blessing, and the Shah dynasty kept the tradition alive, with the monarch receiving her tika each year. Since the end of the monarchy in 2008, the President has taken that role. The house itself has remained the home of the Royal Kumari since its construction, through every change of government in Nepal.",
+          "sourceIds": ["slusser_1982", "wright_1877"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Newar Courtyard Craft",
+          "text": "The building follows the plan of a Newar Buddhist monastery: a three-storey brick block wrapped around a square inner courtyard. Its facades are among the finest examples of eighteenth-century Newar woodcarving, with lattice windows, carved frames and projecting balconies whose details include deities, birds and floral motifs. The main door is guarded by stone lions and topped by a carved torana, while the courtyard walls are lined with more carved windows from which the Kumari may appear. A small chaitya stands in the courtyard, a reminder that the Kumari is chosen from the Buddhist Shakya community even though she embodies a Hindu goddess. The house shows how Newar builders adapted monastic architecture for royal and religious purposes, achieving richness through carving rather than scale, and it rewards anyone who takes time to study a single window closely.",
+          "sourceIds": ["locke_1985", "korn_1976"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Taleju in a Child's Form",
+          "text": "The Kumari is understood as Taleju, the royal goddess, dwelling in the body of a girl from the Shakya clan of Kathmandu's Newar Buddhist community. She is chosen in early childhood after examinations of her horoscope, health and physical signs, described in tradition as thirty-two perfections. Her appearance is strictly prescribed: she wears red, her hair is tied up in a topknot, and a 'fire eye' is painted on her forehead. She does not walk on the ground in public and is carried or pulled in her chariot. The carved windows of the house frame her appearances, turning the building into a living shrine. When she reaches puberty or loses blood through injury, the goddess is believed to leave her body, and a new Kumari is selected, while the former Kumari returns to ordinary life with her family.",
+          "sourceIds": ["levy_1990", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Glimpses at the Window and Indra Jatra",
+          "text": "Visitors who wait quietly in the courtyard may see the Kumari appear for a moment at the carved window on the upper floor, but photographing her is strictly forbidden and her caretakers enforce the rule. Her greatest public appearance comes during Indra Jatra, when she is pulled through the old city in a wooden chariot over several days, accompanied by chariots carrying boys who embody Ganesh and Bhairav. Devotees press forward to receive her blessing, and the head of state receives her tika in a ceremony that links political authority with the goddess's favour. During Dashain and other festivals she gives audiences in her rooms to families seeking blessings. Several towns in the valley, including Patan and Bhaktapur, have their own Kumaris, but the Royal Kumari of Kathmandu holds the most prominent role in national ritual life.",
+          "sourceIds": ["levy_1990", "slusser_1982", "saalik_editorial"],
+          "confidence": "high"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Surviving the Earthquake, Changing Traditions",
+          "text": "Kumari Ghar came through the 2015 earthquake with relatively limited damage while temples a few steps away collapsed, and many residents took this as evidence of the goddess's protection. The building still needed careful inspection, repair of cracked masonry and conservation of its delicate carved windows, which are vulnerable to weathering, insects and the vibration of heavy traffic nearby. Conservation of such a building is complicated by the fact that it is occupied: the Kumari and her caretaker family live there, and rituals continue daily. Alongside physical conservation, the tradition itself has changed. Following public debate and a Supreme Court review, the Kumari now receives schooling, and former Kumaris receive a state allowance. A guide can explain how the institution balances centuries-old ritual with modern ideas of childhood and education.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Step through the lion-guarded doorway into this small courtyard and look up at the carved window on the top floor. If you are patient and quiet, a young girl dressed in red, with a painted third eye, may appear for a few seconds. She is the Kumari, worshipped as a living goddess, and this house was built for her by King Jaya Prakash Malla in 1757. In the same festival week when the Kumari's chariot rolls through the city, the last Malla king lost Kathmandu to Prithvi Narayan Shah. One rule matters here above all: never photograph the Kumari. How is she chosen, and what happens when she grows up? Book a verified local storyteller nearby and hear the story from a guide who knows the families behind the tradition."
+      },
+      "nepaliSummary": "कुमारी घर राजा जयप्रकाश मल्लले सन् १७५७ मा जीवित देवी कुमारीको निवासका रूपमा बनाएका हुन्; कुमारीको फोटो खिच्न निषेध छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-09:00",
+        "lightingNotes": "The courtyard is shaded most of the day; shoot the street facade in early light and expose for carved wood rather than sky.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Street facade with the lion-guarded doorway and carved torana." },
+          { "angle": "LEFT_45", "framingNote": "From the Basantapur side, oblique view of the carved window rows." },
+          { "angle": "RIGHT_45", "framingNote": "From the Trailokya Mohan side, facade depth and balcony projection." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Carved window frames on the street facade only, never the Kumari." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Building in context with Basantapur square and Gaddhi Baithak." }
+        ],
+        "occlusionNotes": "Tour groups crowd the doorway and vendors sit along the facade; shoot before 08:00.",
+        "restrictions": "Photographing the Kumari is strictly forbidden; courtyard photography of architecture only, and only when she is not at the window."
+      },
+      "walkingTourStop": { "sequence": 3, "dwellMinutes": 15, "talkingPoint": "Explain how the Kumari is chosen and how the 1768 Indra Jatra conquest unfolded." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm current courtyard photography rules with the caretaker family; coordinates approximate." }
+    },
+    {
+      "id": "ktm_kal_bhairav",
+      "names": { "en": "Kal Bhairav", "ne": "काल भैरव", "romanized": "Kala Bhairab", "romanizedLanguage": "Nepali" },
+      "aliases": ["Kala Bhairava", "Black Bhairav"],
+      "monumentType": "STONE_IMAGE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "17th century CE (installation; carving possibly older)", "foundingYearCE": null, "datingBasis": "tradition", "patron": "Pratap Malla" },
+      "geo": { "lat": 27.705, "lng": 85.307, "elevationM": 1303, "geofenceRadiusM": 20, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["black_stone"],
+        "guardianVahanas": ["prone figure trampled beneath Bhairav's feet"],
+        "deityMudrasWeapons": ["multiple arms holding a sword and a skull cup", "garland of severed heads", "bulging eyes and fanged grimace under a crown of skulls"],
+        "distinguishingFeatures": ["painted stone image roughly three metres tall standing in the open", "black, red and yellow paint refreshed by devotees", "low railed enclosure open to the sky"],
+        "confusableWith": ["ktm_swet_bhairav"],
+        "disambiguationTip": "Kal Bhairav is a full-body stone image standing in the open; Swet Bhairav is a gilded mask behind a wooden lattice screen a few steps east."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Image Found in a Field",
+          "text": "Kal Bhairav is one of the largest stone sculptures in Kathmandu, a towering image of Bhairav, the fierce manifestation of Shiva. Tradition says it was found in a field north of the city and brought to the palace square in the seventeenth century by King Pratap Malla, who was a great patron of the square's religious art. Its exact carving date is uncertain, and some art historians suggest that it may be considerably older than its installation. The image's placement beside the royal palace was deliberate. Bhairav is a guardian deity in Newar towns, standing at boundaries and thresholds to protect the community. By installing such an imposing figure near the seat of power, the king placed the city's justice and security under the gaze of a god whom no one would dare to deceive, a choice that still shapes how residents treat the image.",
+          "sourceIds": ["slusser_1982", "pal_1974"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Carving a Colossus",
+          "text": "Unlike most images in the square, Kal Bhairav is not housed in a temple. He stands in the open within a low enclosure, carved in high relief from stone and painted in vivid black, red and yellow that devotees refresh regularly. The figure is roughly three metres tall, and its scale is enhanced by its position at ground level, so visitors must look up into its face. The sculptor emphasised mass and frontality: thick limbs, a broad torso and a crown of skulls framing an enormous head with bulging eyes. Unlike the delicate wood carving on surrounding temples, the work relies on bold outlines that read clearly from across the square, making Bhairav visible to crowds during festivals. The open setting also allows offerings of flowers, rice and coins to accumulate at the god's feet throughout the day.",
+          "sourceIds": ["pal_1974", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Weapons, Skulls and the Defeat of Ignorance",
+          "text": "Bhairav embodies Shiva's power to destroy, but in Newar belief that destruction protects devotees and cuts away ignorance and ego. This image shows him with multiple arms bearing weapons and ritual objects, including a sword and a skull cup, and wearing a garland of severed heads. He tramples a prone figure, often interpreted as a demon or as ignorance itself. His face is the most striking feature: wide staring eyes, a fanged grimace and a crown of skulls. These details are not meant to frighten worshippers so much as to reassure them that their guardian is stronger than any threat. Bhairav is also the patron of truth and justice, which explains why this image became associated with the oath-taking that gives it such a fearsome reputation in Kathmandu and draws so many curious visitors.",
+          "sourceIds": ["slusser_1982", "levy_1990"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Do Not Lie Before Bhairav",
+          "text": "Kal Bhairav is famous as Kathmandu's god of truth. Tradition holds that anyone who lies in front of the image will vomit blood and die, and for centuries people were brought here to swear oaths during disputes, sometimes before officials of the royal court in the nearby palace. Whether or not the story was literally believed, it gave the image enormous moral authority. Today devotees still bring offerings of flowers, rice, red powder and coins, and some come specifically to make vows. During festivals such as Indra Jatra, when the city's many forms of Bhairav are honoured, the image receives special worship and attention. The ritual life of the image reminds visitors that in Kathmandu religious sculpture is not decoration but an active participant in social life, keeping promises honest and protecting the city.",
+          "sourceIds": ["slusser_1982", "dowman_1995"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protecting a Painted Stone",
+          "text": "Because Kal Bhairav stands in the open, it faces conservation challenges different from those of wooden temples. Stone can crack through cycles of heat, rain and humidity, and the thick layers of paint, oil and offerings that devotees apply can trap moisture against its surface. Conservators must balance the physical health of the stone with the fact that repainting and anointing are acts of worship that cannot simply be stopped. The image survived the 2015 earthquake while some structures in the surrounding area were damaged, and it continued to receive offerings throughout the recovery period. Its low enclosure helps to protect it from accidental damage by crowds and vehicles. Visitors can help by not touching the surface, following any guidance from attendants, and leaving offerings only where they are clearly meant to be placed.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Face the huge painted figure with bulging eyes and a crown of skulls. This is Kal Bhairav, the fierce form of Shiva, and he is Kathmandu's god of truth. Legend says that anyone who tells a lie in front of him will vomit blood and die on the spot, so for centuries people came here to swear oaths when disputes could not be settled any other way. Tradition says King Pratap Malla found this stone giant in a field north of the city and placed him beside the palace in the seventeenth century, where kings and citizens alike would feel his gaze. Count his arms, look at what he is trampling, and ask yourself what he protects. Book a verified local storyteller nearby and let a guide decode every weapon he holds."
+      },
+      "nepaliSummary": "काल भैरव शिवको उग्र रूपको विशाल ढुङ्गे मूर्ति हो; यसको अगाडि झुटो बोल्नेको मृत्यु हुन्छ भन्ने जनविश्वास छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:30-08:00",
+        "lightingNotes": "The image faces open sky; early diffuse light keeps painted detail readable before direct sun bleaches the yellow and red.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full figure head-on including the enclosure base and offerings." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique to show relief depth and arm placement." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique including the trampled figure at the base." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Face, skull crown and weapon-bearing hands." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Image with the Jagannath temple and palace walls behind." }
+        ],
+        "occlusionNotes": "Worshippers stand directly in front during morning puja; wait for gaps rather than shooting over heads.",
+        "restrictions": "Do not cross the enclosure or touch the image."
+      },
+      "walkingTourStop": { "sequence": 12, "dwellMinutes": 10, "talkingPoint": "Tell the truth-oath tradition and compare the stone giant with the gilded Swet Bhairav mask." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Arm count and attributes to be confirmed from field photographs; coordinates approximate." }
+    },
+    {
+      "id": "ktm_swet_bhairav",
+      "names": { "en": "Swet Bhairav", "ne": "श्वेत भैरव", "romanized": "Seto Bhairab", "romanizedLanguage": "Nepali" },
+      "aliases": ["Seto Bhairav", "White Bhairav Mask"],
+      "monumentType": "MASK_SHRINE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Shah", "century": "18th century CE", "foundingYearCE": 1795, "datingBasis": "documented_record", "patron": "Rana Bahadur Shah" },
+      "geo": { "lat": 27.7049, "lng": 85.3075, "elevationM": 1303, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["gilt_repousse_copper", "carved_wood"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["gilded mask with bulging eyes, fangs and a crown of skulls", "pipe in the mouth that pours rice beer during Indra Jatra"],
+        "distinguishingFeatures": ["giant golden mask hidden behind a carved wooden lattice screen", "shrine set into a building wall rather than a free-standing temple"],
+        "confusableWith": ["ktm_kal_bhairav"],
+        "disambiguationTip": "Swet Bhairav is a mask behind a wooden screen set into a wall; Kal Bhairav is a full-body stone image standing in the open."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Shah King's Gift to Bhairav",
+          "text": "The great gilded mask of Swet Bhairav, the White Bhairav, was installed in 1795 by King Rana Bahadur Shah, a grandson of Prithvi Narayan Shah. Rana Bahadur's reign was turbulent, marked by palace intrigue and later by his abdication and exile, but his patronage left lasting marks on the square, including this mask and the great bell nearby. The mask's installation shows how the Shah kings continued and expanded Malla-era religious traditions rather than replacing them. Bhairav had long been honoured in Kathmandu as a guardian of the city, and by sponsoring a dramatic new image the king associated himself with that protection. The mask was placed at the heart of the Indra Jatra festival, the same festival during which the Shah dynasty had captured Kathmandu less than thirty years earlier, binding the new dynasty to the old city's ritual life.",
+          "sourceIds": ["slusser_1982", "wright_1877"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "The Mask Behind the Screen",
+          "text": "Swet Bhairav is not a free-standing temple but a shrine built into the wall of a building, where the enormous mask is kept behind a carved wooden lattice screen. For most of the year visitors can only glimpse its golden surface through the openings. The mask is made of gilded repousse copper, metal hammered from behind into high relief, a technique in which Newar metalworkers have excelled for centuries. Its size, far taller than a person, makes it one of the largest such masks in the valley. The wooden screen is itself a work of craft, with carved panels that both protect and frame the mask. When the screen is opened during Indra Jatra, the mask is revealed fully, decorated with flowers and offerings, and a pipe in its mouth is connected to a vessel of rice beer placed above it.",
+          "sourceIds": ["pal_1974", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The White Bhairav's Face",
+          "text": "Bhairav is the fierce form of Shiva, and in the Newar tradition he appears in many guises, each with its own character and shrine. Swet Bhairav, the 'White Bhairav', is depicted here as a vast face with staring eyes, sharp fangs and a crown decorated with skulls, framed by a halo of gilded ornament. The masks of Bhairav found throughout the valley, in wood, metal and clay, reflect a belief that the god's face carries the full power of his presence. The white form is often considered milder and more benevolent than the black Kal Bhairav nearby, though both guard the city. The contrast between the two images, standing a few steps apart, offers visitors a lesson in how a single deity can be understood through several personalities, each addressing different human needs and fears.",
+          "sourceIds": ["slusser_1982", "levy_1990"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Rice Beer from a God's Mouth",
+          "text": "Swet Bhairav comes alive during Indra Jatra, the eight-day festival in late summer that honours Indra, the god of rain, and marks the end of the monsoon. On the festival days the wooden screen is opened, the mask is decorated, and jaand, the local rice beer, flows from a pipe in Bhairav's mouth. Crowds jostle to drink from the stream, and tradition holds that anyone who swallows a small fish slipped into the flow will enjoy great good fortune in the coming year. The scene combines devotion, celebration and carnival, with music, masked dances and processions filling the square. Outside the festival the mask is hidden again behind its screen, and its sudden revelation each year is part of its power. It is one of the most memorable moments in Kathmandu's ritual calendar and draws residents from across the city.",
+          "sourceIds": ["levy_1990", "dowman_1995"],
+          "confidence": "high"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Caring for Gilded Copper",
+          "text": "Gilded copper is more durable than wood, but it still requires careful attention. Pollution, humidity and handling can tarnish the gilding, and the metal can be dented during festival crowds. The wooden screen that protects the mask also needs maintenance, as Kathmandu's monsoon humidity encourages rot and insect damage. Like other monuments in the square, the shrine was inspected after the 2015 earthquake, which damaged many buildings nearby. Responsibility for the rituals and day-to-day care rests with the religious trusts and priests associated with the shrine, coordinated with the Department of Archaeology for physical conservation. When you visit, look closely at the screen's carved panels and the visible areas of the mask through the lattice. Respect any barriers, and if you come during Indra Jatra, expect large crowds and follow the instructions of volunteers and police.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Look closely at the wooden lattice screen in the wall in front of you. Behind it hides a giant golden face with fangs and staring eyes: Swet Bhairav, the White Bhairav, installed by King Rana Bahadur Shah in 1795. For most of the year he stays hidden, but during the Indra Jatra festival the screen swings open and rice beer flows from a pipe in his mouth. Crowds push forward to drink, and anyone who swallows the small fish slipped into the stream is said to be lucky for the whole year. A few steps away stands his fierce brother, Kal Bhairav, carved in stone. Why does one god have so many faces in Kathmandu? Book a verified local storyteller nearby and let a guide introduce you to the many Bhairavs of the city."
+      },
+      "nepaliSummary": "श्वेत भैरवको सुनौलो विशाल मुकुण्डो राजा रणबहादुर शाहले सन् १७९५ मा राखेका हुन्; इन्द्रजात्रामा यसको मुखबाट जाँड बग्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-09:00",
+        "lightingNotes": "The mask sits in shade behind the screen; expose for the lattice and use the brief reflected morning light.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full lattice screen square-on, framing the visible mask." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing screen depth and the wall setting." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique toward the Taleju Bell platform." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Mask eyes and crown seen through the lattice openings." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Wall shrine with the surrounding square and Kal Bhairav nearby." }
+        ],
+        "occlusionNotes": "Screen reflections and passers-by interrupt the view; during Indra Jatra dense crowds make clear shots impossible.",
+        "restrictions": "Do not reach through or lean on the screen; festival police control access during Indra Jatra."
+      },
+      "walkingTourStop": { "sequence": 10, "dwellMinutes": 8, "talkingPoint": "Contrast the hidden mask with Kal Bhairav and describe the rice beer ritual." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Mask height and screen opening schedule to be confirmed with custodians." }
+    },
+    {
+      "id": "ktm_jagannath_mandir",
+      "names": { "en": "Jagannath Mandir", "ne": "जगन्नाथ मन्दिर", "romanized": "Jagannath Dega", "romanizedLanguage": "Newa" },
+      "aliases": ["Jagannath Temple Kathmandu"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "16th century CE (date debated)", "foundingYearCE": null, "datingBasis": "chronicle", "patron": "Mahendra Malla (attribution debated)" },
+      "geo": { "lat": 27.7048, "lng": 85.3073, "elevationM": 1303, "geofenceRadiusM": 20, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 2,
+        "primaryMaterials": ["fired_brick", "carved_wood"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["roof struts carved with multi-armed deities above erotic panels", "Jagannath, a form of Krishna, worshipped inside"],
+        "distinguishingFeatures": ["two-tiered pagoda on a three-stage plinth", "explicit erotic carvings on the lower struts", "stands directly beside the Hanuman Dhoka gate"],
+        "confusableWith": ["ktm_maju_dega", "ktm_trailokya_mohan"],
+        "disambiguationTip": "Jagannath is the two-roofed temple beside the palace gate with erotic carvings on its struts; Maju Dega and Trailokya Mohan have three roofs and stand further south-west."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Among the Oldest in the Square",
+          "text": "The Jagannath temple is often described as one of the oldest structures in this part of Kathmandu Durbar Square, though its precise date is debated. Many accounts attribute it to the reign of King Mahendra Malla in the sixteenth century, while others associate later work with King Pratap Malla in the seventeenth. Its location, right beside the palace gate guarded by Hanuman, indicates its importance to the royal household. The temple is dedicated to Jagannath, 'Lord of the World', a form of Krishna and Vishnu best known from the great temple at Puri in eastern India. Its presence in Kathmandu reflects the close cultural ties between the Malla court and the wider Hindu world of the Gangetic plains, from which priests, artists and religious ideas regularly travelled into the valley and found new local forms.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Two Roofs and a Stepped Plinth",
+          "text": "Jagannath is a classic Newar pagoda: a square brick sanctum raised on a stepped plinth, with two tiers of sloping roofs supported by carved wooden struts. The plinth lifts the temple above the bustle of the street and provides a platform on which worshippers can circle the shrine. On each side, doorways framed by carved wooden doors and toranas give access to the sanctum, although usually only priests enter. The roof struts are the temple's most famous feature. Each one is carved with a deity standing above a smaller scene, and on many struts the lower panel shows explicitly erotic figures. The craftsmanship rewards close inspection: notice how the carvers fitted complex figures into narrow, angled timbers while keeping clear outlines that can be read from the ground, even by visitors standing in the busy square below.",
+          "sourceIds": ["bernier_1979", "korn_1976"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Why the Erotic Carvings?",
+          "text": "The erotic carvings on Jagannath's struts surprise many visitors, and guides are often asked to explain them. There is no single answer. One popular story claims that the images protect the temple from lightning, because the goddess of lightning is a shy virgin who will not strike a building decorated with such scenes. Scholars more often connect them with Tantric philosophy, in which sexual union symbolises the union of opposing forces, such as wisdom and compassion or Shiva and Shakti, and with the celebration of fertility and life. Others see them simply as part of a broader visual vocabulary in which all aspects of human experience appear in sacred art. The main images on the struts, representing gods and goddesses, sit above these scenes, suggesting a hierarchy that rises from the earthly to the divine.",
+          "sourceIds": ["bernier_1979", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Daily Worship by the Palace Gate",
+          "text": "Jagannath receives daily worship from priests and local devotees, who make offerings of flowers, rice, incense and coloured powder. Because of its location beside the Hanuman Dhoka gate, it lies on the route of many festivals in the square. During Indra Jatra, the processions and crowds that fill the area pass right by the temple, and its plinth becomes a viewing platform for spectators. In Hindu tradition Jagannath is associated with the great chariot festival of Puri, and devotees in Kathmandu remember that link during their own festivals of Krishna and Vishnu. Morning visits offer the best chance to see worship in progress, as residents stop on their way to work. Visitors are welcome to watch from the plinth steps, while respecting the space of those making offerings and keeping clear of the sanctum doors.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Holding Up the Struts",
+          "text": "Like many temples in the square, Jagannath was damaged in the 2015 earthquake and required repair. Wooden struts are the most fragile part of a Newar pagoda: they carry the weight of the roof eaves while being exposed to rain, sun and insects, and some of the carvings here are centuries old. Conservators try to retain original struts wherever possible, reinforcing them discreetly, and replace only those that can no longer carry load, carving replacements in the traditional style. The erotic panels present an additional challenge, since they attract touching and occasional vandalism. Repairs to the roof covering and the brick plinth also help to keep water out of the timber structure. When you visit, look for subtle differences in colour between older and newer carvings, which often reveal exactly where conservation work has taken place.",
+          "sourceIds": ["doa_nepal", "bernier_1979"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Look up under the roof of this two-tiered temple beside the palace gate, and you may need a moment to understand what the carvings show. On the struts of Jagannath, the Lord of the World, gods stand above scenes of couples in explicit embrace. One local story says these carvings protect the temple from lightning, because the goddess of lightning is too shy to strike it. Scholars point instead to Tantric ideas of union and the celebration of life. The temple itself is among the oldest in the square, usually linked to King Mahendra Malla's reign in the sixteenth century. Which explanation do you believe, and what are the gods above the couples holding? Book a verified local storyteller nearby and let a guide read the struts with you, panel by panel."
+      },
+      "nepaliSummary": "जगन्नाथ मन्दिर हनुमानढोका नजिकैको दुई तले प्यागोडा हो, जसका टुँडालमा कोरिएका कामुक मूर्ति प्रसिद्ध छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "The struts sit deep under the eaves; low morning light reaching under the roof gives the only readable carving detail.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full two-roof temple with plinth, taken from the open square." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the roof struts in sequence." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique including the Hanuman Dhoka gate beside it." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Telephoto on one carved strut showing the deity and lower panel." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple between the palace gate and Kal Bhairav." }
+        ],
+        "occlusionNotes": "Spectators sit on the plinth all day and offering vendors work at the base.",
+        "restrictions": "Do not climb to the sanctum level; be respectful when photographing worshippers."
+      },
+      "walkingTourStop": { "sequence": 9, "dwellMinutes": 10, "talkingPoint": "Discuss the competing explanations of the erotic carvings." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding date contested in sources; confirm roof material and 2015 repair details with the Department of Archaeology." }
+    },
+    {
+      "id": "ktm_taleju_bell",
+      "names": { "en": "Taleju Bell", "ne": "तलेजु घण्ट", "romanized": "Taleju Ghanta", "romanizedLanguage": "Nepali" },
+      "aliases": ["Great Bell of Kathmandu Durbar Square"],
+      "monumentType": "BELL",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Shah", "century": "18th century CE", "foundingYearCE": 1797, "datingBasis": "documented_record", "patron": "Rana Bahadur Shah" },
+      "geo": { "lat": 27.705, "lng": 85.3076, "elevationM": 1303, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["bronze", "fired_brick", "carved_wood"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": [],
+        "distinguishingFeatures": ["large bronze bell suspended in a sturdy frame on a raised platform", "pair of great ceremonial drums installed nearby in 1800"],
+        "confusableWith": ["pat_taleju_bell_patan"],
+        "disambiguationTip": "This bell stands on a raised platform in Kathmandu's square opposite the Jagannath temple; Patan's Taleju Bell hangs between two thick pillars in front of the Patan palace."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Bell for the Royal Goddess",
+          "text": "The great bell in Kathmandu Durbar Square was hung in 1797 by King Rana Bahadur Shah, in the early decades of Shah rule over the valley. It was dedicated to Taleju, the royal tutelary goddess whose temple rises nearby, and its installation continued a Malla tradition: the rulers of Patan and Bhaktapur had already hung great bells in their own palace squares. A few years later, in 1800, his son King Girvan Yuddha Bikram Shah added the two great drums that stand close by, completing a set of sacred sound instruments for the square. These gifts allowed the new Shah dynasty to present itself as the rightful patron of the city's goddesses and festivals. The bell has since witnessed more than two centuries of Kathmandu's history, from Rana rule to the abolition of the monarchy in 2008.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Casting and Hanging a Giant",
+          "text": "The bell is cast in bronze and hangs in a sturdy frame on a raised platform, high enough for its sound to carry across the square and beyond. Casting a bell of this size was a major undertaking, requiring skilled metalworkers, large quantities of metal and a carefully built mould. Newar metalcraft was already famous for statues and ritual objects, and bell casting drew on the same expertise. The suspension structure must bear considerable weight while allowing the bell to be struck, so its joints and beams are robust and periodically inspected. The platform also lifts the bell above the crowd, protecting it from casual handling and creating a small monument in its own right. Bells of this period usually carry inscriptions recording the donor and date, and a guide can point out those details on the bronze surface.",
+          "sourceIds": ["hutt_1994", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Sound as Offering",
+          "text": "In Hindu and Buddhist worship, sound is itself an offering and a means of purification. The ringing of bells drives away negative forces, announces the presence of the deity and calls devotees to attention. A great bell dedicated to Taleju therefore extends the goddess's protection over the whole square, its sound marking the boundary of sacred space as far as it can be heard. Bells also appear in temple architecture, hung from the eaves of pagodas, where they ring in the wind and create a constant gentle music. The great bell amplifies this symbolism to the scale of the city. Many residents say that the sound of the bell was meant to scare away evil spirits and that it was rung especially in times of danger. Its voice is thus a form of protection as well as of devotion.",
+          "sourceIds": ["slusser_1982", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Ringing for Taleju",
+          "text": "The bell is traditionally rung during the worship of Taleju, its deep tone joining the drums, conch shells and chanting that accompany the goddess's rituals. On festival days, when processions and dances fill the square, the sound of the bell adds to an atmosphere of excitement and devotion. Ordinary visitors are not permitted to ring it, but it may be heard during particular ceremonies. The nearby great drums were historically beaten during the worship of Taleju as well, and together the instruments formed the sonic heart of royal ritual. Standing on the platform steps on a quiet morning, you can imagine how these sounds once carried over the rooftops of a city without traffic. Your guide can tell you which ceremonies still involve the bell and on which days of the festival calendar you are most likely to hear it.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Keeping the Frame Sound",
+          "text": "Bronze bells are durable, but the frames and platforms that carry them need maintenance. Timber beams can weaken through rot or insect damage, and the weight of the bell places constant stress on the joints. The 2015 earthquake shook the platform along with every other structure in the square, prompting inspections and repairs. Conservators also monitor the bell's surface for corrosion and cracks, since a crack can change its sound and threaten its integrity. Pigeons, which gather in large numbers around Kathmandu's squares, foul the platform and frame, adding to the cleaning required. Because the bell is part of active ritual, conservation work is coordinated with the temple's priests and trusts. Visitors can help by not climbing the platform or touching the bell, and by respecting any barriers placed around it during repair work.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Look for the great bronze bell hanging high on its platform. King Rana Bahadur Shah hung it here in 1797 for Taleju, the royal goddess, and a few years later his son added the two huge drums nearby. Together they were the voice of the palace: rung and beaten during the goddess's worship, their sound was believed to drive away evil spirits from the whole city. Imagine Kathmandu two centuries ago, without engines or horns, when this bell was among the loudest sounds anyone ever heard. Patan and Bhaktapur have their own great bells, and at one of them, dogs are said to howl whenever it rings. Which city is that, and why? Book a verified local storyteller nearby and let a guide lead you through the soundscape of royal Kathmandu."
+      },
+      "nepaliSummary": "तलेजु घण्ट राजा रणबहादुर शाहले सन् १७९७ मा तलेजु देवीका लागि झुण्ड्याएका हुन्; नजिकै गीर्वाणयुद्ध विक्रम शाहका ठूला नगरा छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "The bell is backlit against the sky from most angles; morning side-light reveals inscription relief on the bronze.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Bell and frame square-on with the full platform." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing frame joinery and platform steps." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the Jagannath temple behind." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Bronze surface inscription and suspension fittings." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Platform with the great drums and palace walls." }
+        ],
+        "occlusionNotes": "Pigeons perch on the frame and visitors sit on the platform steps.",
+        "restrictions": "Do not climb the platform or ring the bell."
+      },
+      "walkingTourStop": { "sequence": 11, "dwellMinutes": 6, "talkingPoint": "Link the bell and drums to early Shah patronage of Taleju." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Inscription text and frame structure to be photographed and transcribed." }
+    },
+    {
+      "id": "ktm_pratap_malla_inscription",
+      "names": { "en": "Stone Inscription of Pratap Malla", "ne": "प्रताप मल्लको शिलालेख", "romanized": "Pratap Mallako Shilalekh", "romanizedLanguage": "Nepali" },
+      "aliases": ["Fifteen-Language Inscription", "Kalika Stuti Inscription"],
+      "monumentType": "INSCRIPTION",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "17th century CE", "foundingYearCE": 1664, "datingBasis": "inscription", "patron": "Pratap Malla" },
+      "geo": { "lat": 27.7047, "lng": 85.3076, "elevationM": 1303, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["black_stone", "fired_brick"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": [],
+        "distinguishingFeatures": ["long dark stone slab set into the outer palace wall", "many scripts side by side, including Devanagari, Persian and Roman letters", "European words such as WINTER carved among South Asian scripts"],
+        "confusableWith": ["chg_manadeva_garuda_pillar"],
+        "disambiguationTip": "This is a flat stone slab set into a palace wall near the Hanuman gate; the Manadeva inscription at Changu Narayan is carved on a free-standing pillar."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Poet-King's Signature",
+          "text": "King Pratap Malla, who ruled Kathmandu from 1641 to 1674, took pride in being a scholar and poet and styled himself Kavindra, 'king of poets'. In 1664 he set this stone inscription into the wall of his palace. It contains a hymn to the goddess Kalika and is famous for being written in many languages and scripts, traditionally counted as fifteen. Among the South Asian scripts appear Persian and Arabic characters, Tibetan, and even European words in Roman letters, including the English 'winter' and the French 'l'hiver'. Pratap Malla's court was cosmopolitan for its time: traders, scholars and, in 1661, the Jesuit travellers Johann Grueber and Albert d'Orville all passed through Kathmandu during his reign. The inscription was both an act of devotion and a demonstration of the king's learning, showing visitors that Kathmandu stood at a crossroads of cultures.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Wall of Words",
+          "text": "The inscription is carved on a long slab of dark stone set into the outer wall of Hanuman Dhoka palace, at a height where passers-by can read it but not easily touch it. Its surface is divided into lines of text in different scripts, with careful spacing that reveals a planned design rather than a random collection. The stone-cutters who executed it had to reproduce unfamiliar letter forms precisely, a challenge suggesting that the king supplied written models for each script. The slab sits in a frame of brickwork, giving it the look of a framed panel on the palace facade. Public inscriptions were a common way for Nepali rulers to announce donations, laws and achievements, but few match this one's ambition. It combines the function of a royal proclamation with the qualities of a work of calligraphic art and remains a favourite stop for visitors.",
+          "sourceIds": ["hutt_1994", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "A Hymn to Kalika",
+          "text": "Though often admired as a linguistic curiosity, the inscription is above all a devotional poem addressed to Kalika, a form of the goddess Kali who protects against danger and embodies the power of time and transformation. Pratap Malla was a devotee of several goddesses, including Taleju, and his religious patronage filled the square with temples and images. By inscribing a hymn in so many languages, he may have intended to extend the goddess's praise across all the peoples whose words he included, or to show that her power is universal. The inscription also carries the king's name, linking his fame permanently to the goddess's. For visitors, it offers a reminder that the visual and the verbal were intertwined in Malla culture: poetry, sculpture and architecture were all forms of offering made by the same royal patron.",
+          "sourceIds": ["slusser_1982", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "The Spout That Would Flow with Milk",
+          "text": "A popular legend surrounds the inscription. It is said that if anyone succeeds in reading the entire text, in all its languages, milk will flow from the spout in the wall instead of water. No one, the story goes, has ever managed it, and the legend has become a favourite of guides and schoolteachers alike. The tale playfully captures the inscription's challenge: few people in any century have been able to read every script on the stone. It also reflects the reverence that Nepali culture holds for learning and literacy, since the reward for mastering knowledge is imagined as a sacred, nourishing substance. Today the inscription is less a place of worship than of curiosity, and many visitors stand in front of it trying to pick out the scripts they recognise, a small daily re-enactment of the legend's challenge.",
+          "sourceIds": ["saalik_editorial", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Weathering and Legibility",
+          "text": "Stone inscriptions face a slow but serious threat: weathering that erodes the sharp edges of letters until texts become illegible. Rain, pollution, temperature changes and touching all contribute. Pratap Malla's inscription has fared reasonably well, but parts of the text are worn, and scholars rely on earlier photographs and transcriptions to confirm readings. After the 2015 earthquake, conservation teams inspected the palace walls, including the area around the inscription, for cracking and displacement. Modern methods such as high-resolution photography and three-dimensional scanning now allow inscriptions to be documented in great detail, preserving the text even if the stone continues to weather. Field documentation of the slab, including raking-light photographs that reveal faint letters, is one of the tasks Saalik's field collectors can contribute, adding a digital record to the physical monument.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Find the long dark stone set into the palace wall, near the Hanuman gate. In 1664 King Pratap Malla, who called himself the king of poets, carved a hymn to the goddess Kalika here in many scripts and languages, traditionally counted as fifteen. Look carefully and you may spot something unexpected: European letters spelling words like winter in English and l'hiver in French, carved into a Himalayan palace more than three hundred years ago. Legend says that if anyone ever reads the whole inscription, milk will pour from the spout in the wall. No one has managed it yet. How many scripts can you recognise before your guide does? Book a verified local storyteller nearby and let a guide help you read the king's poem line by line."
+      },
+      "nepaliSummary": "राजा प्रताप मल्लले सन् १६६४ मा १५ भाषाका लिपिमा कालिकाको स्तुति कुँदेको यो शिलालेख हनुमानढोकाको पर्खालमा छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:30-08:00",
+        "lightingNotes": "Raking early light across the slab reveals worn letters; flat midday light makes the text unreadable.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full slab square-on, camera perpendicular to the wall to avoid keystone distortion." },
+          { "angle": "LEFT_45", "framingNote": "Left raking angle to emphasise the carved relief." },
+          { "angle": "RIGHT_45", "framingNote": "Right raking angle to catch the opposite letter edges." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Roman-letter words and the Persian script section." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Slab in the palace wall with the Hanuman gate nearby." }
+        ],
+        "occlusionNotes": "Vendors and visitors lean on the wall and parked bicycles sometimes block the lower edge.",
+        "restrictions": "Do not touch or trace the letters; no rubbings without Department of Archaeology permission."
+      },
+      "walkingTourStop": { "sequence": 8, "dwellMinutes": 8, "talkingPoint": "Challenge guests to find the European words, then tell the milk legend." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Verify the script count and exact European words from close-up photographs." }
+    },
+    {
+      "id": "ktm_trailokya_mohan",
+      "names": { "en": "Trailokya Mohan Narayan Temple", "ne": "त्रैलोक्य मोहन नारायण मन्दिर", "romanized": "Dasavatar Dega", "romanizedLanguage": "Newa" },
+      "aliases": ["Trailokya Mohan", "Dasavatar Temple"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "17th century CE", "foundingYearCE": 1680, "datingBasis": "documented_record", "patron": "Parthivendra Malla" },
+      "geo": { "lat": 27.7041, "lng": 85.3064, "elevationM": 1300, "geofenceRadiusM": 25, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 3,
+        "primaryMaterials": ["fired_brick", "carved_wood", "clay_tile"],
+        "guardianVahanas": ["kneeling stone Garuda facing the temple with joined hands"],
+        "deityMudrasWeapons": ["roof struts carved with the ten avatars of Vishnu", "Vishnu's discus and conch on the toranas"],
+        "distinguishingFeatures": ["three-tiered pagoda on a stepped plinth", "large kneeling Garuda statue in front", "fresh post-2015 timber alongside salvaged old carvings"],
+        "confusableWith": ["ktm_maju_dega", "ktm_kasthamandap"],
+        "disambiguationTip": "Look for the kneeling Garuda facing the temple: Trailokya Mohan belongs to Vishnu, while nearby Maju Dega is Shiva's and has a Nandi bull instead."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Brother's Memorial",
+          "text": "Trailokya Mohan Narayan, meaning 'Narayan, enchanter of the three worlds', was built in 1680 by King Parthivendra Malla in memory of his elder brother, King Nripendra Malla, who had died young. The temple stands near Kasthamandap on the south-western side of Kathmandu Durbar Square, and its dedication to Narayan, the preserving form of Vishnu, expresses the hope that the departed king would find protection. A large kneeling Garuda, Vishnu's bird-mount, was later placed facing the temple, and tradition credits Queen Riddhi Lakshmi, a powerful figure at the Kathmandu court in the late seventeenth century. The temple belongs to the final generations of Malla patronage, when the rival kings of Kathmandu, Patan and Bhaktapur competed to embellish their squares, producing the dense cluster of temples that visitors see today across the three cities.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Three Roofs Over a Stepped Plinth",
+          "text": "Trailokya Mohan follows the classic three-tiered Newar pagoda form, with a square sanctum on a stepped plinth and three sloping roofs that diminish in size as they rise. The plinth raises the temple above street level and gives it presence on the square, while also providing space for worshippers to walk around the shrine. Wooden struts carved with deities support the roof eaves, and carved doors and toranas frame each entrance. A gilded finial crowns the summit. After the temple collapsed in 2015, its reconstruction gave residents a rare chance to see how such a pagoda is built: brick walls with timber bands, a wooden roof framework and a covering of tiles. The new timber is bright and unweathered, and over the coming decades it will darken until it matches the older temples nearby.",
+          "sourceIds": ["bernier_1979", "korn_1976", "doa_nepal"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Ten Avatars of Vishnu",
+          "text": "The roof struts of Trailokya Mohan depict the ten avatars of Vishnu, the forms he takes to restore order to the world: Matsya the fish, Kurma the tortoise, Varaha the boar, Narasimha the man-lion, Vamana the dwarf, Parashurama, Rama, Krishna, Buddha and Kalki. The inclusion of the Buddha among Vishnu's avatars reflects a widespread Hindu interpretation that resonates in the Kathmandu Valley, where Hindu and Buddhist traditions intertwine. The kneeling Garuda facing the temple, his hands joined in devotion, is Vishnu's vehicle and a symbol of loyal service. Together, the struts and the Garuda make the temple's dedication unmistakable. Visitors can try to identify each avatar on the struts, a pleasant exercise that reveals how sculptors condensed complex stories into single figures with recognisable attributes.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Dances of the Ten Avatars",
+          "text": "During Indra Jatra, the great late-summer festival of Kathmandu, a performance of the ten avatars of Vishnu is staged on the platform in front of Trailokya Mohan. Masked dancers enact the avatars, bringing the carvings on the temple's struts to life for crowds gathered in the square. The performances are kept alive by hereditary groups who preserve the dance steps, masks and music across generations. Throughout the year the temple receives daily worship, and its Garuda is honoured by devotees who touch its base or offer flowers. The area around the temple is always busy, since it lies on the route between Maru and Basantapur, and its platform is a popular place for residents to sit, chat and watch life in the square, much as people did in Malla times when the temple was new and freshly painted.",
+          "sourceIds": ["levy_1990", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Collapse and Rebuilding",
+          "text": "Trailokya Mohan was among the temples that collapsed completely in the 2015 Gorkha earthquake, leaving only its plinth and a pile of brick and timber. Salvage teams recovered carved struts, doors and other elements from the debris, numbering and storing them for reuse. Reconstruction followed traditional methods supervised by the Department of Archaeology, with original carvings reinstalled where possible and missing pieces newly carved by local craftsmen. The site was cleared and documented before work began so that the temple could be rebuilt on its original plinth with its proportions and position preserved exactly. The project also involved discreet structural improvements to help the temple resist future earthquakes. When you visit, compare the colour of the old struts with the new ones: the contrast tells the story of 2015 more vividly than any information sign.",
+          "sourceIds": ["doa_nepal", "unesco_whc_121"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "In front of this temple, a stone Garuda kneels with his hands pressed together, gazing at the sanctum. He is the bird-mount of Vishnu, and he tells you exactly whose temple this is. Trailokya Mohan, the enchanter of the three worlds, was built in 1680 by King Parthivendra Malla to honour his brother, a king who died young. Look up at the roof struts and you will find Vishnu's ten avatars, from a fish to a man-lion. Can you spot the Buddha among them? In 2015 the temple fell completely, and what you see is the rebuilt version, with old carvings rescued from the rubble. During Indra Jatra, masked dancers perform the ten avatars right here. Book a verified local storyteller nearby and let a guide match every carving to its story."
+      },
+      "nepaliSummary": "त्रैलोक्य मोहन नारायण मन्दिर राजा पार्थिवेन्द्र मल्लले सन् १६८० मा बनाएका हुन्; २०१५ को भूकम्पमा ढलेपछि पुनर्निर्माण गरिएको हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "Morning sun reaches the south-west of the square; the Garuda's face reads best in soft early light.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Temple with the kneeling Garuda in the foreground and all three roofs." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing plinth steps and strut rows." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the edge of Kasthamandap in frame." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Avatar struts and the Garuda's joined hands." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple between Kasthamandap and Kumari Ghar." }
+        ],
+        "occlusionNotes": "Residents use the platform as seating and Indra Jatra stages block views in September.",
+        "restrictions": "Do not climb on the Garuda; remove shoes before stepping onto the sanctum level."
+      },
+      "walkingTourStop": { "sequence": 2, "dwellMinutes": 10, "talkingPoint": "Match the strut carvings to the ten avatars and point out salvaged pieces." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm reconstruction completion year and the Garuda attribution with the Department of Archaeology." }
+    },
+    {
+      "id": "ktm_maju_dega",
+      "names": { "en": "Maju Dega", "ne": "माजु देग", "romanized": "Maju Dega", "romanizedLanguage": "Newa" },
+      "aliases": ["Maju Dega Shiva Temple", "Shiva Mandir Kathmandu Durbar Square"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "17th century CE", "foundingYearCE": 1690, "datingBasis": "documented_record", "patron": "Queen Riddhi Lakshmi" },
+      "geo": { "lat": 27.7043, "lng": 85.3065, "elevationM": 1301, "geofenceRadiusM": 25, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 3,
+        "primaryMaterials": ["fired_brick", "carved_wood", "clay_tile"],
+        "guardianVahanas": ["Nandi bull facing the temple", "stone guardian figures on the plinth stairs"],
+        "deityMudrasWeapons": ["Shiva lingam in the sanctum", "erotic carvings on the lower roof struts"],
+        "distinguishingFeatures": ["three-tiered pagoda on a tall nine-stage plinth", "plinth steps crowded with seated people", "gilded pinnacle above tiled roofs"],
+        "confusableWith": ["ktm_trailokya_mohan", "ktm_taleju_mandir"],
+        "disambiguationTip": "Maju Dega has the tallest stepped plinth in the open square, usually covered with seated people, and a Nandi bull rather than a Garuda in front."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Queen Mother's Temple",
+          "text": "Maju Dega, often translated as 'the temple of the mother', was built in 1690 by Queen Riddhi Lakshmi, the mother of King Bhupalendra Malla. Riddhi Lakshmi was one of the most influential royal women of Malla Kathmandu, acting as regent and patron during her son's minority, and she sponsored several religious works in the square. The temple is dedicated to Shiva, who is worshipped here in the form of a lingam. Its construction toward the end of the seventeenth century belongs to a period of intense temple-building, when the Malla rulers of the valley expressed their piety and power through ever grander structures. Maju Dega's size and position, at the meeting point of the square's southern and central areas, made it one of the most prominent religious buildings in the city and a natural gathering point for its residents.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Nine Steps to the Sky",
+          "text": "Maju Dega's most striking feature is its tall plinth of nine stepped stages, which lifts the three-tiered temple high above the square. From the top of the steps, visitors gain one of the best views over Kathmandu Durbar Square, which is why the plinth is almost always occupied by residents, visitors and vendors sitting in the sun. The temple itself is a square brick sanctum with timber-framed doors on each side, three diminishing roofs and a gilded finial. Its roof struts carry carved deities and, as on many Newar temples, erotic scenes at their lower ends. The plinth's height is not only aesthetic: it elevates the shrine above crowds and the floods of earlier centuries, and it creates a stage on which the temple appears grander than its modest footprint would suggest from the street below.",
+          "sourceIds": ["bernier_1979", "korn_1976"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Shiva's Lingam and Nandi",
+          "text": "Inside the sanctum is a Shiva lingam, the abstract column that represents Shiva's creative energy and presence, set in a yoni base symbolising Shakti, the feminine power. Facing the temple stands Nandi, the bull who serves as Shiva's vehicle and devoted attendant, gazing toward his lord. The carved struts depict various deities associated with Shiva and the goddess, and, as on other temples in the square, some lower carvings show erotic scenes whose meaning is linked with Tantric ideas of union. The temple's dedication by a queen mother adds another layer: devotion to Shiva was believed to bring protection and prosperity to the royal family, and the temple's popular name, linked to the word for mother, keeps its patron's role alive in the memory of the city three centuries after her death.",
+          "sourceIds": ["slusser_1982", "pal_1974"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "The City's Grandstand",
+          "text": "Maju Dega is both a shrine and a gathering place. In the mornings, devotees climb the steps to offer flowers, rice and water to the lingam, and the sound of bells mingles with conversation. Through the day, the plinth becomes Kathmandu's grandstand: people sit on its steps to rest, meet friends and watch the life of the square. During festivals such as Indra Jatra, when masked dances, chariots and processions fill the area, its steps fill with spectators who enjoy the best view of the action. This combination of worship and everyday sociability is typical of Newar urban life, in which temples are woven into the fabric of the city rather than set apart from it. Visitors are welcome to sit on the steps, but should keep the upper platform clear for worshippers and take off their shoes near the sanctum.",
+          "sourceIds": ["toffin_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Standing Through 2015",
+          "text": "Maju Dega survived the 2015 earthquake while neighbouring Trailokya Mohan and Kasthamandap collapsed. Its survival has been attributed to the robustness of its tall brick plinth and the quality of its original construction, although it still required inspection and repairs to cracked brickwork and timber. Heavy daily use of the plinth by people sitting and climbing wears down the bricks, and conservators periodically repair the steps. Like other temples in the square, the roof needs regular maintenance to keep out monsoon rain, which can rot the wooden framework if allowed to penetrate. Because the temple is in active use, conservation is coordinated with the priests who perform daily worship. A guide may be able to point out where repairs have been made since 2015 and explain how engineers assessed which temples were safe to reopen.",
+          "sourceIds": ["doa_nepal", "unesco_whc_121"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "If you want the best view in Kathmandu Durbar Square, climb the nine steps of this temple and sit with the locals. You are on Maju Dega, built in 1690 by Queen Riddhi Lakshmi, a royal mother who helped rule Kathmandu while her son was a child. Inside is a Shiva lingam, and the bull Nandi waits faithfully in front. Look up under the roofs: the carvings on the struts show gods above and much more earthly scenes below. When the 2015 earthquake brought down temples on either side, this one stayed standing. During Indra Jatra these steps become a grandstand for dances and chariots. Who else watched the city from here over three centuries? Book a verified local storyteller nearby and let a guide tell you while you rest on the steps."
+      },
+      "nepaliSummary": "माजु देग रानी ऋद्धिलक्ष्मीले सन् १६९० मा बनाएको शिव मन्दिर हो, जसको नौ तले चबुतराबाट दरबार क्षेत्रको राम्रो दृश्य देखिन्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "06:45-08:15",
+        "lightingNotes": "Before crowds arrive the empty plinth shows its full stepped profile, with morning light raking across each step.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full nine-stage plinth and three roofs with Nandi in the foreground." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing plinth stepping and roof struts." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with Trailokya Mohan in the background." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Strut carvings and gilded pinnacle by telephoto." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "From Basantapur, Maju Dega dominating the square." }
+        ],
+        "occlusionNotes": "The plinth is covered with seated people from mid-morning and pigeons crowd the lower steps.",
+        "restrictions": "Keep the top platform clear for worshippers; shoes off near the sanctum."
+      },
+      "walkingTourStop": { "sequence": 4, "dwellMinutes": 12, "talkingPoint": "Invite guests to sit on the plinth while telling the queen mother's story." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm the plinth stage count and the scope of 2015 repairs." }
+    },
+    {
+      "id": "ktm_shiva_parvati_mandir",
+      "names": { "en": "Shiva Parvati Mandir", "ne": "शिव पार्वती मन्दिर", "romanized": "Shiva Parvati Dega", "romanizedLanguage": "Newa" },
+      "aliases": ["Shiva-Parvati Temple"],
+      "monumentType": "SHRINE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Shah", "century": "late 18th century CE", "foundingYearCE": null, "datingBasis": "chronicle", "patron": "Bahadur Shah (regent, son of Prithvi Narayan Shah)" },
+      "geo": { "lat": 27.7044, "lng": 85.3068, "elevationM": 1301, "geofenceRadiusM": 20, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 1,
+        "primaryMaterials": ["fired_brick", "carved_wood"],
+        "guardianVahanas": ["stone lions guarding the steps"],
+        "deityMudrasWeapons": ["painted wooden figures of Shiva with trident and Parvati leaning from the upper window"],
+        "distinguishingFeatures": ["rectangular two-storey house-like temple on a stepped plinth", "central upper window with a divine couple looking down on the square"],
+        "confusableWith": ["ktm_kumari_ghar", "ktm_gaddhi_baithak"],
+        "disambiguationTip": "Look for the painted couple at the central upper window; Kumari Ghar has carved windows but no figures, and Gaddhi Baithak is white stucco."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Shah Regent's Gift",
+          "text": "The Shiva Parvati temple was built in the late eighteenth century by Bahadur Shah, a son of Prithvi Narayan Shah who served as regent for his young nephew, King Rana Bahadur Shah. It belongs to the first generation of Shah patronage in Kathmandu after the conquest of 1768, when the new rulers sought to show their devotion to the gods of the city they had captured. Unlike the soaring Malla pagodas around it, the temple is a modest rectangular building, more like a Newar house than a classic temple, and its charm lies in its single famous image rather than in its scale. Bahadur Shah was an energetic regent who expanded the young kingdom's borders through military campaigns, and his temple offers a gentler counterpoint to the warlike history usually associated with his name in Nepali textbooks.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Temple in the Form of a House",
+          "text": "The temple is built as a rectangular two-storey structure on a stepped plinth, resembling the residential buildings of Newar towns more than the tall pagodas nearby. Its ground floor has carved doors and windows, while the upper storey features a central window from which the painted wooden figures of Shiva and Parvati look out. The roof is a single sloping structure with deep eaves supported by carved struts, and stone lions guard the steps leading up to the entrance. This domestic form is significant: by presenting the divine couple at the window of a house, the builders made the gods into neighbours of the people in the square, sharing in the daily life below. The temple also frames one side of the open space between Maju Dega and the palace, contributing to the square's sense of enclosure.",
+          "sourceIds": ["korn_1976", "hutt_1994"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Divine Couple at the Window",
+          "text": "The temple's famous image shows Shiva and Parvati, the divine couple of Hindu mythology, leaning from the upper window as if watching the bustle of the square below. The figures are carved in wood and brightly painted, Shiva recognisable by his trident and matted hair, Parvati by her jewellery and gentle expression. The scene draws on a long tradition in Newar art of showing gods in relaxed, human poses, and on the mythology of Shiva and Parvati as an affectionate married couple living on Mount Kailash. Their presence at the window turns the square into a stage and the gods into spectators, a playful and touching idea. Many visitors find this the most memorable image in the square, and it has become one of Kathmandu's most photographed sights, reproduced on postcards and guidebook covers for decades.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Gods Who Watch the Festivals",
+          "text": "The Shiva Parvati temple is less a focus of intense ritual than a beloved presence in the square. Devotees offer flowers and prayers at its doors, and couples sometimes visit to ask the divine pair for a happy marriage. During festivals such as Teej, when women honour Shiva and Parvati and pray for marital happiness, and Indra Jatra, when the square fills with music and dance, the temple takes on added significance. The image of the gods watching from their window seems especially apt on these occasions, as if they too were enjoying the celebrations. Local residents may share their own stories about the figures, and guides often point out how their gaze seems to follow you across the square. It is a good place to pause, smile and imagine how the city looks from the gods' point of view.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Caring for Painted Wood",
+          "text": "The painted wooden figures of Shiva and Parvati are vulnerable to sun, rain and pollution, and their colours must be periodically renewed by skilled painters using traditional or compatible pigments. Conservators try to strike a balance between keeping the figures vivid for worshippers and preserving the original carving beneath the paint. The building itself, with its brick walls and timber elements, was damaged in the 2015 earthquake, as were many structures in the square, and it underwent inspection and repair. Because the temple stands on a busy route, vibration from traffic and the movement of crowds add to wear. The figures in the window are high enough to be protected from touching, but the plinth and lower walls receive heavy use. When you visit, notice the subtle hollows in the steps, worn by more than two centuries of feet.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Look up at the centre window of the small temple in front of you, and you will see two figures leaning out, watching the crowd just as you are watching them. They are Shiva and Parvati, the divine couple, carved in wood and brightly painted. This temple was built in the late eighteenth century by Bahadur Shah, son of the conqueror Prithvi Narayan Shah, and it looks more like a Newar house than a temple. That is the point: the gods live here as neighbours, gazing down at the square through every festival, market day and earthquake. Many visitors say their eyes seem to follow you as you walk. Try it and see. Book a verified local storyteller nearby and let a guide tell you what Shiva and Parvati have seen from their window."
+      },
+      "nepaliSummary": "शिव पार्वती मन्दिरको माथिल्लो झ्यालबाट शिव र पार्वतीका रङ्गीन काठे मूर्ति दरबार क्षेत्रतिर हेरिरहेका देखिन्छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:30-09:00",
+        "lightingNotes": "The window figures catch direct light only in the morning; later the deep eaves shadow their faces.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Facade square-on with the central window and lion-guarded steps." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing facade depth and eave struts." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the edge of Maju Dega in frame." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Telephoto on Shiva and Parvati at the window." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple framing the square between Maju Dega and the palace." }
+        ],
+        "occlusionNotes": "Vendors' umbrellas and parked rickshaws often stand in front of the plinth.",
+        "restrictions": "Respect worshippers at the doors; do not climb on the lions."
+      },
+      "walkingTourStop": { "sequence": 5, "dwellMinutes": 8, "talkingPoint": "Point out the divine couple and discuss early Shah patronage." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm founding date and patron details; coordinates approximate." }
+    },
+    {
+      "id": "ktm_gaddhi_baithak",
+      "names": { "en": "Gaddhi Baithak", "ne": "गद्दी बैठक", "romanized": "Gaddi Baithak", "romanizedLanguage": "Nepali" },
+      "aliases": ["Gaddi Baithak", "White Palace Hall"],
+      "monumentType": "PALACE",
+      "tradition": "CIVIC_ROYAL",
+      "era": { "dynasty": "Rana", "century": "20th century CE", "foundingYearCE": 1908, "datingBasis": "documented_record", "patron": "Chandra Shumsher Rana" },
+      "geo": { "lat": 27.7041, "lng": 85.3071, "elevationM": 1301, "geofenceRadiusM": 30, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["stucco", "whitewash_lime", "fired_brick"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": [],
+        "distinguishingFeatures": ["white neoclassical facade with columns and pediments", "European-style wing attached to the traditional Newar palace", "first-floor balcony overlooking Basantapur"],
+        "confusableWith": ["ktm_hanuman_dhoka", "ktm_kumari_ghar"],
+        "disambiguationTip": "Gaddhi Baithak is the only white European-style facade in the square; Hanuman Dhoka's gate is brick and gilt with the red Hanuman beside it."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Rana Statement in Stucco",
+          "text": "Gaddhi Baithak was built in 1908 by Chandra Shumsher Rana, the hereditary prime minister who governed Nepal during the Rana era, when the Shah kings were figureheads and real power lay with the Rana family. Its name means 'throne seat', and it served as a hall for state ceremonies and receptions. Chandra Shumsher visited Britain in 1908, and his building reflects the European neoclassical style that the Ranas adopted for their palaces, a sign of their close contacts with British India and Europe. Placing such a building at the edge of the ancient Malla palace was a powerful statement: it presented the Rana regime as modern and outward-looking while claiming a place at the historic heart of the city. Today Gaddhi Baithak remains part of the Hanuman Dhoka complex and is used for important national ceremonies.",
+          "sourceIds": ["hutt_1994", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Columns Among the Pagodas",
+          "text": "Gaddhi Baithak's white facade, with classical columns, pediments and symmetrical windows, contrasts dramatically with the brick and timber pagodas around it. It was built with brick walls coated in lime plaster and stucco, techniques that the Ranas used widely in their palaces across Kathmandu. Popular accounts compare its design to buildings in London, and the influence of European architecture is unmistakable. Yet the building is attached to the traditional Newar palace, and from certain angles visitors can see the junction between the two styles. Its first-floor balcony overlooks Basantapur and was used by royalty and officials to watch festivals in the square. Inside, the halls were decorated with chandeliers, portraits and European furniture in the Rana taste. The building is a reminder that Kathmandu's heritage includes the colonial-era borrowings of the early twentieth century.",
+          "sourceIds": ["hutt_1994", "korn_1976"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Symbols of a Modernising Regime",
+          "text": "Gaddhi Baithak carries no deity images in the manner of the temples around it. Its iconography is political rather than religious. The European columns and symmetrical facade stood for order, modernity and connection with the wider world, ideas that the Rana prime ministers used to justify their rule. Inside, portraits of kings and Rana rulers, along with imported decorations, reinforced the image of a sophisticated court. At the same time, the building's placement within the old palace complex, near temples and the residence of the Kumari, shows that the Ranas still depended on the traditional religious legitimacy of the Shah monarchy and the city's gods. For visitors, the building invites reflection on how architecture can be used to project power, and on the layered history of a square in which every dynasty added its own symbols.",
+          "sourceIds": ["hutt_1994", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Watching Indra Jatra from the Balcony",
+          "text": "Gaddhi Baithak's most important ritual role comes during Indra Jatra, when the head of state traditionally watches the festivities from the palace and receives the tika blessing of the Kumari. During the monarchy this was the king's role, and since 2008 the President has attended, maintaining continuity in one of the most symbolic moments of Nepal's ritual calendar. The building is also used for other state occasions, receptions and ceremonies, its halls providing a formal setting at the heart of the historic city. On ordinary days it is mostly closed to the public, but its facade forms the backdrop to Basantapur, where people gather, vendors sell goods and pigeons flock. Seeing it during Indra Jatra, decorated and filled with dignitaries, offers a glimpse of how old and new traditions continue to be staged together in Kathmandu.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Retrofitting a Rana Palace",
+          "text": "Gaddhi Baithak was badly damaged in the 2015 earthquake, which cracked its walls and threatened the stability of its facade. Its construction, brick walls finished with heavy plaster ornament, was vulnerable to shaking, and parts of the stucco decoration fell. Restoration involved structural strengthening, repair of the brickwork and careful reinstatement of the plaster details, carried out with international support. The work illustrates a broader challenge for Kathmandu's heritage: Rana-era buildings, often overlooked in favour of older Malla monuments, are increasingly recognised as part of the valley's history and require their own conservation techniques. Visitors today can see the restored facade, its white surfaces gleaming in the sun. If you look closely, you may notice where new plaster has been matched to the old, a sign of the careful work that has gone into its revival.",
+          "sourceIds": ["doa_nepal", "unesco_whc_121"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Among the brick temples and golden roofs, one building looks as if it belongs in London: the white, columned facade of Gaddhi Baithak. It was built in 1908 by Chandra Shumsher Rana, the powerful prime minister who ruled Nepal while the kings were figureheads, in the same year he travelled to Britain. Its name means throne seat, and here Nepal's heads of state still watch the Indra Jatra festival and receive the blessing of the living goddess Kumari. The 2015 earthquake cracked its walls and knocked down plaster ornaments, and it has since been strengthened and restored. Why would a regime build a European palace in the heart of a Hindu kingdom? Book a verified local storyteller nearby and let a guide tell you about the Ranas and their remarkable century of power."
+      },
+      "nepaliSummary": "गद्दी बैठक सन् १९०८ मा चन्द्रशमशेर राणाले युरोपेली शैलीमा बनाएको दरबार भवन हो, जहाँबाट राष्ट्रप्रमुखले इन्द्रजात्रा हेर्छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "The white facade blows out in midday sun; expose for the stucco in early light or under thin overcast.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full symmetrical facade square-on from Basantapur." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the junction with the Newar palace wing." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the corner of Kumari Ghar in frame." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Column capitals, pediment and balcony balustrade." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Facade with Basantapur square and the Shiva Parvati temple." }
+        ],
+        "occlusionNotes": "Basantapur vendors, parked motorbikes and flocks of pigeons fill the forecourt.",
+        "restrictions": "Building usually closed; security staff may restrict close access during state events."
+      },
+      "walkingTourStop": { "sequence": 6, "dwellMinutes": 8, "talkingPoint": "Use the facade to explain the Rana century and Indra Jatra protocol." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm restoration partners and completion year." }
+    },
+    {
+      "id": "ktm_kotilingeshwara_mahadev",
+      "names": { "en": "Kotilingeshwara Mahadev", "ne": "कोटिलिङ्गेश्वर महादेव", "romanized": "Kotilingeshwar", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Kotilingeshwar Temple"],
+      "monumentType": "DOME_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "16th century CE (attributed)", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": "Mahendra Malla (attributed)" },
+      "geo": { "lat": 27.7055, "lng": 85.3074, "elevationM": 1304, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["grey_stone", "whitewash_lime"],
+        "guardianVahanas": ["Nandi bull facing the temple on the west"],
+        "deityMudrasWeapons": ["Shiva lingam within a domed sanctum"],
+        "distinguishingFeatures": ["compact square shrine topped by a bell-shaped gumbhaj dome", "three-stage plinth in the quieter northern square"],
+        "confusableWith": ["pas_pandra_shivalaya"],
+        "disambiguationTip": "Kotilingeshwara is a single small domed shrine in Kathmandu's northern square; the Pandra Shivalaya at Pashupatinath are a row of fifteen similar domed shrines on a riverbank."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "An Early Shrine in the Northern Square",
+          "text": "Kotilingeshwara Mahadev stands in the quieter northern part of Kathmandu Durbar Square, away from the crowds of Basantapur. It is usually attributed to the reign of King Mahendra Malla in the sixteenth century, making it one of the earlier surviving shrines in this part of the square, although its precise date is not firmly established. Its name means 'Lord of ten million lingams', an epithet of Shiva that emphasises his infinite presence. The northern square was closely associated with the palace's ritual activities, and several important temples, including Taleju, stand nearby. Kotilingeshwara's modest scale contrasts with the grand pagodas around it, but its age and style make it valuable for understanding how the square developed before the great building boom of the seventeenth century transformed the royal precinct into what visitors see today.",
+          "sourceIds": ["slusser_1982", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Dome Among Pagodas",
+          "text": "Unlike most temples in the square, Kotilingeshwara is not a tiered pagoda but a compact square shrine topped by a bell-shaped dome, a form known in Nepal as gumbhaj. This style, which shows influence from the architecture of northern India, appears in a number of Kathmandu Valley temples from the Malla period onward. The temple stands on a three-stage plinth, which gives it height and allows worshippers to circle it. Its compact form and solid construction make it a good example of how builders adapted foreign styles to local materials and needs. The dome's smooth curve contrasts with the stepped silhouettes of the neighbouring pagodas, and from the steps of Taleju or the palace, visitors can see how the square combines several architectural traditions in a single space shaped over many centuries of royal patronage.",
+          "sourceIds": ["korn_1976", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Ten Million Lingams in One",
+          "text": "The sanctum contains a Shiva lingam, the abstract form of the god that represents his boundless creative energy. The temple's name, 'Lord of ten million lingams', expresses the idea that this single lingam contains the presence of countless others, a way of describing Shiva's infinite nature. Facing the temple on its western side is a figure of Nandi, Shiva's bull, whose presence immediately identifies the temple's deity to visitors. The simplicity of the shrine's decoration focuses attention on the lingam and its meaning. In the Kathmandu Valley, Shiva is worshipped in many forms, from the fierce Bhairav to the benevolent Pashupati, and the lingam is the most universal of them. Visitors who have seen Pashupatinath or the Pandra Shivalaya will recognise the same sacred symbol here in a smaller, quieter and more intimate setting.",
+          "sourceIds": ["slusser_1982", "michaels_2008"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Quiet Daily Worship",
+          "text": "Kotilingeshwara receives daily offerings from local devotees, especially on Mondays, the day sacred to Shiva, and during festivals such as Maha Shivaratri, when Shiva temples across the valley are crowded with worshippers. Offerings include water, milk, flowers, bel leaves and incense, which are poured over or placed on the lingam. Because the temple stands in a less crowded area, it offers a calmer setting in which visitors can observe worship without the bustle of the southern square. Morning is the best time to see devotees arrive. The monsoon month of Shrawan is also important for Shiva worship, and many women visit Shiva temples during this time to pray for the well-being of their families. A guide can explain the meaning of each offering and why particular days of the week and year draw the largest numbers of worshippers.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protecting a Small Monument",
+          "text": "Small shrines like Kotilingeshwara can be overlooked in conservation planning, which tends to focus on the most famous monuments. Yet they are equally part of the World Heritage property and face the same threats: earthquakes, weathering, pollution and the wear of daily worship. After the 2015 earthquake, the temples of the northern square were inspected for damage, and repairs were carried out where needed. The dome form is relatively robust, but cracks in the plinth or the sanctum walls must be monitored. Offerings of milk and water, though central to worship, can encourage biological growth on stone and plaster if they are not cleaned away regularly. Documentation by field photographers, including detailed images of the dome and plinth, helps conservators track change over time and plan maintenance before small problems become serious ones.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Step away from the busy southern square to this small domed temple in the north, where the noise softens. Kotilingeshwara Mahadev means Lord of ten million lingams, and inside is a single stone lingam, said to hold the presence of countless others. Built, according to tradition, in the time of King Mahendra Malla in the sixteenth century, it is one of the older shrines in this part of the square. Notice its shape: instead of the stacked roofs of a pagoda, it wears a smooth bell-shaped dome, a style that travelled up from the plains of India. And look for Nandi, the faithful bull, waiting on the western side. Why would a king choose such a different design? Book a verified local storyteller nearby and let a guide show you the quieter side of Durbar Square."
+      },
+      "nepaliSummary": "कोटिलिङ्गेश्वर महादेव दरबार क्षेत्रको उत्तरी भागमा रहेको गुम्बज शैलीको शिव मन्दिर हो, जसलाई महेन्द्र मल्लको पालाको मानिन्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:30-08:00",
+        "lightingNotes": "The northern square is shaded early; soft light suits the plain dome surface and avoids glare on whitewash.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Shrine and dome square-on from the west with Nandi in frame." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the three-stage plinth." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the Taleju enclosure behind." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Doorway and lingam offering area, without worshippers' faces." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Shrine within the northern square and palace walls." }
+        ],
+        "occlusionNotes": "Parked motorbikes line the northern edge and offering vendors sit near the steps.",
+        "restrictions": "Non-Hindus should not enter the sanctum; do not photograph worshippers without permission."
+      },
+      "walkingTourStop": { "sequence": 13, "dwellMinutes": 6, "talkingPoint": "Contrast the domed gumbhaj style with the pagodas before ending at Taleju." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding attribution and material (stone or plastered brick) need on-site confirmation." }
+    },
+    {
+      "id": "ktm_akash_bhairav",
+      "names": { "en": "Akash Bhairav, Indra Chowk", "ne": "आकाश भैरव (इन्द्रचोक)", "romanized": "Aakash Bhairab", "romanizedLanguage": "Nepali" },
+      "aliases": ["Akash Bhairab Temple", "Indra Chowk Bhairav"],
+      "monumentType": "MASK_SHRINE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "date unconfirmed; worship of the mask long established across the Malla and Shah centuries", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7061, "lng": 85.3092, "elevationM": 1305, "geofenceRadiusM": 25, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["fired_brick", "carved_wood"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["large blue-painted mask of Bhairav with bulging eyes and fangs", "mask displayed in the square during Indra Jatra"],
+        "distinguishingFeatures": ["shrine on the upper floor of a building overlooking Indra Chowk", "busy market crossroads with shops at street level"],
+        "confusableWith": ["ktm_swet_bhairav"],
+        "disambiguationTip": "Akash Bhairav is the blue mask in an upper-floor shrine at Indra Chowk; Swet Bhairav is the golden mask behind a lattice screen in Durbar Square."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Sky Bhairav of Indra Chowk",
+          "text": "A short walk north-east of Kathmandu Durbar Square lies Indra Chowk, one of the old city's busiest crossroads, where an upper-floor shrine houses the mask of Akash Bhairav, the 'sky Bhairav'. Popular tradition identifies the mask with Yalambar, remembered as the first king of the Kirata dynasty that ruled the valley before the Licchavis. In one widely told story, Yalambar went to watch the great war of the Mahabharata and was beheaded by Krishna, and his head flew back to the valley, where it is now worshipped as Akash Bhairav. The date of the present shrine has not been established in Saalik's sources. The crossroads takes its name from Indra, the god of rain, and it plays a central role in the Indra Jatra festival, when the mask is displayed to the public. The shrine connects the city's market life with its most ancient legends.",
+          "sourceIds": ["slusser_1982", "levy_1990"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Shrine Above the Market",
+          "text": "Unlike the free-standing temples of Durbar Square, Akash Bhairav's shrine occupies the upper floor of a building, above shops that open onto the crossroads. Its facade carries carved and decorated windows and a balcony from which the shrine overlooks the square, and devotees climb a staircase to reach the deity. This arrangement, with a sacred space above commercial premises, is characteristic of old Kathmandu, where religious and economic life have always been tightly interwoven. Indra Chowk itself is a dense junction of narrow lanes, famous for its fabric and bead sellers, and the shrine's elevated position lifts it above the bustle. During Indra Jatra the mask is brought out and displayed in the square on a platform, transforming the crossroads into a ritual stage. Field collectors are asked to record the facade and the festival platform when it is assembled.",
+          "sourceIds": ["korn_1976", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "A Blue Face of Bhairav",
+          "text": "Akash Bhairav is depicted as a large blue face with bulging eyes, fangs and a crown, one of the many forms of Bhairav, the fierce manifestation of Shiva who guards the city. Blue is associated with the sky, hence the name 'sky Bhairav', and with the vastness and power of the divine. The identification of the mask with the Kirata king Yalambar adds a layer of local history and legend, linking Bhairav worship with the valley's earliest remembered rulers. Bhairav masks are central to Newar religious life, and the faces of Akash Bhairav in Indra Chowk and Swet Bhairav in Durbar Square together dominate the imagery of Indra Jatra. For devotees the mask embodies Bhairav's protective presence, and offerings are made to it throughout the year. Visitors can compare the blue mask here with the golden one in Durbar Square to see how Bhairav's personalities differ.",
+          "sourceIds": ["slusser_1982", "pal_1974"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Indra Jatra at the Crossroads",
+          "text": "During Indra Jatra, the late-summer festival that marks the end of the monsoon, Akash Bhairav's mask is displayed in Indra Chowk, decorated with flowers and surrounded by offerings, and devotees crowd the crossroads to see it. The festival also features the raising of a tall wooden pole near Durbar Square, masked dances and the chariot procession of the living goddess Kumari. In Indra Chowk, musicians play and devotees make offerings late into the night. Throughout the year the shrine receives daily worship, and traders in the surrounding market stop to pray for prosperity. Visitors can watch the festivities from the edges of the square, though the crowds can be intense. At other times the shrine is accessible by its staircase, but visitors should ask before entering, remove their shoes and refrain from photographing inside without the custodians' explicit permission.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Heritage in a Living Market",
+          "text": "Akash Bhairav's shrine faces conservation challenges typical of heritage in Kathmandu's commercial core. The building that houses it is shared with shops, and alterations, signage and wiring can affect its historic character. The 2015 earthquake damaged many buildings in the old city, and structures around Indra Chowk were inspected and repaired. The mask itself, as a sacred object in active use, is cared for by its custodians, and its paint and decoration are periodically renewed. Traffic and pollution at the crossroads add to the wear on facades. Protecting the shrine requires cooperation between the custodians, shop owners, the municipality and heritage authorities. Documentation of the facade and the festival display contributes to the record of the old city's living heritage, and Saalik's field collectors are asked to photograph the shrine and the square from permitted vantage points only.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Look up above the shops at this busy crossroads and you will find a shrine where a huge blue face watches the market below. This is Akash Bhairav, the sky Bhairav, and many in Kathmandu say the face belongs to Yalambar, the first king of the ancient Kirata dynasty. Legend says he went to watch the great war of the Mahabharata, lost his head to Krishna, and the head flew home to the valley, where it has been worshipped ever since. During the Indra Jatra festival the mask is brought down and displayed right here in the square, surrounded by music and offerings. A short walk away, in Durbar Square, his golden cousin Swet Bhairav pours rice beer. Book a verified local storyteller nearby and let a guide take you through the old market lanes."
+      },
+      "nepaliSummary": "इन्द्रचोकको आकाश भैरव निलो मुकुण्डो भएको भैरवको स्थान हो, जसलाई किरात राजा यलम्बरको शिर मानिन्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:30-08:00",
+        "lightingNotes": "Shoot the facade before the market opens; the crossroads is shaded and crowded from mid-morning.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Shrine facade and balcony square-on from the crossroads." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique along the market lane." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique showing the shopfronts below." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Mask during the Indra Jatra display, or carved window detail." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Indra Chowk crossroads with the shrine above." }
+        ],
+        "occlusionNotes": "Dense market crowds, vendors, signage and overhead wires fill every view.",
+        "restrictions": "Ask before entering the shrine; no interior photography without permission."
+      },
+      "walkingTourStop": { "sequence": 15, "dwellMinutes": 10, "talkingPoint": "Leave the square for the market crossroads and the legend of Yalambar's head." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Shrine building date, mask material and coordinates to confirm on site." }
+    },
+    {
+      "id": "ktm_ashok_binayak",
+      "names": { "en": "Ashok Binayak (Maru Ganesh)", "ne": "अशोक विनायक (मरु गणेश)", "romanized": "Maru Ganesh", "romanizedLanguage": "Newa" },
+      "aliases": ["Maru Ganesh", "Ashok Vinayak"],
+      "monumentType": "SHRINE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "date unconfirmed; among Kathmandu's principal Ganesh shrines for many centuries", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7038, "lng": 85.3056, "elevationM": 1300, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 1,
+        "primaryMaterials": ["gilt_repousse_copper", "fired_brick"],
+        "guardianVahanas": ["shrew figure, the vehicle of Ganesh"],
+        "deityMudrasWeapons": ["image of Ganesh covered in red powder and offerings"],
+        "distinguishingFeatures": ["tiny gilded shrine at the corner of Kasthamandap", "constant stream of commuters pausing to pray"],
+        "confusableWith": ["ktm_kasthamandap", "hg_karya_binayak"],
+        "disambiguationTip": "Ashok Binayak is the tiny gilded shrine at Kasthamandap's corner; the pavilion itself is a large open timber structure, and Karya Binayak is a hilltop shrine near Bungamati."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Kathmandu's Ganesh of Beginnings",
+          "text": "Ashok Binayak, also called Maru Ganesh after the Maru neighbourhood, is a small but immensely popular Ganesh shrine at the corner of Kasthamandap, at the south-western entrance to Kathmandu Durbar Square. Its name is traditionally linked to an ashoka tree that once grew here. The shrine is often named among the principal Ganesh temples of the Kathmandu Valley, though lists of the valley's foremost Ganesh shrines differ between traditions. Its founding date has not been established in Saalik's sources, but its position beside the pavilion that gave Kathmandu its name places it at the historic heart of the city, at the meeting of old trade routes. For centuries Kathmandu residents have stopped here before journeys and new ventures, and the shrine's importance is out of all proportion to its tiny size. It is one of the busiest places of worship in the old city.",
+          "sourceIds": ["slusser_1982", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Small Gilded Shrine",
+          "text": "Ashok Binayak is a compact shrine with a gilded roof and a richly decorated front, set at the corner of the Kasthamandap platform. Its small size means that devotees worship from the street, standing before the image to make offerings, ring the bell and receive a tika of red powder. The gilded metalwork of the roof and the frame catches the morning light, and the shrine is almost always surrounded by worshippers. Its placement at Maru, where streets converge, makes it a natural stopping point for people passing through the old city on foot or by motorbike. The shrine's architecture is modest, but its decoration reflects the generosity of devotees over the centuries, who have donated metal ornaments and offerings. Field collectors are asked to photograph the shrine early in the morning, before the crowds, to record its gilded details clearly.",
+          "sourceIds": ["korn_1976", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Remover of Obstacles",
+          "text": "Ganesh, the elephant-headed son of Shiva and Parvati, is the god of beginnings and the remover of obstacles, worshipped before any important undertaking. His image at Ashok Binayak is covered in red powder and offerings, so that its features are often hidden beneath layers of devotion. His vehicle, the shrew, symbolises the ability to overcome any obstacle, however small or hidden, and his elephant head stands for wisdom. In the Newar tradition, Ganesh is worshipped first in every ritual, and every neighbourhood has its own Ganesh shrine. Ashok Binayak's location at the entrance to the royal square suggests that he guarded the threshold of the city's sacred centre, ensuring that all who entered did so under his protection. For visitors, the shrine offers a vivid example of everyday devotion in the city, where a quick prayer to Ganesh begins the day.",
+          "sourceIds": ["pal_1974", "levy_1990"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "A Prayer on the Way to Work",
+          "text": "From dawn until late at night, Ashok Binayak receives a constant stream of devotees: commuters on their way to work, families preparing for weddings, students before examinations and travellers before long journeys. Many touch the shrine, ring the bell and receive a tika in a matter of seconds, while others linger to make more elaborate offerings. Tuesdays, sacred to Ganesh in Nepal, are especially busy, and the festival of Ganesh Chaturthi brings large crowds. New vehicles are sometimes brought to be blessed by priests nearby. The shrine's priests and attendants keep the offerings flowing, and the area around it is lined with sellers of flowers and sweets. Visitors are welcome to observe and may receive a tika if they wish. The shrine is a perfect place to begin a walk through Durbar Square, just as Kathmandu residents begin their own journeys here.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Survival Beside a Collapsed Neighbour",
+          "text": "When Kasthamandap collapsed in the 2015 earthquake, the small Ashok Binayak shrine at its corner survived, and worshippers continued to visit it amid the rubble, a scene that became a symbol of resilience for many residents. The shrine required inspection and minor repair, and its surroundings were transformed during the years of Kasthamandap's reconstruction. The heavy daily use of the shrine wears its metalwork and surroundings, and offerings must be cleared regularly. Its gilded elements require periodic cleaning and regilding, coordinated with the priests. The shrine's conservation is closely linked with that of Kasthamandap and the Maru area, which have been the focus of community-led rebuilding. Saalik's field collectors are asked to photograph the shrine before the morning crowds, recording its gilded details and its relationship to the rebuilt pavilion, so that changes can be tracked over time.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Before you leave Durbar Square, watch this tiny golden shrine for a minute. Commuters on motorbikes slow down, students touch the step, a family with a new car waits for a blessing. This is Ashok Binayak, also called Maru Ganesh, the elephant-headed remover of obstacles, and Kathmandu residents have stopped here before journeys, exams and weddings for centuries. Its name is said to come from an ashoka tree that once grew on this spot. When the great wooden Kasthamandap beside it collapsed in the 2015 earthquake, this little shrine survived, and people kept praying here amid the rubble. You have come full circle to where the walk began. Ring the bell if you like, and ask Ganesh to bless your next journey. Book a verified local storyteller nearby and let a guide plan your next walk in the valley."
+      },
+      "nepaliSummary": "अशोक विनायक (मरु गणेश) काष्ठमण्डपको छेउमा रहेको सानो सुनौलो गणेश मन्दिर हो, जहाँ काठमाडौंवासी यात्रा र नयाँ काम सुरु गर्नुअघि पूजा गर्छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:00-07:00",
+        "lightingNotes": "Gilded details glow in the first light; the shrine is mobbed by worshippers soon after sunrise.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Shrine front square-on with the gilded roof." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with Kasthamandap behind." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique toward the Maru street." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gilded frame and offering area, without worshippers' faces." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Shrine at the corner of the rebuilt Kasthamandap." }
+        ],
+        "occlusionNotes": "Continuous worshippers, flower sellers and motorbikes crowd the shrine.",
+        "restrictions": "Do not block worshippers; photograph quickly and respectfully."
+      },
+      "walkingTourStop": { "sequence": 16, "dwellMinutes": 5, "talkingPoint": "Close the loop back at Maru with the Ganesh who blesses every journey." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Tree-name tradition and the shrine's inclusion among principal Ganesh shrines to cite properly." }
+    }
+  ]
+}

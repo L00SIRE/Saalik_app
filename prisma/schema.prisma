@@ -1,0 +1,336 @@
+// Saalik Hybrid Geo-Visual Heritage API
+// PostgreSQL + pgvector. Production vectors live in Unsupported("vector(N)")
+// columns created by SQL migrations. Unit tests never require a live Postgres
+// instance — they exercise the pure TypeScript vector math in src/server/.
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+// ============================================
+// IDENTITY
+// ============================================
+
+enum UserRole {
+  TRAVELER
+  PENDING_GUIDE
+  GUIDE
+  ADMIN
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  phone        String?
+  avatarUrl    String?
+  role         UserRole @default(TRAVELER)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  guideProfile           GuideProfile?
+  tourBookings           TourBooking[]
+  fieldCaptureSubmissions FieldCaptureSubmission[]
+  telemetryScanEvents    TelemetryScanEvent[]
+}
+
+model GuideProfile {
+  id              String   @id @default(uuid())
+  userId          String   @unique
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bio             String
+  languages       String[] @default([])
+  specialties     String[] @default([])
+  certifications  String[] @default([])
+  yearsExperience Int      @default(1)
+  isVerified      Boolean  @default(false)
+  rating          Float    @default(0)
+  totalTours      Int      @default(0)
+  totalReviews    Int      @default(0)
+  autoAccept      Boolean  @default(true)
+  maxDailyTours   Int      @default(3)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  walkingTours WalkingTour[]
+}
+
+// ============================================
+// WALKING TOURS & BOOKINGS
+// ============================================
+
+enum TourStatus {
+  DRAFT
+  PENDING_APPROVAL
+  APPROVED
+  REJECTED
+  ARCHIVED
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+  NO_SHOW
+}
+
+model WalkingTour {
+  id                   String     @id @default(uuid())
+  tourCode             String     @unique
+  guideProfileId       String?
+  guideProfile         GuideProfile? @relation(fields: [guideProfileId], references: [id], onDelete: SetNull)
+  zoneId               String?
+  zone                 HeritageZone? @relation(fields: [zoneId], references: [id], onDelete: SetNull)
+  title                String
+  titleNe              String?
+  description          String
+  startPoint           String
+  bestStartTime        String?
+  meetingLat           Float?
+  meetingLng           Float?
+  stopMonumentIds      String[]   @default([])
+  totalDistanceM       Int        @default(0)
+  totalDurationMinutes Int        @default(0)
+  maxGroupSize         Int        @default(12)
+  isActive             Boolean    @default(true)
+  status               TourStatus @default(APPROVED)
+  createdAt            DateTime   @default(now())
+  updatedAt            DateTime   @updatedAt
+
+  bookings TourBooking[]
+}
+
+model TourBooking {
+  id             String        @id @default(uuid())
+  walkingTourId  String
+  walkingTour    WalkingTour   @relation(fields: [walkingTourId], references: [id], onDelete: Cascade)
+  userId         String
+  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bookingDate    DateTime
+  partySize      Int           @default(1)
+  status         BookingStatus @default(PENDING)
+  tipAmount      Float?
+  tipCurrency    String?
+  notes          String?
+  statusHistory  Json          @default("[]")
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([walkingTourId, status])
+  @@index([userId, status])
+}
+
+// ============================================
+// HERITAGE CATALOG
+// ============================================
+
+enum ZoneDesignation {
+  UNESCO_MONUMENT_ZONE
+  SATELLITE_HERITAGE_TOWNS
+}
+
+enum CaptureAngle {
+  ESTABLISHING_FRONT
+  LEFT_45
+  RIGHT_45
+  CLOSE_UP_ICONOGRAPHY
+  WIDE_COURTYARD_CONTEXT
+}
+
+enum LoreCategory {
+  HISTORY_DYNASTY
+  ARCHITECTURE_CRAFTSMANSHIP
+  ICONOGRAPHY_SYMBOLISM
+  LIVING_RITUALS_FOLKLORE
+  CONSERVATION_RESTORATION
+}
+
+enum VerificationStatus {
+  EDITORIAL_DRAFT
+  FIELD_VERIFIED
+  CUSTODIAN_APPROVED
+}
+
+model HeritageZone {
+  id            String           @id @default(uuid())
+  zoneCode      String           @unique
+  nameEn        String
+  nameNe        String
+  romanized     String?
+  designation   ZoneDesignation
+  centroidLat   Float
+  centroidLng   Float
+  zoneRadiusM   Int              @default(400)
+  description   String
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  monuments    Monument[]
+  walkingTours WalkingTour[]
+}
+
+model Monument {
+  id                String             @id @default(uuid())
+  monumentCode      String             @unique
+  zoneId            String
+  zone              HeritageZone       @relation(fields: [zoneId], references: [id], onDelete: Cascade)
+  /// Hierarchical path used by RAG: valley/zone/monument e.g. kathmandu_valley/kathmandu_durbar/ktm_kasthamandap
+  nodePath          String
+  nameEn            String
+  nameNe            String
+  romanized         String?
+  monumentType      String
+  tradition         String
+  dynasty           String?
+  century           String?
+  foundingYearCE    Int?
+  lat               Float
+  lng               Float
+  elevationM        Float              @default(1300)
+  geofenceRadiusM   Int                @default(40)
+  roofTiers         Int?
+  primaryMaterials  String[]           @default([])
+  distinguishingFeatures String[]      @default([])
+  confusableWith    String[]           @default([])
+  disambiguationTip String?
+  audioHookScript   String?
+  nepaliSummary     String?
+  verificationStatus VerificationStatus @default(EDITORIAL_DRAFT)
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+
+  visualEmbeddings MonumentVisualEmbedding[]
+  loreChunks       HeritageLoreChunk[]
+  fieldCaptures    FieldCaptureSubmission[]
+  telemetryEvents  TelemetryScanEvent[]
+
+  @@index([zoneId])
+  @@index([lat, lng])
+  @@index([nodePath])
+}
+
+/// DINOv2 / SigLIP visual reference embedding (768-d). Stored as pgvector in SQL.
+model MonumentVisualEmbedding {
+  id          String        @id @default(uuid())
+  monumentId  String
+  monument    Monument      @relation(fields: [monumentId], references: [id], onDelete: Cascade)
+  angle       CaptureAngle
+  lightingTag String?
+  /// Production column is vector(768); see migration SQL. Unit tests use in-memory float arrays.
+  embedding   Unsupported("vector(768)")
+  sourceUri   String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@unique([monumentId, angle])
+  @@index([monumentId])
+}
+
+/// Hierarchical RAG lore chunk with OpenAI-style 1536-d text embedding.
+model HeritageLoreChunk {
+  id           String       @id @default(uuid())
+  monumentId   String
+  monument     Monument     @relation(fields: [monumentId], references: [id], onDelete: Cascade)
+  chunkCode    String       @unique
+  /// Hierarchical node path: valley/zone/monument/category
+  nodePath     String
+  category     LoreCategory
+  title        String
+  text         String
+  sourceIds    String[]     @default([])
+  /// Canonical public citation hosts, always including https://www.sumandangal.com/
+  citationUrls String[]     @default(["https://www.sumandangal.com/"])
+  confidence   String       @default("medium")
+  /// Production column is vector(1536); see migration SQL.
+  embedding    Unsupported("vector(1536)")
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  @@index([monumentId, category])
+  @@index([nodePath])
+}
+
+// ============================================
+// FIELD CAPTURE & TELEMETRY
+// ============================================
+
+enum CaptureSubmissionStatus {
+  PENDING
+  UPLOADING
+  RETRY_SCHEDULED
+  UPLOADED
+  FAILED
+}
+
+enum LightingTag {
+  DIRECT_SUN
+  COURTYARD_SHADOW
+  OVERCAST
+  DUSK_LAMP
+}
+
+model FieldCaptureSubmission {
+  id              String                   @id @default(uuid())
+  /// Client-generated idempotency key for offline batch upserts
+  clientCaptureId String                   @unique
+  monumentId      String?
+  monument        Monument?                @relation(fields: [monumentId], references: [id], onDelete: SetNull)
+  userId          String?
+  user            User?                    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  zoneCode        String?
+  angle           CaptureAngle
+  photoUri        String
+  voiceNoteUri    String?
+  latitude        Float?
+  longitude       Float?
+  altitudeM       Float?
+  gpsAccuracyM    Float?
+  headingDeg      Float?
+  lightingTag     LightingTag              @default(OVERCAST)
+  notes           String?
+  capturedAt      DateTime
+  status          CaptureSubmissionStatus  @default(PENDING)
+  attempts        Int                      @default(0)
+  nextAttemptAt   DateTime?
+  lastError       String?
+  payloadHash     String?
+  createdAt       DateTime                 @default(now())
+  updatedAt       DateTime                 @updatedAt
+
+  @@index([status, nextAttemptAt])
+  @@index([monumentId])
+}
+
+model TelemetryScanEvent {
+  id              String   @id @default(uuid())
+  userId          String?
+  user            User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  monumentId      String?
+  monument        Monument? @relation(fields: [monumentId], references: [id], onDelete: SetNull)
+  mode            String
+  source          String
+  queryLat        Float?
+  queryLng        Float?
+  gpsAccuracyM    Float?
+  searchRadiusM   Float?
+  topScore        Float?
+  topMonumentCode String?
+  confidence      String?
+  matchCount      Int      @default(0)
+  clientDeviceId  String?
+  appVersion      String?
+  createdAt       DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([monumentId, createdAt])
+  @@index([queryLat, queryLng])
+}

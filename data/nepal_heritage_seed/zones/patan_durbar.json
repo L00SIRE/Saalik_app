@@ -1,0 +1,1219 @@
+{
+  "zoneId": "patan_durbar",
+  "names": { "en": "Patan Durbar Square", "ne": "पाटन दरबार क्षेत्र", "romanized": "Yala Layaku", "romanizedLanguage": "Newa" },
+  "designation": "UNESCO_MONUMENT_ZONE",
+  "unescoReference": "UNESCO WHC 121 - Patan Durbar Square Monument Zone",
+  "district": "Lalitpur",
+  "centroid": { "lat": 27.6735, "lng": 85.3255 },
+  "zoneRadiusM": 800,
+  "description": "The palace square of the former Malla kingdom of Lalitpur, the city of beauty, renowned for its metalworkers and stone carvers. Its palace courtyards, the stone Krishna Mandir and the nearby Buddhist monasteries of Kwa Bahal and Mahabouddha show the intertwined Hindu and Buddhist heritage of Patan, much of it restored with the Kathmandu Valley Preservation Trust after 2015.",
+  "walkingTour": {
+    "tourId": "pat_city_of_artisans",
+    "title": "Patan: City of Artisans and Monasteries",
+    "titleNe": "पाटन: कालिगढ र विहारहरूको सहर",
+    "startPoint": "Mahabouddha courtyard, Mahabu Tole",
+    "bestStartTime": "07:00"
+  },
+  "monuments": [
+    {
+      "id": "pat_mahabouddha",
+      "names": { "en": "Mahabouddha Temple", "ne": "महाबौद्ध मन्दिर", "romanized": "Mahabu", "romanizedLanguage": "Newa" },
+      "aliases": ["Temple of a Thousand Buddhas", "Mahabouddha Mahavihar"],
+      "monumentType": "SHIKHARA_TEMPLE",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Malla", "century": "late 16th to early 17th century CE; rebuilt after 1934", "foundingYearCE": null, "datingBasis": "chronicle", "patron": "Abhaya Raj Shakya and descendants (by tradition)" },
+      "geo": { "lat": 27.6713, "lng": 85.3272, "elevationM": 1310, "geofenceRadiusM": 20, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["terracotta", "fired_brick"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["thousands of small seated Buddhas moulded into terracotta tiles", "Buddha in the earth-touching gesture (bhumisparsha mudra)"],
+        "distinguishingFeatures": ["tall terracotta shikhara modelled on the Mahabodhi Temple at Bodh Gaya", "hemmed into a narrow courtyard by surrounding houses", "smaller Maya Devi shrine in the same courtyard"],
+        "confusableWith": ["pat_krishna_mandir"],
+        "disambiguationTip": "Mahabouddha is a terracotta-tiled tower hidden in a tight courtyard; Krishna Mandir is grey stone with open pillared galleries in the main square."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Copy of Bodh Gaya in Patan",
+          "text": "Mahabouddha, the 'Temple of a Thousand Buddhas', was built by a Patan family of the Shakya Buddhist community. Tradition credits Abhaya Raj Shakya, a priest who travelled to Bodh Gaya in India, where the Buddha attained enlightenment, and returned determined to reproduce its great Mahabodhi Temple in his home city. Construction is usually said to have begun in the later sixteenth century and to have continued across generations of the family, finishing around the turn of the seventeenth century. The project shows the wealth and international connections of Patan's Buddhist merchants and craftsmen during the Malla period, when pilgrims and traders travelled between the valley and the holy sites of the Gangetic plain. It remains one of the clearest examples in Nepal of a monument consciously modelled on a famous foreign sacred building.",
+          "sourceIds": ["locke_1985", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Terracotta Tower in a Courtyard",
+          "text": "The temple is a tall shikhara, a tapering tower of the north Indian type, built in brick and faced with terracotta tiles, each moulded with a small image of the Buddha. The repetition of thousands of near-identical figures gives the building its popular name and creates a shimmering texture across its surface. Unlike the free-standing temples of Durbar Square, Mahabouddha is wedged into a tight courtyard, surrounded by houses so closely that visitors must crane their necks to see the summit. Some neighbouring rooftops, often reached through shops, offer the best views. The tower's tapering profile consciously echoes the Bodh Gaya model. Terracotta was well suited to the mass production of identical images, and Patan's craftsmen were skilled in moulding, firing and fitting the tiles precisely into the brick core so that the whole surface reads as one continuous field of Buddhas.",
+          "sourceIds": ["gutschow_1997", "korn_1976"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "A Thousand Buddhas",
+          "text": "Each terracotta tile carries a seated Buddha, most often in the earth-touching gesture, with the right hand reaching down to call the earth to witness his enlightenment. The repetition of the image expresses a Mahayana idea: that there have been countless Buddhas across time and space, and that enlightenment is open to all beings. Inside the temple is an image of the Buddha, and the tower itself functions as a vast three-dimensional mandala, a diagram of the enlightened universe. The link with Bodh Gaya makes Mahabouddha a pilgrimage substitute, allowing Patan's Buddhists to honour the place of enlightenment without the long journey to India. A smaller shrine in the courtyard dedicated to Maya Devi, the Buddha's mother, completes the story of the Buddha's life, from his birth in Lumbini to his awakening under the Bodhi tree.",
+          "sourceIds": ["pal_1974", "locke_1985"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Worship in a Neighbourhood Courtyard",
+          "text": "Mahabouddha is cared for by the Buddhist families of its neighbourhood, who perform daily rituals and maintain the shrine. Lamps are lit, offerings of flowers and rice are made, and on Buddhist festivals the courtyard fills with worshippers. Buddha Jayanti, the full-moon day celebrating the Buddha's birth, enlightenment and passing, is a particularly important occasion. The courtyard is also a working space: metalworkers and woodcarvers have workshops in the surrounding houses, and many sell their work to visitors. Patan's reputation as the city of artisans is closely linked with its Buddhist communities, especially the Shakya and Vajracharya castes, who have long specialised in metal casting, repousse and image-making. A visit to Mahabouddha therefore combines devotion and craft, and a guide can introduce visitors to workshops where centuries-old techniques are still practised every day.",
+          "sourceIds": ["toffin_2008", "locke_1985", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Rebuilt After 1934",
+          "text": "The great earthquake of 1934 brought Mahabouddha down, and the tower had to be rebuilt almost from scratch. The reconstruction did not perfectly reproduce the original proportions, and attentive visitors notice that the present tower looks slightly different from early photographs. According to local accounts, bricks and tiles left over from the rebuilding were used to construct the small Maya Devi shrine in the courtyard. The 2015 earthquake caused further damage, cracking parts of the structure and dislodging tiles, which were repaired by conservation teams working with the local community. The tight courtyard setting complicates any work, since scaffolding and materials must be carried through narrow passages. Terracotta tiles are also vulnerable to erosion by rain and pollution, so Saalik field collectors are asked to photograph tile surfaces in detail to help monitor their condition over time.",
+          "sourceIds": ["doa_nepal", "slusser_1982", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Squeeze through the narrow passage into this courtyard and look up. A tower covered in thousands of tiny Buddhas rises above the rooftops. This is Mahabouddha, the Temple of a Thousand Buddhas, built by a Patan family whose ancestor, legend says, travelled to Bodh Gaya in India, where the Buddha found enlightenment, and came home determined to build a copy. Count the tiles on one face if you can: each one holds a seated Buddha touching the earth. The 1934 earthquake brought the tower down, and the neighbours rebuilt it, using the leftover bricks for a shrine to the Buddha's mother. The best view is from a rooftop next door. Which one? Book a verified local storyteller nearby and let a guide lead you up and into the artisan workshops."
+      },
+      "nepaliSummary": "महाबौद्ध मन्दिर बोधगयाको महाबोधि मन्दिरको नमुनामा बनेको, हजारौं बुद्ध अंकित टेराकोटा इँटाले सजिएको शिखर मन्दिर हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:30-13:00",
+        "lightingNotes": "The courtyard is so enclosed that the lower tower stays in shadow until late morning; bright overcast gives the most even tile detail.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "From the courtyard entrance, as much tower height as the courtyard allows." },
+          { "angle": "LEFT_45", "framingNote": "From the left corner of the courtyard, tower edge and tile rows." },
+          { "angle": "RIGHT_45", "framingNote": "From the right corner, including the Maya Devi shrine." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "A single terracotta tile showing the earth-touching Buddha." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "From a neighbouring rooftop, the tower above surrounding roofs." }
+        ],
+        "occlusionNotes": "Shop signs, laundry and overhead wires cut across the tower, and the courtyard is too tight for wide lenses at ground level.",
+        "restrictions": "Rooftop access is through private shops; ask permission and expect a small fee."
+      },
+      "walkingTourStop": { "sequence": 1, "dwellMinutes": 15, "talkingPoint": "Start with the Bodh Gaya replica and the artisan neighbourhood around it." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Construction dates and 1934 rebuild details to confirm with custodians." }
+    },
+    {
+      "id": "pat_char_narayan",
+      "names": { "en": "Char Narayan Mandir", "ne": "चार नारायण मन्दिर", "romanized": "Char Narayan Dega", "romanizedLanguage": "Newa" },
+      "aliases": ["Jagannarayan Temple", "Charnarayan Temple"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "16th century CE", "foundingYearCE": 1565, "datingBasis": "chronicle", "patron": "Purandarasimha, a noble of Patan (attributed)" },
+      "geo": { "lat": 27.6726, "lng": 85.3251, "elevationM": 1312, "geofenceRadiusM": 20, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 2,
+        "primaryMaterials": ["fired_brick", "carved_wood", "clay_tile"],
+        "guardianVahanas": ["stone lions on the plinth steps"],
+        "deityMudrasWeapons": ["struts carved with multi-armed forms of Vishnu", "Vishnu's conch, discus, mace and lotus"],
+        "distinguishingFeatures": ["two-tiered brick pagoda regarded as the oldest in the square", "stands at the southern end of the square near the palace"],
+        "confusableWith": ["pat_vishwanath_mandir", "pat_bhimsen_mandir"],
+        "disambiguationTip": "Char Narayan is at the southern end of the square and belongs to Vishnu; Vishwanath has stone elephants at its steps, and Bhimsen has a gilded first-floor balcony."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "One of Patan's Oldest Temples",
+          "text": "Char Narayan, also known as Jagannarayan, is often described as the oldest temple standing in Patan Durbar Square, with a construction date usually given as 1565. It is commonly attributed to Purandarasimha, a noble of Patan, at a time when the city was governed by local lords before it emerged as an independent Malla kingdom in the early seventeenth century. Its dedication to Narayan, the preserver form of Vishnu, reflects the importance of Vaishnava worship in the city. Over the following century, Patan's kings would build much grander temples nearby, including the stone Krishna Mandir, but Char Narayan's position near the palace shows that the square was already an important religious centre before the great Malla building boom of the seventeenth century. It therefore offers a glimpse of the square as it looked before its most famous monuments existed.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Classic Two-Tiered Pagoda",
+          "text": "Char Narayan is a two-tiered brick pagoda raised on a stepped plinth, a compact example of the classic Newar temple form. Its square sanctum has doors on each side, framed by carved wooden panels and toranas, and its two roofs are supported by struts carved with deities. Stone lions guard the stairs. The temple's carvings are admired for their quality, and some art historians consider them among the finest early struts in Patan. The building's modest scale makes its proportions easy to appreciate from the square, and it provides a useful comparison with later, larger pagodas such as Bhimsen and the tall temples of the palace. Its brickwork, with fine joints and moulded bands, shows the skill of Patan's masons in an era before the more elaborate stone and metalwork that the seventeenth century would bring to the square.",
+          "sourceIds": ["bernier_1979", "korn_1976"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Vishnu Facing Every Direction",
+          "text": "The name Char Narayan means 'four Narayans', usually explained as a reference to Vishnu's presence facing the four directions, protecting the city on every side. The temple's carvings include multi-armed forms of Vishnu bearing his attributes, the conch, discus, mace and lotus, together with his avatars and attendants. Some struts carry erotic scenes at their lower ends, as on many Newar temples. Vishnu's role as preserver of the cosmic order made him an important protector of kings, and his worship was central to Malla royal religion alongside the cults of Shiva and the goddess. Visitors who have seen Trailokya Mohan in Kathmandu, with its ten-avatar struts, will find interesting parallels here. A guide can help identify the different forms of Vishnu on the struts and explain the meaning of each object he holds in his many hands.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Morning Offerings at the Square's Edge",
+          "text": "Char Narayan receives daily worship, with devotees offering flowers, rice, incense and lamps, especially in the early morning when Patan's residents make their rounds of neighbourhood shrines. Ekadashi, the eleventh day of each lunar fortnight, is sacred to Vishnu and brings additional worshippers, as do the major Vaishnava festivals. The temple's location near the southern entrance to the square means that many people pass it on their way to Mangal Bazaar, Patan's old market street, and pause briefly to pray. On festival days the square fills with music and processions, and the plinth of Char Narayan becomes a place to watch and gather. Its quieter character, compared with the busier Krishna Mandir, makes it a good place to observe everyday devotion and to see how temples remain part of the daily rhythm of the city.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Restored After 2015",
+          "text": "Char Narayan was damaged in the 2015 Gorkha earthquake, which shook the temple's brick walls and timber structure. It was among the monuments in Patan Durbar Square whose restoration was carried out with the Kathmandu Valley Preservation Trust, an organisation that has worked in Patan since the 1990s and built a strong record of careful, research-based conservation. The work involved dismantling damaged sections, recording each element, repairing or replacing decayed timbers with matching wood, and reassembling the structure with discreet reinforcement to improve its earthquake resistance. Original carvings were retained wherever possible. The restoration of Char Narayan is part of a broader programme that has brought many of Patan's damaged monuments back to life since 2015. Comparing old photographs with the present building shows how closely the restorers followed the historic design, down to individual carvings.",
+          "sourceIds": ["kvpt", "doa_nepal"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "At the southern end of Patan Durbar Square stands a two-roofed temple that may be the oldest in the square: Char Narayan, built around 1565, decades before Patan's kings raised the stone and gold wonders around it. Its name means four Narayans, Vishnu watching over every direction of the city. Look closely at the roof struts; some art historians count them among the finest early carvings in Patan. In 2015 the earthquake cracked its walls, and conservators took it apart piece by piece, numbering every timber before putting it back together. Can you tell which carvings are four centuries old and which are new? Book a verified local storyteller nearby and let a guide walk you from this temple into the royal courtyards behind it."
+      },
+      "nepaliSummary": "चार नारायण मन्दिर सन् १५६५ तिर बनेको पाटन दरबार क्षेत्रको सबैभन्दा पुरानो मानिने विष्णु मन्दिर हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "06:45-08:30",
+        "lightingNotes": "Morning sun lights the south of the square; struts under the lower roof read only in low-angle light.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full two-tiered temple from the open square with the lion steps." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the strut sequence on the lower roof." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the palace facade behind." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Telephoto on a Vishnu strut with attributes visible." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple at the southern end of the square with Krishna Mandir beyond." }
+        ],
+        "occlusionNotes": "Market traffic from Mangal Bazaar passes close by and vendors sit on the plinth.",
+        "restrictions": "Respect worshippers and do not climb above the plinth steps."
+      },
+      "walkingTourStop": { "sequence": 2, "dwellMinutes": 8, "talkingPoint": "Compare the early pagoda with the later Malla showpieces of the square." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding attribution and the scope of the KVPT restoration to confirm." }
+    },
+    {
+      "id": "pat_sundari_chowk_tusha_hiti",
+      "names": { "en": "Sundari Chowk and Tusha Hiti", "ne": "सुन्दरी चोक र तुषा हिटी", "romanized": "Sundari Chuka, Tusha Hiti", "romanizedLanguage": "Newa" },
+      "aliases": ["Sundari Chowk", "Tusha Hiti", "Royal Bath of Patan"],
+      "monumentType": "PALACE_COURTYARD",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "17th century CE", "foundingYearCE": 1647, "datingBasis": "documented_record", "patron": "Siddhinarasimha Malla" },
+      "geo": { "lat": 27.6725, "lng": 85.3256, "elevationM": 1312, "geofenceRadiusM": 30, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["black_stone", "fired_brick", "carved_wood", "gilt_bronze"],
+        "guardianVahanas": ["stone serpents (nagas) around the bath rim", "gilded water spout"],
+        "deityMudrasWeapons": ["registers of small stone images of mother goddesses, Bhairavas and nagas lining the bath", "miniature stone replica of the Krishna Mandir on the bath edge"],
+        "distinguishingFeatures": ["sunken stepped stone bath at the centre of a palace courtyard", "stone slab beside the bath said to be the king's bed"],
+        "confusableWith": ["pat_mani_dhara", "bkt_naga_pokhari"],
+        "disambiguationTip": "Tusha Hiti is enclosed inside the palace's southern courtyard and densely carved with deities; Mani Dhara is a public sunken spout at the square's north end."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A King's Private Bath",
+          "text": "Sundari Chowk is the southern of the three main courtyards of the Patan royal palace, and at its centre lies Tusha Hiti, the king's private bath, completed in 1647 under King Siddhinarasimha Malla. Siddhinarasimha, who also built the Krishna Mandir, was famous for his piety and is said to have spent long hours in religious practice. Chronicles and local tradition describe him bathing and meditating at Tusha Hiti, and a stone slab beside the bath is said to have served as his bed during periods of austerity. The courtyard was a private, ritual space rather than a public one, used by the royal family for bathing, worship and meditation. Its creation reflects the Malla kings' image of themselves as sacred rulers whose personal religious discipline sustained the well-being of the kingdom and of every one of its subjects.",
+          "sourceIds": ["slusser_1982", "wright_1877"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Sunken Stone Masterpiece",
+          "text": "Tusha Hiti is a sunken, stepped bath built of finely carved stone, its sides descending to a pool fed by a gilded spout. Water was supplied through the valley's ingenious network of canals and underground channels, the same system that feeds public hitis across Patan. The bath's rim and walls are densely carved with small images of deities set into niches in successive registers, and a miniature stone version of the Krishna Mandir stands at its edge. The surrounding courtyard is enclosed by palace wings with carved windows and doors, including a richly decorated main entrance. The combination of stone, water and carved timber creates one of the most refined spaces in Newar architecture, and it shows the skill of Patan's stone carvers, who were among the most accomplished anywhere in South Asia during the seventeenth century.",
+          "sourceIds": ["korn_1976", "kvpt"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Goddesses, Bhairavas and Serpents",
+          "text": "The carvings around Tusha Hiti form a Tantric mandala in stone. Images of the Ashta Matrika, the eight mother goddesses, and of forms of Bhairav line the bath, together with other deities, attendants and nagas, the serpent spirits associated with water. Nagas are particularly important at a bath, since they control springs and rain, and their presence ensured both a steady water supply and ritual purity. The miniature Krishna temple links the bath with the king's great foundation in the square outside. For the king, bathing here was not simply washing but a ritual immersion within a circle of protective deities, a daily re-enactment of his role as the kingdom's sacred centre. Visitors can spend a long time identifying individual figures, many of which retain remarkably crisp detail after nearly four centuries of use.",
+          "sourceIds": ["slusser_1982", "pal_1974"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Water, Purity and Royal Meditation",
+          "text": "Water is central to Newar ritual life, and royal baths like Tusha Hiti connected the king's daily purification with the great festivals of the city. Bathing at dawn before worship, especially in the cold months, was considered an act of austerity that generated spiritual merit. Local tradition holds that Siddhinarasimha Malla would sit on the stone slab beside the bath through cold nights, demonstrating his devotion and self-discipline. The courtyard was also used for Tantric rituals reserved for the royal family and their priests. Today Sundari Chowk is no longer an active royal space, but the bath remains a powerful reminder of how Malla kingship combined politics and spirituality. Visitors who enter the courtyard should move quietly, respect the barriers around the bath and never step on the carved surfaces of the rim.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Bringing the Courtyard Back",
+          "text": "Sundari Chowk suffered from long neglect in the twentieth century, and the 2015 earthquake added further damage to its palace wings. The Kathmandu Valley Preservation Trust, which has worked extensively in the Patan palace, led a major conservation project in the courtyard, documenting the structure, repairing walls and timberwork, and conserving the stone carvings of Tusha Hiti. The work revived traditional techniques of brick, timber and stone construction while adding concealed reinforcement for future earthquakes. Water management was a key concern, since leaks and blocked channels can damage both the bath and the surrounding foundations. The restored courtyard is managed together with the palace museum complex, and access arrangements may vary. Its revival is one of the most celebrated conservation achievements in the valley and shows what patient, research-led restoration can achieve.",
+          "sourceIds": ["kvpt", "doa_nepal"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Behind these palace walls lies one of the most beautiful baths ever carved in stone. Tusha Hiti, finished in 1647 for King Siddhinarasimha Malla, sinks step by step into the earth, its walls lined with tiny goddesses, Bhairavas and coiled serpents. The king who built the Krishna Mandir outside was famous for his devotion, and tradition says he slept on a bare stone slab beside this bath through cold winter nights. Look for the miniature stone copy of the Krishna temple on the rim. Then try counting the deities around the bath; few visitors manage before they lose track. Who were these goddesses, and why did a king need them around his bath? Book a verified local storyteller nearby and let a guide decode the circle of stone gods with you."
+      },
+      "nepaliSummary": "सुन्दरी चोकको तुषा हिटी राजा सिद्धिनरसिंह मल्लले सन् १६४७ मा बनाएको, देवदेवीका ढुङ्गे मूर्तिले सजिएको शाही स्नान कुण्ड हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:30",
+        "lightingNotes": "The enclosed courtyard is shaded at dawn and in late afternoon; soft midday or overcast light avoids harsh contrast in the sunken bath.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "From the courtyard entrance, the bath and main spout centred." },
+          { "angle": "LEFT_45", "framingNote": "From the left gallery, the stepped descent and niche registers." },
+          { "angle": "RIGHT_45", "framingNote": "From the right gallery, including the stone slab." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Individual deity niches and the gilded spout." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Whole courtyard with the surrounding palace wings." }
+        ],
+        "occlusionNotes": "Barriers and museum staff stand around the bath and groups gather at the rim.",
+        "restrictions": "Access depends on museum arrangements; do not step on carved surfaces; tripods may need permission."
+      },
+      "walkingTourStop": { "sequence": 3, "dwellMinutes": 15, "talkingPoint": "Introduce royal Tantric ritual through the deities around the bath." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm public access, deity count and KVPT project dates." }
+    },
+    {
+      "id": "pat_mul_chowk",
+      "names": { "en": "Mul Chowk", "ne": "मूल चोक", "romanized": "Mul Chuka", "romanizedLanguage": "Newa" },
+      "aliases": ["Main Courtyard of Patan Palace"],
+      "monumentType": "PALACE_COURTYARD",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "17th century CE", "foundingYearCE": 1666, "datingBasis": "documented_record", "patron": "Srinivasa Malla" },
+      "geo": { "lat": 27.6729, "lng": 85.3256, "elevationM": 1312, "geofenceRadiusM": 35, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 3,
+        "primaryMaterials": ["fired_brick", "carved_wood", "gilt_bronze", "gilt_repousse_copper"],
+        "guardianVahanas": ["gilt-bronze river goddesses Ganga and Yamuna standing on their animal mounts"],
+        "deityMudrasWeapons": ["Taleju Bhawani, Patan's royal goddess, hidden within the shrine"],
+        "distinguishingFeatures": ["large square courtyard with a small gilded shrine at its centre", "golden doorway to the Taleju shrine on the southern side", "tiered temple roofs rising above the courtyard"],
+        "confusableWith": ["pat_sundari_chowk_tusha_hiti", "bkt_taleju_chowk"],
+        "disambiguationTip": "Mul Chowk is the large open central courtyard with a small gilded shrine in the middle; Sundari Chowk is the smaller southern court with the sunken stone bath."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Heart of the Patan Palace",
+          "text": "Mul Chowk, the 'main courtyard', is the largest and oldest of the three principal courtyards of the Patan royal palace. In its present form it was completed in 1666 under King Srinivasa Malla, the son of Siddhinarasimha, after earlier phases of building and rebuilding. It was the ritual heart of the palace, housing the shrine of Taleju Bhawani, the royal goddess of the Malla dynasty, whose worship legitimised the king's rule. Patan's kings performed major ceremonies here, including the rituals of Dashain, and the courtyard was the setting for coronations and other royal events. After Prithvi Narayan Shah took Patan in 1768, the palace ceased to be a royal residence, but Mul Chowk kept its religious importance, and Taleju continued to be worshipped by priests and the city's devotees under every government that followed.",
+          "sourceIds": ["slusser_1982", "kvpt"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Courtyard of Gilded Doors",
+          "text": "Mul Chowk is a large square courtyard enclosed by two-storey palace wings with carved windows and doors, a classic Newar quadrangle built on the same principle as a Buddhist monastery. At its centre stands a small gilded shrine, and around its edges rise the tiered roofs of the temples dedicated to the royal goddess. On the southern side, a golden doorway leads to the Taleju shrine, flanked by gilt-bronze statues of the river goddesses Ganga and Yamuna standing on their animal mounts, among the finest metal sculptures in the valley. The carved struts, windows and doors throughout the courtyard demonstrate the skill of Patan's woodcarvers and metalworkers. The proportions of the courtyard, open yet enclosed, create a sense of ceremony, drawing the eye toward the sacred doorways and the roofs rising above them.",
+          "sourceIds": ["korn_1976", "pal_1974"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "River Goddesses at the Golden Door",
+          "text": "The gilt-bronze statues of Ganga and Yamuna that flank the golden door are personifications of India's two holiest rivers, and their presence turns the threshold into a sacred crossing. In Hindu temple architecture, river goddesses at doorways symbolise purification: devotees passing between them are cleansed as if by bathing in the rivers themselves. Each goddess stands on her aquatic animal mount, holding a water pot. Above the door, a torana shows deities in a protective arrangement. Behind the door, Taleju is present but unseen, as in Kathmandu and Bhaktapur, since her image is reserved for initiated priests. The courtyard's iconography thus mirrors that of the royal precincts in the other Malla cities while expressing Patan's own distinctive metalwork style, which many specialists consider the most refined in the whole of the valley.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Dashain in the Royal Courtyard",
+          "text": "During Dashain, the great autumn festival of the goddess Durga, Mul Chowk becomes the focus of rituals for Taleju, including animal sacrifices performed by the shrine's priests. These ceremonies continue a royal tradition in which the king's offerings to the goddess were believed to ensure victory and prosperity for the coming year. Today they are carried out by the religious trusts and families who inherited responsibility for the shrine. On ordinary days the courtyard is quieter, reached through the palace museum complex, and its gilded doors and statues can be admired in peace. Some rituals are closed to non-Hindus and to the public, and visitors should follow the guidance of staff and priests. A guide can explain the ritual calendar of the courtyard and the roles of the hereditary families who keep its ceremonies alive generation after generation.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Restoring the Palace Core",
+          "text": "Mul Chowk was damaged in the 2015 earthquake, with cracks in its palace wings and damage to temple structures around the courtyard. Conservation work carried out with the Kathmandu Valley Preservation Trust and the Department of Archaeology aimed to stabilise the buildings, repair damaged brickwork and timber, and conserve the metal sculptures and doors. As elsewhere in Patan, the restorers used traditional materials and techniques and documented each stage of the work in detail. The courtyard's role in living ritual meant that conservation had to be scheduled around festivals and coordinated with priests, so that worship could continue. The restored courtyard shows the value of long-term partnerships between local communities, government and conservation specialists, visible today in the crisp brickwork, repaired windows and freshly conserved gilt surfaces around the court.",
+          "sourceIds": ["kvpt", "doa_nepal"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Walk into the heart of the Patan palace, the great courtyard called Mul Chowk, and look for the golden doorway on its southern side. Two goddesses guard it, cast in gilded bronze: Ganga and Yamuna, the holy rivers of India, each standing on her water-animal mount. Pass between them, and tradition says you are purified as if you had bathed in both rivers. Behind the door lives Taleju, the royal goddess of the Malla kings, whom no ordinary visitor ever sees. King Srinivasa Malla completed this courtyard in 1666, and every Dashain since, sacrifices have been offered here. Which goddess stands on which animal, and why? Book a verified local storyteller nearby and let a guide show you the royal courtyard as the kings knew it."
+      },
+      "nepaliSummary": "मूल चोक पाटन दरबारको मुख्य चोक हो, जहाँ तलेजु भवानीको मन्दिर र गंगा-यमुनाका सुनौला मूर्ति रहेका छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:00",
+        "lightingNotes": "High sun lights the whole courtyard floor; gilt surfaces flare, so meter for the bronze statues.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "From the north side, the golden doorway with Ganga and Yamuna." },
+          { "angle": "LEFT_45", "framingNote": "From the west wing, courtyard depth and the central shrine." },
+          { "angle": "RIGHT_45", "framingNote": "From the east wing, including the tiered roofs above." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gilt-bronze river goddesses and their mounts." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Whole courtyard with the surrounding carved wings." }
+        ],
+        "occlusionNotes": "Museum barriers and visitor groups fill the courtyard, and festival periods close sections.",
+        "restrictions": "Some areas are closed to non-Hindus and during Dashain rituals; follow museum staff instructions."
+      },
+      "walkingTourStop": { "sequence": 4, "dwellMinutes": 15, "talkingPoint": "Connect Taleju worship across the three Malla capitals." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm which goddess stands on which mount and the current courtyard access rules." }
+    },
+    {
+      "id": "pat_taleju_bell_patan",
+      "names": { "en": "Taleju Bell, Patan", "ne": "तलेजु घण्ट (पाटन)", "romanized": "Patanko Taleju Ghanta", "romanizedLanguage": "Nepali" },
+      "aliases": ["Patan Taleju Bell"],
+      "monumentType": "BELL",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "18th century CE", "foundingYearCE": 1737, "datingBasis": "inscription", "patron": "Vishnu Malla and Queen Chandra Lakshmi" },
+      "geo": { "lat": 27.6728, "lng": 85.3253, "elevationM": 1312, "geofenceRadiusM": 15, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["bronze", "grey_stone"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": [],
+        "distinguishingFeatures": ["large bronze bell hanging between two thick stone pillars", "stands in the open square in front of the palace"],
+        "confusableWith": ["ktm_taleju_bell", "bkt_vatsala_durga"],
+        "disambiguationTip": "Patan's bell hangs between two stone pillars; Kathmandu's bell sits in a frame on a raised platform, and Bhaktapur's barking-dog bell stands beside the stone Vatsala Durga temple."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Royal Couple's Bell",
+          "text": "The Taleju Bell of Patan was erected in 1737 by King Vishnu Malla and his queen, Chandra Lakshmi, during the last decades of Patan's independence. Like the great bells of Kathmandu and Bhaktapur, it was dedicated to Taleju, the royal goddess, and it stood before the palace as a public sign of the king's devotion. The eighteenth century was a time of political instability in Patan, with rival factions and frequent changes of ruler, and the bell's installation may have been intended to strengthen the king's legitimacy through visible piety. Barely three decades later Patan fell to Prithvi Narayan Shah, but the bell remained in place and has continued to sound through the centuries since. Its inscription records its donors and date, a valuable source for historians reconstructing the turbulent final chapter of the Malla period in Patan.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Hanging Between Pillars",
+          "text": "Unlike Kathmandu's bell, which hangs from a frame on a raised platform, Patan's bell is suspended between two thick stone pillars joined at the top by a beam from which the bell hangs. The arrangement is simple and robust, allowing the heavy bronze to swing freely when struck. The pillars stand on a stepped base in the open square, where the bell's sound can carry over the surrounding temples and houses. The bronze casting shows the skill of Patan's metalworkers, whose bells, statues and ritual objects were prized across the Himalayan region. The bell's position in front of the palace, near the temples of the square, makes it a natural meeting point and photograph spot for visitors exploring the area. Its plain, solid form contrasts with the intricate carvings that surround it on every side of the square.",
+          "sourceIds": ["hutt_1994", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Calling the Goddess and the People",
+          "text": "Bells in Newar religious practice serve several purposes. They announce the start of worship, summon the deity's attention and drive away inauspicious spirits. Patan's great bell performed these roles on behalf of the whole city, its sound linking the palace shrine of Taleju with the homes of ordinary people. According to a well-known local tradition, the bell also served a civic purpose: citizens with grievances could ring it to call the king's attention to injustice, making it a kind of public petition. Whether or not this practice was ever formalised, the story reflects an ideal of the Malla king as a protector who listened to his subjects. The bell thus symbolises both divine protection and the hope of just government, ideas that remain meaningful to many residents of Patan when they tell the story today.",
+          "sourceIds": ["saalik_editorial", "hutt_1994"],
+          "confidence": "low"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "The Bell in Patan's Festivals",
+          "text": "The bell is rung during the worship of Taleju and on important religious occasions, its deep sound joining the drums and cymbals that accompany Patan's festivals. During Dashain, when Taleju is honoured with special rituals in the palace, and during other major festivals, the bell adds to the celebratory atmosphere of the square. Patan's festival calendar is particularly rich, including the great chariot festival of Rato Machhindranath and the celebration of Krishna Janmashtami at the Krishna Mandir, both of which bring huge crowds to the city. Visitors are not usually permitted to ring the bell, but they may hear it during ceremonies. Its position at the centre of the square makes it a landmark that guides use to orient visitors and to begin explaining the layout of the palace and its temples before leading them inside.",
+          "sourceIds": ["levy_1990", "locke_1980", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Maintaining a Landmark",
+          "text": "The bell's stone pillars and bronze body are durable, but they require periodic inspection, particularly after earthquakes. The 2015 earthquake shook the entire square and damaged several temples, and the bell's supports were checked for cracks and displacement. Bronze can corrode where water collects, and the beam and fittings from which the bell hangs must be kept secure to prevent accidents. Pigeons and the constant flow of visitors add to the cleaning and maintenance required. Conservation of the bell is coordinated with the wider programme of work in Patan Durbar Square, led by the Department of Archaeology and partners such as the Kathmandu Valley Preservation Trust. Visitors can help by not climbing the base or hanging from the bell, and by reporting any visible damage they notice to the site office near the palace entrance.",
+          "sourceIds": ["doa_nepal", "kvpt"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "In front of the Patan palace, a great bronze bell hangs between two stone pillars. King Vishnu Malla and Queen Chandra Lakshmi raised it in 1737 for Taleju, the royal goddess. But Patan tells another story about this bell: citizens with a complaint could ring it, and the king was expected to come out and listen. Imagine the sound echoing off these temples as someone demanded justice. Within a few decades Patan's kings were gone, conquered by Prithvi Narayan Shah, yet the bell still hangs here, and it still sounds on festival days. Kathmandu and Bhaktapur have great bells too, each with its own legend. Which one makes dogs bark? Book a verified local storyteller nearby and let a guide compare the bells of the three royal cities."
+      },
+      "nepaliSummary": "पाटनको तलेजु घण्ट राजा विष्णु मल्ल र रानी चन्द्रलक्ष्मीले सन् १७३७ मा दुई ढुङ्गे खम्बाबीच झुण्ड्याएका हुन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "The bell is backlit from the east early; position with the sun behind you to read the bronze inscription.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Bell and both pillars square-on with the stepped base." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the temple row behind." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the palace facade behind." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Bronze inscription band and suspension beam." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Bell in the middle of the square between temple row and palace." }
+        ],
+        "occlusionNotes": "Visitors pose under the bell constantly and pigeons perch on the beam.",
+        "restrictions": "Do not ring the bell or climb the base."
+      },
+      "walkingTourStop": { "sequence": 5, "dwellMinutes": 6, "talkingPoint": "Tell the grievance-bell tradition and compare the three royal bells." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Transcribe the inscription to confirm donors and date; grievance tradition needs a citable source." }
+    },
+    {
+      "id": "pat_yoganarendra_malla_saalik",
+      "names": { "en": "King Yoganarendra Malla Saalik", "ne": "राजा योगनरेन्द्र मल्लको सालिक", "romanized": "Raja Yoganarendra Mallako Salik", "romanizedLanguage": "Nepali" },
+      "aliases": ["Yoganarendra Malla Statue", "Yoganarendra Malla Column"],
+      "monumentType": "PILLAR_STATUE",
+      "tradition": "CIVIC_ROYAL",
+      "era": { "dynasty": "Malla", "century": "late 17th century CE", "foundingYearCE": null, "datingBasis": "chronicle", "patron": "Yoganarendra Malla" },
+      "geo": { "lat": 27.673, "lng": 85.3253, "elevationM": 1312, "geofenceRadiusM": 15, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["gilt_bronze", "grey_stone"],
+        "guardianVahanas": ["cobra hood rising behind the king", "small bird perched on top of the cobra"],
+        "deityMudrasWeapons": ["king kneeling with hands joined in prayer on a lotus throne"],
+        "distinguishingFeatures": ["gilt-bronze kneeling king atop a tall stone column", "faces the palace and its temples"],
+        "confusableWith": ["bkt_bhupatindra_malla_saalik"],
+        "disambiguationTip": "Patan's king kneels under a cobra hood topped by a bird; Bhaktapur's Bhupatindra Malla sits with folded hands and no cobra canopy."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The King Who Might Return",
+          "text": "The gilt-bronze statue of King Yoganarendra Malla, raised on a tall stone column in front of the Patan palace, dates from the late seventeenth century. Yoganarendra ruled Patan from 1684 until around 1705 and is remembered as a devout king who, according to tradition, renounced his throne after the death of his son and left to become an ascetic. The circumstances of his departure are obscure, and stories about it have multiplied over the centuries. The column, placed so that the king faces the temples of his family's goddess, preserved his image as a perpetual worshipper at the heart of his city. Similar royal columns stand in Kathmandu and Bhaktapur, reflecting a shared Malla custom of placing kings in eternal devotion before their sacred buildings, a practice that combined piety with political display in equal measure.",
+          "sourceIds": ["slusser_1982", "wright_1877"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Column Crowned with Gold",
+          "text": "The statue rests on a lotus-shaped throne at the top of a slender stone column several metres high, raising the king far above the crowds in the square. Above him rises the hood of a cobra, a protective canopy, and on the cobra's head perches a small bird. The column's height and placement were carefully chosen: from the palace, the king's image appears framed against the temples, and from the square he is visible from every direction. The gilt-bronze figure is a fine example of Patan's metal casting, with detailed jewellery, clothing and facial features. Casting such a figure required considerable skill, and Patan's metalworkers were renowned throughout the Himalayan world. The column itself had to be quarried, carried and raised in the crowded square, no small feat with the tools and labour available at the end of the seventeenth century.",
+          "sourceIds": ["pal_1974", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Cobra, Bird and Kneeling King",
+          "text": "The king kneels with his hands joined in prayer, the posture of a devotee before a deity. The cobra hood above him is a symbol of protection drawn from Hindu and Buddhist iconography, recalling the serpent king who sheltered the Buddha and the great serpent on which Vishnu rests. The bird on top of the cobra has inspired a famous legend. Before leaving Patan, the king is said to have declared that as long as the bird remained on its perch, he would still be alive, and that he might one day return. For this reason, the story goes, a window of the palace was long kept open, and a hookah and bed were prepared for his return. The legend turns the statue into a symbol of hope and loyalty, and residents still enjoy telling it to visitors who stop beneath the column.",
+          "sourceIds": ["slusser_1982", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Keeping Faith with an Absent King",
+          "text": "The legend of Yoganarendra's possible return has given the statue a unique place in Patan's folklore. Although the practice of keeping a window open for the king is no longer maintained in any formal sense, many residents remember the story, and guides delight in pointing to the bird and the palace windows. The statue does not receive formal worship like a deity, but it is treated with respect, and its presence helps to define the ritual space of the square. During festivals, when processions pass before the palace, the king appears to watch over them from his column, much as he watched over his city in life. The story reminds visitors that in the Kathmandu Valley the line between history, legend and devotion is often delicate, and that monuments carry emotional as well as historical meanings for the people who live beside them.",
+          "sourceIds": ["saalik_editorial", "toffin_2008"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protecting a Gilded Figure on High",
+          "text": "The statue's height protects it from handling but exposes it to the weather. Rain, sun and pollution can damage the gilding, and the column must be monitored for stability, especially after earthquakes. The 2015 earthquake shook the square violently, and the column and statue were inspected for signs of tilt, cracking or loosening of the bronze from its base. The monument survived, unlike some of the temples nearby. Maintenance of the gilding is a delicate task, requiring scaffolding and specialist metal conservators, and must be coordinated with the wider conservation programme in the square. The small bird on the cobra, so important to the legend, is especially vulnerable to damage and theft. Visitors with zoom lenses can examine the details of the figure and bird, and Saalik field collectors are asked to document them carefully on every visit.",
+          "sourceIds": ["doa_nepal", "kvpt"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Look up at the golden king kneeling high on the stone column in front of the palace. He is Yoganarendra Malla, who ruled Patan more than three centuries ago. Above him rises a cobra's hood, and on top of the cobra sits a tiny bird. That bird holds a promise. Legend says the king left Patan to live as an ascetic, declaring that as long as the bird stayed on its perch he was still alive and might come back. So the palace kept a window open, a bed made and a hookah ready, waiting for a king who never returned. Is the bird still there today? Look closely and decide for yourself. Book a verified local storyteller nearby and let a guide tell you what really happened to the king of Patan."
+      },
+      "nepaliSummary": "राजा योगनरेन्द्र मल्लको सुनौलो सालिक अग्लो ढुङ्गे स्तम्भमा छ; टाउकोमाथि नागको फणा र त्यसमाथि चरा बसेको छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "06:45-08:15",
+        "lightingNotes": "The gilt figure glows in low sun; at midday the bronze flares and detail is lost against the sky.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Column and statue from the palace side with the king facing camera." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with Krishna Mandir behind the column." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the Taleju bell nearby." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Telephoto on the king's face, cobra hood and bird." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Column in the square between the palace and the temple row." }
+        ],
+        "occlusionNotes": "Overhead wires sometimes cross the upper column and live birds perch on the statue.",
+        "restrictions": "Do not climb the column base."
+      },
+      "walkingTourStop": { "sequence": 6, "dwellMinutes": 6, "talkingPoint": "Tell the bird legend and point out the palace windows." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Erection date differs between accounts (1693 and 1700); confirm from inscription." }
+    },
+    {
+      "id": "pat_krishna_mandir",
+      "names": { "en": "Krishna Mandir", "ne": "कृष्ण मन्दिर", "romanized": "Krishna Dega", "romanizedLanguage": "Newa" },
+      "aliases": ["Krishna Temple Patan", "Radha Krishna Mandir"],
+      "monumentType": "SHIKHARA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "17th century CE", "foundingYearCE": 1637, "datingBasis": "inscription", "patron": "Siddhinarasimha Malla" },
+      "geo": { "lat": 27.6731, "lng": 85.3251, "elevationM": 1312, "geofenceRadiusM": 25, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["grey_stone", "gilt_repousse_copper"],
+        "guardianVahanas": ["gilded Garuda kneeling on a pillar facing the temple"],
+        "deityMudrasWeapons": ["stone friezes of the Mahabharata and Ramayana", "Krishna with flute beside Radha in the sanctum"],
+        "distinguishingFeatures": ["stone shikhara rising through twenty-one pinnacles", "open pillared pavilions around the lower floors", "gilded finial atop the central spire"],
+        "confusableWith": ["pat_mahabouddha", "pat_char_narayan"],
+        "disambiguationTip": "Krishna Mandir is the only all-stone tower with open pillared galleries in the square; Mahabouddha is terracotta and hidden in a courtyard."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Temple Born of a Dream",
+          "text": "Krishna Mandir was completed in 1637 by King Siddhinarasimha Malla of Patan, one of the most devout and celebrated rulers of the Malla period. According to legend, Krishna and his consort Radha appeared to the king in a dream, and he built the temple on the spot where he had seen them. The temple's inscription records its dedication and date, making it one of the best-documented monuments in the valley. Siddhinarasimha's reign was a golden age for Patan, which had recently become an independent kingdom, and the king's patronage of temples and baths, including the Tusha Hiti in the palace, transformed the square. The Krishna Mandir was the crowning achievement of his religious building programme and remains the most famous temple in Patan, often appearing on postcards and in histories of Nepali art.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Stone Shikhara with Twenty-One Spires",
+          "text": "Unlike the brick and timber pagodas that dominate the valley, Krishna Mandir is built entirely of stone in the shikhara style of northern India, a tapering tower crowned with a gilded finial. Its design combines this Indian form with Newar inventiveness: the lower storeys are surrounded by open pillared pavilions, creating galleries and balconies, and the tower rises through a cluster of twenty-one pinnacles. The stone was carved with extraordinary precision, and the friezes that run along the first and second floors are celebrated as masterpieces of narrative sculpture. Standard descriptions place Krishna on the ground floor, with shrines to Shiva and Lokeshvara on the upper levels. Its combination of solidity and delicacy has made it one of the most admired buildings in South Asian architecture and a model for later stone temples in the valley.",
+          "sourceIds": ["korn_1976", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Epics Carved in Stone",
+          "text": "The stone friezes of Krishna Mandir are among the finest examples of narrative carving in Nepal. Along the first floor run scenes from the Mahabharata, the great epic in which Krishna plays a central role, and along the second floor scenes from the Ramayana, the story of Rama, another avatar of Vishnu. Each panel is accompanied by a caption in old Newari script, allowing scholars and devotees to identify the episodes. In front of the temple, a gilded Garuda, Vishnu's bird-mount, kneels atop a pillar facing the shrine, a common feature of Vishnu temples in the valley. Krishna himself appears with his flute in the sanctum, accompanied by Radha. The carvings invite visitors to walk around the temple, reading the epics panel by panel, as devotees have done for nearly four centuries during festivals.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Krishna Janmashtami",
+          "text": "Krishna Mandir is the focus of Krishna Janmashtami, the festival of Krishna's birth, held in late summer. On this night thousands of devotees gather in Patan Durbar Square, many staying awake through the night singing devotional songs and offering prayers. Lamps are lit around the temple, creating one of the most beautiful sights in the valley's festival calendar. Women in particular take part in the devotional singing, and the steps and pavilions of the temple fill with worshippers. Throughout the year the temple receives daily worship, and Hindu visitors may enter, while others can admire it from outside and from the square. The festival's atmosphere of devotion and community reflects the continuing importance of Krishna worship in Patan, nearly four centuries after Siddhinarasimha Malla dreamed of the divine couple and built their stone home.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "high"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "A Stone Temple That Stood Firm",
+          "text": "Krishna Mandir's stone construction helped it survive the 2015 earthquake with relatively limited damage, while brick and timber temples nearby suffered more severely. Its survival, like its endurance through the 1934 earthquake, has been attributed to the quality of its masonry and its compact, well-balanced form. Nevertheless, the temple required inspection and some repairs, and its delicate friezes need continual monitoring for weathering and for damage caused by touching, pollution and pigeons. Conservation of stone carving is a specialised field, requiring careful cleaning and, where necessary, consolidation of fragile surfaces. The large crowds that gather during Janmashtami also place stress on the steps and pavilions. Visitors can help preserve the temple by not touching the carvings, not climbing on the pavilions, and following the guidance of temple staff during festivals.",
+          "sourceIds": ["doa_nepal", "kvpt"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "In 1637 King Siddhinarasimha Malla of Patan had a dream: Krishna and Radha stood before him on this very spot. So he built them a home of stone, unlike anything else in the valley. Look at the tower rising through twenty-one pinnacles, the open pavilions on each level, and the gilded Garuda kneeling on a pillar out front. Now walk slowly around the first floor. The tiny carved panels tell the Mahabharata, the great epic of Krishna, and the next floor tells the Ramayana, each scene labelled in old Newari script. On Krishna's birthday, thousands of devotees sing here all night by lamplight. Can you find the battle of Kurukshetra in the friezes? Book a verified local storyteller nearby and let a guide read the stone epics with you."
+      },
+      "nepaliSummary": "कृष्ण मन्दिर राजा सिद्धिनरसिंह मल्लले सन् १६३७ मा बनाएको २१ गजुर भएको ढुङ्गे शिखर शैलीको मन्दिर हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "06:30-08:00",
+        "lightingNotes": "Low morning sun from the east models the stone friezes; midday light flattens the carved detail.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full shikhara with the Garuda pillar in the foreground." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing pavilion galleries and pinnacles." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with Vishwanath temple alongside." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "A Mahabharata frieze panel with its Newari caption." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple within the temple row facing the palace." }
+        ],
+        "occlusionNotes": "Pigeons crowd the steps and devotees stand at the entrance throughout the morning.",
+        "restrictions": "Sanctum entry for Hindus only; do not climb the pavilions."
+      },
+      "walkingTourStop": { "sequence": 7, "dwellMinutes": 15, "talkingPoint": "Read one Mahabharata panel together and describe Janmashtami night." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm floor-by-floor shrine dedications with temple staff." }
+    },
+    {
+      "id": "pat_vishwanath_mandir",
+      "names": { "en": "Vishwanath Mandir", "ne": "विश्वनाथ मन्दिर", "romanized": "Vishwanath Dega", "romanizedLanguage": "Newa" },
+      "aliases": ["Vishwanath Temple Patan"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "17th century CE", "foundingYearCE": 1627, "datingBasis": "documented_record", "patron": "Siddhinarasimha Malla" },
+      "geo": { "lat": 27.6735, "lng": 85.3252, "elevationM": 1312, "geofenceRadiusM": 20, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 2,
+        "primaryMaterials": ["fired_brick", "carved_wood", "clay_tile", "grey_stone"],
+        "guardianVahanas": ["two stone elephants with riders guarding the front steps", "Nandi bull facing the temple"],
+        "deityMudrasWeapons": ["large Shiva lingam in the sanctum", "deity and erotic carvings on the roof struts"],
+        "distinguishingFeatures": ["two-tiered pagoda with heavily carved struts", "stone elephants flanking the stairs"],
+        "confusableWith": ["pat_bhimsen_mandir", "pat_char_narayan"],
+        "disambiguationTip": "Vishwanath has stone elephants on its steps and a Nandi bull opposite; Bhimsen has a gilded balcony above its ground floor."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Shiva, Lord of the Universe",
+          "text": "Vishwanath Mandir, dedicated to Shiva as 'Lord of the Universe', was built in 1627 by King Siddhinarasimha Malla, a decade before he completed the stone Krishna Mandir nearby. The name echoes the famous Vishwanath temple of Varanasi in India, one of Hinduism's holiest shrines, and its use in Patan expressed the king's ambition to bring the sanctity of the Gangetic plain into his own city. Siddhinarasimha's reign saw Patan flourish as an independent kingdom, and his temples, baths and palace courtyards set the tone for the city's architectural splendour. Vishwanath stands in the row of temples facing the palace, between the Krishna Mandir and the Bhimsen temple, and its position reflects the careful planning of the square as a sacred landscape dedicated to the principal deities honoured by the Malla kings and their court.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Elephants on the Steps",
+          "text": "Vishwanath is a two-tiered pagoda raised on a stepped plinth, with heavily carved roof struts and wooden doors. Its most distinctive features are the two stone elephants that guard the front steps, each with a rider, a motif that adds weight and grandeur to the temple's approach. The struts are among the most elaborate in the square, carved with deities and, at their lower ends, erotic scenes. The temple's carvings and proportions make it an excellent example of seventeenth-century Newar craftsmanship. Its compact size allows visitors to examine the details closely, from the elephant guardians to the carved toranas over the doors. Inside, the sanctum houses a large Shiva lingam, and a stone Nandi, Shiva's bull, sits facing the temple from the opposite side, gazing across at his lord through the bustle of the square.",
+          "sourceIds": ["bernier_1979", "korn_1976"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Guardians and Lingam",
+          "text": "The stone elephants on Vishwanath's steps are royal symbols, associated with power and protection, and their riders suggest disciplined strength in the service of the god. Elephants also carry associations with Indra, king of the gods, and with prosperity and rain. The lingam inside represents Shiva's creative power, and the Nandi bull outside is his devoted vehicle. The carved struts show Shiva in various forms, along with goddesses and attendants, and the erotic scenes at their lower ends reflect the Tantric concept of union between Shiva and Shakti. The temple's iconography is thus coherent and layered: guardians at the threshold, devotion embodied in Nandi, divine power in the lingam, and the cosmic play of Shiva and Shakti on the struts. A guide can help visitors read these layers in sequence as they approach the sanctum.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Mondays and Shivaratri",
+          "text": "Vishwanath receives daily worship, with Mondays and the festival of Maha Shivaratri bringing the largest numbers of devotees. On Shivaratri, the great night of Shiva in late winter, Shiva temples throughout the valley are thronged with worshippers, and Patan's Vishwanath is no exception, although the largest crowds go to Pashupatinath. Offerings of water, milk, flowers and bel leaves are made to the lingam, and devotees circle the temple. During the monsoon month of Shrawan, women in particular visit Shiva temples to pray for the welfare of their families. The temple's location in the main square means that it also forms the backdrop for Patan's great festivals, including the processions of Krishna Janmashtami. Visitors should remove their shoes before climbing to the upper plinth and take care not to disturb worshippers at the doors.",
+          "sourceIds": ["michaels_2008", "levy_1990"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Collapse, Rebuilding and Repair",
+          "text": "Vishwanath has a long history of damage and repair. Accounts record that part of the temple collapsed in 1990 after heavy monsoon rains weakened its structure, and it was subsequently reconstructed. The 2015 earthquake caused further damage, and the temple required stabilisation and restoration. Conservation work in Patan Durbar Square after 2015 was carried out by the Department of Archaeology with partners, including the Kathmandu Valley Preservation Trust, using traditional materials and techniques. The struts, with their delicate carvings, received particular attention, as did the roof and walls that protect the timber from rain. The stone elephants and Nandi, being more robust, fared better. The temple's history illustrates the cycle of decay and renewal that has always characterised Newar architecture, in which skilled craftsmen periodically repair and rebuild the sacred buildings of their cities.",
+          "sourceIds": ["doa_nepal", "kvpt"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Two stone elephants with riders guard the steps of this temple, and across the square a stone bull sits gazing at its door. You are at Vishwanath, the temple of Shiva as Lord of the Universe, built in 1627 by King Siddhinarasimha Malla, the same king who later built the stone Krishna Mandir next door. He borrowed the name from the holiest Shiva temple in Varanasi, bringing that sanctity to Patan. Look up at the roof struts: they are among the most elaborate in the square, gods above and lovers below. This temple has been damaged and rebuilt more than once, by monsoon rain and by earthquakes. Can you tell old carvings from new? Book a verified local storyteller nearby and let a guide show you how Patan keeps rebuilding its gods."
+      },
+      "nepaliSummary": "विश्वनाथ मन्दिर राजा सिद्धिनरसिंह मल्लले सन् १६२७ मा बनाएको शिव मन्दिर हो, जसको सिँढीमा ढुङ्गाका हात्ती छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "06:45-08:15",
+        "lightingNotes": "Eastern light reaches the elephants and lower struts; the upper roof is best caught before 08:00.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full temple with both stone elephants on the steps." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with Krishna Mandir alongside." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the Bhimsen temple alongside." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "An elephant rider and one carved strut." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple within the row facing the palace, Nandi opposite." }
+        ],
+        "occlusionNotes": "Visitors sit on the elephants' plinths and motorbikes park along the row.",
+        "restrictions": "Shoes off on the upper plinth; do not climb the elephants."
+      },
+      "walkingTourStop": { "sequence": 8, "dwellMinutes": 8, "talkingPoint": "Show the sequence from guardians to lingam and the cycle of rebuilding." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm the 1990 collapse details and the post-2015 restoration partner." }
+    },
+    {
+      "id": "pat_patan_museum_courtyard",
+      "names": { "en": "Patan Museum Courtyard (Keshav Narayan Chowk)", "ne": "पाटन संग्रहालय (केशव नारायण चोक)", "romanized": "Keshav Narayan Chuka", "romanizedLanguage": "Newa" },
+      "aliases": ["Keshav Narayan Chowk", "Patan Museum"],
+      "monumentType": "MUSEUM_COURTYARD",
+      "tradition": "SHARED_HINDU_BUDDHIST",
+      "era": { "dynasty": "Malla", "century": "late 17th to early 18th century CE", "foundingYearCE": 1734, "datingBasis": "documented_record", "patron": "Vishnu Malla (completion)" },
+      "geo": { "lat": 27.6735, "lng": 85.3257, "elevationM": 1312, "geofenceRadiusM": 35, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["fired_brick", "carved_wood", "gilt_repousse_copper"],
+        "guardianVahanas": ["stone lions at the entrance"],
+        "deityMudrasWeapons": ["gilded torana with Vishnu above the golden door", "small Keshav Narayan shrine at the courtyard centre"],
+        "distinguishingFeatures": ["golden doorway with a gilded window directly above it on the square facade", "restored palace courtyard housing bronze sculpture galleries"],
+        "confusableWith": ["pat_mul_chowk", "bkt_golden_gate"],
+        "disambiguationTip": "Look for the gilded doorway with a golden window above it on Patan's palace facade; Bhaktapur's Golden Gate is a free-standing gilded portal set in a whitewashed wall."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "From Palace Wing to Museum",
+          "text": "Keshav Narayan Chowk is the northernmost of the main courtyards of the Patan palace. Construction is generally said to have begun in the later seventeenth century and to have been completed in 1734 under King Vishnu Malla, making it the youngest of the palace's principal courtyards. It takes its name from the shrine of Keshav Narayan, a form of Vishnu, which stands at its centre. After Patan's conquest by the Shah dynasty in 1768, the palace lost its royal function and the courtyard gradually fell into disrepair, used for various administrative purposes. In the 1980s and 1990s it was restored with Austrian support and reopened in 1997 as the Patan Museum, now widely regarded as one of the finest museums in South Asia for the display of Himalayan religious art, particularly bronze and gilt-copper sculpture from the valley.",
+          "sourceIds": ["slusser_1982", "kvpt"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Golden Door on the Square",
+          "text": "From the square, the museum is identified by its golden doorway, framed by a gilded torana, with a gilded window directly above it from which the king could appear before his people. Stone lions guard the doorway. Inside, the courtyard follows the classic Newar quadrangle plan, with carved windows, struts and balconies around an open space and the small Keshav Narayan shrine at its centre. The restoration led by the Austrian architect Gotz Hagmuller with Nepali craftsmen combined meticulous repair of the historic structure with sensitive modern additions, including galleries, lighting and a cafe in a rear garden. The project is often cited as a model of how historic buildings can be adapted for new uses without losing their character, and it trained a generation of craftsmen in traditional techniques that later proved vital after 2015.",
+          "sourceIds": ["korn_1976", "kvpt"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Bronzes of the Himalayan World",
+          "text": "The Patan Museum's collection focuses on the sacred art of the Kathmandu Valley, particularly bronze and gilt-copper images of Hindu and Buddhist deities, many of them made in Patan itself. The galleries explain the iconography of these images, the meaning of their gestures, postures and attributes, and the techniques used to make them, including the lost-wax casting method still practised by Patan's metalworkers. Among the displays are images of Buddhas and bodhisattvas, forms of Vishnu and Shiva, and goddesses, along with ritual objects and architectural fragments. The museum therefore serves as a key to the whole valley: after visiting it, travellers find it much easier to recognise the deities on temple struts and in shrines. The golden door and window on the facade, with their gilded deities, form a fitting introduction to the treasures within.",
+          "sourceIds": ["pal_1974", "hutt_1994"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "A Museum Within Living Heritage",
+          "text": "Although the Patan Museum is a secular institution, it sits within a palace that remains part of a living religious landscape. The Keshav Narayan shrine at the centre of the courtyard is still honoured, and the neighbouring Mul Chowk hosts important rituals for Taleju during Dashain. The golden window above the entrance recalls the king's appearances before his people during festivals. Many of the objects in the collection were once used in worship, and the museum's curators have worked to present them respectfully, explaining their religious meaning as well as their artistic value. For visitors, the museum offers a calm space in which to learn before stepping back into the square, where the same deities appear in shrines that receive offerings every day. The cafe in the rear garden is a pleasant place to reflect on what you have seen.",
+          "sourceIds": ["saalik_editorial", "levy_1990"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "A Training Ground for Recovery",
+          "text": "The 1990s restoration of Keshav Narayan Chowk was more than a museum project: it revived traditional building crafts in Patan and trained craftsmen and conservators who would later work on many other monuments. When the 2015 earthquake struck, the museum and palace suffered damage, and the skills developed during the earlier restoration proved invaluable. The Kathmandu Valley Preservation Trust and the Department of Archaeology led extensive work in the palace complex after the earthquake, stabilising damaged wings and restoring courtyards. The museum also served as a reference point for documenting and conserving damaged sculptures and architectural fragments. Today the restored courtyard demonstrates the importance of investing in heritage skills before disasters occur. Visitors can see information about the restorations within the museum, and a guide can explain how the work was carried out.",
+          "sourceIds": ["kvpt", "doa_nepal"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "See the golden doorway with a gilded window directly above it? From that window, Patan's kings once appeared before their people on festival days. Today the doorway leads into one of the best museums in South Asia, created inside a palace courtyard completed in 1734 and restored in the 1990s with Austrian support. Inside, you can come face to face with the bronze gods of the Himalayas, many cast in Patan using the same lost-wax method that local metalworkers still use a few streets away. Learn here how to read a mudra, a halo or a weapon, and every temple in the valley will start speaking to you. Which gesture means do not fear? Book a verified local storyteller nearby and let a guide turn the museum into a key for the whole city."
+      },
+      "nepaliSummary": "पाटन संग्रहालय केशव नारायण चोकमा रहेको छ, जहाँ हिमाली क्षेत्रका धातु र काष्ठ कलाकृति प्रदर्शन गरिन्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "The gilded door faces the square; morning light warms the gold without glare.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Golden door and window square-on with the lion guardians." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique along the palace facade." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique toward the Bhimsen temple." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gilded torana and the deities on the window frame." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Inside the courtyard with the Keshav Narayan shrine at centre." }
+        ],
+        "occlusionNotes": "A ticket queue forms at the door and vendors line the facade.",
+        "restrictions": "Museum admission charged; photography inside galleries may be restricted."
+      },
+      "walkingTourStop": { "sequence": 9, "dwellMinutes": 30, "talkingPoint": "Use the bronzes to teach mudras before continuing to Bhimsen." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm current gallery photography policy and opening hours." }
+    },
+    {
+      "id": "pat_bhimsen_mandir",
+      "names": { "en": "Bhimsen Mandir", "ne": "भीमसेन मन्दिर", "romanized": "Bhimsen Dega", "romanizedLanguage": "Newa" },
+      "aliases": ["Bhimsen Temple Patan"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "late 17th century CE; rebuilt several times", "foundingYearCE": null, "datingBasis": "chronicle", "patron": "Srinivasa Malla (attributed)" },
+      "geo": { "lat": 27.6738, "lng": 85.3252, "elevationM": 1312, "geofenceRadiusM": 20, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 3,
+        "primaryMaterials": ["fired_brick", "carved_wood", "gilt_repousse_copper"],
+        "guardianVahanas": ["stone lions on the steps"],
+        "deityMudrasWeapons": ["Bhimsen, the mace-bearing Pandava hero, worshipped as patron of traders"],
+        "distinguishingFeatures": ["three-tiered rectangular pagoda", "gilded balcony across the first floor", "stands at the northern end of the temple row"],
+        "confusableWith": ["pat_vishwanath_mandir", "pat_char_narayan"],
+        "disambiguationTip": "Bhimsen is rectangular with a gilded first-floor balcony at the north end of the row; Vishwanath is square with stone elephants on its steps."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Traders' God",
+          "text": "The temple of Bhimsen stands at the northern end of the temple row in Patan Durbar Square. It is usually dated to the reign of King Srinivasa Malla in the later seventeenth century, although it has been damaged and rebuilt several times, including after a fire in the 1680s and after the great earthquake of 1934. Bhimsen is the hero Bhima of the Mahabharata, renowned for his strength, and in the Kathmandu Valley he became the patron deity of traders and merchants, especially among the Newar mercantile communities who traded with Tibet. His temples are found in trading towns across Nepal, and Patan's Bhimsen reflects the wealth and importance of its merchant families. The temple's dedication to an epic hero rather than one of the great gods is distinctive and reveals the practical concerns of commercial life in the Malla city.",
+          "sourceIds": ["slusser_1982", "toffin_2008"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Rectangular Pagoda with a Golden Balcony",
+          "text": "Bhimsen's temple differs from the square pagodas around it. It is rectangular in plan and rises in three tiers, with a richly gilded balcony projecting across the first floor. The shrine is located on the upper floor, a feature typical of Bhimsen temples, while the ground floor provides an entrance hall. The gilded balcony and windows sparkle in the morning sun and make the temple instantly recognisable. The struts and doors are carved with deities and decorative motifs, and stone lions guard the entrance. Because of its upper-floor shrine, the building has something of the character of a house as well as a temple, recalling the domestic architecture of Newar merchant families. Its successive rebuildings have left a layered structure that combines older elements with newer repairs carried out by generations of craftsmen.",
+          "sourceIds": ["korn_1976", "bernier_1979"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Strength in Service of Commerce",
+          "text": "Bhimsen is depicted as a powerful figure, often holding a mace, the weapon he wields in the Mahabharata. His reputation for strength and loyalty made him an ideal protector for traders who undertook long, dangerous journeys across Himalayan passes to Tibet. Newar merchants carried images of Bhimsen with them and built temples to him in their trading posts. In the Kathmandu Valley his worship blends with that of other deities, and some traditions associate him with forms of Shiva or Bhairav. The upper-floor shrine is accessible to Hindu worshippers, and the gilded decoration of the balcony reflects the generosity of merchant donors who sought the god's blessing for their ventures. The temple thus tells the story of Patan's economic life, linking religious devotion with the risks and rewards of long-distance trade across the mountains.",
+          "sourceIds": ["slusser_1982", "toffin_2008"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Merchants' Offerings",
+          "text": "Bhimsen's temple receives regular worship from traders, shopkeepers and families seeking prosperity. Many merchants visit before beginning new business ventures or important journeys, offering flowers, coins and other gifts. The temple is particularly busy on days of the lunar calendar associated with Bhimsen and during festivals, when the square fills with crowds. Hindu worshippers may climb to the upper-floor shrine, while other visitors can admire the gilded balcony from the square. The temple's position, near the northern entrance of the square and close to the Mani Dhara water spout, makes it a natural stopping point for residents coming to fetch water or to shop. Its living worship illustrates how religious life in Patan has always been intertwined with the practical concerns of earning a living and protecting one's family on the road.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Repeated Rebuilding",
+          "text": "Few temples in the square have been rebuilt as often as Bhimsen. After a fire in the late seventeenth century it was restored, and after the 1934 earthquake it was substantially rebuilt. Accounts also record a major renovation in 1967, and the 2015 earthquake caused further damage, requiring stabilisation and restoration. Each rebuilding has left traces in the structure, and conservators working after 2015 sought to respect the temple's layered history while improving its resistance to future earthquakes. The gilded balcony and windows required careful conservation of their metal surfaces, and the timber structure was repaired using traditional techniques. The temple's story shows how the monuments of the valley are not frozen relics but buildings in continuous use and renewal, maintained by successive generations who see them as living homes of the gods.",
+          "sourceIds": ["doa_nepal", "kvpt"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "At the north end of the temple row, a three-tiered temple flashes with a golden balcony. This is the home of Bhimsen, the mighty hero of the Mahabharata, who in Nepal became the god of traders. For centuries Patan's merchants walked for weeks over Himalayan passes to trade with Tibet, and before they left, they came here to ask Bhimsen for protection and profit. Notice that the god lives upstairs, not on the ground floor, a sign of a Bhimsen temple. Fire, earthquakes and time have damaged this building again and again, and each generation has rebuilt it. What did Patan's merchants carry to Lhasa, and what did they bring home? Book a verified local storyteller nearby and let a guide tell you the story of the Tibet trade."
+      },
+      "nepaliSummary": "भीमसेन मन्दिर व्यापारीहरूका संरक्षक देवता भीमसेनको तीन तले मन्दिर हो, जसको पहिलो तलामा सुनौलो बार्दली छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "06:45-08:15",
+        "lightingNotes": "The gilded balcony faces the square; morning light makes it glow, while midday light flattens the gold.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full rectangular facade with the gilded balcony." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique toward the Mani Dhara spout." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with Vishwanath alongside." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gilded balcony panels and window frames." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple at the northern end of the row with the palace opposite." }
+        ],
+        "occlusionNotes": "Shops and vendors crowd the base and motorbikes pass close by.",
+        "restrictions": "Upper-floor shrine for Hindu worshippers only."
+      },
+      "walkingTourStop": { "sequence": 10, "dwellMinutes": 8, "talkingPoint": "Connect Bhimsen worship to the Newar trade with Tibet." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm founding attribution and the dates of earlier rebuildings." }
+    },
+    {
+      "id": "pat_uma_maheshwar",
+      "names": { "en": "Uma Maheshwar Shrine, Patan", "ne": "उमा महेश्वर मन्दिर (पाटन)", "romanized": "Uma Maheshwar Dega", "romanizedLanguage": "Newa" },
+      "aliases": ["Uma Maheshwar Patan"],
+      "monumentType": "SHRINE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "Malla-period centuries CE (date unconfirmed)", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.674, "lng": 85.325, "elevationM": 1312, "geofenceRadiusM": 20, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 1,
+        "primaryMaterials": ["black_stone", "fired_brick", "carved_wood"],
+        "guardianVahanas": ["Nandi the bull and Parvati's lion carved below the divine couple"],
+        "deityMudrasWeapons": ["Shiva seated at ease with trident and crescent moon", "Parvati leaning against Shiva on Mount Kailash"],
+        "distinguishingFeatures": ["small shrine with a carved stone Uma Maheshwar stele seen through the doorway", "Ganesh and Kumar among the attendant figures"],
+        "confusableWith": ["ktm_shiva_parvati_mandir", "hg_uma_maheshwar_kirtipur"],
+        "disambiguationTip": "Patan's Uma Maheshwar is a small shrine with a stone stele of the couple inside; Kathmandu's Shiva Parvati temple shows painted wooden figures at an upper window, and Kirtipur's Uma Maheshwar is a hilltop pagoda."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Thousand Years of the Divine Couple",
+          "text": "Images of Uma Maheshwar, Shiva seated with his consort Parvati, are among the most beloved subjects of Kathmandu Valley sculpture, and Patan is especially rich in them. The earliest surviving examples date from the Licchavi period, more than a thousand years ago, and the motif remained popular throughout the Malla centuries. In Patan, Uma Maheshwar steles appear in temple sanctums, monastery courtyards and roadside shrines, often donated by families to celebrate a marriage or to seek blessings for one. The shrine recorded here, near the northern edge of Patan Durbar Square, belongs to this long tradition. Its precise date and founder have not been established in published sources, and Saalik's field team is documenting it on site. What is certain is that devotion to the divine couple has linked household worship and royal patronage in Patan for well over a millennium.",
+          "sourceIds": ["pal_1974", "slusser_1982", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Reading an Uma Maheshwar Stele",
+          "text": "Uma Maheshwar images in Patan typically take the form of a carved stone stele, set into a shrine or niche, in which the divine couple is shown on a stylised Mount Kailash. Shiva sits at ease, one leg folded and the other pendant, while Parvati sits on his left thigh or beside him, leaning toward him affectionately. Around them, smaller figures fill the composition: their sons Ganesh and Kumar, attendants, sages and the animals of the mountain. The craftsmanship of the finest examples is extraordinary, with crisp detail in jewellery, hair and drapery that survives despite centuries of offerings. Shrines that house such steles may be small, with a single roof and a carved doorway, so that the image is seen through the door as a framed scene. Visitors should look for the couple's gaze and gestures, which convey intimacy and calm.",
+          "sourceIds": ["pal_1974", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Shiva, Parvati and Their Household",
+          "text": "The Uma Maheshwar composition is a portrait of a divine family. Shiva is recognisable by his matted hair, crescent moon and trident, and Parvati, also called Uma, by her jewellery and gentle posture, often with one arm around Shiva's shoulder. Below them stand Nandi, Shiva's bull, and Parvati's lion, while Ganesh with his elephant head and Kumar with his peacock often appear among the attendants. The setting is Kailash, the mountain home of the couple, and the image expresses harmony between masculine and feminine principles, ascetic power and domestic love. In Tantric thought, the union of Shiva and Shakti underlies all creation. For ordinary devotees, the image is a model of marital affection and a source of blessings for family life, and many Newar families keep the couple's image in their own household shrines.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Blessings for Marriage and Family",
+          "text": "Uma Maheshwar shrines are visited by couples and families seeking blessings for marriage, harmony and children. Women in particular honour the divine couple during Teej, the late-summer festival in which they fast and pray to Parvati for the long life of their husbands or for a good marriage. On Mondays and during the month of Shrawan, offerings to Shiva and Parvati increase. Typical offerings include flowers, rice, red powder, sweets and lamps, and some devotees tie threads or leave small gifts. Because Uma Maheshwar images are often small and placed in intimate settings, worship at them is quiet and personal rather than grand. Visitors who approach respectfully can observe these private moments of devotion, which reveal the warmth and domestic character of much Newar religious practice, far from the spectacle of the great festivals.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Caring for Stone Under Offerings",
+          "text": "Stone steles like those of Uma Maheshwar are durable, but centuries of offerings take their toll. Layers of red powder, oil, rice and flowers can accumulate on the surface, hiding the carving and trapping moisture that encourages biological growth. Conservators work with priests and devotees to clean images gently without disrupting worship. Theft is another threat: in the late twentieth century many valuable stone and metal images were stolen from the Kathmandu Valley and sold abroad, and some have since been returned through the efforts of researchers, journalists and government agencies. Documentation through detailed photographs helps protect images by creating a record that can identify them if they are stolen. Saalik's field collectors photograph shrines like this one carefully, recording their condition and setting, to support both conservation and protection against theft.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Look through the doorway of this small shrine and you may find a scene of quiet affection carved in stone: Shiva sitting at ease on Mount Kailash, with Parvati leaning against him, their sons and animals gathered around. This is Uma Maheshwar, the divine couple, and Patan has honoured them in stone for over a thousand years. Couples come to shrines like this to ask for a happy marriage, and during the Teej festival women fast and pray to Parvati. Many such images were stolen from the valley in the last century and sold to collectors abroad; some have recently come home. Can you find Ganesh, Nandi and Parvati's lion in the carving? Book a verified local storyteller nearby and let a guide introduce you to the family of the gods."
+      },
+      "nepaliSummary": "उमा महेश्वरका मूर्तिमा कैलाश पर्वतमा शिव र पार्वती सँगै बसेको दृश्य कुँदिएको हुन्छ; पाटनमा यस्ता मूर्ति हजार वर्षदेखि पुजिँदै आएका छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:00",
+        "lightingNotes": "Small shrine interiors are dark; bright overcast light through the doorway gives the most even view of the stele.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Shrine doorway square-on with the stele visible inside." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the shrine roof and door frame." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with neighbouring buildings for context." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Stele detail of the couple's faces and attendants, without flash." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Shrine within the northern edge of Durbar Square." }
+        ],
+        "occlusionNotes": "Offerings and garlands may cover parts of the stele, and doorway grilles cast shadows.",
+        "restrictions": "No flash on stone images; do not touch or remove offerings."
+      },
+      "walkingTourStop": { "sequence": 11, "dwellMinutes": 6, "talkingPoint": "Read the Uma Maheshwar family scene and discuss image theft and return." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Playbook lists an Uma Maheshwar shrine in the Patan Durbar Square zone; its exact identity, location and founding are unconfirmed in desk research. Field team must confirm which shrine is meant before publication." }
+    },
+    {
+      "id": "pat_mani_dhara",
+      "names": { "en": "Mani Dhara (Manga Hiti)", "ne": "मणिधारा (मंगा हिटी)", "romanized": "Manga Hiti", "romanizedLanguage": "Newa" },
+      "aliases": ["Manga Hiti", "Mani Dhara", "Mani Mandap water spout"],
+      "monumentType": "WATER_SPOUT",
+      "tradition": "SHARED_HINDU_BUDDHIST",
+      "era": { "dynasty": "Licchavi", "century": "6th century CE (traditional date)", "foundingYearCE": 570, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.6741, "lng": 85.3254, "elevationM": 1310, "geofenceRadiusM": 25, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["grey_stone", "fired_brick"],
+        "guardianVahanas": ["makara heads on the water spouts"],
+        "deityMudrasWeapons": ["small shrines and images set into the pit walls"],
+        "distinguishingFeatures": ["sunken stepped stone pit with carved spouts", "Mani Mandap pavilions on platforms beside it"],
+        "confusableWith": ["pat_sundari_chowk_tusha_hiti"],
+        "disambiguationTip": "Mani Dhara is a public sunken water spout at the square's north end with pavilions beside it; Tusha Hiti is enclosed inside the palace."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "One of the Valley's Oldest Water Spouts",
+          "text": "Manga Hiti, also known as Mani Dhara, is a sunken stone water spout at the northern end of Patan Durbar Square and one of the oldest functioning hitis in the Kathmandu Valley. It is commonly dated to around 570 CE, in the Licchavi period, when kings and nobles across the valley built stone water spouts as acts of merit. Licchavi engineers developed a sophisticated system of canals, ponds and underground channels that fed hitis with water from the surrounding hills, and parts of these systems still function today. Beside the spout stands Mani Mandap, a pair of pavilions built in the early eighteenth century and used for royal coronations and ceremonies. Together, the spout and pavilions show how water, ritual and kingship were connected in Patan from its earliest history through to the final years of the Malla period.",
+          "sourceIds": ["slusser_1982", "vajracharya_1973"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Engineering a Sunken Spout",
+          "text": "Manga Hiti is built in a stepped pit below street level, allowing water from underground channels to flow by gravity through carved stone spouts. The pit's walls are faced with stone and brick, and steps lead down from the square so that people can collect water and bathe. The spouts are carved in the form of makaras, mythical water creatures with crocodile-like snouts, from whose mouths the water emerges. The design is both practical and symbolic: lowering the spouts into the ground made it possible to tap the water table and channels, while the carvings sanctified the flow. Hitis like this one were also social centres, where people gathered to wash, fetch water and talk. The adjacent Mani Mandap pavilions, raised on platforms, offer shade and a view of the spout and the square beyond.",
+          "sourceIds": ["korn_1976", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Makaras, Nagas and the Sacredness of Water",
+          "text": "The carved makaras on Manga Hiti's spouts are guardians of water in South Asian iconography, associated with rivers, fertility and abundance. The water that flows from their mouths is regarded as purified and blessed. Small shrines and images set into the pit walls honour deities associated with water and protection, such as nagas, the serpent spirits who control rain and springs. In the Kathmandu Valley nagas are especially important, since legend tells that the valley was once a lake inhabited by them. The name Mani Dhara, 'jewel stream', evokes the preciousness of water in a land where the monsoon brings abundance but the dry season brings scarcity. Visitors who look closely at the spouts will notice the fine carving of the makaras, worn smooth in places by centuries of flowing water and touching hands.",
+          "sourceIds": ["slusser_1982", "pal_1974"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Water for Daily Life and Festivals",
+          "text": "For centuries, Manga Hiti supplied water to the residents of central Patan for drinking, washing and ritual purification. Women and children came at dawn to fill their water jars, and the spout was a place of daily meeting and conversation. During festivals the water was used in rituals, and certain ceremonies required bathing at sacred spouts. Although piped water has reduced daily dependence on hitis, many residents still use them, especially when the municipal supply is unreliable, and the spouts remain cherished community spaces. In recent years community groups in Patan have organised cleaning campaigns and celebrations of the hitis, recognising their cultural and practical value. Visitors who sit in the Mani Mandap pavilions can watch the comings and goings at the spout, a scene that connects the present with Patan's ancient past.",
+          "sourceIds": ["toffin_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Keeping Ancient Water Flowing",
+          "text": "Manga Hiti's survival as a functioning spout depends on the health of the underground channels and ponds that feed it, many of which have been damaged or disrupted by urban development, groundwater extraction and changes in land use. When channels are blocked or water tables fall, spouts dry up, and many hitis in the valley have ceased to flow. Conservation of a hiti therefore involves not only repairing stonework but also restoring the hydrological system behind it. After the 2015 earthquake, some spouts in the valley changed their flow or stopped altogether, while others revived unexpectedly. Patan has been a centre for efforts to revive traditional water systems, involving municipal authorities, researchers and community groups, and Mani Mandap beside the spout was also restored after earthquake damage. Supporting these efforts helps keep an ancient technology alive.",
+          "sourceIds": ["kvpt", "doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Walk down the stone steps into this sunken pit, and listen for the sound of water. You are at Manga Hiti, also called Mani Dhara, one of the oldest working water spouts in the valley, traditionally dated to around 570 in the Licchavi period. The water comes from hidden channels that ancient engineers dug to carry rain and spring water from the hills, and it pours out through the mouths of carved crocodile-like makaras. For generations, Patan's families gathered here at dawn to fill their jars and share the news. Some hitis in the valley dried up as the city grew, while others still flow. How did Licchavi engineers find and guide this water? Book a verified local storyteller nearby and let a guide trace Patan's ancient waterways with you."
+      },
+      "nepaliSummary": "मंगा हिटी (मणिधारा) लिच्छविकालमा बनेको मानिने उपत्यकाकै पुरानो ढुङ्गेधारा मध्ये एक हो, जुन अझै पनि चलिरहेको छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:30-12:30",
+        "lightingNotes": "The sunken pit is lit only when the sun is high; overcast midday light falls evenly on the spouts.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "From the top of the steps, the full pit with all spouts." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the step descent and wall shrines." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the Mani Mandap pavilion above." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Makara spout head with flowing water." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Pit and pavilions at the northern end of the square." }
+        ],
+        "occlusionNotes": "People wash and fill containers at the spouts throughout the day.",
+        "restrictions": "Do not photograph people bathing; keep the steps clear for water users."
+      },
+      "walkingTourStop": { "sequence": 12, "dwellMinutes": 10, "talkingPoint": "Explain Licchavi water engineering and the community revival of hitis." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding date (c. 570 CE) to verify against inscription records; check current flow status." }
+    },
+    {
+      "id": "pat_golden_temple",
+      "names": { "en": "Hiranya Varna Mahavihar (Golden Temple)", "ne": "हिरण्यवर्ण महाविहार (स्वर्ण मन्दिर)", "romanized": "Kwa Bahal", "romanizedLanguage": "Newa" },
+      "aliases": ["Golden Temple Patan", "Kwa Bahal", "Hiranya Varna Mahavihar"],
+      "monumentType": "MONASTERY",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Thakuri", "century": "12th century CE by tradition; rebuilt and embellished in later centuries", "foundingYearCE": null, "datingBasis": "tradition", "patron": "Bhaskaradeva (by tradition)" },
+      "geo": { "lat": 27.6756, "lng": 85.3248, "elevationM": 1310, "geofenceRadiusM": 25, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 3,
+        "primaryMaterials": ["gilt_repousse_copper", "fired_brick", "carved_wood"],
+        "guardianVahanas": ["guardian lions at the entrance"],
+        "deityMudrasWeapons": ["Shakyamuni Buddha in the main shrine", "gilded repousse panels of Buddhas and bodhisattvas on the facade"],
+        "distinguishingFeatures": ["three-tiered gilded copper roof over the main shrine", "courtyard crowded with bells, lamps and donated images", "turtles roaming the courtyard"],
+        "confusableWith": ["swy_dewa_dharma_monastery", "pat_mahabouddha"],
+        "disambiguationTip": "The Golden Temple is a courtyard monastery whose main shrine has gilded roofs and facade; Mahabouddha is a terracotta tower with no gilded courtyard."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Monastery of Golden Colour",
+          "text": "Hiranya Varna Mahavihar, the 'golden-coloured great monastery', is better known as Kwa Bahal or simply the Golden Temple. It is one of the most important Buddhist monasteries in Patan, and tradition attributes its founding to King Bhaskaradeva in the twelfth century, although the present buildings result from many phases of rebuilding and embellishment over the following centuries. Kwa Bahal is a bahal, a traditional Newar Buddhist monastery, maintained by a large sangha of Shakya and Vajracharya families who trace their membership through the male line. Over the centuries wealthy members and donors, including merchants who traded with Tibet, covered the main shrine with gilded copper, giving the monastery its name. It remains a living institution, with daily rituals and a rich calendar of festivals that have continued for hundreds of years without interruption.",
+          "sourceIds": ["locke_1985", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Gilded Facade and Courtyard",
+          "text": "Kwa Bahal is entered through a doorway guarded by lions, leading into a rectangular courtyard surrounded by two-storey buildings. Facing the entrance is the main shrine, whose facade is covered with gilded repousse panels and crowned with a three-tiered gilded roof. In the centre of the courtyard stands a small gilded shrine, and the courtyard is filled with bells, lamps, images and ritual objects donated over the centuries. Upstairs, a Tibetan-style shrine room with murals reflects the long connection between Patan's Newar Buddhists and Tibetan Buddhism. The density of ornament in the courtyard is breathtaking, and every surface seems to carry an offering. Leather items must be removed before entering, a rule that reflects Buddhist concerns with the taking of animal life. Visitors pay a small entry fee that supports the upkeep of the monastery.",
+          "sourceIds": ["locke_1985", "korn_1976"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Shakyamuni and the Child Priest",
+          "text": "The main shrine houses an image of Shakyamuni Buddha, the historical Buddha, and the courtyard contains many images of Buddhas, bodhisattvas and protective deities. One of Kwa Bahal's most remarkable traditions is the role of the child priest: a boy from the sangha, usually under the age of twelve, serves as the chief priest of the main shrine for one month, after which another boy takes his place. The young priest performs daily rituals, assisted by adults, and must observe rules of purity during his term. The tradition expresses the Buddhist ideal of renunciation and the communal ownership of the monastery by its sangha. Turtles that wander the courtyard are regarded as guardians of the shrine and add to its unique atmosphere. Visitors should not disturb them, nor interrupt the young priest at his work.",
+          "sourceIds": ["locke_1985", "saalik_editorial"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Daily Worship and the Buddhist Calendar",
+          "text": "Kwa Bahal's courtyard is alive with daily worship from dawn, as members of the sangha and devotees light lamps, ring bells and make offerings. The month of Gunla, during the monsoon, is a particularly important time, when Newar Buddhists visit monasteries and perform devotional music and recitations. Patan's great Buddhist festivals, including the periodic Samyak celebration in which images of Buddhas from monasteries across the city are displayed and honoured, connect Kwa Bahal with the wider Buddhist community of the city. The child priest's monthly change is marked by rituals, and the courtyard also sees family ceremonies such as initiations. Visitors are welcome to observe, provided they respect the rules: remove leather, walk clockwise around shrines and avoid touching ritual objects. A guide from Patan can explain the meaning of the rituals in detail.",
+          "sourceIds": ["locke_1985", "toffin_2008"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Maintaining a Living Monastery",
+          "text": "Kwa Bahal's conservation is the responsibility of its sangha, who have maintained the monastery for centuries through donations and collective effort. The gilded metalwork requires periodic regilding and cleaning, and the brick and timber buildings must be repaired as they weather. The 2015 earthquake damaged parts of the complex, and the sangha worked with conservation specialists and the authorities to repair the structures while keeping worship going. The density of donated objects in the courtyard, many of them historically valuable, creates challenges for security and conservation, as theft of religious objects has been a serious problem in the Kathmandu Valley. Entry fees and donations from visitors contribute directly to the monastery's upkeep. Kwa Bahal is a fine example of how community ownership can sustain heritage over the long term, complementing the work of government and international organisations.",
+          "sourceIds": ["locke_1985", "doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Take off anything made of leather, step past the lions, and enter a courtyard where almost every surface gleams with gold. This is Kwa Bahal, the Golden Temple of Patan, a Buddhist monastery whose founding tradition goes back to the twelfth century. Look at the main shrine: its facade and three roofs are covered in gilded copper, gifts from generations of merchants who traded with Tibet. Now look for the priest. He may be a young boy, because here a child under twelve serves as chief priest for one month at a time. And watch your step: turtles wander the courtyard as guardians of the shrine. How does a boy become a temple priest? Book a verified local storyteller nearby and let a guide from Patan's Buddhist community tell you."
+      },
+      "nepaliSummary": "हिरण्यवर्ण महाविहार (क्वा बहाल) पाटनको सुनौलो छाना भएको प्रसिद्ध बौद्ध विहार हो, जहाँ बालक पुजारीले एक महिनासम्म पूजा गर्छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:00",
+        "lightingNotes": "The enclosed courtyard gets direct sun only near midday; gilt surfaces flare in bright sun, so bracket exposures.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Main shrine facade and gilded roofs from the courtyard entrance." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique across the courtyard to the central shrine." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique showing bells and donated objects." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Repousse panels of Buddhas on the main facade." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Whole courtyard from the entrance gallery." }
+        ],
+        "occlusionNotes": "The courtyard is crowded with devotees and objects, and turtles move across the ground.",
+        "restrictions": "Remove leather items; small entry fee; do not photograph the child priest without permission; no flash in shrine rooms."
+      },
+      "walkingTourStop": { "sequence": 13, "dwellMinutes": 20, "talkingPoint": "Introduce the sangha system and the child priest tradition." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding attribution to confirm with the sangha; check photography rules in the upper shrine." }
+    },
+    {
+      "id": "pat_kumbheshwar_mandir",
+      "names": { "en": "Kumbheshwar Mandir", "ne": "कुम्भेश्वर मन्दिर", "romanized": "Kumbheshwar", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Kumbheshwar Temple"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "14th century CE; upper tiers added later", "foundingYearCE": 1392, "datingBasis": "chronicle", "patron": "Jayasthiti Malla" },
+      "geo": { "lat": 27.6774, "lng": 85.325, "elevationM": 1309, "geofenceRadiusM": 40, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 5,
+        "primaryMaterials": ["fired_brick", "carved_wood", "clay_tile"],
+        "guardianVahanas": ["Nandi bull facing the temple"],
+        "deityMudrasWeapons": ["Shiva lingam adorned with a silver mask on festival days"],
+        "distinguishingFeatures": ["five-tiered pagoda, one of only two free-standing five-roofed temples in the valley", "sacred pond in the courtyard believed to be fed from Gosainkunda lake"],
+        "confusableWith": ["bkt_nyatapola"],
+        "disambiguationTip": "Kumbheshwar is a five-roofed temple in Patan's northern neighbourhood beside a sacred pond; Nyatapola in Bhaktapur stands on a tall stepped plinth lined with paired guardian statues."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Patan's Five-Roofed Temple",
+          "text": "Kumbheshwar is one of the oldest temples in Patan and one of only two free-standing five-roofed pagodas in the Kathmandu Valley, the other being Nyatapola in Bhaktapur. According to the chronicles, it was founded in 1392 by King Jayasthiti Malla, the ruler who reorganised Newar society in the late fourteenth century. It was originally built with two roofs, and the three upper tiers were added later, raising it to its present height. The temple is dedicated to Shiva as Kumbheshwar, 'Lord of the Water Pot', a name linked to the legend of its sacred pond. It stands in a densely populated neighbourhood north of Durbar Square, surrounded by courtyards, workshops and smaller shrines. Its long history makes it a valuable witness to the development of Patan from the early Malla period to the present day.",
+          "sourceIds": ["slusser_1982", "wright_1877"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Five Roofs Over a Neighbourhood",
+          "text": "Kumbheshwar's five roofs rise in diminishing tiers above a square brick sanctum, creating a tall, slender silhouette that dominates the surrounding neighbourhood. Each roof is supported by carved wooden struts depicting deities, and the eaves are hung with bells. The temple stands in a courtyard that includes the sacred pond, smaller shrines and resting places, and a large Nandi bull faces the temple. Its height, unusual for a Newar temple, made it a landmark visible across Patan. The later addition of the upper tiers shows how Newar temples could be expanded over time, though such additions required careful engineering to support the extra weight. The fine woodcarving of the struts and doors rewards close inspection, and architectural historians admire the temple's proportions as among the most graceful in the valley.",
+          "sourceIds": ["bernier_1979", "korn_1976"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Shiva of the Sacred Water Pot",
+          "text": "The name Kumbheshwar comes from kumbha, a water pot, and the temple's lingam is associated with the sacred water of its courtyard pond. Legend holds that the pond is connected by an underground channel to Gosainkunda, the holy lake high in the Himalayas north of Kathmandu, where Shiva is said to have created a lake to cool his throat after swallowing poison during the churning of the cosmic ocean. Bathing in the pond is therefore considered equivalent to bathing in Gosainkunda itself. The lingam inside the sanctum is adorned on special occasions with a silver mask, and the courtyard contains images of other deities associated with Shiva, including Ganesh and forms of the goddess. The temple thus connects Patan's urban life with the sacred geography of the high mountains, a link renewed every year at a great festival.",
+          "sourceIds": ["slusser_1982", "dowman_1995"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Janai Purnima",
+          "text": "Kumbheshwar's greatest festival is Janai Purnima, the full moon of the monsoon month of Shrawan, when Hindu men renew the sacred thread worn across the chest and devotees tie protective threads around their wrists. On this day thousands of pilgrims who cannot make the long trek to Gosainkunda come to bathe in Kumbheshwar's pond, believing its water to be connected with the sacred lake. The lingam is placed on a platform in the pond and worshipped, and jhankris, traditional shamans, may perform dances and rituals in the courtyard, adding to the festival's atmosphere. The day combines Hindu and indigenous traditions in a vivid display of devotion. Throughout the year the temple receives daily worship, and its courtyard is a focus of neighbourhood life, where people gather, children play and elders rest in the shade of the five roofs.",
+          "sourceIds": ["dowman_1995", "levy_1990"],
+          "confidence": "high"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Repairing the Upper Tiers",
+          "text": "Tall temples like Kumbheshwar are especially vulnerable to earthquakes, as the upper tiers experience greater movement during shaking. In the 2015 earthquake the temple's uppermost tier was damaged, and its restoration became an important project in Patan's recovery. Conservation work involved repairing and reinforcing the roof structure, conserving the carved struts and restoring the brick walls with traditional materials. The Kathmandu Valley Preservation Trust and the Department of Archaeology were involved in restoration work in the area, building on their long experience in Patan. The courtyard's sacred pond also requires management, since water quality and leakage can affect both ritual use and the stability of nearby structures. The restored temple once again dominates the northern skyline of Patan, and the Janai Purnima festival continues to draw crowds every monsoon.",
+          "sourceIds": ["doa_nepal", "kvpt"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Five roofs, one above the other, rise over this Patan neighbourhood. Only two free-standing temples in the whole valley have five, and this is the older one: Kumbheshwar, founded in 1392, centuries before the famous Nyatapola in Bhaktapur. Now look at the pond in the courtyard. Legend says its water flows underground from Gosainkunda, a holy lake high in the Himalayas, several days' walk north of here. Every year on the full moon of Janai Purnima, thousands of pilgrims who cannot make that journey bathe here instead, while shamans dance in the courtyard and men renew their sacred threads. How could water travel so far beneath the mountains? Book a verified local storyteller nearby and let a guide tell you the legend of Shiva's poisoned throat."
+      },
+      "nepaliSummary": "कुम्भेश्वर मन्दिर सन् १३९२ मा स्थापना भएको पाँच तले शिव मन्दिर हो; यसको पोखरी गोसाइँकुण्डसँग जोडिएको जनविश्वास छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "06:30-08:00",
+        "lightingNotes": "Upper tiers catch first light above the surrounding roofs while the courtyard floor stays shaded until mid-morning.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full five-tier profile from the courtyard entrance with Nandi." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the sacred pond in the foreground." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique showing the courtyard shrines." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Carved struts and bells of the lower roof." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "From a nearby rooftop, the temple rising above the neighbourhood." }
+        ],
+        "occlusionNotes": "The courtyard is packed during Janai Purnima; laundry and children playing at other times.",
+        "restrictions": "Sanctum for Hindu worshippers; avoid photographing bathers at the pond."
+      },
+      "walkingTourStop": { "sequence": 14, "dwellMinutes": 15, "talkingPoint": "Share the Gosainkunda legend at the five-roofed temple before turning south." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm the extent of 2015 damage and the restoration lead." }
+    },
+    {
+      "id": "pat_hari_shankar",
+      "names": { "en": "Hari Shankar Temple", "ne": "हरिशंकर मन्दिर", "romanized": "Harishankar Dega", "romanizedLanguage": "Newa" },
+      "aliases": ["Harishankar Mandir"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "early 18th century CE; rebuilt after 2015", "foundingYearCE": null, "datingBasis": "chronicle", "patron": "Yogamati, daughter of Yoganarendra Malla (attributed)" },
+      "geo": { "lat": 27.6729, "lng": 85.3251, "elevationM": 1312, "geofenceRadiusM": 20, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 3,
+        "primaryMaterials": ["fired_brick", "carved_wood", "clay_tile"],
+        "guardianVahanas": ["stone lions on the plinth steps"],
+        "deityMudrasWeapons": ["Hari Shankar, a combined form of Vishnu and Shiva", "struts carved with scenes of suffering in the underworld"],
+        "distinguishingFeatures": ["three-tiered pagoda in the temple row of Patan Durbar Square", "bright new timber from its post-2015 reconstruction"],
+        "confusableWith": ["pat_vishwanath_mandir", "pat_char_narayan"],
+        "disambiguationTip": "Hari Shankar has three roofs and fresh rebuilt timber; Vishwanath has two roofs and stone elephants, and Char Narayan has two roofs at the square's southern end."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Princess's Temple to Two Gods",
+          "text": "The Hari Shankar temple in Patan Durbar Square is dedicated to Hari Shankar, a combined form of Vishnu, known as Hari, and Shiva, known as Shankar. It is usually attributed to the early eighteenth century and to Yogamati, a daughter of King Yoganarendra Malla, whose gilded statue on a column stands nearby, though the exact date and circumstances of its founding should be confirmed from inscriptions. Royal women played an important role in temple patronage in Malla Patan, and the temple's dedication to a unified form of Vishnu and Shiva reflects the inclusive religious outlook of the court. The temple collapsed in the 2015 earthquake and was rebuilt in the following years, restoring its place in the row of temples facing the palace. Its history thus spans the final decades of the Malla kingdom and the recovery of Patan's heritage in the twenty-first century.",
+          "sourceIds": ["slusser_1982", "kvpt"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Three Roofs Rebuilt",
+          "text": "Hari Shankar is a three-tiered Newar pagoda raised on a stepped plinth, with carved roof struts, wooden doors and stone lions on its steps. Its proportions follow the classic form of the square's larger temples, rising in three diminishing roofs crowned by a gilded finial. When it collapsed in 2015, its carved elements were recovered from the rubble where possible, and reconstruction by the Kathmandu Valley Preservation Trust with local craftsmen used traditional joinery, matching timbers and newly carved replacements for pieces that could not be saved. Discreet structural improvements were incorporated to help the temple resist future earthquakes. The contrast between the fresh timber of the rebuilt temple and the darker wood of its neighbours tells the story of 2015 clearly. The project became one of the showcase reconstructions of Patan's post-earthquake recovery and trained many young craftsmen.",
+          "sourceIds": ["kvpt", "bernier_1979"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Vishnu and Shiva United",
+          "text": "Hari Shankar, also called Harihara, represents the union of Vishnu and Shiva in a single deity, typically shown with one half of the body bearing Vishnu's attributes and the other half Shiva's. The image expresses the idea that the preserver and the destroyer are two aspects of one ultimate reality, a theme that resonates strongly in the Kathmandu Valley, where devotees of different gods share temples and festivals. The temple's struts are noted for scenes depicting the torments of the underworld, reminders of the consequences of wrongdoing and of the god's power to save devotees from suffering. Such imagery, unusual among the square's temples, adds a moral dimension to the building. Visitors who look closely at the struts, original and newly carved, can follow these scenes and compare them with the deities and erotic panels found on other temples in the square.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Worship in the Temple Row",
+          "text": "Hari Shankar receives daily worship from Patan's residents, who include it in their morning rounds of the square's temples. Devotees of both Vishnu and Shiva honour the combined deity, and festivals of both gods bring worshippers, including Ekadashi days sacred to Vishnu and Maha Shivaratri. The temple's reconsecration after its reconstruction was marked by elaborate rituals involving priests, guthi members and residents, who regarded the rebuilding as the restoration of a living shrine rather than simply a monument. During Patan's great festivals, the temple's plinth becomes a viewing platform for processions and crowds. Visitors are welcome to observe from the steps, but should respect worshippers and the sanctum. A guide can explain the meaning of the Hari Shankar image and point out the differences between the original carvings and the new pieces made by today's craftsmen.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "A Showcase of Post-2015 Rebuilding",
+          "text": "The reconstruction of Hari Shankar after its collapse in 2015 is one of the best-documented heritage recovery projects in Patan. The Kathmandu Valley Preservation Trust, working with the Department of Archaeology and the community, recorded the fallen elements, conserved those that could be reused and commissioned new carvings from local woodcarvers, using historical photographs to guide the work. The project demonstrated that traditional techniques can be combined with modern engineering to improve earthquake resistance without changing a temple's appearance. It also provided training and employment for craftsmen, helping to sustain the skills on which the valley's heritage depends. The rebuilt temple was completed in the years following the earthquake and returned to worship. Visitors can see the results in the crisp new carvings. Field collectors are asked to photograph old and new struts side by side for the record.",
+          "sourceIds": ["kvpt", "doa_nepal"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "This three-roofed temple looks brand new, and in a way it is. Hari Shankar collapsed completely in the 2015 earthquake, and craftsmen rebuilt it piece by piece, rescuing old carvings from the rubble and carving new ones by hand. The temple honours Hari Shankar, a single god who is half Vishnu and half Shiva, proof that in this valley even the great gods share. Tradition links its founding to Yogamati, a daughter of King Yoganarendra Malla, whose golden statue on the column is just steps away. Look up at the struts: some show the torments of the underworld, a warning carved in wood. Can you tell which carvings survived the earthquake and which were made by today's carvers? Book a verified local storyteller nearby and let a guide introduce you to the craftsmen who rebuilt it."
+      },
+      "nepaliSummary": "हरिशंकर मन्दिर विष्णु र शिवको संयुक्त रूपलाई समर्पित तीन तले मन्दिर हो, जुन २०१५ को भूकम्पपछि पुनर्निर्माण गरिएको हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "06:45-08:15",
+        "lightingNotes": "Morning light reaches the struts in the temple row; new timber reads warmer than the old in low sun.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full three-roof temple from the square with lion steps." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the strut sequence." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the palace facade behind." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "An underworld strut next to a deity strut." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple within the row facing the palace." }
+        ],
+        "occlusionNotes": "Visitors sit on the plinth and vendors work along the temple row.",
+        "restrictions": "Shoes off on the upper plinth; respect worshippers at the sanctum."
+      },
+      "walkingTourStop": { "sequence": 15, "dwellMinutes": 8, "talkingPoint": "Return to the square to see a temple rebuilt after 2015 and the half-Vishnu, half-Shiva god." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding date, patron and the reconstruction completion year to confirm with KVPT." }
+    },
+    {
+      "id": "pat_uku_bahal",
+      "names": { "en": "Rudra Varna Mahavihar (Uku Bahal)", "ne": "रुद्रवर्ण महाविहार (उकु बहाल)", "romanized": "Uku Bahal", "romanizedLanguage": "Newa" },
+      "aliases": ["Uku Bahal", "Rudravarna Mahavihar"],
+      "monumentType": "MONASTERY",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Malla", "century": "early foundation by tradition; present buildings of the Malla and later centuries", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.6707, "lng": 85.3258, "elevationM": 1310, "geofenceRadiusM": 25, "municipality": "Lalitpur Metropolitan City", "district": "Lalitpur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 2,
+        "primaryMaterials": ["gilt_bronze", "bronze", "fired_brick", "stucco"],
+        "guardianVahanas": ["bronze and stone animals filling the courtyard: elephants, lions, peacocks and garudas"],
+        "deityMudrasWeapons": ["Buddha images in the main shrine", "statues of donors and kings among the animals"],
+        "distinguishingFeatures": ["monastery courtyard crowded with metal statues of animals", "stucco-faced shrine building facing the courtyard"],
+        "confusableWith": ["pat_golden_temple"],
+        "disambiguationTip": "Uku Bahal's courtyard is crowded with free-standing metal animals in south Patan; Kwa Bahal, the Golden Temple, is north of the square and its shrine facade is covered in gilded panels."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "One of Patan's Oldest Monasteries",
+          "text": "Rudra Varna Mahavihar, known locally as Uku Bahal, is regarded as one of the oldest Buddhist monasteries in Patan, located a short walk south of Durbar Square near Mahabouddha. Tradition attributes an early foundation to the site, and the monastery is said to have served as a place of coronation or royal ritual in some periods, though these claims should be confirmed from published surveys and inscriptions. Like other Newar Buddhist monasteries, it is maintained by a sangha of Shakya and Vajracharya families who inherit membership. Over the centuries, donors filled its courtyard with statues and ritual objects, and the present buildings combine Malla-era structures with later additions, including a facade decorated in stucco during the Rana period. The monastery's rich collection of metal sculpture makes it one of the most remarkable courtyards in the valley, yet it receives far fewer visitors than the Golden Temple.",
+          "sourceIds": ["locke_1985", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Courtyard of Metal Animals",
+          "text": "Uku Bahal's courtyard is famous for the dense collection of metal and stone figures that fill its open space: elephants, lions, peacocks, garudas and other creatures, along with statues of donors and royal figures, many mounted on pedestals and some protected by railings. The main shrine faces the courtyard, its facade combining traditional Newar woodwork with stucco decoration added in a later period, which gives the building an unusual appearance among Patan's monasteries. The surrounding wings follow the quadrangular plan typical of Newar monasteries, with rooms for the sangha and for ritual use. Bells, lamps and offerings add to the courtyard's richness. The quality of the metalwork reflects Patan's renown as a centre of bronze casting. Field collectors are asked to photograph the courtyard systematically, recording each sculpture's position, since the collection is vulnerable to theft.",
+          "sourceIds": ["locke_1985", "korn_1976"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Guardians and Donors",
+          "text": "The animals in Uku Bahal's courtyard carry layered meanings. Elephants and lions are royal symbols of strength and protection, peacocks evoke beauty and the transformation of poison into wisdom, and garudas recall the swift power of the enlightened mind. Many of the figures were donated by devotees as acts of merit, and some bear inscriptions recording the donors' names and dates, which make the courtyard a historical archive as well as a sacred space. The statues of donors and royal figures show how lay patrons placed themselves in perpetual devotion before the Buddha, a practice also seen in the royal columns of the Durbar Squares. The main shrine houses images of the Buddha, honoured daily by the sangha. For visitors, the courtyard offers a vivid lesson in how Buddhist devotion, artistic patronage and community memory combine in a single place.",
+          "sourceIds": ["pal_1974", "locke_1985"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Daily Rituals of the Sangha",
+          "text": "Uku Bahal remains an active monastery, with daily rituals performed by members of its sangha, who light lamps, make offerings and maintain the shrine. During the Newar Buddhist month of Gunla, devotees visit the monastery regularly, playing traditional music and reciting texts, and the courtyard fills with activity. Major Buddhist festivals, such as Buddha Jayanti, are also celebrated, and the monastery takes part in Patan's wider Buddhist festival calendar. Life-cycle rituals, such as the initiation of young boys into the sangha, are performed here. Visitors are welcome to enter the courtyard quietly, walk clockwise around the shrine and admire the sculptures, but they should not touch the figures, climb on pedestals or photograph rituals without permission. A local guide can explain the meanings of the animals and introduce visitors to the monastery's history and community.",
+          "sourceIds": ["locke_1985", "toffin_2008"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protecting a Sculpture Courtyard",
+          "text": "Uku Bahal's open courtyard full of metal sculpture makes it particularly vulnerable to theft, and in past decades valuable images have been stolen from monasteries across the valley. Railings and supervision help to protect the figures, but detailed documentation is essential for identifying objects if they disappear. The 2015 earthquake damaged buildings in Patan, and the monastery's structures were inspected and repaired where needed. Metal sculptures exposed to the weather require cleaning and treatment to prevent corrosion, and the stucco facade needs periodic repair. Conservation is the responsibility of the sangha, supported by heritage authorities and donors. Saalik's field collectors are asked to photograph the courtyard and each sculpture from multiple angles, recording positions and any inscriptions, with the sangha's permission, building a record that supports both conservation and protection against theft.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Step into this quiet courtyard south of Durbar Square and you will find yourself surrounded by a menagerie of metal: elephants, lions, peacocks and garudas, standing on pedestals among statues of kneeling donors. This is Uku Bahal, the Rudra Varna Mahavihar, regarded as one of the oldest Buddhist monasteries in Patan. Every animal here was a gift, offered by families hoping to earn merit, and some still carry the donors' names. Few visitors find their way here, compared with the Golden Temple, so you may have the courtyard almost to yourself. Look at the shrine's facade too: Newar woodwork meets later stucco decoration. Can you find the garuda among the animals? Book a verified local storyteller nearby and let a Patan guide tell you the stories behind the statues."
+      },
+      "nepaliSummary": "रुद्रवर्ण महाविहार (उकु बहाल) पाटनको पुरानो बौद्ध विहार हो, जसको चोकमा धातुका हात्ती, सिंह, मयूर र गरुडका मूर्ति छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:00",
+        "lightingNotes": "Metal statues glare in direct sun; soft midday or overcast light shows their detail best.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Main shrine facade from the courtyard entrance." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique across the courtyard statues." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique showing the stucco facade." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "One metal animal with its pedestal inscription." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Whole courtyard with its statue collection." }
+        ],
+        "occlusionNotes": "Railings around statues and residents passing through the courtyard.",
+        "restrictions": "Do not touch the sculptures or climb on pedestals; ask before photographing rituals."
+      },
+      "walkingTourStop": { "sequence": 16, "dwellMinutes": 15, "talkingPoint": "End the loop near the start among the metal animals of a lesser-known monastery." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding tradition, royal-ritual claims, facade date and exact coordinates to confirm." }
+    }
+  ]
+}

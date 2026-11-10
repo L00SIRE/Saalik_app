@@ -19,6 +19,13 @@ import { SavedToursScreen } from '@screens/SavedToursScreen';
 import { MyReviewsScreen } from '@screens/MyReviewsScreen';
 import { SettingsScreen } from '@screens/SettingsScreen';
 import { CheckpointsScreen } from '@screens/CheckpointsScreen';
+import { HeritageHomeScreen } from '@screens/heritage/HeritageHomeScreen';
+import { ScannerScreen } from '@screens/scanner/ScannerScreen';
+import { MonumentStoryScreen } from '@screens/scanner/MonumentStoryScreen';
+import { LocalStorytellersScreen } from '@screens/marketplace/LocalStorytellersScreen';
+import { CollectorChecklistScreen } from '@screens/collector/CollectorChecklistScreen';
+import { GuidedCameraScreen } from '@screens/collector/GuidedCameraScreen';
+import { SyncManagerScreen } from '@screens/collector/SyncManagerScreen';
 import type {
   TravelerTabParamList,
   ExploreStackParamList,
@@ -62,7 +69,14 @@ function ExploreNavigator() {
 function DiscoverNavigator() {
   return (
     <DiscoverStack.Navigator screenOptions={stackOptions}>
+      <DiscoverStack.Screen name="HeritageHome" component={HeritageHomeScreen} />
       <DiscoverStack.Screen name="Scan" component={ScanScreen} />
+      <DiscoverStack.Screen name="Scanner" component={ScannerScreen} />
+      <DiscoverStack.Screen name="MonumentStory" component={MonumentStoryScreen} />
+      <DiscoverStack.Screen name="LocalStorytellers" component={LocalStorytellersScreen} />
+      <DiscoverStack.Screen name="CollectorChecklist" component={CollectorChecklistScreen} />
+      <DiscoverStack.Screen name="GuidedCamera" component={GuidedCameraScreen} />
+      <DiscoverStack.Screen name="SyncManager" component={SyncManagerScreen} />
     </DiscoverStack.Navigator>
   );
 }

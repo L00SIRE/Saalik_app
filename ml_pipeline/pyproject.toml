@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "saalik-ml-pipeline"
+version = "0.1.0"
+description = "Saalik heritage computer vision, embeddings, and retrieval benchmarks"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Proprietary" }
+authors = [{ name = "Saalik" }]
+dependencies = [
+  "numpy>=1.24,<3",
+  "Pillow>=10.0,<12",
+  "opencv-python-headless>=4.8,<5",
+]
+
+[project.optional-dependencies]
+torch = [
+  "torch>=2.1",
+  "torchvision>=0.16",
+  "transformers>=4.38",
+]
+dev = [
+  "pytest>=7.4,<9",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".."]
+addopts = "-q"
+filterwarnings = [
+  "ignore::DeprecationWarning",
+]
+
+[tool.setuptools.packages.find]
+where = [".."]
+include = ["ml_pipeline*"]

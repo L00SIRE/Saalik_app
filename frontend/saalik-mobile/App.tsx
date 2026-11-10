@@ -6,6 +6,7 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { AuthProvider } from './src/context/AuthContext';
+import { AppModeProvider } from './src/context/AppModeContext';
 import { AppNavigator } from './src/navigation/AppNavigator';
 import { queryClient, asyncStoragePersister } from './src/services/queryClient';
 import { colors } from './src/theme/colors';
@@ -53,10 +54,12 @@ export default function App() {
         persistOptions={{ persister: asyncStoragePersister }}
       >
         <AuthProvider>
-          <NavigationContainer theme={navTheme}>
-            <StatusBar style="light" />
-            <AppNavigator />
-          </NavigationContainer>
+          <AppModeProvider>
+            <NavigationContainer theme={navTheme}>
+              <StatusBar style="light" />
+              <AppNavigator />
+            </NavigationContainer>
+          </AppModeProvider>
         </AuthProvider>
       </PersistQueryClientProvider>
     </SafeAreaProvider>

@@ -1,0 +1,769 @@
+{
+  "zoneId": "changu_narayan",
+  "names": { "en": "Changu Narayan", "ne": "चाँगुनारायण", "romanized": "Changu", "romanizedLanguage": "Newa" },
+  "designation": "UNESCO_MONUMENT_ZONE",
+  "unescoReference": "UNESCO WHC 121 - Changu Narayan Monument Zone",
+  "district": "Bhaktapur",
+  "centroid": { "lat": 27.7162, "lng": 85.4278 },
+  "zoneRadiusM": 300,
+  "description": "Changu Narayan crowns a ridge at the eastern edge of the Kathmandu Valley. Its two-tiered Vishnu temple, rebuilt in 1702, stands in a courtyard holding the valley's finest collection of Licchavi sculpture and Nepal's oldest dated inscription, carved for King Manadeva in 464 CE.",
+  "walkingTour": {
+    "tourId": "chg_hilltop_of_vishnu",
+    "title": "Changu Narayan: Fifteen Centuries of Vishnu",
+    "titleNe": "चाँगुनारायण: पन्ध्र शताब्दीका विष्णु",
+    "startPoint": "Main gate of the Changu Narayan courtyard, top of Changu village",
+    "bestStartTime": "07:00"
+  },
+  "monuments": [
+    {
+      "id": "chg_main_pagoda",
+      "names": { "en": "Changu Narayan Temple", "ne": "चाँगुनारायण मन्दिर", "romanized": "Changu Narayan Dega", "romanizedLanguage": "Newa" },
+      "aliases": ["Main Changu Narayan Two-Tiered Pagoda", "Changunarayan Temple", "Garudanarayan Temple"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Licchavi", "century": "Licchavi origins (site attested by a 464 CE inscription); present temple rebuilt in the early 18th century", "foundingYearCE": null, "datingBasis": "inscription", "patron": null },
+      "geo": { "lat": 27.7162, "lng": 85.4278, "elevationM": 1540, "geofenceRadiusM": 40, "municipality": "Changunarayan Municipality", "district": "Bhaktapur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 2,
+        "primaryMaterials": ["fired_brick", "carved_wood", "gilt_repousse_copper"],
+        "guardianVahanas": ["paired guardians at each of the four doors: lions, sarabhas, griffins and elephants", "kneeling Garuda facing the western door"],
+        "deityMudrasWeapons": ["struts carved with multi-armed Tantric deities", "gilded repousse doors and toranas"],
+        "distinguishingFeatures": ["two-tiered pagoda in a hilltop courtyard surrounded by Licchavi sculptures", "four gilded doorways each with a different guardian pair"],
+        "confusableWith": ["pas_main_pagoda_courtyard", "pat_char_narayan"],
+        "disambiguationTip": "Changu Narayan is a two-tiered pagoda in a hilltop courtyard full of ancient stone sculptures, with a different pair of guardian animals at each door."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Oldest Temple in the Valley",
+          "text": "Changu Narayan, crowning a ridge at the eastern edge of the Kathmandu Valley, is widely regarded as the oldest temple site in Nepal still in active worship. A stone pillar in its courtyard bears an inscription of King Manadeva dated 464 CE, the oldest dated inscription in the country, which confirms that this hill was already a major sacred site of Vishnu in the Licchavi period. Legend places its origins even earlier, and one well-known story tells of a cow that gave its milk to a tree on the hill, from which Vishnu revealed himself. The temple has been rebuilt several times; the present two-tiered pagoda dates from 1702, after a fire destroyed its predecessor. The courtyard around it holds the valley's finest collection of Licchavi stone sculpture, and the site is one of the seven monument zones of the Kathmandu Valley World Heritage property.",
+          "sourceIds": ["unesco_whc_121", "vajracharya_1973", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Four Doors, Four Guardians",
+          "text": "The temple is a two-tiered Newar pagoda raised on a plinth in the centre of a paved courtyard, its roofs supported by some of the most elaborately carved struts in the valley. Each of its four sides has a gilded doorway framed by repousse panels and toranas, and each doorway is guarded by a different pair of animals: lions, sarabhas or winged lions, griffins and elephants. The struts depict multi-armed deities, many of them Tantric forms of the goddess and of Vishnu, standing above smaller figures. Around the temple, the courtyard is filled with shrines, pillars and stone sculptures from the fifth century onward, making it an open-air museum of Nepali art. Traditional houses of Changu village line the approach. The combination of hilltop setting, ancient stone and Malla-era woodwork makes the temple one of the most rewarding sites in the whole valley.",
+          "sourceIds": ["bernier_1979", "korn_1976"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Vishnu on the Hill",
+          "text": "Changu Narayan is dedicated to Vishnu, worshipped here as Narayan and in the form of Garudanarayan, Vishnu riding his eagle-like mount Garuda. The main image inside the sanctum is not shown to the public, but the temple's exterior and courtyard present a rich catalogue of Vishnu's forms: his cosmic form, his avatars as the man-lion Narasimha and the striding Trivikrama, and images of Vishnu with his consort Lakshmi. A kneeling Garuda in front of the western door, one of the oldest sculptures in the courtyard, faces the sanctum in devotion. The struts introduce Tantric deities with many arms and weapons, showing how Vishnu's temple absorbed the goddess-centred Tantric traditions of the Malla period. For visitors, the temple is the best place in Nepal to learn the iconography of Vishnu, since nearly every major form appears somewhere in the courtyard.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Ekadashi and the Hilltop Pilgrimage",
+          "text": "Changu Narayan is a living temple, and devotees from Bhaktapur, Kathmandu and the surrounding villages come to worship, especially on Ekadashi, the eleventh day of each lunar fortnight, which is sacred to Vishnu. Major festivals include Haribodhini Ekadashi in the autumn, when Vishnu is believed to awaken from his four-month cosmic sleep. Pilgrims often walk up from Bhaktapur along the old trail through fields and villages. The courtyard fills with offerings, music and the smoke of incense on festival days, and priests perform rituals at the four doors. Visitors are welcome in the courtyard, although the sanctum is reserved for Hindu worshippers. A guide can explain the rituals and help visitors find and interpret the many sculptures, which are easily overlooked among the shrines and pillars, and can share the legends that villagers tell about the hill.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "After the Earthquake",
+          "text": "The 2015 earthquake damaged Changu Narayan's main temple and many surrounding structures, cracking walls, displacing struts and toppling some smaller buildings in the courtyard and village. Restoration work, led by the Department of Archaeology with partners, repaired the temple's structure and conserved its carved struts and gilded doors, while traditional houses in Changu village were rebuilt with support from heritage programmes. The site's ancient stone sculptures faced their own risks, since some were dislodged or damaged and required careful resetting. Changu's hilltop position exposes it to wind and rain, and its stone images, many over fifteen centuries old, are vulnerable to weathering. Conservation must balance protecting these irreplaceable works with their continued worship. Visitors can help by not touching the sculptures, especially the delicate Licchavi reliefs, and by paying the site's entry fee, which supports maintenance.",
+          "sourceIds": ["doa_nepal", "unesco_whc_121"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Climb to the top of this ridge and you stand at what may be the oldest temple site in Nepal still in daily worship. In the courtyard, a stone pillar carries words carved in the year 464, the oldest dated inscription in the country, proving that Vishnu was honoured here more than fifteen centuries ago. The temple itself was rebuilt in 1702 after a fire, and its struts are among the most richly carved anywhere in the valley. Walk around it slowly: each of the four golden doors has its own pair of guardians, lions on one side, elephants on another, and mythical beasts in between. Then turn to the courtyard, filled with ancient stone gods. Which of them is the oldest? Book a verified local storyteller nearby and let a guide show you fifteen centuries of Vishnu in one courtyard."
+      },
+      "nepaliSummary": "चाँगुनारायण उपत्यकाको सबैभन्दा पुरानो मानिने विष्णु मन्दिर हो; यहाँको मानदेवको सन् ४६४ को शिलालेख नेपालकै पुरानो मितियुक्त अभिलेख हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "Hilltop morning light reaches all four doors in turn, and haze lifts by mid-morning for valley views.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Western door with the kneeling Garuda and both roofs." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing struts and the elephant door." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique showing the lion door." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gilded repousse doorway and one carved strut." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Whole courtyard with the temple and surrounding sculptures." }
+        ],
+        "occlusionNotes": "School groups and pilgrims fill the courtyard, and scaffolding may stand during repairs.",
+        "restrictions": "Sanctum for Hindu worshippers; entry fee for foreign visitors; do not touch the sculptures."
+      },
+      "walkingTourStop": { "sequence": 1, "dwellMinutes": 20, "talkingPoint": "Introduce the oldest temple site and its four guardian doors." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Rebuild date (1702) and the guardian pair at each door to confirm on site." }
+    },
+    {
+      "id": "chg_manadeva_garuda_pillar",
+      "names": { "en": "Manadeva Garuda Pillar Inscription (464 CE)", "ne": "मानदेवको गरुडध्वज शिलालेख", "romanized": "Manadevako Garudadhvaja Abhilekh", "romanizedLanguage": "Nepali" },
+      "aliases": ["464 AD Manadeva Garuda Pillar Inscription", "Garudadhvaja of Changu Narayan"],
+      "monumentType": "INSCRIPTION",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Licchavi", "century": "5th century CE", "foundingYearCE": 464, "datingBasis": "inscription", "patron": "Manadeva I" },
+      "geo": { "lat": 27.7162, "lng": 85.4276, "elevationM": 1540, "geofenceRadiusM": 15, "municipality": "Changunarayan Municipality", "district": "Bhaktapur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["grey_stone"],
+        "guardianVahanas": ["Garuda associated with the pillar's summit"],
+        "deityMudrasWeapons": [],
+        "distinguishingFeatures": ["tall stone pillar inscribed in Licchavi script around its shaft", "stands near the western door of the temple"],
+        "confusableWith": ["ktm_pratap_malla_inscription", "chg_garuda_narayan"],
+        "disambiguationTip": "This is a free-standing pillar with Licchavi script carved around its shaft; Kathmandu's Pratap Malla inscription is a slab set into a palace wall."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Nepal's Oldest Dated Words",
+          "text": "The stone pillar standing near the western door of Changu Narayan carries the oldest dated inscription in Nepal, recorded by King Manadeva in 464 CE. Manadeva was one of the most important Licchavi kings, and his inscription is a cornerstone of Nepali history. It describes the death of his father, King Dharmadeva, and the grief of his mother, Queen Rajyavati, who resolved to follow her husband in death. Manadeva persuaded her to live, and with her blessing he set out on military campaigns to the east and west, which the inscription celebrates. The pillar was erected as a garudadhvaja, a Garuda standard dedicated to Vishnu. For historians, the inscription provides precious evidence of the Licchavi dynasty, its language and its religious life, confirming that Changu was already an important sanctuary of Vishnu in the fifth century.",
+          "sourceIds": ["vajracharya_1973", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Pillar for Garuda",
+          "text": "The inscription is carved on the shaft of a tall stone pillar, a garudadhvaja, the type of column erected before Vishnu temples to carry an image of Garuda, Vishnu's mount. The text runs in lines around the shaft in the Licchavi script, a form of Gupta-period Brahmi used in the valley at the time. Over the centuries the pillar's upper part has been damaged, and accounts suggest that its original Garuda capital fell, possibly in an earthquake. The surviving shaft remains a powerful monument, its weathered surface bearing the king's words. The pillar's placement near the temple's western door aligns it with the temple's main axis, showing that the sacred layout of the site has deep roots. The lettering, still legible to specialists, reflects the skill of Licchavi stone-cutters, whose work survives in inscriptions across the valley.",
+          "sourceIds": ["vajracharya_1973", "pal_1974"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Words as Devotion",
+          "text": "Although the inscription is primarily a historical record, it is also a devotional act. By dedicating a Garuda standard to Vishnu and recording his deeds on it, Manadeva placed his reign under the god's protection and offered his achievements to him. The story of Queen Rajyavati's choice to live rather than follow her husband in death is notable as an early record touching on the practice of sati, though historians caution against reading modern values into the ancient text. The inscription uses the elevated Sanskrit of royal proclamations, praising the king's virtues and victories. Garuda, who once crowned the pillar, symbolises the swiftness and strength of Vishnu's power and the devotion of his servant. The pillar thus links political authority, family loyalty and religious devotion in a single monument, a pattern that would continue in Nepali royal patronage for centuries.",
+          "sourceIds": ["vajracharya_1973", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Honouring the Ancient Pillar",
+          "text": "The pillar is not a primary focus of worship like the temple's sanctum, but devotees treat it with respect, sometimes touching its base or making small offerings as part of their circuit of the courtyard. Its importance lies more in what it represents: the antiquity and continuity of worship at Changu Narayan. For Nepali visitors, especially students, the pillar is a place of national pride, often mentioned in school history lessons as the beginning of Nepal's written history. Guides frequently bring visitors here to explain the Licchavi period and the story of Manadeva and his mother. During festivals, when the courtyard is crowded, the pillar becomes a landmark around which people gather. Visitors should avoid touching the inscribed surface, which is fragile, and should never lean on the pillar or use it as a support while photographing the temple.",
+          "sourceIds": ["saalik_editorial", "ntb"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protecting a Fifteen-Century Text",
+          "text": "The Manadeva inscription is one of Nepal's most precious historical documents, and its conservation is a priority. Weathering, pollution and touching have worn the stone surface, and parts of the text are difficult to read. Scholars have relied on careful readings and published editions, such as the standard collections of Licchavi inscriptions, to preserve the text. The 2015 earthquake shook the Changu courtyard and damaged structures around the pillar, prompting inspections to ensure its stability. Modern documentation techniques, including high-resolution photography under raking light and three-dimensional scanning, can capture the inscription in detail and help monitor its condition over time. Saalik's field collectors are asked to photograph the inscription carefully from all sides, following the guidance of site staff and without touching the surface, to contribute to a permanent digital record of this foundational text.",
+          "sourceIds": ["vajracharya_1973", "doa_nepal"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Look closely at this weathered stone pillar. The lines of old script running around it are the oldest dated words in Nepal, carved for King Manadeva in the year 464. They tell a family story: Manadeva's father had died, and his grieving mother, Queen Rajyavati, wanted to follow her husband in death. Her son begged her to live, and with her blessing he rode out to war and came back victorious. Then he raised this pillar for Vishnu, once crowned, it is said, with a stone Garuda. Schoolchildren across Nepal learn that their written history begins right here. Please do not touch the letters; fifteen centuries of weather have made them fragile. What else did Manadeva build? Book a verified local storyteller nearby and let a guide read the pillar's story with you."
+      },
+      "nepaliSummary": "मानदेवको गरुडध्वज शिलालेख सन् ४६४ मा कुँदिएको नेपालको सबैभन्दा पुरानो मितियुक्त अभिलेख हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:45-08:00",
+        "lightingNotes": "Raking early light across the shaft reveals worn letters; flat midday light hides them.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full pillar with the temple's western door behind." },
+          { "angle": "LEFT_45", "framingNote": "Left raking angle across the inscribed shaft." },
+          { "angle": "RIGHT_45", "framingNote": "Right raking angle on the opposite face." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Lines of Licchavi script at eye level." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Pillar in the courtyard with the temple and Garuda." }
+        ],
+        "occlusionNotes": "Visitors gather around the pillar, and railings may surround it.",
+        "restrictions": "Do not touch the inscribed surface or lean on the pillar."
+      },
+      "walkingTourStop": { "sequence": 2, "dwellMinutes": 10, "talkingPoint": "Tell Manadeva and Rajyavati's story at the oldest dated inscription." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm the current state of the pillar's capital and any protective railing." }
+    },
+    {
+      "id": "chg_vishwaroopa_relief",
+      "names": { "en": "Vishwaroopa Stone Relief", "ne": "विश्वरूप शिला मूर्ति", "romanized": "Vishwarup Murti", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Vishwarupa of Changu Narayan"],
+      "monumentType": "STONE_RELIEF",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Licchavi", "century": "around the 6th century CE (stylistic dating)", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.7161, "lng": 85.4277, "elevationM": 1540, "geofenceRadiusM": 15, "municipality": "Changunarayan Municipality", "district": "Bhaktapur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["black_stone"],
+        "guardianVahanas": ["Garuda and attendants within the relief"],
+        "deityMudrasWeapons": ["Vishnu's cosmic form with many heads and arms", "lower register of Vishnu reclining on the serpent Ananta"],
+        "distinguishingFeatures": ["upright black stone stele carved in deep relief", "small figures of worshippers and gods filling the panel"],
+        "confusableWith": ["pas_vishwaroopa_courtyard", "chg_trivikrama"],
+        "disambiguationTip": "The Vishwaroopa relief shows a many-headed, many-armed Vishnu above a reclining Vishnu; the Trivikrama relief shows a single striding figure."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Licchavi Masterpiece",
+          "text": "The Vishwaroopa relief at Changu Narayan is one of the masterpieces of Licchavi sculpture, generally dated on stylistic grounds to around the sixth century. It depicts Vishnu in his universal form, as described in the Bhagavad Gita, when Krishna reveals himself to Arjuna as containing the whole universe. The relief was carved during the golden age of Licchavi art, when the sculptors of the Kathmandu Valley produced stone images of remarkable refinement, influenced by the art of the Gupta period in India but with their own distinctive character. Many Licchavi sculptures were lost or damaged over the centuries, making the survival of the Vishwaroopa relief at Changu particularly precious. It is one of several Licchavi works in the courtyard that make Changu Narayan the most important collection of early Nepali sculpture still standing in its original sacred setting.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Carving the Cosmos",
+          "text": "The relief is carved on an upright stone stele, its surface densely filled with figures. In the upper register, Vishnu appears in his cosmic form, with multiple heads and many arms radiating outward, holding weapons and symbols, surrounded by smaller figures of gods, sages and beings. In the lower register, a separate scene shows Vishnu reclining on the coils of the cosmic serpent Ananta, floating on the ocean of creation. The composition combines two great Vaishnava visions, the god as the totality of the universe and the god as the dreamer from whose sleep creation unfolds. The carving is deep and confident, with figures arranged in balanced groups. The sculptor managed to convey immense scale and complexity within a relatively small panel, an achievement that continues to impress art historians and visitors alike more than fourteen centuries later.",
+          "sourceIds": ["pal_1974", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Arjuna's Vision",
+          "text": "In the Bhagavad Gita, before the great battle of Kurukshetra, the warrior Arjuna asks Krishna to reveal his true form. Krishna grants him divine sight, and Arjuna sees the universe in Krishna's body: all the gods, all beings, the past and the future, blazing with the light of a thousand suns. The vision terrifies and humbles him, and he begs Krishna to return to his familiar form. The relief at Changu captures this moment, with Vishnu's many heads and arms filling the panel and small figures looking on in awe. The lower scene of Vishnu reclining on Ananta complements this vision, showing the god at rest before creation. Together the two scenes present Vishnu as both the creator and the totality of creation, a profound theological statement carved in stone for worshippers who could not read the scriptures themselves.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Worship Beside an Ancient Image",
+          "text": "The Vishwaroopa relief is part of the living temple complex, and devotees honour it with offerings of flowers, rice and red powder as they circle the courtyard. Its importance is recognised by priests and pilgrims alike, though it is less a focus of daily ritual than the main temple. During festivals, when the courtyard is crowded, devotees may pause before the relief to pray. For art historians and visitors interested in Nepali sculpture, the relief is a highlight of any visit to Changu. Guides often explain the Bhagavad Gita story and point out details of the carving, such as the weapons held by Vishnu's many arms and the small figures around him. Visitors should view the relief from a respectful distance, avoid touching its surface and refrain from using flash, which disturbs worshippers and does not improve photographs of stone.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protecting Fragile Stone",
+          "text": "The Vishwaroopa relief has survived for around fourteen or fifteen centuries, but its surface is vulnerable to weathering, pollution and the accumulation of offerings. The 2015 earthquake shook the Changu courtyard, and the relief was inspected for damage. Conservation of Licchavi sculpture requires specialist expertise: cleaning must be gentle to avoid removing original surface, and any consolidation of cracks must use compatible materials. Theft is a serious concern, since Licchavi sculptures are highly valued on the illegal art market, and several images from the valley have been stolen in past decades. Documentation through detailed photographs is therefore important both for conservation and for security. Saalik's field collectors are asked to photograph the relief carefully, capturing both registers in detail, so that the record supports long-term monitoring and, if ever necessary, identification.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Stand before this black stone and look for the many heads and many arms spreading across the top. This is Vishwarupa, Vishnu's universal form, carved by Licchavi sculptors around fourteen centuries ago. It illustrates the moment in the Bhagavad Gita when Krishna reveals to the warrior Arjuna that the whole universe, every god and every creature, lives inside him, blazing like a thousand suns. Now look below: Vishnu again, this time asleep on a giant serpent floating on the cosmic ocean, dreaming the world into being. Two visions of God in one stone. Art historians count this among the greatest sculptures in Nepal. How many arms can you count? Book a verified local storyteller nearby and let a guide decode every weapon in Vishnu's hands."
+      },
+      "nepaliSummary": "विश्वरूप शिला मूर्ति लिच्छविकालीन उत्कृष्ट कलाकृति हो, जसमा विष्णुको ब्रह्माण्डीय रूप र अनन्त नागमाथि सुतेका विष्णु कुँदिएका छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:00",
+        "lightingNotes": "Soft overcast light reveals relief depth without harsh shadows; never use flash.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full stele square-on with both registers in frame." },
+          { "angle": "LEFT_45", "framingNote": "Left raking angle to show carving depth." },
+          { "angle": "RIGHT_45", "framingNote": "Right raking angle on the opposite figures." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Vishnu's heads and arms in the upper register." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Relief in its courtyard setting beside the temple." }
+        ],
+        "occlusionNotes": "Offerings and red powder cover parts of the stele, and railings or cages may surround it.",
+        "restrictions": "No touching and no flash."
+      },
+      "walkingTourStop": { "sequence": 5, "dwellMinutes": 10, "talkingPoint": "Tell Arjuna's vision and read both registers of the relief." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Stylistic date and register descriptions to confirm against published catalogues." }
+    },
+    {
+      "id": "chg_garuda_narayan",
+      "names": { "en": "Garuda Narayan Sculpture", "ne": "गरुडनारायण मूर्ति", "romanized": "Garudanarayan", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Garuda Narayan 6th-Century Sculpture", "Vishnu on Garuda"],
+      "monumentType": "STONE_RELIEF",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Licchavi", "century": "around the 6th century CE (stylistic dating)", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.7163, "lng": 85.4277, "elevationM": 1540, "geofenceRadiusM": 15, "municipality": "Changunarayan Municipality", "district": "Bhaktapur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["black_stone"],
+        "guardianVahanas": ["Garuda with outstretched wings carrying Vishnu"],
+        "deityMudrasWeapons": ["multi-armed Vishnu holding conch, discus, mace and lotus"],
+        "distinguishingFeatures": ["black stone image of Vishnu seated on Garuda in flight", "set within the courtyard near the temple"],
+        "confusableWith": ["chg_sridhar_vishnu", "chg_manadeva_garuda_pillar"],
+        "disambiguationTip": "Garuda Narayan shows Vishnu riding a flying Garuda; Sridhar Vishnu shows Vishnu standing between attendants, and the kneeling Garuda before the western door has no rider."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Vishnu in Flight",
+          "text": "Among the treasures of Changu Narayan's courtyard is a black stone sculpture of Garuda Narayan, Vishnu riding on Garuda, his eagle-like mount, generally attributed on stylistic grounds to the Licchavi period around the sixth century. Changu Narayan itself is often called Garudanarayan, and this image embodies the temple's central theme. The Licchavi period produced many of the finest stone sculptures of the Kathmandu Valley, and the Garuda Narayan image is often cited among them, although its exact date and the identity of its patron are not recorded. The sculpture has been honoured for centuries by worshippers at Changu and has become one of the iconic images of Nepali religious art. Its survival in its original sacred context, rather than in a museum, makes it especially valuable for understanding how Licchavi images functioned in everyday worship.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Carved Movement",
+          "text": "The sculpture shows Vishnu seated astride Garuda, who spreads his wings as if in flight. Vishnu's multiple arms hold his attributes, and his posture is calm and regal, contrasting with Garuda's dynamic, outstretched form. The stone is dark and polished in places by centuries of touch and offerings. The sculptor balanced the composition carefully, with Garuda's wings creating a horizontal sweep beneath the vertical figure of Vishnu, giving the image a sense of upward movement. Details such as the feathers of Garuda's wings and the jewellery worn by Vishnu are rendered with care. The sculpture is set within the courtyard near the temple, where it can be viewed from several sides. Its scale is modest, but its presence is powerful, and visitors often find it one of the most memorable images in the courtyard of Changu Narayan.",
+          "sourceIds": ["pal_1974", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Eagle and the God",
+          "text": "Garuda is the king of birds, a mythical being with an eagle's head and wings and a human body, who serves as Vishnu's vehicle. In Hindu mythology he is the enemy of serpents, having fought them to obtain the nectar of immortality to win his mother's freedom. His loyalty and speed make him a symbol of devotion and of the swift arrival of divine help. Vishnu, holding the conch, discus, mace and lotus, is shown as the preserver who rides out to protect the world. The image of Vishnu on Garuda is particularly important in Nepal, where it is associated with Changu and with royal power. Kings often represented themselves as devotees of Vishnu, and the image of the god riding to the rescue of the world resonated with their claims to protect the realm and its people.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Honouring Garudanarayan",
+          "text": "Devotees honour the Garuda Narayan image as part of their worship at Changu, offering flowers, rice and red powder and touching the image or its base. During festivals dedicated to Vishnu, such as Haribodhini Ekadashi, the image receives special attention. Garuda is also honoured in his own right, and devotees seeking protection from snakes or illness may pray to him. The image's presence in the courtyard makes it accessible to all visitors, including those who cannot enter the sanctum, and it often attracts small groups listening to guides explain its significance. Visitors should view the image respectfully, avoid touching it and be patient if worshippers are making offerings. Photographing the image is generally permitted, but without flash and without obstructing devotees. A guide can explain the mythology of Garuda and his place in Vishnu worship across Nepal.",
+          "sourceIds": ["saalik_editorial", "levy_1990"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Guarding a Treasure",
+          "text": "The Garuda Narayan image is among the most valuable sculptures in Nepal, and its protection is a priority. Licchavi sculptures have been targeted by thieves, and several images from the valley were stolen and sold abroad in past decades, though some have since been returned. Security at Changu includes supervision by site staff and, for some images, protective cages or barriers. Weathering and the accumulation of offerings also affect the stone surface, and conservation must be gentle to preserve the original carving. The 2015 earthquake shook the courtyard, and sculptures were inspected for damage and displacement. Documentation is essential, both to monitor condition and to aid identification in case of theft. Saalik's field collectors are asked to photograph the image systematically from all sides, recording details that would help identify it if it were ever removed.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Look for the god in flight. In this black stone carving, around fourteen centuries old, Vishnu sits calmly on the back of Garuda, the king of birds, whose wings spread wide as if he has just taken off. Garuda is half eagle and half man, the sworn enemy of serpents, and the fastest servant any god could have. When the world is in danger, this is how Vishnu arrives. The temple you are standing beside is often called Garudanarayan, after exactly this image. Look at Vishnu's hands: conch, discus, mace and lotus, the tools of a preserver. Images like this have been stolen from Nepal in the past, so the community watches over it closely. Why are Garuda and the serpents enemies? Book a verified local storyteller nearby and let a guide tell you the story."
+      },
+      "nepaliSummary": "गरुडनारायण मूर्तिमा उड्दै गरेका गरुडमाथि विष्णु बसेको दृश्य कुँदिएको छ, जुन लिच्छविकालीन उत्कृष्ट कला मानिन्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:00",
+        "lightingNotes": "Polished black stone reflects harsh sun; overcast light shows the wing feathers best.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full image square-on with Vishnu and Garuda centred." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing wing depth." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the temple behind." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Vishnu's hands and attributes." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Image in the courtyard context." }
+        ],
+        "occlusionNotes": "Offerings, protective cages and groups of visitors stand in front of the image.",
+        "restrictions": "No touching and no flash."
+      },
+      "walkingTourStop": { "sequence": 3, "dwellMinutes": 8, "talkingPoint": "Explain Garuda's mythology and why the temple is called Garudanarayan." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Exact location in the courtyard and stylistic date to confirm." }
+    },
+    {
+      "id": "chg_bhupatindra_cage_statue",
+      "names": { "en": "King Bhupatindra Malla Cage Statue", "ne": "राजा भूपतीन्द्र मल्ल र रानीको पिँजडाभित्रको सालिक", "romanized": "Bhupatindra Mallako Salik", "romanizedLanguage": "Nepali" },
+      "aliases": ["Bhupatindra Malla and Queen Statue, Changu"],
+      "monumentType": "ROYAL_STATUE",
+      "tradition": "CIVIC_ROYAL",
+      "era": { "dynasty": "Malla", "century": "late 17th to early 18th century CE", "foundingYearCE": null, "datingBasis": "chronicle", "patron": "Bhupatindra Malla" },
+      "geo": { "lat": 27.7161, "lng": 85.4275, "elevationM": 1540, "geofenceRadiusM": 15, "municipality": "Changunarayan Municipality", "district": "Bhaktapur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["gilt_bronze", "iron"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["king and queen kneeling with folded hands facing the temple"],
+        "distinguishingFeatures": ["gilded statues of a royal couple enclosed in a protective metal cage", "faces the temple's main door"],
+        "confusableWith": ["bkt_bhupatindra_malla_saalik", "pat_yoganarendra_malla_saalik"],
+        "disambiguationTip": "At Changu the royal couple kneel together inside a cage; in Bhaktapur Bhupatindra sits alone on a column, and Patan's Yoganarendra kneels under a cobra hood."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A King and Queen in Devotion",
+          "text": "In the courtyard of Changu Narayan, gilded statues of King Bhupatindra Malla of Bhaktapur and his queen kneel in devotion, facing the temple, enclosed in a protective metal cage. Bhupatindra, who ruled Bhaktapur from 1696 to 1722, was the great builder king who raised Nyatapola and remodelled the Fifty-Five Window Palace, and his patronage extended to Changu Narayan, which lay within Bhaktapur's kingdom. The temple was rebuilt in 1702 after a fire, during his reign, and the royal statues commemorate the king's devotion to Vishnu. The queen is commonly identified as Bhuvan Lakshmi, though this should be confirmed from inscriptions. The statues complement the famous column of Bhupatindra in Bhaktapur Durbar Square, showing the king in two different devotional settings: before the royal goddess in his capital and before Vishnu on this sacred hill.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Why a Cage?",
+          "text": "The statues of the king and queen are made of gilt bronze and set on a platform facing the temple, kneeling side by side with their hands joined. Unusually, they are enclosed in a metal cage, which protects them from theft and damage. The cage reflects a sad reality of heritage in Nepal: in the late twentieth century many valuable images and statues were stolen from temples and sold abroad, and protective measures became necessary. The cage does not obscure the statues entirely, and visitors can see the royal couple through its bars. The gilt-bronze casting shows the skill of Bhaktapur's metalworkers, with detailed clothing, jewellery and facial features. The statues' placement aligns them with the temple's doorway, so that the king and queen remain in perpetual worship, just as Bhupatindra's statue in Bhaktapur gazes toward Taleju's courtyard.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Royal Devotion Before Vishnu",
+          "text": "The kneeling posture and joined hands of the king and queen express devotion to Vishnu, the deity of Changu Narayan. By placing their images before the temple, the royal couple ensured that their worship would continue forever. Such statues also asserted the king's legitimacy as a devotee and protector of the sacred site, linking his rule with Vishnu's role as preserver of the cosmic order. Kings of the Malla period often identified themselves with Vishnu, and some were praised in inscriptions as his incarnations. The presence of the queen beside the king emphasises the importance of royal women in religious patronage, a theme visible across the valley in temples founded by queens such as Riddhi Lakshmi in Kathmandu. Together the statues tell a story of royal piety, patronage and the close relationship between kings and gods.",
+          "sourceIds": ["slusser_1982", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Remembering the Royal Patrons",
+          "text": "The royal statues do not receive formal worship like the deities in the courtyard, but they are treated with respect, and visitors often pause to look at them through the cage. Guides use the statues to tell the story of Bhupatindra Malla and his role in shaping Bhaktapur and Changu Narayan. For Nepali visitors the statues are reminders of the Malla kings, whose patronage created much of the valley's architectural heritage. During festivals at Changu, when the courtyard fills with pilgrims, the statues remain a silent presence before the temple. Their cage also serves as a reminder of the importance of protecting heritage, prompting conversations about theft and conservation. Visitors should not attempt to reach through the cage or touch the statues, and should be mindful of worshippers moving around the courtyard as they take their photographs.",
+          "sourceIds": ["saalik_editorial", "levy_1990"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protection from Theft",
+          "text": "The cage around the statues is itself a conservation measure, protecting them from theft, a serious threat to Nepal's heritage. In past decades many sculptures and statues were stolen from temples in the valley and sold on international art markets, and efforts to recover them continue. The statues' gilt-bronze surfaces also require care to prevent corrosion and to preserve the gilding. The 2015 earthquake shook the courtyard, and the statues and their platform were inspected for damage. Conservation of metal statues requires specialist expertise and coordination with the site's management and the Department of Archaeology. Documentation, including detailed photographs, helps both to monitor condition and to identify the statues if they were ever stolen. Saalik's field collectors are asked to photograph the statues through the cage from all angles, recording details of their faces, clothing and posture.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "In front of the temple, a king and queen kneel side by side, hands joined in prayer, their gilded bodies glinting behind iron bars. He is Bhupatindra Malla, the builder king of Bhaktapur, who ruled when this temple was rebuilt after a fire in 1702, and beside him is his queen. You may already have met him in Bhaktapur Durbar Square, seated alone on a column. Here the royal couple worship Vishnu together, forever. So why the cage? Because in the last century, thieves stripped many of Nepal's temples of their sacred images and sold them abroad, and communities had to lock up their treasures to keep them. Some stolen images have recently come home. Book a verified local storyteller nearby and let a guide tell you the story of Nepal's lost gods."
+      },
+      "nepaliSummary": "चाँगुनारायण मन्दिर अगाडि राजा भूपतीन्द्र मल्ल र रानीका सुनौला सालिक चोरीबाट जोगाउन पिँजडाभित्र राखिएका छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:00",
+        "lightingNotes": "Cage bars cast shadows in direct sun; overcast light gives cleaner views through the bars.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Royal couple through the cage with faces centred." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the temple door behind." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique showing the platform." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "The king's face and joined hands through the bars." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Cage and statues before the temple." }
+        ],
+        "occlusionNotes": "Cage bars and reflections cut across the statues, and visitors stand in front.",
+        "restrictions": "Do not reach through the cage or touch the statues."
+      },
+      "walkingTourStop": { "sequence": 4, "dwellMinutes": 6, "talkingPoint": "Connect Bhupatindra's two statues and discuss heritage theft." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Queen's identity and the statues' date to confirm from inscriptions." }
+    },
+    {
+      "id": "chg_chhinnamasta",
+      "names": { "en": "Chhinnamasta Devi Shrine", "ne": "छिन्नमस्ता देवी मन्दिर", "romanized": "Chhinnamasta", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Chhinnamasta Temple Changu"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "later Malla centuries CE (attributed on style)", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.7164, "lng": 85.428, "elevationM": 1540, "geofenceRadiusM": 15, "municipality": "Changunarayan Municipality", "district": "Bhaktapur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 2,
+        "primaryMaterials": ["fired_brick", "carved_wood", "clay_tile"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["Chhinnamasta, the self-decapitated goddess holding her own head and a sword", "struts carved with Tantric goddesses"],
+        "distinguishingFeatures": ["two-tiered goddess temple in a corner of the Changu courtyard", "smaller than the main temple with carved struts"],
+        "confusableWith": ["chg_kileshwar"],
+        "disambiguationTip": "Chhinnamasta's shrine is a two-tiered goddess temple; Kileshwar is a smaller Shiva shrine with a lingam and a Nandi in front."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Goddess Shrine Beside Vishnu",
+          "text": "In the courtyard of Changu Narayan stands a two-tiered temple dedicated to Chhinnamasta, one of the ten Mahavidyas, the great wisdom goddesses of Tantric Hinduism. Its precise date has not been established in Saalik's sources, and it is attributed on stylistic grounds to the later Malla period. The presence of a powerful Tantric goddess beside the ancient temple of Vishnu reflects the religious world of the Malla kings, in which goddess worship and Tantric ritual became central to royal and popular religion. Many Vishnu temples in the valley include shrines to goddesses and to Shiva, creating complexes in which different traditions coexist. Chhinnamasta's temple at Changu is one of the most striking examples, and it draws devotees who seek the goddess's fierce protection. Field documentation is still needed to confirm its history, patron and any inscriptions it may carry.",
+          "sourceIds": ["slusser_1982", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Two-Tiered Courtyard Temple",
+          "text": "Chhinnamasta's temple is a two-tiered pagoda in the Newar style, smaller than the main temple, with brick walls, carved wooden doors and struts supporting its roofs. Its struts depict goddesses and Tantric deities, echoing the imagery of the main temple's struts. The temple's position within the courtyard places it among the many shrines and sculptures that surround the central temple, contributing to the dense sacred landscape of the site. Its scale allows visitors to examine its carvings closely. Like many smaller temples in the valley, it has been repaired and partly rebuilt over the centuries, and some elements may be later replacements. Field collectors are asked to record its struts, doors and any inscriptions, which would help to establish its date and history. The temple's form is typical of the goddess shrines built during the Malla period across the valley.",
+          "sourceIds": ["bernier_1979", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Severed-Headed Goddess",
+          "text": "Chhinnamasta is one of the most startling images in Hindu iconography. She is depicted holding her own severed head in one hand and a sword in the other, with three streams of blood flowing from her neck: one into her own mouth and two into the mouths of her attendants. She often stands on a copulating couple, symbolising her mastery over desire. The image expresses Tantric ideas about self-sacrifice, the transcendence of ego and the nourishment of others through one's own life force. It also represents the cycle of life, death and regeneration. For devotees, Chhinnamasta is a fierce protector who removes obstacles and grants spiritual power. Her image is not meant to shock for its own sake but to confront the devotee with truths about existence that gentler images cannot convey as directly or as memorably.",
+          "sourceIds": ["pal_1974", "levy_1990"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Worship of a Fierce Goddess",
+          "text": "Chhinnamasta is worshipped at Changu by devotees who seek her protection and blessings, with offerings of flowers and red powder and, on certain occasions, animal sacrifices, in keeping with the traditions of Tantric goddess worship. Dashain, the great festival of the goddess, is an important time for her shrine, and Tantric rituals may be performed by priests, some of them restricted to initiates. Devotees visiting the main temple often pay respects at Chhinnamasta's shrine as part of their circuit of the courtyard. Visitors are welcome to observe from a respectful distance, but should not enter the sanctum without permission and should avoid photographing worshippers or rituals. A guide can explain the meaning of Chhinnamasta's iconography, which visitors often find puzzling, and her place among the ten Mahavidyas, the wisdom goddesses of Tantric tradition.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Caring for the Courtyard Shrines",
+          "text": "Chhinnamasta's temple, like other structures in the Changu courtyard, was affected by the 2015 earthquake and required inspection and repair. Its wooden struts and doors are vulnerable to weathering on the exposed hilltop, and its roof must be maintained to keep out monsoon rain. Restoration at Changu after 2015 was led by the Department of Archaeology with partners, and smaller temples were included in the work. The temple's active worship means that conservation must be coordinated with priests and that offerings and ritual use must be taken into account. Documentation of the temple's carvings and structure is important for monitoring its condition and for future repairs. Saalik's field collectors are asked to photograph the temple's struts and doors in detail and to record any inscriptions, so that its history can be better understood and shared.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "In a corner of the courtyard, a smaller two-roofed temple belongs to one of the most startling goddesses in Hindu tradition: Chhinnamasta, the one who cut off her own head. In her images she holds her severed head in her hand while three streams of blood arc from her neck, feeding herself and two attendants. It sounds terrifying, but the meaning is profound: self-sacrifice that nourishes others, and victory over the ego. She is one of the ten great wisdom goddesses of Tantric worship, and her shrine stands right beside Vishnu's ancient temple. Look at the carved struts for other fierce goddesses. Why would Vishnu share his courtyard with her? Book a verified local storyteller nearby and let a guide explain the ten wisdom goddesses."
+      },
+      "nepaliSummary": "छिन्नमस्ता देवी मन्दिर चाँगुनारायण परिसरमा रहेको, आफ्नै शिर काटेकी तान्त्रिक देवी छिन्नमस्ताको दुई तले मन्दिर हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "Morning light reaches the courtyard corner; the struts fall into shade later in the day.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Temple facade with both roofs." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the struts." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the main temple behind." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "A goddess carving on one strut." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Shrine within the courtyard." }
+        ],
+        "occlusionNotes": "Worshippers and offerings at the door, and courtyard visitors passing.",
+        "restrictions": "Do not photograph rituals or sacrifices; sanctum by permission only."
+      },
+      "walkingTourStop": { "sequence": 9, "dwellMinutes": 6, "talkingPoint": "Explain Chhinnamasta's iconography and the ten Mahavidyas." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Date, patron and dedication details to confirm on site." }
+    },
+    {
+      "id": "chg_sridhar_vishnu",
+      "names": { "en": "Sridhar Vishnu Sculpture", "ne": "श्रीधर विष्णु मूर्ति", "romanized": "Shridhar Vishnu", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Shridhar Vishnu Stele"],
+      "monumentType": "STONE_IMAGE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Licchavi", "century": "Licchavi or early medieval centuries CE (stylistic dating)", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.7161, "lng": 85.4279, "elevationM": 1540, "geofenceRadiusM": 15, "municipality": "Changunarayan Municipality", "district": "Bhaktapur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["black_stone"],
+        "guardianVahanas": ["Garuda in human form beside Vishnu"],
+        "deityMudrasWeapons": ["standing four-armed Vishnu flanked by Lakshmi and Garuda"],
+        "distinguishingFeatures": ["black stone stele of a standing Vishnu triad", "finely carved crown and jewellery"],
+        "confusableWith": ["chg_garuda_narayan"],
+        "disambiguationTip": "Sridhar Vishnu stands upright between two attendants; Garuda Narayan shows Vishnu riding a flying Garuda."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Vishnu as Sridhar",
+          "text": "Among the sculptures in Changu Narayan's courtyard is an image of Vishnu in the form known as Sridhar, 'bearer of Shri', the goddess of fortune, shown with Vishnu's consort Lakshmi and his mount Garuda at his side. Sridhar Vishnu images were popular in the Kathmandu Valley from the Licchavi period onward, and the Changu example is attributed on stylistic grounds to the Licchavi or early medieval period, though its exact date has not been established in Saalik's sources. Such images were often donated by individuals or families as acts of merit, and some bear inscriptions recording their donors. The Sridhar Vishnu at Changu is one of many images that make the courtyard a museum of Vishnu's forms, and field documentation will help to confirm its date, inscription and relationship to similar images elsewhere in the valley.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Triad in Stone",
+          "text": "The image is carved on a stone stele and shows Vishnu standing upright in the centre, with four arms holding his attributes, flanked by smaller figures of Lakshmi and Garuda. The composition follows a standard arrangement for Vishnu triads in Licchavi and early medieval Nepali art, with the central figure larger and frontal and the attendants turned slightly toward him. Vishnu wears a tall crown and jewellery, and his garments are rendered with delicate folds. Garuda often appears in human form with wings and folded hands, while Lakshmi holds a lotus or a fly-whisk. The carving's quality reflects the skill of the valley's sculptors, who adapted Gupta-period Indian models into a distinctive Nepali style. The stele is set within the courtyard, where visitors can approach it closely, though they should never touch its surface.",
+          "sourceIds": ["pal_1974", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Fortune and Devotion",
+          "text": "Sridhar Vishnu emphasises the god's relationship with Shri or Lakshmi, the goddess of prosperity, beauty and good fortune. By bearing Shri, Vishnu ensures the well-being of the world and of his devotees. Lakshmi's presence beside him represents the inseparability of the preserver and the goddess of abundance, while Garuda represents loyal devotion and the swift action of the divine. The four attributes in Vishnu's hands, the conch, discus, mace and lotus, are commonly interpreted as symbols of creation, the power of the mind, strength and purity. For worshippers, praying before Sridhar Vishnu brings blessings of prosperity and harmony. The image also illustrates the Nepali tradition of honouring Vishnu not only in his heroic avatars but also in his gentle, beneficent aspect as protector of the household and the community.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Prayers for Prosperity",
+          "text": "Devotees honour the Sridhar Vishnu image with offerings of flowers, rice and red powder, and some pray specifically for prosperity and family well-being, in keeping with Vishnu's role as the bearer of fortune. On Ekadashi days and during Vishnu festivals, the image receives additional attention. Because it is accessible in the courtyard, it forms part of the circuit that pilgrims follow around the temple, pausing at each important image. Visitors interested in Nepali sculpture often linger here, comparing the image with the other Vishnu forms in the courtyard. Guides can point out the differences between Sridhar Vishnu, Garuda Narayan, Trivikrama and Narasimha, helping visitors understand how a single deity is represented in many forms. Visitors should view the image respectfully, avoid touching it and wait for worshippers to finish before photographing or studying the details.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Recording a Courtyard Stele",
+          "text": "The Sridhar Vishnu stele, like the other stone images at Changu, faces weathering on the exposed hilltop and the effects of offerings, which can accumulate and discolour the stone. The 2015 earthquake shook the courtyard, and images were inspected for cracks and displacement. Theft is a risk for all Licchavi and early medieval sculptures, and documentation helps to protect them. If the stele bears an inscription, recording and transcribing it would add important information about its date and donor. Conservation should be undertaken by specialists, coordinated with the temple's priests, and should avoid harsh cleaning. Saalik's field collectors are asked to locate the image in the courtyard, photograph it from all angles, record any inscription and note its condition, so that it can be properly documented in the corpus and monitored over the coming years.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Here Vishnu stands calm and upright, four arms holding the conch, discus, mace and lotus, with the goddess of fortune on one side and Garuda, hands folded, on the other. This form is called Sridhar, the bearer of Shri, the goddess of prosperity, and families come to images like this to pray for good fortune and harmony at home. The carving's style links it to the early centuries of Nepali sculpture, when artists here took ideas from India's Gupta age and made them their own. In this one courtyard you can meet Vishnu as a cosmic giant, a man-lion, a striding dwarf and, here, a gentle protector. Can you spot the differences? Book a verified local storyteller nearby and let a guide introduce you to all of Vishnu's faces."
+      },
+      "nepaliSummary": "श्रीधर विष्णु मूर्तिमा लक्ष्मी र गरुडसहित उभिएका चतुर्भुज विष्णु कुँदिएका छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:00",
+        "lightingNotes": "Even overcast light shows the fine jewellery carving; avoid flash on dark stone.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Stele square-on with all three figures." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique emphasising relief depth." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the surrounding shrines." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Vishnu's crown and attributes." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Stele within the courtyard." }
+        ],
+        "occlusionNotes": "Offerings and red powder cover parts of the stele and visitors stand nearby.",
+        "restrictions": "No touching and no flash."
+      },
+      "walkingTourStop": { "sequence": 8, "dwellMinutes": 6, "talkingPoint": "Compare Sridhar Vishnu with the other Vishnu forms in the courtyard." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Location, date and any donor inscription to confirm on site." }
+    },
+    {
+      "id": "chg_trivikrama",
+      "names": { "en": "Trivikrama Vikrant Relief", "ne": "त्रिविक्रम विक्रान्त मूर्ति", "romanized": "Trivikram", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Trivikrama Relief", "Vamana Avatar Relief"],
+      "monumentType": "STONE_RELIEF",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Licchavi", "century": "Licchavi centuries CE (stylistic dating)", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.7162, "lng": 85.428, "elevationM": 1540, "geofenceRadiusM": 15, "municipality": "Changunarayan Municipality", "district": "Bhaktapur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["black_stone"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["Vishnu striding with one leg raised high across the heavens", "King Bali and the dwarf Vamana in the lower scene"],
+        "distinguishingFeatures": ["stone relief of a giant striding figure", "small narrative figures at the base"],
+        "confusableWith": ["chg_vishwaroopa_relief", "chg_narasimha_saalik"],
+        "disambiguationTip": "Trivikrama shows one giant striding figure with a leg raised; Vishwaroopa shows many heads and arms, and Narasimha shows a lion-headed figure tearing a demon."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Three Steps Across the Universe",
+          "text": "The Trivikrama relief at Changu Narayan depicts one of the most famous stories of Vishnu: his incarnation as Vamana, a dwarf, who tricked the demon king Bali into granting him as much land as he could cover in three steps, then grew to cosmic size and strode across earth, sky and heaven. The form of Vishnu taking these steps is called Trivikrama. Images of Trivikrama were important in Licchavi Nepal, and Licchavi inscriptions record the dedication of such images. The Changu relief is attributed to the Licchavi period on stylistic grounds, although its exact date is not recorded in Saalik's sources. It belongs to the extraordinary collection of early Vishnu sculptures in the courtyard, which together illustrate the range of Vishnu's avatars as they were understood and worshipped in the valley more than a thousand years ago.",
+          "sourceIds": ["pal_1974", "vajracharya_1973"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Capturing a Cosmic Stride",
+          "text": "The relief shows Vishnu as Trivikrama with one leg planted on the earth and the other raised high, extending toward the upper edge of the stone to suggest his step across the heavens. His many arms hold his attributes, and his body is shown in a dynamic pose that conveys enormous scale and energy. Smaller figures at the base, often identified as King Bali, his queen and the dwarf Vamana receiving the gift, tell the earlier part of the story. The sculptor used the vertical format of the stone to emphasise the upward stride, a bold composition that brings movement into stone. The carving's quality reflects the sophistication of Licchavi workshops. The relief's placement in the courtyard allows close viewing, and the contrast between the tiny figures below and the giant figure above makes the story legible even to visitors unfamiliar with it.",
+          "sourceIds": ["pal_1974", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Humility and Cosmic Order",
+          "text": "The story of Vamana and Bali carries several meanings. Bali was a generous and powerful king who had conquered the gods' realms, upsetting the cosmic order. Vishnu, in the humble form of a dwarf, restored balance not through battle but through a request for a small gift. When Bali kept his word, Vishnu's three steps reclaimed the universe, and in many versions Bali was rewarded for his generosity with rule over the underworld. The image thus combines themes of humility, the keeping of promises and the restoration of order. In Licchavi Nepal, kings associated themselves with Vishnu's role as upholder of order, and Trivikrama images may have carried political meaning as well as devotional significance. For visitors, the relief offers a vivid introduction to one of the best-loved stories in all of Hindu mythology.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Remembering Vamana",
+          "text": "The Trivikrama relief is honoured by devotees circling the courtyard, who make offerings and pause to pray. The story of Vamana is remembered in Hindu festivals, and in some traditions a day in the month of Bhadra is dedicated to him as Vamana Dwadashi. At Changu, Vishnu festivals such as Haribodhini Ekadashi bring large numbers of pilgrims, who honour all of Vishnu's images in the courtyard. Guides often tell the story of Vamana and Bali at this relief, using its figures to illustrate the narrative, and children in particular enjoy the story of the dwarf who grew to cosmic size. Visitors should view the relief without touching it, as its carved surface is fragile, and should allow worshippers space to make their offerings before stepping closer to photograph or to study the details of the carving.",
+          "sourceIds": ["saalik_editorial", "levy_1990"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Weathering on the Hilltop",
+          "text": "The Trivikrama relief has survived many centuries on the exposed hilltop of Changu, but its surface shows the effects of weathering, and some details have softened. The accumulation of offerings, especially oil and red powder, can damage the stone over time. The 2015 earthquake shook the courtyard, and the relief was checked for damage. Protection against theft is important, given the value of Licchavi sculptures on the illegal art market. Conservation should be undertaken by specialists, avoiding harsh cleaning, and coordinated with the temple's priests. High-resolution photography and three-dimensional scanning can document the relief's current state and support long-term monitoring. Saalik's field collectors are asked to photograph the relief from multiple angles, including raking light that reveals worn details, contributing to the digital record of the sculptures at Changu Narayan.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Find the stone giant with one leg raised high, as if stepping across the sky. This is Trivikrama, Vishnu taking his three cosmic steps. The story goes like this: a powerful demon king named Bali had conquered heaven itself. Vishnu came to him disguised as a humble dwarf and asked for a tiny gift, only as much land as he could cover in three steps. Bali laughed and agreed. Then the dwarf grew and grew, until one step covered the earth, the second the sky, and the third had nowhere left to go but Bali's own head. Look at the little figures at the bottom of the stone and the giant above them. Book a verified local storyteller nearby and let a guide tell you how Bali was rewarded for keeping his promise."
+      },
+      "nepaliSummary": "त्रिविक्रम मूर्तिमा वामन अवतारका विष्णुले तीन पाइलामा पृथ्वी, आकाश र स्वर्ग नापेको दृश्य कुँदिएको छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:00",
+        "lightingNotes": "Overcast light reveals carved detail; raking early light helps on worn areas.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full relief square-on with the raised leg." },
+          { "angle": "LEFT_45", "framingNote": "Left raking angle across the striding figure." },
+          { "angle": "RIGHT_45", "framingNote": "Right raking angle on the base figures." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Bali and Vamana figures at the base." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Relief within the courtyard." }
+        ],
+        "occlusionNotes": "Offerings and visitors gather in front, and a protective cage may surround the relief.",
+        "restrictions": "No touching and no flash."
+      },
+      "walkingTourStop": { "sequence": 6, "dwellMinutes": 8, "talkingPoint": "Tell the Vamana and Bali story using the figures in the relief." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Location in the courtyard and stylistic date to confirm." }
+    },
+    {
+      "id": "chg_narasimha_saalik",
+      "names": { "en": "Narasimha Avatar Stone Saalik", "ne": "नरसिंह अवतार ढुङ्गे सालिक", "romanized": "Narasimha Salik", "romanizedLanguage": "Nepali" },
+      "aliases": ["Narasimha Stone Statue Changu", "Narasimha Relief Changu"],
+      "monumentType": "STONE_IMAGE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Licchavi", "century": "Licchavi centuries CE (stylistic dating)", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.7163, "lng": 85.4279, "elevationM": 1540, "geofenceRadiusM": 15, "municipality": "Changunarayan Municipality", "district": "Bhaktapur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["black_stone"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["lion-headed Vishnu tearing open the demon Hiranyakashipu across his lap"],
+        "distinguishingFeatures": ["stone image of the man-lion avatar", "demon laid across the god's knees"],
+        "confusableWith": ["chg_trivikrama", "ktm_hanuman_dhoka"],
+        "disambiguationTip": "Changu's Narasimha is a stone image in the hilltop courtyard; Kathmandu's famous Narasimha stands inside the Hanuman Dhoka palace."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Man-Lion of Changu",
+          "text": "Among the stone images in Changu Narayan's courtyard is a sculpture of Narasimha, the man-lion avatar of Vishnu, attributed on stylistic grounds to the Licchavi period. Narasimha images were among the most popular Vishnu forms in the Kathmandu Valley, and examples from various periods survive, including the famous seventeenth-century Narasimha inside Hanuman Dhoka palace in Kathmandu. The Changu image, being older, shows how the form was represented by early Nepali sculptors. Its exact date and patron are not recorded in Saalik's sources, and field documentation will help to confirm its history. The word 'saalik', Nepali for statue, is used in the seed list's name for this image. Together with the Trivikrama and Vishwaroopa reliefs and the Garuda Narayan image, it forms part of the courtyard's remarkable sequence of Vishnu's forms.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Ferocity in Stone",
+          "text": "The Narasimha image shows Vishnu with a lion's head and a human body, with the demon king Hiranyakashipu laid across his knees. His claws tear open the demon's abdomen, a moment of intense violence rendered with controlled skill. The god's multiple arms may hold attributes while the lower hands perform the act of destruction. The carving captures the contrast between Narasimha's fierce lion face, with open mouth and mane, and the stylised calm of the composition. Licchavi sculptors balanced drama and dignity, producing images that convey divine power without chaos. The stone's dark surface, polished in places by touch, adds to the image's presence. Its placement in the courtyard allows visitors to study it closely, though they should not touch it. Field collectors are asked to document its pose and attributes carefully for comparison with other images.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Protector of the Devoted",
+          "text": "The story of Narasimha tells of the demon king Hiranyakashipu, who had obtained a boon that he could not be killed by man or beast, by day or night, inside or outside, on the ground or in the sky, by any weapon. Confident in his invulnerability, he persecuted his own son, Prahlada, a devotee of Vishnu. Vishnu emerged from a pillar as Narasimha, neither man nor beast, at twilight, neither day nor night, on a threshold, neither inside nor outside, and killed the demon on his lap, neither ground nor sky, with his claws, which were not weapons. The story celebrates the protection of devotees and the triumph of divine ingenuity over arrogance. Narasimha is invoked for protection against danger and fear, and his image at Changu reassures devotees that Vishnu will always find a way to save those who trust him.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Narasimha Jayanti and Protection",
+          "text": "Narasimha is honoured on Narasimha Jayanti, the anniversary of his appearance, which falls in late spring, and devotees visit his images to pray for protection. At Changu the Narasimha image receives offerings as part of the courtyard circuit, especially during Vishnu festivals. Devotees facing danger or fear may make special prayers, and some offer red powder and flowers to the image. The story of Prahlada and Narasimha is often told to children as a lesson in faith and courage. Guides at Changu use the image to tell the story, pointing out the details of the god's lion head and the demon on his lap. Visitors should view the image respectfully, without touching it, and should be aware that it remains a living object of devotion as well as a work of art that has been honoured here for many centuries.",
+          "sourceIds": ["saalik_editorial", "levy_1990"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protecting the Courtyard's Avatars",
+          "text": "The Narasimha image faces the same conservation challenges as other stone sculptures at Changu: weathering on the exposed hilltop, accumulation of offerings and the risk of theft. The 2015 earthquake shook the courtyard, and sculptures were inspected and, where necessary, reset. Specialists must handle conservation carefully, avoiding harsh cleaning that could remove original surfaces. Documentation through detailed photography is important for monitoring and security. The Department of Archaeology and the site's management oversee the courtyard, working with priests to balance conservation with worship. Saalik's field collectors are asked to locate the image, photograph it from all angles, record its pose and attributes, and note its condition. These records will strengthen the corpus and support efforts to protect what may be one of the oldest representations of Narasimha in the whole valley.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Look for the lion's face. This stone image shows Narasimha, Vishnu as a man-lion, tearing open a demon laid across his lap. The demon king Hiranyakashipu thought he could never die: not by man or beast, not by day or night, not inside or outside, not on the ground or in the sky. So Vishnu burst out of a pillar as a creature neither man nor beast, at twilight, on a threshold, and killed him on his lap with his claws. Every condition met, every loophole closed. He did it to save the demon's own son, a boy who refused to stop praying to Vishnu. Carved here more than a thousand years ago, this is one of the valley's oldest Narasimhas. Book a verified local storyteller nearby and let a guide tell you Prahlada's story."
+      },
+      "nepaliSummary": "नरसिंह अवतार ढुङ्गे सालिकमा विष्णुले नरसिंह रूपमा हिरण्यकशिपुलाई काखमा राखी वध गरेको दृश्य छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "OVERCAST_MIDDAY",
+        "localTimeWindow": "10:00-12:00",
+        "lightingNotes": "Overcast light shows the lion mane and claws without glare off the polished stone.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Full image square-on with the demon across the lap." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the lion head in profile." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with courtyard context." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Lion face and claws." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Image within the courtyard." }
+        ],
+        "occlusionNotes": "Offerings and visitors stand in front, and a protective railing may surround the image.",
+        "restrictions": "No touching and no flash."
+      },
+      "walkingTourStop": { "sequence": 7, "dwellMinutes": 6, "talkingPoint": "Tell the story of the loophole-closing man-lion." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Location, date and form (stele or free-standing image) to confirm." }
+    },
+    {
+      "id": "chg_kileshwar",
+      "names": { "en": "Kileshwar Mahadev", "ne": "किलेश्वर महादेव", "romanized": "Kileshwar", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Kileshwar Temple Changu"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "HINDU",
+      "era": { "dynasty": "Malla", "century": "date unconfirmed; Malla-style shrine of recent centuries", "foundingYearCE": null, "datingBasis": "architectural_style", "patron": null },
+      "geo": { "lat": 27.716, "lng": 85.4279, "elevationM": 1540, "geofenceRadiusM": 15, "municipality": "Changunarayan Municipality", "district": "Bhaktapur", "ward": null, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 2,
+        "primaryMaterials": ["fired_brick", "carved_wood", "clay_tile"],
+        "guardianVahanas": ["Nandi facing the shrine"],
+        "deityMudrasWeapons": ["Shiva lingam in the sanctum"],
+        "distinguishingFeatures": ["small two-tiered Shiva temple in the Changu courtyard", "carved struts and doorway"],
+        "confusableWith": ["chg_chhinnamasta"],
+        "disambiguationTip": "Kileshwar is the small Shiva temple with a Nandi before it; Chhinnamasta is the goddess shrine nearby."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Shiva in Vishnu's Courtyard",
+          "text": "Kileshwar Mahadev is a small temple to Shiva within the courtyard of Changu Narayan. Its name has been explained as referring to Shiva as 'lord of the stake' or 'lord of the nail', a form associated in some traditions with fixing and protecting sacred ground, though the precise meaning in this local context should be confirmed. Its date has not been established in Saalik's sources, and it is attributed on stylistic grounds to the Malla period or later. The presence of a Shiva temple beside the great temple of Vishnu reflects the inclusive character of Hindu worship in the valley, where devotees honour several deities in a single visit. At Changu the courtyard combines Vishnu's ancient sanctuary with shrines to Shiva and the goddess, creating a complete sacred world. Field documentation is needed to confirm Kileshwar's history, patron and inscriptions.",
+          "sourceIds": ["saalik_editorial", "slusser_1982"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Compact Shiva Pagoda",
+          "text": "Kileshwar is a compact two-tiered pagoda in the Newar style, with brick walls, a carved wooden doorway and struts supporting its roofs. A Nandi, Shiva's bull, faces the shrine. The temple's small scale allows visitors to see its carvings at close range, and its struts depict deities associated with Shiva and the goddess. Its position in the courtyard places it among the many shrines and sculptures that surround the main temple. Like other buildings at Changu, it was affected by the 2015 earthquake and has been repaired. Its architecture is typical of the smaller temples found throughout the valley's sacred complexes, demonstrating the consistency of Newar building traditions across sites and centuries. Field collectors are asked to document its struts, doorway and any inscriptions, which may help to establish its date and the identity of its patrons.",
+          "sourceIds": ["bernier_1979", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Lingam and the Bull",
+          "text": "Inside Kileshwar's sanctum is a Shiva lingam, the abstract form of the god, and outside sits Nandi, the bull who is Shiva's vehicle and devoted attendant. The pairing of lingam and Nandi is the most basic sign of a Shiva temple, recognisable to every Hindu devotee. The struts may depict forms of Shiva and his consort as well as attendant figures. In the context of Changu, the temple reminds visitors that the valley's sacred sites are rarely dedicated to a single god alone: Vishnu, Shiva and the goddess all have their places, and devotees move between them as part of their worship. The name Kileshwar, if linked with the idea of a stake fixing sacred ground, would connect the temple with rituals that establish and protect the sacred space of the hilltop and its ancient sanctuary.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Mondays and Shivaratri at Changu",
+          "text": "Kileshwar receives regular worship from devotees visiting Changu, especially on Mondays, which are sacred to Shiva, and during Maha Shivaratri, when Shiva temples throughout the valley are crowded. Offerings include water, milk, flowers and bel leaves. Because the temple is small and within the courtyard, worship here is often brief and personal, as devotees include it in their circuit of the site. During the month of Shrawan, many women visit to pray for family well-being. The temple's priests and custodians maintain its rituals alongside those of the main temple. Visitors can observe from the courtyard, but should not enter the sanctum without permission and should avoid photographing worshippers. A guide can explain how Shiva and Vishnu worship are combined at Changu and the meaning of the offerings that devotees bring to each shrine.",
+          "sourceIds": ["michaels_2008", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Small Temples After 2015",
+          "text": "Kileshwar, like other small temples in the Changu courtyard, was affected by the 2015 earthquake, and its repair formed part of the restoration of the site led by the Department of Archaeology with partners. Small temples are sometimes overlooked in favour of major monuments, but they are integral to the site's character and require the same care. Wooden struts and doors weather on the exposed hilltop, and roofs must be maintained to keep out monsoon rain. Documentation of the temple's structure and carvings helps conservators plan maintenance and assess condition over time. The temple's active worship means that conservation must be coordinated with priests. Saalik's field collectors are asked to photograph the temple from all angles, record any inscriptions and note its condition, contributing to a complete record of the Changu courtyard and its many monuments.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Not everything in Changu's courtyard belongs to Vishnu. This compact two-roofed temple, with a stone bull waiting faithfully outside, is Kileshwar Mahadev, a shrine to Shiva. In the Kathmandu Valley the great gods are good neighbours: Vishnu's ancient temple shares its hilltop with Shiva here and with a fierce goddess just across the courtyard, and pilgrims honour them all in one visit. On Mondays, Shiva's day, you may see devotees pour water and milk over the lingam inside. Saalik's field team is still researching the temple's exact age and the meaning of its name, which may refer to a sacred stake that fixes holy ground. What do the carved struts show? Book a verified local storyteller nearby and let a guide finish your circuit of the courtyard here."
+      },
+      "nepaliSummary": "किलेश्वर महादेव चाँगुनारायण परिसरभित्रको नन्दीसहितको सानो दुई तले शिव मन्दिर हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "Morning sun lights the small temple's struts; shade falls across it by afternoon.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Temple facade with Nandi in the foreground." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the struts." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the main temple behind." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "A carved strut or the doorway." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple within the courtyard." }
+        ],
+        "occlusionNotes": "Courtyard visitors and offerings crowd the doorway.",
+        "restrictions": "Sanctum by permission only; do not photograph worshippers."
+      },
+      "walkingTourStop": { "sequence": 10, "dwellMinutes": 5, "talkingPoint": "Close the courtyard circuit at Shiva's shrine." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Name meaning, date and patron to confirm on site." }
+    }
+  ]
+}

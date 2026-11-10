@@ -1,0 +1,9 @@
+numpy>=1.24,<3
+Pillow>=10.0,<12
+opencv-python-headless>=4.8,<5
+pytest>=7.4,<9
+
+# Optional heavy backends (not required for tests / SAALIK_ML_FAKE=1):
+# torch>=2.1
+# torchvision>=0.16
+# transformers>=4.38

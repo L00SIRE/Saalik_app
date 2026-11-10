@@ -1,0 +1,844 @@
+{
+  "zoneId": "swayambhunath",
+  "names": { "en": "Swayambhunath", "ne": "स्वयम्भूनाथ", "romanized": "Singu", "romanizedLanguage": "Newa" },
+  "designation": "UNESCO_MONUMENT_ZONE",
+  "unescoReference": "UNESCO WHC 121 - Swayambhu Monument Zone",
+  "district": "Kathmandu",
+  "centroid": { "lat": 27.7149, "lng": 85.29 },
+  "zoneRadiusM": 900,
+  "description": "Swayambhu, Singu in Newar, crowns a hill west of Kathmandu and is one of the valley's oldest Buddhist sites, revered by Newar and Tibetan Buddhists and by Hindus. Its hilltop gathers the great stupa with its painted eyes, the vajra and twin shikharas of Pratap Malla, the Harati shrine and a crowd of votive chaityas, with monasteries on its slopes.",
+  "walkingTour": {
+    "tourId": "swy_hill_of_self_arisen_light",
+    "title": "Swayambhu: The Hill of Self-Arisen Light",
+    "titleNe": "स्वयम्भू: स्वयं उत्पन्न ज्योतिको डाँडा",
+    "startPoint": "Foot of the eastern stairway, Swayambhu",
+    "bestStartTime": "06:30"
+  },
+  "monuments": [
+    {
+      "id": "swy_mahachaitya",
+      "names": { "en": "Swayambhu Mahachaitya", "ne": "स्वयम्भू महाचैत्य", "romanized": "Singu Chaitya", "romanizedLanguage": "Newa" },
+      "aliases": ["Main Mahachaitya Stupa", "Swayambhunath Stupa", "Monkey Temple"],
+      "monumentType": "STUPA",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Licchavi", "century": "5th century CE by chronicle tradition; legendary origins far older", "foundingYearCE": null, "datingBasis": "chronicle", "patron": "Vrishadeva (by chronicle tradition)" },
+      "geo": { "lat": 27.7149, "lng": 85.2904, "elevationM": 1410, "geofenceRadiusM": 60, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 15, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["whitewash_lime", "gilt_repousse_copper", "gold_leaf", "fired_brick"],
+        "guardianVahanas": ["vehicles of the five Buddhas beneath their niches: elephant, horse, peacock, garuda and lion"],
+        "deityMudrasWeapons": ["painted wisdom eyes of the Buddha on all four sides of the harmika", "Nepali numeral one in place of a nose", "gilded images of the five Dhyani Buddhas in niches around the dome"],
+        "distinguishingFeatures": ["white hemispherical dome topped by a gilded square harmika with painted eyes", "thirteen gilded rings forming the spire", "hilltop platform crowded with chaityas and shrines"],
+        "confusableWith": ["bdh_boudha_mahachaitya"],
+        "disambiguationTip": "Swayambhu's stupa is smaller and crowded with shrines on a hilltop; Boudhanath's stupa sits on a vast tiered mandala platform on flat ground."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Stupa Older Than Memory",
+          "text": "Swayambhu Mahachaitya crowns a hill west of Kathmandu and is one of the oldest and most sacred Buddhist monuments in Nepal. Chronicles credit an early Licchavi king, Vrishadeva, with building or enlarging the stupa in the fifth century, and Licchavi-period records confirm that Buddhism flourished in the valley by that time. Legend reaches much further back. The Swayambhu Purana tells that the Kathmandu Valley was once a lake, from which a lotus bloomed bearing a self-arisen flame of light, Swayambhu, and that the stupa was built over this flame. Through the centuries the stupa has been repaired and embellished many times, including after its sack by the Bengal Sultan Shams ud-din Ilyas in 1349. Today it is a pilgrimage centre for Newar Buddhists, Tibetan Buddhists and Hindus alike, and one of the seven monument zones of the World Heritage property.",
+          "sourceIds": ["unesco_whc_121", "slusser_1982", "wright_1877"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Dome, Eyes and Spire",
+          "text": "The stupa follows a classic plan rich in symbolism. A white hemispherical dome rises from a circular base, representing the womb of the universe. Above it sits the harmika, a square block painted on all four sides with the eyes of the Buddha, and above that a spire of thirteen gilded rings, symbolising the stages on the path to enlightenment, crowned by a gilded parasol. Around the dome, gilded shrines house images of the five Dhyani Buddhas. The stupa is surrounded by a crowded platform of chaityas, temples, prayer wheels and shrines accumulated over many centuries, giving the hilltop a dense and vibrant character. The long eastern stairway climbs steeply to the summit, and a second approach from the west passes the hillock of Manjushri, so pilgrims can choose between a hard climb and a gentler path.",
+          "sourceIds": ["gutschow_1997", "korn_1976"],
+          "confidence": "high"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The All-Seeing Eyes",
+          "text": "The eyes painted on the harmika are among the most recognisable images in Nepal. They represent the all-seeing wisdom and compassion of the Buddha, gazing in every direction over the valley. Below and between the eyes, a curling sign resembling a question mark is the Nepali numeral one, symbolising unity and the single path to enlightenment, while a dot between the brows represents insight. The five Dhyani Buddhas around the dome, each with a distinct colour, gesture and animal vehicle, represent different aspects of the enlightened mind. The thirteen rings of the spire rise toward the parasol of liberation. Every element of the stupa is a teaching, and Newar and Tibetan Buddhists circle it clockwise, spinning prayer wheels, as a form of meditation in motion that has been practised on this hill for well over a thousand years.",
+          "sourceIds": ["gutschow_1997", "pal_1974"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Circling the Stupa at Dawn",
+          "text": "Every morning before sunrise, devotees climb Swayambhu's hill to circle the stupa clockwise, spinning prayer wheels, lighting butter lamps and chanting. Newar Buddhists from Kathmandu, Tibetan monks and lay pilgrims, and Hindus who honour the stupa as sacred all share the space. The hill is famously home to troops of rhesus macaques, which earned it the nickname 'Monkey Temple' and are regarded as holy. Major festivals include Buddha Jayanti, celebrating the Buddha's birth, enlightenment and passing, and the Newar Buddhist month of Gunla, during which devotees visit daily and play traditional music. Losar, the Tibetan New Year, also brings crowds. The atmosphere on the hilltop at dawn, with incense smoke drifting through the prayer flags and the valley waking below, is one of the most moving experiences in Kathmandu and well worth the early climb.",
+          "sourceIds": ["locke_1985", "dowman_1995"],
+          "confidence": "high"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Regilded, Then Shaken in 2015",
+          "text": "Swayambhu has been repaired many times. Between 2008 and 2010 the stupa's upper parts were renovated and regilded with gold donated through the Tibetan Nyingma Meditation Center, an international Buddhist organisation, in a project that also drew on traditional Newar metalworking skills. The 2015 earthquake damaged several structures on the hilltop, including the shikhara temples near the top of the eastern stairway and some smaller shrines and monastery buildings, and the main stupa required inspection and repair. Conservation since then has been coordinated by the Department of Archaeology with the hill's local management and conservation bodies and international partners. The hill itself presents risks, since landslides and erosion threaten its slopes, especially during the monsoon. Visitors can help by staying on paths and following signs, particularly on the steep eastern stairway.",
+          "sourceIds": ["doa_nepal", "unesco_whc_121"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "Climb the last of the steep stone steps and look up into the eyes. Painted on all four sides of the golden tower, the eyes of the Buddha gaze across the whole Kathmandu Valley, and the curl beneath them is the Nepali number one, for unity. Legend says this valley was once a lake, and a lotus rose from the water bearing a flame of self-arisen light, Swayambhu. This stupa was built over that flame, and chronicles say a Licchavi king enlarged it more than fifteen hundred years ago. Walk clockwise around the dome with the pilgrims, spin the prayer wheels, and watch out for the monkeys, who consider this hill their own. Who drained the lake, and how? Book a verified local storyteller nearby and let a guide tell you the legend of Manjushri's sword."
+      },
+      "nepaliSummary": "स्वयम्भू महाचैत्य काठमाडौंको पश्चिमी डाँडामा रहेको, बुद्धका आँखा कोरिएको उपत्यकाकै पुरानो र पवित्र स्तूप हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:00-07:30",
+        "lightingNotes": "Sunrise from the east lights the eyes on the harmika, and an early visit avoids the midday haze over the valley.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Stupa from the top of the eastern stairway with the eyes facing camera." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with prayer wheels in the foreground." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the Harati temple in frame." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Harmika eyes, numeral and the gilded spire rings." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "From the western terrace, the stupa above the crowded platform." }
+        ],
+        "occlusionNotes": "Monkeys, pigeons and dense crowds fill the platform, and prayer flags cross the upper views.",
+        "restrictions": "Walk clockwise; foreign visitor entry fee applies; keep food away from the monkeys."
+      },
+      "walkingTourStop": { "sequence": 5, "dwellMinutes": 25, "talkingPoint": "Teach the stupa's symbolism from base to parasol." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Confirm the specifics of 2015 damage and the current management body name." }
+    },
+    {
+      "id": "swy_harati_ajima",
+      "names": { "en": "Harati Devi Mandir (Ajima)", "ne": "हारती देवी (अजिमा) मन्दिर", "romanized": "Harati Ajima", "romanizedLanguage": "Newa" },
+      "aliases": ["Harati Devi / Ajima Mandir", "Hariti Temple", "Ajima Temple Swayambhu"],
+      "monumentType": "PAGODA_TEMPLE",
+      "tradition": "SHARED_HINDU_BUDDHIST",
+      "era": { "dynasty": "Malla", "century": "17th century CE (image tradition)", "foundingYearCE": null, "datingBasis": "tradition", "patron": "Pratap Malla (by tradition)" },
+      "geo": { "lat": 27.7151, "lng": 85.2907, "elevationM": 1410, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 15, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 2,
+        "primaryMaterials": ["fired_brick", "gilt_repousse_copper", "carved_wood"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["goddess Harati holding children, protector against childhood disease"],
+        "distinguishingFeatures": ["small gilded pagoda immediately beside the stupa", "constant stream of families making offerings at the doorway"],
+        "confusableWith": ["bdh_ajima_shrine"],
+        "disambiguationTip": "Swayambhu's Harati temple stands right beside the stupa on the hilltop; Boudha's Ajima shrine is a small pagoda on the flat stupa circuit."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "From Ogress to Protector",
+          "text": "Beside the great stupa stands a small gilded pagoda dedicated to Harati, known to Newars as Ajima, 'grandmother'. Buddhist legend tells that Hariti was once an ogress who devoured other people's children. The Buddha hid one of her own five hundred children, and when she was mad with grief, he taught her to feel the pain she had caused others. Transformed, she became a protector of children and of the Buddhist community. Her temple at Swayambhu is one of the most important in the valley. Local tradition links the present image with the reign of King Pratap Malla in the seventeenth century, when a smallpox epidemic struck Kathmandu and the king is said to have sought the goddess's help. Since then Harati has been honoured especially as the protector of children against diseases, and families still turn to her when a child falls ill.",
+          "sourceIds": ["slusser_1982", "locke_1985"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Gilded Shrine Beside the Stupa",
+          "text": "The Harati temple is a compact pagoda with gilded roofs and a richly decorated facade, set on the hilltop platform close to the main stupa. Its gilded metal roofs and toranas glow against the white dome of the stupa and the colourful prayer flags. The temple's doors and windows are framed by carved and metal decoration, and the shrine is usually busy with devotees, so the surrounding space is crowded with offerings, bells and lamps. Its position beside the stupa reflects the integration of Hariti into Buddhist practice: she is honoured as part of the sacred complex rather than in a separate precinct. The temple's scale is modest, but its richness of decoration and its constant use make it one of the liveliest spots on the hill, a place where visitors can quietly observe intimate family devotion.",
+          "sourceIds": ["korn_1976", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Goddess and Her Children",
+          "text": "Harati is depicted as a mother goddess holding or surrounded by children, a gentle image that contrasts with the fierce ogress of her legend. In Buddhist teaching her story illustrates the transforming power of compassion: even a being who has caused great suffering can become a protector. In Hindu practice she is identified with forms of the goddess associated with disease and healing, particularly smallpox, and her worship overlaps with that of Sitala, the smallpox goddess of northern India. The Newar name Ajima, 'grandmother', expresses intimacy and trust, and Ajima shrines are found throughout the valley, often at the edges of settlements. Offerings to Harati frequently include items for children, such as sweets, and parents bring their sons and daughters to her for blessings, especially after an illness or a recovery.",
+          "sourceIds": ["slusser_1982", "pal_1974"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Mothers, Children and Offerings",
+          "text": "Harati's temple is busy throughout the day with mothers, grandmothers and families bringing children for blessings. Offerings of rice, flowers, red powder, eggs, sweets and coins are made, and many devotees ring the temple's bells as they arrive. When a child falls ill, families come to pray for recovery, and they return to give thanks when the child is well. During festivals, particularly the Newar Buddhist celebrations of Gunla and Buddha Jayanti, the temple receives special worship. The priests who serve the shrine come from Newar Buddhist families, and their rituals combine Buddhist and Hindu elements in characteristic Newar fashion. For visitors, the temple offers a vivid example of how Buddhist and Hindu practices meet at Swayambhu, and of how religious life responds to the most personal concerns of ordinary families.",
+          "sourceIds": ["locke_1985", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Caring for a Busy Shrine",
+          "text": "The Harati temple's constant use creates conservation challenges. Smoke from lamps and incense blackens surfaces, offerings accumulate, and the movement of crowds wears the floors and steps. The gilded roofs and metalwork require periodic cleaning and regilding, and the timber elements must be protected from moisture. The 2015 earthquake shook the Swayambhu hilltop and damaged several structures, and the temple area was inspected and repaired as needed. Conservation at Swayambhu is coordinated by the Department of Archaeology and the hill's management bodies, working with the priests who serve the shrines. Visitors can help by keeping a respectful distance from worshippers, not touching the metalwork and giving priority to families who come with children. Small donations to the shrine also contribute to its upkeep and are welcomed by the priests who care for it.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Beside the great stupa, families crowd around a small golden temple, holding up their children for blessings. This is the shrine of Harati, whom Newars call Ajima, grandmother. Her story is surprising. Buddhist legend says she was once an ogress who ate other people's children, until the Buddha hid one of her own. Mad with grief, she finally understood the pain she had caused, and she became the protector of all children instead. Tradition says a Malla king turned to her when smallpox struck Kathmandu in the seventeenth century, and parents still come when their little ones fall ill. Watch for eggs, sweets and coins among the offerings. Book a verified local storyteller nearby and let a guide explain how a demon became a grandmother."
+      },
+      "nepaliSummary": "हारती (अजिमा) बालबालिकाको रक्षक देवी हुन्; स्वयम्भू स्तूपको छेउको सुनौलो मन्दिरमा परिवारहरू बच्चाको आशीर्वाद लिन आउँछन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:15-07:45",
+        "lightingNotes": "Morning sun lights the gilded roofs; the shrine interior stays dark, so photograph the facade only.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Temple facade with the gilded torana and doorway." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the stupa dome behind." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique showing the roof tiers." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gilded torana and roof ornaments, not the image inside." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Temple beside the stupa on the crowded platform." }
+        ],
+        "occlusionNotes": "Families queue at the doorway constantly, with lamp smoke and offerings in the foreground.",
+        "restrictions": "Do not photograph inside the shrine; give way to families with children."
+      },
+      "walkingTourStop": { "sequence": 6, "dwellMinutes": 8, "talkingPoint": "Tell the ogress-to-protector story and point out offerings made for children." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Image-date tradition and roof tier count to confirm." }
+    },
+    {
+      "id": "swy_vajra_dhatu_mandala",
+      "names": { "en": "Vajra Dhatu Mandala", "ne": "वज्रधातु मण्डल", "romanized": "Vajradhatu Mandala", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Great Vajra of Swayambhu", "Dorje of Swayambhu"],
+      "monumentType": "SHRINE",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Malla", "century": "17th century CE", "foundingYearCE": 1667, "datingBasis": "tradition", "patron": "Pratap Malla" },
+      "geo": { "lat": 27.7148, "lng": 85.2909, "elevationM": 1408, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 15, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["gilt_repousse_copper", "grey_stone"],
+        "guardianVahanas": ["animals of the Tibetan calendar carved around the pedestal"],
+        "deityMudrasWeapons": ["giant gilded vajra lying on a circular pedestal", "Dharmadhatu mandala carved on the pedestal top"],
+        "distinguishingFeatures": ["huge gilded thunderbolt at the head of the eastern stairway", "flanked by two white shikhara towers"],
+        "confusableWith": ["swy_pratappur_anantapur"],
+        "disambiguationTip": "The Vajra Dhatu Mandala is the giant gilded thunderbolt lying on a round pedestal at the head of the stairs; the white towers either side are Pratappur and Anantapur."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A King's Thunderbolt",
+          "text": "At the top of Swayambhu's eastern stairway lies an enormous gilded vajra, the ritual thunderbolt of Vajrayana Buddhism, resting on a circular stone pedestal carved as a mandala. It is usually said to have been offered by King Pratap Malla of Kathmandu in 1667, part of his extensive patronage at Swayambhu, where he also commissioned the two shikhara temples that flank it and is credited with improving the great stairway. Pratap Malla was a Hindu king, but like many Malla rulers he supported Buddhist institutions, reflecting the intertwined religious life of the valley. The vajra became one of Swayambhu's defining images, greeting pilgrims as they reach the summit. Its position at the threshold of the stupa platform marks the transition from the ordinary world of the stairway to the sacred precinct of the self-arisen stupa beyond.",
+          "sourceIds": ["slusser_1982", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Gilded Metal on a Mandala Drum",
+          "text": "The vajra is made of gilded copper and lies horizontally on a round stone pedestal, its two ends shaped like closed lotuses with prongs curving toward a central point. The pedestal is carved with a mandala representing the Dharmadhatu, the realm of ultimate reality, and around its sides are carved animals associated with the Tibetan calendar. The ensemble is compact but monumental in effect, especially when seen against the white dome of the stupa behind it. On either side stand the white shikhara towers of Pratappur and Anantapur, creating a symmetrical frame. The combination of metalwork and stone carving demonstrates the skill of Newar craftsmen working for Buddhist patrons. Pilgrims touch the vajra and circle it before proceeding to the stupa, so its gilded surface is polished by countless hands and gleams in the morning light.",
+          "sourceIds": ["pal_1974", "gutschow_1997"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Indestructible Wisdom",
+          "text": "The vajra, called dorje in Tibetan, is the central symbol of Vajrayana Buddhism, the form of Buddhism practised by Newar Buddhists and in Tibet. It represents the indestructible nature of the enlightened mind, as hard as diamond and as powerful as a thunderbolt. In ritual the vajra is paired with a bell, the vajra symbolising compassionate method and the bell representing wisdom, their union expressing enlightenment. The Dharmadhatu mandala on the pedestal maps the enlightened universe, linking the vajra with the stupa, which is itself a three-dimensional mandala. The calendar animals around the base suggest the cycles of time over which enlightened wisdom presides. For pilgrims arriving at the summit, the giant vajra announces that they are entering a realm of transformation, where ordinary perception gives way to the path of awakening taught by the Buddha.",
+          "sourceIds": ["pal_1974", "locke_1985"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Touching the Vajra",
+          "text": "Pilgrims who reach the top of the eastern stairway usually begin their visit at the vajra, touching it with their foreheads or hands, offering flowers and coins and circling it clockwise. Many then proceed to circle the stupa itself. During major festivals such as Buddha Jayanti and the Tibetan New Year, Losar, the area around the vajra is crowded with devotees and monks. Newar Buddhist ritual specialists, the Vajracharyas, whose name means 'vajra masters', use smaller vajras in their ceremonies, and the giant vajra at Swayambhu is a public emblem of their tradition. Visitors may also see Tibetan pilgrims performing prostrations near the vajra and the stupa. Respectful observers are welcome to watch, but should not climb on the pedestal or block the path of devotees moving around it in the customary clockwise direction.",
+          "sourceIds": ["locke_1985", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Weathering at the Summit",
+          "text": "Exposed on the hilltop, the vajra and its pedestal face sun, rain and the constant touch of pilgrims. Gilding wears away where hands rest most often, and the stone pedestal can weather and crack, softening the carved mandala and animals. The 2015 earthquake damaged nearby structures, including the shikhara temples flanking the vajra, and the area was cordoned off during repairs. Conservation at Swayambhu is coordinated by the Department of Archaeology and the hill's management bodies, and Buddhist donors have supported regilding and restoration on the hilltop. Detailed documentation of the pedestal carvings is valuable for monitoring their condition, since erosion gradually removes fine details. Visitors can help by touching the vajra gently, if at all, and never stepping on the pedestal. Field collectors are asked to photograph the calendar animals carefully from every side.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "At the top of the stairs, before you even see the stupa properly, you meet a giant golden thunderbolt lying on a round stone drum. This is the great vajra of Swayambhu, offered, it is said, by King Pratap Malla in 1667. In Vajrayana Buddhism the vajra stands for wisdom that cannot be destroyed, as hard as diamond and as fast as lightning. Look at the stone beneath it: a carved mandala of the enlightened universe on top, and animals of the Tibetan calendar around the sides. Pilgrims touch it with their foreheads before they begin their circuit, and its gold shines where countless hands have rested. Can you find the animal of your birth year? Book a verified local storyteller nearby and let a guide explain the vajra and the bell."
+      },
+      "nepaliSummary": "वज्रधातु मण्डलमा राजा प्रताप मल्लले चढाएको भनिएको सुनौलो विशाल वज्र ढुङ्गाको मण्डलमाथि राखिएको छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:00-07:30",
+        "lightingNotes": "Sunrise from the east lights the vajra as you crest the stairway.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Vajra and pedestal with the stupa dome behind." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the Pratappur tower." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the Anantapur tower." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Pedestal calendar animals and the vajra prongs." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Top of the eastern stairway with vajra, towers and stupa." }
+        ],
+        "occlusionNotes": "Pilgrims touch the vajra continuously and monkeys sit on the pedestal.",
+        "restrictions": "Do not climb the pedestal; move clockwise."
+      },
+      "walkingTourStop": { "sequence": 3, "dwellMinutes": 8, "talkingPoint": "Introduce Vajrayana symbolism at the threshold of the stupa." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Donation date and the calendar animal carvings to confirm." }
+    },
+    {
+      "id": "swy_pratappur_anantapur",
+      "names": { "en": "Pratappur and Anantapur Shikhara Temples", "ne": "प्रतापपुर र अनन्तपुर शिखर मन्दिर", "romanized": "Pratappur, Anantapur", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Pratapafuru and Anantapura Shikhara Temples", "Twin Shikharas of Swayambhu"],
+      "monumentType": "SHIKHARA_TEMPLE",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Malla", "century": "17th century CE", "foundingYearCE": null, "datingBasis": "chronicle", "patron": "Pratap Malla (and his queen, by tradition)" },
+      "geo": { "lat": 27.7147, "lng": 85.2906, "elevationM": 1409, "geofenceRadiusM": 25, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 15, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["whitewash_lime", "fired_brick", "gilt_repousse_copper"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["Tantric Buddhist protective deities enshrined out of public view"],
+        "distinguishingFeatures": ["matching pair of white shikhara towers flanking the great vajra", "gilded finials and small bells at their summits"],
+        "confusableWith": ["swy_vajra_dhatu_mandala", "bkt_vatsala_durga"],
+        "disambiguationTip": "Pratappur and Anantapur are a matching pair of white plastered towers beside the vajra; Bhaktapur's Vatsala Durga is a single grey-stone shikhara."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A King's Twin Towers",
+          "text": "The two white shikhara towers that flank the great vajra at the top of Swayambhu's eastern stairway are known as Pratappur and Anantapur. Tradition attributes them to King Pratap Malla of Kathmandu in the mid-seventeenth century, with Anantapur sometimes associated with his queen, and they belong to the same programme of royal patronage that brought the vajra to the summit. Pratap Malla's devotion at Swayambhu included a famous episode recorded at the nearby Shantipur shrine, where he is said to have entered a secret chamber in search of a rain-bringing mandala during a drought. The twin towers thus mark a king's relationship with the Buddhist hill, expressing both piety and the political value of supporting the valley's most important Buddhist site. They frame the entrance to the platform for every pilgrim who arrives by the eastern stairs.",
+          "sourceIds": ["slusser_1982", "dowman_1995"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Shikharas in White",
+          "text": "Pratappur and Anantapur are shikhara towers, built in brick and coated in white plaster, each tapering to a gilded finial. Their form reflects the influence of north Indian temple architecture, which had become fashionable in the valley, as seen in Patan's Krishna Mandir, but they are adapted to Buddhist use. Small balconies, niches and decorative mouldings articulate their surfaces, and bells hang from their upper levels. Standing on either side of the vajra, they create a symmetrical gateway to the stupa platform, framing the view of the dome as pilgrims crest the stairway. Their whiteness echoes that of the stupa's dome, unifying the composition of the summit. Although relatively plain compared with the richly carved pagodas of the Durbar Squares, they make a strong impression through their scale, symmetry and dramatic setting against the open sky.",
+          "sourceIds": ["korn_1976", "hutt_1994"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Guardians of the Threshold",
+          "text": "The towers house shrines to Tantric Buddhist deities, protectors associated with the esoteric practices of Vajrayana. Their images are not displayed publicly, in keeping with the Newar tradition of reserving powerful Tantric deities for initiates. As a pair flanking the vajra, the towers function as guardians of the threshold, protecting the sacred precinct of the stupa. Their names, which combine royal names with the suffix 'pur', meaning city or abode, suggest that they were conceived as divine dwellings. The use of a Hindu temple form for Buddhist deities illustrates the fluid exchange of architectural ideas in the valley. For pilgrims, the towers mark the culmination of the long climb and the beginning of the circumambulation, and the small bells at their summits ring out across the platform whenever the wind rises over the hill.",
+          "sourceIds": ["slusser_1982", "locke_1985"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Passing Between the Towers",
+          "text": "Pilgrims arriving at the top of the eastern stairway pass between the twin towers and the vajra on their way to the stupa. Many pause to touch the vajra and bow toward the towers before beginning their circumambulation. Because the shrines inside are reserved for Tantric rituals, the towers themselves are rarely opened, but their presence is part of the sacred geography of the hilltop. During festivals the area between them fills with pilgrims, monks and musicians, and offerings accumulate at their bases. Newar Buddhist priests perform rituals at various shrines on the hill, and some ceremonies involve the towers' deities. Visitors should take care on the uneven ground at the top of the stairway, which is crowded and often occupied by monkeys, and should keep the path clear for worshippers moving between the vajra and the stupa.",
+          "sourceIds": ["locke_1985", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Damage and Repair After 2015",
+          "text": "The 2015 earthquake damaged the twin shikharas, with Pratappur suffering serious damage to its upper structure. Slender towers of brick and plaster are vulnerable to earthquakes, as their height amplifies shaking, and they had been damaged in earlier events too. Restoration after 2015 involved stabilising the towers, rebuilding damaged sections with traditional materials and incorporating discreet reinforcement. The work was coordinated by the Department of Archaeology and the hill's management bodies, with support from donors. The whitewash that gives the towers their brilliant appearance must be renewed periodically, and the gilded finials require care. Visitors who saw the towers scaffolded or damaged in the years after the earthquake will appreciate their restored appearance. Documenting their condition helps conservators plan maintenance and assess the risks posed by future earthquakes.",
+          "sourceIds": ["doa_nepal", "unesco_whc_121"],
+          "confidence": "medium"
+        }
+      ],
+      "audioHook": {
+        "script": "As you step off the last stair at Swayambhu, two white towers stand on either side of you like gatekeepers. They are Pratappur and Anantapur, raised in the seventeenth century by King Pratap Malla, and tradition links one to the king and the other to his queen. Their tall, tapering shape comes from Hindu temples of the Indian plains, yet inside live Tantric Buddhist protectors whose images ordinary visitors never see. That mix of Hindu form and Buddhist spirit is pure Kathmandu Valley. In 2015 the earthquake badly damaged these towers, and they have since been repaired. Listen for the small bells at their summits ringing in the wind. Who guards the secret shrines inside? Book a verified local storyteller nearby and let a guide introduce the hill's hidden protectors."
+      },
+      "nepaliSummary": "प्रतापपुर र अनन्तपुर स्वयम्भूको पूर्वी सिँढीको टुप्पोमा वज्रका दुवैतिर रहेका सेता शिखर मन्दिर हुन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:00-07:30",
+        "lightingNotes": "White plaster glows at sunrise; at midday the towers wash out against a hazy sky.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Both towers framing the vajra from the top of the stairway." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique isolating Pratappur." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique isolating Anantapur." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Gilded finial, bells and balcony mouldings." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Both towers with the stupa dome between them." }
+        ],
+        "occlusionNotes": "Scaffolding may remain during repairs, and crowds and monkeys gather at the bases.",
+        "restrictions": "Tower shrines are closed to the public."
+      },
+      "walkingTourStop": { "sequence": 4, "dwellMinutes": 6, "talkingPoint": "Explain the Hindu form, Buddhist content and the 2015 damage." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding attributions to king and queen and the extent of 2015 damage to confirm." }
+    },
+    {
+      "id": "swy_world_peace_pond",
+      "names": { "en": "World Peace Pond", "ne": "विश्व शान्ति पोखरी", "romanized": "Bishwa Shanti Pokhari", "romanizedLanguage": "Nepali" },
+      "aliases": ["Swayambhu Peace Pond"],
+      "monumentType": "POND",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Modern", "century": "late 20th century CE (date to confirm)", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7143, "lng": 85.2879, "elevationM": 1350, "geofenceRadiusM": 40, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 15, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["reinforced_concrete", "grey_stone"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["standing Buddha with raised hand in the gesture of reassurance", "small vessel in the water that visitors aim coins at"],
+        "distinguishingFeatures": ["small pond at the foot of the hill with a standing Buddha at its centre", "railings lined with people tossing coins toward a pot"],
+        "confusableWith": ["bkt_siddha_pokhari"],
+        "disambiguationTip": "The World Peace Pond is small, with a standing Buddha in the middle; Bhaktapur's Siddha Pokhari is a large historic reservoir with no central statue."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Modern Pond at an Ancient Hill",
+          "text": "The World Peace Pond lies near the foot of Swayambhu hill, along one of the approaches to the stupa. Unlike the ancient monuments on the summit, it is a modern addition, created in the later twentieth century as part of efforts to beautify the surroundings of the hill and to welcome the growing number of pilgrims and visitors. Its name reflects a theme that has become important in Nepal's presentation of its Buddhist heritage: the Buddha as a teacher of peace, born in Lumbini in southern Nepal. Saalik's desk research has not confirmed the exact date or sponsor of the pond, and field collectors are asked to record any inscriptions or plaques on site. Even as a recent creation, the pond has become part of the ritual landscape of Swayambhu, showing how sacred sites continue to grow and change over time.",
+          "sourceIds": ["saalik_editorial", "ntb"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Water and a Standing Buddha",
+          "text": "The pond is a small, stone-edged basin with a standing image of the Buddha in its centre, rising from the water on a pedestal. A small vessel set in the water serves as a target for visitors who toss coins, hoping to land them inside for good luck. Walkways and railings surround the pond, and benches allow visitors to rest before or after the climb to the summit. The design is simple and modern, using concrete and stone, and it contrasts with the dense historic fabric of the hilltop. Its setting near the base of the hill, among trees and the paths used by pilgrims, makes it a gentle introduction to the sacred landscape. The reflections of the Buddha image and the surrounding trees in the water create a peaceful scene that many visitors stop to photograph on their way up the hill.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "The Buddha as Teacher of Peace",
+          "text": "The standing Buddha in the pond is shown with a raised hand, a posture associated with the abhaya mudra, which means 'do not fear'. Standing images of the Buddha often represent him in his role as a teacher walking among people, and the placement in water evokes purity, since the lotus, a central Buddhist symbol, rises unstained from muddy water. The theme of world peace links the image with Nepal's identity as the birthplace of the Buddha and with modern Buddhist movements that emphasise compassion and non-violence. Visitors who continue up the hill will find older images of the Buddha in many forms, from the five Dhyani Buddhas around the stupa to small carvings on the chaityas, and the pond's figure offers a simple, accessible starting point for understanding the Buddhist imagery that fills the hilltop above.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Coins, Wishes and Rest",
+          "text": "The most visible ritual at the World Peace Pond is the tossing of coins toward the vessel in the water. Visitors, both Nepali and foreign, try their luck, and success is believed to bring good fortune or the fulfilment of a wish. Some pilgrims also bow or offer flowers to the Buddha image before beginning their climb. Families with children often stop here, and the pond is a popular place for photographs. While the practice of coin tossing is modern, it echoes much older customs of offering coins at shrines and sacred waters throughout the valley. The pond also works as a resting place, especially for elderly pilgrims preparing for or recovering from the climb to the summit, and its benches are rarely empty in the morning hours when the hill is busiest with worshippers.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Maintaining a Modern Feature",
+          "text": "As a modern structure, the World Peace Pond faces different conservation issues from the ancient monuments on the hill. Water quality, algae, litter and the maintenance of concrete and paving are the main concerns. Coins thrown into the pond must be collected regularly, and the basin must be cleaned to keep the water clear. The 2015 earthquake affected structures across Swayambhu hill, and features at the base were also inspected for damage. The hill's slopes are vulnerable to landslides and erosion, particularly during the monsoon, so drainage around the pond and paths must be maintained. Management of the site falls within the broader administration of the Swayambhu area. Visitors can help by not littering, by using the bins provided and by keeping the water clean, so that the pond remains a peaceful introduction to the hill for everyone.",
+          "sourceIds": ["saalik_editorial", "doa_nepal"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Before you climb Swayambhu's hill, stop at this small pond where a standing Buddha rises from the water. Nepalis and visitors alike take a coin, take aim, and try to land it in the little pot in the water for good luck. Unlike the ancient stupa above you, the World Peace Pond is a modern addition, created to welcome pilgrims and to celebrate Nepal as the birthplace of the Buddha, a teacher of peace. Look at his raised hand: it is a gesture that means do not fear, a good thought before a steep climb. Then lift your eyes to the hill, where fifteen centuries of shrines are waiting. Did your coin land? Book a verified local storyteller nearby and let a guide lead you up the sacred hill from here."
+      },
+      "nepaliSummary": "विश्व शान्ति पोखरी स्वयम्भू डाँडाको फेदमा रहेको, बीचमा उभिएका बुद्धको मूर्ति भएको आधुनिक पोखरी हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "Morning light falls on the Buddha's face, and reflections are clearest before the wind ripples the water.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Buddha statue centred across the pond." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the hill rising behind." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique including the visitors' walkway." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "The Buddha's raised hand and the coin vessel." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Pond within the base of Swayambhu hill." }
+        ],
+        "occlusionNotes": "Visitors line the railings tossing coins, and litter sometimes floats on the water.",
+        "restrictions": "Do not enter the water."
+      },
+      "walkingTourStop": { "sequence": 10, "dwellMinutes": 6, "talkingPoint": "End the circuit at the coin pond after descending the western side." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Construction date, sponsor and exact location to confirm on site; playbook listing retained." }
+    },
+    {
+      "id": "swy_shantipur",
+      "names": { "en": "Shantipur Tantric Shrine", "ne": "शान्तिपुर", "romanized": "Shantipur", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Shantipur", "Shantikar Acharya Shrine"],
+      "monumentType": "SHRINE",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Malla", "century": "17th century CE inscription; shrine tradition older", "foundingYearCE": null, "datingBasis": "inscription", "patron": null },
+      "geo": { "lat": 27.7153, "lng": 85.2899, "elevationM": 1410, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 15, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["fired_brick", "whitewash_lime", "carved_wood"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["wrathful Tantric protectors painted at the entrance", "inscription recording Pratap Malla's descent into the shrine"],
+        "distinguishingFeatures": ["plain shrine building on the north-west of the hilltop platform", "sealed inner chambers said to hold the meditating master Shantikar"],
+        "confusableWith": ["swy_vasubandhu_chorten", "swy_harati_ajima"],
+        "disambiguationTip": "Shantipur is a closed shrine building with painted Tantric guardians at its door on the north-west of the platform; Harati is a gilded pagoda right beside the stupa."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Master Who Never Left",
+          "text": "Shantipur, on the north-western side of Swayambhu's hilltop, is one of the most mysterious shrines in the valley. It is one of the five 'pura' shrines of Swayambhu associated with the elements, Shantipur representing the sky or space. According to the Swayambhu Purana, the Tantric master Shantikar Acharya, who covered the original self-arisen flame to protect it, entered a chamber beneath the shrine to meditate and has remained there ever since. An inscription at the shrine records that King Pratap Malla of Kathmandu entered the underground chambers in the seventeenth century during a severe drought, seeking a mandala drawn in the blood of nagas that could bring rain. According to the account he succeeded, and the rains came. The episode reveals the power attributed to Shantipur and the close links between kingship, Tantric Buddhism and the valley's water.",
+          "sourceIds": ["slusser_1982", "dowman_1995", "wright_1877"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Closed Shrine Building",
+          "text": "Shantipur is a modest building on the hilltop platform, with a doorway guarded by painted images of Tantric protective deities. Its exterior is plain compared with the gilded shrines nearby, but its significance lies in what is hidden: the series of underground chambers described in the chronicles, which are sealed and not accessible to visitors. The building's architecture follows that of Newar shrine buildings, with brick walls, carved doors and a tiled roof. Inside, a shrine room is used for Tantric rituals by initiated priests. The inscription recording Pratap Malla's visit is set in the building, a rare written account of a king's personal Tantric quest. For visitors, Shantipur's understated appearance contrasts with its extraordinary legend, a reminder that in Newar Buddhism the most powerful places are often the least visible to outsiders.",
+          "sourceIds": ["korn_1976", "slusser_1982"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Painted Guardians and Hidden Mandalas",
+          "text": "The painted deities at Shantipur's entrance are fierce protectors who guard the sacred chamber from intruders. Their wrathful expressions, flaming halos and weapons are characteristic of Tantric guardian imagery. Inside, according to tradition, lies a mandala drawn with the blood of nagas, the serpent spirits who control rain, which can be used to summon the monsoon in times of drought. The figure of Shantikar Acharya, the meditating master, embodies the idea of a realised being whose meditation sustains the sacred site across the centuries. The shrine's iconography therefore connects several themes central to the valley: the protection of the self-arisen flame, the control of water through Tantric power and the role of human masters as intermediaries between the visible and invisible worlds. The guardians at the door are the public face of these hidden powers.",
+          "sourceIds": ["dowman_1995", "pal_1974"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Rituals for Rain",
+          "text": "Shantipur's most famous ritual role is associated with rain. In times of drought, Newar Buddhist priests have historically performed ceremonies here to appeal to the nagas and bring the monsoon, continuing the tradition recorded in Pratap Malla's inscription. The shrine is also the site of regular Tantric rituals performed by initiated priests, which are not open to the public. Lay devotees honour the shrine as part of their circuit of the hilltop, bowing at the entrance and making offerings. Its association with the element of space or sky gives it a special place among the five pura shrines of Swayambhu, which pilgrims sometimes visit in sequence. Visitors should not attempt to enter or photograph the interior. A guide familiar with Newar Buddhism can explain the legends and rituals connected with this enigmatic and much-discussed shrine.",
+          "sourceIds": ["locke_1985", "dowman_1995"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protecting a Sealed Sanctuary",
+          "text": "Shantipur's conservation is shaped by its sealed chambers and its restricted ritual use. The building was damaged in the 2015 earthquake along with other structures on the hilltop, and repairs focused on stabilising its walls and roof without disturbing the inner sanctuary. The painted guardians at the entrance need careful conservation, since paint flakes and fades with exposure, and repainting must be done by artists who know the traditional iconography. The inscription recording Pratap Malla's visit is a valuable historical document and must be protected from weathering and damage. Conservation work at Shantipur is coordinated with the priests who maintain its rituals, respecting the boundaries of what may be touched or documented. Saalik's field collectors photograph only the exterior and permitted elements, such as the entrance paintings and the inscription, from outside the shrine.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "This plain little building on the north side of the hill hides one of the strangest stories in Kathmandu. Behind its painted guardians, legend says, a great Tantric master named Shantikar sits in an underground chamber, meditating since ancient times to protect the sacred flame of Swayambhu. In the seventeenth century, during a terrible drought, King Pratap Malla himself is said to have climbed down into those chambers to find a mandala drawn in the blood of serpent spirits, and when he came back up, the rains began. An inscription here records his journey. No visitor goes inside today. What did the king see in the dark? Book a verified local storyteller nearby and let a guide tell you the legend of Shantipur."
+      },
+      "nepaliSummary": "शान्तिपुर स्वयम्भू डाँडाको तान्त्रिक तीर्थ हो, जहाँ राजा प्रताप मल्ल खडेरीमा वर्षाको मण्डल खोज्न भित्र पसेको अभिलेख छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:15-07:45",
+        "lightingNotes": "The shrine faces the platform; soft early light keeps the painted guardians from glaring.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Doorway with the painted guardians square-on." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique of the shrine building." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the edge of the stupa in frame." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "A painted guardian figure and the inscription slab." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Shrine on the north-west corner of the platform." }
+        ],
+        "occlusionNotes": "Prayer flags and stalls crowd the front and monkeys sit on the roof.",
+        "restrictions": "Interior closed and not to be photographed; exterior only."
+      },
+      "walkingTourStop": { "sequence": 8, "dwellMinutes": 8, "talkingPoint": "Tell the story of Pratap Malla's descent for the rain mandala." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Transcribe the inscription; confirm the elemental association of Shantipur." }
+    },
+    {
+      "id": "swy_manjushree_hill",
+      "names": { "en": "Manjushree Hill Shrine", "ne": "मञ्जुश्री डाँडा (सरस्वती स्थान)", "romanized": "Manjushri Chaitya", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Manjushri Shrine", "Saraswati Shrine Swayambhu"],
+      "monumentType": "SHRINE",
+      "tradition": "SHARED_HINDU_BUDDHIST",
+      "era": { "dynasty": "Malla", "century": "present shrines of Malla and later centuries; cult far older", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7152, "lng": 85.2878, "elevationM": 1395, "geofenceRadiusM": 40, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 15, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["fired_brick", "whitewash_lime", "grey_stone"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["Manjushri with the flaming sword of wisdom and a book", "Saraswati with the vina, honoured by Hindu students"],
+        "distinguishingFeatures": ["small shrine on the wooded western hillock of Swayambhu", "pens, notebooks and offerings left by students"],
+        "confusableWith": ["swy_vasubandhu_chorten"],
+        "disambiguationTip": "Manjushree's shrine stands on the separate western hillock among trees; the Vasubandhu chorten sits on the main stupa platform."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "The Bodhisattva Who Drained the Lake",
+          "text": "On the smaller hillock west of the main Swayambhu stupa stands a shrine dedicated to Manjushri, the bodhisattva of wisdom, who is honoured in Newar tradition as a founding figure of the Kathmandu Valley. The Swayambhu Purana tells that Manjushri came from the north, from China in many tellings, to worship the self-arisen flame on the lotus in the valley's lake. Seeing that the lake prevented pilgrims from reaching it, he cut a gorge in the southern hills with his sword of wisdom, draining the water and making the valley habitable. The gorge is identified with Chobhar, south of Kathmandu, and the story is often linked with geological evidence that the valley was indeed once a lake. Manjushri is said to have rested on this hillock, and his shrine here commemorates his role in the valley's creation.",
+          "sourceIds": ["slusser_1982", "wright_1877", "dowman_1995"],
+          "confidence": "high"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Shrine Among Trees",
+          "text": "The Manjushri shrine is a small structure on the western hillock, reached by a path from the main stupa platform or from the western approach to Swayambhu. It is set among trees and surrounded by smaller chaityas and shrines, creating a quieter, more contemplative atmosphere than the busy summit. The shrine itself has a modest form, often decorated with offerings, prayer flags and the marks of devotion left by students. Stone chaityas and steles nearby date from various periods, adding layers of history to the site. The hillock's elevation offers views over the western valley, and the trees provide shade, making it a pleasant place to rest. The combination of natural setting and accumulated shrines illustrates how sacred places in the valley grow over time through the contributions of countless devotees across many centuries.",
+          "sourceIds": ["gutschow_1997", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Sword of Wisdom, Book of Knowledge",
+          "text": "Manjushri is depicted holding a flaming sword in his right hand, which cuts through ignorance, and a book of wisdom, the Prajnaparamita sutra, often resting on a lotus at his left shoulder. He is usually shown as a youthful prince, symbolising the freshness of awakened understanding. Hindus honour the same shrine as a place of Saraswati, the goddess of knowledge, learning and the arts, who carries a vina and a book. This dual identity reflects the shared religious culture of the valley, where a single sacred place can hold meaning for both Buddhists and Hindus. Both deities are patrons of learning, which explains why students regard the shrine as particularly auspicious. The sword that drained the lake in legend is the same sword that, in Buddhist teaching, cuts away the confusion that prevents enlightenment.",
+          "sourceIds": ["pal_1974", "slusser_1982"],
+          "confidence": "high"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Shree Panchami and Students' Wishes",
+          "text": "The Manjushri shrine is especially busy on Shree Panchami, also called Basanta Panchami, the festival of Saraswati in late winter, when students from across Kathmandu come to seek blessings for their studies. Young children are brought here for their first lessons in writing, and pens, pencils and notebooks are placed before the deity to be blessed. Throughout the year, students preparing for examinations visit to pray for success. Buddhist devotees honour Manjushri as the bodhisattva of wisdom and remember his role in the valley's creation. The shrine is also part of the pilgrimage circuit of Swayambhu, and many visitors combine a visit to the main stupa with a walk to the hillock. Observing students and families at the shrine offers a touching glimpse of how ancient legends connect with the everyday hopes of Kathmandu's residents.",
+          "sourceIds": ["levy_1990", "saalik_editorial"],
+          "confidence": "high"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Protecting the Hillock",
+          "text": "The western hillock faces conservation challenges from erosion, landslides and the pressures of a growing city. Trees help to stabilise the slopes, and their protection is important for the site's integrity. The shrines and chaityas on the hillock were affected by the 2015 earthquake, and some required repair. The many small stone monuments are vulnerable to weathering and theft, and documenting them helps to protect them. Management of the hillock falls within the broader administration of Swayambhu, coordinated by the Department of Archaeology and local management bodies. The crowds of Shree Panchami put pressure on paths and shrines, and waste management is a recurring concern. Visitors can help by staying on paths, avoiding litter and respecting the shrines. Field collectors are asked to photograph the smaller chaityas and steles, which are rarely documented.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Walk to the quiet hillock west of the stupa and find the shrine of Manjushri, the bodhisattva of wisdom. Legend says the whole Kathmandu Valley was once a lake, and Manjushri, arriving from the north to worship the sacred flame of Swayambhu, raised his flaming sword and cut a gorge through the southern hills. The water rushed out, and the valley you see today was born. Geologists agree the valley really was once a lake. Hindus honour this same shrine as the home of Saraswati, goddess of learning, so look for pens and notebooks left by students hoping to pass their exams. On the festival of Shree Panchami, children write their very first letters here. Book a verified local storyteller nearby and let a guide take you to the gorge the sword cut."
+      },
+      "nepaliSummary": "मञ्जुश्री डाँडामा ज्ञानका बोधिसत्त्व मञ्जुश्रीको स्थान छ, जसले तरवारले उपत्यकाको ताल निकासेको किंवदन्ती छ; हिन्दूहरू यहाँ सरस्वतीको पूजा गर्छन्।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "Trees filter the light; mid-morning sun reaches the shrine more evenly than dawn.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Shrine square-on with offerings and prayer flags." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the surrounding chaityas." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique showing the hillock path." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Manjushri or Saraswati image and the students' offerings." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Hillock with the view toward the main stupa." }
+        ],
+        "occlusionNotes": "Huge crowds gather on Shree Panchami and prayer flags cross the shrine.",
+        "restrictions": "Do not move offerings; avoid photographing children's ceremonies without permission."
+      },
+      "walkingTourStop": { "sequence": 9, "dwellMinutes": 10, "talkingPoint": "Tell the lake-draining legend and the Saraswati connection." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Exact shrine identity (Manjushri chaitya or Saraswati shrine) and coordinates to confirm." }
+    },
+    {
+      "id": "swy_nagarkot_viewpoint_stele",
+      "names": { "en": "Nagarkot Viewpoint Stele", "ne": "नगरकोट दृश्य शिलास्तम्भ", "romanized": "Nagarkot Drishya Shilastambha", "romanizedLanguage": "Nepali" },
+      "aliases": ["Eastern Viewpoint Terrace, Swayambhu"],
+      "monumentType": "VIEWPOINT",
+      "tradition": "SHARED_HINDU_BUDDHIST",
+      "era": { "dynasty": "Modern", "century": "date unconfirmed; assigned to recent centuries pending field survey", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7146, "lng": 85.2913, "elevationM": 1400, "geofenceRadiusM": 20, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 15, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["grey_stone"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": [],
+        "distinguishingFeatures": ["eastern terrace looking across the valley toward the Nagarkot ridge", "stone marker on the terrace edge whose identity is still to be confirmed"],
+        "confusableWith": ["swy_vajra_dhatu_mandala"],
+        "disambiguationTip": "This is a terrace viewpoint on the eastern rim of the hilltop; if the frame shows the city panorama rather than a shrine, match here."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Looking East Across the Valley",
+          "text": "From the eastern edge of Swayambhu's hilltop, the whole Kathmandu Valley opens out, and on clear days the eye can follow it to the ridge of Nagarkot on the far eastern rim, about twenty-five kilometres away. Saalik's seed list records a stele at this viewpoint linked with Nagarkot, but desk research has not identified a published description of such an object, so this record is treated as a viewpoint until field collectors confirm what the stone is. The view itself carries history. From this hill, Licchavi and Malla rulers could survey the kingdom that the Swayambhu Purana says was born when Manjushri drained the primordial lake. The rim of hills visible from here, including Nagarkot, Phulchoki and Shivapuri, marked the edges of that lake and later the frontiers of the valley's kingdoms and their trade routes toward Tibet.",
+          "sourceIds": ["saalik_editorial", "slusser_1982"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Reading the Valley from Above",
+          "text": "The eastern terrace is part of the hilltop platform, reached from the top of the main stairway, and its edge gives a panoramic view over Kathmandu. Looking east, visitors can trace the layout of the valley: the dense old city with the roofs of Hanuman Dhoka, newer neighbourhoods spreading toward the ring road, the airport, and beyond them Bhaktapur and the rising ridge of Nagarkot. The terrace is a natural place for markers and inscriptions, and the valley's hilltops have long been used for stone memorials and boundary stones. Any stone on the terrace should be recorded with its dimensions, material and inscription, if present. The view also helps to explain the valley's architecture, since the clustered towns, temple roofs and open fields below follow patterns of settlement first established in the Licchavi and Malla periods.",
+          "sourceIds": ["korn_1976", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Sacred Geography of the Rim",
+          "text": "In the religious imagination of the valley, the surrounding hills are not merely scenery but sacred places. Shivapuri to the north, Phulchoki to the south-east, Nagarkot and the eastern ridges, and Champadevi to the south-west are associated with deities, shrines and pilgrimage routes. Buddhist and Hindu traditions both map the valley as a mandala, with sacred sites at its centre and around its rim, and Swayambhu, standing near the centre, is a natural vantage point for contemplating this sacred geography. Nagarkot itself, now famous for Himalayan sunrise views, lies toward the eastern hills and the old trade paths to Tibet. A stone marker at this viewpoint, if it exists as recorded, would belong to this long tradition of marking and honouring the sacred landscape that is visible from the hill on a clear morning.",
+          "sourceIds": ["dowman_1995", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Sunrise and the Morning Circuit",
+          "text": "Early in the morning, many pilgrims who complete their circuit of the stupa pause at the eastern edge of the hilltop to watch the sun rise over the valley and the eastern hills. On clear winter mornings the light reaches the city's rooftops in stages, and on the best days Himalayan peaks appear above the haze to the north-east. Photographers gather here for the view, and local residents come to exercise and enjoy the fresh air. During festivals the terrace becomes part of the crowded hilltop, with pilgrims resting and families taking photographs. While no formal ritual is associated with the viewpoint itself, the act of looking out over the valley from Swayambhu has a contemplative quality, connecting visitors with the legend of the lake and the long history of the valley spread out beneath them.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Documenting an Unconfirmed Feature",
+          "text": "This record exists to be verified. Saalik's field collectors are asked to survey the eastern terrace and record any stone stele, marker or inscription, noting its exact position, size, material, inscription text and condition, and photographing it from all five capture angles. If no stele is found, the record will be reclassified as a viewpoint or retired from the corpus. The terrace itself faces conservation concerns: erosion of the hill's slopes, damage to railings and paving, and the pressure of crowds, particularly at sunrise and during festivals. The 2015 earthquake affected parts of the hilltop, and some areas were closed during repairs. The Department of Archaeology and the hill's management bodies oversee the site. Visitors at the viewpoint should stay behind the railings, as the slopes below are steep, and take care on the uneven stones.",
+          "sourceIds": ["saalik_editorial", "doa_nepal"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Turn your back on the stupa for a moment and look east. The whole Kathmandu Valley lies at your feet: the old city's temple roofs, the airport, Bhaktapur in the distance, and on the far rim, the ridge of Nagarkot, about twenty-five kilometres away. Legend says all of this was once a lake, until Manjushri's sword set the water free. From this hill, kings once surveyed their kingdoms, and pilgrims still pause here at sunrise when the light rolls across the rooftops. Saalik's field team is still investigating a stone marker recorded at this viewpoint, so keep your eyes open and tell us what you find. Which hills mark the old lake's shore? Book a verified local storyteller nearby and let a guide name every peak on the horizon for you."
+      },
+      "nepaliSummary": "स्वयम्भूको पूर्वी किनाराबाट पूरै काठमाडौं उपत्यका र टाढा नगरकोटको डाँडा देखिन्छ; यहाँको शिलास्तम्भ फिल्ड टोलीले पुष्टि गर्न बाँकी छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:00-07:30",
+        "lightingNotes": "Shoot at sunrise in winter for clear air; post-monsoon mornings give the longest views.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Any stone marker square-on with the valley behind." },
+          { "angle": "LEFT_45", "framingNote": "Left panorama toward the old city." },
+          { "angle": "RIGHT_45", "framingNote": "Right panorama toward Bhaktapur and Nagarkot." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Inscription or surface of the marker, if present." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Full eastern panorama from the terrace edge." }
+        ],
+        "occlusionNotes": "Haze and smog obscure the far rim for much of the year, and railings and crowds fill the terrace at sunrise.",
+        "restrictions": "Stay behind the railings; the slopes below are steep."
+      },
+      "walkingTourStop": { "sequence": 2, "dwellMinutes": 8, "talkingPoint": "Orient visitors to the whole valley before they reach the stupa." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Playbook lists a 'Nagarkot Viewpoint Stele' here, but no published reference was found. The field team must confirm the object's identity or retire this record; coordinates are a terrace estimate." }
+    },
+    {
+      "id": "swy_dewa_dharma_monastery",
+      "names": { "en": "Dewa Dharma Monastery", "ne": "देव धर्म महाविहार", "romanized": "Deva Dharma Mahavihar", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Deva Dharma Mahavihar", "Dewa Dharma Mahavihara"],
+      "monumentType": "MONASTERY",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Modern", "century": "20th century CE (date to confirm)", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7139, "lng": 85.2917, "elevationM": 1370, "geofenceRadiusM": 30, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 15, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["whitewash_lime", "carved_wood", "reinforced_concrete"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["bronze image of Shakyamuni Buddha", "Tibetan-style wall paintings in the prayer hall"],
+        "distinguishingFeatures": ["monastery building on the slopes below the stupa", "prayer hall with painted interior and prayer-flag-decked roof"],
+        "confusableWith": ["pat_golden_temple", "bdh_tamang_gompa"],
+        "disambiguationTip": "Dewa Dharma sits on Swayambhu's slopes below the summit; Kwa Bahal in Patan is a city courtyard covered in gilded copper, and Boudha's Tamang Gompa faces the Boudha stupa circuit."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Monastery on the Sacred Slopes",
+          "text": "Dewa Dharma Monastery, also written Deva Dharma Mahavihar, stands on the slopes of Swayambhu hill below the summit, one of several monastic institutions that have grown up around the stupa. Swayambhu's slopes have long attracted monasteries, both Newar Buddhist bahals and, especially since the twentieth century, Tibetan-style gompas established by refugee communities and Himalayan Buddhists. Desk research for Saalik has not established the monastery's founding date or founder, so its history must be gathered from the monastic community itself. Guidebooks describe it as notable for a bronze image of the Buddha and for traditional paintings. Monasteries like Dewa Dharma provide accommodation and training for monks, maintain rituals and offer teaching to lay Buddhists, and they contribute to Swayambhu's role as a living centre of Buddhist practice rather than an ancient monument alone.",
+          "sourceIds": ["saalik_editorial", "locke_1985"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "A Prayer Hall on the Hillside",
+          "text": "The monastery's buildings follow the pattern of Himalayan Buddhist monasteries in the valley: a main prayer hall or shrine room, usually with painted walls and columns, surrounded by residential quarters for monks. Exterior surfaces are typically whitewashed or painted, with carved and painted window frames and a roof decked with prayer flags. Inside, the shrine room is arranged around the main image, with rows of cushions for monks during prayer sessions. The monastery's position on the slope means that it is built on terraces, with steps connecting different levels. While modest in comparison with the great stupa above, monastery architecture adds to the layered character of Swayambhu hill, where ancient shrines, Malla-era temples and modern monastic buildings coexist. Field collectors are asked to document the layout and any inscriptions that record the founding.",
+          "sourceIds": ["saalik_editorial", "korn_1976"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Shakyamuni and Painted Teachings",
+          "text": "The bronze image of the Buddha at Dewa Dharma is described in guidebooks as a notable piece, and it likely represents Shakyamuni, the historical Buddha, seated in meditation or in the earth-touching gesture. Monastery paintings typically depict the lineage of teachers, protective deities, the wheel of life and scenes from the Buddha's life, serving both as objects of devotion and as visual teaching tools. In Himalayan Buddhist art, the wheel of life shows the cycle of rebirth driven by ignorance, desire and aversion, and the path to liberation beyond it. Protective deities guard the teachings and the community. Visitors who enter the shrine room with permission can see how images and paintings are arranged to guide the mind of the practitioner from the outer world toward the Buddha at the centre, and monks may explain the paintings if asked respectfully.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Prayers, Chants and Butter Lamps",
+          "text": "Daily life in the monastery follows a rhythm of prayer sessions, study and work. Monks gather in the shrine room in the early morning and evening to chant texts, accompanied by drums, cymbals and horns, and visitors who arrive at these times may hear the sound drifting across the hillside. Butter lamps are lit as offerings, and lay devotees visit to make offerings and receive blessings. Major Buddhist festivals, such as Buddha Jayanti and Losar, are celebrated with special rituals. The monastery's community also takes part in the wider ritual life of Swayambhu, joining processions and ceremonies at the stupa. Visitors are generally welcome to observe, provided they remove shoes, avoid disturbing prayers, do not use flash and ask permission before photographing monks or the interior. A small donation is customary and directly supports the monks.",
+          "sourceIds": ["saalik_editorial", "locke_1985"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Caring for Monastic Buildings",
+          "text": "Monastic buildings on Swayambhu's slopes face the same risks as the hill's ancient monuments: earthquakes, landslides and monsoon erosion. The 2015 earthquake damaged several monasteries on and around the hill, and many required repair or reconstruction, often funded by their own communities and international supporters. Painted interiors are vulnerable to moisture and to smoke from butter lamps, and conservation of murals requires specialist skills. Because monasteries are living institutions, their conservation is usually managed by the monastic community itself, sometimes in consultation with heritage authorities when buildings lie within the protected zone. Documenting monasteries builds a fuller picture of Swayambhu's heritage, which includes recent as well as ancient layers. Saalik's field collectors are asked to record the building, its inscriptions and the community's account of its history, with the monastery's permission.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "On the slopes below Swayambhu's summit, the sound of horns and drums may drift out of a monastery prayer hall. This is Dewa Dharma Monastery, one of several monastic communities that have made their homes on this sacred hill. Guidebooks praise its bronze Buddha and its traditional paintings, but much of its story is still held by the monks themselves rather than in books, and Saalik's field team is gathering it now. If you visit at prayer time, you may see rows of monks chanting by the light of butter lamps. Remove your shoes, ask before taking photos, and leave a small offering. What do the paintings on the walls teach? Book a verified local storyteller nearby and let a guide introduce you to the living monasteries of Swayambhu."
+      },
+      "nepaliSummary": "देव धर्म महाविहार स्वयम्भू डाँडाको भिरालोमा रहेको बौद्ध गुम्बा हो, जुन काँसाको बुद्ध मूर्ति र परम्परागत चित्रका लागि चिनिन्छ।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "GOLDEN_HOUR_MORNING",
+        "localTimeWindow": "07:00-08:30",
+        "lightingNotes": "The exterior catches morning light on the eastern slope; interior photography only with permission and without flash.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Monastery facade and entrance square-on." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with the hillside path." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the residential quarters." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Painted window frames or entrance murals." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Monastery on the slope below the stupa." }
+        ],
+        "occlusionNotes": "Trees and prayer flags cut across the facade and stalls line the path.",
+        "restrictions": "Ask permission before interior photography; remove shoes; no flash."
+      },
+      "walkingTourStop": { "sequence": 1, "dwellMinutes": 10, "talkingPoint": "Start the climb with Swayambhu's living monastic community." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Founding date, lineage and exact location unconfirmed; the field team should interview the monastery and GPS the entrance." }
+    },
+    {
+      "id": "swy_vasubandhu_chorten",
+      "names": { "en": "Vasubandhu Chorten", "ne": "वसुबन्धु चैत्य", "romanized": "Vasubandhu Chaitya", "romanizedLanguage": "Sanskrit" },
+      "aliases": ["Vasubandhu Chaitya"],
+      "monumentType": "CHAITYA",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Licchavi", "century": "commemorates a 4th-5th century CE scholar; present structure later", "foundingYearCE": null, "datingBasis": "tradition", "patron": null },
+      "geo": { "lat": 27.7151, "lng": 85.2901, "elevationM": 1410, "geofenceRadiusM": 15, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 15, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["grey_stone", "whitewash_lime"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["small Buddha images in the chaitya niches"],
+        "distinguishingFeatures": ["small stone chaitya on the stupa platform", "one of many votive chaityas crowding the hilltop"],
+        "confusableWith": ["swy_shantipur", "swy_manjushree_hill"],
+        "disambiguationTip": "The Vasubandhu chorten is a small stone chaitya on the main platform; rely on the field team's marker or inscription, since many chaityas here look alike."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "A Philosopher Remembered on the Hill",
+          "text": "Vasubandhu was one of the greatest philosophers of Indian Buddhism, a scholar of the fourth or fifth century who helped to systematise the Abhidharma and the Yogacara school of thought. Tibetan historical tradition holds that he spent his last years in Nepal, and Swayambhu has long been associated with his memory. A chaitya on the hilltop is identified in local tradition as his memorial, though the present structure is certainly later than his lifetime, and Saalik's desk research has not confirmed which of the platform's many chaityas carries this identification. The association reflects the prestige of Swayambhu as a centre of Buddhist learning, where Indian, Tibetan and Newar traditions met. Remembering Vasubandhu here connects the stupa with the intellectual history of Buddhism across Asia, beyond its ritual and devotional roles for pilgrims.",
+          "sourceIds": ["saalik_editorial", "gutschow_1997"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "The Votive Chaityas of Swayambhu",
+          "text": "Swayambhu's hilltop is crowded with chaityas, small stupa-shaped monuments built over the centuries as acts of merit, memorials or offerings. They range from simple stone forms to elaborately carved structures with niches for Buddha images on each side. A chaitya typically consists of a base, a dome or rounded body, a square harmika and a spire, echoing the form of the great stupa in miniature. The chaityas around the main stupa create a dense forest of sacred forms, through which pilgrims weave as they circle. Their styles reveal different periods, from Licchavi-era shapes to Malla and later designs, making the platform an open-air museum of votive architecture. The Vasubandhu chorten belongs to this tradition, and its form, once identified on site, will help date its construction relative to the other chaityas on the platform.",
+          "sourceIds": ["gutschow_1997", "korn_1976"],
+          "confidence": "medium"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Mind Only: The Teaching Behind the Stone",
+          "text": "Vasubandhu is associated above all with the Yogacara school, sometimes summarised as 'mind only', which analyses how experience arises from consciousness and how ignorance distorts perception. His works, including the Abhidharmakosha and the Twenty and Thirty Verses, became foundational texts studied across the Buddhist world, from India to Tibet, China and Japan. A chaitya dedicated to his memory honours not only a person but a tradition of rigorous inquiry into the nature of mind. The Buddha images in a chaitya's niches represent the enlightened state toward which such inquiry leads. For visitors, the chorten offers a reminder that Swayambhu is not only a place of devotion and legend but also of philosophy, where questions about what we perceive and how we might be free have been studied for centuries by monks and lay scholars alike.",
+          "sourceIds": ["saalik_editorial", "locke_1985"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Merit Through Circling",
+          "text": "Like other chaityas on the platform, the Vasubandhu chorten is honoured by pilgrims who circle it clockwise, touch it and make offerings of flowers, rice and lamps. Building and honouring chaityas is considered a source of merit in Newar and Tibetan Buddhism, and families have commissioned chaityas to mark deaths, celebrate events or fulfil vows. Scholars and students of Buddhist philosophy, including monks from monasteries in the valley, may pay particular respect to a memorial associated with Vasubandhu. During the month of Gunla and on festival days, the chaityas of the platform receive extra attention, with lamps lit in rows and offerings placed in their niches. Visitors moving around the platform should keep to the clockwise direction and avoid sitting on or leaning against chaityas, which are regarded as sacred objects rather than furniture.",
+          "sourceIds": ["locke_1985", "gutschow_1997"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Documenting Small Monuments",
+          "text": "Small chaityas are among the most vulnerable monuments at Swayambhu. They can be damaged by earthquakes, weathering and accidental impact, and their carved images are at risk of theft. The 2015 earthquake toppled or damaged several small structures on the hilltop, and some were reassembled afterwards. Identifying individual chaityas, such as the one associated with Vasubandhu, requires careful field documentation, recording their position, form, inscriptions and condition. Such documentation supports conservation planning and protects against theft, since well-recorded objects are easier to trace if stolen. Saalik's field collectors are asked to locate the chaitya identified locally as Vasubandhu's, consult with the hill's custodians and record it from five angles. Visitors can help by respecting chaityas, not climbing on them and reporting any damage they notice to the site's management office.",
+          "sourceIds": ["doa_nepal", "saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "Among the forest of small stone chaityas around the great stupa, one is remembered for a philosopher. Vasubandhu, one of the greatest thinkers in Buddhist history, lived some sixteen hundred years ago, and Tibetan tradition says he spent his final years here in Nepal. His teachings on the mind, on how what we perceive arises from consciousness itself, are still studied in monasteries from Tibet to Japan. Which chaitya honours him? Even Saalik's researchers are still confirming it with the custodians of the hill, so this is your chance to be a detective among the stones. As you walk clockwise, look for inscriptions and unusual shapes. Book a verified local storyteller nearby and let a guide who knows the hill point out the philosopher's chorten."
+      },
+      "nepaliSummary": "वसुबन्धु चैत्य स्वयम्भू मञ्चमा रहेको, बौद्ध दार्शनिक वसुबन्धुको सम्झनामा बनेको भनिने सानो ढुङ्गे चैत्य हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "EARLY_MORNING",
+        "localTimeWindow": "06:15-07:45",
+        "lightingNotes": "Soft early light suits small stone carvings; avoid midday, when the niches fall into black shadow.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "Chaitya square-on with its principal niche." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique showing the base and dome." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique with the stupa behind." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Niche image and any inscription." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Chaitya among the other votive chaityas on the platform." }
+        ],
+        "occlusionNotes": "The platform is crowded with pilgrims, prayer flags and monkeys.",
+        "restrictions": "Do not sit on or lean against chaityas; move clockwise."
+      },
+      "walkingTourStop": { "sequence": 7, "dwellMinutes": 6, "talkingPoint": "Introduce Buddhist philosophy through the chaityas of the platform." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Which chaitya carries the Vasubandhu identification is unconfirmed; the field team should identify it with the custodians." }
+    },
+    {
+      "id": "swy_buddha_amideva_park",
+      "names": { "en": "Buddha Amideva Park", "ne": "बुद्ध अमिदेव पार्क", "romanized": "Amideva Park", "romanizedLanguage": "Nepali" },
+      "aliases": ["Buddha Park Swayambhu"],
+      "monumentType": "MONUMENTAL_STATUE",
+      "tradition": "BUDDHIST",
+      "era": { "dynasty": "Modern", "century": "early 21st century CE", "foundingYearCE": null, "datingBasis": "documented_record", "patron": null },
+      "geo": { "lat": 27.7166, "lng": 85.2836, "elevationM": 1340, "geofenceRadiusM": 80, "municipality": "Kathmandu Metropolitan City", "district": "Kathmandu", "ward": 15, "coordinatePrecision": "approximate_desk_research" },
+      "visualCues": {
+        "roofTiers": 0,
+        "primaryMaterials": ["reinforced_concrete", "gold_leaf"],
+        "guardianVahanas": [],
+        "deityMudrasWeapons": ["three giant golden statues: Shakyamuni Buddha flanked by Amitabha and Avalokiteshvara"],
+        "distinguishingFeatures": ["three colossal gilded statues beside the ring road west of Swayambhu", "prayer wheels and flags around the statue platforms"],
+        "confusableWith": ["swy_world_peace_pond"],
+        "disambiguationTip": "Buddha Amideva Park has three colossal golden statues side by side; the World Peace Pond has a single standing Buddha in water."
+      },
+      "loreChunks": [
+        {
+          "category": "HISTORY_DYNASTY",
+          "title": "Three Giants Beside the Ring Road",
+          "text": "Buddha Amideva Park, at the western foot of Swayambhu hill beside Kathmandu's ring road, is one of the newest sacred landmarks in the valley. It is known for three colossal golden statues, usually identified as Shakyamuni Buddha in the centre, flanked by Amitabha, the Buddha of Infinite Light, and Avalokiteshvara, the bodhisattva of compassion. The park was created in the early years of the twenty-first century with support from Buddhist donors, and its exact opening date and sponsors should be confirmed from the site's own records, which Saalik's field team will consult. The statues are visible from a distance and have quickly become a popular stop for pilgrims and visitors on their way to or from the stupa. The park shows that the sacred landscape of Swayambhu continues to grow, with each generation adding its own monuments to a hill honoured for well over a thousand years.",
+          "sourceIds": ["saalik_editorial", "ntb"],
+          "confidence": "low"
+        },
+        {
+          "category": "ARCHITECTURE_CRAFTSMANSHIP",
+          "title": "Monumental Modern Sculpture",
+          "text": "The three statues stand side by side on raised platforms, each many metres tall and finished in gold, creating a striking contrast with the green slopes of Swayambhu behind them. Their scale is unprecedented in the valley, where traditional sacred images are generally modest in size and housed in shrines. Around the statues, the park includes prayer wheels, flags and paths for circumambulation, as well as smaller shrines and seating areas. The statues follow standard Tibetan and Newar iconographic conventions in their postures, gestures and attributes, adapted to monumental size. Their construction required modern engineering methods, including reinforced structures to support their weight and resist earthquakes. Field collectors are asked to document the statues from all angles, record any plaques or inscriptions describing their construction, and note the materials visible on their surfaces, which have not yet been confirmed for this record.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "low"
+        },
+        {
+          "category": "ICONOGRAPHY_SYMBOLISM",
+          "title": "Wisdom, Light and Compassion",
+          "text": "Each of the three figures represents a central aspect of Mahayana and Vajrayana Buddhism. Shakyamuni, the historical Buddha born in Lumbini in Nepal, is shown seated in meditation or touching the earth, representing the path of awakening he taught. Amitabha, the Buddha of Infinite Light, presides over the Pure Land into which devotees hope to be reborn, and he is often shown with his hands in meditation holding a bowl. Avalokiteshvara, the bodhisattva of compassion, is shown with multiple arms or holding a lotus, embodying the vow to relieve the suffering of all beings. Together the three express wisdom, boundless light and compassion. Their placement at Swayambhu, a site sacred to Newar and Tibetan Buddhists alike, links the modern statues with the ancient stupa above, where the same figures appear in older and smaller forms across the hilltop.",
+          "sourceIds": ["pal_1974", "saalik_editorial"],
+          "confidence": "medium"
+        },
+        {
+          "category": "LIVING_RITUALS_FOLKLORE",
+          "title": "Circling the Golden Statues",
+          "text": "Pilgrims visiting the park circle the statues clockwise, spinning prayer wheels and offering butter lamps, flowers and khata scarves, much as they do at the stupa above. Tibetan Buddhists in particular include the park in their circuit around Swayambhu hill, and the park is busy on full-moon days and during Buddhist festivals such as Buddha Jayanti and Losar. Local residents also use the park as a quiet space for walking and rest in a busy part of the city. The statues are popular with photographers, and visitors often stop here before or after climbing the hill. Visitors are welcome to walk around the statues, but should follow the clockwise direction, avoid climbing on platforms and treat the statues as sacred images rather than as backdrops. A guide can explain the three figures and their relationship with the shrines on the hilltop above.",
+          "sourceIds": ["saalik_editorial", "dowman_1995"],
+          "confidence": "medium"
+        },
+        {
+          "category": "CONSERVATION_RESTORATION",
+          "title": "Maintaining Modern Monuments",
+          "text": "As a recent creation, Buddha Amideva Park faces conservation issues different from those of the ancient monuments on the hill. The statues' gilded surfaces are exposed to sun, rain and pollution from the busy ring road, and their finishes must be maintained to prevent discolouration and damage. Large modern statues also require structural monitoring, particularly after earthquakes, and the 2015 earthquake prompted inspections of buildings and structures around Swayambhu. The park's paths, prayer wheels and gardens need regular upkeep. Management of the park rests with its sponsoring organisations in coordination with local authorities. Documenting modern monuments such as this one helps to record the continuing development of the valley's sacred landscape. Saalik's field collectors are asked to photograph the statues, record construction details from on-site plaques and note their condition for future comparison.",
+          "sourceIds": ["saalik_editorial"],
+          "confidence": "low"
+        }
+      ],
+      "audioHook": {
+        "script": "As you leave Swayambhu by its western side, three golden giants rise beside the ring road. This is Buddha Amideva Park, one of the newest sacred places in the valley, created early this century. In the centre sits Shakyamuni, the Buddha born in Lumbini in southern Nepal. Beside him are Amitabha, the Buddha of Infinite Light, and Avalokiteshvara, the bodhisattva of compassion. Together they stand for wisdom, light and kindness. Look up the hill behind them, and you will see the ancient stupa where the same figures appear in much older, much smaller forms. Tibetan pilgrims circle these statues just as they circle the stupa, spinning prayer wheels and lighting lamps. Walk clockwise with them. Book a verified local storyteller nearby and let a guide finish your Swayambhu circuit here."
+      },
+      "nepaliSummary": "बुद्ध अमिदेव पार्क स्वयम्भूको पश्चिमी फेदमा रिङरोड छेउ रहेको, शाक्यमुनि बुद्ध, अमिताभ र अवलोकितेश्वरका तीन विशाल सुनौला मूर्ति भएको स्थल हो।",
+      "fieldPhotoSpec": {
+        "bestTimeOfDay": "LATE_AFTERNOON_GOLDEN",
+        "localTimeWindow": "16:00-17:30",
+        "lightingNotes": "The statues face east; late-afternoon light from the west makes the gold glow without harsh glare.",
+        "angles": [
+          { "angle": "ESTABLISHING_FRONT", "framingNote": "All three statues square-on from the park entrance." },
+          { "angle": "LEFT_45", "framingNote": "Left oblique with Swayambhu hill behind." },
+          { "angle": "RIGHT_45", "framingNote": "Right oblique including the prayer wheels." },
+          { "angle": "CLOSE_UP_ICONOGRAPHY", "framingNote": "Faces and hand gestures of the central Buddha." },
+          { "angle": "WIDE_COURTYARD_CONTEXT", "framingNote": "Park with the statues and the ring road setting." }
+        ],
+        "occlusionNotes": "Prayer flags, visitors and traffic along the ring road.",
+        "restrictions": "Walk clockwise; do not climb on statue platforms."
+      },
+      "walkingTourStop": { "sequence": 11, "dwellMinutes": 10, "talkingPoint": "Close the Swayambhu circuit with the three golden giants at the western foot." },
+      "verification": { "status": "EDITORIAL_DRAFT", "notes": "Opening year, sponsors, statue materials and identities to confirm from on-site plaques." }
+    }
+  ]
+}

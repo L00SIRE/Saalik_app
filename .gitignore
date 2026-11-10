@@ -20,7 +20,6 @@ frontend/saalik-mobile/build/
 !.env.example
 
 # ─── Credentials & secrets (do not commit) ────────────────────────────────────
-# These match anything that looks remotely like a key, cert, or service account.
 *.pem
 *.key
 *.cer
@@ -45,6 +44,10 @@ secrets/
 *.sqlite
 *.sqlite3
 *.dump
+*.faiss
+*.index
+*.npy
+*.npz
 backend/dev.db
 
 # ─── Native build artifacts ───────────────────────────────────────────────────
@@ -97,10 +100,6 @@ notes/
 .tmp/
 
 # ─── Recordings, screenshots, demo videos ─────────────────────────────────────
-# Demo recordings, screen captures, and design exports are easy to commit by
-# accident and bloat the repo. Anything in the directories below is private.
-# Legitimate brand assets live under frontend/saalik-mobile/assets — those are
-# explicitly re-allowed at the bottom of this file.
 recordings/
 screenshots/
 demo-output/
@@ -111,15 +110,13 @@ investor-materials/
 *.mkv
 *.gif
 
-# Re-allow committed brand/UI image assets (these *should* be in version control).
+# Re-allow committed brand/UI image assets.
 !frontend/saalik-mobile/assets/**
 
 # ─── Confidential / private documents ─────────────────────────────────────────
-# Anything that contains pricing, take rates, founder comp, partnership terms,
-# or investor-specific framing. Use the suffix conventions, the `private/` dir,
-# or the named-file list below.
 AI_GUIDE_DESIGN.md
 SOFT_LAUNCH_PLAN.md
+ENGINEERING_DOCS.md
 DEMO_RECORDING_GUIDE.md
 GROWTH_STRATEGY.md
 INVESTOR_*.md
@@ -135,11 +132,39 @@ private/
 internal/
 investors/
 
-# ─── Agent / runtime output (Claude Code task transcripts, etc.) ──────────────
-# These can leak conversation history and partial drafts.
+# ─── Agent / runtime output ───────────────────────────────────────────────────
 tasks/
 .tasks/
 .agent-output/
-
-# ─── Agentic memory / architect ledger (local source of truth, never commit) ──
 .project_ledger.md
+
+# Cursor & Local Autonomous Playbooks (Do Not Commit)
+CURSOR_AUTORUN_PLAYBOOK.md
+cursor_autorun_playbook.md
+.cursorrules
+.cursor/
+*.cursor-prompt.md
+
+# Python ML Pipeline Virtualenvs, Caches & Model Weights
+ml_pipeline/.venv/
+ml_pipeline/venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+*.pyc
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.bin
+
+# Raw Downloaded Seed Photos & Unsynced Field Capture Bundles
+ml_pipeline/seed_scraper/raw_images/
+ml_pipeline/benchmarks/output_plots/
+data/raw_field_photos/
+data/offline_upload_queue/
+
+# Next.js Command Center & Expo Build Artifacts
+apps/ntb-command-center/.next/
+apps/ntb-command-center/out/
+apps/ntb-command-center/node_modules/

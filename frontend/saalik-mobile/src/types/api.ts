@@ -118,7 +118,7 @@ export interface User {
   name: string;
   phone?: string;
   avatar?: string;
-  role: 'TRAVELER' | 'GUIDE' | 'ADMIN';
+  role: 'TRAVELER' | 'GUIDE' | 'ADMIN' | 'PENDING_GUIDE';
 }
 
 export interface AuthResponse {
@@ -167,4 +167,30 @@ export interface GuideApplicationPayload {
   specialties: string[];
   yearsExperience: number;
   certifications?: string[];
+}
+
+// Legacy experience planner types (PlanScreen / Journey flows)
+export interface ExperiencePlanHighlight {
+  title: string;
+  description: string;
+}
+
+export interface ExperiencePlanDay {
+  day: string;
+  focus: string;
+  details: string[];
+}
+
+export interface ExperiencePlan {
+  id?: string;
+  headline: string;
+  summary: string;
+  soundtrack: string;
+  highlights: ExperiencePlanHighlight[];
+  dayPlan: ExperiencePlanDay[];
+}
+
+export interface ChatTurn {
+  role: 'user' | 'assistant' | 'system';
+  content: string;
 }
