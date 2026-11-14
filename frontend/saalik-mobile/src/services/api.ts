@@ -411,7 +411,7 @@ let DEMO_BOOKINGS: Booking[] = [];
 // ============================================
 // MOCK API FLAG
 // ============================================
-const USE_MOCK = true; // Set to false when backend is running
+const USE_MOCK = process.env.EXPO_PUBLIC_USE_MOCK === 'true';
 
 // ============================================
 // AUTHENTICATION API

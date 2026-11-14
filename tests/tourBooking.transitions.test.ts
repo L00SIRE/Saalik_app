@@ -2,7 +2,7 @@ import {
   TourBookingService,
   assertTransition,
   canTransition,
-} from '../src/server/services/tourBooking.service';
+} from '../backend/src/heritage/services/tourBooking.service';
 
 describe('guide booking state transitions', () => {
   let service: TourBookingService;

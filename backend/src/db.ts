@@ -1,15 +1,10 @@
 import { PrismaClient } from '@prisma/client';
 import { PrismaBetterSqlite3 } from '@prisma/adapter-better-sqlite3';
-import Database from 'better-sqlite3';
 import path from 'path';
 
-const dbPath = process.env.DATABASE_URL?.replace('file:', '') || './dev.db';
-
-// Resolve path relative to CWD or use absolute if provided
-const resolvedPath = path.isAbsolute(dbPath) ? dbPath : path.join(process.cwd(), dbPath);
-
-const connection = new Database(resolvedPath);
-const adapter = new PrismaBetterSqlite3(connection as any);
+const configured = process.env.DATABASE_URL ?? 'file:./dev.db';
+const fileUrl = configured.startsWith('file:') ? configured : `file:${path.resolve(configured)}`;
+const adapter = new PrismaBetterSqlite3({ url: fileUrl });
 
 const prisma = new PrismaClient({
     adapter,

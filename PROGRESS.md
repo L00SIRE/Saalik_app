@@ -1,5 +1,31 @@
 # Saalik — Implementation Progress
 
+Last updated: 2026-11-10
+
+## Unified architecture (monorepo)
+
+```
+frontend/saalik-mobile/     Expo app. Discover tab: heritage home, scanner,
+                            field collector, sync manager, local storytellers.
+                            AppModeContext: LIVE_CLOUD | OFFLINE_FIELD_SYNC | NTB_VIP_DEMO_MODE
+backend/                    Express API (port 4000)
+  src/routes/               auth, tours, bookings, guides, reviews, ai
+  src/heritage/             pgvector-style geo-visual search, RAG assembly,
+                            field-capture ingest, telemetry, command-center metrics
+                            mounted at /api/heritage
+  prisma/                   SQLite marketplace schema
+prisma/                     PostgreSQL + pgvector heritage schema (production target)
+data/nepal_heritage_seed/   101-monument bilingual corpus (offline fallback)
+apps/ntb-command-center/    Next.js NTB dashboard. Fetches
+                            GET /api/heritage/command-center, else seed dashboard JSON
+ml_pipeline/                Python quality gate, encoder, augmenter, retrieval benchmark
+tests/                      Jest against backend/src/heritage
+```
+
+Root scripts: `dev:all`, `seed:db`, `verify:all`.
+
+---
+
 Last updated: 2026-05-05
 
 This is the working stage doc. When tokens run out and you come back, **start here**.
@@ -93,54 +119,24 @@ The README is for sharing; this file is for you.
 
 ---
 
-## ⚠️ Pending — code inconsistencies (not blocking demo, blocking launch)
+## ✅ Launch blockers (completed 2026-11-10)
 
-### 1. Legacy JWT pattern in old routes
-**Files:** `backend/src/routes/{bookings,guides,reviews,experience}.ts`
+### 1. Legacy JWT pattern in old routes — done
+Shared `backend/src/config/auth.ts` (`ACCESS_SECRET`, `REFRESH_SECRET`) and `backend/src/middleware/requireAuth.ts`. Bookings, guides, reviews, experience, AI, and `GET /api/heritage/session` verify with that secret. Jest: `backend/tests/auth.integration.test.ts`.
 
-These still inline:
-```ts
-jwt.verify(token, process.env.JWT_SECRET || 'secret')
-```
+### 2. `ai.ts` bare PrismaClient — done
+`backend/src/routes/ai.ts` imports the shared adapter client from `../db`.
 
-The new `auth.ts` uses `process.env.JWT_SECRET ?? 'dev_access_secret_CHANGE_IN_PROD'`. **Tokens issued by `auth.ts` won't validate in these routes** because the dev fallbacks differ. In prod (with `JWT_SECRET` set) it works, but the inconsistency is fragile.
+### 3. `USE_MOCK` not reading env — done
+`frontend/saalik-mobile/src/services/api.ts` uses `process.env.EXPO_PUBLIC_USE_MOCK === 'true'`. Demo sessions still short-circuit through `demo.isActive()`.
 
-**Fix:**
-1. Create `backend/src/middleware/requireAuth.ts` — exports `requireAuth(req, res, next)` that reads the same `ACCESS_SECRET` constant, attaches `req.user`.
-2. Replace inline `jwt.verify` calls in the four legacy routes with `router.use(requireAuth)` or per-route `requireAuth`.
-3. Move `ACCESS_SECRET` / `REFRESH_SECRET` constants into a shared `backend/src/config/auth.ts`.
+### 4. No rate limiting on auth — done
+`express-rate-limit` on `/api/auth/login` (10 / 15 min) and `/api/auth/refresh` (30 / 15 min). Skipped when `NODE_ENV=test`.
 
-Estimated effort: ~30 minutes. **Do this before flipping mock mode off.**
+### 5. No origin allowlist — done
+CORS `origin` is `CORS_ORIGINS` or the local Expo / Next / API origins.
 
-### 2. `ai.ts` bare PrismaClient
-**File:** `backend/src/routes/ai.ts`
-
-Constructs `new PrismaClient()` directly. The project uses better-sqlite3 with a driver adapter, so the client must be built with the adapter (which `src/db.ts` already does).
-
-**Fix:** Replace `new PrismaClient()` with `import prisma from '../db'`. One-line change.
-
-### 3. `USE_MOCK` not reading env
-**File:** `frontend/saalik-mobile/src/services/api.ts`
-
-`USE_MOCK` is currently a hardcoded constant. The `.env.example` documents `EXPO_PUBLIC_USE_MOCK` but nothing reads it.
-
-**Fix:**
-```ts
-const USE_MOCK = process.env.EXPO_PUBLIC_USE_MOCK === 'true';
-```
-(remember Expo only inlines `EXPO_PUBLIC_*` at build time — restart Metro).
-
-### 4. No rate limiting on auth
-**File:** `backend/src/index.ts` (or wherever the Express app is composed)
-
-`/auth/login` has no rate limit. Brute-force is trivial.
-
-**Fix:** `npm i express-rate-limit`, add a strict limiter on `/auth/*` (e.g., 10 req / 15 min per IP for login, 30 / 15 min for refresh).
-
-### 5. No CSRF / origin check
-We're stateless JWT, so CSRF risk is low. But adding an `Origin` header allowlist in prod is cheap insurance against XHR exploits if someone embeds the API.
-
-**Fix:** `cors({ origin: ALLOWED_ORIGINS })` in prod config.
+Live camera frames go to `POST /api/heritage/scan-image`, which calls `ml_pipeline/inference_server.py` (`python -m uvicorn` on port 8099, CLIP on MPS). If that worker is down, the route uses a deterministic 512-d cue and still logs the scan.
 
 ---
 
@@ -155,13 +151,9 @@ We're stateless JWT, so CSRF risk is low. But adding an `Origin` header allowlis
 
 When you have tokens again, this is the path:
 
-1. **Fix inconsistency #2** (`ai.ts` PrismaClient) — 1 minute, removes a guaranteed crash.
-2. **Fix inconsistency #1** (auth middleware extraction) — half an hour, unblocks live mode.
-3. **Fix inconsistency #3** (`USE_MOCK` from env) — 5 minutes.
-4. **Verify live mode**: backend `npm run dev`, mobile with `EXPO_PUBLIC_USE_MOCK=false`, register a new user, kill the app, reopen, confirm refresh-token bootstrap works without re-login.
-5. **Add rate limiting** (#4).
-6. **Wire real Google/Apple sign-in** — placeholders in `LoginScreen.tsx` already exist; swap mock handlers for `expo-auth-session` (Google) and `expo-apple-authentication`. Backend needs an `/auth/oauth/{provider}` endpoint that verifies the ID token, upserts the user, returns the same `{ user, accessToken, refreshToken }` shape.
-7. **Image upload via Cloudflare R2** — schema already has `tour.images String[]` etc., just need a presigned-URL endpoint + an `<ImagePicker>` flow.
+1. **Verify live mode**: backend `npm run dev`, CLIP worker `ml_pipeline/.venv/bin/python ml_pipeline/inference_server.py`, mobile with `EXPO_PUBLIC_USE_MOCK=false`.
+2. **Wire real Google/Apple sign-in** — placeholders in `LoginScreen.tsx` already exist; swap mock handlers for `expo-auth-session` (Google) and `expo-apple-authentication`. Backend needs an `/auth/oauth/{provider}` endpoint that verifies the ID token, upserts the user, returns the same `{ user, accessToken, refreshToken }` shape.
+3. **Image upload via Cloudflare R2** — schema already has `tour.images String[]` etc., just need a presigned-URL endpoint + an `<ImagePicker>` flow.
 
 ---
 

@@ -6,16 +6,15 @@ import {
   angleLabel,
   formatNumber,
   getCaptureAngles,
-  getMonuments,
-  getOverview,
-  getZones,
 } from "@/lib/data";
+import { loadLiveDashboard } from "@/lib/live";
 
-export default function RegistryPage() {
-  const monuments = getMonuments();
-  const zones = getZones();
+export default async function RegistryPage() {
+  const live = await loadLiveDashboard();
+  const monuments = live.monuments;
+  const zones = live.zones;
   const angles = getCaptureAngles();
-  const overview = getOverview();
+  const overview = live.overview;
 
   const readyEn = monuments.filter((m) => m.embeddingHealth.ragStatusEn === "ready").length;
   const readyNe = monuments.filter((m) => m.embeddingHealth.ragStatusNe === "ready").length;

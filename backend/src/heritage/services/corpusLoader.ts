@@ -48,7 +48,8 @@ interface RawCorpus {
 }
 
 function defaultCorpusPath(): string {
-  return path.resolve(__dirname, '../../../data/nepal_heritage_seed/master_rag_corpus.json');
+  // backend/src/heritage/services -> repo root
+  return path.resolve(__dirname, '../../../../data/nepal_heritage_seed/master_rag_corpus.json');
 }
 
 export interface LoadedCorpus {

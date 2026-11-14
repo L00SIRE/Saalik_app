@@ -1,7 +1,7 @@
-import { getOverview } from "@/lib/data";
+import { loadLiveDashboard } from "@/lib/live";
 
-export function Topbar() {
-  const overview = getOverview();
+export async function Topbar() {
+  const overview = (await loadLiveDashboard()).overview;
 
   return (
     <header className="topbar">

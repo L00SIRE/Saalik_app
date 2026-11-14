@@ -38,6 +38,15 @@ export function SettingsScreen() {
       />
 
       <ScrollView contentContainerStyle={styles.scroll} showsVerticalScrollIndicator={false}>
+        <Card>
+          <AppText style={{ color: colors.textPrimary, fontWeight: '700', marginBottom: 8 }}>
+            Heritage field tools
+          </AppText>
+          <AppText style={{ color: colors.textSecondary, marginBottom: 12 }}>
+            Field Collector, AI scanner, and NTB demo mode live on the Discover tab.
+          </AppText>
+          <Button label="Open Discover" onPress={() => navigation.getParent()?.navigate('DiscoverTab')} />
+        </Card>
         {/* ─── Notifications ─────────────────────────────────────────────── */}
         <Section title="Notifications">
           <ToggleRow

@@ -82,6 +82,29 @@ class MultiCropResult:
         return [self.silhouette_embedding, self.detail_embedding, self.fused_embedding]
 
 
+def _center_crop(image: Image.Image, scale: float) -> Image.Image:
+    width, height = image.size
+    crop_w = max(1, int(width * scale))
+    crop_h = max(1, int(height * scale))
+    left = (width - crop_w) // 2
+    top = (height - crop_h) // 2
+    return image.crop((left, top, left + crop_w, top + crop_h))
+
+
+def center_biased_views(image: Image.Image) -> List[Image.Image]:
+    """Full frame, 70% center, 50% subject crop, and a mirrored 70% crop."""
+    crop_70 = _center_crop(image, 0.70)
+    return [
+        image,
+        crop_70,
+        _center_crop(image, 0.50),
+        crop_70.transpose(Image.Transpose.FLIP_LEFT_RIGHT),
+    ]
+
+
+PYRAMID_WEIGHTS = (0.35, 0.35, 0.20, 0.10)
+
+
 def _l2_normalize(vec: np.ndarray, eps: float = 1e-12) -> np.ndarray:
     norm = float(np.linalg.norm(vec))
     if norm < eps:
@@ -186,7 +209,14 @@ class TorchVisionEncoder(BaseEncoder):
         import torch
 
         self.backend = backend
-        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        if device:
+            self.device = device
+        elif getattr(torch.backends, "mps", None) is not None and torch.backends.mps.is_available():
+            self.device = "mps"
+        elif torch.cuda.is_available():
+            self.device = "cuda"
+        else:
+            self.device = "cpu"
         self._torch = torch
         self._model = None
         self._processor = None
@@ -209,9 +239,7 @@ class TorchVisionEncoder(BaseEncoder):
             self._processor = CLIPProcessor.from_pretrained(model_id)
             self._model = CLIPModel.from_pretrained(model_id).to(self.device)
             self._model.eval()
-            self.embedding_dim = int(
-                self._embedding_dim_override or self._model.config.projection_dim
-            )
+            self.embedding_dim = int(self._model.config.projection_dim)
             return
 
         self._processor = AutoImageProcessor.from_pretrained(model_id)
@@ -228,11 +256,12 @@ class TorchVisionEncoder(BaseEncoder):
 
         with torch.no_grad():
             if self.backend == "clip":
-                inputs = self._processor(images=pil, return_tensors="pt")
+                views = center_biased_views(pil)
+                inputs = self._processor(images=views, return_tensors="pt")
                 inputs = {k: v.to(self.device) for k, v in inputs.items()}
-                feats = self._model.get_image_features(**inputs)
-                vec = feats[0].detach().cpu().numpy().astype(np.float32)
-                return _l2_normalize(vec)
+                feats = self._model.get_image_features(**inputs).detach().cpu().numpy().astype(np.float32)
+                fused = sum(weight * _l2_normalize(feats[index]) for index, weight in enumerate(PYRAMID_WEIGHTS))
+                return _l2_normalize(np.asarray(fused, dtype=np.float32))
 
             inputs = self._processor(images=pil, return_tensors="pt")
             inputs = {k: v.to(self.device) for k, v in inputs.items()}
@@ -254,7 +283,7 @@ class TorchVisionEncoder(BaseEncoder):
 
         with torch.no_grad():
             if self.backend == "clip":
-                inputs = self._processor(text=[text], return_tensors="pt", padding=True)
+                inputs = self._processor(text=[text], return_tensors="pt", padding=True, truncation=True, max_length=77)
                 inputs = {k: v.to(self.device) for k, v in inputs.items()}
                 feats = self._model.get_text_features(**inputs)
                 vec = feats[0].detach().cpu().numpy().astype(np.float32)
@@ -263,7 +292,7 @@ class TorchVisionEncoder(BaseEncoder):
             # SigLIP via transformers AutoModel typically exposes get_text_features
             # when loaded as a vision-text dual encoder; fall back to hashing if absent.
             if hasattr(self._model, "get_text_features"):
-                inputs = self._processor(text=[text], return_tensors="pt", padding=True)
+                inputs = self._processor(text=[text], return_tensors="pt", padding=True, truncation=True, max_length=77)
                 inputs = {k: v.to(self.device) for k, v in inputs.items() if k.startswith("input")}
                 feats = self._model.get_text_features(**inputs)
                 vec = feats[0].detach().cpu().numpy().astype(np.float32)

@@ -7,18 +7,16 @@ import {
   designationLabel,
   formatNpr,
   formatNumber,
-  getAlerts,
-  getGuides,
-  getOverview,
-  getZones,
 } from "@/lib/data";
 import { NAV_ITEMS } from "@/lib/nav";
+import { loadLiveDashboard } from "@/lib/live";
 
-export default function HomePage() {
-  const overview = getOverview();
-  const zones = getZones();
-  const alerts = getAlerts().filter((a) => a.active);
-  const guides = getGuides();
+export default async function HomePage() {
+  const live = await loadLiveDashboard();
+  const overview = live.overview;
+  const zones = live.zones;
+  const alerts = live.alerts.filter((a) => a.active);
+  const guides = live.guides;
   const topGuides = [...guides].sort((a, b) => b.livelihoodIndex - a.livelihoodIndex).slice(0, 4);
   const unescoScans = zones
     .filter((z) => z.designation === "UNESCO_MONUMENT_ZONE")

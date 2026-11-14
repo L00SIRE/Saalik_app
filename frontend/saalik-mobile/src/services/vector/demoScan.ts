@@ -1,5 +1,8 @@
 import type { CaptureAngle, GeoFix, HeritageMonument, ScanResult } from '../../types/heritage';
+import visualIndex from '../../data/visualIndex.json';
 import { l2Normalize, rankMonuments } from './similarity';
+
+const INDEXED = (visualIndex as { dim: number; monuments: Record<string, Record<string, number[]>> }).monuments;
 
 function mulberry32(seed: number): () => number {
   let state = seed >>> 0;
@@ -39,14 +42,29 @@ export function simulateDemoScan(
   options: DemoScanOptions,
 ): ScanResult {
   const rand = mulberry32(options.seed ?? Date.now());
-  const reference = target.referenceEmbeddings.find((r) => r.angle === options.angle) ?? target.referenceEmbeddings[0];
+  const indexedAngles = INDEXED[target.id];
+  const pool = indexedAngles
+    ? allMonuments
+        .filter((monument) => INDEXED[monument.id])
+        .map((monument) => ({
+          ...monument,
+          referenceEmbeddings: Object.entries(INDEXED[monument.id] ?? {}).map(([angle, vector]) => ({
+            angle: angle as CaptureAngle,
+            vector,
+          })),
+        }))
+    : allMonuments;
+  const indexedTarget = pool.find((monument) => monument.id === target.id) ?? target;
+  const reference =
+    indexedTarget.referenceEmbeddings.find((r) => r.angle === options.angle) ??
+    indexedTarget.referenceEmbeddings[0];
   if (!reference) {
     return { source: 'on_device_demo', searchRadiusM: null, matches: [], notice: 'This monument has no reference embeddings yet.' };
   }
 
   const noise = options.noise ?? 0.18;
   const confuserMix = options.confuserMix ?? 0.15;
-  const confuser = allMonuments.find((m) => target.visualCues.confusableWith.includes(m.id));
+  const confuser = pool.find((m) => target.visualCues.confusableWith.includes(m.id));
   const confuserVector = confuser?.referenceEmbeddings.find((r) => r.angle === options.angle)?.vector;
   const scale = noise / Math.sqrt(reference.vector.length);
 
@@ -65,11 +83,13 @@ export function simulateDemoScan(
     Math.abs(options.deviceFix.lng - target.geo.lng) < 0.01;
   const fix = deviceIsNear ? options.deviceFix! : simulatedFix;
 
-  const { matches, radiusM } = rankMonuments(query, allMonuments, fix);
+  const { matches, radiusM } = rankMonuments(query, pool, fix);
   return {
     source: 'on_device_demo',
     searchRadiusM: radiusM,
     matches,
-    notice: 'Demo mode: matched on-device against bundled cue-signature reference embeddings.',
+    notice: indexedAngles
+      ? 'Demo mode: cosine match against the precomputed CLIP index of open-license reference photos.'
+      : 'Demo mode: matched on-device against bundled cue-signature reference embeddings.',
   };
 }

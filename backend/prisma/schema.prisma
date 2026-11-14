@@ -59,9 +59,48 @@ model Guide {
   rating          Float    @default(0)
   totalTours      Int      @default(0)
   totalReviews    Int      @default(0)
+  autoAccept      Boolean  @default(true)
+  maxDailyTours   Int      @default(3)
   createdAt       DateTime @default(now())
 
-  tours Tour[]
+  tours           Tour[]
+  availability    GuideAvailability?
+  blackoutDates   BlackoutDate[]
+}
+
+model GuideApplication {
+  id              String   @id @default(uuid())
+  userId          String   @unique
+  phone           String
+  languages       String
+  yearsExperience Int
+  specialties     String
+  certifications  String?
+  motivation      String
+  uniqueValue     String
+  status          String   @default("PENDING")
+  createdAt       DateTime @default(now())
+}
+
+model GuideAvailability {
+  id        String  @id @default(uuid())
+  guideId   String  @unique
+  guide     Guide   @relation(fields: [guideId], references: [id])
+  monday    String?
+  tuesday   String?
+  wednesday String?
+  thursday  String?
+  friday    String?
+  saturday  String?
+  sunday    String?
+}
+
+model BlackoutDate {
+  id      String   @id @default(uuid())
+  guideId String
+  guide   Guide    @relation(fields: [guideId], references: [id])
+  date    DateTime
+  reason  String?
 }
 
 // ============================================
@@ -87,6 +126,7 @@ model Tour {
   notIncluded  String   // JSON array: ["Transport", "Food"]
   photos       String   // JSON array of image URLs
   isActive     Boolean  @default(true)
+  status       String   @default("DRAFT")
   rating       Float    @default(0)
   totalReviews Int      @default(0)
   createdAt    DateTime @default(now())

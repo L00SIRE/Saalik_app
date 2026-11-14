@@ -4,13 +4,9 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 import prisma from '../db';
+import { ACCESS_EXPIRY, ACCESS_SECRET, REFRESH_EXPIRY_DAYS, REFRESH_SECRET } from '../config/auth';
 
 const router = Router();
-
-const ACCESS_SECRET = process.env.JWT_SECRET ?? 'dev_access_secret_CHANGE_IN_PROD';
-const REFRESH_SECRET = process.env.REFRESH_TOKEN_SECRET ?? 'dev_refresh_secret_CHANGE_IN_PROD';
-const ACCESS_EXPIRY = '15m';
-const REFRESH_EXPIRY_DAYS = 30;
 
 // ─── Validation Schemas ────────────────────────────────────────────────────────
 

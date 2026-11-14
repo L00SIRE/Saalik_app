@@ -2,7 +2,8 @@ import { MetricCard } from "@/components/MetricCard";
 import { PageHeader } from "@/components/PageHeader";
 import { Panel } from "@/components/Panel";
 import { DesignationBadge } from "@/components/StatusBadge";
-import { formatNumber, getHourlyScans, getZones } from "@/lib/data";
+import { formatNumber, getHourlyScans } from "@/lib/data";
+import { loadLiveDashboard } from "@/lib/live";
 
 const ZONE_COLORS: Record<string, string> = {
   kathmandu_durbar: "#1f4034",
@@ -15,8 +16,9 @@ const ZONE_COLORS: Record<string, string> = {
   hidden_gems_kirtipur_panauti_bungamati: "#c46d4a",
 };
 
-export default function FootTrafficPage() {
-  const zones = getZones();
+export default async function FootTrafficPage() {
+  const live = await loadLiveDashboard();
+  const zones = live.zones;
   const hourly = getHourlyScans();
   const unesco = zones.filter((z) => z.designation === "UNESCO_MONUMENT_ZONE");
   const satellite = zones.filter((z) => z.designation === "SATELLITE_HERITAGE_TOWNS");

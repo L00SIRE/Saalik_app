@@ -1,4 +1,4 @@
-import { FieldCaptureService } from '../src/server/services/fieldCapture.service';
+import { FieldCaptureService } from '../backend/src/heritage/services/fieldCapture.service';
 
 describe('offline field-capture batch upsert idempotency', () => {
   let service: FieldCaptureService;

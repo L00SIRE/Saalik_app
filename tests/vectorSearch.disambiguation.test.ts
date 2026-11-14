@@ -4,8 +4,8 @@ import {
   hybridGeoVisualScan,
   rankMonuments,
   SEARCH_RADIUS_M,
-} from '../src/server/services/vectorSearch.service';
-import { SAALIK_EDITORIAL_CITATION } from '../src/server/types/heritage';
+} from '../backend/src/heritage/services/vectorSearch.service';
+import { SAALIK_EDITORIAL_CITATION } from '../backend/src/heritage/types/heritage';
 import {
   embeddingForAngle,
   getCorpus,

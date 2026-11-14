@@ -1,11 +1,13 @@
 import { MetricCard } from "@/components/MetricCard";
 import { PageHeader } from "@/components/PageHeader";
 import { Panel } from "@/components/Panel";
-import { formatNpr, formatNumber, getGuides, getZones } from "@/lib/data";
+import { formatNpr, formatNumber } from "@/lib/data";
+import { loadLiveDashboard } from "@/lib/live";
 
-export default function LivelihoodsPage() {
-  const guides = getGuides();
-  const zones = getZones();
+export default async function LivelihoodsPage() {
+  const live = await loadLiveDashboard();
+  const guides = live.guides;
+  const zones = live.zones;
   const totalScans = guides.reduce((s, g) => s + g.scansAttributed7d, 0);
   const totalBookings = guides.reduce((s, g) => s + g.walkingToursBooked7d, 0);
   const totalTips = guides.reduce((s, g) => s + g.tipRevenueNpr7d, 0);

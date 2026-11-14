@@ -69,7 +69,8 @@ export interface CloudScanResponse {
 }
 
 export async function scanMonumentInCloud(request: CloudScanRequest): Promise<CloudScanResponse> {
-  const { data } = await client.post<CloudScanResponse>('/scan', request, { timeout: 30000 });
+  const path = request.imageBase64 ? '/scan-image' : '/scan';
+  const { data } = await client.post<CloudScanResponse>(path, request, { timeout: 30000 });
   return data;
 }
 

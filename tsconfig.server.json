@@ -14,6 +14,6 @@
     "types": ["node", "jest"],
     "declaration": false
   },
-  "include": ["src/server/**/*.ts", "tests/**/*.ts"],
-  "exclude": ["node_modules", "backend", "frontend", "dist"]
+  "include": ["backend/src/heritage/**/*.ts", "tests/**/*.ts"],
+  "exclude": ["node_modules", "frontend", "dist", "backend/src/routes", "backend/src/services/ai.ts"]
 }

@@ -1,13 +1,17 @@
-import { Router, Request, Response } from 'express';
+import { Router, Response } from 'express';
 import { chat, clearChatHistory, getChatHistory } from '../services/ai';
+import prisma from '../db';
+import { requireAuth, type AuthedRequest } from '../middleware/requireAuth';
 
 const router = Router();
+router.use(requireAuth);
 
 // POST /api/ai/chat - Send a message to AI
-router.post('/chat', async (req: Request, res: Response) => {
+router.post('/chat', async (req: AuthedRequest, res: Response) => {
     try {
         const { message } = req.body;
-        const userId = (req as any).userId || 'anonymous';
+        const userId = req.userId ?? 'anonymous';
+        await prisma.user.findUnique({ where: { id: userId }, select: { id: true } });
 
         if (!message || typeof message !== 'string') {
             return res.status(400).json({ error: 'Message is required' });
@@ -33,9 +37,9 @@ router.post('/chat', async (req: Request, res: Response) => {
 });
 
 // GET /api/ai/history - Get chat history
-router.get('/history', async (req: Request, res: Response) => {
+router.get('/history', async (req: AuthedRequest, res: Response) => {
     try {
-        const userId = (req as any).userId || 'anonymous';
+        const userId = req.userId ?? 'anonymous';
         const history = getChatHistory(userId);
 
         return res.json({
@@ -51,9 +55,9 @@ router.get('/history', async (req: Request, res: Response) => {
 });
 
 // DELETE /api/ai/history - Clear chat history (start new conversation)
-router.delete('/history', async (req: Request, res: Response) => {
+router.delete('/history', async (req: AuthedRequest, res: Response) => {
     try {
-        const userId = (req as any).userId || 'anonymous';
+        const userId = req.userId ?? 'anonymous';
         clearChatHistory(userId);
 
         return res.json({ message: 'Chat history cleared' });
@@ -64,7 +68,7 @@ router.delete('/history', async (req: Request, res: Response) => {
 });
 
 // GET /api/ai/suggestions - Get quick action suggestions
-router.get('/suggestions', async (req: Request, res: Response) => {
+router.get('/suggestions', async (req: AuthedRequest, res: Response) => {
     const suggestions = [
         { text: "Plan my trip", icon: "map-outline", message: "Help me plan a 5-day trip to Nepal" },
         { text: "Today's tours", icon: "calendar-outline", message: "What tours are available today?" },

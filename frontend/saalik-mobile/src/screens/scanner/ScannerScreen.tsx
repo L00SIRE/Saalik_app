@@ -19,6 +19,21 @@ import {
   type ScanResult,
 } from '../../types/heritage';
 
+function cuePhrase(monument: HeritageMonument): string {
+  const roof = monument.visualCues.roofTiers > 0 ? `a ${monument.visualCues.roofTiers}-tiered roof` : 'no tiered pagoda roof';
+  const feature = monument.visualCues.distinguishingFeatures[0];
+  return feature ? `${roof}, ${feature}` : roof;
+}
+
+function tieQuestion(matches: ScanResult['matches']): string | null {
+  const [first, second] = matches;
+  if (!first || !second) return null;
+  if (first.monument.zoneId !== second.monument.zoneId) return null;
+  if (!first.monument.zoneId.includes('durbar')) return null;
+  if (Math.abs(first.score - second.score) > 0.04) return null;
+  return `Do you see ${cuePhrase(first.monument)}, or ${cuePhrase(second.monument)}?`;
+}
+
 function formatDistance(distanceM: number | null): string {
   if (distanceM === null) return 'distance unknown';
   return distanceM < 1000 ? `${Math.round(distanceM)} m away` : `${(distanceM / 1000).toFixed(1)} km away`;
@@ -187,6 +202,20 @@ export function ScannerScreen() {
           </View>
         )}
 
+        {result && result.matches.length > 1 && tieQuestion(result.matches) && (
+          <View style={styles.tieCard}>
+            <AppText style={styles.sectionTitle}>Which one are you facing?</AppText>
+            <AppText style={styles.helper}>{tieQuestion(result.matches)}</AppText>
+            <View style={styles.tieActions}>
+              {result.matches.slice(0, 2).map((match) => (
+                <Pressable key={match.monument.id} style={styles.tieButton} onPress={() => openMonument(match.monument.id, match.score)}>
+                  <AppText style={styles.tieButtonText}>{match.monument.names.en}</AppText>
+                </Pressable>
+              ))}
+            </View>
+          </View>
+        )}
+
         {result && result.matches.length > 0 && (
           <View style={styles.results}>
             <AppText style={styles.sectionTitle}>Top matches</AppText>
@@ -225,6 +254,10 @@ const styles = StyleSheet.create({
   content: { padding: 16, gap: 16, paddingBottom: 48 },
   sectionTitle: { color: colors.textPrimary, fontSize: 17 },
   helper: { color: colors.textSecondary, fontSize: 13 },
+  tieCard: { gap: 8, padding: 12, borderRadius: 14, borderWidth: 1, borderColor: colors.warning, backgroundColor: 'rgba(251, 191, 36, 0.08)' },
+  tieActions: { flexDirection: 'row', gap: 8 },
+  tieButton: { flex: 1, paddingVertical: 10, borderRadius: 12, backgroundColor: colors.card, borderWidth: 1, borderColor: colors.border, alignItems: 'center' },
+  tieButtonText: { color: colors.textPrimary, fontSize: 12, textAlign: 'center' },
   demoPanel: { gap: 12 },
   chips: { gap: 8 },
   chip: { paddingHorizontal: 12, paddingVertical: 8, borderRadius: 999, borderWidth: 1, borderColor: colors.border },

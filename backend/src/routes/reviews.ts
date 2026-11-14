@@ -1,22 +1,11 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import jwt from 'jsonwebtoken';
+import { userIdFromHeader } from '../middleware/requireAuth';
 import prisma from '../db';
 
 const router = Router();
-const JWT_SECRET = (process.env.JWT_SECRET || 'secret') as string;
 
-// Helper to get user from token
-const getUserFromToken = (authHeader: string | undefined): string | null => {
-    if (!authHeader) return null;
-    try {
-        const token = authHeader.replace('Bearer ', '');
-        const decoded = jwt.verify(token, JWT_SECRET) as { userId: string };
-        return decoded.userId;
-    } catch {
-        return null;
-    }
-};
+const getUserFromToken = (authHeader: string | undefined): string | null => userIdFromHeader(authHeader);
 
 // ============================================
 // CREATE REVIEW

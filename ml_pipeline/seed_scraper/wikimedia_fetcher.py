@@ -9,6 +9,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import time
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass, field
@@ -58,9 +59,20 @@ def _env_flag(name: str, default: str = "0") -> bool:
     return os.environ.get(name, default).strip().lower() in {"1", "true", "yes", "on"}
 
 
+PRIORITY_ZONE_IDS = (
+    "kathmandu_durbar",
+    "patan_durbar",
+    "bhaktapur_durbar",
+    "swayambhunath",
+    "boudhanath",
+    "pashupatinath",
+)
+
+
 def load_monuments_from_seed(
     seed_root: Optional[Path] = None,
     limit: Optional[int] = None,
+    zone_ids: Optional[Sequence[str]] = None,
 ) -> List[MonumentSeed]:
     """Parse zone JSON files under data/nepal_heritage_seed/zones/."""
     root = Path(seed_root) if seed_root else DEFAULT_SEED_ROOT
@@ -72,6 +84,8 @@ def load_monuments_from_seed(
     for path in sorted(zones_dir.glob("*.json")):
         payload = json.loads(path.read_text(encoding="utf-8"))
         zone_id = str(payload.get("zoneId") or path.stem)
+        if zone_ids is not None and zone_id not in zone_ids:
+            continue
         for item in payload.get("monuments", []):
             names = item.get("names") or {}
             name_en = str(names.get("en") or item.get("id"))
@@ -82,7 +96,7 @@ def load_monuments_from_seed(
                     name_en=name_en,
                     zone_id=zone_id,
                     aliases=aliases,
-                    search_query=f"{name_en} Kathmandu Valley Nepal",
+                    search_query=f'"{name_en}" Nepal',
                 )
             )
             if limit is not None and len(monuments) >= limit:
@@ -149,8 +163,9 @@ class WikimediaSeedFetcher:
         self,
         output_dir: Optional[Path] = None,
         mock: Optional[bool] = None,
-        user_agent: str = "SaalikHeritageBot/0.1 (educational; contact=saalik-app)",
-        timeout_s: float = 15.0,
+        user_agent: str = "SaalikHeritageBot/0.1 (educational heritage index; https://www.sumandangal.com/)",
+        timeout_s: float = 20.0,
+        allow_mock_fallback: bool = True,
     ) -> None:
         self.output_dir = Path(output_dir) if output_dir else DEFAULT_OUTPUT_DIR
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -159,6 +174,7 @@ class WikimediaSeedFetcher:
         self.mock = bool(mock)
         self.user_agent = user_agent
         self.timeout_s = timeout_s
+        self.allow_mock_fallback = allow_mock_fallback
 
     def fetch_monument(
         self,
@@ -206,43 +222,71 @@ class WikimediaSeedFetcher:
         max_images: int,
     ) -> SeedFetchResult:
         result = SeedFetchResult(monument_id=monument.monument_id, source="wikimedia")
+        queries = [monument.search_query, f"{monument.name_en} Nepal temple"]
+        file_titles: List[str] = []
         try:
-            file_titles = self._search_file_titles(monument.search_query, limit=max_images * 2)
+            for query in queries:
+                file_titles.extend(self._search_file_titles(query, limit=max_images * 3))
+                if len(file_titles) >= max_images * 2:
+                    break
         except Exception as exc:  # noqa: BLE001
             result.errors.append(f"search_failed: {exc}")
-            mock = self._fetch_mock(monument, dest, max_images=max_images)
-            mock.source = "mock_fallback"
-            mock.errors = result.errors + mock.errors
-            return mock
+            return self._maybe_mock(monument, dest, max_images, result)
 
+        seen = set()
         for title in file_titles:
+            if title in seen:
+                continue
+            seen.add(title)
             if len(result.paths) >= max_images:
                 break
+            lowered = title.lower()
+            if lowered.endswith((".pdf", ".svg", ".tif", ".tiff", ".djvu", ".ogg", ".webm")):
+                continue
             try:
                 meta = self._file_metadata(title)
                 if not meta:
                     continue
                 url = meta.get("url")
                 license_name = str(meta.get("license", "unknown"))
-                if not url:
+                mime = str(meta.get("mime", ""))
+                if not url or not _open_license(license_name):
+                    result.errors.append(f"skipped_license:{title}:{license_name}")
                     continue
-                ext = Path(urllib.parse.urlparse(url).path).suffix or ".jpg"
-                safe_name = title.replace("File:", "").replace(" ", "_")
-                out_path = dest / f"{safe_name[:80]}{ext}"
-                self._download(url, out_path)
+                if mime and not mime.startswith("image/"):
+                    continue
+                ext = Path(urllib.parse.urlparse(url).path).suffix.lower() or ".jpg"
+                if ext not in {".jpg", ".jpeg", ".png", ".webp", ".gif"}:
+                    ext = ".jpg"
+                safe_name = "".join(ch if ch.isalnum() or ch in "._-" else "_" for ch in title.replace("File:", ""))
+                out_path = dest / f"{safe_name[:90]}{ext}"
+                if not out_path.exists() or out_path.stat().st_size < 1000:
+                    self._download(url, out_path)
                 result.paths.append(out_path)
                 result.licenses.append(license_name)
             except Exception as exc:  # noqa: BLE001
                 result.errors.append(f"{title}: {exc}")
 
         if not result.paths:
-            mock = self._fetch_mock(monument, dest, max_images=max_images)
-            mock.source = "mock_fallback"
-            mock.errors = result.errors + mock.errors
-            return mock
+            return self._maybe_mock(monument, dest, max_images, result)
         return result
 
+    def _maybe_mock(
+        self,
+        monument: MonumentSeed,
+        dest: Path,
+        max_images: int,
+        result: SeedFetchResult,
+    ) -> SeedFetchResult:
+        if not self.allow_mock_fallback:
+            return result
+        mock = self._fetch_mock(monument, dest, max_images=max_images)
+        mock.source = "mock_fallback"
+        mock.errors = result.errors + mock.errors
+        return mock
+
     def _api_get(self, params: Dict[str, Any]) -> Dict[str, Any]:
+        time.sleep(0.2)
         query = urllib.parse.urlencode({**params, "format": "json"})
         req = urllib.request.Request(
             f"{self.API_URL}?{query}",
@@ -286,7 +330,11 @@ class WikimediaSeedFetcher:
                 or "unknown"
             )
             url = info.get("thumburl") or info.get("url")
-            return {"url": str(url) if url else "", "license": str(license_short)}
+            return {
+                "url": str(url) if url else "",
+                "license": str(license_short),
+                "mime": str(info.get("mime") or ""),
+            }
         return None
 
     def _download(self, url: str, dest: Path) -> None:
@@ -295,16 +343,41 @@ class WikimediaSeedFetcher:
             dest.write_bytes(resp.read())
 
 
+def _open_license(license_name: str) -> bool:
+    low = license_name.lower()
+    if any(bad in low for bad in ("non-free", "nonfree", "fair use", "all rights reserved", "copyrighted")):
+        return False
+    return any(
+        ok in low
+        for ok in (
+            "cc0",
+            "cc-by",
+            "cc by",
+            "cc-sa",
+            "public domain",
+            "gfdl",
+            "no restrictions",
+            "pd-",
+        )
+    ) or low.strip() in {"pd", "cc0"}
+
+
 def fetch_seed_photos(
     seed_root: Optional[Path] = None,
     output_dir: Optional[Path] = None,
     mock: Optional[bool] = None,
     limit_monuments: Optional[int] = None,
     max_images: int = 2,
+    zone_ids: Optional[Sequence[str]] = None,
+    allow_mock_fallback: bool = True,
 ) -> List[SeedFetchResult]:
     """CLI-friendly entrypoint used by scripts and benchmarks."""
-    monuments = load_monuments_from_seed(seed_root=seed_root, limit=limit_monuments)
-    fetcher = WikimediaSeedFetcher(output_dir=output_dir, mock=mock)
+    monuments = load_monuments_from_seed(seed_root=seed_root, limit=limit_monuments, zone_ids=zone_ids)
+    fetcher = WikimediaSeedFetcher(
+        output_dir=output_dir,
+        mock=mock,
+        allow_mock_fallback=allow_mock_fallback,
+    )
     return fetcher.fetch_all(monuments, max_images=max_images)
 
 
@@ -314,16 +387,20 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Fetch open-licensed heritage seed photos")
     parser.add_argument("--seed-root", type=Path, default=None)
     parser.add_argument("--output-dir", type=Path, default=None)
-    parser.add_argument("--limit", type=int, default=8)
-    parser.add_argument("--max-images", type=int, default=2)
+    parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--max-images", type=int, default=4)
     parser.add_argument("--live", action="store_true", help="Hit Wikimedia (default is mock)")
+    parser.add_argument("--priority-zones", action="store_true")
+    parser.add_argument("--strict", action="store_true", help="Do not write mock images when Commons has no hit")
     args = parser.parse_args()
 
     results = fetch_seed_photos(
         seed_root=args.seed_root,
         output_dir=args.output_dir,
         mock=not args.live,
-        limit_monuments=args.limit,
+        limit_monuments=args.limit or None,
         max_images=args.max_images,
+        zone_ids=PRIORITY_ZONE_IDS if args.priority_zones else None,
+        allow_mock_fallback=not args.strict,
     )
     print(json.dumps([r.to_dict() for r in results], indent=2))

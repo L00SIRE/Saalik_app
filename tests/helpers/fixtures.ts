@@ -1,5 +1,5 @@
-import { loadHeritageCorpus, selectMonuments } from '../../src/server/services/corpusLoader';
-import type { MonumentRecord } from '../../src/server/types/heritage';
+import { loadHeritageCorpus, selectMonuments } from '../../backend/src/heritage/services/corpusLoader';
+import type { MonumentRecord } from '../../backend/src/heritage/types/heritage';
 
 let cached: ReturnType<typeof loadHeritageCorpus> | null = null;
 

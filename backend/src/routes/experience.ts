@@ -1,11 +1,9 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import jwt from 'jsonwebtoken';
 import { craftExperiencePlan } from '../services/imaginationEngine';
-import prisma from '../db';
+import { requireAuth, type AuthedRequest } from '../middleware/requireAuth';
 
 const router = Router();
-const JWT_SECRET = (process.env.JWT_SECRET || 'secret') as string;
 
 const experienceSchema = z.object({
   name: z.string().optional(),
@@ -50,10 +48,7 @@ router.post('/', async (req, res) => {
 });
 
 // Endpoint to manually save a plan
-router.post('/save', async (req, res) => {
-  // Mock Auth Check
-  const authHeader = req.headers.authorization;
-  if (!authHeader) return res.status(401).json({ error: 'Unauthorized' });
+router.post('/save', requireAuth, async (req: AuthedRequest, res) => {
 
   try {
     const { plan } = req.body; // Expecting { plan: ExperiencePlan }
@@ -61,7 +56,7 @@ router.post('/save', async (req, res) => {
 
     const newSavedPlan = {
       id: 'mock-plan-' + Date.now(),
-      userId: 'demo-user-id',
+      userId: req.userId,
       data: JSON.stringify(plan),
       createdAt: new Date(),
     };
@@ -74,9 +69,7 @@ router.post('/save', async (req, res) => {
   }
 });
 
-router.get('/saved', async (req, res) => {
-  const authHeader = req.headers.authorization;
-  if (!authHeader) return res.status(401).json({ error: 'Unauthorized' });
+router.get('/saved', requireAuth, async (_req, res) => {
 
   try {
     // Return all mocked plans

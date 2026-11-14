@@ -8,7 +8,10 @@
     "server:typecheck": "tsc --noEmit -p tsconfig.server.json",
     "test": "jest --watchAll=false",
     "test:watch": "jest --watch",
-    "heritage:dev": "ts-node src/server/index.ts",
+    "heritage:dev": "npm --prefix backend run dev",
+    "dev:all": "npx --yes concurrently -k -n api,mobile,ntb \"npm --prefix backend run dev\" \"npm --prefix frontend/saalik-mobile run start\" \"npm --prefix apps/ntb-command-center run dev\"",
+    "seed:db": "npm run seed:compile && npm --prefix backend run db:seed",
+    "verify:all": "npm run server:typecheck && npm --prefix frontend/saalik-mobile exec -- tsc --noEmit && npm --prefix backend exec -- tsc --noEmit && npm --prefix apps/ntb-command-center exec -- tsc --noEmit && npm test -- --watchAll=false && npm --prefix backend test -- --watchAll=false && SAALIK_ML_FAKE=1 SAALIK_SEED_MOCK=1 ml_pipeline/.venv/bin/pytest ml_pipeline/tests/ -q",
     "prisma:generate": "prisma generate --schema prisma/schema.prisma",
     "prisma:validate": "prisma validate --schema prisma/schema.prisma"
   },

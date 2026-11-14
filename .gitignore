@@ -151,6 +151,7 @@ ml_pipeline/venv/
 __pycache__/
 .pytest_cache/
 *.egg-info/
+saalik_ml_pipeline.egg-info/
 *.pyc
 *.pt
 *.pth

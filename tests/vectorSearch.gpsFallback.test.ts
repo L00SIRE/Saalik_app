@@ -7,7 +7,7 @@ import {
   isGpsDegraded,
   rankByProximity,
   rankMonuments,
-} from '../src/server/services/vectorSearch.service';
+} from '../backend/src/heritage/services/vectorSearch.service';
 import { embeddingForAngle, getCorpus, loadConfusableTemples } from './helpers/fixtures';
 
 describe('GPS fallback mode', () => {
