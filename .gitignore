@@ -161,6 +161,7 @@ saalik_ml_pipeline.egg-info/
 
 # Raw Downloaded Seed Photos & Unsynced Field Capture Bundles
 ml_pipeline/seed_scraper/raw_images/
+ml_pipeline/seed_scraper/rejected_images/
 ml_pipeline/benchmarks/output_plots/
 data/raw_field_photos/
 data/offline_upload_queue/
@@ -169,3 +170,11 @@ data/offline_upload_queue/
 apps/ntb-command-center/.next/
 apps/ntb-command-center/out/
 apps/ntb-command-center/node_modules/
+CLAUDE.md
+
+# Local ML embedding caches & live-stack runtime logs/pids
+ml_pipeline/benchmarks/.cache/
+.live-stack/
+
+# Local Claude Code tooling (preview launch config)
+.claude/

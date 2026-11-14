@@ -7,8 +7,12 @@ deterministic local placeholder images suitable for tests and offline demos.
 from __future__ import annotations
 
 import hashlib
+import html
+import io
 import json
 import os
+import re
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -22,6 +26,25 @@ from PIL import Image, ImageDraw
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SEED_ROOT = REPO_ROOT / "data" / "nepal_heritage_seed"
 DEFAULT_OUTPUT_DIR = Path(__file__).resolve().parent / "raw_images"
+
+RASTER_MIMES = {"image/jpeg", "image/png", "image/webp"}
+MIN_ORIGINAL_WIDTH = 640
+DHASH_NEAR = 8  # Hamming distance (of 64 bits) at or below which two photos count as the same frame
+
+
+def dhash(image: Image.Image) -> int:
+    """64-bit difference hash: one bit per left-to-right brightness step on a 9x8 grey thumbnail."""
+    px = image.convert("L").resize((9, 8), Image.LANCZOS).tobytes()
+    return sum(
+        1 << (row * 8 + col)
+        for row in range(8)
+        for col in range(8)
+        if px[row * 9 + col + 1] > px[row * 9 + col]
+    )
+
+
+def is_near_duplicate(a: int, b: int) -> bool:
+    return bin(a ^ b).count("1") <= DHASH_NEAR
 
 
 @dataclass(frozen=True)
@@ -226,7 +249,7 @@ class WikimediaSeedFetcher:
         file_titles: List[str] = []
         try:
             for query in queries:
-                file_titles.extend(self._search_file_titles(query, limit=max_images * 3))
+                file_titles.extend(self._search_titles(query, limit=max_images * 3))
                 if len(file_titles) >= max_images * 2:
                     break
         except Exception as exc:  # noqa: BLE001
@@ -255,11 +278,7 @@ class WikimediaSeedFetcher:
                     continue
                 if mime and not mime.startswith("image/"):
                     continue
-                ext = Path(urllib.parse.urlparse(url).path).suffix.lower() or ".jpg"
-                if ext not in {".jpg", ".jpeg", ".png", ".webp", ".gif"}:
-                    ext = ".jpg"
-                safe_name = "".join(ch if ch.isalnum() or ch in "._-" else "_" for ch in title.replace("File:", ""))
-                out_path = dest / f"{safe_name[:90]}{ext}"
+                out_path = dest / f"{_safe_stem(title)}{_thumb_ext(url)}"
                 if not out_path.exists() or out_path.stat().st_size < 1000:
                     self._download(url, out_path)
                 result.paths.append(out_path)
@@ -285,6 +304,88 @@ class WikimediaSeedFetcher:
         mock.errors = result.errors + mock.errors
         return mock
 
+    def harvest_additional(
+        self,
+        monument: MonumentSeed,
+        add: int,
+        extra_queries: Sequence[str] = (),
+    ) -> List[Dict[str, str]]:
+        """Download up to ``add`` new open-licensed Commons photos into the monument folder.
+
+        Candidates come from ``extra_queries`` (file search), then members of categories
+        matching the name and aliases, then file search on the name and aliases. Returns one
+        ``{file, title, url, license, artist}`` record per photo added. Never runs in mock mode.
+        """
+        if self.mock or add <= 0:
+            return []
+        dest = self.output_dir / monument.monument_id
+        dest.mkdir(parents=True, exist_ok=True)
+        hashes = []
+        for path in dest.iterdir():
+            try:
+                with Image.open(path) as image:
+                    hashes.append(dhash(image))
+            except OSError:  # not an image
+                continue
+        # One verdict per Commons file: skip anything already filed, or rejected, under any monument.
+        roots = (self.output_dir, self.output_dir.parent / "rejected_images")
+        known = {p.stem for root in roots for p in root.glob("*/*")}
+
+        names = (monument.name_en, *monument.aliases)
+        titles: List[str] = []
+        try:
+            for query in extra_queries:
+                titles += self._search_titles(query, limit=20)
+            for name in names:
+                for category in self._search_titles(name, limit=3, namespace=14):
+                    data = self._api_get(
+                        {"action": "query", "list": "categorymembers", "cmtitle": category, "cmtype": "file", "cmlimit": 50}
+                    )
+                    titles += [item["title"] for item in data.get("query", {}).get("categorymembers", [])]
+            for name in names:
+                titles += self._search_titles(f"{name} Nepal", limit=20)
+        except Exception as exc:  # noqa: BLE001 - keep the candidates gathered so far
+            print(f"harvest {monument.monument_id}: candidate lookup failed: {exc}", file=sys.stderr)
+
+        added: List[Dict[str, str]] = []
+        for title in dict.fromkeys(titles):
+            if len(added) >= add:
+                break
+            stem = _safe_stem(title)
+            if stem in known:
+                continue
+            try:
+                meta = self._file_metadata(title)
+                if (
+                    not meta
+                    or not meta["url"]
+                    or not _open_license(meta["license"])
+                    or meta["mime"] not in RASTER_MIMES
+                    or meta["width"] < MIN_ORIGINAL_WIDTH
+                ):
+                    continue
+                blob = self._get_bytes(meta["url"])
+                with Image.open(io.BytesIO(blob)) as image:
+                    digest = dhash(image)
+            except Exception as exc:  # noqa: BLE001 - unreadable candidate: try the next one
+                print(f"harvest {monument.monument_id}: skipped {title}: {exc}", file=sys.stderr)
+                continue
+            if any(is_near_duplicate(digest, seen) for seen in hashes):
+                continue
+            path = dest / f"{stem}{_thumb_ext(meta['url'])}"
+            path.write_bytes(blob)
+            hashes.append(digest)
+            added.append(
+                {
+                    "file": path.name,
+                    "title": title,
+                    "url": meta["page"],
+                    "license": meta["license"],
+                    "artist": meta["artist"],
+                }
+            )
+        return added
+
     def _api_get(self, params: Dict[str, Any]) -> Dict[str, Any]:
         time.sleep(0.2)
         query = urllib.parse.urlencode({**params, "format": "json"})
@@ -295,25 +396,26 @@ class WikimediaSeedFetcher:
         with urllib.request.urlopen(req, timeout=self.timeout_s) as resp:
             return json.loads(resp.read().decode("utf-8"))
 
-    def _search_file_titles(self, query: str, limit: int = 5) -> List[str]:
+    def _search_titles(self, query: str, limit: int = 5, namespace: int = 6) -> List[str]:
+        """Search Commons page titles; namespace 6 is files, 14 is categories."""
         data = self._api_get(
             {
                 "action": "query",
                 "list": "search",
                 "srsearch": query,
-                "srnamespace": 6,
+                "srnamespace": namespace,
                 "srlimit": max(1, limit),
             }
         )
         return [item["title"] for item in data.get("query", {}).get("search", [])]
 
-    def _file_metadata(self, title: str) -> Optional[Dict[str, str]]:
+    def _file_metadata(self, title: str) -> Optional[Dict[str, Any]]:
         data = self._api_get(
             {
                 "action": "query",
                 "titles": title,
                 "prop": "imageinfo",
-                "iiprop": "url|extmetadata|mime",
+                "iiprop": "url|extmetadata|mime|size",
                 "iiurlwidth": 1280,
             }
         )
@@ -330,17 +432,34 @@ class WikimediaSeedFetcher:
                 or "unknown"
             )
             url = info.get("thumburl") or info.get("url")
+            artist = re.sub(r"<[^>]+>", "", (meta.get("Artist") or {}).get("value") or "")
             return {
                 "url": str(url) if url else "",
                 "license": str(license_short),
                 "mime": str(info.get("mime") or ""),
+                "width": int(info.get("width") or 0),
+                "artist": " ".join(html.unescape(artist).split()),
+                "page": str(info.get("descriptionurl") or ""),
             }
         return None
 
-    def _download(self, url: str, dest: Path) -> None:
+    def _get_bytes(self, url: str) -> bytes:
         req = urllib.request.Request(url, headers={"User-Agent": self.user_agent})
         with urllib.request.urlopen(req, timeout=self.timeout_s) as resp:
-            dest.write_bytes(resp.read())
+            return resp.read()
+
+    def _download(self, url: str, dest: Path) -> None:
+        dest.write_bytes(self._get_bytes(url))
+
+
+def _safe_stem(title: str) -> str:
+    """Local file stem for a Commons ``File:`` title."""
+    return "".join(ch if ch.isalnum() or ch in "._-" else "_" for ch in title.replace("File:", ""))[:90]
+
+
+def _thumb_ext(url: str) -> str:
+    ext = Path(urllib.parse.urlparse(url).path).suffix.lower() or ".jpg"
+    return ext if ext in {".jpg", ".jpeg", ".png", ".webp", ".gif"} else ".jpg"
 
 
 def _open_license(license_name: str) -> bool:
@@ -392,15 +511,29 @@ if __name__ == "__main__":
     parser.add_argument("--live", action="store_true", help="Hit Wikimedia (default is mock)")
     parser.add_argument("--priority-zones", action="store_true")
     parser.add_argument("--strict", action="store_true", help="Do not write mock images when Commons has no hit")
+    parser.add_argument("--add", type=int, default=0, help="Harvest up to N more live Commons photos per monument")
+    parser.add_argument("--only", default="", help="Comma-separated monument ids to harvest with --add")
     args = parser.parse_args()
+    if args.only and not args.add:
+        parser.error("--only needs --add")
 
-    results = fetch_seed_photos(
-        seed_root=args.seed_root,
-        output_dir=args.output_dir,
-        mock=not args.live,
-        limit_monuments=args.limit or None,
-        max_images=args.max_images,
-        zone_ids=PRIORITY_ZONE_IDS if args.priority_zones else None,
-        allow_mock_fallback=not args.strict,
-    )
-    print(json.dumps([r.to_dict() for r in results], indent=2))
+    if args.add:
+        only = set(filter(None, args.only.split(",")))
+        fetcher = WikimediaSeedFetcher(output_dir=args.output_dir, mock=False)
+        harvested = {
+            m.monument_id: fetcher.harvest_additional(m, args.add)
+            for m in load_monuments_from_seed(seed_root=args.seed_root)
+            if not only or m.monument_id in only
+        }
+        print(json.dumps(harvested, indent=2, ensure_ascii=False))
+    else:
+        results = fetch_seed_photos(
+            seed_root=args.seed_root,
+            output_dir=args.output_dir,
+            mock=not args.live,
+            limit_monuments=args.limit or None,
+            max_images=args.max_images,
+            zone_ids=PRIORITY_ZONE_IDS if args.priority_zones else None,
+            allow_mock_fallback=not args.strict,
+        )
+        print(json.dumps([r.to_dict() for r in results], indent=2))

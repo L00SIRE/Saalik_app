@@ -112,6 +112,11 @@ def _l2_normalize(vec: np.ndarray, eps: float = 1e-12) -> np.ndarray:
     return (vec / norm).astype(np.float32)
 
 
+def fuse_views(views: np.ndarray) -> np.ndarray:
+    """Fuse the four ``center_biased_views`` vectors with ``PYRAMID_WEIGHTS``."""
+    return _l2_normalize(np.asarray(PYRAMID_WEIGHTS, dtype=np.float32) @ views)
+
+
 def _fuse_embeddings(a: np.ndarray, b: np.ndarray, alpha: float = 0.6) -> np.ndarray:
     fused = alpha * a + (1.0 - alpha) * b
     return _l2_normalize(fused)
@@ -126,6 +131,10 @@ class BaseEncoder(ABC):
     @abstractmethod
     def encode_image(self, image: ImageInput) -> np.ndarray:
         raise NotImplementedError
+
+    def encode_views(self, image: ImageInput) -> np.ndarray:
+        """L2-normalized vectors of the four ``center_biased_views``, shape (4, dim)."""
+        return np.stack([self.encode_image(view) for view in center_biased_views(_load_pil(image))])
 
     def encode_multi_crop(self, image: ImageInput, detail_scale: float = 0.45) -> MultiCropResult:
         silhouette, detail = extract_multi_crops(image, detail_scale=detail_scale)
@@ -248,21 +257,27 @@ class TorchVisionEncoder(BaseEncoder):
         hidden = getattr(self._model.config, "hidden_size", None)
         self.embedding_dim = int(self._embedding_dim_override or hidden or 768)
 
+    def encode_views(self, image: ImageInput) -> np.ndarray:
+        if self.backend != "clip":
+            return super().encode_views(image)
+        self._ensure_loaded()
+        assert self._model is not None and self._processor is not None
+        with self._torch.no_grad():
+            # One batched forward pass over the four pyramid views.
+            inputs = self._processor(images=center_biased_views(_load_pil(image)), return_tensors="pt")
+            inputs = {k: v.to(self.device) for k, v in inputs.items()}
+            feats = self._model.get_image_features(**inputs).detach().cpu().numpy().astype(np.float32)
+        return feats / np.linalg.norm(feats, axis=1, keepdims=True)
+
     def encode_image(self, image: ImageInput) -> np.ndarray:
+        if self.backend == "clip":
+            return fuse_views(self.encode_views(image))
         self._ensure_loaded()
         assert self._model is not None and self._processor is not None
         pil = _load_pil(image)
         torch = self._torch
 
         with torch.no_grad():
-            if self.backend == "clip":
-                views = center_biased_views(pil)
-                inputs = self._processor(images=views, return_tensors="pt")
-                inputs = {k: v.to(self.device) for k, v in inputs.items()}
-                feats = self._model.get_image_features(**inputs).detach().cpu().numpy().astype(np.float32)
-                fused = sum(weight * _l2_normalize(feats[index]) for index, weight in enumerate(PYRAMID_WEIGHTS))
-                return _l2_normalize(np.asarray(fused, dtype=np.float32))
-
             inputs = self._processor(images=pil, return_tensors="pt")
             inputs = {k: v.to(self.device) for k, v in inputs.items()}
             outputs = self._model(**inputs)
@@ -327,6 +342,9 @@ class MultimodalEncoder(BaseEncoder):
 
     def encode_image(self, image: ImageInput) -> np.ndarray:
         return self._impl.encode_image(image)
+
+    def encode_views(self, image: ImageInput) -> np.ndarray:
+        return self._impl.encode_views(image)
 
     def encode_multi_crop(self, image: ImageInput, detail_scale: float = 0.45) -> MultiCropResult:
         return self._impl.encode_multi_crop(image, detail_scale=detail_scale)
