@@ -71,6 +71,11 @@ GEO_WEIGHTS = (0.0, 0.02, 0.04, 0.06, 0.08, 0.12)
 Query = Tuple[int, str, np.ndarray, Sequence[int]]  # monument index, photo path, vector, gallery rows to drop
 
 
+def text_probe_weight(config: RankerConfig) -> float:
+    """Text weight of the ablation row: the tuned one, or the smallest grid step when the tuner chose zero."""
+    return max(config.text_weight, TEXT_WEIGHTS[1])
+
+
 def contrastive_prompt(meta: dict) -> str:
     cues = meta["cues"]
     materials = ", ".join(str(item).replace("_", " ") for item in cues.get("primaryMaterials") or [])
@@ -325,7 +330,9 @@ def main() -> None:
     loo, loo_outcomes = score(held_out, "noise")
     ablation = {
         "Stage 1 only": score(held_out, "noise", replace(config, text_weight=0.0, geo_weight=0.0))[0],
-        "Stage 1 + text z-score": score(held_out, "noise", replace(config, geo_weight=0.0))[0],
+        "Stage 1 + text z-score": score(
+            held_out, "noise", replace(config, text_weight=text_probe_weight(config), geo_weight=0.0)
+        )[0],
         "Stage 1 + geometric prior": score(held_out, "noise", replace(config, text_weight=0.0))[0],
         "Full two-stage": loo,
     }
@@ -382,7 +389,7 @@ def main() -> None:
     )
 
     photo_counts = Counter(owner.tolist())
-    noisy_photos = int((weights[: len(kept)] < 1.0).sum()) if config.noisy_weight < 1.0 else 0
+    noisy_photos = int((gallery_weights(0.0)[: len(kept)] == 0.0).sum())  # flagged, whatever weight the tuner chose
     write_report(
         names, ids, bundle, config, noisy_photos, len(tuning), len(grid),
         [(visual, visual_outcomes), (geo, geo_outcomes), (loo, loo_outcomes)],
@@ -451,9 +458,13 @@ def write_report(
         f"Every image is encoded as a center-biased pyramid in one batched forward pass: {pyramid}. "
         f"The gallery is instance-level: each of the {bundle['imageCount']} photos keeps its own vector, "
         f"and a photo that matches the CLIP cue prompt of a neighboring confuser (listed in `confusableWith` "
-        f"or within {NEIGHBOR_RADIUS_M:.0f} m) better than its own counts {config.noisy_weight:.2f}x "
-        f"({noisy_photos} photos). {bundle['monumentCount']} monuments are indexed, "
-        f"{bundle['zeroShotCount']} of them zero-shot.",
+        f"or within {NEIGHBOR_RADIUS_M:.0f} m) better than its own is flagged ({noisy_photos} photos). "
+        f"The tuner set the weight of flagged photos to {config.noisy_weight:.2f}"
+        + (", which leaves them at full weight: downweighting did not help on the tuning split. "
+           if config.noisy_weight == 1.0 else ". ")
+        + f"{bundle['monumentCount']} monuments are indexed, {bundle['zeroShotCount']} of them zero-shot. "
+        "Mislabeled Commons photos were removed or re-filed by eye before this run; "
+        "`precomputed_index/harvest_manifest.json` lists each one with the reason.",
         "",
         f"Ranking has two stages, implemented once in `ml_pipeline/embeddings/geo_visual_ranker.py` and used by "
         f"both this benchmark and the inference worker. Stage 1 keeps the monuments within {config.radius_m:.0f} m "
@@ -499,6 +510,12 @@ def write_report(
         *header,
         *(row(label, metrics) for label, metrics in ablation.items()),
         "",
+        f"Stage 1 alone scores {ablation['Stage 1 only']['recallAt1']:.3f}. Adding only the text z-score "
+        f"(at weight {text_probe_weight(config):.2f}; the tuner chose {config.text_weight:.2f}) gives "
+        f"{ablation['Stage 1 + text z-score']['recallAt1']:.3f} and adding only the geometric prior gives "
+        f"{ablation['Stage 1 + geometric prior']['recallAt1']:.3f}. The headline is the configuration the tuner "
+        "chose on the tuning split, not the best row of this table.",
+        "",
         "Other leave-one-out rows:",
         "",
         *header,
@@ -542,6 +559,8 @@ def write_report(
         "drawn around those same coordinates, need field-verified GPS before the prior's gain can be trusted on site.",
         "- The tuning split and the held-out queries come from the same monuments and share gallery photos; "
         "only the query photos are disjoint.",
+        "- These first-photo queries are not the same files as in the earlier 0.625 run: curation removed or "
+        "re-filed mislabeled photos, some of which were query photos, and newly added photos can sort first.",
         "",
     ]
     REPORT.write_text("\n".join(lines), encoding="utf-8")

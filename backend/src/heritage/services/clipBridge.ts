@@ -2,21 +2,37 @@ import { createHash } from 'crypto';
 import { readFileSync } from 'fs';
 import path from 'path';
 
+export interface VisualHit {
+  monumentId: string;
+  /** Ranking score. From the worker this includes the GPS prior, so it is not a cosine. */
+  score: number;
+  /** Visual-only similarity, when the ranking score is something else. */
+  visual?: number;
+}
+
 export interface ClipEmbedResult {
   vector: number[];
   source: 'clip_worker' | 'deterministic_fallback';
   quality: Record<string, unknown> | null;
   elapsedMs: number | null;
+  /** The worker's own two-stage ranking; null when it is down, has no gallery, or found nothing in range. */
+  matches: VisualHit[] | null;
+  /** Radius the worker searched around the fix, in metres. */
+  searchRadiusM: number | null;
 }
 
 const WORKER = process.env.CLIP_WORKER_URL ?? 'http://127.0.0.1:8099';
 
-export async function embedImage(imageBase64: string): Promise<ClipEmbedResult> {
+export async function embedImage(
+  imageBase64: string,
+  fix: { lat: number; lng: number; accuracyM: number | null } | null = null,
+  topK = 3,
+): Promise<ClipEmbedResult> {
   try {
     const response = await fetch(`${WORKER}/embed`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ imageBase64 }),
+      body: JSON.stringify({ imageBase64, lat: fix?.lat, lng: fix?.lng, accuracyM: fix?.accuracyM, topK }),
       signal: AbortSignal.timeout(2500),
     });
     if (response.ok) {
@@ -24,6 +40,8 @@ export async function embedImage(imageBase64: string): Promise<ClipEmbedResult> 
         vector?: number[];
         quality?: Record<string, unknown>;
         elapsedMs?: number;
+        matches?: Array<{ monumentId: string; score: number; stage1: number }>;
+        searchRadiusM?: number | null;
       };
       if (body.vector && body.vector.length > 0) {
         return {
@@ -31,6 +49,10 @@ export async function embedImage(imageBase64: string): Promise<ClipEmbedResult> 
           source: 'clip_worker',
           quality: body.quality ?? null,
           elapsedMs: body.elapsedMs ?? null,
+          matches: body.matches?.length
+            ? body.matches.map(({ monumentId, score, stage1 }) => ({ monumentId, score, visual: stage1 }))
+            : null,
+          searchRadiusM: body.searchRadiusM ?? null,
         };
       }
     }
@@ -42,6 +64,8 @@ export async function embedImage(imageBase64: string): Promise<ClipEmbedResult> 
     source: 'deterministic_fallback',
     quality: null,
     elapsedMs: null,
+    matches: null,
+    searchRadiusM: null,
   };
 }
 
@@ -56,11 +80,6 @@ export function deterministicVector(seed: string, dim: number): number[] {
   }
   const norm = Math.sqrt(raw.reduce((sum, v) => sum + v * v, 0)) || 1;
   return raw.map((v) => v / norm);
-}
-
-export interface VisualHit {
-  monumentId: string;
-  score: number;
 }
 
 export function rankVisualIndex(query: number[], topK = 3): VisualHit[] {

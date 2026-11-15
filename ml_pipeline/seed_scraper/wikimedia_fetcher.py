@@ -453,8 +453,12 @@ class WikimediaSeedFetcher:
 
 
 def _safe_stem(title: str) -> str:
-    """Local file stem for a Commons ``File:`` title."""
-    return "".join(ch if ch.isalnum() or ch in "._-" else "_" for ch in title.replace("File:", ""))[:90]
+    """Local file stem for a Commons ``File:`` title, at most 90 characters."""
+    stem = "".join(ch if ch.isalnum() or ch in "._-" else "_" for ch in title.replace("File:", ""))
+    if len(stem) <= 90:
+        return stem
+    # Photo series share long title prefixes; plain truncation made them overwrite each other.
+    return f"{stem[:81]}_{hashlib.sha1(title.encode('utf-8')).hexdigest()[:8]}"
 
 
 def _thumb_ext(url: str) -> str:

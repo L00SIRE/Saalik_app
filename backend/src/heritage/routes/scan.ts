@@ -213,14 +213,19 @@ export function createHeritageRouter(deps: ScanRouterDeps = {}): Router {
       res.status(400).json({ error: 'imageBase64 is required' });
       return;
     }
-    const embedded = await embedImage(body.imageBase64);
     const fix: GeoFix | null =
       body.lat != null && body.lng != null
         ? { lat: body.lat, lng: body.lng, accuracyM: body.accuracyM ?? null }
         : null;
-    const geoRadius = fix ? (isGpsDegraded(fix) ? DEGRADED_SEARCH_RADIUS_M : SEARCH_RADIUS_M) : null;
-    let visualHits = rankVisualIndex(embedded.vector, 30);
-    if (fix && geoRadius != null) {
+    const embedded = await embedImage(body.imageBase64, fix, body.topK ?? 3);
+    // The worker's two-stage ranking is already geo-filtered; the local index is the fallback.
+    const geoRadius = embedded.matches
+      ? embedded.searchRadiusM
+      : fix
+        ? isGpsDegraded(fix) ? DEGRADED_SEARCH_RADIUS_M : SEARCH_RADIUS_M
+        : null;
+    let visualHits = embedded.matches ?? rankVisualIndex(embedded.vector, 30);
+    if (!embedded.matches && fix && geoRadius != null) {
       const nearby = visualHits.filter((hit) => {
         const monument = corpus.monuments.find((item) => item.id === hit.monumentId);
         if (!monument) return false;
@@ -254,16 +259,20 @@ export function createHeritageRouter(deps: ScanRouterDeps = {}): Router {
       elapsedMs: embedded.elapsedMs,
       searchRadiusM: geoRadius ?? ranked.searchRadiusM,
       notice: embedded.source === 'clip_worker' ? null : 'CLIP worker offline; used a deterministic visual cue.',
-      matches: visualHits.map((hit) => ({
-        monumentId: hit.monumentId,
-        score: hit.score,
-        maxAngleSimilarity: hit.score,
-        top3MeanSimilarity: hit.score,
-        bestAngle: 'ESTABLISHING_FRONT',
-        distanceM: fix ? haversineMeters(fix, (byId.get(hit.monumentId) ?? { geo: fix }).geo) : null,
-        confidence: hit.score >= 0.82 ? 'HIGH' : hit.score >= 0.65 ? 'MEDIUM' : 'LOW',
-        monument: byId.get(hit.monumentId) ?? null,
-      })),
+      matches: visualHits.map((hit) => {
+        // Confidence follows the visual evidence alone, not the GPS prior folded into the worker's score.
+        const visual = hit.visual ?? hit.score;
+        return {
+          monumentId: hit.monumentId,
+          score: hit.score,
+          maxAngleSimilarity: visual,
+          top3MeanSimilarity: visual,
+          bestAngle: 'ESTABLISHING_FRONT',
+          distanceM: fix ? haversineMeters(fix, (byId.get(hit.monumentId) ?? { geo: fix }).geo) : null,
+          confidence: visual >= 0.82 ? 'HIGH' : visual >= 0.65 ? 'MEDIUM' : 'LOW',
+          monument: byId.get(hit.monumentId) ?? null,
+        };
+      }),
     });
   });
 

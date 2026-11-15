@@ -77,6 +77,7 @@ def embed(body: EmbedBody) -> dict:
     if _ranker is not None:
         fix = (body.lat, body.lng) if body.lat is not None and body.lng is not None else None
         response["matches"] = _ranker.rank(vector, fix, body.accuracyM, body.topK)
+        response["searchRadiusM"] = _ranker.config.radius_m if fix else None
     response["elapsedMs"] = round((time.perf_counter() - started) * 1000, 2)
     return response
 

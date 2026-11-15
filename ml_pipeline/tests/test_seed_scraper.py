@@ -11,6 +11,7 @@ from PIL import Image, ImageDraw
 from ml_pipeline.seed_scraper.wikimedia_fetcher import (
     MonumentSeed,
     WikimediaSeedFetcher,
+    _safe_stem,
     dhash,
     fetch_seed_photos,
     is_near_duplicate,
@@ -65,6 +66,14 @@ def test_mock_images_differ_across_monuments(tmp_path: Path) -> None:
     results = fetcher.fetch_all(monuments, max_images=1)
     bytes_set = {path.read_bytes() for r in results for path in r.paths}
     assert len(bytes_set) == 3
+
+
+def test_long_titles_in_one_series_get_distinct_filenames() -> None:
+    series = "File:Fiftyfive Window Palace 55 window Palace Bhaktapur Durbar Square Bhaktapur Nepal Rajesh Dhungana"
+    first, second = _safe_stem(f"{series} (1).jpg"), _safe_stem(f"{series} (2).jpg")
+    assert first != second
+    assert len(first) <= 90 and len(second) <= 90
+    assert _safe_stem("File:Ajima Temple.jpg") == "Ajima_Temple.jpg"
 
 
 def _scene(seed: int) -> Image.Image:

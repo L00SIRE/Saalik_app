@@ -1,0 +1,730 @@
+{
+  "note": "Provenance for the Commons reference photos added or re-filed on 2026-11-14. The photos themselves live in ml_pipeline/seed_scraper/raw_images/ and rejected_images/, which are gitignored; older gallery photos have no stored metadata.",
+  "photos": {
+    "bdh_ajima_shrine": [
+      {
+        "file": "Ajima__Hariti_Devi__Boudhanath.jpg.jpg",
+        "title": "File:Ajima (Hariti Devi) Boudhanath.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Ajima_(Hariti_Devi)_Boudhanath.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Christopher J. Fynn"
+      },
+      {
+        "file": "Ajima_Temple.jpg.jpg",
+        "title": "File:Ajima Temple.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Ajima_Temple.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Suraj Belbase"
+      },
+      {
+        "file": "Boudhanath__Nepal__23724189281_.jpg.jpg",
+        "title": "File:Boudhanath, Nepal (23724189281).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Boudhanath,_Nepal_(23724189281).jpg",
+        "license": "CC BY 2.0",
+        "artist": "Juan Antonio Segal from Madrid, Spain"
+      },
+      {
+        "file": "Hārītī_Devī_temple__Boudhanath.jpg.jpg",
+        "title": "File:Hārītī Devī temple, Boudhanath.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:H%C4%81r%C4%ABt%C4%AB_Dev%C4%AB_temple,_Boudhanath.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Christopher J. Fynn"
+      },
+      {
+        "file": "Hārītī_Devī__Boudhanath.jpg.jpg",
+        "title": "File:Hārītī Devī, Boudhanath.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:H%C4%81r%C4%ABt%C4%AB_Dev%C4%AB,_Boudhanath.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Christopher J. Fynn"
+      }
+    ],
+    "bkt_fifty_five_window_palace": [
+      {
+        "file": "Fiftyfive_Window_Palace_55_window_Palace_Bhaktapur_Durbar_Square_Bhaktapur_Nepal_Rajesh_Dh.jpg",
+        "title": "File:Fiftyfive Window Palace 55 window Palace Bhaktapur Durbar Square Bhaktapur Nepal Rajesh Dhungana (1).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Fiftyfive_Window_Palace_55_window_Palace_Bhaktapur_Durbar_Square_Bhaktapur_Nepal_Rajesh_Dhungana_(1).jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Rajesh Dhungana"
+      },
+      {
+        "file": "55_Window_Palace__Bhaktapur.jpg.jpg",
+        "title": "File:55 Window Palace, Bhaktapur.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:55_Window_Palace,_Bhaktapur.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Nrik kiran"
+      },
+      {
+        "file": "55_Window_Palace__Bhaktapur_Durbar_Square.jpg.jpg",
+        "title": "File:55 Window Palace, Bhaktapur Durbar Square.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:55_Window_Palace,_Bhaktapur_Durbar_Square.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Shadow Ayush"
+      },
+      {
+        "file": "Fiftyfive_Window_Palace_55_window_Palace_Bhaktapur_Durbar_Square_Bhaktapur_Nepal__61e0520d.jpg",
+        "title": "File:Fiftyfive Window Palace 55 window Palace Bhaktapur Durbar Square Bhaktapur Nepal Rajesh Dhungana (3).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Fiftyfive_Window_Palace_55_window_Palace_Bhaktapur_Durbar_Square_Bhaktapur_Nepal_Rajesh_Dhungana_(3).jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Rajesh Dhungana"
+      },
+      {
+        "file": "Pachpanna_Jhyale_Durbar__55_window_palace___Bhaktapur_Durbar_Square.jpg.jpg",
+        "title": "File:Pachpanna Jhyale Durbar (55 window palace), Bhaktapur Durbar Square.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Pachpanna_Jhyale_Durbar_(55_window_palace),_Bhaktapur_Durbar_Square.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Shadow Ayush"
+      }
+    ],
+    "ktm_gaddhi_baithak": [
+      {
+        "file": "Gaddi_Baithak__Kathmandu_Durbar_Square.jpg.jpg",
+        "title": "File:Gaddi Baithak, Kathmandu Durbar Square.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Gaddi_Baithak,_Kathmandu_Durbar_Square.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Shadow Ayush"
+      },
+      {
+        "file": "Gaddi_Baithak_Basantapur_Durbar_Square__Kathmandu_Nepal-0314.jpg.jpg",
+        "title": "File:Gaddi Baithak Basantapur Durbar Square, Kathmandu Nepal-0314.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Gaddi_Baithak_Basantapur_Durbar_Square,_Kathmandu_Nepal-0314.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Bijay chaurasia"
+      },
+      {
+        "file": "Gaddi_Baithak__Kathmandu_Durbar_Square3.jpg.jpg",
+        "title": "File:Gaddi Baithak, Kathmandu Durbar Square3.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Gaddi_Baithak,_Kathmandu_Durbar_Square3.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Shadow Ayush"
+      }
+    ],
+    "ktm_hanuman_dhoka": [
+      {
+        "file": "Hanuman_temple_Hanumandhoka_Kathmandu_Durbar_Square_Kathmandu_Nepal_Rajesh_Dhungana_1.jpg.jpg",
+        "title": "File:Hanuman temple Hanumandhoka Kathmandu Durbar Square Kathmandu Nepal Rajesh Dhungana 1.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Hanuman_temple_Hanumandhoka_Kathmandu_Durbar_Square_Kathmandu_Nepal_Rajesh_Dhungana_1.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Rajesh Dhungana"
+      },
+      {
+        "file": "Hanuman_temple_Hanumandhoka_Kathmandu_Durbar_Square_Kathmandu_Nepal_Rajesh_Dhungana_2.jpg.jpg",
+        "title": "File:Hanuman temple Hanumandhoka Kathmandu Durbar Square Kathmandu Nepal Rajesh Dhungana 2.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Hanuman_temple_Hanumandhoka_Kathmandu_Durbar_Square_Kathmandu_Nepal_Rajesh_Dhungana_2.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Rajesh Dhungana"
+      },
+      {
+        "file": "Pratap_Malla_at_Hanuman_Dhoka_2.jpg.jpg",
+        "title": "File:Pratap Malla at Hanuman Dhoka 2.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Pratap_Malla_at_Hanuman_Dhoka_2.jpg",
+        "license": "CC BY-SA 3.0",
+        "artist": "Ganesh Paudel"
+      }
+    ],
+    "ktm_taleju_bell": [
+      {
+        "file": "Kathmandu_Darbar0511.JPG.jpg",
+        "title": "File:Kathmandu Darbar0511.JPG",
+        "url": "https://commons.wikimedia.org/wiki/File:Kathmandu_Darbar0511.JPG",
+        "license": "CC BY-SA 3.0",
+        "artist": "Sundar1"
+      },
+      {
+        "file": "02_Hanumandhoka_Palace_Area_04.jpg.jpg",
+        "title": "File:02 Hanumandhoka Palace Area 04.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:02_Hanumandhoka_Palace_Area_04.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "महेश धामी"
+      },
+      {
+        "file": "1-Big_Bell.JPG.jpg",
+        "title": "File:1-Big Bell.JPG",
+        "url": "https://commons.wikimedia.org/wiki/File:1-Big_Bell.JPG",
+        "license": "CC BY-SA 4.0",
+        "artist": "Ksssshl"
+      },
+      {
+        "file": "Bell_basantapur.JPG.jpg",
+        "title": "File:Bell basantapur.JPG",
+        "url": "https://commons.wikimedia.org/wiki/File:Bell_basantapur.JPG",
+        "license": "CC BY-SA 3.0",
+        "artist": "Shulav Neupane"
+      },
+      {
+        "file": "Big_Bell_at_Basantapur_Durbar_Area__NP-KHP-12_.JPG.jpg",
+        "title": "File:Big Bell at Basantapur Durbar Area (NP-KHP-12).JPG",
+        "url": "https://commons.wikimedia.org/wiki/File:Big_Bell_at_Basantapur_Durbar_Area_(NP-KHP-12).JPG",
+        "license": "CC BY-SA 3.0",
+        "artist": "Nirmal Dulal"
+      },
+      {
+        "file": "Big_bell_basantapur_GP.JPG.jpg",
+        "title": "File:Big bell basantapur GP.JPG",
+        "url": "https://commons.wikimedia.org/wiki/File:Big_bell_basantapur_GP.JPG",
+        "license": "CC BY-SA 3.0",
+        "artist": "Ganesh Paudel"
+      }
+    ],
+    "pas_arya_ghat": [
+      {
+        "file": "Pashupatinath-Arya_Ghats-08-2007-gje.jpg.jpg",
+        "title": "File:Pashupatinath-Arya Ghats-08-2007-gje.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Pashupatinath-Arya_Ghats-08-2007-gje.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Gerd Eichmann"
+      },
+      {
+        "file": "Pashupatinath-Arya_Ghats-12-2007-gje.jpg.jpg",
+        "title": "File:Pashupatinath-Arya Ghats-12-2007-gje.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Pashupatinath-Arya_Ghats-12-2007-gje.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Gerd Eichmann"
+      },
+      {
+        "file": "Pashupatinath-Arya_Ghats-02-Tempel-2007-gje.jpg.jpg",
+        "title": "File:Pashupatinath-Arya Ghats-02-Tempel-2007-gje.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Pashupatinath-Arya_Ghats-02-Tempel-2007-gje.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Gerd Eichmann"
+      },
+      {
+        "file": "Pashupatinath-Arya_Ghats-16-2007-gje.jpg.jpg",
+        "title": "File:Pashupatinath-Arya Ghats-16-2007-gje.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Pashupatinath-Arya_Ghats-16-2007-gje.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Gerd Eichmann"
+      },
+      {
+        "file": "Arya_ghat__Cremation_place_for_Hindus__in_Pashupatinath_-_panoramio.jpg.jpg",
+        "title": "File:Arya ghat (Cremation place for Hindus) in Pashupatinath - panoramio.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Arya_ghat_(Cremation_place_for_Hindus)_in_Pashupatinath_-_panoramio.jpg",
+        "license": "CC BY-SA 3.0",
+        "artist": "aabhash"
+      }
+    ],
+    "pas_gorakhnath_shikhar": [
+      {
+        "file": "Gorakhnath_or_Goraksanath_Temple_Mrigasthali_Pasupati_Kathmandu_Nepal_Rajesh_Dhun_e1b0b001.jpg",
+        "title": "File:Gorakhnath or Goraksanath Temple Mrigasthali Pasupati Kathmandu Nepal Rajesh Dhungana (4).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Gorakhnath_or_Goraksanath_Temple_Mrigasthali_Pasupati_Kathmandu_Nepal_Rajesh_Dhungana_(4).jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Rajesh Dhungana"
+      },
+      {
+        "file": "Gorakhnath_or_Goraksanath_Temple_Mrigasthali_Pasupati_Kathmandu_Nepal_Rajesh_Dhun_716c2dd9.jpg",
+        "title": "File:Gorakhnath or Goraksanath Temple Mrigasthali Pasupati Kathmandu Nepal Rajesh Dhungana (2).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Gorakhnath_or_Goraksanath_Temple_Mrigasthali_Pasupati_Kathmandu_Nepal_Rajesh_Dhungana_(2).jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Rajesh Dhungana"
+      }
+    ],
+    "pas_main_pagoda_courtyard": [
+      {
+        "file": "_Aareghat__way_up_to_pashupatinath.jpg.jpg",
+        "title": "File:\"Aareghat\" way up to pashupatinath.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:%22Aareghat%22_way_up_to_pashupatinath.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Avishek98"
+      },
+      {
+        "file": "_third_day_of_unending_prosperity_.jpg.jpg",
+        "title": "File:\"third day of unending prosperity\".jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:%22third_day_of_unending_prosperity%22.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Basnetkprem"
+      },
+      {
+        "file": "Aaryaghat__Bagmati_River__Pashupati.jpg.jpg",
+        "title": "File:Aaryaghat, Bagmati River, Pashupati.jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Aaryaghat,_Bagmati_River,_Pashupati.jpg",
+        "license": "CC BY-SA 4.0",
+        "artist": "Pratap Baniya"
+      }
+    ],
+    "pat_taleju_bell_patan": [
+      {
+        "file": "Patan_Kathmandu__5084997631_.jpg.jpg",
+        "title": "File:Patan Kathmandu (5084997631).jpg",
+        "url": "https://commons.wikimedia.org/wiki/File:Patan_Kathmandu_(5084997631).jpg",
+        "license": "CC BY 2.0",
+        "artist": "S Pakhrin from DC, USA"
+      }
+    ]
+  },
+  "rejected": [
+    {
+      "monumentId": "bdh_ajima_shrine",
+      "file": "Boudha_Stupa_4.jpg.jpg",
+      "reason": "Subject is the Boudhanath stupa, not the Ajima shrine",
+      "movedTo": "bdh_boudha_mahachaitya"
+    },
+    {
+      "monumentId": "bdh_ajima_shrine",
+      "file": "Boudha_stupa__2_.jpg.jpg",
+      "reason": "Subject is the Boudhanath stupa at night, not the Ajima shrine",
+      "movedTo": "bdh_boudha_mahachaitya"
+    },
+    {
+      "monumentId": "bdh_ajima_shrine",
+      "file": "Boudha_stupa__3_.jpg.jpg",
+      "reason": "Butter lamps with the Boudhanath stupa behind; the Ajima shrine is not in frame",
+      "movedTo": "bdh_boudha_mahachaitya"
+    },
+    {
+      "monumentId": "bdh_ajima_shrine",
+      "file": "Hariti_Devi__Boudhanath.jpg.jpg",
+      "reason": "Same framing of the deity image as Ajima__Hariti_Devi__Boudhanath.jpg; near-duplicate angle",
+      "movedTo": null
+    },
+    {
+      "monumentId": "bkt_fifty_five_window_palace",
+      "file": "Bhaktapur_Durbar_Square_Panorama_View.jpg.jpg",
+      "reason": "Panorama dominated by the whitewashed west wing; the 55-window facade is a small background element",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_arya_ghat",
+      "file": "PASHUPATINATH-TEMPLE-KATHMANDU-NEPAL.jpg.jpg",
+      "reason": "Shows the main Pashupatinath temple roofs, not the cremation ghat",
+      "movedTo": "pas_main_pagoda_courtyard"
+    },
+    {
+      "monumentId": "pas_arya_ghat",
+      "file": "Pashupatinath-Arya_Ghats-18-2007-gje.jpg.jpg",
+      "reason": "Frame filled by a crowd; the ghat platforms cannot be recognised",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_arya_ghat",
+      "file": "Pashupatinath-Arya_Ghats-42-Trauergemeinde-2014-gje.jpg.jpg",
+      "reason": "Group of mourners in a shelter; no ghat platform or river in frame",
+      "movedTo": null
+    },
+    {
+      "monumentId": "bkt_fifty_five_window_palace",
+      "file": "Fiftyfive_Window_Palace_55_window_Palace_Bhaktapur_Durbar_Square_Bhaktapur_Nepal__52b694d4.jpg",
+      "reason": "Same viewpoint as the first photo of this series; near-duplicate angle",
+      "movedTo": null
+    },
+    {
+      "monumentId": "bkt_fifty_five_window_palace",
+      "file": "Fiftyfive_Window_Palace_55_window_Palace_Bhaktapur_Durbar_Square_Bhaktapur_Nepal__84c3f28d.jpg",
+      "reason": "Same viewpoint as the third photo of this series; near-duplicate angle",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Bhaktapur_Durbar_Square_041224_70.jpg.jpg",
+      "reason": "A brick building in Bhaktapur Durbar Square, not Pashupatinath",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Bhaktapur_Durbar_Square_041224_71.jpg.jpg",
+      "reason": "A building in Bhaktapur Durbar Square, not Pashupatinath",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Bishworoop_Temple_Mrigasthali_Pashupati_Kathmandu_Nepal_Rajesh_Dhungana__1_.jpg.jpg",
+      "reason": "Shows the Vishwaroop temple at Mrigasthali, a separate corpus monument",
+      "movedTo": "pas_vishwaroopa_courtyard"
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Bishworoop_Temple_Mrigasthali_Pashupati_Kathmandu_Nepal_Rajesh_Dhungana__2_.jpg.jpg",
+      "reason": "Shows the Vishwaroop temple courtyard at Mrigasthali, a separate corpus monument",
+      "movedTo": "pas_vishwaroopa_courtyard"
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Patal_Hanuman_Ram_Mandir_Pashupatinath_Kathmandu_Nepal_Rajesh_Dhungana_2__1_.jpg.jpg",
+      "reason": "Patal Hanuman shrine in the Ram Mandir area, not the main temple",
+      "movedTo": "pas_ram_mandir"
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Patal_Hanuman_Ram_Mandir_Pashupatinath_Kathmandu_Nepal_Rajesh_Dhungana_2__2_.jpg.jpg",
+      "reason": "Ram Mandir terrace with the Hanuman statue, not the main temple",
+      "movedTo": "pas_ram_mandir"
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Ram_Mandir_Ram_Mandir_Area_Ram_Temple_Pashupatinath_Kathmandu_Nepal_Rajesh_Dhungana.jpg.jpg",
+      "reason": "Ram Mandir area seen across a field, not the main temple",
+      "movedTo": "pas_ram_mandir"
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Sadhu_Giving_Blessings_to_a_Devotee_During_Maha_Shivaratri_at_Pashupatinath_Temple__Kathma.jpg",
+      "reason": "Portrait of a sadhu and a devotee; no monument in frame",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Sadhu_during_Maha_Shivaratri_Celebrations_at_Pashupatinath_Temple__Kathmandu__Nepal-070A69.jpg",
+      "reason": "Portrait of a sadhu; no monument in frame",
+      "movedTo": null
+    },
+    {
+      "monumentId": "bdh_boudha_mahachaitya",
+      "file": "Boudhanath_Stupa_view_from_Kapan_Height-IMG_9815.jpg.jpg",
+      "reason": "Distant city skyline; the stupa is a tiny background element",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_pandra_shivalaya",
+      "file": "Pashupatinath_Temple_with_Pandra_Shivalaya_1.jpg.jpg",
+      "reason": "Subject is the Bagmati and the ghats; the domed shrines are not the subject",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_pandra_shivalaya",
+      "file": "Pashupatinath_Temple_with_Pandra_Shivalaya_2.jpg.jpg",
+      "reason": "Classic east-bank view of the main Pashupatinath temple roofs; the main temple is the subject",
+      "movedTo": "pas_main_pagoda_courtyard"
+    },
+    {
+      "monumentId": "pas_pandra_shivalaya",
+      "file": "Pashupatinath_temples_shivalinga_column_view_from_its_starting_to_end.jpg.jpg",
+      "reason": "Same aligned-doorway view as the Shiva_linga_inside photo, heavily filtered; near-duplicate angle",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_pandra_shivalaya",
+      "file": "Shadhu_in_Pasupatinath_Temple-1973.jpg.jpg",
+      "reason": "Portrait of a sadhu in a doorway; the person is the subject",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_panch_deval",
+      "file": "Panchadewal_Pashupatinath_Kathmandu_Nepal_Rajesh_Dhungana__24_.jpg.jpg",
+      "reason": "Same corner viewpoint as the photo numbered 18 in this series; near-duplicate angle",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_panch_deval",
+      "file": "Panchadewal_Pashupatinath_Kathmandu_Nepal_Rajesh_Dhungana__26_.jpg.jpg",
+      "reason": "Same corner viewpoint as the photo numbered 18 in this series; near-duplicate angle",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_gorakhnath_shikhar",
+      "file": "Gorakhnath_Temple_Pashupatinath_Kathmandu_Nepal_Rajesh_Dhungana.jpg.jpg",
+      "reason": "Shows a small red gate shrine; the white shikhara is not in frame",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_gorakhnath_shikhar",
+      "file": "Yogi_Narharinath_Samadhi_Sthal_Cemeteries_Mrigasthali_Gorakhnath_Temple_Pashupatinath_Kath.jpg",
+      "reason": "Gilded statue at the Narharinath samadhi; the shikhara temple is not the subject",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_gaddhi_baithak",
+      "file": "Kumari_Chhen__Kumari_Ghar__and_Gaddhi_Baithak_after_Nepal-Bihar_earthquake__वसन_तप_र_क_ष_त.jpg",
+      "reason": "1934 archival scan showing both Kumari Ghar and the ruined Gaddhi Baithak; not a usable present-day view",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_gaddhi_baithak",
+      "file": "Maju_Dega__centre__and_the_white_Kamadev_Temple_on_its_left__17663233260_.jpg.jpg",
+      "reason": "Subject is the Maju Dega pagoda",
+      "movedTo": "ktm_maju_dega"
+    },
+    {
+      "monumentId": "ktm_gaddhi_baithak",
+      "file": "Maju_Deval_and_Kamdev_Temple__temple_of_love__early_in_the_morning__17807396326_.jpg.jpg",
+      "reason": "Subject is the Maju Dega pagoda",
+      "movedTo": "ktm_maju_dega"
+    },
+    {
+      "monumentId": "ktm_gaddhi_baithak",
+      "file": "Maju_Deval_at_dusk__17213323403_.jpg.jpg",
+      "reason": "Subject is the Maju Dega pagoda at dusk",
+      "movedTo": "ktm_maju_dega"
+    },
+    {
+      "monumentId": "ktm_gaddhi_baithak",
+      "file": "Stairs_of_the_Maju_Dega__17663047918_.jpg.jpg",
+      "reason": "Subject is the Maju Dega stairway",
+      "movedTo": "ktm_maju_dega"
+    },
+    {
+      "monumentId": "ktm_maju_dega",
+      "file": "Kathmandu_Durbar_Square__Shiva_Parvati_Temple__Nepal__edit_.jpg.jpg",
+      "reason": "Subject is the Shiva Parvati temple, a separate corpus monument",
+      "movedTo": "ktm_shiva_parvati_mandir"
+    },
+    {
+      "monumentId": "ktm_hanuman_dhoka",
+      "file": "Entrance_Fee_Counter_of_Hanuman_Dhoka_Kathmandu_Durbar_Square-070A8646.jpg.jpg",
+      "reason": "Ticket booth in front of a modern wing; the palace is not the subject",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_hanuman_dhoka",
+      "file": "The_Kumari_jatra._Three_temple_cars_outside_the_Hanuman_Dhoka__or_Old_Palace__Kathmandu_-_.jpg",
+      "reason": "Nineteenth-century painting, not a photograph",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_jagannath_mandir",
+      "file": "Jaganath_Temple_Tripureshwor_Bagh_Durbar_Central_Jail_Kathmandu_Nepal_Rajesh_Dhungana_2.jp.jpg",
+      "reason": "A different Jagannath temple, at Tripureshwor, not the Durbar Square pagoda",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_jagannath_mandir",
+      "file": "Jagannath_Mandir.jpg.jpg",
+      "reason": "A ruined overgrown temple elsewhere, not the Durbar Square pagoda",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_jagannath_mandir",
+      "file": "Jagannath_Mandir__Baitadi__Gadhi__Nepal.jpg.jpg",
+      "reason": "Interior of a Jagannath temple in Baitadi, far-west Nepal",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_jagannath_mandir",
+      "file": "Jagannath_Mandir_situated_at_Gadhi__Baitadi__Nepal.jpg.jpg",
+      "reason": "A Jagannath temple in Baitadi, far-west Nepal",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_kumari_ghar",
+      "file": "Kumari_Chhen__Kumari_Ghar__and_Gaddhi_Baithak_after_Nepal-Bihar_earthquake__वसन_तप_र_क_ष_त.jpg",
+      "reason": "1934 archival scan showing both Kumari Ghar and the ruined Gaddhi Baithak; not a usable present-day view",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_kumari_ghar",
+      "file": "Kumari_Ghar__Hanuman_Dhoka_Durbar_Square.jpg.jpg",
+      "reason": "Festival crowd and chariot fill the frame; the house is a side element",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_kumari_ghar",
+      "file": "Will_Nepal_survive_.jpg.jpg",
+      "reason": "Portrait of a man at a doorway; the person is the subject",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Bhaktapur_4__Nepal_.jpg.jpg",
+      "reason": "This is the big bell in Bhaktapur Durbar Square, not the Kathmandu bell",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Durbar_Square_Bhaktapur_Nepal_46.jpg.jpg",
+      "reason": "This is the big bell in Bhaktapur Durbar Square, not the Kathmandu bell",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Durbar_Square_Patan_Kathmandu_38.jpg.jpg",
+      "reason": "This is the Taleju bell in Patan Durbar Square (already filed under pat_taleju_bell_patan, so quarantined rather than moved)",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Kathmandu_Patan_Durbar_Square_in_the_19th_century.jpg.jpg",
+      "reason": "Nineteenth-century archival photo of Patan Durbar Square",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Nepal_Patan_Durbar_Square_10__full_res_.jpg.jpg",
+      "reason": "Patan Durbar Square overview; no bell is the subject",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Patan_Durbar_Historical_Heritage_Lalitpur_Patan_Kathmandu_Rajesh_Dhungana__12_.jpg.jpg",
+      "reason": "This is the Taleju bell in Patan Durbar Square (already filed under pat_taleju_bell_patan, so quarantined rather than moved)",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Patan_Durbar_Historical_Heritage_Lalitpur_Patan_Kathmandu_Rajesh_Dhungana__3_.jpg.jpg",
+      "reason": "Fisheye view of Patan temples; no bell is the subject",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Patan_Durbar_Square_A_center_of_for_both_Hinduism_and_Buddhism_04.jpg.jpg",
+      "reason": "This is the Taleju bell in Patan Durbar Square (already filed under pat_taleju_bell_patan, so quarantined rather than moved)",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Taleju_Temple__Patan_Durbar_Square.jpg.jpg",
+      "reason": "This is the Taleju bell in Patan Durbar Square, with the Patan Taleju temple behind (already filed under pat_taleju_bell_patan, so quarantined rather than moved)",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_mandir",
+      "file": "Before_and_After.jpg.jpg",
+      "reason": "A hand holding an old photograph in a street; not a view of the temple",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_mandir",
+      "file": "Taleju_Temple__Kathmandu-26.jpg.jpg",
+      "reason": "Same viewpoint as Taleju_Temple__Kathmandu-3, tighter; near-duplicate angle",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_mandir",
+      "file": "Taleju_Temple__Kathmandu-6.jpg.jpg",
+      "reason": "Same alley viewpoint as Taleju_Temple__Kathmandu-5; near-duplicate angle",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pat_bhimsen_mandir",
+      "file": "Patan_Bhimsen_Temple_Patan_Durbar_Square_Patan_Lalitpur_Nepal_Rajesh_Dhungana__5_.jpg.jpg",
+      "reason": "Same corner viewpoint as the photo numbered 4 in this series; near-duplicate angle",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pat_taleju_bell_patan",
+      "file": "Kathmandu_Darbar__Big_Bell__Taleju_Bell_.jpg.jpg",
+      "reason": "This is the Kathmandu Durbar Square bell, already filed under ktm_taleju_bell",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pat_taleju_bell_patan",
+      "file": "Kathmandu_Patan_Durbar_Square_in_the_19th_century.jpg.jpg",
+      "reason": "Nineteenth-century archival photo; not a usable present-day view",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pat_taleju_bell_patan",
+      "file": "Nepal_Patan_Durbar_Square_10__full_res_.jpg.jpg",
+      "reason": "Subject is the octagonal Chyasin Dega; the bell is a small background element",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pat_taleju_bell_patan",
+      "file": "Patan_Durbar_Historical_Heritage_Lalitpur_Patan_Kathmandu_Rajesh_Dhungana__3_.jpg.jpg",
+      "reason": "Fisheye view of temples and a fountain; the bell is not in frame",
+      "movedTo": null
+    },
+    {
+      "monumentId": "bkt_vatsala_durga",
+      "file": "Bhaktapur_durbar_square_temple.jpg.jpg",
+      "reason": "Unmistakably Nyatapola: five roofs and the paired guardians on the stairway",
+      "movedTo": "bkt_nyatapola"
+    },
+    {
+      "monumentId": "pat_mani_dhara",
+      "file": "Mangah_Hiti_and_Krishna_Temple__shikhara_style__north_of_Patan__Lalitpur___Durbar_Square__.jpg",
+      "reason": "Nineteenth-century engraving, not a photograph",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Bhaktapur_Durbar_Square_with_King_Bhupatindra_Malla_Statue_and_Taleju_Bell.jpg.jpg",
+      "reason": "Silhouette at the Bhaktapur bell, not the Kathmandu bell",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Bhaktapur_Durbar_Square-IMG_3517-Pano.jpg.jpg",
+      "reason": "Bhaktapur Durbar Square panorama, not the Kathmandu bell",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Patan_Kathmandu__5085595252_.jpg.jpg",
+      "reason": "Patan Durbar Square pagodas with the Patan bell; not the Kathmandu bell",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Patan_Kathmandu__5084997631_.jpg.jpg",
+      "reason": "This is the Taleju bell in Patan Durbar Square",
+      "movedTo": "pat_taleju_bell_patan"
+    },
+    {
+      "monumentId": "ktm_taleju_bell",
+      "file": "Patan_Kathmandu__5084998149_.jpg.jpg",
+      "reason": "Patan Durbar Square pagodas with the Patan bell; not the Kathmandu bell",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Bhringeshwor_Mahadev_Ancient_Shiva_Linga_Bhringeshwor_Mahadev_Temple_Sunakothi_La_316951c6.jpg",
+      "reason": "Interior of the Bhringeshwor Mahadev temple at Sunakothi, not Pashupatinath",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Bhringeshwor_Mahadev_Ancient_Shiva_Linga_Bhringeshwor_Mahadev_Temple_Sunakothi_La_69ca22fb.jpg",
+      "reason": "Interior of the Bhringeshwor Mahadev temple at Sunakothi, not Pashupatinath",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Bhringeshwor_Mahadev_Ancient_Shiva_Linga_Bhringeshwor_Mahadev_Temple_Sunakothi_La_6b695505.jpg",
+      "reason": "Interior of the Bhringeshwor Mahadev temple at Sunakothi, not Pashupatinath",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Bhringeshwor_Mahadev_Ancient_Shiva_Linga_Bhringeshwor_Mahadev_Temple_Sunakothi_La_05e7a1f0.jpg",
+      "reason": "Interior of the Bhringeshwor Mahadev temple at Sunakothi, not Pashupatinath",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Bhringeshwor_Mahadev_Ancient_Shiva_Linga_Bhringeshwor_Mahadev_Temple_Sunakothi_La_f8860a97.jpg",
+      "reason": "Interior of the Bhringeshwor Mahadev temple at Sunakothi, not Pashupatinath",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_gaddhi_baithak",
+      "file": "Gaddi_Baithak_Kathmandu_Durbar_Square.jpg.jpg",
+      "reason": "Night silhouettes of passers-by fill the frame",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_gorakhnath_shikhar",
+      "file": "Gorakhnath_or_Goraksanath_Temple_Mrigasthali_Pasupati_Kathmandu_Nepal_Rajesh_Dhun_866ce19f.jpg",
+      "reason": "Same courtyard viewpoint as the previous photo in the series; near-duplicate angle",
+      "movedTo": null
+    },
+    {
+      "monumentId": "ktm_hanuman_dhoka",
+      "file": "Pratap_Malla_at_Hanuman_Dhoka.JPG.jpg",
+      "reason": "Low-resolution repeat of Pratap_Malla_at_Hanuman_Dhoka_2",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "20231104_110747_PASUPATI_NATH_TEMPLE_HERITAGE_OF_NEPAL____03.jpg.jpg",
+      "reason": "Subject is the Bagmati and the ghats; the temple is not in frame",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "A_different_view__Pashupati.jpg.jpg",
+      "reason": "Night silhouette of trees and small shrines; the temple cannot be identified",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Aarati_in_pashupati.JPG.jpg",
+      "reason": "Priest performing aarti before a crowd; no monument in frame",
+      "movedTo": null
+    },
+    {
+      "monumentId": "pas_main_pagoda_courtyard",
+      "file": "Aarati_Pashupatinath_temple__Nepal.jpg.jpg",
+      "reason": "Close-up of aarti lamps; no monument in frame",
+      "movedTo": null
+    }
+  ]
+}
