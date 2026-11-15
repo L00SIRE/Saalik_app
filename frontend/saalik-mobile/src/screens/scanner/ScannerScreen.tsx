@@ -25,12 +25,13 @@ function cuePhrase(monument: HeritageMonument): string {
   return feature ? `${roof}, ${feature}` : roof;
 }
 
+/** Scores closer than this are a coin toss, so the visitor is asked what they can see. */
+const TIE_MARGIN = 0.03;
+
 function tieQuestion(matches: ScanResult['matches']): string | null {
   const [first, second] = matches;
-  if (!first || !second) return null;
-  if (first.monument.zoneId !== second.monument.zoneId) return null;
-  if (!first.monument.zoneId.includes('durbar')) return null;
-  if (Math.abs(first.score - second.score) > 0.04) return null;
+  if (!first || !second || first.score <= 0) return null;
+  if (first.score - second.score > TIE_MARGIN) return null;
   return `Do you see ${cuePhrase(first.monument)}, or ${cuePhrase(second.monument)}?`;
 }
 
@@ -106,8 +107,12 @@ export function ScannerScreen() {
     }
   };
 
-  const openMonument = (monumentId: string, score?: number) =>
-    navigation.navigate('MonumentStory', { monumentId, matchScore: score });
+  const openMonument = (monumentId: string, score?: number) => {
+    // On a near-tie the story screen offers a one-tap switch to the other candidate.
+    const tied = result && tieQuestion(result.matches) ? result.matches.slice(0, 2).map((m) => m.monument.id) : [];
+    const alternateId = tied.includes(monumentId) ? tied.find((id) => id !== monumentId) : undefined;
+    navigation.navigate('MonumentStory', { monumentId, matchScore: score, alternateId });
+  };
 
   return (
     <SafeAreaView style={styles.container} edges={['top']}>

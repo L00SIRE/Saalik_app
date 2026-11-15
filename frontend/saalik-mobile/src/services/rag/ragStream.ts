@@ -61,6 +61,63 @@ export function buildTabContext(
   };
 }
 
+const FOLLOW_UP_ROUTES: { category: LoreCategory; pattern: RegExp }[] = [
+  { category: 'CONSERVATION_RESTORATION', pattern: /earthquake|2015|restor|rebuil|damage|conserv|repair|collaps/ },
+  { category: 'LIVING_RITUALS_FOLKLORE', pattern: /festival|ritual|puja|worship|legend|myth|folk|jatra|tantr|pray|ceremon/ },
+  { category: 'ICONOGRAPHY_SYMBOLISM', pattern: /god|deity|symbol|statue|carving|mean|icon|guardian|represent|image/ },
+  { category: 'ARCHITECTURE_CRAFTSMANSHIP', pattern: /architect|roof|tier|wood|brick|stone|style|craft|material|design|tall|made of/ },
+  { category: 'HISTORY_DYNASTY', pattern: /who|when|built|king|dynasty|century|history|old|year|found/ },
+];
+
+const words = (text: string) => text.toLowerCase().match(/[a-z0-9]{4,}/g) ?? [];
+
+export const FOLLOW_UP_SUGGESTIONS = [
+  'Who built it, and when?',
+  'What do the carvings and statues mean?',
+  'What rituals or festivals happen here?',
+  'What happened in the 2015 earthquake?',
+  'How do I tell it apart from nearby monuments?',
+];
+
+/**
+ * Offline answer to a follow-up question, extracted from the monument's own lore chunks.
+ * It routes the question to one of the five lore categories and returns the three sentences
+ * that share the most words with it, so every answer stays inside the sourced corpus.
+ */
+export function answerFollowUp(monument: HeritageMonument, question: string, sources: HeritageSource[]): RagContext {
+  const asked = question.toLowerCase();
+  if (/apart|confus|differen|recogni|identif|nearby|mistake/.test(asked)) {
+    const cues = monument.visualCues;
+    return {
+      text: `${cues.disambiguationTip} Look for: ${cues.distinguishingFeatures.join('; ')}.`,
+      citations: [],
+      confidence: null,
+    };
+  }
+
+  const askedWords = new Set(words(asked));
+  const overlap = (text: string) => words(text).filter((word) => askedWords.has(word)).length;
+  const routed = FOLLOW_UP_ROUTES.find((route) => route.pattern.test(asked))?.category;
+  const best =
+    (routed && chunk(monument, routed)) ??
+    monument.loreChunks.slice().sort((a, b) => overlap(b.text) - overlap(a.text))[0];
+  if (!best) {
+    return { text: 'Saalik has no written lore for this monument yet.', citations: [], confidence: null };
+  }
+
+  const sentences = best.text.match(/[^.!?]+[.!?]+/g) ?? [best.text];
+  const ranked = sentences
+    .map((sentence, index) => ({ sentence: sentence.trim(), index, score: overlap(sentence) }))
+    .sort((a, b) => b.score - a.score || a.index - b.index)
+    .slice(0, 3)
+    .sort((a, b) => a.index - b.index);
+  return {
+    text: ranked.map((item) => item.sentence).join(' '),
+    citations: citationsFor(best.sourceIds, sources),
+    confidence: best.confidence,
+  };
+}
+
 /**
  * Streams text word by word, emulating token streaming entirely offline.
  * Resolves when the full text has been emitted or the signal aborts.

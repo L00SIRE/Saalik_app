@@ -93,6 +93,9 @@ export interface Booking {
   createdAt: string;
   tour: Tour;
   schedule: TourSchedule;
+  /** Set when the booking began with a scan of this monument. */
+  monumentId?: string;
+  monumentName?: string;
 }
 
 // Review Types
@@ -150,6 +153,8 @@ export interface CreateBookingPayload {
   bookingDate: string;
   partySize: number;
   notes?: string;
+  /** The scanned monument that led to this booking, if any. */
+  monument?: { id: string; name: string };
 }
 
 // Create Review Payload

@@ -50,6 +50,8 @@ type AuthActions = {
   logout: () => Promise<void>;
   /** Start a demo session as one of the pre-baked personas. */
   loginAsDemo: (persona: DemoPersona) => Promise<void>;
+  /** Flip between the traveler and guide personas, keeping scan-led bookings. */
+  switchDemoPersona: () => Promise<void>;
   /** Wipe session-accumulated demo state but stay logged in as the same persona. */
   resetDemo: () => Promise<void>;
   /** Exit the demo and return to the login screen. */
@@ -191,6 +193,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     dispatch({ type: 'SIGN_IN', payload: user, demoPersona: persona });
   }, []);
 
+  const switchDemoPersona = useCallback(async () => {
+    const next: DemoPersona = demoSession.getCurrentPersona() === 'guide-bishnu' ? 'traveler-aanya' : 'guide-bishnu';
+    const user = await demoSession.switchPersona(next);
+    const tokens = demoSession.demoTokensFor(next);
+    await tokenManager.setTokenPair(tokens.accessToken, tokens.refreshToken);
+    dispatch({ type: 'SIGN_IN', payload: user, demoPersona: next });
+  }, []);
+
   const resetDemo = useCallback(async () => {
     await demoSession.reset();
     // No state change — same user, same persona, but session-accumulated state
@@ -208,8 +218,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   // Stable reference — actions never change identity, preventing all downstream re-renders.
   const actions = useMemo<AuthActions>(
-    () => ({ login, register, logout, loginAsDemo, resetDemo, exitDemo, updateProfile }),
-    [login, register, logout, loginAsDemo, resetDemo, exitDemo, updateProfile],
+    () => ({ login, register, logout, loginAsDemo, switchDemoPersona, resetDemo, exitDemo, updateProfile }),
+    [login, register, logout, loginAsDemo, switchDemoPersona, resetDemo, exitDemo, updateProfile],
   );
 
   return (

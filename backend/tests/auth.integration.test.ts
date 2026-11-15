@@ -1,3 +1,5 @@
+import crypto from 'crypto';
+import jwt from 'jsonwebtoken';
 import request from 'supertest';
 import { createApp } from '../src/index';
 
@@ -41,5 +43,69 @@ describe('issued access tokens validate on protected routes', () => {
     expect(ai.status).toBe(200);
     expect(heritage.status).toBe(200);
     expect(heritage.body.userId).toEqual(expect.any(String));
+  });
+
+  it('answers social sign-in safely when a provider is unknown, incomplete or unconfigured', async () => {
+    delete process.env.GOOGLE_OAUTH_CLIENT_ID;
+    const unknown = await request(app).post('/api/auth/oauth/facebook').send({ idToken: 'x' });
+    const missing = await request(app).post('/api/auth/oauth/google').send({});
+    const unconfigured = await request(app).post('/api/auth/oauth/google').send({ idToken: 'x' });
+    expect(unknown.status).toBe(404);
+    expect(missing.status).toBe(400);
+    expect(unconfigured.status).toBe(503);
+  });
+
+  it('creates the account on first Google sign-in and reuses it on the next', async () => {
+    const { publicKey, privateKey } = crypto.generateKeyPairSync('rsa', { modulusLength: 2048 });
+    const jwks = { keys: [{ ...publicKey.export({ format: 'jwk' }), kid: 'k1' }] };
+    const fetchSpy = jest.spyOn(global, 'fetch').mockImplementation(async () => new Response(JSON.stringify(jwks)));
+    process.env.GOOGLE_OAUTH_CLIENT_ID = 'saalik-client';
+    const googleEmail = `google-${Date.now()}@saalik.test`;
+    const idToken = jwt.sign({ sub: 'g-1', email: googleEmail, email_verified: true, name: 'Google Traveler' }, privateKey, {
+      algorithm: 'RS256',
+      keyid: 'k1',
+      expiresIn: '5m',
+      issuer: 'https://accounts.google.com',
+      audience: 'saalik-client',
+    });
+
+    const first = await request(app).post('/api/auth/oauth/google').send({ idToken });
+    const second = await request(app).post('/api/auth/oauth/google').send({ idToken });
+    fetchSpy.mockRestore();
+    delete process.env.GOOGLE_OAUTH_CLIENT_ID;
+
+    expect(first.status).toBe(200);
+    expect(first.body.user).toMatchObject({ email: googleEmail, name: 'Google Traveler', role: 'TRAVELER' });
+    expect(second.body.user.id).toBe(first.body.user.id);
+    const me = await request(app).get('/api/auth/me').set({ Authorization: `Bearer ${first.body.accessToken}` });
+    expect(me.body.email).toBe(googleEmail);
+    // The account has no usable password.
+    const passwordLogin = await request(app).post('/api/auth/login').send({ email: googleEmail, password: 'g-1' });
+    expect(passwordLogin.status).toBe(401);
+  });
+
+  it('presigns an image upload only for a signed-in user with storage configured', async () => {
+    const body = { contentType: 'image/jpeg' };
+    const anonymous = await request(app).post('/api/uploads/presign').send(body);
+    expect(anonymous.status).toBe(401);
+
+    delete process.env.R2_BUCKET;
+    const unconfigured = await request(app).post('/api/uploads/presign').set(auth()).send(body);
+    expect(unconfigured.status).toBe(503);
+
+    Object.assign(process.env, {
+      R2_ACCOUNT_ID: 'acct',
+      R2_ACCESS_KEY_ID: 'key',
+      R2_SECRET_ACCESS_KEY: 'secret',
+      R2_BUCKET: 'saalik-media',
+    });
+    const wrongType = await request(app).post('/api/uploads/presign').set(auth()).send({ contentType: 'text/html' });
+    const signed = await request(app).post('/api/uploads/presign').set(auth()).send(body);
+    expect(wrongType.status).toBe(400);
+    expect(signed.status).toBe(200);
+    expect(signed.body.method).toBe('PUT');
+    expect(signed.body.key).toMatch(/^uploads\/[^/]+\/[0-9a-f-]{36}\.jpg$/);
+    expect(signed.body.uploadUrl).toContain(`https://acct.r2.cloudflarestorage.com/saalik-media/${signed.body.key}?`);
+    expect(signed.body.uploadUrl).toMatch(/X-Amz-Signature=[0-9a-f]{64}$/);
   });
 });

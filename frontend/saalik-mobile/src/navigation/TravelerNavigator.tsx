@@ -20,6 +20,7 @@ import { MyReviewsScreen } from '@screens/MyReviewsScreen';
 import { SettingsScreen } from '@screens/SettingsScreen';
 import { CheckpointsScreen } from '@screens/CheckpointsScreen';
 import { HeritageHomeScreen } from '@screens/heritage/HeritageHomeScreen';
+import { HeritageWalkScreen } from '@screens/heritage/HeritageWalkScreen';
 import { ScannerScreen } from '@screens/scanner/ScannerScreen';
 import { MonumentStoryScreen } from '@screens/scanner/MonumentStoryScreen';
 import { LocalStorytellersScreen } from '@screens/marketplace/LocalStorytellersScreen';
@@ -73,7 +74,10 @@ function DiscoverNavigator() {
       <DiscoverStack.Screen name="Scan" component={ScanScreen} />
       <DiscoverStack.Screen name="Scanner" component={ScannerScreen} />
       <DiscoverStack.Screen name="MonumentStory" component={MonumentStoryScreen} />
+      <DiscoverStack.Screen name="HeritageWalk" component={HeritageWalkScreen} />
       <DiscoverStack.Screen name="LocalStorytellers" component={LocalStorytellersScreen} />
+      <DiscoverStack.Screen name="TourDetail" component={TourDetailScreen} />
+      <DiscoverStack.Screen name="Booking" component={BookingScreen} />
       <DiscoverStack.Screen name="CollectorChecklist" component={CollectorChecklistScreen} />
       <DiscoverStack.Screen name="GuidedCamera" component={GuidedCameraScreen} />
       <DiscoverStack.Screen name="SyncManager" component={SyncManagerScreen} />

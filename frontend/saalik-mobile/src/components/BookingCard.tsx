@@ -31,7 +31,9 @@ export function BookingCard({ booking, onPress, onCancel, onReview }: BookingCar
       ? { label: 'Completed', tone: 'success' as const }
       : isPast
         ? { label: 'Past', tone: 'neutral' as const }
-        : { label: 'Confirmed', tone: 'accent' as const };
+        : booking.status === 'PENDING'
+          ? { label: 'Awaiting guide', tone: 'warning' as const }
+          : { label: 'Confirmed', tone: 'accent' as const };
 
   const dateLabel = bookingDate.toLocaleDateString('en-US', {
     weekday: 'short',

@@ -25,6 +25,7 @@ import {
   FEATURED_TOURS,
   GUIDE_EARNINGS,
   GUIDE_INCOMING_BOOKINGS,
+  GUIDE_PROFILE,
   GUIDE_USER,
   TRAVELER_BOOKINGS,
   TRAVELER_REVIEWS,
@@ -35,6 +36,7 @@ import {
 } from './demoSeed';
 
 const STORAGE_KEY = 'saalik_demo_session_v1';
+const HANDOFF_KEY = 'saalik_demo_handoff_v1';
 
 // ─── Persistent store shape ──────────────────────────────────────────────────
 
@@ -84,12 +86,31 @@ export function personaFromToken(token: string | null): DemoPersona | null {
 
 // ─── Store bootstrap & lifecycle ─────────────────────────────────────────────
 
-function freshStore(persona: DemoPersona): DemoStore {
+/**
+ * Bookings Aanya made from a scanned monument. Unlike the rest of the store they outlive a
+ * persona switch, so Bishnu finds the request on his dashboard. reset() and stop() wipe them.
+ */
+async function loadHandoff(): Promise<Booking[]> {
+  try {
+    const raw = await AsyncStorage.getItem(HANDOFF_KEY);
+    return raw ? (JSON.parse(raw) as Booking[]) : [];
+  } catch {
+    return [];
+  }
+}
+
+async function saveHandoff(bookings: Booking[]): Promise<void> {
+  await AsyncStorage.setItem(HANDOFF_KEY, JSON.stringify(bookings)).catch(() => {});
+}
+
+function freshStore(persona: DemoPersona, handoff: Booking[] = []): DemoStore {
+  // A guide only sees requests for his own tours; newest scan-led requests go first.
+  const forBishnu = handoff.filter((b) => b.tour.guideId === GUIDE_PROFILE.id && b.status !== 'CANCELLED');
   return {
     persona,
     startedAt: new Date().toISOString(),
-    travelerBookings: persona === 'traveler-aanya' ? clone(TRAVELER_BOOKINGS) : [],
-    guideIncoming: persona === 'guide-bishnu' ? clone(GUIDE_INCOMING_BOOKINGS) : [],
+    travelerBookings: persona === 'traveler-aanya' ? [...clone(handoff), ...clone(TRAVELER_BOOKINGS)] : [],
+    guideIncoming: persona === 'guide-bishnu' ? [...clone(forBishnu), ...clone(GUIDE_INCOMING_BOOKINGS)] : [],
     authoredReviews: persona === 'traveler-aanya' ? clone(TRAVELER_REVIEWS) : [],
     wishlist: persona === 'traveler-aanya' ? [...TRAVELER_WISHLIST] : [],
     nudgeImpressions: {},
@@ -149,8 +170,16 @@ export async function start(persona: DemoPersona): Promise<AuthUser> {
   return persona === 'traveler-aanya' ? TRAVELER_USER : GUIDE_USER;
 }
 
+/** Change persona inside one demo run, carrying scan-led bookings across to the other side. */
+export async function switchPersona(persona: DemoPersona): Promise<AuthUser> {
+  store = freshStore(persona, await loadHandoff());
+  await persist();
+  return persona === 'traveler-aanya' ? TRAVELER_USER : GUIDE_USER;
+}
+
 export async function reset(): Promise<void> {
   if (!store) return;
+  await AsyncStorage.removeItem(HANDOFF_KEY).catch(() => {});
   store = freshStore(store.persona);
   await persist();
 }
@@ -158,7 +187,7 @@ export async function reset(): Promise<void> {
 export async function stop(): Promise<void> {
   store = null;
   bootstrapPromise = null;
-  await AsyncStorage.removeItem(STORAGE_KEY).catch(() => {});
+  await AsyncStorage.multiRemove([STORAGE_KEY, HANDOFF_KEY]).catch(() => {});
 }
 
 // ─── Read APIs (used by api.ts) ──────────────────────────────────────────────
@@ -220,6 +249,7 @@ export async function createTravelerBooking(payload: {
   bookingDate: string;
   partySize: number;
   notes?: string;
+  monument?: { id: string; name: string };
 }): Promise<Booking> {
   if (!store) throw new Error('Demo session not active');
   if (store.persona !== 'traveler-aanya') {
@@ -236,15 +266,21 @@ export async function createTravelerBooking(payload: {
     userId: TRAVELER_USER.id,
     bookingDate: payload.bookingDate,
     partySize: payload.partySize,
-    status: 'CONFIRMED',
-    notes: payload.notes,
+    // A request that began with a scan waits for the guide to accept it.
+    status: payload.monument ? 'PENDING' : 'CONFIRMED',
+    notes: payload.monument
+      ? [`Booked after scanning ${payload.monument.name}.`, payload.notes].filter(Boolean).join(' ')
+      : payload.notes,
     createdAt: new Date().toISOString(),
     tour,
     schedule,
+    monumentId: payload.monument?.id,
+    monumentName: payload.monument?.name,
   };
 
   store.travelerBookings = [booking, ...store.travelerBookings];
   await persist();
+  if (payload.monument) await saveHandoff([booking, ...(await loadHandoff())]);
   return clone(booking);
 }
 
@@ -254,6 +290,7 @@ export async function cancelTravelerBooking(id: string): Promise<void> {
     b.id === id ? { ...b, status: 'CANCELLED' as const } : b,
   );
   await persist();
+  await saveHandoff((await loadHandoff()).filter((b) => b.id !== id));
 }
 
 export async function tipTravelerBooking(
@@ -363,6 +400,7 @@ export const demoSession = {
   getCurrentPersona,
   getCurrentUser,
   start,
+  switchPersona,
   reset,
   stop,
   demoTokensFor,

@@ -10,6 +10,7 @@ import bookingsRouter from './routes/bookings';
 import guidesRouter from './routes/guides';
 import reviewsRouter from './routes/reviews';
 import aiRouter from './routes/ai';
+import uploadsRouter from './routes/uploads';
 import { createHeritageRouter } from './heritage/routes/scan';
 
 const ALLOWED_ORIGINS = (
@@ -30,6 +31,10 @@ app.use(express.json({ limit: '8mb' }));
 
 app.use(
   '/api/auth/login',
+  rateLimit({ windowMs: 15 * 60 * 1000, limit: 10, standardHeaders: true, legacyHeaders: false, skip: skipLimits }),
+);
+app.use(
+  '/api/auth/oauth',
   rateLimit({ windowMs: 15 * 60 * 1000, limit: 10, standardHeaders: true, legacyHeaders: false, skip: skipLimits }),
 );
 app.use(
@@ -54,6 +59,7 @@ app.use('/api/bookings', bookingsRouter);
 app.use('/api/guides', guidesRouter);
 app.use('/api/reviews', reviewsRouter);
 app.use('/api/ai', aiRouter);
+app.use('/api/uploads', uploadsRouter);
 app.use('/api/heritage', createHeritageRouter());
 
 // 404 handler

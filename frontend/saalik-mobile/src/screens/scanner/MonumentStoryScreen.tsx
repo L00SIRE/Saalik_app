@@ -6,6 +6,8 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { AppText } from '@components/AppText';
 import { StreamingText } from '@components/heritage/StreamingText';
 import { StorytellerCard } from '@components/heritage/StorytellerCard';
+import { VoiceHistorianBar } from '@components/heritage/VoiceHistorianBar';
+import { AskSaalikDrawer } from '@components/heritage/AskSaalikDrawer';
 import { colors } from '@theme/colors';
 import { useAppMode } from '../../context/AppModeContext';
 import { buildTabContext, STORY_TABS, type StoryTab } from '../../services/rag/ragStream';
@@ -16,14 +18,17 @@ import type { Tour } from '../../types/api';
 export function MonumentStoryScreen() {
   const navigation = useNavigation<any>();
   const route = useRoute<any>();
-  const { monumentId } = route.params as { monumentId: string; matchScore?: number };
+  const { monumentId, alternateId } = route.params as { monumentId: string; matchScore?: number; alternateId?: string };
   const { repositories, mode, connectivity } = useAppMode();
   const [tab, setTab] = useState<StoryTab>('STORY_HOOK');
   const [offers, setOffers] = useState<StorytellerOffer[]>([]);
   const [offersLoading, setOffersLoading] = useState(true);
+  const [askOpen, setAskOpen] = useState(false);
 
   const monument = repositories?.monuments.getById(monumentId);
   const zone = monument ? repositories?.monuments.getZone(monument.zoneId) : undefined;
+  // Set by the scanner when the top two matches scored within 0.03 of each other.
+  const alternate = alternateId ? repositories?.monuments.getById(alternateId) : undefined;
 
   const context = useMemo(() => {
     if (!repositories || !monument) return null;
@@ -83,7 +88,11 @@ export function MonumentStoryScreen() {
       connectivity,
       true,
     );
-    navigation.navigate('TourDetail', { tourId: tour.id, tour });
+    navigation.navigate('TourDetail', {
+      tourId: tour.id,
+      tour,
+      fromMonument: { id: monument.id, name: monument.names.en },
+    });
   };
 
   return (
@@ -105,6 +114,19 @@ export function MonumentStoryScreen() {
           {monument.era.dynasty} - {monument.era.century}
         </AppText>
 
+        {alternate && (
+          <Pressable
+            style={styles.tiePill}
+            onPress={() => navigation.replace('MonumentStory', { monumentId: alternate.id, alternateId: monument.id })}
+          >
+            <Ionicons name="swap-horizontal" size={16} color={colors.warning} />
+            <AppText style={styles.tiePillText}>
+              Close match. If you see {alternate.visualCues.distinguishingFeatures[0] ?? alternate.names.en}, tap for{' '}
+              {alternate.names.en}.
+            </AppText>
+          </Pressable>
+        )}
+
         {monument.verificationStatus === 'EDITORIAL_DRAFT' && (
           <View style={styles.draft}>
             <Ionicons name="alert-circle-outline" size={16} color={colors.warning} />
@@ -119,6 +141,12 @@ export function MonumentStoryScreen() {
             </Pressable>
           ))}
         </View>
+
+        <VoiceHistorianBar
+          label={STORY_TABS.find((t) => t.key === tab)?.label ?? 'Story'}
+          english={context.text}
+          nepali={monument.nepaliSummary}
+        />
 
         <View style={styles.storyCard}>
           {tab === 'STORY_HOOK' && (
@@ -141,6 +169,17 @@ export function MonumentStoryScreen() {
 
         <AppText style={styles.summaryNe}>{monument.nepaliSummary}</AppText>
 
+        <View style={styles.actions}>
+          <Pressable style={styles.action} onPress={() => setAskOpen(true)}>
+            <Ionicons name="chatbubble-ellipses-outline" size={18} color={colors.accent} />
+            <AppText style={styles.actionText}>Ask Saalik</AppText>
+          </Pressable>
+          <Pressable style={styles.action} onPress={() => navigation.navigate('HeritageWalk', { monumentId: monument.id })}>
+            <Ionicons name="walk" size={18} color={colors.accent} />
+            <AppText style={styles.actionText}>Build My 90-Min Heritage Walk</AppText>
+          </Pressable>
+        </View>
+
         <StorytellerCard
           offers={offers}
           loading={offersLoading}
@@ -149,6 +188,12 @@ export function MonumentStoryScreen() {
           onSeeAll={() => navigation.navigate('LocalStorytellers', { monumentId: monument.id })}
         />
       </ScrollView>
+      <AskSaalikDrawer
+        visible={askOpen}
+        onClose={() => setAskOpen(false)}
+        monument={monument}
+        sources={repositories.monuments.getSources()}
+      />
     </SafeAreaView>
   );
 }
@@ -171,6 +216,32 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(251, 191, 36, 0.08)',
   },
   draftText: { color: colors.textSecondary, fontSize: 12, flex: 1 },
+  tiePill: {
+    flexDirection: 'row',
+    gap: 8,
+    alignItems: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: colors.warning,
+    backgroundColor: 'rgba(251, 191, 36, 0.08)',
+  },
+  tiePillText: { color: colors.textPrimary, fontSize: 12, flex: 1 },
+  actions: { flexDirection: 'row', gap: 8 },
+  action: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    paddingVertical: 12,
+    paddingHorizontal: 8,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: colors.accent,
+  },
+  actionText: { color: colors.accent, fontSize: 13, flexShrink: 1 },
   tabs: { flexDirection: 'row', gap: 8, marginTop: 6 },
   tab: { flex: 1, paddingVertical: 10, borderRadius: 12, borderWidth: 1, borderColor: colors.border, alignItems: 'center' },
   tabActive: { backgroundColor: colors.accent, borderColor: colors.accent },

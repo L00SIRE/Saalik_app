@@ -20,7 +20,7 @@ import type { Tour, TourSchedule } from '@app-types/api';
 export function BookingScreen() {
     const navigation = useNavigation<any>();
     const route = useRoute<any>();
-    const { tour } = route.params as { tour: Tour };
+    const { tour, fromMonument } = route.params as { tour: Tour; fromMonument?: { id: string; name: string } };
 
     const [selectedSchedule, setSelectedSchedule] = useState<TourSchedule | null>(null);
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -75,11 +75,15 @@ export function BookingScreen() {
                 scheduleId: selectedSchedule.id,
                 bookingDate: selectedDate.toISOString(),
                 partySize,
+                monument: fromMonument,
             });
 
+            const pending = booking.status === 'PENDING';
             Alert.alert(
-                'Booking Confirmed! 🎉',
-                `Your tour "${tour.title}" is booked for ${formatDate(selectedDate)} at ${selectedSchedule.startTime}.\n\nYou'll receive a confirmation email with all the details.`,
+                pending ? 'Request sent' : 'Booking Confirmed! 🎉',
+                pending
+                    ? `${tour.guide.user.name} will confirm "${tour.title}" for ${formatDate(selectedDate)} at ${selectedSchedule.startTime}. The request says you scanned ${booking.monumentName}.`
+                    : `Your tour "${tour.title}" is booked for ${formatDate(selectedDate)} at ${selectedSchedule.startTime}.\n\nYou'll receive a confirmation email with all the details.`,
                 [
                     {
                         text: 'View My Bookings',

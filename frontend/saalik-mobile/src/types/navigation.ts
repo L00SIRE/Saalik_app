@@ -44,8 +44,11 @@ export type DiscoverStackParamList = {
   Scan: undefined;
   HeritageHome: undefined;
   Scanner: undefined;
-  MonumentStory: { monumentId: string };
+  MonumentStory: { monumentId: string; matchScore?: number; alternateId?: string };
+  HeritageWalk: { monumentId?: string } | undefined;
   LocalStorytellers: { monumentId?: string } | undefined;
+  TourDetail: { tourId: string };
+  Booking: { tourId: string; scheduleId: string };
   CollectorChecklist: undefined;
   GuidedCamera: { monumentId: string; angle?: string };
   SyncManager: undefined;

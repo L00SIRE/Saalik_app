@@ -14,7 +14,7 @@ import { space } from '@theme';
  * thin and unobtrusive — visible but not annoying.
  */
 export function DemoBanner() {
-  const { isDemo, demoPersona, exitDemo, resetDemo } = useAuth();
+  const { isDemo, demoPersona, exitDemo, resetDemo, switchDemoPersona } = useAuth();
   if (!isDemo) return null;
 
   const personaLabel =
@@ -43,6 +43,17 @@ export function DemoBanner() {
             {personaLabel}
           </AppText>
         </View>
+        <Pressable
+          onPress={() => void switchDemoPersona()}
+          hitSlop={8}
+          accessibilityLabel="Switch demo persona"
+          style={({ pressed }) => [styles.exit, pressed && styles.exitPressed]}
+        >
+          <Ionicons name="swap-horizontal" size={14} color="#021007" />
+          <AppText variant="label" tone="inverse" style={styles.exitText}>
+            {demoPersona === 'guide-bishnu' ? 'Aanya' : 'Bishnu'}
+          </AppText>
+        </Pressable>
         <Pressable
           onPress={handleExit}
           hitSlop={8}

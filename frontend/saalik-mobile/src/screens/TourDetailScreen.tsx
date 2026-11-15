@@ -349,7 +349,7 @@ export function TourDetailScreen() {
           label="Book now"
           rightIcon="arrow-forward"
           size="lg"
-          onPress={() => navigation.navigate('Booking', { tour })}
+          onPress={() => navigation.navigate('Booking', { tour, fromMonument: route.params.fromMonument })}
         />
       </SafeAreaView>
     </View>

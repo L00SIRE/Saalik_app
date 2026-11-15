@@ -301,6 +301,12 @@ function IncomingBookingRow({ booking }: { booking: Booking }) {
         />
       </View>
 
+      {booking.monumentName && (
+        <View style={styles.bookingScan}>
+          <Tag label={`From a scan of ${booking.monumentName}`} tone="accent" icon="scan" size="sm" />
+        </View>
+      )}
+
       {booking.notes && (
         <View style={styles.bookingNote}>
           <Ionicons name="chatbox-outline" size={13} color={colors.textSecondary} />
@@ -490,6 +496,9 @@ const styles = StyleSheet.create({
   },
   bookingTitle: {
     fontSize: 15,
+  },
+  bookingScan: {
+    flexDirection: 'row',
   },
   bookingNote: {
     flexDirection: 'row',

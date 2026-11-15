@@ -5,6 +5,7 @@ import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 import prisma from '../db';
 import { ACCESS_EXPIRY, ACCESS_SECRET, REFRESH_EXPIRY_DAYS, REFRESH_SECRET } from '../config/auth';
+import { isOAuthProvider, OAuthError, verifyIdToken } from '../services/oauth';
 
 const router = Router();
 
@@ -93,6 +94,49 @@ router.post('/login', async (req, res) => {
   const valid = await bcrypt.compare(password, hash);
 
   if (!user || !valid) return res.status(401).json({ error: 'Invalid credentials' });
+
+  const [accessToken, refreshToken] = await Promise.all([
+    signAccessToken(user.id),
+    issueRefreshToken(user.id),
+  ]);
+
+  return res.json({ user: formatUser(user), accessToken, refreshToken });
+});
+
+/**
+ * POST /api/auth/oauth/:provider   (provider: google | apple)
+ * Body: { idToken, name? }. Verifies the provider's ID token, finds or creates the user by
+ * verified email, and returns the same { user, accessToken, refreshToken } as /login.
+ */
+router.post('/oauth/:provider', async (req, res) => {
+  const provider = String(req.params.provider);
+  if (!isOAuthProvider(provider)) return res.status(404).json({ error: 'Unknown sign-in provider' });
+
+  const { idToken, name } = req.body as { idToken?: unknown; name?: unknown };
+  if (typeof idToken !== 'string' || !idToken) return res.status(400).json({ error: 'idToken is required' });
+
+  let identity;
+  try {
+    identity = await verifyIdToken(provider, idToken);
+  } catch (error) {
+    if (error instanceof OAuthError) return res.status(error.status).json({ error: error.message });
+    throw error;
+  }
+
+  let user = await prisma.user.findUnique({ where: { email: identity.email } });
+  if (!user) {
+    // Apple only sends the name to the app, and only on first sign-in, so the body may carry it.
+    const fallbackName = typeof name === 'string' && name.trim() ? name.trim() : identity.email.split('@')[0]!;
+    user = await prisma.user.create({
+      data: {
+        email: identity.email,
+        // No password exists for a social account; a random one means password login can never match.
+        passwordHash: await bcrypt.hash(crypto.randomBytes(32).toString('hex'), 12),
+        name: (identity.name ?? fallbackName).slice(0, 100),
+        role: 'TRAVELER',
+      },
+    });
+  }
 
   const [accessToken, refreshToken] = await Promise.all([
     signAccessToken(user.id),

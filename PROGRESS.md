@@ -1,15 +1,17 @@
 # Saalik — Implementation Progress
 
-Last updated: 2026-11-10
+Last updated: 2026-11-14
 
 ## Unified architecture (monorepo)
 
 ```
-frontend/saalik-mobile/     Expo app. Discover tab: heritage home, scanner,
-                            field collector, sync manager, local storytellers.
+frontend/saalik-mobile/     Expo app. Discover tab: heritage home, scanner, monument story
+                            (voice historian, Ask Saalik, tie-breaker), 90-minute walk
+                            builder, field collector, sync manager, local storytellers.
                             AppModeContext: LIVE_CLOUD | OFFLINE_FIELD_SYNC | NTB_VIP_DEMO_MODE
 backend/                    Express API (port 4000)
-  src/routes/               auth, tours, bookings, guides, reviews, ai
+  src/routes/               auth (+ oauth/:provider), tours, bookings, guides, reviews,
+                            ai, uploads (presign)
   src/heritage/             pgvector-style geo-visual search, RAG assembly,
                             field-capture ingest, telemetry, command-center metrics
                             mounted at /api/heritage
@@ -17,12 +19,42 @@ backend/                    Express API (port 4000)
 prisma/                     PostgreSQL + pgvector heritage schema (production target)
 data/nepal_heritage_seed/   101-monument bilingual corpus (offline fallback)
 apps/ntb-command-center/    Next.js NTB dashboard. Fetches
-                            GET /api/heritage/command-center, else seed dashboard JSON
+                            GET /api/heritage/command-center, else seed dashboard JSON.
+                            Home page: 3D heritage twin, pitch film, policy ROI simulator
+  src/lib/twin/             solar position, twin data loader (tests/twin.solarAndData.test.ts)
+docs/ntb_pitch_pack/        executive brief, draft 90-day pilot MOU, 5-minute demo script
+scripts/                    start_live_stack.sh (npm run live:all)
 ml_pipeline/                Python quality gate, encoder, augmenter, retrieval benchmark
 tests/                      Jest against backend/src/heritage
 ```
 
-Root scripts: `dev:all`, `seed:db`, `verify:all`.
+Root scripts: `dev:all`, `live:all`, `seed:db`, `verify:all`.
+
+## Full-stack integration (2026-11-14)
+
+**Command center** (`apps/ntb-command-center/src/components/`)
+- [x] `ThreeHeritageTwin.tsx` — three.js scene built from `lib/twin`: procedural pagodas, shikharas, stupas and the other corpus types; a 1 December to 31 January date slider and a 06:00 to 18:00 NPT time slider driving the sun and shadows; the five field-capture camera frustums coloured by front, side or back light; the 150 m candidate ring with neighbour lines and bars coloured by prototype cosine. Heights, footprints and facade bearings are nominal, not surveyed.
+- [x] `AnimatedPitchFilm.tsx` — 90-second, 5-scene canvas film with WebAudio singing-bowl strikes and SpeechSynthesis narration, both switchable.
+- [x] `PolicyRoiSimulator.tsx` — sliders for daily active tourists, scan-to-guide conversion and satellite ward dispersion. Revenue per walk comes from the dashboard's guide ledger, which is still seeded demo data.
+
+**Mobile** (`frontend/saalik-mobile/src/`)
+- [x] `components/heritage/VoiceHistorianBar.tsx` — expo-speech narration of the open story tab in English, or the Nepali summary. Offline.
+- [x] `components/heritage/AskSaalikDrawer.tsx` + `answerFollowUp` in `services/rag/ragStream.ts` — follow-up questions answered by extracting sentences from the monument's own lore chunks, with their sources. Offline, no model call.
+- [x] Tie-breaker — the scanner asks which cue the visitor sees when the top two scores are within 0.03, and the story screen shows a one-tap pill to switch to the other candidate.
+- [x] `services/route/walkOptimizer.ts` + `screens/heritage/HeritageWalkScreen.tsx` — nearest monuments in the zone, ordered by nearest-neighbour then 2-opt, cut to 90 minutes of walking plus dwell time. Tests: `tests/walkOptimizer.test.ts`.
+- [x] Aanya-to-Bishnu bridge — a booking made from a scanned monument is saved as PENDING with the monument attached, kept in `saalik_demo_handoff_v1`, and placed first in Bishnu's incoming list after the new persona switch on `DemoBanner`. Only Bishnu's own tours cross over. Reset and Exit clear it.
+- [x] `TourDetail` and `Booking` are now registered in the Discover stack, so the storyteller card on a scan result leads to a booking.
+
+**Backend**
+- [x] `POST /api/auth/oauth/:provider` (google, apple) — verifies the ID token against the provider's published keys, then finds or creates the user by verified email. Answers 503 until `GOOGLE_OAUTH_CLIENT_ID` / `APPLE_OAUTH_CLIENT_ID` is set.
+- [x] `POST /api/uploads/presign` — SigV4 presigned PUT URL for Cloudflare R2, signed with the content type. Answers 503 until the four `R2_*` variables are set.
+- [x] Tests: `backend/tests/{oauth,presign,auth.integration}.test.ts`.
+
+**Not done yet**
+- The guide dashboard's Accept and Decline buttons do nothing.
+- The login screen's Google and Apple buttons do not call the new endpoint.
+- No screen uploads an image through the presign endpoint.
+- The presign URL has not been tried against a real R2 bucket, and the OAuth route has not been tried with a real Google or Apple token.
 
 ---
 
@@ -151,9 +183,10 @@ Live camera frames go to `POST /api/heritage/scan-image`, which calls `ml_pipeli
 
 When you have tokens again, this is the path:
 
-1. **Verify live mode**: backend `npm run dev`, CLIP worker `ml_pipeline/.venv/bin/python ml_pipeline/inference_server.py`, mobile with `EXPO_PUBLIC_USE_MOCK=false`.
-2. **Wire real Google/Apple sign-in** — placeholders in `LoginScreen.tsx` already exist; swap mock handlers for `expo-auth-session` (Google) and `expo-apple-authentication`. Backend needs an `/auth/oauth/{provider}` endpoint that verifies the ID token, upserts the user, returns the same `{ user, accessToken, refreshToken }` shape.
-3. **Image upload via Cloudflare R2** — schema already has `tour.images String[]` etc., just need a presigned-URL endpoint + an `<ImagePicker>` flow.
+1. **Verify live mode**: `npm run live:all` starts the CLIP worker, API, command center and Expo with mock data off.
+2. **Wire real Google/Apple sign-in** — placeholders in `LoginScreen.tsx` already exist; swap mock handlers for `expo-auth-session` (Google) and `expo-apple-authentication`, and send the ID token to `POST /api/auth/oauth/{provider}`.
+3. **Image upload via Cloudflare R2** — add an `<ImagePicker>` flow that calls `POST /api/uploads/presign` and PUTs the file to the returned URL.
+4. **Guide accept / decline** — make the dashboard buttons change the booking status.
 
 ---
 

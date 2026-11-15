@@ -116,6 +116,12 @@ export function HeritageHomeScreen() {
           onPress={() => navigation.navigate('Scanner')}
         />
         <ActionCard
+          icon="walk"
+          title="Build My 90-Min Heritage Walk"
+          subtitle="The shortest route through the monuments nearest you, with time at each stop."
+          onPress={() => navigation.navigate('HeritageWalk')}
+        />
+        <ActionCard
           icon="camera"
           title="Field Collector Mode"
           subtitle="Zone-by-zone checklist and 5-angle guided camera for dataset capture."

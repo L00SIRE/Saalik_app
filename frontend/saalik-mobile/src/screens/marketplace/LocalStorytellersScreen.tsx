@@ -68,7 +68,11 @@ export function LocalStorytellersScreen() {
           <Pressable
             key={offer.tour.id}
             style={styles.offer}
-            onPress={() => navigation.navigate('TourDetail', { tourId: offer.tour.id, tour: offer.tour })}
+            onPress={() => navigation.navigate('TourDetail', {
+                tourId: offer.tour.id,
+                tour: offer.tour,
+                fromMonument: { id: monument.id, name: monument.names.en },
+              })}
           >
             {offer.tour.guide?.user.avatar ? (
               <Image source={{ uri: offer.tour.guide.user.avatar }} style={styles.avatar} />
