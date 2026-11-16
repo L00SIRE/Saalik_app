@@ -24,9 +24,9 @@ import { colors } from '@theme/colors';
 import { radii, space } from '@theme';
 import { useAuth } from '@context/AuthContext';
 import * as demo from '@services/demoSession';
-import { formatDuration } from '@services/api';
+import { formatDuration, updateBookingStatus } from '@services/api';
 import type { GuideEarnings } from '@services/demoSeed';
-import type { Booking, Review, Tour } from '@app-types/api';
+import type { Booking, Review } from '@app-types/api';
 
 /**
  * Bishnu's home screen. Shows earnings at a glance, incoming bookings he needs
@@ -40,6 +40,7 @@ export function GuideDashboardScreen() {
   const [recentReviews, setRecentReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [respondingId, setRespondingId] = useState<string | null>(null);
 
   const load = async () => {
     if (isDemo) {
@@ -47,7 +48,6 @@ export function GuideDashboardScreen() {
       setIncoming(demo.listGuideIncoming());
       setRecentReviews(demo.getGuideOwnReviews().slice(0, 3));
     } else {
-      // TODO: real guide-side API endpoints (out of scope for this build)
       setEarnings(null);
       setIncoming([]);
       setRecentReviews([]);
@@ -64,6 +64,19 @@ export function GuideDashboardScreen() {
   const onRefresh = () => {
     setRefreshing(true);
     load();
+  };
+
+  const respondToBooking = async (bookingId: string, status: 'CONFIRMED' | 'CANCELLED') => {
+    if (respondingId) return;
+    setRespondingId(bookingId);
+    try {
+      await updateBookingStatus(bookingId, status);
+      await load();
+    } catch (error) {
+      console.warn('[guide] respondToBooking failed', error);
+    } finally {
+      setRespondingId(null);
+    }
   };
 
   const firstName = user?.name?.split(' ')[0] ?? 'Guide';
@@ -138,7 +151,12 @@ export function GuideDashboardScreen() {
           ) : (
             <View style={styles.bookingList}>
               {incoming.map((b) => (
-                <IncomingBookingRow key={b.id} booking={b} />
+                <IncomingBookingRow
+                  key={b.id}
+                  booking={b}
+                  busy={respondingId === b.id}
+                  onRespond={respondToBooking}
+                />
               ))}
             </View>
           )}
@@ -275,7 +293,15 @@ function QuickAction({
   );
 }
 
-function IncomingBookingRow({ booking }: { booking: Booking }) {
+function IncomingBookingRow({
+  booking,
+  busy,
+  onRespond,
+}: {
+  booking: Booking;
+  busy: boolean;
+  onRespond: (bookingId: string, status: 'CONFIRMED' | 'CANCELLED') => void;
+}) {
   const isPending = booking.status === 'PENDING';
   const dateLabel = formatDateRelative(booking.bookingDate);
 
@@ -318,8 +344,20 @@ function IncomingBookingRow({ booking }: { booking: Booking }) {
 
       {isPending && (
         <View style={styles.bookingActions}>
-          <Button label="Decline" size="sm" variant="ghost" onPress={() => undefined} />
-          <Button label="Accept" size="sm" onPress={() => undefined} rightIcon="checkmark" />
+          <Button
+            label="Decline"
+            size="sm"
+            variant="ghost"
+            disabled={busy}
+            onPress={() => onRespond(booking.id, 'CANCELLED')}
+          />
+          <Button
+            label="Accept"
+            size="sm"
+            disabled={busy}
+            onPress={() => onRespond(booking.id, 'CONFIRMED')}
+            rightIcon="checkmark"
+          />
         </View>
       )}
     </Card>

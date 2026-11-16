@@ -47,12 +47,19 @@ interface DemoStore {
   travelerBookings: Booking[];
   /** Mutable for the guide persona — incoming bookings list. */
   guideIncoming: Booking[];
+  /** Mutable earnings — accept bumps 7d/30d/all-time + today's sparkline. */
+  guideEarnings: GuideEarnings;
   /** Reviews authored by the active persona during this session. */
   authoredReviews: Review[];
   /** Tour IDs the traveler has saved/wishlisted. */
   wishlist: string[];
   /** Counter for analytics on conversion nudges (used by signup nudge logic). */
   nudgeImpressions: Record<string, number>;
+}
+
+/** Expected tip "tour price" shown on Bishnu's earnings card (tours themselves are free). */
+export function demoTourPriceUsd(booking: Booking): number {
+  return Math.max(15, booking.partySize * 15);
 }
 
 let store: DemoStore | null = null;
@@ -103,7 +110,11 @@ async function saveHandoff(bookings: Booking[]): Promise<void> {
   await AsyncStorage.setItem(HANDOFF_KEY, JSON.stringify(bookings)).catch(() => {});
 }
 
-function freshStore(persona: DemoPersona, handoff: Booking[] = []): DemoStore {
+function freshStore(
+  persona: DemoPersona,
+  handoff: Booking[] = [],
+  earnings: GuideEarnings = clone(GUIDE_EARNINGS),
+): DemoStore {
   // A guide only sees requests for his own tours; newest scan-led requests go first.
   const forBishnu = handoff.filter((b) => b.tour.guideId === GUIDE_PROFILE.id && b.status !== 'CANCELLED');
   return {
@@ -111,6 +122,7 @@ function freshStore(persona: DemoPersona, handoff: Booking[] = []): DemoStore {
     startedAt: new Date().toISOString(),
     travelerBookings: persona === 'traveler-aanya' ? [...clone(handoff), ...clone(TRAVELER_BOOKINGS)] : [],
     guideIncoming: persona === 'guide-bishnu' ? [...clone(forBishnu), ...clone(GUIDE_INCOMING_BOOKINGS)] : [],
+    guideEarnings: clone(earnings),
     authoredReviews: persona === 'traveler-aanya' ? clone(TRAVELER_REVIEWS) : [],
     wishlist: persona === 'traveler-aanya' ? [...TRAVELER_WISHLIST] : [],
     nudgeImpressions: {},
@@ -131,6 +143,7 @@ async function hydrate(): Promise<DemoStore | null> {
     if (!raw) return null;
     const parsed = JSON.parse(raw) as DemoStore;
     if (parsed.persona !== 'traveler-aanya' && parsed.persona !== 'guide-bishnu') return null;
+    if (!parsed.guideEarnings) parsed.guideEarnings = clone(GUIDE_EARNINGS);
     return parsed;
   } catch {
     return null;
@@ -172,7 +185,8 @@ export async function start(persona: DemoPersona): Promise<AuthUser> {
 
 /** Change persona inside one demo run, carrying scan-led bookings across to the other side. */
 export async function switchPersona(persona: DemoPersona): Promise<AuthUser> {
-  store = freshStore(persona, await loadHandoff());
+  const earnings = store?.guideEarnings ?? clone(GUIDE_EARNINGS);
+  store = freshStore(persona, await loadHandoff(), earnings);
   await persist();
   return persona === 'traveler-aanya' ? TRAVELER_USER : GUIDE_USER;
 }
@@ -360,11 +374,66 @@ export async function toggleWishlist(tourId: string): Promise<boolean> {
 
 export function listGuideIncoming(): Booking[] {
   if (!store || store.persona !== 'guide-bishnu') return [];
-  return clone(store.guideIncoming);
+  return clone(store.guideIncoming.filter((b) => b.status !== 'CANCELLED'));
 }
 
 export function getGuideEarnings(): GuideEarnings {
-  return clone(GUIDE_EARNINGS);
+  if (!store) return clone(GUIDE_EARNINGS);
+  return clone(store.guideEarnings);
+}
+
+/**
+ * Bishnu Accept / Decline on an incoming booking.
+ * Updates both the guide inbox and the traveler handoff so Aanya's Trips tab
+ * reflects CONFIRMED / CANCELLED after a persona switch. Accepting credits the
+ * expected tip ("tour price") onto the earnings card.
+ */
+export async function respondToIncomingBooking(
+  bookingId: string,
+  status: 'CONFIRMED' | 'CANCELLED',
+): Promise<Booking> {
+  if (!store) throw new Error('Demo session not active');
+  if (store.persona !== 'guide-bishnu') {
+    throw new Error('Only the guide persona can accept or decline bookings');
+  }
+
+  const existing = store.guideIncoming.find((b) => b.id === bookingId);
+  if (!existing) throw new Error(`Incoming booking ${bookingId} not found`);
+  if (existing.status !== 'PENDING') {
+    throw new Error(`Illegal booking transition: ${existing.status} → ${status}`);
+  }
+
+  const updated: Booking = { ...existing, status };
+  store.guideIncoming = store.guideIncoming.map((b) => (b.id === bookingId ? updated : b));
+  store.travelerBookings = store.travelerBookings.map((b) =>
+    b.id === bookingId ? { ...b, status } : b,
+  );
+
+  const handoff = await loadHandoff();
+  const nextHandoff =
+    status === 'CANCELLED'
+      ? handoff.filter((b) => b.id !== bookingId)
+      : handoff.map((b) => (b.id === bookingId ? { ...b, status } : b));
+  await saveHandoff(nextHandoff);
+
+  if (status === 'CONFIRMED') {
+    const price = demoTourPriceUsd(updated);
+    const earnings = clone(store.guideEarnings);
+    earnings.last7DaysUsd += price;
+    earnings.last30DaysUsd += price;
+    earnings.allTimeUsd += price;
+    earnings.bookingsLast7Days += 1;
+    earnings.bookingsLast30Days += 1;
+    earnings.payoutPendingUsd += price;
+    if (earnings.daily.length > 0) {
+      const today = earnings.daily[earnings.daily.length - 1]!;
+      today.tipUsd += price;
+    }
+    store.guideEarnings = earnings;
+  }
+
+  await persist();
+  return clone(updated);
 }
 
 export function listGuideOwnTours(): Tour[] {
@@ -423,6 +492,8 @@ export const demoSession = {
   toggleWishlist,
   listGuideIncoming,
   getGuideEarnings,
+  respondToIncomingBooking,
+  demoTourPriceUsd,
   listGuideOwnTours,
   getGuideOwnReviews,
   recordNudgeImpression,

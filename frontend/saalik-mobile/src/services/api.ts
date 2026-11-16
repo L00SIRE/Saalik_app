@@ -675,6 +675,26 @@ export const cancelBooking = async (id: string): Promise<{ message: string }> =>
   return data;
 };
 
+/** Guide Accept / Decline (or traveler cancel via status). Demo short-circuits into demoSession. */
+export const updateBookingStatus = async (
+  id: string,
+  status: 'CONFIRMED' | 'CANCELLED',
+): Promise<Booking> => {
+  if (demo.isActive()) {
+    await delay(200);
+    return demo.respondToIncomingBooking(id, status);
+  }
+  if (USE_MOCK) {
+    await delay(400);
+    const booking = DEMO_BOOKINGS.find((b) => b.id === id);
+    if (!booking) throw new Error('Booking not found');
+    booking.status = status;
+    return { ...booking };
+  }
+  const { data } = await client.patch<{ booking: Booking }>(`/bookings/${id}/status`, { status });
+  return data.booking;
+};
+
 export const addTip = async (bookingId: string, amount: number, currency: string): Promise<void> => {
   if (demo.isActive()) {
     await delay(200);

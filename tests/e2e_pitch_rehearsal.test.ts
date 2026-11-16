@@ -125,6 +125,47 @@ describe('NTB pitch rehearsal', () => {
     expect(demo.listGuideIncoming().some((booking) => booking.id === scanLed.id)).toBe(false);
   });
 
+  it("3:20 Bishnu accepts Aanya's scan booking; earnings and Trips update", async () => {
+    await demo.stop();
+    await demo.start('traveler-aanya');
+    const beforeEarnings = demo.getGuideEarnings();
+    const bookingDate = new Date(Date.now() + 4 * 86_400_000).toISOString();
+    const scanLed = await demo.createTravelerBooking({
+      tourId: 'tour-bishnu-1',
+      scheduleId: 'sched-bishnu-1a',
+      bookingDate,
+      partySize: 2,
+      monument: { id: KRISHNA, name: 'Krishna Mandir' },
+    });
+    expect(scanLed.status).toBe('PENDING');
+    expect(scanLed.notes).toContain('Krishna Mandir');
+
+    await demo.switchPersona('guide-bishnu');
+    const incoming = demo.listGuideIncoming();
+    expect(incoming[0]!.id).toBe(scanLed.id);
+    expect(incoming[0]!.status).toBe('PENDING');
+
+    const accepted = await demo.respondToIncomingBooking(scanLed.id, 'CONFIRMED');
+    expect(accepted.status).toBe('CONFIRMED');
+
+    const afterAccept = demo.listGuideIncoming().find((booking) => booking.id === scanLed.id);
+    expect(afterAccept?.status).toBe('CONFIRMED');
+
+    const price = demo.demoTourPriceUsd(scanLed);
+    const earnings = demo.getGuideEarnings();
+    expect(earnings.last7DaysUsd).toBe(beforeEarnings.last7DaysUsd + price);
+    expect(earnings.last30DaysUsd).toBe(beforeEarnings.last30DaysUsd + price);
+    expect(earnings.allTimeUsd).toBe(beforeEarnings.allTimeUsd + price);
+    expect(earnings.bookingsLast7Days).toBe(beforeEarnings.bookingsLast7Days + 1);
+    expect(earnings.daily[earnings.daily.length - 1]!.tipUsd).toBe(
+      beforeEarnings.daily[beforeEarnings.daily.length - 1]!.tipUsd + price,
+    );
+
+    await demo.switchPersona('traveler-aanya');
+    const trips = demo.listTravelerBookings('upcoming');
+    expect(trips.find((booking) => booking.id === scanLed.id)?.status).toBe('CONFIRMED');
+  });
+
   it('3:10 records the guide request with the API and confirms it', async () => {
     const created = await post('/bookings', {
       walkingTourId: 'pat_city_of_artisans',

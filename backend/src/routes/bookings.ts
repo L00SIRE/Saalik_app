@@ -2,10 +2,16 @@ import { Router } from 'express';
 import { z } from 'zod';
 import prisma from '../db';
 import { userIdFromHeader } from '../middleware/requireAuth';
+import { assertTransition } from '../heritage/services/tourBooking.service';
+import type { BookingStatus as TourBookingStatus } from '../heritage/types/heritage';
 
 const router = Router();
 
 const getUserFromToken = (authHeader: string | undefined): string | null => userIdFromHeader(authHeader);
+
+const bookingStatusSchema = z.object({
+  status: z.enum(['CONFIRMED', 'CANCELLED', 'COMPLETED', 'NO_SHOW', 'PENDING']),
+});
 
 // ============================================
 // CREATE BOOKING
@@ -160,6 +166,72 @@ router.get('/', async (req, res) => {
         console.error('Bookings fetch failed:', error);
         res.status(500).json({ error: 'Failed to fetch bookings' });
     }
+});
+
+// ============================================
+// UPDATE BOOKING STATUS (guide accept / decline / complete)
+// Uses the TourBooking state machine: PENDING → CONFIRMED | CANCELLED, etc.
+// ============================================
+
+router.patch('/:id/status', async (req, res) => {
+  const userId = getUserFromToken(req.headers.authorization);
+  if (!userId) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+
+  try {
+    const data = bookingStatusSchema.parse(req.body);
+    const booking = await prisma.booking.findUnique({
+      where: { id: req.params.id },
+      include: {
+        tour: { select: { guideId: true, guide: { select: { userId: true } } } },
+      },
+    });
+
+    if (!booking) {
+      return res.status(404).json({ error: 'Booking not found' });
+    }
+
+    const isOwner = booking.userId === userId;
+    const isGuide = booking.tour.guide.userId === userId;
+    if (!isOwner && !isGuide) {
+      return res.status(403).json({ error: 'Not authorized to update this booking' });
+    }
+
+    try {
+      assertTransition(booking.status as TourBookingStatus, data.status as TourBookingStatus);
+    } catch (error) {
+      return res.status(400).json({
+        error: error instanceof Error ? error.message : 'Illegal booking transition',
+      });
+    }
+
+    const updated = await prisma.booking.update({
+      where: { id: req.params.id },
+      data: { status: data.status },
+      include: {
+        tour: true,
+        schedule: true,
+      },
+    });
+
+    res.json({
+      message: `Booking ${data.status.toLowerCase()}`,
+      booking: {
+        ...updated,
+        tour: {
+          ...updated.tour,
+          photos: JSON.parse(updated.tour.photos),
+        },
+      },
+    });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({ error: error.issues[0]?.message ?? 'Invalid status' });
+    }
+    console.error('Booking status update failed:', error);
+    res.status(500).json({ error: 'Failed to update booking status' });
+  }
 });
 
 // ============================================

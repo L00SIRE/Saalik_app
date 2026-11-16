@@ -1,8 +1,18 @@
 import React, { useMemo, useRef, useState } from 'react';
-import { ActivityIndicator, Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import {
+  ActivityIndicator,
+  Image,
+  Platform,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  View,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { CameraView, useCameraPermissions } from 'expo-camera';
+import Constants from 'expo-constants';
+import * as ImagePicker from 'expo-image-picker';
 import { useNavigation } from '@react-navigation/native';
 import { AppText } from '@components/AppText';
 import { ConfidenceBadge } from '@components/heritage/ConfidenceBadge';
@@ -10,6 +20,11 @@ import { colors } from '@theme/colors';
 import { useAppMode } from '../../context/AppModeContext';
 import { useCurrentFix } from '../../hooks/useCurrentFix';
 import { recordScanTelemetry, runScan } from '../../services/scanner/scanService';
+import {
+  SAMPLE_MONUMENT_FRAMES,
+  sampleFrameToBase64,
+  type SampleMonumentFrame,
+} from '../../services/scanner/sampleFrames';
 import {
   APP_MODE_LABELS,
   CAPTURE_ANGLES,
@@ -40,6 +55,8 @@ function formatDistance(distanceM: number | null): string {
   return distanceM < 1000 ? `${Math.round(distanceM)} m away` : `${(distanceM / 1000).toFixed(1)} km away`;
 }
 
+const isSimulator = Platform.OS === 'ios' && !Constants.isDevice;
+
 export function ScannerScreen() {
   const navigation = useNavigation<any>();
   const { mode, connectivity, repositories } = useAppMode();
@@ -51,6 +68,7 @@ export function ScannerScreen() {
   const [demoZone, setDemoZone] = useState<string | null>(null);
   const [demoTarget, setDemoTarget] = useState<HeritageMonument | null>(null);
   const [demoAngle, setDemoAngle] = useState<CaptureAngle>('ESTABLISHING_FRONT');
+  const [activeSampleId, setActiveSampleId] = useState<string | null>(null);
 
   const isDemo = mode === 'NTB_VIP_DEMO_MODE';
   const zones = repositories?.monuments.getZones() ?? [];
@@ -58,6 +76,7 @@ export function ScannerScreen() {
     () => (repositories && demoZone ? repositories.monuments.getByZone(demoZone) : []),
     [repositories, demoZone],
   );
+  const showLivePhotoBar = !isDemo;
 
   if (!repositories) {
     return (
@@ -84,6 +103,7 @@ export function ScannerScreen() {
       void recordScanTelemetry(mode, scan, currentFix, connectivity);
     } finally {
       setScanning(false);
+      setActiveSampleId(null);
     }
   };
 
@@ -103,6 +123,42 @@ export function ScannerScreen() {
         searchRadiusM: null,
         matches: [],
         notice: error instanceof Error ? `Camera error: ${error.message}` : 'Camera error.',
+      });
+    }
+  };
+
+  const pickPhotoAndScan = async () => {
+    const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    if (!permissionResult.granted) {
+      setResult({
+        source: 'gps_only',
+        searchRadiusM: null,
+        matches: [],
+        notice: 'Photo library permission is required to pick a monument frame.',
+      });
+      return;
+    }
+    const picked = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      quality: 0.7,
+      base64: true,
+    });
+    if (picked.canceled || !picked.assets[0]?.base64) return;
+    await executeScan(picked.assets[0].base64);
+  };
+
+  const scanSampleFrame = async (frame: SampleMonumentFrame) => {
+    setActiveSampleId(frame.id);
+    try {
+      const base64 = await sampleFrameToBase64(frame.source);
+      await executeScan(base64);
+    } catch (error) {
+      setActiveSampleId(null);
+      setResult({
+        source: 'gps_only',
+        searchRadiusM: null,
+        matches: [],
+        notice: error instanceof Error ? `Sample frame error: ${error.message}` : 'Sample frame error.',
       });
     }
   };
@@ -183,7 +239,7 @@ export function ScannerScreen() {
               {scanning ? <ActivityIndicator color="#021007" /> : <AppText style={styles.scanButtonText}>Run on-device scan</AppText>}
             </Pressable>
           </View>
-        ) : !permission?.granted ? (
+        ) : !permission?.granted && !isSimulator ? (
           <View style={styles.permission}>
             <Ionicons name="camera-outline" size={40} color={colors.accent} />
             <AppText style={styles.helper}>Saalik needs the camera to identify monuments.</AppText>
@@ -193,10 +249,68 @@ export function ScannerScreen() {
           </View>
         ) : (
           <View style={styles.cameraWrap}>
-            <CameraView ref={cameraRef} style={styles.camera} facing="back" />
-            <Pressable style={[styles.shutter, scanning && styles.disabled]} onPress={() => void captureAndScan()} disabled={scanning}>
-              {scanning ? <ActivityIndicator color="#021007" /> : <Ionicons name="scan" size={30} color="#021007" />}
+            {permission?.granted ? (
+              <>
+                <CameraView ref={cameraRef} style={styles.camera} facing="back" />
+                <Pressable style={[styles.shutter, scanning && styles.disabled]} onPress={() => void captureAndScan()} disabled={scanning}>
+                  {scanning ? <ActivityIndicator color="#021007" /> : <Ionicons name="scan" size={30} color="#021007" />}
+                </Pressable>
+              </>
+            ) : (
+              <View style={styles.simulatorPlaceholder}>
+                <Ionicons name="phone-portrait-outline" size={36} color={colors.accent} />
+                <AppText style={styles.helper}>
+                  Camera is unavailable on the Simulator. Use Pick Photo or a sample monument frame below to hit the live CLIP worker.
+                </AppText>
+              </View>
+            )}
+          </View>
+        )}
+
+        {showLivePhotoBar && (
+          <View style={styles.liveBar}>
+            <AppText style={styles.sectionTitle}>Pick Photo / Sample Monument Frame</AppText>
+            <AppText style={styles.helper}>
+              {isSimulator
+                ? 'iOS Simulator has no physical camera. Pick a photo or tap a bundled frame to POST /api/heritage/scan-image through the Apple MPS CLIP worker on port 8099.'
+                : 'Conference-room fallback: pick any photo or tap a bundled monument frame to demonstrate the live CLIP path.'}
+            </AppText>
+            <Pressable
+              style={[styles.scanButton, scanning && styles.disabled]}
+              disabled={scanning}
+              onPress={() => void pickPhotoAndScan()}
+            >
+              {scanning && !activeSampleId ? (
+                <ActivityIndicator color="#021007" />
+              ) : (
+                <View style={styles.pickRow}>
+                  <Ionicons name="images-outline" size={18} color="#021007" />
+                  <AppText style={styles.scanButtonText}>Pick Photo</AppText>
+                </View>
+              )}
             </Pressable>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.sampleRow}>
+              {SAMPLE_MONUMENT_FRAMES.map((frame) => {
+                const active = activeSampleId === frame.id;
+                return (
+                  <Pressable
+                    key={frame.id}
+                    style={[styles.sampleCard, active && styles.sampleCardActive, scanning && styles.disabled]}
+                    disabled={scanning}
+                    onPress={() => void scanSampleFrame(frame)}
+                  >
+                    <Image source={frame.source} style={styles.sampleThumb} />
+                    {active ? (
+                      <ActivityIndicator color={colors.accent} style={styles.sampleSpinner} />
+                    ) : (
+                      <AppText style={styles.sampleLabel} numberOfLines={2}>
+                        {frame.label}
+                      </AppText>
+                    )}
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
           </View>
         )}
 
@@ -285,6 +399,7 @@ const styles = StyleSheet.create({
   tileNe: { color: colors.textMuted, fontSize: 12 },
   scanButton: { backgroundColor: colors.accent, paddingVertical: 14, borderRadius: 16, alignItems: 'center' },
   scanButtonText: { color: '#021007', fontSize: 15 },
+  pickRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   disabled: { opacity: 0.5 },
   permission: { alignItems: 'center', gap: 12, padding: 24 },
   cameraWrap: { height: 380, borderRadius: 20, overflow: 'hidden', backgroundColor: '#000' },
@@ -300,6 +415,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  simulatorPlaceholder: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 12,
+    padding: 24,
+    backgroundColor: colors.card,
+  },
+  liveBar: { gap: 12 },
+  sampleRow: { gap: 10, paddingVertical: 4 },
+  sampleCard: {
+    width: 112,
+    borderRadius: 14,
+    overflow: 'hidden',
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  sampleCardActive: { borderColor: colors.accent },
+  sampleThumb: { width: 112, height: 84, backgroundColor: '#111' },
+  sampleLabel: { color: colors.textPrimary, fontSize: 11, paddingHorizontal: 8, paddingVertical: 8 },
+  sampleSpinner: { marginVertical: 10 },
   notice: {
     flexDirection: 'row',
     gap: 8,
