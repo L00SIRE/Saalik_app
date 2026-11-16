@@ -1,6 +1,6 @@
 # Saalik — Implementation Progress
 
-Last updated: 2026-11-14
+Last updated: 2026-11-15
 
 ## Unified architecture (monorepo)
 
@@ -20,34 +20,81 @@ prisma/                     PostgreSQL + pgvector heritage schema (production ta
 data/nepal_heritage_seed/   101-monument bilingual corpus (offline fallback)
 apps/ntb-command-center/    Next.js NTB dashboard. Fetches
                             GET /api/heritage/command-center, else seed dashboard JSON.
-                            Home page: 3D heritage twin, pitch film, policy ROI simulator
+                            Tabs: /digital-twin, /pitch-film, /roi-simulator
+  src/components/three/     ThreeHeritageTwin (procedural three.js scene)
+  src/components/pitch-film/ AnimatedPitchFilm (canvas, WebAudio, SpeechSynthesis)
   src/lib/twin/             solar position, twin data loader (tests/twin.solarAndData.test.ts)
+  src/lib/benchmark.ts      benchmark figures read from the exported vector bundle
 docs/ntb_pitch_pack/        executive brief, draft 90-day pilot MOU, 5-minute demo script
 scripts/                    start_live_stack.sh (npm run live:all)
 ml_pipeline/                Python quality gate, encoder, augmenter, retrieval benchmark
-tests/                      Jest against backend/src/heritage
+tests/                      Jest: heritage API, walk optimizer, twin maths, monument sync
+                            contract, scan ranking source, e2e_pitch_rehearsal
 ```
 
 Root scripts: `dev:all`, `live:all`, `seed:db`, `verify:all`.
 
+## Stability fixes and remaining pieces (2026-11-15)
+
+Three things stopped the iOS app from running. All were reproduced on the iPhone 17 Pro
+simulator and are fixed.
+
+- [x] **Red screen on launch** ("Unable to resolve module expo/internal/bundle-origin"). `expo-audio`
+  has a loose peer dependency on `expo-asset`, and npm had hoisted the SDK 58 `expo-asset` and
+  `expo-constants` next to Expo SDK 54. Both are now direct dependencies at their SDK 54 versions.
+- [x] **Heritage screens crashing with the API running** ("Cannot read property 'sequence' of
+  undefined"). `GET /api/heritage/sync/monuments` sent trimmed search records and the app stored
+  them over its full bundled monuments, so the crash persisted in the phone's database. The API
+  now sends the compiled records the app ships, and only to clients older than the corpus build.
+  The app ignores any incomplete record and falls back to the bundled monument for rows already
+  damaged (`isCompleteMonument` in `types/heritage.ts`). Test: `tests/monumentSync.contract.test.ts`.
+- [x] **Fatal error opening the scanner** (missing `NSLocationWhenInUseUsageDescription`). `app.json`
+  now lists the `expo-location` and `expo-camera` plugins with camera, location and microphone
+  purpose strings. `ios/` is a local prebuild: run `npx expo prebuild --platform ios` and rebuild
+  after pulling this change.
+- [x] `DemoBanner` is mounted again at the root (`navigation/AppNavigator.tsx`). It had not been
+  rendered since the June redesign, so the Aanya to Bishnu switch could not be reached.
+- [x] Command center: the twin, the film and the simulator each have their own tab. The film reads
+  Recall@1, Recall@3, photo count and latency from `vector_bundle.json`, so it cannot drift from
+  the benchmark again.
+- [x] `tests/e2e_pitch_rehearsal.test.ts` walks the demo script (scan, story, 90-minute walk,
+  scan-led booking reaching Bishnu's list first, booking API, command center) and fails if the
+  pitch pack quotes figures other than the measured ones.
+- [x] Presigned uploads are bound to a declared byte length of at most 10 MB as well as to the
+  content type.
+- [x] Scanner tie-breaker margin is 0.05.
+
+## Retrieval benchmark (2026-11-14)
+
+- [x] Center-biased four-view CLIP pyramid, instance-level gallery and the two-stage ranker
+  (`ml_pipeline/embeddings/geo_visual_ranker.py`), shared by the benchmark and the worker.
+- [x] Gallery curated by eye: 62 mislabeled Commons photos quarantined, 17 re-filed, 33 added.
+  Every change is listed with its reason in `precomputed_index/harvest_manifest.json`.
+- [x] Table (c), leave-one-photo-out with GPS: Recall@1 **0.892** on 65 held-out queries (0.625
+  before). Photo only, without the GPS prior: 0.738. With the fix displaced 10 to 35 m: 0.862.
+  The tuner switched the text re-ranker off; the gain over 0.738 is the GPS proximity prior, which
+  depends on field-verified coordinates. Full method: `PRE_NEPAL_VECTOR_BENCHMARK.md`.
+- [x] `POST /api/heritage/scan-image` uses the worker's two-stage ranking, with the local index as
+  the fallback. Test: `tests/scanImage.workerRanking.test.ts`.
+
 ## Full-stack integration (2026-11-14)
 
 **Command center** (`apps/ntb-command-center/src/components/`)
-- [x] `ThreeHeritageTwin.tsx` — three.js scene built from `lib/twin`: procedural pagodas, shikharas, stupas and the other corpus types; a 1 December to 31 January date slider and a 06:00 to 18:00 NPT time slider driving the sun and shadows; the five field-capture camera frustums coloured by front, side or back light; the 150 m candidate ring with neighbour lines and bars coloured by prototype cosine. Heights, footprints and facade bearings are nominal, not surveyed.
-- [x] `AnimatedPitchFilm.tsx` — 90-second, 5-scene canvas film with WebAudio singing-bowl strikes and SpeechSynthesis narration, both switchable.
+- [x] `three/ThreeHeritageTwin.tsx` — three.js scene built from `lib/twin`: procedural pagodas, shikharas, stupas and the other corpus types; a 1 December to 31 January date slider and a 06:00 to 18:00 NPT time slider driving the sun and shadows; the five field-capture camera frustums coloured by front, side or back light; the 150 m candidate ring with neighbour lines and bars coloured by prototype cosine. Heights, footprints and facade bearings are nominal, not surveyed.
+- [x] `pitch-film/AnimatedPitchFilm.tsx` — 90-second, 5-scene canvas film with WebAudio singing-bowl strikes and SpeechSynthesis narration, both switchable.
 - [x] `PolicyRoiSimulator.tsx` — sliders for daily active tourists, scan-to-guide conversion and satellite ward dispersion. Revenue per walk comes from the dashboard's guide ledger, which is still seeded demo data.
 
 **Mobile** (`frontend/saalik-mobile/src/`)
 - [x] `components/heritage/VoiceHistorianBar.tsx` — expo-speech narration of the open story tab in English, or the Nepali summary. Offline.
 - [x] `components/heritage/AskSaalikDrawer.tsx` + `answerFollowUp` in `services/rag/ragStream.ts` — follow-up questions answered by extracting sentences from the monument's own lore chunks, with their sources. Offline, no model call.
-- [x] Tie-breaker — the scanner asks which cue the visitor sees when the top two scores are within 0.03, and the story screen shows a one-tap pill to switch to the other candidate.
+- [x] Tie-breaker — the scanner asks which cue the visitor sees when the top two scores are within 0.05, and the story screen shows a one-tap pill to switch to the other candidate.
 - [x] `services/route/walkOptimizer.ts` + `screens/heritage/HeritageWalkScreen.tsx` — nearest monuments in the zone, ordered by nearest-neighbour then 2-opt, cut to 90 minutes of walking plus dwell time. Tests: `tests/walkOptimizer.test.ts`.
 - [x] Aanya-to-Bishnu bridge — a booking made from a scanned monument is saved as PENDING with the monument attached, kept in `saalik_demo_handoff_v1`, and placed first in Bishnu's incoming list after the new persona switch on `DemoBanner`. Only Bishnu's own tours cross over. Reset and Exit clear it.
 - [x] `TourDetail` and `Booking` are now registered in the Discover stack, so the storyteller card on a scan result leads to a booking.
 
 **Backend**
 - [x] `POST /api/auth/oauth/:provider` (google, apple) — verifies the ID token against the provider's published keys, then finds or creates the user by verified email. Answers 503 until `GOOGLE_OAUTH_CLIENT_ID` / `APPLE_OAUTH_CLIENT_ID` is set.
-- [x] `POST /api/uploads/presign` — SigV4 presigned PUT URL for Cloudflare R2, signed with the content type. Answers 503 until the four `R2_*` variables are set.
+- [x] `POST /api/uploads/presign` — SigV4 presigned PUT URL for Cloudflare R2, signed with the content type and byte length. Answers 503 until the four `R2_*` variables are set.
 - [x] Tests: `backend/tests/{oauth,presign,auth.integration}.test.ts`.
 
 **Not done yet**
@@ -55,6 +102,7 @@ Root scripts: `dev:all`, `live:all`, `seed:db`, `verify:all`.
 - The login screen's Google and Apple buttons do not call the new endpoint.
 - No screen uploads an image through the presign endpoint.
 - The presign URL has not been tried against a real R2 bucket, and the OAuth route has not been tried with a real Google or Apple token.
+- The app has been run on the iOS simulator only, not on a physical phone or on Android.
 
 ---
 

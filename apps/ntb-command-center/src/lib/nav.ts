@@ -35,4 +35,22 @@ export const NAV_ITEMS = [
     short: "Sandbox",
     description: "Cosine retrieval + mobile tourist preview",
   },
+  {
+    href: "/digital-twin",
+    label: "3D Heritage Twin",
+    short: "Twin",
+    description: "Procedural monuments, winter sun and capture cameras",
+  },
+  {
+    href: "/pitch-film",
+    label: "NTB Pitch Film",
+    short: "Film",
+    description: "90-second animated story with narration",
+  },
+  {
+    href: "/roi-simulator",
+    label: "Policy & ROI Simulator",
+    short: "ROI",
+    description: "Tourists, guide conversion and ward dispersion",
+  },
 ] as const;

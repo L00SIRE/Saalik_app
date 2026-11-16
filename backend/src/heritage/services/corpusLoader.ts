@@ -52,6 +52,27 @@ function defaultCorpusPath(): string {
   return path.resolve(__dirname, '../../../../data/nepal_heritage_seed/master_rag_corpus.json');
 }
 
+export interface AppSeed {
+  version: string;
+  generatedAt: string;
+  monuments: unknown[];
+}
+
+/**
+ * The compiled bundle the mobile app ships. Monument sync must send these full records: the
+ * trimmed search records in `LoadedCorpus` lack fields the app's screens read.
+ */
+// shortcut: reads the app's bundled JSON from the monorepo; serve it from the database once
+// monuments are edited server-side.
+export function loadAppSeed(): AppSeed | null {
+  const seedPath = path.resolve(__dirname, '../../../../frontend/saalik-mobile/src/data/heritageSeed.json');
+  try {
+    return JSON.parse(fs.readFileSync(seedPath, 'utf8')) as AppSeed;
+  } catch {
+    return null;
+  }
+}
+
 export interface LoadedCorpus {
   monuments: MonumentRecord[];
   walkingTours: WalkingTourRecord[];

@@ -13,9 +13,9 @@ The Board sees the other side of the same activity in a web command center: wher
 | Component | State |
 | --- | --- |
 | Heritage corpus | 101 monuments across 8 zones: the 7 UNESCO monument zones of the Kathmandu Valley plus Kirtipur, Bungamati, Panauti and other satellite towns. Each has bilingual names, 5 sourced lore passages and a 60-second audio script. |
-| Monument recognition | 363 open-license reference photographs covering 68 monuments in 6 priority zones. Another 10 monuments in those zones are indexed from text descriptions only, until field photographs exist. |
+| Monument recognition | 354 open-license reference photographs covering 69 monuments in 6 priority zones, each checked by eye against the monument it is filed under. Another 9 monuments in those zones are indexed from text descriptions only, until field photographs exist. |
 | Mobile app | Scanner, offline stories, voice narration, follow-up questions, a 90-minute walking-route builder and guide booking. A demo mode runs the full flow in airplane mode. |
-| Command center | Dispersion, registry health, guide livelihoods, alerts, a 3D model of each zone with winter sun and shadow, and a policy simulator. Its visitor and revenue figures are seeded demonstration data until the pilot produces real ones. |
+| Command center | Dispersion, registry health, guide livelihoods, alerts, a 3D model of each zone with winter sun and shadow, a 90-second pitch film and a policy simulator. Its visitor and revenue figures are seeded demonstration data until the pilot produces real ones. |
 
 ## Measured accuracy
 
@@ -23,11 +23,11 @@ These figures come from our pre-departure benchmark, run on a laptop before any 
 
 | Test | Result | What it shows |
 | --- | --- | --- |
-| Photo plus GPS, field-condition copies of the reference photos (363 queries) | Recall@1 **1.000** | The system is robust to overcast light, partial occlusion and tilt. The reference photo itself stays in the index, so this is not a test on new photographs. |
-| Photo plus GPS, photographs held out of the index (64 queries) | Recall@1 **0.828**, Recall@3 **0.938** | The closest test we have to a visitor's own photo. The right monument is the first answer about 5 times in 6 and is among the top 3 about 15 times in 16. |
-| Processing time per photo | **49.5 ms** median, warm, on an Apple-silicon laptop (MPS) | Decode, quality check, encoding and ranking. Network time is not included. |
+| Photo plus GPS, field-condition copies of the reference photos (354 queries) | Recall@1 **1.000** | The system is robust to overcast light, partial occlusion and tilt. The reference photo itself stays in the index, so this is not a test on new photographs. |
+| Photo plus GPS, photographs held out of the index (65 queries) | Recall@1 **0.892**, Recall@3 **0.954** | The closest test we have to a visitor's own photo. The right monument is the first answer about 9 times in 10 and is among the top 3 about 19 times in 20. Most of that comes from GPS: on the photo alone the first answer is right 0.738 of the time, and with the phone held 10 to 35 m back from the monument the figure is 0.862. |
+| Processing time per photo | **52.8 ms** median, warm, on an Apple-silicon laptop (MPS) | Decode, quality check, encoding and ranking. Network time is not included. |
 
-The remaining errors are between neighbours in the same square, such as Kumari Ghar and Gaddhi Baithak. The app handles those by asking the visitor one question about what they can see.
+The remaining errors are between neighbours in the same square, such as Vishwanath Mandir and Krishna Mandir in Patan. The app handles those by asking the visitor one question about what they can see.
 
 ## What the benchmark does not show
 

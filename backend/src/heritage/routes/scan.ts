@@ -1,5 +1,5 @@
 import { Router, type Request, type Response } from 'express';
-import { loadHeritageCorpus } from '../services/corpusLoader';
+import { loadAppSeed, loadHeritageCorpus } from '../services/corpusLoader';
 import { FieldCaptureService } from '../services/fieldCapture.service';
 import { TourBookingService } from '../services/tourBooking.service';
 import { hybridGeoVisualScan } from '../services/vectorSearch.service';
@@ -36,11 +36,16 @@ export function createHeritageRouter(deps: ScanRouterDeps = {}): Router {
 
   const telemetry: Array<Record<string, unknown>> = [];
 
-  router.get('/sync/monuments', (_req: Request, res: Response) => {
+  const appSeed = loadAppSeed();
+
+  router.get('/sync/monuments', (req: Request, res: Response) => {
+    // Send monuments only to a client whose last sync predates this corpus build.
+    const since = typeof req.query.since === 'string' ? Date.parse(req.query.since) : NaN;
+    const changed = appSeed !== null && !(since >= Date.parse(appSeed.generatedAt));
     res.json({
       serverTime: new Date().toISOString(),
-      corpusVersion: 'nepal_heritage_seed',
-      monuments: corpus.monuments,
+      corpusVersion: appSeed?.version ?? 'nepal_heritage_seed',
+      monuments: changed ? appSeed.monuments : [],
       deletedIds: [] as string[],
     });
   });

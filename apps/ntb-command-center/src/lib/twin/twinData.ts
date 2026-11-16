@@ -147,7 +147,7 @@ function cosine(a: number[] | undefined, b: number[] | undefined): number | null
   return normA === 0 || normB === 0 ? null : dot / Math.sqrt(normA * normB);
 }
 
-function findRepoRoot(startDir: string): string {
+export function findRepoRoot(startDir: string): string {
   let dir = path.resolve(startDir);
   for (let depth = 0; depth < 5; depth += 1) {
     if (existsSync(path.join(dir, ZONES_DIR))) return dir;

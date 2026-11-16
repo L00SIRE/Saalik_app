@@ -85,7 +85,7 @@ describe('issued access tokens validate on protected routes', () => {
   });
 
   it('presigns an image upload only for a signed-in user with storage configured', async () => {
-    const body = { contentType: 'image/jpeg' };
+    const body = { contentType: 'image/jpeg', contentLength: 2_000_000 };
     const anonymous = await request(app).post('/api/uploads/presign').send(body);
     expect(anonymous.status).toBe(401);
 
@@ -99,11 +99,21 @@ describe('issued access tokens validate on protected routes', () => {
       R2_SECRET_ACCESS_KEY: 'secret',
       R2_BUCKET: 'saalik-media',
     });
-    const wrongType = await request(app).post('/api/uploads/presign').set(auth()).send({ contentType: 'text/html' });
+    const wrongType = await request(app)
+      .post('/api/uploads/presign')
+      .set(auth())
+      .send({ ...body, contentType: 'text/html' });
+    const tooLarge = await request(app)
+      .post('/api/uploads/presign')
+      .set(auth())
+      .send({ ...body, contentLength: 50_000_000 });
     const signed = await request(app).post('/api/uploads/presign').set(auth()).send(body);
     expect(wrongType.status).toBe(400);
+    expect(tooLarge.status).toBe(400);
     expect(signed.status).toBe(200);
     expect(signed.body.method).toBe('PUT');
+    expect(signed.body.headers).toEqual({ 'Content-Type': 'image/jpeg', 'Content-Length': '2000000' });
+    expect(signed.body.uploadUrl).toContain('X-Amz-SignedHeaders=content-length%3Bcontent-type%3Bhost');
     expect(signed.body.key).toMatch(/^uploads\/[^/]+\/[0-9a-f-]{36}\.jpg$/);
     expect(signed.body.uploadUrl).toContain(`https://acct.r2.cloudflarestorage.com/saalik-media/${signed.body.key}?`);
     expect(signed.body.uploadUrl).toMatch(/X-Amz-Signature=[0-9a-f]{64}$/);

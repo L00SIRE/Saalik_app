@@ -128,6 +128,28 @@ export interface HeritageMonument {
   referenceEmbeddings: ReferenceEmbedding[];
 }
 
+/**
+ * True when a record carries every field the heritage screens read. Server deltas are checked
+ * with this before they replace a bundled monument: a partial record crashes those screens.
+ */
+export function isCompleteMonument(value: unknown): value is HeritageMonument {
+  const m = value as Partial<HeritageMonument> | null;
+  return Boolean(
+    m &&
+      typeof m.id === 'string' &&
+      typeof m.zoneId === 'string' &&
+      m.names &&
+      m.era &&
+      m.geo &&
+      m.audioHook &&
+      m.fieldPhotoSpec &&
+      m.walkingTourStop &&
+      Array.isArray(m.visualCues?.distinguishingFeatures) &&
+      Array.isArray(m.loreChunks) &&
+      Array.isArray(m.referenceEmbeddings),
+  );
+}
+
 export interface HeritageZone {
   zoneId: string;
   names: BilingualName;

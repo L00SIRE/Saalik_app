@@ -24,7 +24,14 @@ export function AppText({ variant = 'body', tone, align, style, ...rest }: AppTe
   const variantStyle = typography[variant];
   const toneStyle = tone ? { color: toneToColor[tone] } : null;
   const alignStyle = align ? { textAlign: align } : null;
-  return <Text {...rest} style={[styles.default, variantStyle, toneStyle, alignStyle, style]} />;
+  // A caller that only raises fontSize would keep the variant's line box and lose the top of
+  // its letters (a 28 pt title in 21 pt of line height), so the line box grows with the font.
+  const custom = StyleSheet.flatten(style);
+  const lineFix =
+    custom?.fontSize && !custom.lineHeight && custom.fontSize * 1.2 > (variantStyle.lineHeight ?? 0)
+      ? { lineHeight: Math.round(custom.fontSize * 1.25) }
+      : null;
+  return <Text {...rest} style={[styles.default, variantStyle, toneStyle, alignStyle, lineFix, style]} />;
 }
 
 // Kept for backwards compatibility — older imports that pass raw `style` keep working.

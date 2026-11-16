@@ -26,7 +26,7 @@ function cuePhrase(monument: HeritageMonument): string {
 }
 
 /** Scores closer than this are a coin toss, so the visitor is asked what they can see. */
-const TIE_MARGIN = 0.03;
+const TIE_MARGIN = 0.05;
 
 function tieQuestion(matches: ScanResult['matches']): string | null {
   const [first, second] = matches;

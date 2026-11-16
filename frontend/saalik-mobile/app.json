@@ -31,7 +31,29 @@
       "expo-font",
       "expo-secure-store",
       "expo-sqlite",
-      "expo-audio"
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Saalik records a voice note when you choose to attach one to a field photo."
+        }
+      ],
+      "expo-asset",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Saalik uses your location to find the monuments around you and to tag field photos.",
+          "locationAlwaysAndWhenInUsePermission": false,
+          "locationAlwaysPermission": false
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Saalik uses the camera to recognise monuments and to capture reference photos.",
+          "microphonePermission": "Saalik records a voice note when you choose to attach one to a field photo.",
+          "recordAudioAndroid": false
+        }
+      ]
     ]
   }
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { DemoBanner } from '@components/DemoBanner';
 import { useAuthState } from '@context/AuthContext';
 import { TravelerNavigator } from './TravelerNavigator';
 import { GuideNavigator } from './GuideNavigator';
@@ -31,15 +33,19 @@ export function AppNavigator() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
-      <Root.Navigator screenOptions={{ headerShown: false, animation: 'fade' }}>
-        {status === 'unauthenticated' ? (
-          <Root.Screen name="Auth" component={LoginScreen} />
-        ) : isGuideOrAdmin ? (
-          <Root.Screen name="GuideApp" component={GuideNavigator} />
-        ) : (
-          <Root.Screen name="TravelerApp" component={TravelerNavigator} />
-        )}
-      </Root.Navigator>
+      <DemoBanner />
+      {/* Its own provider, so screens under the banner do not add the status-bar inset a second time. */}
+      <SafeAreaProvider>
+        <Root.Navigator screenOptions={{ headerShown: false, animation: 'fade' }}>
+          {status === 'unauthenticated' ? (
+            <Root.Screen name="Auth" component={LoginScreen} />
+          ) : isGuideOrAdmin ? (
+            <Root.Screen name="GuideApp" component={GuideNavigator} />
+          ) : (
+            <Root.Screen name="TravelerApp" component={TravelerNavigator} />
+          )}
+        </Root.Navigator>
+      </SafeAreaProvider>
     </View>
   );
 }

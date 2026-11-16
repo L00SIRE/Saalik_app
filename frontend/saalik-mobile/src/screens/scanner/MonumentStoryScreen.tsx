@@ -27,7 +27,7 @@ export function MonumentStoryScreen() {
 
   const monument = repositories?.monuments.getById(monumentId);
   const zone = monument ? repositories?.monuments.getZone(monument.zoneId) : undefined;
-  // Set by the scanner when the top two matches scored within 0.03 of each other.
+  // Set by the scanner when the top two matches scored within its tie margin of each other.
   const alternate = alternateId ? repositories?.monuments.getById(alternateId) : undefined;
 
   const context = useMemo(() => {

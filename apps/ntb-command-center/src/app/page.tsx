@@ -10,14 +10,9 @@ import {
 } from "@/lib/data";
 import { NAV_ITEMS } from "@/lib/nav";
 import { loadLiveDashboard } from "@/lib/live";
-import { loadTwinData } from "@/lib/twin/twinData";
-import { ThreeHeritageTwin } from "@/components/ThreeHeritageTwin";
-import { AnimatedPitchFilm } from "@/components/AnimatedPitchFilm";
-import { PolicyRoiSimulator } from "@/components/PolicyRoiSimulator";
 
 export default async function HomePage() {
   const live = await loadLiveDashboard();
-  const twin = loadTwinData();
   const overview = live.overview;
   const zones = live.zones;
   const alerts = live.alerts.filter((a) => a.active);
@@ -29,10 +24,6 @@ export default async function HomePage() {
   const satelliteScans = zones
     .filter((z) => z.designation === "SATELLITE_HERITAGE_TOWNS")
     .reduce((sum, z) => sum + z.metrics.scansLast24h, 0);
-  const walksBooked = guides.reduce((sum, g) => sum + g.walkingToursBooked7d, 0);
-  const revenuePerBookingNpr =
-    guides.reduce((sum, g) => sum + g.tipRevenueNpr7d + g.tourFeeRevenueNpr7d, 0) / Math.max(1, walksBooked);
-  const baselineDispersionPct = (100 * satelliteScans) / Math.max(1, unescoScans + satelliteScans);
 
   return (
     <>
@@ -62,25 +53,6 @@ export default async function HomePage() {
           value={`${overview.bilingualReadyPct}%`}
           hint={`Mean vector separation ${overview.meanVectorSeparation}`}
         />
-      </div>
-
-      <Panel
-        title="3D heritage twin"
-        description="Procedural models of every monument in a zone. Drag the December–January sun to see where shadows fall, which of the five field-capture cameras are front-lit, and which neighbours inside the 150 m candidate radius the vector index could confuse."
-      >
-        <ThreeHeritageTwin data={twin} />
-      </Panel>
-
-      <div className="twoCol">
-        <Panel title="NTB pitch film" description="Ninety seconds, five scenes, with optional narration and singing-bowl audio.">
-          <AnimatedPitchFilm />
-        </Panel>
-        <Panel
-          title="Policy ROI simulator"
-          description="What a given tourist volume, guide conversion and satellite dispersion would mean for guides and wards."
-        >
-          <PolicyRoiSimulator revenuePerBookingNpr={revenuePerBookingNpr} baselineDispersionPct={baselineDispersionPct} />
-        </Panel>
       </div>
 
       <div className="twoCol">

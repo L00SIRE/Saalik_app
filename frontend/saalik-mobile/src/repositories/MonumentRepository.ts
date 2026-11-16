@@ -1,17 +1,20 @@
 import type { Database } from '../services/storage/database';
 import type { MonumentDeltaResponse } from '../services/heritageApi';
 import { haversineMeters } from '../services/vector/similarity';
-import type {
-  GeoFix,
-  HeritageMonument,
-  HeritageSeedBundle,
-  HeritageSource,
-  HeritageWalkingTour,
-  HeritageZone,
+import {
+  isCompleteMonument,
+  type GeoFix,
+  type HeritageMonument,
+  type HeritageSeedBundle,
+  type HeritageSource,
+  type HeritageWalkingTour,
+  type HeritageZone,
 } from '../types/heritage';
 
 // Loaded with require so TypeScript does not infer a literal type for the 1.4 MB corpus.
 const seedBundle: HeritageSeedBundle = require('../data/heritageSeed.json');
+
+const bundledById = new Map(seedBundle.monuments.map((m) => [m.id, m]));
 
 const SEED_VERSION_KEY = 'monuments.seedVersion';
 const SYNC_RESOURCE = 'monuments';
@@ -68,8 +71,10 @@ export class MonumentRepository {
     const rows = await this.db.getAllAsync<{ payload: string }>('SELECT payload FROM monuments WHERE deleted = 0');
     this.cache.clear();
     for (const row of rows) {
-      const monument = JSON.parse(row.payload) as HeritageMonument;
-      this.cache.set(monument.id, monument);
+      const stored: unknown = JSON.parse(row.payload);
+      // A partial row left by an earlier sync falls back to the bundled monument.
+      const monument = isCompleteMonument(stored) ? stored : bundledById.get((stored as { id?: string } | null)?.id ?? '');
+      if (monument) this.cache.set(monument.id, monument);
     }
   }
 
@@ -133,13 +138,15 @@ export class MonumentRepository {
 
   /** Applies a server delta: upserts changed monuments, soft-deletes removed ones, advances the sync cursor. */
   async applyDelta(delta: MonumentDeltaResponse): Promise<{ upserted: number; deleted: number }> {
+    // Never store a record the screens cannot render; the bundled monument stays in place instead.
+    const monuments = delta.monuments.filter(isCompleteMonument);
     if (!this.db) {
-      delta.monuments.forEach((m) => this.cache.set(m.id, m));
+      monuments.forEach((m) => this.cache.set(m.id, m));
       delta.deletedIds.forEach((id) => this.cache.delete(id));
-      return { upserted: delta.monuments.length, deleted: delta.deletedIds.length };
+      return { upserted: monuments.length, deleted: delta.deletedIds.length };
     }
     await this.db.withExclusiveTransactionAsync(async (txn) => {
-      for (const monument of delta.monuments) {
+      for (const monument of monuments) {
         await txn.runAsync(
           `INSERT INTO monuments (id, zone_id, payload, corpus_version, updated_at, deleted)
            VALUES (?, ?, ?, ?, ?, 0)
@@ -163,6 +170,6 @@ export class MonumentRepository {
       );
     });
     await this.reloadCache();
-    return { upserted: delta.monuments.length, deleted: delta.deletedIds.length };
+    return { upserted: monuments.length, deleted: delta.deletedIds.length };
   }
 }

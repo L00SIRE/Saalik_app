@@ -11,6 +11,13 @@
     "skipLibCheck": true,
     "outDir": "dist/server",
     "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@app-types/*": ["frontend/saalik-mobile/src/types/*"],
+      "@react-native-async-storage/async-storage": [
+        "frontend/saalik-mobile/node_modules/@react-native-async-storage/async-storage"
+      ]
+    },
     "types": ["node", "jest"],
     "declaration": false
   },

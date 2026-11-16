@@ -2,6 +2,7 @@ import React from 'react';
 import { Alert, Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
 import { AppText } from './AppText';
 import { useAuth } from '@context/AuthContext';
 import { colors } from '@theme/colors';
@@ -18,7 +19,7 @@ export function DemoBanner() {
   if (!isDemo) return null;
 
   const personaLabel =
-    demoPersona === 'guide-bishnu' ? 'Bishnu — Guide preview' : 'Aanya — Traveler preview';
+    demoPersona === 'guide-bishnu' ? 'Bishnu — Guide' : 'Aanya — Traveler';
 
   const handleExit = () =>
     Alert.alert(
@@ -33,6 +34,8 @@ export function DemoBanner() {
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>
+      {/* Dark clock and battery icons: the app-wide light ones vanish on the accent strip. */}
+      <StatusBar style="dark" />
       <View style={styles.bar}>
         <View style={styles.dot} />
         <View style={styles.textBlock}>
@@ -97,6 +100,7 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   persona: {
+    flexShrink: 1, // truncate rather than slide under the switch button
     fontSize: 12,
     fontWeight: '600',
   },

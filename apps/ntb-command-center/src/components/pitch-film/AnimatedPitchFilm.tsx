@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import type { BenchmarkSummary } from "@/lib/benchmark";
 
 const WIDTH = 960;
 const HEIGHT = 540;
@@ -151,7 +152,7 @@ function sceneValley(ctx: Ctx, t: number) {
   ctx.globalAlpha = 1;
 }
 
-function sceneScan(ctx: Ctx, t: number) {
+function sceneScan(ctx: Ctx, t: number, benchmark: BenchmarkSummary) {
   label(ctx, "Point the camera. The monument answers.", 60, 120, 30, PAPER, 600);
   card(ctx, 110, 160, 230, 330);
   pagoda(ctx, 225, 440, 62, 5, "rgba(212, 182, 122, 0.85)");
@@ -178,9 +179,9 @@ function sceneScan(ctx: Ctx, t: number) {
 
   ctx.globalAlpha = phase(t, 0.55, 0.7);
   let x = 420;
-  x += pill(ctx, "0.828 Recall@1 on held-out photos", x, 450, "rgba(95, 174, 132, 0.2)", PAPER) + 10;
-  pill(ctx, "0.938 Recall@3", x, 450, "rgba(212, 182, 122, 0.2)", PAPER);
-  pill(ctx, "49.5 ms warm encode on Apple MPS", 420, 490, "rgba(243, 239, 230, 0.1)", PAPER);
+  x += pill(ctx, `${benchmark.recallAt1.toFixed(3)} Recall@1 on held-out photos`, x, 450, "rgba(95, 174, 132, 0.2)", PAPER) + 10;
+  pill(ctx, `${benchmark.recallAt3.toFixed(3)} Recall@3`, x, 450, "rgba(212, 182, 122, 0.2)", PAPER);
+  pill(ctx, `${benchmark.latencyMs.toFixed(1)} ms warm encode (${benchmark.latencyDevice})`, 420, 490, "rgba(243, 239, 230, 0.1)", PAPER);
   ctx.globalAlpha = 1;
 }
 
@@ -277,38 +278,44 @@ function sceneCommand(ctx: Ctx, t: number) {
   ctx.globalAlpha = 1;
 }
 
-const SCENES: { title: string; narration: string; bowlHz: number; draw: (ctx: Ctx, t: number) => void }[] = [
+// Narration and the scan scene quote the benchmark, so they take the numbers the last run exported.
+const SCENES: {
+  title: string;
+  narration: (benchmark: BenchmarkSummary) => string;
+  bowlHz: number;
+  draw: (ctx: Ctx, t: number, benchmark: BenchmarkSummary) => void;
+}[] = [
   {
     title: "The bottleneck",
-    narration:
+    narration: () =>
       "The Kathmandu Valley holds seven UNESCO monument zones. Most visitors see the same few squares, while heritage towns like Kirtipur, Bungamati and Panauti stay quiet. Saalik is built to spread that attention, and the income that follows it.",
     bowlHz: 174.6,
     draw: sceneValley,
   },
   {
     title: "The scan",
-    narration:
-      "Point a phone at a temple. Saalik matches the photo against 363 reference images and the visitor's GPS position. In our pre-departure benchmark, the right monument ranked first for 83 percent of photos the system had never seen.",
+    narration: (benchmark) =>
+      `Point a phone at a temple. Saalik matches the photo against ${benchmark.photos} reference images and the visitor's GPS position. In our pre-departure benchmark, the right monument ranked first for ${Math.round(benchmark.recallAt1 * 100)} percent of photos the system had never seen.`,
     bowlHz: 196,
     draw: sceneScan,
   },
   {
     title: "The story",
-    narration:
+    narration: () =>
       "Then the monument speaks. Each of 101 monuments carries a sixty-second story in English and Nepali, covering its history, iconography and living rituals, with sources listed for every passage. It works offline, in a courtyard with no signal.",
     bowlHz: 220,
     draw: sceneStory,
   },
   {
     title: "The guide",
-    narration:
+    narration: () =>
       "Every story ends with an invitation to walk it with a licensed local guide. The traveler books in two taps. The guide sees the request, tagged with the monument that started it. The walk is free, and the tip goes to the storyteller.",
     bowlHz: 261.6,
     draw: sceneGuide,
   },
   {
     title: "The pilot",
-    narration:
+    narration: () =>
       "For the Tourism Board, every scan is a signal. The command center shows where visitors gather, which monuments still need field photographs, and what guides earn. We propose a ninety-day pilot in the Kathmandu Valley.",
     bowlHz: 293.7,
     draw: sceneCommand,
@@ -347,7 +354,7 @@ function strike(audio: AudioContext, hz: number, seconds: number, level: number)
   }
 }
 
-export function AnimatedPitchFilm() {
+export function AnimatedPitchFilm({ benchmark }: { benchmark: BenchmarkSummary }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const audioRef = useRef<AudioContext | null>(null);
   const elapsed = useRef(0);
@@ -373,7 +380,7 @@ export function AnimatedPitchFilm() {
     ctx.textBaseline = "alphabetic";
     label(ctx, "SAALIK × NEPAL TOURISM BOARD", 60, 60, 14, BRASS, 600);
     label(ctx, `${index + 1} / ${SCENES.length} · ${SCENES[index]!.title}`, WIDTH - 60, 60, 14, MUTED, 400, "right");
-    SCENES[index]!.draw(ctx, t);
+    SCENES[index]!.draw(ctx, t, benchmark);
     // Fade each scene in and out so the cuts are soft.
     ctx.fillStyle = INK;
     ctx.globalAlpha = Math.max(1 - phase(t, 0, 0.05), phase(t, 0.96, 1)) * 0.9;
@@ -387,7 +394,7 @@ export function AnimatedPitchFilm() {
       ctx.fillStyle = BRASS;
       ctx.fillRect(x, HEIGHT - 16, segment * clamp01(seconds / SCENE_SECONDS - i), 4);
     });
-  }, []);
+  }, [benchmark]);
 
   const silence = () => {
     if (typeof window !== "undefined" && "speechSynthesis" in window) window.speechSynthesis.cancel();
@@ -400,11 +407,11 @@ export function AnimatedPitchFilm() {
     if (options.current.sound && audioRef.current) strike(audioRef.current, scene.bowlHz, 9, 0.16);
     if (options.current.narrate && "speechSynthesis" in window) {
       window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(scene.narration);
+      const utterance = new SpeechSynthesisUtterance(scene.narration(benchmark));
       utterance.lang = "en-US";
       window.speechSynthesis.speak(utterance);
     }
-  }, []);
+  }, [benchmark]);
 
   useEffect(() => {
     draw(POSTER_SECONDS);
@@ -506,7 +513,7 @@ export function AnimatedPitchFilm() {
         </label>
       </div>
       <p className="small muted" style={{ marginTop: 8 }}>
-        {SCENES[sceneIndex]!.narration}
+        {SCENES[sceneIndex]!.narration(benchmark)}
       </p>
     </div>
   );
